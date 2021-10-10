@@ -1,2 +1,3 @@
-# CardzApp
-Cardz - Learn the language every day!
+# Cardz
+
+### Рекламный идентификатор: [App ads](https://oleggibadulin.github.io/WordzApp/app-ads.txt)
