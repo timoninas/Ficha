@@ -8,11 +8,9 @@
 import Foundation
 
 protocol DailyWordsViewInput: AnyObject {
-    
+    func changeState(state: DailyWordsViewController.State)
 }
 
-protocol DailyWordsOutput: AnyObject {
-    
-    init(view: DailyWordsViewInput)
+protocol DailyWordsOutput: LifeCycleProtocol, AnyObject {
 
 }

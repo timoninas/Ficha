@@ -3,78 +3,98 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		77EB5AF92712BBF200964479 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EB5AF82712BBF200964479 /* AppDelegate.swift */; };
-		77EB5AFB2712BBF200964479 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EB5AFA2712BBF200964479 /* SceneDelegate.swift */; };
-		77EB5AFD2712BBF200964479 /* DailyWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EB5AFC2712BBF200964479 /* DailyWordsViewController.swift */; };
-		77EB5B032712BBF200964479 /* CardzApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 77EB5B012712BBF200964479 /* CardzApp.xcdatamodeld */; };
-		77EB5B052712BBF800964479 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77EB5B042712BBF800964479 /* Assets.xcassets */; };
-		77EB5B082712BBF800964479 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77EB5B062712BBF800964479 /* LaunchScreen.storyboard */; };
-		77EB5B132712BBF800964479 /* CardzAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EB5B122712BBF800964479 /* CardzAppTests.swift */; };
-		77EB5B1D2712BBF900964479 /* CardzAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EB5B1C2712BBF900964479 /* CardzAppUITests.swift */; };
-		77EB5B2A2712C19900964479 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EB5B292712C19700964479 /* UIColor+Extension.swift */; };
-		77EB5B2E2712C4B000964479 /* DailyWordsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EB5B2D2712C4B000964479 /* DailyWordsPresenter.swift */; };
-		77EB5B332712C4D500964479 /* DailyWordsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EB5B322712C4D500964479 /* DailyWordsBuilder.swift */; };
-		77EB5B352712C57800964479 /* DailyWordsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EB5B342712C57800964479 /* DailyWordsProtocol.swift */; };
-		77EB5B372712C7CD00964479 /* TodayWordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EB5B362712C7CD00964479 /* TodayWordsView.swift */; };
+		D4C7F12F2719636D0066125A /* DailyWordsViewController+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C7F12E2719636D0066125A /* DailyWordsViewController+State.swift */; };
+		D4F00D5B2718C3840079A860 /* CardzApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4F00D592718C3840079A860 /* CardzApp.xcdatamodeld */; };
+		D4F00D5D2718C3860079A860 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F00D5C2718C3860079A860 /* Assets.xcassets */; };
+		D4F00D602718C3860079A860 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4F00D5E2718C3860079A860 /* LaunchScreen.storyboard */; };
+		D4F00D6B2718C3860079A860 /* CardzAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F00D6A2718C3860079A860 /* CardzAppTests.swift */; };
+		D4F00D762718C3860079A860 /* CardzAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F00D752718C3860079A860 /* CardzAppUITests.swift */; };
+		D4F00D952718C3FB0079A860 /* DailyWordsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F00D842718C3FB0079A860 /* DailyWordsProtocol.swift */; };
+		D4F00D962718C3FB0079A860 /* DailyWordsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F00D862718C3FB0079A860 /* DailyWordsPresenter.swift */; };
+		D4F00D972718C3FB0079A860 /* DailyWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F00D882718C3FB0079A860 /* DailyWordsViewController.swift */; };
+		D4F00D982718C3FB0079A860 /* DailyWordsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F00D892718C3FB0079A860 /* DailyWordsBuilder.swift */; };
+		D4F00D992718C3FB0079A860 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F00D8C2718C3FB0079A860 /* UIColor+Extension.swift */; };
+		D4F00D9A2718C3FB0079A860 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F00D8D2718C3FB0079A860 /* UILabel+Extension.swift */; };
+		D4F00D9B2718C3FB0079A860 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F00D8E2718C3FB0079A860 /* UIImage+Extension.swift */; };
+		D4F00D9C2718C3FB0079A860 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F00D8F2718C3FB0079A860 /* String+Extension.swift */; };
+		D4F00D9D2718C3FB0079A860 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F00D902718C3FB0079A860 /* AppDelegate.swift */; };
+		D4F00D9E2718C3FB0079A860 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F00D912718C3FB0079A860 /* SceneDelegate.swift */; };
+		D4F00D9F2718C3FB0079A860 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F00D932718C3FB0079A860 /* BlurView.swift */; };
+		D4F00DA02718C3FB0079A860 /* TodayWordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F00D942718C3FB0079A860 /* TodayWordsView.swift */; };
+		D4F00DA22718C4940079A860 /* DailyWordsViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F00DA12718C4940079A860 /* DailyWordsViewController+ViewModel.swift */; };
+		D4F00DA52718C5070079A860 /* LifeCycleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F00DA42718C5070079A860 /* LifeCycleProtocol.swift */; };
+		D4F00DA92718C69C0079A860 /* TodayWordsView+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F00DA82718C69C0079A860 /* TodayWordsView+Configuration.swift */; };
+		D4F00DAC2718C95A0079A860 /* BubblesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F00DAB2718C95A0079A860 /* BubblesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		77EB5B0F2712BBF800964479 /* PBXContainerItemProxy */ = {
+		D4F00D672718C3860079A860 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 77EB5AED2712BBF200964479 /* Project object */;
+			containerPortal = D4F00D452718C3840079A860 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 77EB5AF42712BBF200964479;
+			remoteGlobalIDString = D4F00D4C2718C3840079A860;
 			remoteInfo = CardzApp;
 		};
-		77EB5B192712BBF900964479 /* PBXContainerItemProxy */ = {
+		D4F00D722718C3860079A860 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 77EB5AED2712BBF200964479 /* Project object */;
+			containerPortal = D4F00D452718C3840079A860 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 77EB5AF42712BBF200964479;
+			remoteGlobalIDString = D4F00D4C2718C3840079A860;
 			remoteInfo = CardzApp;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		77EB5AF52712BBF200964479 /* CardzApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardzApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		77EB5AF82712BBF200964479 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		77EB5AFA2712BBF200964479 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		77EB5AFC2712BBF200964479 /* DailyWordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWordsViewController.swift; sourceTree = "<group>"; };
-		77EB5B022712BBF200964479 /* CardzApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardzApp.xcdatamodel; sourceTree = "<group>"; };
-		77EB5B042712BBF800964479 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		77EB5B072712BBF800964479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		77EB5B092712BBF800964479 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		77EB5B0E2712BBF800964479 /* CardzAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardzAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		77EB5B122712BBF800964479 /* CardzAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardzAppTests.swift; sourceTree = "<group>"; };
-		77EB5B182712BBF900964479 /* CardzAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardzAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		77EB5B1C2712BBF900964479 /* CardzAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardzAppUITests.swift; sourceTree = "<group>"; };
-		77EB5B292712C19700964479 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		77EB5B2D2712C4B000964479 /* DailyWordsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWordsPresenter.swift; sourceTree = "<group>"; };
-		77EB5B322712C4D500964479 /* DailyWordsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWordsBuilder.swift; sourceTree = "<group>"; };
-		77EB5B342712C57800964479 /* DailyWordsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWordsProtocol.swift; sourceTree = "<group>"; };
-		77EB5B362712C7CD00964479 /* TodayWordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWordsView.swift; sourceTree = "<group>"; };
+		D4C7F12E2719636D0066125A /* DailyWordsViewController+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyWordsViewController+State.swift"; sourceTree = "<group>"; };
+		D4F00D4D2718C3840079A860 /* CardzApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardzApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4F00D5A2718C3840079A860 /* CardzApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardzApp.xcdatamodel; sourceTree = "<group>"; };
+		D4F00D5C2718C3860079A860 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D4F00D5F2718C3860079A860 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D4F00D612718C3860079A860 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4F00D662718C3860079A860 /* CardzAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardzAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4F00D6A2718C3860079A860 /* CardzAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardzAppTests.swift; sourceTree = "<group>"; };
+		D4F00D6C2718C3860079A860 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4F00D712718C3860079A860 /* CardzAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardzAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4F00D752718C3860079A860 /* CardzAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardzAppUITests.swift; sourceTree = "<group>"; };
+		D4F00D772718C3860079A860 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4F00D842718C3FB0079A860 /* DailyWordsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyWordsProtocol.swift; sourceTree = "<group>"; };
+		D4F00D862718C3FB0079A860 /* DailyWordsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyWordsPresenter.swift; sourceTree = "<group>"; };
+		D4F00D882718C3FB0079A860 /* DailyWordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyWordsViewController.swift; sourceTree = "<group>"; };
+		D4F00D892718C3FB0079A860 /* DailyWordsBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyWordsBuilder.swift; sourceTree = "<group>"; };
+		D4F00D8C2718C3FB0079A860 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		D4F00D8D2718C3FB0079A860 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		D4F00D8E2718C3FB0079A860 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		D4F00D8F2718C3FB0079A860 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		D4F00D902718C3FB0079A860 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D4F00D912718C3FB0079A860 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D4F00D932718C3FB0079A860 /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		D4F00D942718C3FB0079A860 /* TodayWordsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayWordsView.swift; sourceTree = "<group>"; };
+		D4F00DA12718C4940079A860 /* DailyWordsViewController+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyWordsViewController+ViewModel.swift"; sourceTree = "<group>"; };
+		D4F00DA42718C5070079A860 /* LifeCycleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeCycleProtocol.swift; sourceTree = "<group>"; };
+		D4F00DA82718C69C0079A860 /* TodayWordsView+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodayWordsView+Configuration.swift"; sourceTree = "<group>"; };
+		D4F00DAB2718C95A0079A860 /* BubblesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubblesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		77EB5AF22712BBF200964479 /* Frameworks */ = {
+		D4F00D4A2718C3840079A860 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		77EB5B0B2712BBF800964479 /* Frameworks */ = {
+		D4F00D632718C3860079A860 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		77EB5B152712BBF900964479 /* Frameworks */ = {
+		D4F00D6E2718C3860079A860 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -84,119 +104,170 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		77EB5AEC2712BBF200964479 = {
+		D4F00D442718C3840079A860 = {
 			isa = PBXGroup;
 			children = (
-				77EB5AF72712BBF200964479 /* CardzApp */,
-				77EB5B112712BBF800964479 /* CardzAppTests */,
-				77EB5B1B2712BBF900964479 /* CardzAppUITests */,
-				77EB5AF62712BBF200964479 /* Products */,
+				D4F00D4F2718C3840079A860 /* CardzApp */,
+				D4F00D692718C3860079A860 /* CardzAppTests */,
+				D4F00D742718C3860079A860 /* CardzAppUITests */,
+				D4F00D4E2718C3840079A860 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		77EB5AF62712BBF200964479 /* Products */ = {
+		D4F00D4E2718C3840079A860 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				77EB5AF52712BBF200964479 /* CardzApp.app */,
-				77EB5B0E2712BBF800964479 /* CardzAppTests.xctest */,
-				77EB5B182712BBF900964479 /* CardzAppUITests.xctest */,
+				D4F00D4D2718C3840079A860 /* CardzApp.app */,
+				D4F00D662718C3860079A860 /* CardzAppTests.xctest */,
+				D4F00D712718C3860079A860 /* CardzAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		77EB5AF72712BBF200964479 /* CardzApp */ = {
+		D4F00D4F2718C3840079A860 /* CardzApp */ = {
 			isa = PBXGroup;
 			children = (
-				77EB5B2C2712C2F600964479 /* Helpers */,
-				77EB5B2F2712C4B400964479 /* DailyWordsModule */,
-				77EB5B382712C7D100964479 /* Moriah */,
-				77EB5B042712BBF800964479 /* Assets.xcassets */,
-				77EB5B062712BBF800964479 /* LaunchScreen.storyboard */,
-				77EB5B092712BBF800964479 /* Info.plist */,
-				77EB5B012712BBF200964479 /* CardzApp.xcdatamodeld */,
+				D4F00D922718C3FB0079A860 /* Moriah */,
+				D4F00D832718C3FB0079A860 /* DailyWordsModule */,
+				D4F00D8A2718C3FB0079A860 /* Helpers */,
+				D4F00D5C2718C3860079A860 /* Assets.xcassets */,
+				D4F00D5E2718C3860079A860 /* LaunchScreen.storyboard */,
+				D4F00D612718C3860079A860 /* Info.plist */,
+				D4F00D592718C3840079A860 /* CardzApp.xcdatamodeld */,
 			);
 			path = CardzApp;
 			sourceTree = "<group>";
 		};
-		77EB5B112712BBF800964479 /* CardzAppTests */ = {
+		D4F00D692718C3860079A860 /* CardzAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				77EB5B122712BBF800964479 /* CardzAppTests.swift */,
+				D4F00D6A2718C3860079A860 /* CardzAppTests.swift */,
+				D4F00D6C2718C3860079A860 /* Info.plist */,
 			);
 			path = CardzAppTests;
 			sourceTree = "<group>";
 		};
-		77EB5B1B2712BBF900964479 /* CardzAppUITests */ = {
+		D4F00D742718C3860079A860 /* CardzAppUITests */ = {
 			isa = PBXGroup;
 			children = (
-				77EB5B1C2712BBF900964479 /* CardzAppUITests.swift */,
+				D4F00D752718C3860079A860 /* CardzAppUITests.swift */,
+				D4F00D772718C3860079A860 /* Info.plist */,
 			);
 			path = CardzAppUITests;
 			sourceTree = "<group>";
 		};
-		77EB5B2B2712C19E00964479 /* Extensions */ = {
+		D4F00D832718C3FB0079A860 /* DailyWordsModule */ = {
 			isa = PBXGroup;
 			children = (
-				77EB5B292712C19700964479 /* UIColor+Extension.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		77EB5B2C2712C2F600964479 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				77EB5B2B2712C19E00964479 /* Extensions */,
-				77EB5AF82712BBF200964479 /* AppDelegate.swift */,
-				77EB5AFA2712BBF200964479 /* SceneDelegate.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		77EB5B2F2712C4B400964479 /* DailyWordsModule */ = {
-			isa = PBXGroup;
-			children = (
-				77EB5B302712C4B800964479 /* View */,
-				77EB5B312712C4BD00964479 /* Presenter */,
-				77EB5B322712C4D500964479 /* DailyWordsBuilder.swift */,
-				77EB5B342712C57800964479 /* DailyWordsProtocol.swift */,
+				D4F00D842718C3FB0079A860 /* DailyWordsProtocol.swift */,
+				D4F00D892718C3FB0079A860 /* DailyWordsBuilder.swift */,
+				D4F00D872718C3FB0079A860 /* View */,
+				D4F00D852718C3FB0079A860 /* Presenter */,
 			);
 			path = DailyWordsModule;
 			sourceTree = "<group>";
 		};
-		77EB5B302712C4B800964479 /* View */ = {
+		D4F00D852718C3FB0079A860 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				77EB5AFC2712BBF200964479 /* DailyWordsViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		77EB5B312712C4BD00964479 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				77EB5B2D2712C4B000964479 /* DailyWordsPresenter.swift */,
+				D4F00D862718C3FB0079A860 /* DailyWordsPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		77EB5B382712C7D100964479 /* Moriah */ = {
+		D4F00D872718C3FB0079A860 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				77EB5B362712C7CD00964479 /* TodayWordsView.swift */,
+				D4F00DA32718C4970079A860 /* Supplementary */,
+				D4F00D882718C3FB0079A860 /* DailyWordsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D4F00D8A2718C3FB0079A860 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D4F00DA62718C5430079A860 /* Protocols */,
+				D4F00D8B2718C3FB0079A860 /* Extensions */,
+				D4F00D902718C3FB0079A860 /* AppDelegate.swift */,
+				D4F00D912718C3FB0079A860 /* SceneDelegate.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D4F00D8B2718C3FB0079A860 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D4F00D8C2718C3FB0079A860 /* UIColor+Extension.swift */,
+				D4F00D8D2718C3FB0079A860 /* UILabel+Extension.swift */,
+				D4F00D8E2718C3FB0079A860 /* UIImage+Extension.swift */,
+				D4F00D8F2718C3FB0079A860 /* String+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D4F00D922718C3FB0079A860 /* Moriah */ = {
+			isa = PBXGroup;
+			children = (
+				D4F00DAA2718C9470079A860 /* BlurView */,
+				D4F00DA72718C68E0079A860 /* TodayWordsView */,
+				D4F00DAD2718C95D0079A860 /* BubblesView */,
 			);
 			path = Moriah;
+			sourceTree = "<group>";
+		};
+		D4F00DA32718C4970079A860 /* Supplementary */ = {
+			isa = PBXGroup;
+			children = (
+				D4F00DA12718C4940079A860 /* DailyWordsViewController+ViewModel.swift */,
+				D4C7F12E2719636D0066125A /* DailyWordsViewController+State.swift */,
+			);
+			path = Supplementary;
+			sourceTree = "<group>";
+		};
+		D4F00DA62718C5430079A860 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D4F00DA42718C5070079A860 /* LifeCycleProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D4F00DA72718C68E0079A860 /* TodayWordsView */ = {
+			isa = PBXGroup;
+			children = (
+				D4F00D942718C3FB0079A860 /* TodayWordsView.swift */,
+				D4F00DA82718C69C0079A860 /* TodayWordsView+Configuration.swift */,
+			);
+			path = TodayWordsView;
+			sourceTree = "<group>";
+		};
+		D4F00DAA2718C9470079A860 /* BlurView */ = {
+			isa = PBXGroup;
+			children = (
+				D4F00D932718C3FB0079A860 /* BlurView.swift */,
+			);
+			path = BlurView;
+			sourceTree = "<group>";
+		};
+		D4F00DAD2718C95D0079A860 /* BubblesView */ = {
+			isa = PBXGroup;
+			children = (
+				D4F00DAB2718C95A0079A860 /* BubblesView.swift */,
+			);
+			path = BubblesView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		77EB5AF42712BBF200964479 /* CardzApp */ = {
+		D4F00D4C2718C3840079A860 /* CardzApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 77EB5B202712BBF900964479 /* Build configuration list for PBXNativeTarget "CardzApp" */;
+			buildConfigurationList = D4F00D7A2718C3860079A860 /* Build configuration list for PBXNativeTarget "CardzApp" */;
 			buildPhases = (
-				77EB5AF12712BBF200964479 /* Sources */,
-				77EB5AF22712BBF200964479 /* Frameworks */,
-				77EB5AF32712BBF200964479 /* Resources */,
+				D4F00D492718C3840079A860 /* Sources */,
+				D4F00D4A2718C3840079A860 /* Frameworks */,
+				D4F00D4B2718C3840079A860 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -204,106 +275,105 @@
 			);
 			name = CardzApp;
 			productName = CardzApp;
-			productReference = 77EB5AF52712BBF200964479 /* CardzApp.app */;
+			productReference = D4F00D4D2718C3840079A860 /* CardzApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		77EB5B0D2712BBF800964479 /* CardzAppTests */ = {
+		D4F00D652718C3860079A860 /* CardzAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 77EB5B232712BBF900964479 /* Build configuration list for PBXNativeTarget "CardzAppTests" */;
+			buildConfigurationList = D4F00D7D2718C3860079A860 /* Build configuration list for PBXNativeTarget "CardzAppTests" */;
 			buildPhases = (
-				77EB5B0A2712BBF800964479 /* Sources */,
-				77EB5B0B2712BBF800964479 /* Frameworks */,
-				77EB5B0C2712BBF800964479 /* Resources */,
+				D4F00D622718C3860079A860 /* Sources */,
+				D4F00D632718C3860079A860 /* Frameworks */,
+				D4F00D642718C3860079A860 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				77EB5B102712BBF800964479 /* PBXTargetDependency */,
+				D4F00D682718C3860079A860 /* PBXTargetDependency */,
 			);
 			name = CardzAppTests;
 			productName = CardzAppTests;
-			productReference = 77EB5B0E2712BBF800964479 /* CardzAppTests.xctest */;
+			productReference = D4F00D662718C3860079A860 /* CardzAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		77EB5B172712BBF900964479 /* CardzAppUITests */ = {
+		D4F00D702718C3860079A860 /* CardzAppUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 77EB5B262712BBF900964479 /* Build configuration list for PBXNativeTarget "CardzAppUITests" */;
+			buildConfigurationList = D4F00D802718C3860079A860 /* Build configuration list for PBXNativeTarget "CardzAppUITests" */;
 			buildPhases = (
-				77EB5B142712BBF900964479 /* Sources */,
-				77EB5B152712BBF900964479 /* Frameworks */,
-				77EB5B162712BBF900964479 /* Resources */,
+				D4F00D6D2718C3860079A860 /* Sources */,
+				D4F00D6E2718C3860079A860 /* Frameworks */,
+				D4F00D6F2718C3860079A860 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				77EB5B1A2712BBF900964479 /* PBXTargetDependency */,
+				D4F00D732718C3860079A860 /* PBXTargetDependency */,
 			);
 			name = CardzAppUITests;
 			productName = CardzAppUITests;
-			productReference = 77EB5B182712BBF900964479 /* CardzAppUITests.xctest */;
+			productReference = D4F00D712718C3860079A860 /* CardzAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		77EB5AED2712BBF200964479 /* Project object */ = {
+		D4F00D452718C3840079A860 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1300;
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
 				TargetAttributes = {
-					77EB5AF42712BBF200964479 = {
-						CreatedOnToolsVersion = 13.0;
+					D4F00D4C2718C3840079A860 = {
+						CreatedOnToolsVersion = 12.5.1;
 					};
-					77EB5B0D2712BBF800964479 = {
-						CreatedOnToolsVersion = 13.0;
-						TestTargetID = 77EB5AF42712BBF200964479;
+					D4F00D652718C3860079A860 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = D4F00D4C2718C3840079A860;
 					};
-					77EB5B172712BBF900964479 = {
-						CreatedOnToolsVersion = 13.0;
-						TestTargetID = 77EB5AF42712BBF200964479;
+					D4F00D702718C3860079A860 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = D4F00D4C2718C3840079A860;
 					};
 				};
 			};
-			buildConfigurationList = 77EB5AF02712BBF200964479 /* Build configuration list for PBXProject "CardzApp" */;
-			compatibilityVersion = "Xcode 13.0";
+			buildConfigurationList = D4F00D482718C3840079A860 /* Build configuration list for PBXProject "CardzApp" */;
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 77EB5AEC2712BBF200964479;
-			productRefGroup = 77EB5AF62712BBF200964479 /* Products */;
+			mainGroup = D4F00D442718C3840079A860;
+			productRefGroup = D4F00D4E2718C3840079A860 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				77EB5AF42712BBF200964479 /* CardzApp */,
-				77EB5B0D2712BBF800964479 /* CardzAppTests */,
-				77EB5B172712BBF900964479 /* CardzAppUITests */,
+				D4F00D4C2718C3840079A860 /* CardzApp */,
+				D4F00D652718C3860079A860 /* CardzAppTests */,
+				D4F00D702718C3860079A860 /* CardzAppUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		77EB5AF32712BBF200964479 /* Resources */ = {
+		D4F00D4B2718C3840079A860 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77EB5B082712BBF800964479 /* LaunchScreen.storyboard in Resources */,
-				77EB5B052712BBF800964479 /* Assets.xcassets in Resources */,
+				D4F00D602718C3860079A860 /* LaunchScreen.storyboard in Resources */,
+				D4F00D5D2718C3860079A860 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		77EB5B0C2712BBF800964479 /* Resources */ = {
+		D4F00D642718C3860079A860 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		77EB5B162712BBF900964479 /* Resources */ = {
+		D4F00D6F2718C3860079A860 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -313,58 +383,67 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		77EB5AF12712BBF200964479 /* Sources */ = {
+		D4F00D492718C3840079A860 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77EB5B372712C7CD00964479 /* TodayWordsView.swift in Sources */,
-				77EB5B2E2712C4B000964479 /* DailyWordsPresenter.swift in Sources */,
-				77EB5B332712C4D500964479 /* DailyWordsBuilder.swift in Sources */,
-				77EB5AFD2712BBF200964479 /* DailyWordsViewController.swift in Sources */,
-				77EB5AF92712BBF200964479 /* AppDelegate.swift in Sources */,
-				77EB5B032712BBF200964479 /* CardzApp.xcdatamodeld in Sources */,
-				77EB5AFB2712BBF200964479 /* SceneDelegate.swift in Sources */,
-				77EB5B2A2712C19900964479 /* UIColor+Extension.swift in Sources */,
-				77EB5B352712C57800964479 /* DailyWordsProtocol.swift in Sources */,
+				D4C7F12F2719636D0066125A /* DailyWordsViewController+State.swift in Sources */,
+				D4F00DAC2718C95A0079A860 /* BubblesView.swift in Sources */,
+				D4F00D982718C3FB0079A860 /* DailyWordsBuilder.swift in Sources */,
+				D4F00D9C2718C3FB0079A860 /* String+Extension.swift in Sources */,
+				D4F00D962718C3FB0079A860 /* DailyWordsPresenter.swift in Sources */,
+				D4F00DA52718C5070079A860 /* LifeCycleProtocol.swift in Sources */,
+				D4F00DA02718C3FB0079A860 /* TodayWordsView.swift in Sources */,
+				D4F00D5B2718C3840079A860 /* CardzApp.xcdatamodeld in Sources */,
+				D4F00DA22718C4940079A860 /* DailyWordsViewController+ViewModel.swift in Sources */,
+				D4F00DA92718C69C0079A860 /* TodayWordsView+Configuration.swift in Sources */,
+				D4F00D9B2718C3FB0079A860 /* UIImage+Extension.swift in Sources */,
+				D4F00D9F2718C3FB0079A860 /* BlurView.swift in Sources */,
+				D4F00D9A2718C3FB0079A860 /* UILabel+Extension.swift in Sources */,
+				D4F00D992718C3FB0079A860 /* UIColor+Extension.swift in Sources */,
+				D4F00D9E2718C3FB0079A860 /* SceneDelegate.swift in Sources */,
+				D4F00D972718C3FB0079A860 /* DailyWordsViewController.swift in Sources */,
+				D4F00D9D2718C3FB0079A860 /* AppDelegate.swift in Sources */,
+				D4F00D952718C3FB0079A860 /* DailyWordsProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		77EB5B0A2712BBF800964479 /* Sources */ = {
+		D4F00D622718C3860079A860 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77EB5B132712BBF800964479 /* CardzAppTests.swift in Sources */,
+				D4F00D6B2718C3860079A860 /* CardzAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		77EB5B142712BBF900964479 /* Sources */ = {
+		D4F00D6D2718C3860079A860 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77EB5B1D2712BBF900964479 /* CardzAppUITests.swift in Sources */,
+				D4F00D762718C3860079A860 /* CardzAppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		77EB5B102712BBF800964479 /* PBXTargetDependency */ = {
+		D4F00D682718C3860079A860 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 77EB5AF42712BBF200964479 /* CardzApp */;
-			targetProxy = 77EB5B0F2712BBF800964479 /* PBXContainerItemProxy */;
+			target = D4F00D4C2718C3840079A860 /* CardzApp */;
+			targetProxy = D4F00D672718C3860079A860 /* PBXContainerItemProxy */;
 		};
-		77EB5B1A2712BBF900964479 /* PBXTargetDependency */ = {
+		D4F00D732718C3860079A860 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 77EB5AF42712BBF200964479 /* CardzApp */;
-			targetProxy = 77EB5B192712BBF900964479 /* PBXContainerItemProxy */;
+			target = D4F00D4C2718C3840079A860 /* CardzApp */;
+			targetProxy = D4F00D722718C3860079A860 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		77EB5B062712BBF800964479 /* LaunchScreen.storyboard */ = {
+		D4F00D5E2718C3860079A860 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				77EB5B072712BBF800964479 /* Base */,
+				D4F00D5F2718C3860079A860 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -372,7 +451,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		77EB5B1E2712BBF900964479 /* Debug */ = {
+		D4F00D782718C3860079A860 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -423,7 +502,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -433,7 +512,7 @@
 			};
 			name = Debug;
 		};
-		77EB5B1F2712BBF900964479 /* Release */ = {
+		D4F00D792718C3860079A860 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -478,7 +557,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -488,156 +567,118 @@
 			};
 			name = Release;
 		};
-		77EB5B212712BBF900964479 /* Debug */ = {
+		D4F00D7B2718C3860079A860 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = X92LK22555;
-				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CardzApp/Info.plist;
-				INFOPLIST_KEY_CFBundleExecutable = CardzApp;
-				INFOPLIST_KEY_CFBundleName = CardzApp;
-				INFOPLIST_KEY_CFBundleVersion = 1;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Revolvetra.CardzApp;
+				PRODUCT_BUNDLE_IDENTIFIER = Revolvetra.Inc.CardzApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
-		77EB5B222712BBF900964479 /* Release */ = {
+		D4F00D7C2718C3860079A860 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = X92LK22555;
-				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CardzApp/Info.plist;
-				INFOPLIST_KEY_CFBundleExecutable = CardzApp;
-				INFOPLIST_KEY_CFBundleName = CardzApp;
-				INFOPLIST_KEY_CFBundleVersion = 1;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Revolvetra.CardzApp;
+				PRODUCT_BUNDLE_IDENTIFIER = Revolvetra.Inc.CardzApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
-		77EB5B242712BBF900964479 /* Debug */ = {
+		D4F00D7E2718C3860079A860 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = X92LK22555;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				INFOPLIST_FILE = CardzAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Revolvetra.CardzAppTests;
+				PRODUCT_BUNDLE_IDENTIFIER = Revolvetra.Inc.CardzAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CardzApp.app/CardzApp";
 			};
 			name = Debug;
 		};
-		77EB5B252712BBF900964479 /* Release */ = {
+		D4F00D7F2718C3860079A860 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = X92LK22555;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				INFOPLIST_FILE = CardzAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Revolvetra.CardzAppTests;
+				PRODUCT_BUNDLE_IDENTIFIER = Revolvetra.Inc.CardzAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CardzApp.app/CardzApp";
 			};
 			name = Release;
 		};
-		77EB5B272712BBF900964479 /* Debug */ = {
+		D4F00D812718C3860079A860 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = X92LK22555;
-				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CardzAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Revolvetra.CardzAppUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = Revolvetra.Inc.CardzAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = CardzApp;
 			};
 			name = Debug;
 		};
-		77EB5B282712BBF900964479 /* Release */ = {
+		D4F00D822718C3860079A860 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = X92LK22555;
-				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CardzAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Revolvetra.CardzAppUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = Revolvetra.Inc.CardzAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = CardzApp;
@@ -647,38 +688,38 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		77EB5AF02712BBF200964479 /* Build configuration list for PBXProject "CardzApp" */ = {
+		D4F00D482718C3840079A860 /* Build configuration list for PBXProject "CardzApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				77EB5B1E2712BBF900964479 /* Debug */,
-				77EB5B1F2712BBF900964479 /* Release */,
+				D4F00D782718C3860079A860 /* Debug */,
+				D4F00D792718C3860079A860 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		77EB5B202712BBF900964479 /* Build configuration list for PBXNativeTarget "CardzApp" */ = {
+		D4F00D7A2718C3860079A860 /* Build configuration list for PBXNativeTarget "CardzApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				77EB5B212712BBF900964479 /* Debug */,
-				77EB5B222712BBF900964479 /* Release */,
+				D4F00D7B2718C3860079A860 /* Debug */,
+				D4F00D7C2718C3860079A860 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		77EB5B232712BBF900964479 /* Build configuration list for PBXNativeTarget "CardzAppTests" */ = {
+		D4F00D7D2718C3860079A860 /* Build configuration list for PBXNativeTarget "CardzAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				77EB5B242712BBF900964479 /* Debug */,
-				77EB5B252712BBF900964479 /* Release */,
+				D4F00D7E2718C3860079A860 /* Debug */,
+				D4F00D7F2718C3860079A860 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		77EB5B262712BBF900964479 /* Build configuration list for PBXNativeTarget "CardzAppUITests" */ = {
+		D4F00D802718C3860079A860 /* Build configuration list for PBXNativeTarget "CardzAppUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				77EB5B272712BBF900964479 /* Debug */,
-				77EB5B282712BBF900964479 /* Release */,
+				D4F00D812718C3860079A860 /* Debug */,
+				D4F00D822718C3860079A860 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -686,17 +727,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		77EB5B012712BBF200964479 /* CardzApp.xcdatamodeld */ = {
+		D4F00D592718C3840079A860 /* CardzApp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				77EB5B022712BBF200964479 /* CardzApp.xcdatamodel */,
+				D4F00D5A2718C3840079A860 /* CardzApp.xcdatamodel */,
 			);
-			currentVersion = 77EB5B022712BBF200964479 /* CardzApp.xcdatamodel */;
+			currentVersion = D4F00D5A2718C3840079A860 /* CardzApp.xcdatamodel */;
 			path = CardzApp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = 77EB5AED2712BBF200964479 /* Project object */;
+	rootObject = D4F00D452718C3840079A860 /* Project object */;
 }
