@@ -23,7 +23,7 @@ extension TodayWordsView {
             return mutableSelf
         }
         
-        func with(subtitles: [String]) -> Configuration {
+        func with(subtitles: [String]?) -> Configuration {
             var mutableSelf = self
             mutableSelf.subtitles = subtitles
             return mutableSelf

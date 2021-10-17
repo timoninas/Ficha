@@ -11,9 +11,14 @@ final class DailyWordsViewController: UIViewController {
     
     weak var presenter: DailyWordsOutput?
     
-    let todayView = TodayWordsView(configuration: .init()
-                                    .with(title: "Words")
-                                    .with(subtitles: ["Some word", "Another word"]))
+    var viewModels: [ViewModel] = [] {
+        didSet {
+            guard self.viewModels != oldValue else { return }
+            self.renderTodayViews()
+        }
+    }
+    
+    var wordsView: [TodayWordsView] = []
     
     let imageView = UIImageView(image: .revolvetra)
     
@@ -30,7 +35,11 @@ final class DailyWordsViewController: UIViewController {
     
     private let output: DailyWordsOutput
     
-    private let header = DailyWordsHeader()
+    private let header: DailyWordsHeader = {
+        let header = DailyWordsHeader()
+        header.title = "Daily Words"
+        return header
+    }()
     
     init(output: DailyWordsOutput) {
         self.output = output
@@ -51,10 +60,9 @@ final class DailyWordsViewController: UIViewController {
     private func configureUI() {
         self.addBackgroundView()
         
-//        self.addImage()
         self.addScrollView()
         self.addHeader()
-        self.addTodayView()
+        self.renderTodayViews()
     }
     
     private func addBackgroundView() {
@@ -82,13 +90,59 @@ final class DailyWordsViewController: UIViewController {
         self.header.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16.0).isActive = true
     }
     
-    private func addTodayView() {
-        self.scrollView.addSubview(self.todayView)
-        self.todayView.topAnchor.constraint(equalTo: self.header.bottomAnchor, constant: 10.0).isActive = true
-        self.todayView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -16.0).isActive = true
-        self.todayView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16.0).isActive = true
-        self.todayView.bottomAnchor.constraint(lessThanOrEqualTo: self.view.bottomAnchor).isActive = true
-        self.todayView.heightAnchor.constraint(equalToConstant: 350.0).isActive = true
+    var todayConstraints = [NSLayoutConstraint]()
+    
+    private func renderTodayViews() {
+        NSLayoutConstraint.deactivate(self.todayConstraints)
+        self.todayConstraints.removeAll()
+        
+        self.wordsView.forEach { view in
+            if view.superview != nil {
+                view.removeFromSuperview()
+            }
+        }
+        
+        var previousView: TodayWordsView?
+        for (idx, viewModel) in self.viewModels.enumerated() {
+            let todayView = TodayWordsView(configuration: .init()
+                                            .with(title: viewModel.title)
+                                            .with(subtitles: viewModel.subtitles))
+            self.scrollView.addSubview(todayView)
+            self.wordsView.append(todayView)
+            if idx == 0 {
+                self.todayConstraints += [
+                    todayView.topAnchor.constraint(equalTo: self.header.bottomAnchor, constant: 10.0),
+                    
+                ]
+            } else {
+                if idx == self.viewModels.count - 1 {
+                    self.todayConstraints += [
+                        todayView.bottomAnchor.constraint(lessThanOrEqualTo: self.scrollView.bottomAnchor)
+                    ]
+                }
+                if let view = previousView {
+                    self.todayConstraints += [
+                        todayView.topAnchor.constraint(equalTo: view.bottomAnchor, constant: 30.0)
+                    ]
+                }
+            }
+            
+            self.todayConstraints += [
+                todayView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16.0),
+                todayView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -16.0),
+                todayView.heightAnchor.constraint(equalToConstant: 350.0),
+            ]
+            
+            previousView = todayView
+        }
+        
+        NSLayoutConstraint.activate(self.todayConstraints)
+//        self.scrollView.addSubview(self.todayView)
+//        self.todayView.topAnchor.constraint(equalTo: self.header.bottomAnchor, constant: 10.0).isActive = true
+//        self.todayView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -16.0).isActive = true
+//        self.todayView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16.0).isActive = true
+//        self.todayView.bottomAnchor.constraint(lessThanOrEqualTo: self.view.bottomAnchor).isActive = true
+//        self.todayView.heightAnchor.constraint(equalToConstant: 350.0).isActive = true
     }
     
     private func addImage() {
@@ -107,6 +161,7 @@ extension DailyWordsViewController: DailyWordsViewInput {
     func changeState(state: DailyWordsViewController.State) {
         switch state {
         case .content(let viewModel):
+            self.viewModels = viewModel
             print(viewModel)
         case .error:
             print("Oshibka")

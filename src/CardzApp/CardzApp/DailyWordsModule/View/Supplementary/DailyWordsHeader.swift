@@ -7,13 +7,27 @@
 
 import UIKit
 
+/// DailyWordsHeader
+///
+/// Селфсайзится по высоте
 final class DailyWordsHeader: UIView {
+    
+    // MARK: - Public properties
     
     public var onTap: (() -> Void)?
     
+    public var title: String = "" {
+        didSet {
+            if self.title != oldValue {
+                self.titleLabel.text = self.title
+            }
+        }
+    }
+    
+    // MARK: - Private properties
+    
     private struct Constants {
-        static let height: CGFloat = 55.0
-        static let tilte: String = "Daily Words"
+        static let height: CGFloat = 65.0
         static let settingsImageSize = 25.0
         static let revolvetraImageSize = 12.5
     }
@@ -25,7 +39,6 @@ final class DailyWordsHeader: UIView {
         label.font = UIFont(name:"HelveticaNeue-Bold", size: 24.0)
         label.textAlignment = .left
         label.numberOfLines = 0
-        label.text = Constants.tilte
         return label
     }()
     
@@ -47,6 +60,8 @@ final class DailyWordsHeader: UIView {
         return button
     }()
     
+    // MARK: - Init
+    
     init() {
         super.init(frame: .zero)
         self.configureUI()
@@ -55,6 +70,8 @@ final class DailyWordsHeader: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Layout
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -77,8 +94,6 @@ final class DailyWordsHeader: UIView {
         self.addSubview(self.titleLabel)
         self.titleLabel.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         self.titleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-//        self.titleLabel.heightAnchor.constraint(equalToConstant: Constants.height).isActive = true
-//        self.titleLabel.rightAnchor.constraint(equalTo: self.settingsButton.leftAnchor, constant: -10.0).isActive = true
         self.titleLabel.rightAnchor.constraint(lessThanOrEqualTo: self.settingsButton.leftAnchor, constant: -10.0).isActive = true
         self.titleLabel.sizeToFit()
     }
@@ -99,6 +114,8 @@ final class DailyWordsHeader: UIView {
         self.settingsButton.widthAnchor.constraint(equalTo: self.settingsButton.heightAnchor).isActive = true
         self.settingsButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0.0).isActive = true
     }
+    
+    // MARK: - Private properties
     
     @objc
     func onSettingsButtonTapped(sender: UIButton) {

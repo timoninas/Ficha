@@ -10,7 +10,7 @@ import UIKit
 public extension UILabel {
 
     // MARK: - spacingValue is spacing that you need
-    public func addInterlineSpacing(spacingValue: CGFloat = 2) {
+    func addInterlineSpacing(spacingValue: CGFloat = 2) {
 
         // MARK: - Check if there's any text
         guard let textString = text else { return }
