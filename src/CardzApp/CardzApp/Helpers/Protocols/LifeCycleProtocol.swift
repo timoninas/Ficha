@@ -15,6 +15,10 @@ protocol LifeCycleProtocol {
     
     func viewDidAppear()
     
+    func viewWillDisappear()
+    
+    func viewDidDisappear()
+    
 }
 
 extension LifeCycleProtocol {
@@ -24,5 +28,9 @@ extension LifeCycleProtocol {
     func viewWillAppear() {}
     
     func viewDidAppear() {}
+    
+    func viewWillDisappear() {}
+    
+    func viewDidDisappear() {}
     
 }
