@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		775A18C7271C284E00A295C0 /* DailyWordsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775A18C6271C284E00A295C0 /* DailyWordsHeader.swift */; };
 		D4C7F12F2719636D0066125A /* DailyWordsViewController+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C7F12E2719636D0066125A /* DailyWordsViewController+State.swift */; };
 		D4F00D5B2718C3840079A860 /* CardzApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4F00D592718C3840079A860 /* CardzApp.xcdatamodeld */; };
 		D4F00D5D2718C3860079A860 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F00D5C2718C3860079A860 /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		775A18C6271C284E00A295C0 /* DailyWordsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWordsHeader.swift; sourceTree = "<group>"; };
 		D4C7F12E2719636D0066125A /* DailyWordsViewController+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyWordsViewController+State.swift"; sourceTree = "<group>"; };
 		D4F00D4D2718C3840079A860 /* CardzApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardzApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F00D5A2718C3840079A860 /* CardzApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardzApp.xcdatamodel; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			children = (
 				D4F00DA12718C4940079A860 /* DailyWordsViewController+ViewModel.swift */,
 				D4C7F12E2719636D0066125A /* DailyWordsViewController+State.swift */,
+				775A18C6271C284E00A295C0 /* DailyWordsHeader.swift */,
 			);
 			path = Supplementary;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				D4F00D9B2718C3FB0079A860 /* UIImage+Extension.swift in Sources */,
 				D4F00D9F2718C3FB0079A860 /* BlurView.swift in Sources */,
 				D4F00D9A2718C3FB0079A860 /* UILabel+Extension.swift in Sources */,
+				775A18C7271C284E00A295C0 /* DailyWordsHeader.swift in Sources */,
 				D4F00D992718C3FB0079A860 /* UIColor+Extension.swift in Sources */,
 				D4F00D9E2718C3FB0079A860 /* SceneDelegate.swift in Sources */,
 				D4F00D972718C3FB0079A860 /* DailyWordsViewController.swift in Sources */,

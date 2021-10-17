@@ -30,6 +30,8 @@ final class DailyWordsViewController: UIViewController {
     
     private let output: DailyWordsOutput
     
+    private let header = DailyWordsHeader()
+    
     init(output: DailyWordsOutput) {
         self.output = output
         super.init(nibName: nil, bundle: nil)
@@ -48,8 +50,10 @@ final class DailyWordsViewController: UIViewController {
     
     private func configureUI() {
         self.addBackgroundView()
+        
 //        self.addImage()
         self.addScrollView()
+        self.addHeader()
         self.addTodayView()
     }
     
@@ -70,9 +74,17 @@ final class DailyWordsViewController: UIViewController {
         self.scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
     }
     
+    private func addHeader() {
+        self.header.onTap = { print("Tapped") }
+        self.scrollView.addSubview(self.header)
+        self.header.topAnchor.constraint(equalTo: self.scrollView.topAnchor, constant: 10.0).isActive = true
+        self.header.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -16.0).isActive = true
+        self.header.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16.0).isActive = true
+    }
+    
     private func addTodayView() {
         self.scrollView.addSubview(self.todayView)
-        self.todayView.topAnchor.constraint(equalTo: self.scrollView.topAnchor, constant: 40.0).isActive = true
+        self.todayView.topAnchor.constraint(equalTo: self.header.bottomAnchor, constant: 10.0).isActive = true
         self.todayView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -16.0).isActive = true
         self.todayView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16.0).isActive = true
         self.todayView.bottomAnchor.constraint(lessThanOrEqualTo: self.view.bottomAnchor).isActive = true
