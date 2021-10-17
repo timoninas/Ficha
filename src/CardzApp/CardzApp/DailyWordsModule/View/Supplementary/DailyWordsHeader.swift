@@ -28,7 +28,7 @@ final class DailyWordsHeader: UIView {
     
     private struct Constants {
         static let height: CGFloat = 65.0
-        static let settingsImageSize = 25.0
+        static let settingsImageSize = 40.0
         static let revolvetraImageSize = 12.5
     }
     

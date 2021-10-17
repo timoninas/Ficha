@@ -83,7 +83,11 @@ final class DailyWordsViewController: UIViewController {
     }
     
     private func addHeader() {
-        self.header.onTap = { print("Tapped") }
+        self.header.onTap = {
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
+            print("Tapped")
+        }
         self.scrollView.addSubview(self.header)
         self.header.topAnchor.constraint(equalTo: self.scrollView.topAnchor, constant: 10.0).isActive = true
         self.header.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -16.0).isActive = true
@@ -117,7 +121,7 @@ final class DailyWordsViewController: UIViewController {
             } else {
                 if idx == self.viewModels.count - 1 {
                     self.todayConstraints += [
-                        todayView.bottomAnchor.constraint(lessThanOrEqualTo: self.scrollView.bottomAnchor)
+                        todayView.bottomAnchor.constraint(lessThanOrEqualTo: self.scrollView.bottomAnchor, constant: -30.0)
                     ]
                 }
                 if let view = previousView {
