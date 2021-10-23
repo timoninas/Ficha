@@ -20,13 +20,15 @@ final class DailyWordsPresenter: DailyWordsOutput {
     private func fetchData() {
         let viewModel = [
             DailyWordsViewController.ViewModel(title: "Words", subtitles: ["Harper's words came faster now", "Tracy listened to his words, first with shock and then with growing anger. He made her sound like an outcast, a leper"]),
-            DailyWordsViewController.ViewModel(title: "Cardz", subtitles: nil),
-            DailyWordsViewController.ViewModel(title: "Lol kek cheburek zaza papa", subtitles: ["Nichego man"]),
-            DailyWordsViewController.ViewModel(title: "KeK", subtitles: nil),
-            DailyWordsViewController.ViewModel(title: "Something neverthing everything kekeke", subtitles: nil),
-            DailyWordsViewController.ViewModel(title: "Something neverthing everything kekeke", subtitles: ["ASjkfaskjfa. sjkfnwekj. wkeflkw klewklew klwelkewkl kel wlkewkl klewlklkw lwkelwlewk lwelkew", "Kflererlkf klrefker erlfkmerlkf erlfkeklr klolol olklollk"]),
+            DailyWordsViewController.ViewModel(title: "Interesting", subtitles: nil),
+            DailyWordsViewController.ViewModel(title: "Joke", subtitles: ["It was a joke, of course, Percy was happy, not in a serious grabbing mood at all, but Delacroix didn't know that"]),
+            DailyWordsViewController.ViewModel(title: "Pleasantry", subtitles: nil),
+            DailyWordsViewController.ViewModel(title: "Silly", subtitles: nil),
+            DailyWordsViewController.ViewModel(title: "to get out", subtitles: ["Suddenly I was terrified, almost choked with a need to get out of there", "Who told you to get out ?"]),
         ]
+        
         self.handleSuccess(viewModel)
+        
     }
     
     private func handleSuccess(_ todayCards: [DailyWordsViewController.ViewModel]) {

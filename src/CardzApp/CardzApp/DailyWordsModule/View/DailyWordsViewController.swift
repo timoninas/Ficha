@@ -14,7 +14,7 @@ final class DailyWordsViewController: UIViewController {
     var viewModels: [ViewModel] = [] {
         didSet {
             guard self.viewModels != oldValue else { return }
-            self.renderTodayViews()
+            self.renderContent(isAnimated: true)
         }
     }
     
@@ -41,9 +41,17 @@ final class DailyWordsViewController: UIViewController {
         return header
     }()
     
+    private var todayConstraints: [NSLayoutConstraint] = []
+    private var heightConstraints: [NSLayoutConstraint] = []
+    
     init(output: DailyWordsOutput) {
         self.output = output
         super.init(nibName: nil, bundle: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.renderHeights()
     }
     
     required init?(coder: NSCoder) {
@@ -62,7 +70,7 @@ final class DailyWordsViewController: UIViewController {
         
         self.addScrollView()
         self.addHeader()
-        self.renderTodayViews()
+        self.renderContent(isAnimated: false)
     }
     
     private func addBackgroundView() {
@@ -93,8 +101,6 @@ final class DailyWordsViewController: UIViewController {
         self.header.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -16.0).isActive = true
         self.header.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16.0).isActive = true
     }
-    
-    var todayConstraints = [NSLayoutConstraint]()
     
     private func renderTodayViews() {
         NSLayoutConstraint.deactivate(self.todayConstraints)
@@ -134,28 +140,37 @@ final class DailyWordsViewController: UIViewController {
             self.todayConstraints += [
                 todayView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16.0),
                 todayView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -16.0),
-                todayView.heightAnchor.constraint(equalToConstant: 350.0),
             ]
             
             previousView = todayView
         }
         
         NSLayoutConstraint.activate(self.todayConstraints)
-//        self.scrollView.addSubview(self.todayView)
-//        self.todayView.topAnchor.constraint(equalTo: self.header.bottomAnchor, constant: 10.0).isActive = true
-//        self.todayView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -16.0).isActive = true
-//        self.todayView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16.0).isActive = true
-//        self.todayView.bottomAnchor.constraint(lessThanOrEqualTo: self.view.bottomAnchor).isActive = true
-//        self.todayView.heightAnchor.constraint(equalToConstant: 350.0).isActive = true
     }
     
-    private func addImage() {
-        self.view.addSubview(self.imageView)
-        self.imageView.translatesAutoresizingMaskIntoConstraints = false
-        self.imageView.heightAnchor.constraint(equalToConstant: 300.0).isActive = true
-        self.imageView.widthAnchor.constraint(equalToConstant: 300.0).isActive = true
-        self.imageView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 14.0).isActive = true
-        self.imageView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 14.0).isActive = true
+    private func renderHeights() {
+        NSLayoutConstraint.deactivate(self.heightConstraints)
+        self.heightConstraints.removeAll()
+        
+        self.wordsView.forEach { view in
+            self.heightConstraints += [
+                view.heightAnchor.constraint(equalToConstant: view.height() + 25)
+            ]
+        }
+        
+        NSLayoutConstraint.activate(self.heightConstraints)
+    }
+    
+    private func renderContent(isAnimated: Bool) {
+        if isAnimated {
+            UIView.animate(withDuration: 0.3, delay: 0.0,  options: [.curveEaseOut]) {
+                self.renderTodayViews()
+                self.renderHeights()
+            }
+        } else {
+            self.renderTodayViews()
+            self.renderHeights()
+        }
     }
 
 }

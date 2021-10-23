@@ -34,5 +34,13 @@ public extension UILabel {
         // MARK: - Assign string that you've modified to current attributed Text
         attributedText = attributedString
     }
+    
+    var numberOfVisibleLines: CGFloat {
+        self.layoutIfNeeded()
+        let maxSize = CGSize(width: frame.size.width, height: CGFloat(MAXFLOAT))
+        let textHeight = sizeThatFits(maxSize).height
+        let lineHeight = font.lineHeight
+        return textHeight / lineHeight
+    }
 
 }
