@@ -19,4 +19,10 @@ extension UIImage {
     
     static let starFilledIcon = UIImage(named: "starFilledIcon")
     
+    static let starIcon = UIImage(named: "starIcon")
+    
+    static let todayIcon = UIImage(named: "todayIcon")
+    
+    static let graduateIcon = UIImage(named: "graduateIcon")
+    
 }

@@ -181,6 +181,8 @@ final class TodayWordsView: UIView {
             let secondLabelHeight = self.secondLabel.numberOfVisibleLines * self.secondLabel.font.lineHeight
             self.mainLabelHeightAnchor += [ self.secondLabel.heightAnchor.constraint(equalToConstant: secondLabelHeight) ]
             totalHeight += secondLabelHeight
+        } else {
+            totalHeight += 20
         }
         
         totalHeight += 35

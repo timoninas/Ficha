@@ -13,12 +13,46 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        self.window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         
-        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-        window?.windowScene = windowScene
+        let todayViewController = DailyWordsBuilder.build()
+        if let todayIconData = UIImage.todayIcon?.pngData() {
+            let image = UIImage(data: todayIconData, scale: 13.0)
+            let item = UITabBarItem(title: "", image: image, selectedImage: nil)
+            todayViewController.tabBarItem = item
+        }
         
-        window?.rootViewController = DailyWordsBuilder.build()
-        window?.makeKeyAndVisible()
+        let learnViewController = DailyWordsBuilder.build()
+        if let graduateIconData = UIImage.graduateIcon?.pngData() {
+            let image = UIImage(data: graduateIconData, scale: 13.0)
+            let item = UITabBarItem(title: "", image: image, selectedImage: nil)
+            learnViewController.tabBarItem = item
+        }
+        
+        let favouriteViewController = DailyWordsBuilder.build()
+        if let favouriteIconData = UIImage.starIcon?.pngData() {
+            let image = UIImage(data: favouriteIconData, scale: 13.5)
+            let item = UITabBarItem(title: "", image: image, selectedImage: nil)
+            favouriteViewController.tabBarItem = item
+        }
+        
+        let tabBar = UITabBarController()
+        tabBar.setViewControllers([todayViewController, learnViewController, favouriteViewController], animated: true)
+        tabBar.selectedViewController = todayViewController
+        tabBar.tabBar.isHidden = false
+        tabBar.tabBar.isTranslucent = true
+        
+        UITabBar.appearance().tintColor = .mysteryShack
+        
+        let bounds = tabBar.tabBar.bounds as CGRect
+        let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+        visualEffectView.frame = bounds
+        visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        tabBar.tabBar.insertSubview(visualEffectView, at: 0)
+        
+        self.window?.windowScene = windowScene
+        self.window?.rootViewController = tabBar
+        self.window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {}
