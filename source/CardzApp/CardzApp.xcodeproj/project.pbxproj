@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		7702F1DF2729F48C006176FE /* Rivendell in Frameworks */ = {isa = PBXBuildFile; productRef = 7702F1DE2729F48C006176FE /* Rivendell */; };
 		775A18C7271C284E00A295C0 /* DailyWordsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775A18C6271C284E00A295C0 /* DailyWordsHeader.swift */; };
+		776E4926272C90E7000D0B2D /* LearnCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E4925272C90E7000D0B2D /* LearnCardViewController.swift */; };
+		776E4929272C9103000D0B2D /* LearnCardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E4928272C9103000D0B2D /* LearnCardPresenter.swift */; };
+		776E492D272C91B3000D0B2D /* LearnCardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E492C272C91B3000D0B2D /* LearnCardProtocol.swift */; };
+		776E492F272C91C1000D0B2D /* LearnCardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E492E272C91C1000D0B2D /* LearnCardBuilder.swift */; };
 		D4C7F12F2719636D0066125A /* DailyWordsViewController+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C7F12E2719636D0066125A /* DailyWordsViewController+State.swift */; };
 		D4F00D5B2718C3840079A860 /* CardzApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4F00D592718C3840079A860 /* CardzApp.xcdatamodeld */; };
 		D4F00D5D2718C3860079A860 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F00D5C2718C3860079A860 /* Assets.xcassets */; };
@@ -45,6 +49,10 @@
 /* Begin PBXFileReference section */
 		7702F1DD2729F483006176FE /* Rivendell */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Rivendell; path = ../Frameworks/Rivendell; sourceTree = "<group>"; };
 		775A18C6271C284E00A295C0 /* DailyWordsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWordsHeader.swift; sourceTree = "<group>"; };
+		776E4925272C90E7000D0B2D /* LearnCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCardViewController.swift; sourceTree = "<group>"; };
+		776E4928272C9103000D0B2D /* LearnCardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCardPresenter.swift; sourceTree = "<group>"; };
+		776E492C272C91B3000D0B2D /* LearnCardProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCardProtocol.swift; sourceTree = "<group>"; };
+		776E492E272C91C1000D0B2D /* LearnCardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCardBuilder.swift; sourceTree = "<group>"; };
 		D4C7F12E2719636D0066125A /* DailyWordsViewController+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyWordsViewController+State.swift"; sourceTree = "<group>"; };
 		D4F00D4D2718C3840079A860 /* CardzApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardzApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F00D5A2718C3840079A860 /* CardzApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardzApp.xcdatamodel; sourceTree = "<group>"; };
@@ -93,6 +101,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		776E4927272C90F3000D0B2D /* LearnCardModule */ = {
+			isa = PBXGroup;
+			children = (
+				776E492C272C91B3000D0B2D /* LearnCardProtocol.swift */,
+				776E492E272C91C1000D0B2D /* LearnCardBuilder.swift */,
+				776E492B272C9112000D0B2D /* View */,
+				776E492A272C910A000D0B2D /* Presenter */,
+			);
+			path = LearnCardModule;
+			sourceTree = "<group>";
+		};
+		776E492A272C910A000D0B2D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				776E4928272C9103000D0B2D /* LearnCardPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		776E492B272C9112000D0B2D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				776E4925272C90E7000D0B2D /* LearnCardViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		77C962262729F1CC00100FC3 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +168,7 @@
 		D4F00D4F2718C3840079A860 /* CardzApp */ = {
 			isa = PBXGroup;
 			children = (
+				776E4927272C90F3000D0B2D /* LearnCardModule */,
 				D4F00D922718C3FB0079A860 /* Rivendell */,
 				D4F00D832718C3FB0079A860 /* DailyWordsModule */,
 				D4F00D8A2718C3FB0079A860 /* Helpers */,
@@ -360,14 +396,18 @@
 				D4C7F12F2719636D0066125A /* DailyWordsViewController+State.swift in Sources */,
 				D4F00D982718C3FB0079A860 /* DailyWordsBuilder.swift in Sources */,
 				D4F00D962718C3FB0079A860 /* DailyWordsPresenter.swift in Sources */,
+				776E4929272C9103000D0B2D /* LearnCardPresenter.swift in Sources */,
 				D4F00DA52718C5070079A860 /* LifeCycleProtocol.swift in Sources */,
 				D4F00D5B2718C3840079A860 /* CardzApp.xcdatamodeld in Sources */,
+				776E492F272C91C1000D0B2D /* LearnCardBuilder.swift in Sources */,
 				D4F00DA22718C4940079A860 /* DailyWordsViewController+ViewModel.swift in Sources */,
 				775A18C7271C284E00A295C0 /* DailyWordsHeader.swift in Sources */,
 				D4F00D9E2718C3FB0079A860 /* SceneDelegate.swift in Sources */,
 				D4F00D972718C3FB0079A860 /* DailyWordsViewController.swift in Sources */,
 				D4F00D9D2718C3FB0079A860 /* AppDelegate.swift in Sources */,
 				D4F00D952718C3FB0079A860 /* DailyWordsProtocol.swift in Sources */,
+				776E492D272C91B3000D0B2D /* LearnCardProtocol.swift in Sources */,
+				776E4926272C90E7000D0B2D /* LearnCardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

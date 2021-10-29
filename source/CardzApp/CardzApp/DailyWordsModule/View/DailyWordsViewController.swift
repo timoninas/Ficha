@@ -10,8 +10,6 @@ import Rivendell
 
 final class DailyWordsViewController: UIViewController {
     
-    weak var presenter: DailyWordsOutput?
-    
     var viewModels: [ViewModel] = [] {
         didSet {
             guard self.viewModels != oldValue else { return }

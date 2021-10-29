@@ -15,24 +15,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         
-        let todayViewController = DailyWordsBuilder.build()
+        let todayViewController = LearnCardBuilder.build()
         if let todayIconData = UIImage.todayIcon?.pngData() {
             let image = UIImage(data: todayIconData, scale: 13.0)
-            let item = UITabBarItem(title: "", image: image, selectedImage: nil)
+            let item = UITabBarItem(title: "Daily", image: image, selectedImage: nil)
             todayViewController.tabBarItem = item
         }
         
         let learnViewController = DailyWordsBuilder.build()
         if let graduateIconData = UIImage.graduateIcon?.pngData() {
             let image = UIImage(data: graduateIconData, scale: 13.0)
-            let item = UITabBarItem(title: "", image: image, selectedImage: nil)
+            let item = UITabBarItem(title: "Learn", image: image, selectedImage: nil)
             learnViewController.tabBarItem = item
         }
         
         let favouriteViewController = DailyWordsBuilder.build()
         if let favouriteIconData = UIImage.starIcon?.pngData() {
             let image = UIImage(data: favouriteIconData, scale: 13.5)
-            let item = UITabBarItem(title: "", image: image, selectedImage: nil)
+            let item = UITabBarItem(title: "Favourite", image: image, selectedImage: nil)
             favouriteViewController.tabBarItem = item
         }
         
@@ -43,6 +43,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         tabBar.tabBar.isTranslucent = true
         
         UITabBar.appearance().tintColor = .mysteryShack
+        UITabBar.appearance().unselectedItemTintColor = .gendalfGray
         
         let bounds = tabBar.tabBar.bounds as CGRect
         let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
