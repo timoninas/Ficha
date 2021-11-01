@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Hobbiton
 
 public final class TodayWordsView: UIView {
     

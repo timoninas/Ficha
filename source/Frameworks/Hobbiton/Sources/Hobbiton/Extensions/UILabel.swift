@@ -1,8 +1,8 @@
 //
-//  UILabel+Extension.swift
-//  CardzApp
+//  File.swift
+//  
 //
-//  Created by Антон Тимонин on 12.10.2021.
+//  Created by Антон Тимонин on 01.11.2021.
 //
 
 import UIKit
@@ -44,3 +44,4 @@ public extension UILabel {
     }
 
 }
+

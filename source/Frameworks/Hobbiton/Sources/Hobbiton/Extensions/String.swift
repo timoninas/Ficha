@@ -1,13 +1,14 @@
 //
-//  String+Extension.swift
-//  CardzApp
+//  File.swift
+//  
 //
-//  Created by Антон Тимонин on 11.10.2021.
+//  Created by Антон Тимонин on 01.11.2021.
 //
 
 import UIKit
 
-extension String {
+public extension String {
+    
     func height(constraintedWidth width: CGFloat, font: UIFont) -> CGFloat {
         let label =  UILabel(frame: CGRect(x: 0, y: 0, width: width, height: .greatestFiniteMagnitude))
         label.numberOfLines = 0
@@ -17,5 +18,5 @@ extension String {
         
         return label.frame.height
     }
+    
 }
-
