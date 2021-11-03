@@ -12,7 +12,7 @@ final class LearnCardViewController: UIViewController {
     
     weak var output: LearnCardOutput?
     
-    var cardView = BaseCardView()
+    var cardView = BaseCardView(swipeDirections: .top, .right, .left, .bottom, .bottom)
     
     init(output: LearnCardOutput) {
         self.output = output
@@ -38,6 +38,11 @@ final class LearnCardViewController: UIViewController {
     }
     
     private func addCardView() {
+        cardView.onTopSwipe = { print("Top swipe") }
+        cardView.onLeftSwipe = { print("Left swipe") }
+        cardView.onRightSwipe = { print("Right swipe") }
+        cardView.onBottomSwipe = { print("Bottom swipe") }
+        cardView.onDragCard = { print("Drag swipe") }
         
         self.view.addSubview(self.cardView)
         NSLayoutConstraint.activate([

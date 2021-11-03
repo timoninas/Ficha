@@ -29,4 +29,8 @@ public extension UIImage {
     
     static let rightArrowIcon = UIImage(named: "rightArrowIcon")
     
+    static let openedEye = UIImage(named: "openedEye")
+    
+    static let closedEye = UIImage(named: "closedEye")
+    
 }
