@@ -7,6 +7,7 @@
 
 import UIKit
 import Rivendell
+import EyeOfSauron
 
 final class DailyWordsViewController: UIViewController {
     
@@ -59,6 +60,7 @@ final class DailyWordsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        RLogInfo(message: "[Info] \(String(describing: self)) ViewDidLoad")
         self.view.backgroundColor = .gendalf
         self.configureUI()
         self.output.viewDidLoad()

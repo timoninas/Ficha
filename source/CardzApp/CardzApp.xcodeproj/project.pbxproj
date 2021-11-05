@@ -14,6 +14,8 @@
 		776E492D272C91B3000D0B2D /* LearnCardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E492C272C91B3000D0B2D /* LearnCardProtocol.swift */; };
 		776E492F272C91C1000D0B2D /* LearnCardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E492E272C91C1000D0B2D /* LearnCardBuilder.swift */; };
 		77895BF927306ABC00A852BF /* Hobbiton in Frameworks */ = {isa = PBXBuildFile; productRef = 77895BF827306ABC00A852BF /* Hobbiton */; };
+		77A178DD273526FE005E520C /* EyeOfSauron in Frameworks */ = {isa = PBXBuildFile; productRef = 77A178DC273526FE005E520C /* EyeOfSauron */; };
+		77A178DF27352A0E005E520C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A178DE27352A0E005E520C /* Logger.swift */; };
 		D4C7F12F2719636D0066125A /* DailyWordsViewController+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C7F12E2719636D0066125A /* DailyWordsViewController+State.swift */; };
 		D4F00D5B2718C3840079A860 /* CardzApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4F00D592718C3840079A860 /* CardzApp.xcdatamodeld */; };
 		D4F00D5D2718C3860079A860 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F00D5C2718C3860079A860 /* Assets.xcassets */; };
@@ -54,6 +56,8 @@
 		776E4928272C9103000D0B2D /* LearnCardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCardPresenter.swift; sourceTree = "<group>"; };
 		776E492C272C91B3000D0B2D /* LearnCardProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCardProtocol.swift; sourceTree = "<group>"; };
 		776E492E272C91C1000D0B2D /* LearnCardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCardBuilder.swift; sourceTree = "<group>"; };
+		77A178DB273526F4005E520C /* EyeOfSauron */ = {isa = PBXFileReference; lastKnownFileType = folder; name = EyeOfSauron; path = ../Frameworks/EyeOfSauron; sourceTree = "<group>"; };
+		77A178DE27352A0E005E520C /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		77D5165A27306A180030D1D1 /* Hobbiton */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Hobbiton; path = ../Frameworks/Hobbiton; sourceTree = "<group>"; };
 		D4C7F12E2719636D0066125A /* DailyWordsViewController+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyWordsViewController+State.swift"; sourceTree = "<group>"; };
 		D4F00D4D2718C3840079A860 /* CardzApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardzApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +88,7 @@
 			files = (
 				7702F1DF2729F48C006176FE /* Rivendell in Frameworks */,
 				77895BF927306ABC00A852BF /* Hobbiton in Frameworks */,
+				77A178DD273526FE005E520C /* EyeOfSauron in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,11 +136,20 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		77A178E027352A12005E520C /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				77A178DE27352A0E005E520C /* Logger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
 		77C962262729F1CC00100FC3 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
 				7702F1DD2729F483006176FE /* Rivendell */,
 				77D5165A27306A180030D1D1 /* Hobbiton */,
+				77A178DB273526F4005E520C /* EyeOfSauron */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -180,6 +194,7 @@
 				D4F00D5E2718C3860079A860 /* LaunchScreen.storyboard */,
 				D4F00D612718C3860079A860 /* Info.plist */,
 				D4F00D592718C3840079A860 /* CardzApp.xcdatamodeld */,
+				77A178E027352A12005E520C /* Logger */,
 			);
 			path = CardzApp;
 			sourceTree = "<group>";
@@ -284,6 +299,7 @@
 			packageProductDependencies = (
 				7702F1DE2729F48C006176FE /* Rivendell */,
 				77895BF827306ABC00A852BF /* Hobbiton */,
+				77A178DC273526FE005E520C /* EyeOfSauron */,
 			);
 			productName = CardzApp;
 			productReference = D4F00D4D2718C3840079A860 /* CardzApp.app */;
@@ -405,6 +421,7 @@
 				D4F00DA52718C5070079A860 /* LifeCycleProtocol.swift in Sources */,
 				D4F00D5B2718C3840079A860 /* CardzApp.xcdatamodeld in Sources */,
 				776E492F272C91C1000D0B2D /* LearnCardBuilder.swift in Sources */,
+				77A178DF27352A0E005E520C /* Logger.swift in Sources */,
 				D4F00DA22718C4940079A860 /* DailyWordsViewController+ViewModel.swift in Sources */,
 				775A18C7271C284E00A295C0 /* DailyWordsHeader.swift in Sources */,
 				D4F00D9E2718C3FB0079A860 /* SceneDelegate.swift in Sources */,
@@ -744,6 +761,10 @@
 		77895BF827306ABC00A852BF /* Hobbiton */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Hobbiton;
+		};
+		77A178DC273526FE005E520C /* EyeOfSauron */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = EyeOfSauron;
 		};
 /* End XCSwiftPackageProductDependency section */
 
