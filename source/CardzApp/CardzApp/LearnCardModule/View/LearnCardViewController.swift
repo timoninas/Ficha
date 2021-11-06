@@ -51,7 +51,6 @@ final class LearnCardViewController: UIViewController {
             self.cardView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20.0),
             self.cardView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20.0),
         ])
-        
     }
 
 }

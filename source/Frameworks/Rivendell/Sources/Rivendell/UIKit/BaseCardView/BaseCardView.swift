@@ -15,9 +15,13 @@ public class BaseCardView: UIView {
     
     /// Enum, с направлением свайпов карточки.
     public enum SwipeDirection {
+        /// Свайп вверх.
         case top
+        /// Свайп вправо.
         case right
+        /// Свайп вниз.
         case bottom
+        /// Свайп влево.
         case left
     }
     
@@ -40,6 +44,12 @@ public class BaseCardView: UIView {
     
     /// Замыкание, которое при смещении карточки с места.
     public var onDragCard: VoidClosure?
+    
+    /// Замыкание, которое срабатывает при изменении позиции карточки.
+    /// - Parameters:
+    ///  - x: Изменение по координате `x`.
+    ///  - y: Изменение по координате `y`.
+    public var onCardChangedPosition:((CGFloat, CGFloat) -> Void)?
     
     /// Вью, которая добавится в контентную область карточки.
     public var contentView: UIView = UIView() {
@@ -90,7 +100,6 @@ public class BaseCardView: UIView {
         
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
         if self.contentView.superview == nil {
-            self.contentView.backgroundColor = .green
             self.addSubview(self.contentView)
             let padding = 20.0
             NSLayoutConstraint.activate([
@@ -111,6 +120,8 @@ public class BaseCardView: UIView {
         
         switch gesture.state {
         case .changed:
+            let transition = gesture.translation(in: nil)
+            self.onCardChangedPosition?(transition.x, transition.y)
             self.handleCardChanged(gesture)
         case .ended:
             self.handleCardEnded(gesture)
@@ -213,6 +224,18 @@ public class BaseCardView: UIView {
     
     private func updateRounding() {
         self.layer.cornerRadius = self.frame.height * 0.05
+    }
+    
+    // MARK: - Public methods
+    
+    /// Заменяет все события срабатывающие на свайпы в разные стороны.
+    /// - Parameters:
+    ///  - completion: Замыкание, которое будет срабатывать. Можно обнулить, поставив `nil`.
+    public func onEverySwipe(completion: VoidClosure?) {
+        onTopSwipe = completion
+        onRightSwipe = completion
+        onBottomSwipe = completion
+        onLeftSwipe = completion
     }
     
 }
