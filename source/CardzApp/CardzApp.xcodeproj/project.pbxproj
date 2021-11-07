@@ -58,7 +58,9 @@
 		776E492E272C91C1000D0B2D /* LearnCardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCardBuilder.swift; sourceTree = "<group>"; };
 		77A178DB273526F4005E520C /* EyeOfSauron */ = {isa = PBXFileReference; lastKnownFileType = folder; name = EyeOfSauron; path = ../Frameworks/EyeOfSauron; sourceTree = "<group>"; };
 		77A178DE27352A0E005E520C /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		77C2F4A92737D66900138DF9 /* Rivendell */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Rivendell; path = ../Frameworks/Rivendell; sourceTree = "<group>"; };
 		77D5165A27306A180030D1D1 /* Hobbiton */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Hobbiton; path = ../Frameworks/Hobbiton; sourceTree = "<group>"; };
+		77DD37E32737D5AF007A3B1E /* Moria */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Moria; path = ../Frameworks/Moria; sourceTree = "<group>"; };
 		D4C7F12E2719636D0066125A /* DailyWordsViewController+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyWordsViewController+State.swift"; sourceTree = "<group>"; };
 		D4F00D4D2718C3840079A860 /* CardzApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardzApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F00D5A2718C3840079A860 /* CardzApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardzApp.xcdatamodel; sourceTree = "<group>"; };
@@ -150,6 +152,8 @@
 				7702F1DD2729F483006176FE /* Rivendell */,
 				77D5165A27306A180030D1D1 /* Hobbiton */,
 				77A178DB273526F4005E520C /* EyeOfSauron */,
+				77DD37E32737D5AF007A3B1E /* Moria */,
+				77C2F4A92737D66900138DF9 /* Rivendell */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
