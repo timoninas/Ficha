@@ -8,6 +8,7 @@
 import UIKit
 import Rivendell
 import EyeOfSauron
+import Hobbiton
 
 final class DailyWordsViewController: UIViewController {
     
@@ -41,6 +42,18 @@ final class DailyWordsViewController: UIViewController {
         return header
     }()
     
+    private let playButton: RVImageButton = {
+        let button = RVImageButton(configuration: .init()
+                                    .with(backgroundColor: .galadriel)
+                                    .with(highlitedColor: .galadriel.withAlphaComponent(0.75))
+                                    .with(image: .playGameIcon)
+                                    .with(imageColor: .mysteryShack)
+                                    .with(isFullyRounded: true)
+                                    .with(imageAspectRation: 0.5))
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     private var todayConstraints: [NSLayoutConstraint] = []
     private var heightConstraints: [NSLayoutConstraint] = []
     
@@ -67,11 +80,12 @@ final class DailyWordsViewController: UIViewController {
     }
     
     private func configureUI() {
-        self.addBackgroundView()
+        addBackgroundView()
+        addScrollView()
+        addHeader()
+        addPlayButton()
         
-        self.addScrollView()
-        self.addHeader()
-        self.renderContent(isAnimated: false)
+        renderContent(isAnimated: false)
     }
     
     private func addBackgroundView() {
@@ -93,14 +107,31 @@ final class DailyWordsViewController: UIViewController {
     
     private func addHeader() {
         self.header.onTap = {
-            let generator = UIImpactFeedbackGenerator(style: .light)
-            generator.impactOccurred()
+            UIApplication.hapticLight()
             print("Tapped")
         }
         self.scrollView.addSubview(self.header)
         self.header.topAnchor.constraint(equalTo: self.scrollView.topAnchor, constant: 10.0).isActive = true
         self.header.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -16.0).isActive = true
         self.header.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16.0).isActive = true
+    }
+    
+    private func addPlayButton() {
+        playButton.configuration = playButton.configuration
+            .with(onTap: { [weak self] _ in
+                guard let self = self else { return }
+                UIApplication.hapticLight()
+                print("KEKEKE")
+                self.present(LearnCardBuilder.build(), animated: true, completion: nil)
+        })
+        
+        view.addSubview(playButton)
+        NSLayoutConstraint.activate([
+            playButton.heightAnchor.constraint(equalToConstant: 55.0),
+            playButton.widthAnchor.constraint(equalTo: playButton.heightAnchor),
+            playButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30.0),
+            playButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0)
+        ])
     }
     
     private func renderTodayViews() {

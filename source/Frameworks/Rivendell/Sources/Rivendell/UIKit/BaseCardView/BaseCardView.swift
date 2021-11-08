@@ -58,6 +58,10 @@ public class BaseCardView: UIView {
         }
     }
     
+    private struct Constants {
+        static var threshold: CGFloat { 70.0 }
+    }
+    
     // MARK: - Init
     
     /// Инициализирует объект свайпающаяся карточка.
@@ -141,10 +145,9 @@ public class BaseCardView: UIView {
     }
     
     fileprivate func handleCardEnded(_ gesture: UIPanGestureRecognizer) {
-        let threshold: CGFloat = 80.0
         let currentPoint = gesture.translation(in: nil)
         let responseSwipeRequest = countDirection(currentCardPosition: currentPoint)
-        let shouldDismissCard = abs(currentPoint.x) > threshold || abs(currentPoint.y) > threshold
+        let shouldDismissCard = abs(currentPoint.x) > Constants.threshold || abs(currentPoint.y) > Constants.threshold
         
         UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.3, options: .curveEaseIn) {
             if shouldDismissCard && !self.swipeDirections.isEmpty {

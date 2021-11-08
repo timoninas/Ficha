@@ -191,7 +191,6 @@
 			isa = PBXGroup;
 			children = (
 				776E4927272C90F3000D0B2D /* LearnCardModule */,
-				D4F00D922718C3FB0079A860 /* Rivendell */,
 				D4F00D832718C3FB0079A860 /* DailyWordsModule */,
 				D4F00D8A2718C3FB0079A860 /* Helpers */,
 				D4F00D5C2718C3860079A860 /* Assets.xcassets */,
@@ -257,13 +256,6 @@
 				D4F00D912718C3FB0079A860 /* SceneDelegate.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		D4F00D922718C3FB0079A860 /* Rivendell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Rivendell;
 			sourceTree = "<group>";
 		};
 		D4F00DA32718C4970079A860 /* Supplementary */ = {
