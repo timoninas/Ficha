@@ -59,7 +59,7 @@ public class BaseCardView: UIView {
     }
     
     private struct Constants {
-        static var threshold: CGFloat { 70.0 }
+        static var threshold: CGFloat { 80.0 }
     }
     
     // MARK: - Init
@@ -67,7 +67,7 @@ public class BaseCardView: UIView {
     /// Инициализирует объект свайпающаяся карточка.
     /// - Parameters:
     ///  - swipeDirections: Направления свайпов.
-    public init(swipeDirections: SwipeDirection...) {
+    public init(swipeDirections: [SwipeDirection]) {
         self.swipeDirections = swipeDirections
         super.init(frame: .zero)
         self.configureUI()

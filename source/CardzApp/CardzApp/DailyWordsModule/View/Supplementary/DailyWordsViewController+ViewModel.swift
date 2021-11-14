@@ -17,13 +17,4 @@ extension DailyWordsViewController {
         
     }
     
-    // MARK: - Equatable
-    
-//    func ==(lhs: X, rhs: X) -> Bool {
-//        if let l = lhs as? Y, let r = hrs as? Y {
-//            return l.something == r.something
-//        }
-//        return false
-//    }
-    
 }

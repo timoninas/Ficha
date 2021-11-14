@@ -28,7 +28,7 @@ public final class TodayWordsView: UIView {
         label.textColor = .mysteryShack
         label.font = UIFont(name:"HelveticaNeue-Bold", size: 48.0)
         label.textAlignment = .center
-        label.numberOfLines = 2
+        label.numberOfLines = 0
         return label
     }()
     

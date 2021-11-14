@@ -33,4 +33,6 @@ public extension UIImage {
     
     static let closedEye = UIImage(named: "closedEye")
     
+    static let kolokol = UIImage(named: "kolokol")
+    
 }

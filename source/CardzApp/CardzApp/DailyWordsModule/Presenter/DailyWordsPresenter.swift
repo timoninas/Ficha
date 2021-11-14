@@ -21,6 +21,7 @@ final class DailyWordsPresenter: DailyWordsOutput {
         let viewModel = [
             DailyWordsViewController.ViewModel(title: "Words", subtitles: ["Harper's words came faster now", "Tracy listened to his words, first with shock and then with growing anger. He made her sound like an outcast, a leper"]),
             DailyWordsViewController.ViewModel(title: "Interesting", subtitles: nil),
+            DailyWordsViewController.ViewModel(title: "Interesting message was sended in my pocket", subtitles: nil),
             DailyWordsViewController.ViewModel(title: "Joke", subtitles: ["It was a joke, of course, Percy was happy, not in a serious grabbing mood at all, but Delacroix didn't know that"]),
             DailyWordsViewController.ViewModel(title: "Pleasantry", subtitles: nil),
             DailyWordsViewController.ViewModel(title: "Silly", subtitles: nil),

@@ -29,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             learnViewController.tabBarItem = item
         }
         
-        let favouriteViewController = DailyWordsBuilder.build()
+        let favouriteViewController = AlertCardBuilder.build(data: .init(title: "Вы точно хотите сбросить прогресс?", secondTitle: "Сброс прогресса приведет к полной очистке статистики выученных слов"))
         if let favouriteIconData = UIImage.starIcon?.pngData() {
             let image = UIImage(data: favouriteIconData, scale: 13.5)
             let item = UITabBarItem(title: "Favourite", image: image, selectedImage: nil)
@@ -39,7 +39,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabBar = UITabBarController()
         tabBar.setViewControllers([todayViewController, learnViewController, favouriteViewController], animated: true)
         tabBar.selectedViewController = todayViewController
-        tabBar.selectedIndex = 1
+        tabBar.selectedIndex = 2
         tabBar.tabBar.isHidden = false
         tabBar.tabBar.isTranslucent = true
         

@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 final class LearnCardBuilder {
     
     public static func build() -> UIViewController {

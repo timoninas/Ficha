@@ -62,11 +62,6 @@ final class DailyWordsViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.renderHeights()
-    }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -77,6 +72,11 @@ final class DailyWordsViewController: UIViewController {
         self.view.backgroundColor = .gendalf
         self.configureUI()
         self.output.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.renderHeights()
     }
     
     private func configureUI() {

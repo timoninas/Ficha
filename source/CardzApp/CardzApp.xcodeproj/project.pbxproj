@@ -13,6 +13,10 @@
 		776E4929272C9103000D0B2D /* LearnCardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E4928272C9103000D0B2D /* LearnCardPresenter.swift */; };
 		776E492D272C91B3000D0B2D /* LearnCardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E492C272C91B3000D0B2D /* LearnCardProtocol.swift */; };
 		776E492F272C91C1000D0B2D /* LearnCardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E492E272C91C1000D0B2D /* LearnCardBuilder.swift */; };
+		776EFC37274107C7001010FD /* AlertCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776EFC36274107C7001010FD /* AlertCardViewController.swift */; };
+		776EFC3B27410804001010FD /* AlertCardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776EFC3A27410804001010FD /* AlertCardPresenter.swift */; };
+		776EFC3E27410824001010FD /* AlertCardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776EFC3D27410824001010FD /* AlertCardProtocol.swift */; };
+		776EFC4027410870001010FD /* AlertCardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776EFC3F27410870001010FD /* AlertCardBuilder.swift */; };
 		77895BF927306ABC00A852BF /* Hobbiton in Frameworks */ = {isa = PBXBuildFile; productRef = 77895BF827306ABC00A852BF /* Hobbiton */; };
 		77A178DD273526FE005E520C /* EyeOfSauron in Frameworks */ = {isa = PBXBuildFile; productRef = 77A178DC273526FE005E520C /* EyeOfSauron */; };
 		77A178DF27352A0E005E520C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A178DE27352A0E005E520C /* Logger.swift */; };
@@ -56,6 +60,10 @@
 		776E4928272C9103000D0B2D /* LearnCardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCardPresenter.swift; sourceTree = "<group>"; };
 		776E492C272C91B3000D0B2D /* LearnCardProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCardProtocol.swift; sourceTree = "<group>"; };
 		776E492E272C91C1000D0B2D /* LearnCardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCardBuilder.swift; sourceTree = "<group>"; };
+		776EFC36274107C7001010FD /* AlertCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCardViewController.swift; sourceTree = "<group>"; };
+		776EFC3A27410804001010FD /* AlertCardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCardPresenter.swift; sourceTree = "<group>"; };
+		776EFC3D27410824001010FD /* AlertCardProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCardProtocol.swift; sourceTree = "<group>"; };
+		776EFC3F27410870001010FD /* AlertCardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCardBuilder.swift; sourceTree = "<group>"; };
 		77A178DB273526F4005E520C /* EyeOfSauron */ = {isa = PBXFileReference; lastKnownFileType = folder; name = EyeOfSauron; path = ../Frameworks/EyeOfSauron; sourceTree = "<group>"; };
 		77A178DE27352A0E005E520C /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		77C2F4A92737D66900138DF9 /* Rivendell */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Rivendell; path = ../Frameworks/Rivendell; sourceTree = "<group>"; };
@@ -138,6 +146,33 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		776EFC38274107CC001010FD /* AlertCardModule */ = {
+			isa = PBXGroup;
+			children = (
+				776EFC3D27410824001010FD /* AlertCardProtocol.swift */,
+				776EFC3F27410870001010FD /* AlertCardBuilder.swift */,
+				776EFC39274107E4001010FD /* View */,
+				776EFC3C27410808001010FD /* Presenter */,
+			);
+			path = AlertCardModule;
+			sourceTree = "<group>";
+		};
+		776EFC39274107E4001010FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				776EFC36274107C7001010FD /* AlertCardViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		776EFC3C27410808001010FD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				776EFC3A27410804001010FD /* AlertCardPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		77A178E027352A12005E520C /* Logger */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +225,7 @@
 		D4F00D4F2718C3840079A860 /* CardzApp */ = {
 			isa = PBXGroup;
 			children = (
+				776EFC38274107CC001010FD /* AlertCardModule */,
 				776E4927272C90F3000D0B2D /* LearnCardModule */,
 				D4F00D832718C3FB0079A860 /* DailyWordsModule */,
 				D4F00D8A2718C3FB0079A860 /* Helpers */,
@@ -417,7 +453,11 @@
 				D4F00DA52718C5070079A860 /* LifeCycleProtocol.swift in Sources */,
 				D4F00D5B2718C3840079A860 /* CardzApp.xcdatamodeld in Sources */,
 				776E492F272C91C1000D0B2D /* LearnCardBuilder.swift in Sources */,
+				776EFC37274107C7001010FD /* AlertCardViewController.swift in Sources */,
 				77A178DF27352A0E005E520C /* Logger.swift in Sources */,
+				776EFC3E27410824001010FD /* AlertCardProtocol.swift in Sources */,
+				776EFC4027410870001010FD /* AlertCardBuilder.swift in Sources */,
+				776EFC3B27410804001010FD /* AlertCardPresenter.swift in Sources */,
 				D4F00DA22718C4940079A860 /* DailyWordsViewController+ViewModel.swift in Sources */,
 				775A18C7271C284E00A295C0 /* DailyWordsHeader.swift in Sources */,
 				D4F00D9E2718C3FB0079A860 /* SceneDelegate.swift in Sources */,
