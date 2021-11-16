@@ -12,7 +12,7 @@ final class LearnCardViewController: UIViewController {
     
     weak var output: LearnCardOutput?
     
-    var cardView = BaseCardView(swipeDirections: [.top, .right, .left, .bottom, .bottom])
+    var cardView = BaseCardView(swipeDirections: [.top, .right, .left, .bottom])
     
     init(output: LearnCardOutput) {
         self.output = output

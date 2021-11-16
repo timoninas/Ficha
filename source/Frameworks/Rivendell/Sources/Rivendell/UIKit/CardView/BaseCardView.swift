@@ -150,7 +150,7 @@ public class BaseCardView: UIView {
         let shouldDismissCard = abs(currentPoint.x) > Constants.threshold || abs(currentPoint.y) > Constants.threshold
         
         UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.3, options: .curveEaseIn) {
-            if shouldDismissCard && !self.swipeDirections.isEmpty {
+            if let responseSwipeRequest = responseSwipeRequest, shouldDismissCard && !self.swipeDirections.isEmpty {
                 let offScreenTransform = self.transform.translatedBy(x: responseSwipeRequest.1.x, y: responseSwipeRequest.1.y)
                 self.transform = offScreenTransform
             } else {
@@ -159,7 +159,7 @@ public class BaseCardView: UIView {
         } completion: { [weak self] _ in
             guard let self = self else { return }
             self.transform = .identity
-            guard shouldDismissCard && !self.swipeDirections.isEmpty else {
+            guard let responseSwipeRequest = responseSwipeRequest, shouldDismissCard && !self.swipeDirections.isEmpty else {
                 self.onDragCard?()
                 return
             }
@@ -185,7 +185,7 @@ public class BaseCardView: UIView {
         )
     }
     
-    private func countDirection(currentCardPosition: CGPoint) -> (SwipeDirection, CGPoint) {
+    private func countDirection(currentCardPosition: CGPoint) -> (SwipeDirection, CGPoint)? {
         let topThreshold = CGPoint(x: 0.0, y: -1000.0)
         let bottomThreshold = CGPoint(x: 0.0, y: 1000.0)
         let rightThreshold = CGPoint(x: 1000.0, y: 0.0)
@@ -194,7 +194,9 @@ public class BaseCardView: UIView {
         var defaultDirection: SwipeDirection = .left
         var defaultPoint = CGPoint(x: 0.0, y: 0.0)
         
-        swipeDirections.forEach { direction in
+        let allSwipeDirection: [SwipeDirection] = [.top, .left, .right, .bottom]
+        
+        allSwipeDirection.forEach { direction in
             var currentDistance: CGFloat
             var currentPoint: CGPoint
             switch direction {
@@ -218,7 +220,9 @@ public class BaseCardView: UIView {
             }
         }
         
-        return (defaultDirection, defaultPoint)
+        return swipeDirections.contains(defaultDirection)
+        ? (defaultDirection, defaultPoint)
+        : nil
     }
     
     private func updateAppearance() {

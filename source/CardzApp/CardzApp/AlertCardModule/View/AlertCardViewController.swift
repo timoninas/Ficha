@@ -30,6 +30,8 @@ final class AlertCardViewController: UIViewController {
                                                     .with(title: viewModel.title)
                                                     .with(secondTitle: viewModel.secondTitle))
     
+    private var leftButton = RVLeftRightImageButton(configuration: .init())
+    
     init(output: AlertCardViewOutput, viewModel: AlertViewModel) {
         self.output = output
         self.viewModel = viewModel
@@ -49,6 +51,7 @@ final class AlertCardViewController: UIViewController {
     private func configureUI() {
         view.backgroundColor = .gendalf
         addAlertCard()
+        addLeftButton()
     }
     
     private func addAlertCard() {
@@ -60,6 +63,18 @@ final class AlertCardViewController: UIViewController {
             alertCardView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             alertCardView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20.0),
             alertCardView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20.0),
+        ])
+    }
+    
+    private func addLeftButton() {
+        view.addSubview(leftButton)
+        leftButton.backgroundColor = .green
+        
+        NSLayoutConstraint.activate([
+            leftButton.heightAnchor.constraint(equalToConstant: 70.0),
+            leftButton.widthAnchor.constraint(equalToConstant: 100.0),
+            leftButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            leftButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0),
         ])
     }
 

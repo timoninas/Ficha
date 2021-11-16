@@ -9,7 +9,6 @@ import UIKit
 
 public class RVImageButton: RVControl {
     
-    
     // MARK: - Private properties
     
     public var configuration: Configuration {
@@ -52,7 +51,7 @@ public class RVImageButton: RVControl {
     }
     
     private func configureUI() {
-        addContentView()
+        addContainerView()
         addImageView()
         updateAppearance()
     }
@@ -83,10 +82,10 @@ public class RVImageButton: RVControl {
         
         // Container View constraints
         constraints.append(contentsOf: [
-            containerView.topAnchor.constraint(equalTo: self.topAnchor),
-            containerView.rightAnchor.constraint(equalTo: self.rightAnchor),
-            containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            containerView.leftAnchor.constraint(equalTo: self.leftAnchor),
+            containerView.topAnchor.constraint(equalTo: topAnchor),
+            containerView.rightAnchor.constraint(equalTo: rightAnchor),
+            containerView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            containerView.leftAnchor.constraint(equalTo: leftAnchor),
         ])
         
         // Description Title constraints
@@ -97,14 +96,14 @@ public class RVImageButton: RVControl {
             imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor)
         ])
         
-        NSLayoutConstraint.deactivate(self.viewConstraints)
-        self.viewConstraints = constraints
-        NSLayoutConstraint.activate(self.viewConstraints)
+        NSLayoutConstraint.deactivate(viewConstraints)
+        viewConstraints = constraints
+        NSLayoutConstraint.activate(viewConstraints)
     }
     
-    private func addContentView() {
-        self.addSubview(containerView)
-        self.containerView.backgroundColor = self.configuration.backgroundColor
+    private func addContainerView() {
+        addSubview(containerView)
+        containerView.backgroundColor = configuration.backgroundColor
     }
     
     private func addImageView() {
@@ -122,8 +121,8 @@ public class RVImageButton: RVControl {
     }
     
     override public func handleTap() {
-        self.configuration.onTap?(self)
-        self.setHighlighted(isHighlighted: false, animated: true)
+        configuration.onTap?(self)
+        setHighlighted(isHighlighted: false, animated: true)
     }
     
     public override func setHighlighted(isHighlighted: Bool, animated: Bool) {
@@ -132,7 +131,8 @@ public class RVImageButton: RVControl {
     }
     
     private func updateColorState(_ isHighlighted: Bool) {
-        UIView.animate(withDuration: 0.1) {
+        UIView.animate(withDuration: 0.1) { [weak self] in
+            guard let self = self else { return }
             self.containerView.backgroundColor = isHighlighted
             ? self.configuration.highlitedColor
             : self.configuration.backgroundColor
