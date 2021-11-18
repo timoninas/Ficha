@@ -1,4 +1,6 @@
+[![iOS](https://img.shields.io/badge/iOS-15.0-green.svg)]()
+[![Swift 5.5](https://img.shields.io/badge/Swift-5.5-orange.svg)](https://swift.org)
+
 # Cardz
 
 ### Служба поддержки: revolvetra.help@gmail.com
->>>>>>> e17c48dad176861697e1af6702d6a9dfe71dbdda
