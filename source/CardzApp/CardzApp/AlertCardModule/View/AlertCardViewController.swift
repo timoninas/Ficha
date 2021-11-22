@@ -32,6 +32,15 @@ final class AlertCardViewController: UIViewController {
     
     private var leftButton = RVLeftRightImageButton(configuration: .init())
     
+    private var button = RVButton(configuration: .init()
+                                    .with(title: "Tap to me!")
+                                    .with(titleColor: .gendalf)
+                                    .with(cornerRadius: 13.0)
+                                    .with(highlitedColor: .mysteryShack.withAlphaComponent(0.8))
+                                    .with(onTap: { _ in
+        print("KEKE FEFE")
+    }))
+    
     init(output: AlertCardViewOutput, viewModel: AlertViewModel) {
         self.output = output
         self.viewModel = viewModel
@@ -50,8 +59,10 @@ final class AlertCardViewController: UIViewController {
     
     private func configureUI() {
         view.backgroundColor = .gendalf
+        addRvButton()
         addAlertCard()
-        addLeftButton()
+//        addLeftButton()
+        
     }
     
     private func addAlertCard() {
@@ -75,6 +86,16 @@ final class AlertCardViewController: UIViewController {
             leftButton.widthAnchor.constraint(equalToConstant: 100.0),
             leftButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             leftButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0),
+        ])
+    }
+    
+    private func addRvButton() {
+        view.addSubview(button)
+        NSLayoutConstraint.activate([
+            button.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20.0),
+            button.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20.0),
+            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0),
         ])
     }
 

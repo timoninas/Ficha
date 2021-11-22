@@ -9,7 +9,7 @@ import Foundation
 
 public extension RVLeftRightImageButton {
     
-    public struct Configuration {
+    struct Configuration {
         
         public private(set) var onTap: ((_ button: RVLeftRightImageButton) -> Void)?
         

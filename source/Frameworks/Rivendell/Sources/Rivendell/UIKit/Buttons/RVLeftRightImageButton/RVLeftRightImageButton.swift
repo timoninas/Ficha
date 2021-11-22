@@ -88,7 +88,7 @@ public class RVLeftRightImageButton: RVControl {
     
     func setupConstraints() {
         
-        var constraints = [NSLayoutConstraint]()
+        let constraints = [NSLayoutConstraint]()
         
         NSLayoutConstraint.deactivate(self.viewConstraints)
         self.viewConstraints = constraints
