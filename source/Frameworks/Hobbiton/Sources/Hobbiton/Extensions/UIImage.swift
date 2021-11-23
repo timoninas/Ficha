@@ -25,6 +25,12 @@ public extension UIImage {
     
     static let graduateIcon = UIImage(named: "graduateIcon")
     
+    static let todayIconFilled = UIImage(named: "todayIconFilled")
+    
+    static let starIconFilled = UIImage(named: "starIconFilled")
+    
+    static let graduateIconFilled = UIImage(named: "graduateIconFilled")
+    
     static let leftArrowIcon = UIImage(named: "leftArrowIcon")
     
     static let rightArrowIcon = UIImage(named: "rightArrowIcon")

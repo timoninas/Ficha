@@ -16,23 +16,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         
         let todayViewController = LearnCardBuilder.build()
-        if let todayIconData = UIImage.todayIcon?.pngData() {
+        if let todayIconData = UIImage.todayIcon?.pngData(),
+           let todayIconFilledData = UIImage.todayIconFilled?.pngData(){
             let image = UIImage(data: todayIconData, scale: 13.0)
-            let item = UITabBarItem(title: "Daily", image: image, selectedImage: nil)
+            let imageFilled = UIImage(data: todayIconFilledData, scale: 13.0)
+            let item = UITabBarItem(title: "Daily", image: image, selectedImage: imageFilled)
             todayViewController.tabBarItem = item
         }
         
         let learnViewController = DailyWordsBuilder.build()
-        if let graduateIconData = UIImage.graduateIcon?.pngData() {
+        if let graduateIconData = UIImage.graduateIcon?.pngData() ,
+           let graduateIconFilledData = UIImage.graduateIconFilled?.pngData(){
             let image = UIImage(data: graduateIconData, scale: 13.0)
-            let item = UITabBarItem(title: "Learn", image: image, selectedImage: nil)
+            let imageFilled = UIImage(data: graduateIconFilledData, scale: 13.0)
+            let item = UITabBarItem(title: "Learn", image: image, selectedImage: imageFilled)
             learnViewController.tabBarItem = item
         }
         
         let favouriteViewController = AlertCardBuilder.build(data: .init(title: "Вы точно хотите сбросить прогресс?", secondTitle: "Сброс прогресса приведет к полной очистке статистики выученных слов"))
-        if let favouriteIconData = UIImage.starIcon?.pngData() {
+        if let favouriteIconData = UIImage.starIcon?.pngData(),
+           let favouriteIconFilledData = UIImage.starIconFilled?.pngData(){
             let image = UIImage(data: favouriteIconData, scale: 13.5)
-            let item = UITabBarItem(title: "Favourite", image: image, selectedImage: nil)
+            let imageFilled = UIImage(data: favouriteIconFilledData, scale: 13.5)
+            let item = UITabBarItem(title: "Favourite", image: image, selectedImage: imageFilled)
             favouriteViewController.tabBarItem = item
         }
         

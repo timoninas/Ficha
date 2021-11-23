@@ -84,14 +84,23 @@ public final class RVButton: RVControl {
     
     private func configrationChanged(old: Configuration) {
         setupLabels()
+        updateRounding()
         setupConstraints()
     }
     
     private func setupLabels() {
         mainTitle.text = configuration.title
         mainTitle.textColor = configuration.titleColor
+        mainTitle.font = UIFont(
+            name: mainTitle.font.fontName,
+            size: configuration.titleFontSize
+        )
         descriptionTitle.text = configuration.subtitle
         descriptionTitle.textColor = configuration.subtitleColor
+        descriptionTitle.font = UIFont(
+            name: descriptionTitle.font.fontName,
+            size: configuration.subtitleFontSize
+        )
     }
     
     func setupConstraints() {
@@ -126,13 +135,12 @@ public final class RVButton: RVControl {
         // Description Title constraints
         storedConstraints.append(contentsOf: [
             descriptionTitle.topAnchor.constraint(equalTo: self.mainTitle.bottomAnchor, constant: 4),
-            descriptionTitle.centerXAnchor.constraint(equalTo: self.containerView.centerXAnchor, constant: 0),
-            descriptionTitle.rightAnchor.constraint(equalTo: self.containerView.rightAnchor, constant: 6),
-            descriptionTitle.leftAnchor.constraint(equalTo: self.containerView.leftAnchor, constant: 6)
+            descriptionTitle.rightAnchor.constraint(equalTo: self.containerView.rightAnchor, constant: -8.0),
+            descriptionTitle.leftAnchor.constraint(equalTo: self.containerView.leftAnchor, constant: 8.0)
         ])
         
         storedConstraints.append(contentsOf: [
-            heightAnchor.constraint(equalToConstant: 60.0)
+            heightAnchor.constraint(equalToConstant: self.configuration.height)
         ])
         
         NSLayoutConstraint.activate(self.storedConstraints)

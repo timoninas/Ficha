@@ -34,8 +34,7 @@ final class AlertCardViewController: UIViewController {
     
     private var button = RVButton(configuration: .init()
                                     .with(title: "Tap to me!")
-                                    .with(titleColor: .gendalf)
-                                    .with(cornerRadius: 13.0)
+                                    .with(subtitle: "Тап закроет эту кнопку")
                                     .with(highlitedColor: .mysteryShack.withAlphaComponent(0.8))
                                     .with(onTap: { _ in
         print("KEKE FEFE")

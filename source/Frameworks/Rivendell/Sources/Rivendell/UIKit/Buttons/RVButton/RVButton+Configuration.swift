@@ -18,23 +18,75 @@ public extension RVButton {
         /// Задний цветк кнопки в нажатом состоянии. По умолчанию `.mysteryShack`.
         public private(set) var highlitedColor: UIColor = .mysteryShack
         
-        /// Радиус закругления кнопки. По умолчанию `0.0`.
-        public private(set) var cornerRadius: CGFloat = 0.0
-        
-        /// Главный текст кнопки. По умолчанию `""`.
+        /// Главный текст кнопки. По умолчанию `empty`.
         public private(set) var title: String = ""
-        
-        /// Цвет главного текста. По умолчанию `.nazgul`.
-        public private(set) var titleColor: UIColor = .gendalf
         
         /// Детальный текст кнопки. По умолчанию `nil`.
         public private(set) var subtitle: String?
         
-        /// Цвет детального текста. По умолчанию `.nazgul`.
-        public private(set) var subtitleColor: UIColor = .gendalf
-        
         /// Замыкание, которое сработает при нажатии на кнопку. По умолчанию `nil`.
         public private(set) var onTap: ((_ button: RVButton) -> Void)?
+        
+        /// Вариация размеров кнопки.
+        public enum Size {
+            case legolas
+        }
+        
+        /// Вариация стиля кнопки.
+        public enum Style {
+            case karmin
+        }
+        
+        /// Размер кнопки. По умолчанию `.legolas`.
+        public private(set) var size: Size = .legolas
+        
+        /// Стиль кнопки. По умолчанию `.karmin`.
+        public private(set) var style: Style = .karmin
+        
+        public var height: CGFloat {
+            switch size {
+            case .legolas:
+                return 60.0
+            }
+        }
+        
+        /// Радиус закругления кнопки.
+        public var cornerRadius: CGFloat {
+            switch style {
+            case .karmin:
+                return 13.0
+            }
+        }
+        
+        public var titleFontSize: CGFloat {
+            switch size {
+            case .legolas:
+                return 16.0
+            }
+        }
+        
+        public var subtitleFontSize: CGFloat {
+            switch size {
+            case .legolas:
+                return 12.0
+            }
+        }
+        
+        /// Цвет главного текста.
+        public var titleColor: UIColor {
+            switch style {
+            case .karmin:
+                return .gendalf
+            }
+        }
+        
+        /// Цвет детального текста.
+        public var subtitleColor: UIColor {
+            switch style {
+            case .karmin:
+                return .gendalf
+            }
+        }
         
         /// Инициализирует `Configration` для `RVButton`.
         public init() {}
@@ -51,9 +103,15 @@ public extension RVButton {
             return mutableSelf
         }
         
-        public func with(cornerRadius: CGFloat) -> Configuration {
+        public func with(size: Size) -> Configuration {
             var mutableSelf = self
-            mutableSelf.cornerRadius = cornerRadius
+            mutableSelf.size = size
+            return mutableSelf
+        }
+        
+        public func with(style: Style) -> Configuration {
+            var mutableSelf = self
+            mutableSelf.style = style
             return mutableSelf
         }
         
@@ -63,21 +121,9 @@ public extension RVButton {
             return mutableSelf
         }
         
-        public func with(titleColor: UIColor) -> Configuration {
-            var mutableSelf = self
-            mutableSelf.titleColor = titleColor
-            return mutableSelf
-        }
-        
         public func with(subtitle: String?) -> Configuration {
             var mutableSelf = self
             mutableSelf.subtitle = subtitle
-            return mutableSelf
-        }
-        
-        public func with(subtitleColor: UIColor) -> Configuration {
-            var mutableSelf = self
-            mutableSelf.subtitleColor = subtitleColor
             return mutableSelf
         }
         
