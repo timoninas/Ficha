@@ -28,16 +28,30 @@ final class AlertCardViewController: UIViewController {
     
     private lazy var alertCardView = AlertCardView(swipeDirections: [.left, .right], configuration: .init()
                                                     .with(title: viewModel.title)
-                                                    .with(secondTitle: viewModel.secondTitle))
+                                                    .with(secondTitle: viewModel.secondTitle)
+    )
     
     private var leftButton = RVLeftRightImageButton(configuration: .init())
+    private lazy var closeButton = RVImageButton(configuration: .init()
+                                                    .with(image: .closeIcon)
+                                                    .with(backgroundColor: .clear)
+                                                    .with(highlitedColor: .clear)
+                                                    .with(imageColor: .nazgul)
+                                                    .with(onTap: { [weak self] _ in
+        guard let self = self else { return }
+        self.dismiss(animated: true, completion: nil)
+    }))
     
-    private var button = RVButton(configuration: .init()
-                                    .with(title: "Tap to me!")
-                                    .with(subtitle: "Тап закроет эту кнопку")
-                                    .with(highlitedColor: .mysteryShack.withAlphaComponent(0.8))
-                                    .with(onTap: { _ in
-        print("KEKE FEFE")
+    private lazy var button = RVButton(configuration: .init()
+                                        .with(title: "Tap to me!")
+                                        .with(subtitle: "Тап закроет эту кнопку")
+                                        .with(highlitedColor: .mysteryShack.withAlphaComponent(0.8))
+                                        .with(onTap: { [weak self] _ in
+        guard let self = self else { return }
+        let module = AlertCardBuilder.build(data: .init(title: "KKEE", secondTitle: "FEFEF"))
+        module.modalPresentationStyle = .fullScreen
+        module.modalTransitionStyle = .crossDissolve
+        self.present(module, animated: true, completion: nil)
     }))
     
     init(output: AlertCardViewOutput, viewModel: AlertViewModel) {
@@ -50,6 +64,10 @@ final class AlertCardViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .darkContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         RLogInfo(message: "[Info] \(String(describing: self)) ViewDidLoad")
@@ -60,8 +78,8 @@ final class AlertCardViewController: UIViewController {
         view.backgroundColor = .gendalf
         addRvButton()
         addAlertCard()
-//        addLeftButton()
-        
+        addCloseButton()
+        addLeftButton()
     }
     
     private func addAlertCard() {
@@ -92,12 +110,21 @@ final class AlertCardViewController: UIViewController {
         view.addSubview(button)
         NSLayoutConstraint.activate([
             button.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20.0),
-            button.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20.0),
-            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0),
+            button.widthAnchor.constraint(equalToConstant: 200.0),
+            button.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.0),
         ])
     }
-
+    
+    private func addCloseButton() {
+        view.addSubview(closeButton)
+        NSLayoutConstraint.activate([
+            closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.0),
+            closeButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20.0),
+            closeButton.heightAnchor.constraint(equalToConstant: 30.0),
+            closeButton.widthAnchor.constraint(equalTo: closeButton.heightAnchor)
+        ])
+    }
+    
 }
 
 extension AlertCardViewController: AlertCardViewInput {

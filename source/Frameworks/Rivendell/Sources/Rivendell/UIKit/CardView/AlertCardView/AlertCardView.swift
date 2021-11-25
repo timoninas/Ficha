@@ -28,7 +28,7 @@ public class AlertCardView: BaseCardView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .nazgul
-        label.font = UIFont(name:"HelveticaNeue-Bold", size: 28.0)
+        label.font = UIFont(name:"HelveticaNeue-Bold", size: 24.0)
         label.textAlignment = .center
         label.numberOfLines = 4
         return label
@@ -38,7 +38,7 @@ public class AlertCardView: BaseCardView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .nazgul
-        label.font = UIFont(name:"HelveticaNeue", size: 22.0)
+        label.font = UIFont(name:"HelveticaNeue", size: 18.0)
         label.textAlignment = .center
         label.numberOfLines = 8
         return label

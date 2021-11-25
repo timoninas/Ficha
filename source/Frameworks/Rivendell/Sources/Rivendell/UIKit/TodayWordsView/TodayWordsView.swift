@@ -26,7 +26,7 @@ public final class TodayWordsView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .mysteryShack
-        label.font = UIFont(name:"HelveticaNeue-Bold", size: 48.0)
+        label.font = UIFont(name:"HelveticaNeue-Bold", size: 36.0)
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
@@ -36,7 +36,7 @@ public final class TodayWordsView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .nazgul
-        label.font = UIFont(name:"HelveticaNeue", size: 24.0)
+        label.font = UIFont(name:"HelveticaNeue", size: 20.0)
         label.textAlignment = .center
         label.numberOfLines = 0
         return label

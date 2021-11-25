@@ -190,7 +190,7 @@ public class BaseCardView: UIView {
         let bottomThreshold = CGPoint(x: 0.0, y: 1000.0)
         let rightThreshold = CGPoint(x: 1000.0, y: 0.0)
         let leftThreshold = CGPoint(x: -1000.0, y: 0.0)
-        var defaultMinDistance: CGFloat = 2000.0
+        var defaultMinDistance: CGFloat = 20000.0
         var defaultDirection: SwipeDirection = .left
         var defaultPoint = CGPoint(x: 0.0, y: 0.0)
         
@@ -243,6 +243,54 @@ public class BaseCardView: UIView {
         onRightSwipe = completion
         onBottomSwipe = completion
         onLeftSwipe = completion
+    }
+    
+    /// Сообщает, что нужно свайпнуть карточку в определенную сторону.
+    ///
+    /// - Parameters:
+    ///   - swipeDirection: Направление свайпа.
+    ///
+    /// - Attention: Лучше писать такие экраны, чтобы не приходилось вызывать свайп снаружи.
+    public func swipeTo(_ swipeDirection: SwipeDirection) {
+        let point: CGPoint
+        
+        switch swipeDirection {
+        case .top:
+            point = CGPoint(x: 0.0, y: -1000.0)
+        case .right:
+            point = CGPoint(x: 1000.0, y: 0.0)
+        case .bottom:
+            point = CGPoint(x: 0.0, y: 1000.0)
+        case .left:
+            point = CGPoint(x: -1000.0, y: 0.0)
+        }
+        
+        UIView.animate(
+            withDuration: 0.4,
+            delay: 0.0,
+            usingSpringWithDamping: 1.0,
+            initialSpringVelocity: 0.3,
+            options: .curveEaseIn
+        ) {
+            let offScreenTransform = self.transform.translatedBy(x: point.x, y: point.y)
+            self.transform = offScreenTransform
+        } completion: { [weak self] _ in
+            guard let self = self else { return }
+            // Пока разработка идет
+            self.transform = .identity
+            //self.removeFromSuperview()
+            switch swipeDirection {
+            case .top:
+                self.onTopSwipe?()
+            case .bottom:
+                self.onBottomSwipe?()
+            case .left:
+                self.onLeftSwipe?()
+            case .right:
+                self.onRightSwipe?()
+            }
+        }
+        
     }
     
 }

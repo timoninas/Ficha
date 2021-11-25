@@ -43,6 +43,7 @@ public extension RVButton {
         /// Стиль кнопки. По умолчанию `.karmin`.
         public private(set) var style: Style = .karmin
         
+        /// Высота кнопки.
         public var height: CGFloat {
             switch size {
             case .legolas:
@@ -58,6 +59,7 @@ public extension RVButton {
             }
         }
         
+        /// Размер главного шрифта кнопки.
         public var titleFontSize: CGFloat {
             switch size {
             case .legolas:
@@ -65,6 +67,7 @@ public extension RVButton {
             }
         }
         
+        /// Размер подзаголовка кнопки.
         public var subtitleFontSize: CGFloat {
             switch size {
             case .legolas:

@@ -41,4 +41,6 @@ public extension UIImage {
     
     static let kolokol = UIImage(named: "kolokol")
     
+    static let closeIcon = UIImage(named: "closeIcon")
+    
 }
