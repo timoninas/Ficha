@@ -51,7 +51,7 @@ public class AlertCardView: BaseCardView {
     
     private var storedConstraints: [NSLayoutConstraint] = []
     
-    private var configuration: Configuration {
+    public var configuration: Configuration {
         didSet {
             configurationChanged(oldValue: oldValue)
         }

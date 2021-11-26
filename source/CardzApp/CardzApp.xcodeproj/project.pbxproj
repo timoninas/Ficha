@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7702F1DF2729F48C006176FE /* Rivendell in Frameworks */ = {isa = PBXBuildFile; productRef = 7702F1DE2729F48C006176FE /* Rivendell */; };
+		7748E9322757F4B10063E592 /* FavouriteWordzViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7748E9312757F4B00063E592 /* FavouriteWordzViewController.swift */; };
+		7748E9362757F4D60063E592 /* FavouriteWordzPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7748E9352757F4D60063E592 /* FavouriteWordzPresenter.swift */; };
+		7748E9392757F4EE0063E592 /* FavouriteWordzBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7748E9382757F4EE0063E592 /* FavouriteWordzBuilder.swift */; };
+		7748E93B2757F4F90063E592 /* FavouriteWordzProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7748E93A2757F4F90063E592 /* FavouriteWordzProtocols.swift */; };
+		7748E93D2757F5460063E592 /* AlertCardViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7748E93C2757F5460063E592 /* AlertCardViewController+ViewModel.swift */; };
+		7748E9402757F5B80063E592 /* FavouriteWordzViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7748E93F2757F5B80063E592 /* FavouriteWordzViewController+ViewModel.swift */; };
 		775A18C7271C284E00A295C0 /* DailyWordsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775A18C6271C284E00A295C0 /* DailyWordsHeader.swift */; };
 		776E4926272C90E7000D0B2D /* LearnCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E4925272C90E7000D0B2D /* LearnCardViewController.swift */; };
 		776E4929272C9103000D0B2D /* LearnCardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E4928272C9103000D0B2D /* LearnCardPresenter.swift */; };
@@ -55,6 +61,12 @@
 
 /* Begin PBXFileReference section */
 		7702F1DD2729F483006176FE /* Rivendell */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Rivendell; path = ../Frameworks/Rivendell; sourceTree = "<group>"; };
+		7748E9312757F4B00063E592 /* FavouriteWordzViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteWordzViewController.swift; sourceTree = "<group>"; };
+		7748E9352757F4D60063E592 /* FavouriteWordzPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteWordzPresenter.swift; sourceTree = "<group>"; };
+		7748E9382757F4EE0063E592 /* FavouriteWordzBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteWordzBuilder.swift; sourceTree = "<group>"; };
+		7748E93A2757F4F90063E592 /* FavouriteWordzProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteWordzProtocols.swift; sourceTree = "<group>"; };
+		7748E93C2757F5460063E592 /* AlertCardViewController+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertCardViewController+ViewModel.swift"; sourceTree = "<group>"; };
+		7748E93F2757F5B80063E592 /* FavouriteWordzViewController+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavouriteWordzViewController+ViewModel.swift"; sourceTree = "<group>"; };
 		775A18C6271C284E00A295C0 /* DailyWordsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWordsHeader.swift; sourceTree = "<group>"; };
 		776E4925272C90E7000D0B2D /* LearnCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCardViewController.swift; sourceTree = "<group>"; };
 		776E4928272C9103000D0B2D /* LearnCardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCardPresenter.swift; sourceTree = "<group>"; };
@@ -119,6 +131,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7748E9332757F4B40063E592 /* FavouriteWordzModule */ = {
+			isa = PBXGroup;
+			children = (
+				7748E93A2757F4F90063E592 /* FavouriteWordzProtocols.swift */,
+				7748E9382757F4EE0063E592 /* FavouriteWordzBuilder.swift */,
+				7748E9342757F4C50063E592 /* View */,
+				7748E9372757F4E30063E592 /* Presenter */,
+			);
+			path = FavouriteWordzModule;
+			sourceTree = "<group>";
+		};
+		7748E9342757F4C50063E592 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7748E9412757F5BD0063E592 /* Supplementary  */,
+				7748E9312757F4B00063E592 /* FavouriteWordzViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7748E9372757F4E30063E592 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				7748E9352757F4D60063E592 /* FavouriteWordzPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		7748E93E2757F5490063E592 /* Supplementary  */ = {
+			isa = PBXGroup;
+			children = (
+				7748E93C2757F5460063E592 /* AlertCardViewController+ViewModel.swift */,
+			);
+			path = "Supplementary ";
+			sourceTree = "<group>";
+		};
+		7748E9412757F5BD0063E592 /* Supplementary  */ = {
+			isa = PBXGroup;
+			children = (
+				7748E93F2757F5B80063E592 /* FavouriteWordzViewController+ViewModel.swift */,
+			);
+			path = "Supplementary ";
+			sourceTree = "<group>";
+		};
 		776E4927272C90F3000D0B2D /* LearnCardModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +216,7 @@
 		776EFC39274107E4001010FD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7748E93E2757F5490063E592 /* Supplementary  */,
 				776EFC36274107C7001010FD /* AlertCardViewController.swift */,
 			);
 			path = View;
@@ -225,6 +282,7 @@
 		D4F00D4F2718C3840079A860 /* CardzApp */ = {
 			isa = PBXGroup;
 			children = (
+				7748E9332757F4B40063E592 /* FavouriteWordzModule */,
 				776EFC38274107CC001010FD /* AlertCardModule */,
 				776E4927272C90F3000D0B2D /* LearnCardModule */,
 				D4F00D832718C3FB0079A860 /* DailyWordsModule */,
@@ -446,25 +504,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7748E93B2757F4F90063E592 /* FavouriteWordzProtocols.swift in Sources */,
+				7748E93D2757F5460063E592 /* AlertCardViewController+ViewModel.swift in Sources */,
 				D4C7F12F2719636D0066125A /* DailyWordsViewController+State.swift in Sources */,
 				D4F00D982718C3FB0079A860 /* DailyWordsBuilder.swift in Sources */,
 				D4F00D962718C3FB0079A860 /* DailyWordsPresenter.swift in Sources */,
 				776E4929272C9103000D0B2D /* LearnCardPresenter.swift in Sources */,
 				D4F00DA52718C5070079A860 /* LifeCycleProtocol.swift in Sources */,
+				7748E9392757F4EE0063E592 /* FavouriteWordzBuilder.swift in Sources */,
 				D4F00D5B2718C3840079A860 /* CardzApp.xcdatamodeld in Sources */,
 				776E492F272C91C1000D0B2D /* LearnCardBuilder.swift in Sources */,
 				776EFC37274107C7001010FD /* AlertCardViewController.swift in Sources */,
 				77A178DF27352A0E005E520C /* Logger.swift in Sources */,
 				776EFC3E27410824001010FD /* AlertCardProtocol.swift in Sources */,
 				776EFC4027410870001010FD /* AlertCardBuilder.swift in Sources */,
+				7748E9362757F4D60063E592 /* FavouriteWordzPresenter.swift in Sources */,
 				776EFC3B27410804001010FD /* AlertCardPresenter.swift in Sources */,
 				D4F00DA22718C4940079A860 /* DailyWordsViewController+ViewModel.swift in Sources */,
+				7748E9322757F4B10063E592 /* FavouriteWordzViewController.swift in Sources */,
 				775A18C7271C284E00A295C0 /* DailyWordsHeader.swift in Sources */,
 				D4F00D9E2718C3FB0079A860 /* SceneDelegate.swift in Sources */,
 				D4F00D972718C3FB0079A860 /* DailyWordsViewController.swift in Sources */,
 				D4F00D9D2718C3FB0079A860 /* AppDelegate.swift in Sources */,
 				D4F00D952718C3FB0079A860 /* DailyWordsProtocol.swift in Sources */,
 				776E492D272C91B3000D0B2D /* LearnCardProtocol.swift in Sources */,
+				7748E9402757F5B80063E592 /* FavouriteWordzViewController+ViewModel.swift in Sources */,
 				776E4926272C90E7000D0B2D /* LearnCardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

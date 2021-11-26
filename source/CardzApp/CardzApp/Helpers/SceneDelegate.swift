@@ -33,7 +33,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             learnViewController.tabBarItem = item
         }
         
-        let favouriteViewController = AlertCardBuilder.build(data: .init(title: "Вы точно хотите сбросить прогресс?", secondTitle: "Сброс прогресса приведет к полной очистке статистики выученных слов"))
+        let favouriteViewController = FavouriteWordzBuilder.build()
         if let favouriteIconData = UIImage.starIcon?.pngData(),
            let favouriteIconFilledData = UIImage.starIconFilled?.pngData(){
             let image = UIImage(data: favouriteIconData, scale: 13.5)

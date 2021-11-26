@@ -12,26 +12,22 @@ import Rivendell
 /// Чтобы это уведомление закрылось.
 final class AlertCardViewController: UIViewController {
     
-    /// Представление экрана уведомления.
-    struct AlertViewModel: Equatable {
-        
-        /// Заголовок уведомления.
-        let title: String
-        
-        /// Детальное описание уведомления.
-        let secondTitle: String?
-        
-    }
-    
     private let output: AlertCardViewOutput
-    private var viewModel: AlertViewModel
+    
+    private var viewModel: AlertModel?
     
     private lazy var alertCardView = AlertCardView(swipeDirections: [.left, .right], configuration: .init()
-                                                    .with(title: viewModel.title)
-                                                    .with(secondTitle: viewModel.secondTitle)
     )
     
-    private var leftButton = RVLeftRightImageButton(configuration: .init())
+    private lazy var leftButton = RVAlignImageButton(configuration: .init()
+                                                        .with(align: .top)
+                                                        .with(imageConfig: .visible(image: .leftArrowIcon, color: .bloods))
+                                                        .with(imageMultiplier: 1.0))
+    
+    private lazy var rightButton = RVAlignImageButton(configuration: .init()
+                                                        .with(align: .top)
+                                                        .with(imageConfig: .visible(image: .rightArrowIcon, color: .goblin))
+                                                        .with(imageMultiplier: 1.0))
     private lazy var closeButton = RVImageButton(configuration: .init()
                                                     .with(image: .closeIcon)
                                                     .with(backgroundColor: .clear)
@@ -42,21 +38,26 @@ final class AlertCardViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }))
     
-    private lazy var button = RVButton(configuration: .init()
-                                        .with(title: "Tap to me!")
-                                        .with(subtitle: "Тап закроет эту кнопку")
-                                        .with(highlitedColor: .mysteryShack.withAlphaComponent(0.8))
-                                        .with(onTap: { [weak self] _ in
-        guard let self = self else { return }
-        let module = AlertCardBuilder.build(data: .init(title: "KKEE", secondTitle: "FEFEF"))
-        module.modalPresentationStyle = .fullScreen
-        module.modalTransitionStyle = .crossDissolve
-        self.present(module, animated: true, completion: nil)
-    }))
+    let centerView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
-    init(output: AlertCardViewOutput, viewModel: AlertViewModel) {
+    let rightView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let leftView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    init(output: AlertCardViewOutput) {
         self.output = output
-        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -72,17 +73,27 @@ final class AlertCardViewController: UIViewController {
         super.viewDidLoad()
         RLogInfo(message: "[Info] \(String(describing: self)) ViewDidLoad")
         configureUI()
+        output.viewDidLoad()
     }
     
     private func configureUI() {
         view.backgroundColor = .gendalf
-        addRvButton()
-        addAlertCard()
         addCloseButton()
-        addLeftButton()
+        addAlertCard()
+        addCenteringViews()
+        view.bringSubviewToFront(alertCardView)
     }
     
     private func addAlertCard() {
+        alertCardView.onCardChangedPosition = { [weak self] _, _ in
+            guard let self = self else { return }
+            self.setUserInteractableToElements(isUserInteractible: false)
+        }
+        alertCardView.onCardEndChangedPosition = { [weak self] in
+            guard let self = self else { return }
+            self.setUserInteractableToElements(isUserInteractible: true)
+        }
+        
         view.addSubview(alertCardView)
         alertCardView.backgroundColor = .whisper
         
@@ -94,24 +105,48 @@ final class AlertCardViewController: UIViewController {
         ])
     }
     
-    private func addLeftButton() {
-        view.addSubview(leftButton)
-        leftButton.backgroundColor = .green
+    private func addCenteringViews() {
+        view.addSubview(centerView)
+        view.addSubview(leftView)
+        view.addSubview(rightView)
         
         NSLayoutConstraint.activate([
-            leftButton.heightAnchor.constraint(equalToConstant: 70.0),
-            leftButton.widthAnchor.constraint(equalToConstant: 100.0),
-            leftButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            leftButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0),
+            centerView.widthAnchor.constraint(equalToConstant: 1.0),
+            centerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            centerView.topAnchor.constraint(equalTo: alertCardView.bottomAnchor),
+            centerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            leftView.topAnchor.constraint(equalTo: centerView.topAnchor),
+            leftView.bottomAnchor.constraint(equalTo: centerView.bottomAnchor),
+            leftView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            leftView.rightAnchor.constraint(equalTo: centerView.leftAnchor),
+            
+            rightView.topAnchor.constraint(equalTo: centerView.topAnchor),
+            rightView.bottomAnchor.constraint(equalTo: centerView.bottomAnchor),
+            rightView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            rightView.leftAnchor.constraint(equalTo: centerView.rightAnchor),
         ])
     }
     
-    private func addRvButton() {
-        view.addSubview(button)
+    private func addLeftButton() {
+        view.addSubview(leftButton)
+        
         NSLayoutConstraint.activate([
-            button.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20.0),
-            button.widthAnchor.constraint(equalToConstant: 200.0),
-            button.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.0),
+            leftButton.heightAnchor.constraint(equalToConstant: 105.0),
+            leftButton.widthAnchor.constraint(equalToConstant: 65.0),
+            leftButton.centerXAnchor.constraint(equalTo: leftView.centerXAnchor),
+            leftButton.topAnchor.constraint(equalTo: alertCardView.bottomAnchor, constant: 12.0),
+        ])
+    }
+    
+    private func addRightButton() {
+        view.addSubview(rightButton)
+        
+        NSLayoutConstraint.activate([
+            rightButton.heightAnchor.constraint(equalToConstant: 105.0),
+            rightButton.widthAnchor.constraint(equalToConstant: 65.0),
+            rightButton.centerXAnchor.constraint(equalTo: rightView.centerXAnchor),
+            rightButton.topAnchor.constraint(equalTo: alertCardView.bottomAnchor, constant: 12.0),
         ])
     }
     
@@ -125,8 +160,108 @@ final class AlertCardViewController: UIViewController {
         ])
     }
     
+    private func setUserInteractableToElements(isUserInteractible: Bool) {
+        leftButton.isUserInteractionEnabled = isUserInteractible
+        rightButton.isUserInteractionEnabled = isUserInteractible
+        closeButton.isUserInteractionEnabled = isUserInteractible
+    }
+    
+    private func configureForModel() {
+        guard let viewModel = viewModel else { return }
+        alertCardView.configuration = alertCardView.configuration
+            .with(title: viewModel.title)
+            .with(secondTitle: viewModel.secondTitle)
+        
+        addActionButtons(actions: viewModel.actions)
+        view.bringSubviewToFront(alertCardView)
+    }
+    
+    private func addActionButtons(actions: [AlertModel.AlertAction]) {
+        switch actions.count {
+        case 1:
+            guard let first = actions.first else { return }
+            
+            rightButton.configuration = rightButton.configuration
+                .with(onTap: { [weak self] _ in self?.alertCardView.swipeTo(.right) })
+                .with(titleConfig: .visible(title: first.title, color: .olivie))
+            
+            alertCardView.onEverySwipe(completion: { [weak self] in
+                first.onSwipeClosure?()
+                self?.dismiss(animated: true, completion: nil) })
+            
+            view.addSubview(rightButton)
+            
+            NSLayoutConstraint.activate([
+                rightButton.heightAnchor.constraint(equalToConstant: 105.0),
+                rightButton.widthAnchor.constraint(equalToConstant: 65.0),
+                rightButton.centerXAnchor.constraint(equalTo: centerView.centerXAnchor),
+                rightButton.topAnchor.constraint(equalTo: alertCardView.bottomAnchor, constant: 12.0),
+            ])
+            
+            
+        case 2:
+            guard let first = actions.first else { return }
+            guard let second = actions.last else { return }
+            rightButton.configuration = rightButton.configuration
+                .with(onTap: { [weak self] _ in self?.alertCardView.swipeTo(.right) })
+                .with(titleConfig: .visible(title: second.title, color: .olivie))
+            leftButton.configuration = leftButton.configuration
+                .with(onTap: { [weak self] _ in self?.alertCardView.swipeTo(.left) })
+                .with(titleConfig: .visible(title: first.title, color: .olivie))
+            
+            alertCardView.onLeftSwipe = { [weak self] in
+                guard let self = self else { return }
+                first.onSwipeClosure?()
+                self.dismiss(animated: true, completion: nil)
+            }
+            
+            alertCardView.onRightSwipe = { [weak self] in
+                guard let self = self else { return }
+                second.onSwipeClosure?()
+                self.dismiss(animated: true, completion: nil)
+            }
+            
+            view.addSubview(leftButton)
+            
+            NSLayoutConstraint.activate([
+                leftButton.heightAnchor.constraint(equalToConstant: 105.0),
+                leftButton.widthAnchor.constraint(equalToConstant: 65.0),
+                leftButton.centerXAnchor.constraint(equalTo: leftView.centerXAnchor),
+                leftButton.topAnchor.constraint(equalTo: alertCardView.bottomAnchor, constant: 12.0),
+            ])
+            
+            view.addSubview(rightButton)
+            
+            NSLayoutConstraint.activate([
+                rightButton.heightAnchor.constraint(equalToConstant: 105.0),
+                rightButton.widthAnchor.constraint(equalToConstant: 65.0),
+                rightButton.centerXAnchor.constraint(equalTo: rightView.centerXAnchor),
+                rightButton.topAnchor.constraint(equalTo: alertCardView.bottomAnchor, constant: 12.0),
+            ])
+        default:
+            alertCardView.onEverySwipe(completion: { [weak self] in self?.dismiss(animated: true, completion: nil) })
+        }
+        
+    }
 }
 
 extension AlertCardViewController: AlertCardViewInput {
+    
+    func changeState(state: SimpleScreenState<AlertModel>) {
+        print(state)
+        print()
+        
+        switch state {
+        case .normal(model: let model):
+            let actions = Array(model.actions.prefix(2))
+            viewModel = .init(title: model.title,
+                                   secondTitle: model.secondTitle,
+                                   actions: actions)
+            configureForModel()
+        default:
+            break
+        }
+        
+    }
     
 }

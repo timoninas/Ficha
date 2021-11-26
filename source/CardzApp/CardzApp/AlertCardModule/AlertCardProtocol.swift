@@ -8,6 +8,9 @@
 import Foundation
 
 protocol AlertCardViewInput: AnyObject {
+    
+    func changeState(state: SimpleScreenState<AlertModel>)
+    
 }
 
 protocol AlertCardViewOutput: LifeCycleProtocol, AnyObject {

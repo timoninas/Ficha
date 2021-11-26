@@ -9,9 +9,9 @@ import Foundation
 
 final class AlertCardBuilder {
     
-    static func build(data: AlertCardViewController.AlertViewModel) -> AlertCardViewController {
-        let presenter = AlertCardPresenter()
-        let view = AlertCardViewController(output: presenter, viewModel: data)
+    static func build(model: AlertModel) -> AlertCardViewController {
+        let presenter = AlertCardPresenter(alertModel: model)
+        let view = AlertCardViewController(output: presenter)
         presenter.view = view
         return view
     }

@@ -6,16 +6,19 @@
 //
 
 import Foundation
+import Hobbiton
 
 final class AlertCardPresenter: AlertCardViewOutput {
     
     weak var view: AlertCardViewInput?
+    let alertModel: AlertModel
     
-    init() {
-        
+    init(alertModel: AlertModel) {
+        self.alertModel = alertModel
     }
     
     func viewDidLoad() {
+        view?.changeState(state: .normal(model: alertModel))
     }
     
 }

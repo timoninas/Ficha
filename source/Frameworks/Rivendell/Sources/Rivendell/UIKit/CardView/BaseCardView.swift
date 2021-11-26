@@ -51,6 +51,8 @@ public class BaseCardView: UIView {
     ///  - y: Изменение по координате `y`.
     public var onCardChangedPosition:((CGFloat, CGFloat) -> Void)?
     
+    public var onCardEndChangedPosition: VoidClosure?
+    
     /// Вью, которая добавится в контентную область карточки.
     public var contentView: UIView = UIView() {
         didSet {
@@ -129,6 +131,7 @@ public class BaseCardView: UIView {
             self.handleCardChanged(gesture)
         case .ended:
             self.handleCardEnded(gesture)
+            self.onCardEndChangedPosition?()
         default: break
         }
         
@@ -158,7 +161,7 @@ public class BaseCardView: UIView {
             }
         } completion: { [weak self] _ in
             guard let self = self else { return }
-            self.transform = .identity
+//            self.transform = .identity
             guard let responseSwipeRequest = responseSwipeRequest, shouldDismissCard && !self.swipeDirections.isEmpty else {
                 self.onDragCard?()
                 return
@@ -266,7 +269,7 @@ public class BaseCardView: UIView {
         }
         
         UIView.animate(
-            withDuration: 0.4,
+            withDuration: 0.8,
             delay: 0.0,
             usingSpringWithDamping: 1.0,
             initialSpringVelocity: 0.3,
@@ -277,7 +280,7 @@ public class BaseCardView: UIView {
         } completion: { [weak self] _ in
             guard let self = self else { return }
             // Пока разработка идет
-            self.transform = .identity
+//            self.transform = .identity
             //self.removeFromSuperview()
             switch swipeDirection {
             case .top:
