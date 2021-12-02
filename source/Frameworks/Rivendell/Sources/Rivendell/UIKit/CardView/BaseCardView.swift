@@ -161,7 +161,10 @@ public class BaseCardView: UIView {
             }
         } completion: { [weak self] _ in
             guard let self = self else { return }
+            // ------------
+            // DEPRECATE
 //            self.transform = .identity
+            // ------------
             guard let responseSwipeRequest = responseSwipeRequest, shouldDismissCard && !self.swipeDirections.isEmpty else {
                 self.onDragCard?()
                 return
@@ -280,7 +283,10 @@ public class BaseCardView: UIView {
         } completion: { [weak self] _ in
             guard let self = self else { return }
             // Пока разработка идет
+            // DEPRECATE
 //            self.transform = .identity
+            // ------------
+            
             //self.removeFromSuperview()
             switch swipeDirection {
             case .top:

@@ -5,7 +5,6 @@
 //  Created by Антон Тимонин on 14.11.2021.
 //
 
-import Foundation
 import UIKit
 
 public class AlertCardView: BaseCardView {
@@ -140,7 +139,11 @@ public class AlertCardView: BaseCardView {
     
     private func configurationChanged(oldValue: Configuration) {
         updateData()
+        updateSpacings()
         setupConstraints()
+    }
+    
+    private func updateSpacings() {
     }
     
     private func updateData() {

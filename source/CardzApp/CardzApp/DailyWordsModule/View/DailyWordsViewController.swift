@@ -79,6 +79,10 @@ final class DailyWordsViewController: UIViewController {
         self.renderHeights()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .darkContent
+    }
+    
     private func configureUI() {
         addBackgroundView()
         addScrollView()

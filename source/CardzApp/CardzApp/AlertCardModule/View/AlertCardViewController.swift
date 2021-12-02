@@ -128,28 +128,6 @@ final class AlertCardViewController: UIViewController {
         ])
     }
     
-    private func addLeftButton() {
-        view.addSubview(leftButton)
-        
-        NSLayoutConstraint.activate([
-            leftButton.heightAnchor.constraint(equalToConstant: 105.0),
-            leftButton.widthAnchor.constraint(equalToConstant: 65.0),
-            leftButton.centerXAnchor.constraint(equalTo: leftView.centerXAnchor),
-            leftButton.topAnchor.constraint(equalTo: alertCardView.bottomAnchor, constant: 12.0),
-        ])
-    }
-    
-    private func addRightButton() {
-        view.addSubview(rightButton)
-        
-        NSLayoutConstraint.activate([
-            rightButton.heightAnchor.constraint(equalToConstant: 105.0),
-            rightButton.widthAnchor.constraint(equalToConstant: 65.0),
-            rightButton.centerXAnchor.constraint(equalTo: rightView.centerXAnchor),
-            rightButton.topAnchor.constraint(equalTo: alertCardView.bottomAnchor, constant: 12.0),
-        ])
-    }
-    
     private func addCloseButton() {
         view.addSubview(closeButton)
         NSLayoutConstraint.activate([

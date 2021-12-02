@@ -49,7 +49,7 @@ final class FavouriteWordzViewController: UIViewController {
     }
     
     private func presentAlertWith(title: String) {
-        let vc = UIAlertController(title: "Alert", message: "Some message", preferredStyle: .alert)
+        let vc = UIAlertController(title: title, message: "Some message", preferredStyle: .alert)
         vc.addAction(.init(title: title, style: .default, handler: nil))
         present(vc, animated: true, completion: nil)
     }
