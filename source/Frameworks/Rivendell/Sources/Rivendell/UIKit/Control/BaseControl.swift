@@ -30,7 +30,7 @@ public class RVControl: UIControl {
     open func setHighlighted(isHighlighted: Bool, animated: Bool) {
         self.isHighlightedState = isHighlighted
     }
-
+    
     required public init?(coder: NSCoder) {
         fatalError("NSCoder RControl")
     }

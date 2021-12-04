@@ -16,7 +16,7 @@ final class LearnCardViewController: UIViewController {
                                                         .with(titleConfig: .visible(title: "To\nfavorites", color: .olivie))
                                                         .with(align: .left)
                                                         .with(imageConfig: .visible(image: .starUnfilledIcon, color: .moonlight))
-                                                        .with(imageMultiplier: 0.9))
+                                                        .with(imageMultiplier: 1.0))
     
     private lazy var leftButton = RVAlignImageButton(configuration: .init()
                                                         .with(titleConfig: .visible(title: "I don't \nknow", color: .olivie))
@@ -30,10 +30,22 @@ final class LearnCardViewController: UIViewController {
                                                         .with(imageConfig: .visible(image: .rightArrowIcon, color: .goblin))
                                                         .with(imageMultiplier: 1.0))
     
-    var cards = [
-        LearnWordzCardView(swipeDirections: [.top, .right, .left, .bottom], configuration: .init(wordz: "beetle", translations: ["трамбовать", "дробить камни"])),
-        LearnWordzCardView(swipeDirections: [.top, .right, .left, .bottom], configuration: .init(wordz: "dress", translations: ["платье", "одеваться"])),
-        LearnWordzCardView(swipeDirections: [.top, .right, .left, .bottom], configuration: .init(wordz: "squirrel", translations: ["белка"]))
+    private var allowedSwipeDirections: [BaseCardView.SwipeDirection] = [.top, .right, .left]
+    
+    lazy var cards = [
+        LearnWordzCardView(swipeDirections: allowedSwipeDirections, configuration: .init(wordz: "beetle", translations: ["Трамбовать", "Дробить камни"])
+                            .with(transcription: "[biːtl]")
+                            .with(wordzExamples: ["The petrified impression was about three inches long and looked to be the underside of some kind of huge beetle or crawling insect", "Our friend, the click beetle"])),
+        LearnWordzCardView(swipeDirections: allowedSwipeDirections, configuration: .init(wordz: "To get those subjects", translations: ["Чтобы получить эти предметы"])
+                            .with(wordzExamples: ["There's no use getting on to that subject"])),
+        LearnWordzCardView(swipeDirections: allowedSwipeDirections, configuration: .init(wordz: "Dress", translations: ["Платье", "Одеваться"])
+                            .with(wordzExamples: ["A thin black woman was seated in a chair in a corner of the room sewing on a dress", "The little girl watched me, holding the bread against her dirty dress", "She never conformed in dress or conduct"])),
+        LearnWordzCardView(swipeDirections: allowedSwipeDirections, configuration: .init(wordz: "Blow someone's head off", translations: ["Cнести голову кому-то"])),
+        LearnWordzCardView(swipeDirections: allowedSwipeDirections, configuration: .init(wordz: "Blow someone's head off", translations: ["Cнести голову кому-то"])
+                            .with(wordzExamples: ["How do you go from eight years of a happy marriage to wanting to blow someone's head off?"])),
+        LearnWordzCardView(swipeDirections: allowedSwipeDirections, configuration: .init(wordz: "Squirrel", translations: ["Белка"])
+                            .with(transcription: "[ˈskwɪrəl]")
+                            .with(wordzExamples: ["A squirrel probably got into the attic", "One day a neighbouring cat came to see her, and the squirrel was clearly the subject of their talk", "squirrel food"])),
     ]
     
     let centerView: UIView = {
@@ -157,11 +169,11 @@ final class LearnCardViewController: UIViewController {
             starButton.heightAnchor.constraint(equalToConstant: 45.0),
             starButton.widthAnchor.constraint(equalToConstant: 135.0),
             starButton.centerXAnchor.constraint(equalTo: centerView.centerXAnchor),
-            starButton.bottomAnchor.constraint(equalTo: card.topAnchor, constant: -20.0)
+            starButton.bottomAnchor.constraint(equalTo: card.topAnchor, constant: -24.0)
         ])
         
     }
-
+    
 }
 
 extension LearnCardViewController: LearnCardViewInput {

@@ -11,7 +11,6 @@ final class LearnCardPresenter: LearnCardOutput {
     
     weak var view: LearnCardViewInput?
     
-    init() {
-    }
+    init() { }
     
 }

@@ -10,21 +10,21 @@ import UIKit
 public final class BubblesView: UIView {
     
     let bubble1: UIView = {
-       let view = UIView()
+        let view = UIView()
         view.backgroundColor = .galadriel
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     let bubble2: UIView = {
-       let view = UIView()
+        let view = UIView()
         view.backgroundColor = .galadriel
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     let bubble3: UIView = {
-       let view = UIView()
+        let view = UIView()
         view.backgroundColor = .galadriel
         view.translatesAutoresizingMaskIntoConstraints = false
         return view

@@ -30,6 +30,9 @@ public class BaseCardView: UIView {
     /// По умолчанию, при свайпе карточка будет возвращаться в начальное положение.
     public var swipeDirections: [SwipeDirection] = []
     
+    /// Замыкание, которое сработает при тапе по карточке.
+    public var onTap: VoidClosure?
+    
     /// Замыкание, которое сработает при свайпе вверх.
     public var onTopSwipe: VoidClosure?
     
@@ -61,7 +64,7 @@ public class BaseCardView: UIView {
     }
     
     private struct Constants {
-        static var threshold: CGFloat { 80.0 }
+        static var threshold: CGFloat { 60.0 }
     }
     
     // MARK: - Init
@@ -95,7 +98,7 @@ public class BaseCardView: UIView {
     }
     
     private func configureView() {
-        self.backgroundColor = .blue
+        self.backgroundColor = .whisper
         self.translatesAutoresizingMaskIntoConstraints = false
     }
     
@@ -118,8 +121,16 @@ public class BaseCardView: UIView {
     }
     
     private func addCardGestureRecognizer() {
+        self.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleCardTap(gesture:)))
+        self.addGestureRecognizer(tapGesture)
+        
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handleCardMoving(gesture:)))
         self.addGestureRecognizer(panGesture)
+    }
+    
+    @objc fileprivate func handleCardTap(gesture: UIPanGestureRecognizer) {
+        onTap?()
     }
     
     @objc fileprivate func handleCardMoving(gesture: UIPanGestureRecognizer) {
@@ -152,7 +163,7 @@ public class BaseCardView: UIView {
         let responseSwipeRequest = countDirection(currentCardPosition: currentPoint)
         let shouldDismissCard = abs(currentPoint.x) > Constants.threshold || abs(currentPoint.y) > Constants.threshold
         
-        UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.3, options: .curveEaseIn) {
+        UIView.animate(withDuration: 0.65, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.03, options: .curveEaseIn) {
             if let responseSwipeRequest = responseSwipeRequest, shouldDismissCard && !self.swipeDirections.isEmpty {
                 let offScreenTransform = self.transform.translatedBy(x: responseSwipeRequest.1.x, y: responseSwipeRequest.1.y)
                 self.transform = offScreenTransform

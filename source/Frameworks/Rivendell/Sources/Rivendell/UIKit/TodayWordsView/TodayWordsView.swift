@@ -135,27 +135,18 @@ public final class TodayWordsView: UIView {
             self.mainLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: 0.0),
             self.mainLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 0.0)
         ]
-        if self.hasSecond {
-//            self.storedConstraints += [
-//                self.mainLabel.heightAnchor.constraint(equalToConstant: self.configuration.title.height(constraintedWidth: self.mainLabel.frame.width, font: self.mainLabel.font))
-//            ]
-        } else {
+        if self.hasSecond { } else {
             self.storedConstraints += [
                 self.mainLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 0.0),
             ]
         }
         
         if self.hasSecond {
-//            self.secondLabel.sizeToFit()
             self.storedConstraints += [
                 self.secondLabel.topAnchor.constraint(equalTo: self.mainLabel.bottomAnchor, constant: 14.0),
                 self.secondLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor),
-                self.secondLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor),
-//                self.secondLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -15.0)
-//                self.secondLabel.bottomAnchor.constraint(lessThanOrEqualTo: self.contentView.bottomAnchor, constant: -8.0),
-//                self.secondLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 0.0)
+                self.secondLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor)
             ]
-//            self.secondLabel.sizeToFit()
         }
         NSLayoutConstraint.activate(self.storedConstraints)
     }
@@ -192,4 +183,5 @@ public final class TodayWordsView: UIView {
         
         return totalHeight
     }
+    
 }

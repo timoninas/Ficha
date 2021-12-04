@@ -127,7 +127,7 @@ final class DailyWordsViewController: UIViewController {
                 UIApplication.hapticLight()
                 print("KEKEKE")
                 self.present(LearnCardBuilder.build(), animated: true, completion: nil)
-        })
+            })
         
         view.addSubview(playButton)
         NSLayoutConstraint.activate([
@@ -198,17 +198,20 @@ final class DailyWordsViewController: UIViewController {
     }
     
     private func renderContent(isAnimated: Bool) {
+        // TODO: - Добавить нормальную анимацию появления коллекции.
         if isAnimated {
-            UIView.animate(withDuration: 0.3, delay: 0.0,  options: [.curveEaseOut]) {
-                self.renderTodayViews()
-                self.renderHeights()
+            self.renderTodayViews()
+            self.renderHeights()
+            scrollView.alpha = 0.0
+            UIView.animate(withDuration: 0.3) { [weak self] in
+                self?.scrollView.alpha = 1.0
             }
         } else {
             self.renderTodayViews()
             self.renderHeights()
         }
     }
-
+    
 }
 
 extension DailyWordsViewController: DailyWordsViewInput {

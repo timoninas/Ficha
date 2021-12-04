@@ -154,7 +154,7 @@ public final class RVButton: RVControl {
     private func addTitle() {
         self.addSubview(mainTitle)
     }
-
+    
     private func addDescriptionTitle() {
         self.addSubview(descriptionTitle)
     }

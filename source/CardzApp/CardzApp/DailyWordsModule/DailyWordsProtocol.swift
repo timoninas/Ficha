@@ -12,5 +12,5 @@ protocol DailyWordsViewInput: AnyObject {
 }
 
 protocol DailyWordsOutput: LifeCycleProtocol, AnyObject {
-
+    
 }

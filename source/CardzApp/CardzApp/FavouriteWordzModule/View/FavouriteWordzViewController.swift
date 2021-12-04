@@ -34,7 +34,7 @@ final class FavouriteWordzViewController: UIViewController {
             guard let self = self else { return }
             print("Swipe Da")
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            self.presentAlertWith(title: "Yep")
+                self.presentAlertWith(title: "Yep")
             }
         })]))
         

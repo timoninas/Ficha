@@ -18,7 +18,7 @@ public class AlertCardView: BaseCardView {
     }()
     
     private let labelContainer: UIView = {
-       let view = UIView()
+        let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -32,7 +32,7 @@ public class AlertCardView: BaseCardView {
         label.numberOfLines = 4
         return label
     }()
-
+    
     private let secondTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -55,7 +55,7 @@ public class AlertCardView: BaseCardView {
             configurationChanged(oldValue: oldValue)
         }
     }
-
+    
     public init(swipeDirections: [BaseCardView.SwipeDirection], configuration: Configuration) {
         self.configuration = configuration
         super.init(swipeDirections: swipeDirections)

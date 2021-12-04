@@ -233,8 +233,8 @@ extension AlertCardViewController: AlertCardViewInput {
         case .normal(model: let model):
             let actions = Array(model.actions.prefix(2))
             viewModel = .init(title: model.title,
-                                   secondTitle: model.secondTitle,
-                                   actions: actions)
+                              secondTitle: model.secondTitle,
+                              actions: actions)
             configureForModel()
         default:
             break

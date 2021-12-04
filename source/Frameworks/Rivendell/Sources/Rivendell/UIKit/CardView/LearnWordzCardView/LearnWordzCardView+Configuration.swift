@@ -11,6 +11,14 @@ extension LearnWordzCardView {
     
     public struct Configuration {
         
+        /// Состояние карточки.
+        public enum State {
+            /// Иностранное слово.
+            case wordz
+            /// Перевода с иностранного слова.
+            case translation
+        }
+        
         /// Иностранное слово.
         public private(set) var wordz: String
         
@@ -22,6 +30,27 @@ extension LearnWordzCardView {
         
         /// Перевод с иностранного языка на родной.
         public private(set) var translations: [String]
+        
+        /// Состояние карточки.
+        public private(set) var state: State = .wordz
+        
+        /// Флаг наличия транскрипции.
+        public var isTranscription: Bool {
+            guard transcription != nil else {
+                return false
+            }
+            return true
+        }
+        
+        /// Флаг наличия примеров с иностранным словом.
+        public var isExamples: Bool {
+            !wordzExamples.isEmpty
+        }
+        
+        /// Флаг наличия переводов слова.
+        public var isTranslations: Bool {
+            !translations.isEmpty
+        }
         
         /// Инициализирует объект `LearnWordzCardView`.
         ///
@@ -37,6 +66,7 @@ extension LearnWordzCardView {
         ///
         /// - Parameters:
         ///   - wordz: Иностранное слово.
+        /// - Returns: Измененная конфигурация.
         public func with(wordz: String) -> Configuration {
             var mutableSelf = self
             mutableSelf.wordz = wordz
@@ -47,6 +77,7 @@ extension LearnWordzCardView {
         ///
         /// - Parameters:
         ///   - transcription: Транскрипция.
+        /// - Returns: Измененная конфигурация.
         public func with(transcription: String?) -> Configuration {
             var mutableSelf = self
             mutableSelf.transcription = transcription
@@ -57,9 +88,13 @@ extension LearnWordzCardView {
         ///
         /// - Parameters:
         ///   - wordzExamples: Примеры иностранных слов.
+        /// - Returns: Измененная конфигурация.
         public func with(wordzExamples: [String]) -> Configuration {
             var mutableSelf = self
-            mutableSelf.wordzExamples = wordzExamples
+            
+            mutableSelf.wordzExamples = Array(wordzExamples
+                                                .filter{ $0.count < 91 }
+                                                .prefix(3))
             return mutableSelf
         }
         
@@ -67,9 +102,20 @@ extension LearnWordzCardView {
         ///
         /// - Parameters:
         ///   - translations: Переводы слов.
+        /// - Returns: Измененная конфигурация.
         public func with(translations: [String]) -> Configuration {
             var mutableSelf = self
-            mutableSelf.translations = translations
+            mutableSelf.translations = Array(translations
+                                                .filter{ $0.count < 91 }
+                                                .prefix(5))
+            return mutableSelf
+        }
+        /// Конфигурирует объект состоянием.
+        /// - Parameter state: Состояние
+        /// - Returns: Измененная конфигурация.
+        public func with(state: State) -> Configuration {
+            var mutableSelf = self
+            mutableSelf.state = state
             return mutableSelf
         }
         
