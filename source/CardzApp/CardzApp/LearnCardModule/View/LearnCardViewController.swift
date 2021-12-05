@@ -7,6 +7,7 @@
 
 import UIKit
 import Rivendell
+import RevolvetraKnowledge
 
 final class LearnCardViewController: UIViewController {
     
@@ -102,10 +103,18 @@ final class LearnCardViewController: UIViewController {
     private func addCardsView() {
         cards.forEach { [weak self] card in
             guard let self = self else { return }
-            card.onTopSwipe = { print("Top swipe") }
-            card.onLeftSwipe = { print("Left swipe") }
-            card.onRightSwipe = { print("Right swipe") }
-            card.onBottomSwipe = { print("Bottom swipe") }
+            card.onTopSwipe = {
+                KnowledgeStats.topSwipesLearnCard += 1
+                print("Top swipes: \(KnowledgeStats.topSwipesLearnCard)")
+            }
+            card.onLeftSwipe = {
+                KnowledgeStats.leftSwipesLearnCard += 1
+                print("Left swipes: \(KnowledgeStats.leftSwipesLearnCard)")
+            }
+            card.onRightSwipe = {
+                KnowledgeStats.rightSwipesLearnCard += 1
+                print("Right swipe: \(KnowledgeStats.rightSwipesLearnCard)")
+            }
             card.onDragCard = { print("Drag swipe") }
             
             self.view.addSubview(card)

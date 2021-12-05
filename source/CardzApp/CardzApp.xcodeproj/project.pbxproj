@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7702F1DF2729F48C006176FE /* Rivendell in Frameworks */ = {isa = PBXBuildFile; productRef = 7702F1DE2729F48C006176FE /* Rivendell */; };
+		77232AC8275D2C2800529DE0 /* Moria in Frameworks */ = {isa = PBXBuildFile; productRef = 77232AC7275D2C2800529DE0 /* Moria */; };
+		77232ACA275D2C2B00529DE0 /* RevoletraUserDefaultsKeys in Frameworks */ = {isa = PBXBuildFile; productRef = 77232AC9275D2C2B00529DE0 /* RevoletraUserDefaultsKeys */; };
 		7748E9322757F4B10063E592 /* FavouriteWordzViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7748E9312757F4B00063E592 /* FavouriteWordzViewController.swift */; };
 		7748E9362757F4D60063E592 /* FavouriteWordzPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7748E9352757F4D60063E592 /* FavouriteWordzPresenter.swift */; };
 		7748E9392757F4EE0063E592 /* FavouriteWordzBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7748E9382757F4EE0063E592 /* FavouriteWordzBuilder.swift */; };
@@ -26,6 +28,7 @@
 		77895BF927306ABC00A852BF /* Hobbiton in Frameworks */ = {isa = PBXBuildFile; productRef = 77895BF827306ABC00A852BF /* Hobbiton */; };
 		77A178DD273526FE005E520C /* EyeOfSauron in Frameworks */ = {isa = PBXBuildFile; productRef = 77A178DC273526FE005E520C /* EyeOfSauron */; };
 		77A178DF27352A0E005E520C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A178DE27352A0E005E520C /* Logger.swift */; };
+		77F9EF79275D30C8008B1EB6 /* RevolvetraKnowledge in Frameworks */ = {isa = PBXBuildFile; productRef = 77F9EF78275D30C8008B1EB6 /* RevolvetraKnowledge */; };
 		D4C7F12F2719636D0066125A /* DailyWordsViewController+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C7F12E2719636D0066125A /* DailyWordsViewController+State.swift */; };
 		D4F00D5B2718C3840079A860 /* CardzApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4F00D592718C3840079A860 /* CardzApp.xcdatamodeld */; };
 		D4F00D5D2718C3860079A860 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F00D5C2718C3860079A860 /* Assets.xcassets */; };
@@ -61,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		7702F1DD2729F483006176FE /* Rivendell */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Rivendell; path = ../Frameworks/Rivendell; sourceTree = "<group>"; };
+		77232AC6275D2C1A00529DE0 /* RevoletraUserDefaultsKeys */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RevoletraUserDefaultsKeys; path = ../Frameworks/RevoletraUserDefaultsKeys; sourceTree = "<group>"; };
 		7748E9312757F4B00063E592 /* FavouriteWordzViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteWordzViewController.swift; sourceTree = "<group>"; };
 		7748E9352757F4D60063E592 /* FavouriteWordzPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteWordzPresenter.swift; sourceTree = "<group>"; };
 		7748E9382757F4EE0063E592 /* FavouriteWordzBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteWordzBuilder.swift; sourceTree = "<group>"; };
@@ -81,6 +85,7 @@
 		77C2F4A92737D66900138DF9 /* Rivendell */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Rivendell; path = ../Frameworks/Rivendell; sourceTree = "<group>"; };
 		77D5165A27306A180030D1D1 /* Hobbiton */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Hobbiton; path = ../Frameworks/Hobbiton; sourceTree = "<group>"; };
 		77DD37E32737D5AF007A3B1E /* Moria */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Moria; path = ../Frameworks/Moria; sourceTree = "<group>"; };
+		77F9EF77275D2D8C008B1EB6 /* RevolvetraKnowledge */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RevolvetraKnowledge; path = ../Frameworks/RevolvetraKnowledge; sourceTree = "<group>"; };
 		D4C7F12E2719636D0066125A /* DailyWordsViewController+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyWordsViewController+State.swift"; sourceTree = "<group>"; };
 		D4F00D4D2718C3840079A860 /* CardzApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardzApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F00D5A2718C3840079A860 /* CardzApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardzApp.xcdatamodel; sourceTree = "<group>"; };
@@ -109,6 +114,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7702F1DF2729F48C006176FE /* Rivendell in Frameworks */,
+				77F9EF79275D30C8008B1EB6 /* RevolvetraKnowledge in Frameworks */,
+				77232ACA275D2C2B00529DE0 /* RevoletraUserDefaultsKeys in Frameworks */,
+				77232AC8275D2C2800529DE0 /* Moria in Frameworks */,
 				77895BF927306ABC00A852BF /* Hobbiton in Frameworks */,
 				77A178DD273526FE005E520C /* EyeOfSauron in Frameworks */,
 			);
@@ -246,6 +254,8 @@
 				77A178DB273526F4005E520C /* EyeOfSauron */,
 				77DD37E32737D5AF007A3B1E /* Moria */,
 				77C2F4A92737D66900138DF9 /* Rivendell */,
+				77232AC6275D2C1A00529DE0 /* RevoletraUserDefaultsKeys */,
+				77F9EF77275D2D8C008B1EB6 /* RevolvetraKnowledge */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -390,6 +400,9 @@
 				7702F1DE2729F48C006176FE /* Rivendell */,
 				77895BF827306ABC00A852BF /* Hobbiton */,
 				77A178DC273526FE005E520C /* EyeOfSauron */,
+				77232AC7275D2C2800529DE0 /* Moria */,
+				77232AC9275D2C2B00529DE0 /* RevoletraUserDefaultsKeys */,
+				77F9EF78275D30C8008B1EB6 /* RevolvetraKnowledge */,
 			);
 			productName = CardzApp;
 			productReference = D4F00D4D2718C3840079A860 /* CardzApp.app */;
@@ -700,7 +713,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X92LK22555;
 				INFOPLIST_FILE = CardzApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -720,7 +733,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X92LK22555;
 				INFOPLIST_FILE = CardzApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -858,6 +871,14 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Rivendell;
 		};
+		77232AC7275D2C2800529DE0 /* Moria */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Moria;
+		};
+		77232AC9275D2C2B00529DE0 /* RevoletraUserDefaultsKeys */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RevoletraUserDefaultsKeys;
+		};
 		77895BF827306ABC00A852BF /* Hobbiton */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Hobbiton;
@@ -865,6 +886,10 @@
 		77A178DC273526FE005E520C /* EyeOfSauron */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = EyeOfSauron;
+		};
+		77F9EF78275D30C8008B1EB6 /* RevolvetraKnowledge */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RevolvetraKnowledge;
 		};
 /* End XCSwiftPackageProductDependency section */
 
