@@ -22,9 +22,10 @@ public class LearnWordzCardView: BaseCardView {
     
     private struct Constants {
         static var topContainerOffset: CGFloat { 45.0 }
-        static var topMainContainerOffset: CGFloat { 30.0 }
+        static var topMainContainerOffset: (Bool) -> CGFloat = { $0 ? 20.0 : 4.0 }
         static var mainBetweenLabelsOffset: CGFloat { 16.0 }
-        static var labelBetweenOffset: CGFloat { 15.0 }
+        static var labelBetweenOffset: CGFloat { 17.0 }
+        static var top: CGFloat { 15.0 }
     }
     
     private let mainLabelContainer: UIView = {
@@ -61,7 +62,7 @@ public class LearnWordzCardView: BaseCardView {
         label.textColor = .nazgul
         label.font = UIFont(name:"HelveticaNeue", size: 26.0)
         label.textAlignment = .center
-        label.numberOfLines = 4
+        label.numberOfLines = 2
         return label
     }()
     
@@ -177,12 +178,14 @@ public class LearnWordzCardView: BaseCardView {
             
         /// Верстает экран к иностранному варианту.
         case .wordz:
-            if !configuration.isExamples && !configuration.isTranscription {
+            switch (configuration.isExamples, configuration.isTranscription) {
+            case (false, false):
                 prepareSingleConstraintsToWordz()
-            } else {
+            case (false, true):
+                prepareMainTitleConstraints()
+            default:
                 prepareConstraintsToWordz()
             }
-            
             
         /// Верстает экран к переводу с иностранного слова
         case .translation:
@@ -213,11 +216,12 @@ public class LearnWordzCardView: BaseCardView {
         wordzLabel.sizeToFit()
     }
     
-    private func prepareConstraintsToWordz() {
+    private func prepareMainTitleConstraints() {
         storedConstraints += [
-            mainLabelContainer.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.topContainerOffset),
-            mainLabelContainer.rightAnchor.constraint(equalTo: contentView.rightAnchor),
+            mainLabelContainer.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            mainLabelContainer.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             mainLabelContainer.leftAnchor.constraint(equalTo: contentView.leftAnchor),
+            mainLabelContainer.rightAnchor.constraint(equalTo: contentView.rightAnchor),
         ]
         
         wordzLabel.layoutIfNeeded()
@@ -236,13 +240,43 @@ public class LearnWordzCardView: BaseCardView {
             transcriptionLabel.bottomAnchor.constraint(equalTo: mainLabelContainer.bottomAnchor),
         ]
         transcriptionLabel.sizeToFit()
+    }
+    
+    private func prepareConstraintsToWordz() {
+        storedConstraints += [
+            mainLabelContainer.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.topContainerOffset),
+            mainLabelContainer.rightAnchor.constraint(equalTo: contentView.rightAnchor),
+            mainLabelContainer.leftAnchor.constraint(equalTo: contentView.leftAnchor),
+        ]
+        
+        wordzLabel.layoutIfNeeded()
+        storedConstraints += [
+            wordzLabel.topAnchor.constraint(equalTo: mainLabelContainer.topAnchor),
+            wordzLabel.rightAnchor.constraint(equalTo: mainLabelContainer.rightAnchor),
+            wordzLabel.leftAnchor.constraint(equalTo: mainLabelContainer.leftAnchor),
+        ]
+//        wordzLabel.sizeToFit()
+        
+        transcriptionLabel.layoutIfNeeded()
+        storedConstraints += [
+            transcriptionLabel.topAnchor.constraint(equalTo: wordzLabel.bottomAnchor, constant: Constants.mainBetweenLabelsOffset),
+            transcriptionLabel.rightAnchor.constraint(equalTo: mainLabelContainer.rightAnchor),
+            transcriptionLabel.leftAnchor.constraint(equalTo: mainLabelContainer.leftAnchor),
+            transcriptionLabel.bottomAnchor.constraint(equalTo: mainLabelContainer.bottomAnchor),
+        ]
+//        transcriptionLabel.sizeToFit()
         
         storedConstraints += [
-            exampleLabelContainer.topAnchor.constraint(equalTo: mainLabelContainer.bottomAnchor, constant: Constants.topMainContainerOffset),
+            exampleLabelContainer.topAnchor.constraint(equalTo: mainLabelContainer.bottomAnchor, constant: Constants.topMainContainerOffset(configuration.isTranscription)),
             exampleLabelContainer.rightAnchor.constraint(equalTo: contentView.rightAnchor),
             exampleLabelContainer.leftAnchor.constraint(equalTo: contentView.leftAnchor),
-            exampleLabelContainer.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+//            exampleLabelContainer.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
         ]
+        
+        wordzLabel.layoutIfNeeded()
+        transcriptionLabel.layoutIfNeeded()
+        wordzLabel.sizeToFit()
+        transcriptionLabel.sizeToFit()
         
         var verstedLabels: [UILabel] = []
         
@@ -251,7 +285,7 @@ public class LearnWordzCardView: BaseCardView {
         wordzExampleLabels.forEach { label in
             let estimatedHeight: CGFloat = Constants.topContainerOffset
             + mainLabelContainer.frame.height
-            + Constants.topMainContainerOffset
+            + Constants.topMainContainerOffset(configuration.isTranscription)
             + Constants.mainBetweenLabelsOffset
             + verstedLabels.map { label in label.expectedHeight }.reduce(0.0, +)
             let contentViewHeight = contentView.frame.height

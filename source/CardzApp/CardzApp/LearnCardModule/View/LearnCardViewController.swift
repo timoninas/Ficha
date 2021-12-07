@@ -47,6 +47,13 @@ final class LearnCardViewController: UIViewController {
         LearnWordzCardView(swipeDirections: allowedSwipeDirections, configuration: .init(wordz: "Squirrel", translations: ["Белка"])
                             .with(transcription: "[ˈskwɪrəl]")
                             .with(wordzExamples: ["A squirrel probably got into the attic", "One day a neighbouring cat came to see her, and the squirrel was clearly the subject of their talk", "squirrel food"])),
+        LearnWordzCardView(swipeDirections: allowedSwipeDirections, configuration: .init(wordz: "Squirrel Squirrel Squirrel Squirrel Squirrel", translations: ["Белка", "Белка", "Белка", "Белка", "Белка", "Белка"])
+                            .with(transcription: "[ˈskwɪrəl]")
+                            .with(wordzExamples: ["A squirrel probably got into the attic", "One day a neighbouring cat came to see her, and the squirrel was clearly the subject of their talk", "The petrified impression was about three inches long and looked to be the underside of some kind of huge beetle or crawling insect", "Our friend, the click beetle", "The petrified impression was about three inches long and looked to be the underside of some kind of huge beetle or crawling insect", "Our friend, the click beetle"])),
+        LearnWordzCardView(swipeDirections: allowedSwipeDirections, configuration: .init(wordz: "Squirrel", translations: ["Белка", "Белка", "Белка", "Белка", "Белка", "Белка"])
+                            .with(wordzExamples: ["A squirrel probably got into the attic", "One day a neighbouring cat came to see her, and the squirrel was clearly", "The petrified impression was about three inches long and looked to be the", "The petrified impression was about three inches long and looked to be the underside of some kind of huge beetle or crawling insect"])),
+        LearnWordzCardView(swipeDirections: allowedSwipeDirections, configuration: .init(wordz: "Squirrel kwr eknjjnw jknfjknw fknfkjw fkjnfwjknnfjk wknjfw nkjfe wjknknjfew kjnf ejknf wkknjfw knjfw jkn fwknjwef ", translations: ["Белка", "Белка", "Белка", "Белка", "Белка", "Белка"])
+                            .with(transcription: "[ˈskwɪrəl] erfew njwkn ejrkjnfewkj ewjknfjkn kwkjn wnjkkjnw r"))
     ]
     
     let centerView: UIView = {

@@ -25,6 +25,8 @@ final class DailyWordsViewController: UIViewController {
     
     let containerView = UIView()
     
+    let backView = BubblesView()
+    
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.delegate = self
@@ -93,12 +95,11 @@ final class DailyWordsViewController: UIViewController {
     }
     
     private func addBackgroundView() {
-        let backView = BubblesView()
-        self.view.addSubview(backView)
-        backView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
-        backView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
-        backView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-        backView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        view.addSubview(backView)
+        backView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        backView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        backView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        backView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
     private func addScrollView() {
@@ -202,9 +203,9 @@ final class DailyWordsViewController: UIViewController {
         if isAnimated {
             self.renderTodayViews()
             self.renderHeights()
-            scrollView.alpha = 0.0
-            UIView.animate(withDuration: 0.3) { [weak self] in
-                self?.scrollView.alpha = 1.0
+            backView.alpha = 0.0
+            UIView.animate(withDuration: 0.45) { [weak self] in
+                self?.backView.alpha = 1.0
             }
         } else {
             self.renderTodayViews()
