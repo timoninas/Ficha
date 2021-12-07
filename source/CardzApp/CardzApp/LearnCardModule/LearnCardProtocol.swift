@@ -6,10 +6,20 @@
 //
 
 import Foundation
+import Rivendell
+
+typealias LearnCardViewState = ViewSimpleState<[LearnWordzCardView.ViewModel]>
 
 protocol LearnCardViewInput: AnyObject {
-    func changeState()
+    func changeState(state: LearnCardViewState)
 }
 
 protocol LearnCardOutput: LifeCycleProtocol, AnyObject {
+    
+    func didSwipeCardTop(with index: Int)
+    
+    func didSwipeCardLeft(with index: Int)
+    
+    func didSwipeCardRight(with index: Int)
+    
 }

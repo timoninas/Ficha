@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         
-        let todayViewController = LearnCardBuilder.build()
+        let todayViewController = LearnCardBuilder.build(viewModel: getLearnCardViewModel())
         if let todayIconData = UIImage.todayIcon?.pngData(),
            let todayIconFilledData = UIImage.todayIconFilled?.pngData(){
             let image = UIImage(data: todayIconData, scale: 13.0)

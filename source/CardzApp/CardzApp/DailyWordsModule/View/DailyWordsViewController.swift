@@ -127,7 +127,7 @@ final class DailyWordsViewController: UIViewController {
                 guard let self = self else { return }
                 UIApplication.hapticLight()
                 print("KEKEKE")
-                self.present(LearnCardBuilder.build(), animated: true, completion: nil)
+                self.present(LearnCardBuilder.build(viewModel: getLearnCardViewModel()), animated: true, completion: nil)
             })
         
         view.addSubview(playButton)

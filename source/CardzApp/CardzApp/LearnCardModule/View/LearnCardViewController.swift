@@ -7,11 +7,10 @@
 
 import UIKit
 import Rivendell
-import RevolvetraKnowledge
 
 final class LearnCardViewController: UIViewController {
     
-    weak var output: LearnCardOutput?
+    var output: LearnCardOutput?
     
     private lazy var starButton = RVAlignImageButton(configuration: .init()
                                                         .with(titleConfig: .visible(title: "To\nfavorites", color: .olivie))
@@ -33,42 +32,36 @@ final class LearnCardViewController: UIViewController {
     
     private var allowedSwipeDirections: [BaseCardView.SwipeDirection] = [.top, .right, .left]
     
-    lazy var cards = [
-        LearnWordzCardView(swipeDirections: allowedSwipeDirections, configuration: .init(wordz: "beetle", translations: ["Трамбовать", "Дробить камни"])
-                            .with(transcription: "[biːtl]")
-                            .with(wordzExamples: ["The petrified impression was about three inches long and looked to be the underside of some kind of huge beetle or crawling insect", "Our friend, the click beetle"])),
-        LearnWordzCardView(swipeDirections: allowedSwipeDirections, configuration: .init(wordz: "To get those subjects", translations: ["Чтобы получить эти предметы"])
-                            .with(wordzExamples: ["There's no use getting on to that subject"])),
-        LearnWordzCardView(swipeDirections: allowedSwipeDirections, configuration: .init(wordz: "Dress", translations: ["Платье", "Одеваться"])
-                            .with(wordzExamples: ["A thin black woman was seated in a chair in a corner of the room sewing on a dress", "The little girl watched me, holding the bread against her dirty dress", "She never conformed in dress or conduct"])),
-        LearnWordzCardView(swipeDirections: allowedSwipeDirections, configuration: .init(wordz: "Blow someone's head off", translations: ["Cнести голову кому-то"])),
-        LearnWordzCardView(swipeDirections: allowedSwipeDirections, configuration: .init(wordz: "Blow someone's head off", translations: ["Cнести голову кому-то"])
-                            .with(wordzExamples: ["How do you go from eight years of a happy marriage to wanting to blow someone's head off?"])),
-        LearnWordzCardView(swipeDirections: allowedSwipeDirections, configuration: .init(wordz: "Squirrel", translations: ["Белка"])
-                            .with(transcription: "[ˈskwɪrəl]")
-                            .with(wordzExamples: ["A squirrel probably got into the attic", "One day a neighbouring cat came to see her, and the squirrel was clearly the subject of their talk", "squirrel food"])),
-        LearnWordzCardView(swipeDirections: allowedSwipeDirections, configuration: .init(wordz: "Squirrel Squirrel Squirrel Squirrel Squirrel", translations: ["Белка", "Белка", "Белка", "Белка", "Белка", "Белка"])
-                            .with(transcription: "[ˈskwɪrəl]")
-                            .with(wordzExamples: ["A squirrel probably got into the attic", "One day a neighbouring cat came to see her, and the squirrel was clearly the subject of their talk", "The petrified impression was about three inches long and looked to be the underside of some kind of huge beetle or crawling insect", "Our friend, the click beetle", "The petrified impression was about three inches long and looked to be the underside of some kind of huge beetle or crawling insect", "Our friend, the click beetle"])),
-        LearnWordzCardView(swipeDirections: allowedSwipeDirections, configuration: .init(wordz: "Squirrel", translations: ["Белка", "Белка", "Белка", "Белка", "Белка", "Белка"])
-                            .with(wordzExamples: ["A squirrel probably got into the attic", "One day a neighbouring cat came to see her, and the squirrel was clearly", "The petrified impression was about three inches long and looked to be the", "The petrified impression was about three inches long and looked to be the underside of some kind of huge beetle or crawling insect"])),
-        LearnWordzCardView(swipeDirections: allowedSwipeDirections, configuration: .init(wordz: "Squirrel kwr eknjjnw jknfjknw fknfkjw fkjnfwjknnfjk wknjfw nkjfe wjknknjfew kjnf ejknf wkknjfw knjfw jkn fwknjwef ", translations: ["Белка", "Белка", "Белка", "Белка", "Белка", "Белка"])
-                            .with(transcription: "[ˈskwɪrəl] erfew njwkn ejrkjnfewkj ewjknfjkn kwkjn wnjkkjnw r"))
-    ]
+    private var viewModel: [LearnWordzCardView.ViewModel] = [] {
+        didSet {
+            renderCards()
+        }
+    }
     
-    let centerView: UIView = {
+    private var cards: [LearnWordzCardView] = [] {
+        didSet {
+            guard !cards.isEmpty else { return }
+            configureSwipeButtons()
+            configureCenteringView()
+        }
+    }
+    
+    private var swipeButtonContraints: [NSLayoutConstraint] = []
+    private var centeringContraints: [NSLayoutConstraint] = []
+    
+    private let centerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let rightView: UIView = {
+    private let rightView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let leftView: UIView = {
+    private let leftView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -87,10 +80,12 @@ final class LearnCardViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .gendalf
         self.configureUI()
+        output?.viewDidLoad()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        output?.viewDidAppear()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -98,31 +93,47 @@ final class LearnCardViewController: UIViewController {
     }
     
     private func configureUI() {
-        addCardsView()
         addCenteringViews()
         addSwipeButtons()
-        for card in cards {
-            view.bringSubviewToFront(card)
-        }
-        
     }
     
-    private func addCardsView() {
-        cards.forEach { [weak self] card in
+    private func renderCards() {
+        cards.forEach { card in
+            if card.superview != nil {
+                card.removeFromSuperview()
+            }
+        }
+        
+        cards.removeAll()
+        
+        var tmpCards: [LearnWordzCardView] = []
+        
+        viewModel.enumerated().forEach { [weak self] (idx, model) in
             guard let self = self else { return }
-            card.onTopSwipe = {
-                KnowledgeStats.topSwipesLearnCard += 1
-                print("Top swipes: \(KnowledgeStats.topSwipesLearnCard)")
+            let card = LearnWordzCardView(
+                swipeDirections: allowedSwipeDirections,
+                configuration:
+                        .init(wordz: model.wordz,
+                              translations: model.translations)
+                    .with(transcription: model.transcription)
+                    .with(wordzExamples: model.wordzExamples)
+            )
+            
+            card.onTopSwipe = { [weak self] in
+                guard let self = self else { return }
+                self.output?.didSwipeCardTop(with: idx)
             }
-            card.onLeftSwipe = {
-                KnowledgeStats.leftSwipesLearnCard += 1
-                print("Left swipes: \(KnowledgeStats.leftSwipesLearnCard)")
+            card.onLeftSwipe = { [weak self] in
+                guard let self = self else { return }
+                self.output?.didSwipeCardLeft(with: idx)
             }
-            card.onRightSwipe = {
-                KnowledgeStats.rightSwipesLearnCard += 1
-                print("Right swipe: \(KnowledgeStats.rightSwipesLearnCard)")
+            card.onRightSwipe = { [weak self] in
+                guard let self = self else { return }
+                self.output?.didSwipeCardRight(with: idx)
             }
             card.onDragCard = { print("Drag swipe") }
+            
+            tmpCards.append(card)
             
             self.view.addSubview(card)
             NSLayoutConstraint.activate([
@@ -131,16 +142,27 @@ final class LearnCardViewController: UIViewController {
                 card.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20.0),
                 card.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20.0),
             ])
+            
+            
+            view.bringSubviewToFront(card)
         }
+        
+        self.cards = tmpCards
     }
     
     private func addCenteringViews() {
-        guard let card = cards.first else { return }
         view.addSubview(centerView)
         view.addSubview(leftView)
         view.addSubview(rightView)
+    }
+    
+    private func configureCenteringView() {
+        guard let card = cards.first else { return }
         
-        NSLayoutConstraint.activate([
+        NSLayoutConstraint.deactivate(centeringContraints)
+        centeringContraints.removeAll()
+        
+        centeringContraints += [
             centerView.widthAnchor.constraint(equalToConstant: 1.0),
             centerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             centerView.topAnchor.constraint(equalTo: card.bottomAnchor),
@@ -155,46 +177,58 @@ final class LearnCardViewController: UIViewController {
             rightView.bottomAnchor.constraint(equalTo: centerView.bottomAnchor),
             rightView.rightAnchor.constraint(equalTo: view.rightAnchor),
             rightView.leftAnchor.constraint(equalTo: centerView.rightAnchor),
-        ])
+        ]
+        
+        NSLayoutConstraint.activate(centeringContraints)
     }
     
-    private func addSwipeButtons() {
+    private func configureSwipeButtons() {
         guard let card = cards.first else { return }
         
-        view.addSubview(leftButton)
+        NSLayoutConstraint.deactivate(swipeButtonContraints)
+        swipeButtonContraints.removeAll()
         
-        NSLayoutConstraint.activate([
+        swipeButtonContraints += [
             leftButton.heightAnchor.constraint(equalToConstant: 105.0),
             leftButton.widthAnchor.constraint(equalToConstant: 65.0),
             leftButton.centerXAnchor.constraint(equalTo: leftView.centerXAnchor),
             leftButton.topAnchor.constraint(equalTo: card.bottomAnchor, constant: 12.0)
-        ])
+        ]
         
-        view.addSubview(rightButton)
-        
-        NSLayoutConstraint.activate([
+        swipeButtonContraints += [
             rightButton.heightAnchor.constraint(equalToConstant: 105.0),
             rightButton.widthAnchor.constraint(equalToConstant: 65.0),
             rightButton.centerXAnchor.constraint(equalTo: rightView.centerXAnchor),
             rightButton.topAnchor.constraint(equalTo: card.bottomAnchor, constant: 12.0)
-        ])
+        ]
         
-        view.addSubview(starButton)
-        
-        NSLayoutConstraint.activate([
+        swipeButtonContraints += [
             starButton.heightAnchor.constraint(equalToConstant: 45.0),
             starButton.widthAnchor.constraint(equalToConstant: 135.0),
             starButton.centerXAnchor.constraint(equalTo: centerView.centerXAnchor),
             starButton.bottomAnchor.constraint(equalTo: card.topAnchor, constant: -24.0)
-        ])
+        ]
         
+        NSLayoutConstraint.activate(swipeButtonContraints)
+    }
+    
+    private func addSwipeButtons() {
+        view.addSubview(leftButton)
+        view.addSubview(rightButton)
+        view.addSubview(starButton)
     }
     
 }
 
 extension LearnCardViewController: LearnCardViewInput {
     
-    func changeState() {
+    func changeState(state: LearnCardViewState) {
+        switch state {
+        case .content(let viewModel):
+            self.viewModel = viewModel
+        case .error:
+            break
+        }
     }
     
 }

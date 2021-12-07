@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7702F1DF2729F48C006176FE /* Rivendell in Frameworks */ = {isa = PBXBuildFile; productRef = 7702F1DE2729F48C006176FE /* Rivendell */; };
+		7720F601275FDA7800BC5973 /* ViewSimpleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720F600275FDA7800BC5973 /* ViewSimpleState.swift */; };
 		77232AC8275D2C2800529DE0 /* Moria in Frameworks */ = {isa = PBXBuildFile; productRef = 77232AC7275D2C2800529DE0 /* Moria */; };
 		77232ACA275D2C2B00529DE0 /* RevoletraUserDefaultsKeys in Frameworks */ = {isa = PBXBuildFile; productRef = 77232AC9275D2C2B00529DE0 /* RevoletraUserDefaultsKeys */; };
 		7748E9322757F4B10063E592 /* FavouriteWordzViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7748E9312757F4B00063E592 /* FavouriteWordzViewController.swift */; };
@@ -64,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		7702F1DD2729F483006176FE /* Rivendell */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Rivendell; path = ../Frameworks/Rivendell; sourceTree = "<group>"; };
+		7720F600275FDA7800BC5973 /* ViewSimpleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSimpleState.swift; sourceTree = "<group>"; };
 		77232AC6275D2C1A00529DE0 /* RevoletraUserDefaultsKeys */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RevoletraUserDefaultsKeys; path = ../Frameworks/RevoletraUserDefaultsKeys; sourceTree = "<group>"; };
 		7748E9312757F4B00063E592 /* FavouriteWordzViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteWordzViewController.swift; sourceTree = "<group>"; };
 		7748E9352757F4D60063E592 /* FavouriteWordzPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteWordzPresenter.swift; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				D4F00DA42718C5070079A860 /* LifeCycleProtocol.swift */,
+				7720F600275FDA7800BC5973 /* ViewSimpleState.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				7748E93B2757F4F90063E592 /* FavouriteWordzProtocols.swift in Sources */,
 				7748E93D2757F5460063E592 /* AlertCardViewController+ViewModel.swift in Sources */,
 				D4C7F12F2719636D0066125A /* DailyWordsViewController+State.swift in Sources */,
+				7720F601275FDA7800BC5973 /* ViewSimpleState.swift in Sources */,
 				D4F00D982718C3FB0079A860 /* DailyWordsBuilder.swift in Sources */,
 				D4F00D962718C3FB0079A860 /* DailyWordsPresenter.swift in Sources */,
 				776E4929272C9103000D0B2D /* LearnCardPresenter.swift in Sources */,
@@ -718,6 +722,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Revolvetra.Inc.CardzApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -738,6 +743,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Revolvetra.Inc.CardzApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
