@@ -69,16 +69,16 @@ public class LearnWordzCardView: BaseCardView {
     private var translationExampleGen: UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .nazgul
-        label.font = UIFont(name:"HelveticaNeue-Bold", size: 24.0)
+        label.textColor = .mysteryShack
+        label.font = UIFont(name:"HelveticaNeue-Bold", size: 28.0)
         label.textAlignment = .center
-        label.numberOfLines = 4
+        label.numberOfLines = 2
         return label
     }
     
     private lazy var translationExampleLabels: [UILabel] = {
         var translations: [UILabel] = []
-        for _ in 1...5 {
+        for _ in 1...4 {
             let label = translationExampleGen
             translations.append(label)
         }
@@ -128,6 +128,7 @@ public class LearnWordzCardView: BaseCardView {
     // MARK: - Layout
     
     private func configureUI() {
+        setupOnTap()
         addMainLabelContainer()
         addExampleLabelContainer()
         addTranslationsLabelContainer()
@@ -301,11 +302,12 @@ public class LearnWordzCardView: BaseCardView {
                     label.rightAnchor.constraint(equalTo: exampleLabelContainer.rightAnchor),
                     label.leftAnchor.constraint(equalTo: exampleLabelContainer.leftAnchor),
                 ]
+                
             }
+            previousLabel = label
             label.sizeToFit()
             if label.expectedHeight < contentViewHeight - estimatedHeight {
                 verstedLabels.append(label)
-                previousLabel = label
             }
             label.alpha = 0.0
         }
@@ -315,6 +317,51 @@ public class LearnWordzCardView: BaseCardView {
     }
     
     private func prepareConstraintsToTranslation() {
+        storedConstraints += [
+            translationsLabelContainer.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            translationsLabelContainer.rightAnchor.constraint(equalTo: contentView.rightAnchor),
+            translationsLabelContainer.leftAnchor.constraint(equalTo: contentView.leftAnchor),
+        ]
+        
+        var verstedLabels: [UILabel] = []
+        
+        var previousLabel: UILabel?
+        
+        translationExampleLabels.enumerated().forEach { idx, label in
+            let estimatedHeight: CGFloat = verstedLabels.map { label in
+                label.layoutIfNeeded()
+                return label.expectedHeight
+            }.reduce(0.0, +)
+            let contentViewHeight = contentView.frame.height
+            if let previousLabel = previousLabel {
+                storedConstraints += [
+                    label.topAnchor.constraint(equalTo: previousLabel.bottomAnchor, constant: Constants.labelBetweenOffset),
+                    label.rightAnchor.constraint(equalTo: translationsLabelContainer.rightAnchor),
+                    label.leftAnchor.constraint(equalTo: translationsLabelContainer.leftAnchor),
+                ]
+                if idx == (translationExampleLabels.count - 1) {
+                    storedConstraints += [
+                        label.bottomAnchor.constraint(equalTo: translationsLabelContainer.bottomAnchor),
+                    ]
+                }
+            } else {
+                storedConstraints += [
+                    label.topAnchor.constraint(equalTo: translationsLabelContainer.topAnchor),
+                    label.rightAnchor.constraint(equalTo: translationsLabelContainer.rightAnchor),
+                    label.leftAnchor.constraint(equalTo: translationsLabelContainer.leftAnchor),
+                ]
+                
+            }
+            previousLabel = label
+            label.sizeToFit()
+            if label.expectedHeight < translationsLabelContainer.frame.height - estimatedHeight {
+                verstedLabels.append(label)
+            }
+            label.alpha = 0.0
+        }
+        verstedLabels.forEach { label in
+            label.alpha = 1.0
+        }
         
     }
     
@@ -323,6 +370,33 @@ public class LearnWordzCardView: BaseCardView {
     }
     
     // MARK: - Private methods
+    
+    func setupOnTap() {
+        internalOnTap = { [weak self] in
+            guard let self = self else { return }
+            let state: Configuration.State
+            let options: UIView.AnimationOptions
+            switch self.configuration.state {
+            case .wordz:
+                state = .translation
+                options = [.transitionFlipFromRight]
+            case .translation:
+                state = .wordz
+                options = [.transitionFlipFromLeft]
+            }
+            self.configuration = self.configuration
+                .with(state: state)
+            UIView.transition(
+                with: self, duration: 0.3,
+                options: options,
+                animations: { [weak self] in
+                    guard let self = self else { return }
+                    self.setupConstraints()
+                },
+                completion: nil
+            )
+        }
+    }
     
     private func updateSpacings() {
     }

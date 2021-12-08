@@ -143,7 +143,6 @@ final class LearnCardViewController: UIViewController {
                 card.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20.0),
             ])
             
-            
             view.bringSubviewToFront(card)
         }
         

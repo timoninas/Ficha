@@ -37,7 +37,7 @@ func getLearnCardViewModel() -> [LearnWordzCardView.ViewModel] {
             translations: ["Белка", "Белка", "Белка", "Белка", "Белка", "Белка"],
             wordzExamples: ["A squirrel probably got into the attic", "One day a neighbouring cat came to see her, and the squirrel was clearly", "The petrified impression was about three inches long and looked to be the", "The petrified impression was about three inches long and looked to be the underside of some kind of huge beetle or crawling insect"]),
       .init(wordz: "Squirrel kwr eknjjnw jknfjknw fknfkjw fkjnfwjknnfjk wknjfw nkjfe wjknknjfew kjnf ejknf wkknjfw knjfw jkn fwknjwef",
-            translations: ["Белка", "Белка", "Белка", "Белка", "Белка", "Белка"]) ]
+            translations: ["Белка wfhkej wefwhjkfew fehjkfw ekhj wfewhkfje hjkefw hkjwfe jhkwfek kj", "Белка кекекеке фефефефефе", "Белка jkh hk hk hjk khj hjk k h hkj hkj hjk khj khj kj kj", "Белка фе фе фе фе ф е", "Белка wejfk wjk we ffw ekefwhjkfw ekewfhjk ehjkfw fewjefkwefwfewfefjeek", "Белка уц ец ц уц кцу ац цуа уца уца ауц уца ауц ауц а цу ауц ауц уац уац "]) ]
     
 }
 

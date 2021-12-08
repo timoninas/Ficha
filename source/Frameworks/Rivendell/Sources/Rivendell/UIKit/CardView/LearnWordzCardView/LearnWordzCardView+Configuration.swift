@@ -107,7 +107,7 @@ extension LearnWordzCardView {
             var mutableSelf = self
             mutableSelf.translations = Array(translations
                                                 .filter{ $0.count < 91 }
-                                                .prefix(5))
+                                                .prefix(4))
             return mutableSelf
         }
         /// Конфигурирует объект состоянием.

@@ -30,6 +30,9 @@ public class BaseCardView: UIView {
     /// По умолчанию, при свайпе карточка будет возвращаться в начальное положение.
     public var swipeDirections: [SwipeDirection] = []
     
+    /// Замыкание, которое сработает перед `onTap`.
+    var internalOnTap: VoidClosure?
+    
     /// Замыкание, которое сработает при тапе по карточке.
     public var onTap: VoidClosure?
     
@@ -130,6 +133,7 @@ public class BaseCardView: UIView {
     }
     
     @objc fileprivate func handleCardTap(gesture: UIPanGestureRecognizer) {
+        internalOnTap?()
         onTap?()
     }
     
