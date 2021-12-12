@@ -16,7 +16,7 @@ extension FavouriteWordzViewController {
         let title: String
         
         /// Детальное описание уведомления.
-        let secondTitle: String?
+        let secondTitles: [String]
         
     }
     

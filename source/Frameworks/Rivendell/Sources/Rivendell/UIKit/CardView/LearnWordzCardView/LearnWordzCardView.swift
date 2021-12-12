@@ -329,6 +329,28 @@ public class LearnWordzCardView: BaseCardView {
     }
     
     private func prepareConstraintsToTranslation() {
+        guard configuration.translations.count != 1 else {
+            storedConstraints += [
+                translationsLabelContainer.topAnchor.constraint(equalTo: contentView.topAnchor),
+                translationsLabelContainer.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+                translationsLabelContainer.rightAnchor.constraint(equalTo: contentView.rightAnchor),
+                translationsLabelContainer.leftAnchor.constraint(equalTo: contentView.leftAnchor),
+            ]
+            
+            let label = translationExampleLabels[0]
+            
+            label.numberOfLines = 6
+            
+            storedConstraints += [
+                label.topAnchor.constraint(equalTo: translationsLabelContainer.topAnchor),
+                label.rightAnchor.constraint(equalTo: translationsLabelContainer.rightAnchor),
+                label.bottomAnchor.constraint(equalTo: translationsLabelContainer.bottomAnchor),
+                label.leftAnchor.constraint(equalTo: translationsLabelContainer.leftAnchor),
+            ]
+            
+            return
+        }
+        
         storedConstraints += [
             translationsLabelContainer.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             translationsLabelContainer.rightAnchor.constraint(equalTo: contentView.rightAnchor),
@@ -345,6 +367,7 @@ public class LearnWordzCardView: BaseCardView {
                     label.leftAnchor.constraint(equalTo: translationsLabelContainer.leftAnchor),
                 ]
             } else {
+                label.numberOfLines = 3
                 storedConstraints += [
                     label.topAnchor.constraint(equalTo: translationsLabelContainer.topAnchor),
                     label.rightAnchor.constraint(equalTo: translationsLabelContainer.rightAnchor),

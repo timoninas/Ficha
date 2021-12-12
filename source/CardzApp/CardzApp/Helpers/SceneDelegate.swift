@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         
-        let todayViewController = LearnCardBuilder.build(viewModel: getLearnCardViewModel())
+        let todayViewController = DailyWordsBuilder.build()
         if let todayIconData = UIImage.todayIcon?.pngData(),
            let todayIconFilledData = UIImage.todayIconFilled?.pngData(){
             let image = UIImage(data: todayIconData, scale: 13.0)
@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             todayViewController.tabBarItem = item
         }
         
-        let learnViewController = DailyWordsBuilder.build()
+        let learnViewController = LearnCardBuilder.build(viewModel: getLearnCardViewModel())
         if let graduateIconData = UIImage.graduateIcon?.pngData() ,
            let graduateIconFilledData = UIImage.graduateIconFilled?.pngData(){
             let image = UIImage(data: graduateIconData, scale: 13.0)

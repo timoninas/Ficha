@@ -93,7 +93,7 @@ extension LearnWordzCardView {
             var mutableSelf = self
             
             mutableSelf.wordzExamples = Array(wordzExamples
-                                                .filter{ $0.count < 91 }
+                                                .filter{ $0.count < 101 }
                                                 .prefix(3))
             return mutableSelf
         }
@@ -106,7 +106,7 @@ extension LearnWordzCardView {
         public func with(translations: [String]) -> Configuration {
             var mutableSelf = self
             mutableSelf.translations = Array(translations
-                                                .filter{ $0.count < 91 }
+                                                .filter{ $0.count < 101 }
                                                 .prefix(3))
             return mutableSelf
         }

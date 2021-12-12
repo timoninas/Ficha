@@ -9,11 +9,12 @@ import UIKit
 
 final class FavouriteWordzBuilder {
     
-    static func build() -> FavouriteWordzViewController {
+    static func build() -> UINavigationController {
         let presenter = FavouriteWordzPresenter()
         let view = FavouriteWordzViewController(output: presenter)
         presenter.view = view
-        return view
+        let nav = UINavigationController(rootViewController: view)
+        return nav
     }
     
 }

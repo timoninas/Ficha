@@ -138,8 +138,9 @@ final class DailyWordsViewController: UIViewController {
     
     private func addPlayButton() {
         playButton.configuration = playButton.configuration
-            .with(onTap: { [weak self] _ in
+            .with(onTap: { [weak self] button in
                 guard let self = self else { return }
+                guard button.alpha != 0.0 else { return }
                 UIApplication.hapticLight()
                 let module = LearnCardBuilder.build(viewModel: self.viewModels.map { self.viewModelToLearnWordzViewModel($0) })
                 module.modalTransitionStyle = .coverVertical
@@ -229,8 +230,13 @@ final class DailyWordsViewController: UIViewController {
     private func updateVisabilityBubbles(isHidden: Bool) {
         UIView.animate(withDuration: 0.45) { [weak self] in
             guard let self = self else { return }
+            
             self.backView.alpha = isHidden ? 0.0 : 1.0
-            self.playButton.alpha = isHidden ? 0.0 : 1.0
+            if self.playButton.alpha == 0.0 && self.scrollView.contentOffset.y > 150.0 {
+                
+            } else {
+                self.playButton.alpha = isHidden ? 0.0 : 1.0
+            }
         }
     }
     
@@ -251,5 +257,25 @@ extension DailyWordsViewController: DailyWordsViewInput {
 }
 
 extension DailyWordsViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y > 150.0 {
+            guard playButton.alpha > 0.0 else { return }
+            playButton.isUserInteractionEnabled = false
+            UIView.animate(withDuration: 0.3) { [weak self] in
+                guard let self = self else { return }
+                self.playButton.alpha = 0.0
+                self.playButton.transform = .init(translationX: 20.0, y: 0.0)
+            }
+        } else {
+            guard playButton.alpha < 1.0 else { return }
+            playButton.isUserInteractionEnabled = true
+            UIView.animate(withDuration: 0.3) { [weak self] in
+                guard let self = self else { return }
+                self.playButton.alpha = 1.0
+                self.playButton.transform = .init(translationX: 0.0, y: 0.0)
+            }
+        }
+    }
     
 }
