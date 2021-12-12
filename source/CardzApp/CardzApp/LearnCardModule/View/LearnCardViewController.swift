@@ -78,8 +78,8 @@ final class LearnCardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .gendalf
-        self.configureUI()
+        view.backgroundColor = .gendalf
+        configureUI()
         output?.viewDidLoad()
     }
     
@@ -135,18 +135,18 @@ final class LearnCardViewController: UIViewController {
             
             tmpCards.append(card)
             
-            self.view.addSubview(card)
+            view.addSubview(card)
             NSLayoutConstraint.activate([
-                card.heightAnchor.constraint(equalToConstant: self.view.safeAreaHeight / 1.75),
-                card.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-                card.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20.0),
-                card.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20.0),
+                card.heightAnchor.constraint(equalToConstant: view.safeAreaHeight / 1.75),
+                card.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                card.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20.0),
+                card.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20.0),
             ])
             
             view.bringSubviewToFront(card)
         }
         
-        self.cards = tmpCards
+        cards = tmpCards
     }
     
     private func addCenteringViews() {

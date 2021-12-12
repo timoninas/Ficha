@@ -14,8 +14,8 @@ final class DailyWordsViewController: UIViewController {
     
     var viewModels: [ViewModel] = [] {
         didSet {
-            guard self.viewModels != oldValue else { return }
-            self.renderContent(isAnimated: true)
+            guard viewModels != oldValue else { return }
+            renderContent(isAnimated: true)
         }
     }
     
@@ -71,14 +71,20 @@ final class DailyWordsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         RLogInfo(message: "[Info] \(String(describing: self)) ViewDidLoad")
-        self.view.backgroundColor = .gendalf
-        self.configureUI()
-        self.output.viewDidLoad()
+        view.backgroundColor = .gendalf
+        configureUI()
+        output.viewDidLoad()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.renderHeights()
+        renderHeights()
+        updateVisabilityBubbles(isHidden: false)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        updateVisabilityBubbles(isHidden: true)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -90,6 +96,9 @@ final class DailyWordsViewController: UIViewController {
         addScrollView()
         addHeader()
         addPlayButton()
+        
+        backView.alpha = 0.0
+        playButton.alpha = 0.0
         
         renderContent(isAnimated: false)
     }
@@ -103,22 +112,22 @@ final class DailyWordsViewController: UIViewController {
     }
     
     private func addScrollView() {
-        self.view.addSubview(self.scrollView)
-        self.scrollView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        self.scrollView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
-        self.scrollView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-        self.scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        view.addSubview(scrollView)
+        scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        scrollView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        scrollView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
     private func addHeader() {
-        self.header.onTap = {
+        header.onTap = {
             UIApplication.hapticLight()
             print("Tapped")
         }
-        self.scrollView.addSubview(self.header)
-        self.header.topAnchor.constraint(equalTo: self.scrollView.topAnchor, constant: 10.0).isActive = true
-        self.header.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -16.0).isActive = true
-        self.header.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16.0).isActive = true
+        scrollView.addSubview(header)
+        header.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 10.0).isActive = true
+        header.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0).isActive = true
+        header.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0).isActive = true
     }
     
     private func addPlayButton() {
@@ -140,76 +149,80 @@ final class DailyWordsViewController: UIViewController {
     }
     
     private func renderTodayViews() {
-        NSLayoutConstraint.deactivate(self.todayConstraints)
-        self.todayConstraints.removeAll()
+        NSLayoutConstraint.deactivate(todayConstraints)
+        todayConstraints.removeAll()
         
-        self.wordsView.forEach { view in
+        wordsView.forEach { view in
             if view.superview != nil {
                 view.removeFromSuperview()
             }
         }
         
         var previousView: TodayWordsView?
-        for (idx, viewModel) in self.viewModels.enumerated() {
+        for (idx, viewModel) in viewModels.enumerated() {
             let todayView = TodayWordsView(configuration: .init()
                                             .with(title: viewModel.title)
                                             .with(subtitles: viewModel.subtitles))
-            self.scrollView.addSubview(todayView)
-            self.wordsView.append(todayView)
+            scrollView.addSubview(todayView)
+            wordsView.append(todayView)
             if idx == 0 {
-                self.todayConstraints += [
-                    todayView.topAnchor.constraint(equalTo: self.header.bottomAnchor, constant: 10.0),
+                todayConstraints += [
+                    todayView.topAnchor.constraint(equalTo: header.bottomAnchor, constant: 10.0),
                     
                 ]
             } else {
-                if idx == self.viewModels.count - 1 {
-                    self.todayConstraints += [
-                        todayView.bottomAnchor.constraint(lessThanOrEqualTo: self.scrollView.bottomAnchor, constant: -30.0)
+                if idx == viewModels.count - 1 {
+                    todayConstraints += [
+                        todayView.bottomAnchor.constraint(lessThanOrEqualTo: scrollView.bottomAnchor, constant: -30.0)
                     ]
                 }
                 if let view = previousView {
-                    self.todayConstraints += [
+                    todayConstraints += [
                         todayView.topAnchor.constraint(equalTo: view.bottomAnchor, constant: 30.0)
                     ]
                 }
             }
             
-            self.todayConstraints += [
-                todayView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16.0),
-                todayView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -16.0),
+            todayConstraints += [
+                todayView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0),
+                todayView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0),
             ]
             
             previousView = todayView
         }
         
-        NSLayoutConstraint.activate(self.todayConstraints)
+        NSLayoutConstraint.activate(todayConstraints)
     }
     
     private func renderHeights() {
-        NSLayoutConstraint.deactivate(self.heightConstraints)
-        self.heightConstraints.removeAll()
+        NSLayoutConstraint.deactivate(heightConstraints)
+        heightConstraints.removeAll()
         
-        self.wordsView.forEach { view in
-            self.heightConstraints += [
+        wordsView.forEach { view in
+            heightConstraints += [
                 view.heightAnchor.constraint(equalToConstant: view.height() + 25)
             ]
         }
         
-        NSLayoutConstraint.activate(self.heightConstraints)
+        NSLayoutConstraint.activate(heightConstraints)
     }
     
     private func renderContent(isAnimated: Bool) {
         // TODO: - Добавить нормальную анимацию появления коллекции.
         if isAnimated {
-            self.renderTodayViews()
-            self.renderHeights()
-            backView.alpha = 0.0
-            UIView.animate(withDuration: 0.45) { [weak self] in
-                self?.backView.alpha = 1.0
-            }
+            renderTodayViews()
+            renderHeights()
         } else {
-            self.renderTodayViews()
-            self.renderHeights()
+            renderTodayViews()
+            renderHeights()
+        }
+    }
+    
+    private func updateVisabilityBubbles(isHidden: Bool) {
+        UIView.animate(withDuration: 0.45) { [weak self] in
+            guard let self = self else { return }
+            self.backView.alpha = isHidden ? 0.0 : 1.0
+            self.playButton.alpha = isHidden ? 0.0 : 1.0
         }
     }
     
@@ -220,7 +233,7 @@ extension DailyWordsViewController: DailyWordsViewInput {
     func changeState(state: DailyWordsViewController.State) {
         switch state {
         case .content(let viewModel):
-            self.viewModels = viewModel
+            viewModels = viewModel
             print(viewModel)
         case .error:
             print("Oshibka")

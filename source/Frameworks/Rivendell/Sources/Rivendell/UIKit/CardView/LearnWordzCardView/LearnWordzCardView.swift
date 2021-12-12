@@ -187,7 +187,6 @@ public class LearnWordzCardView: BaseCardView {
             default:
                 prepareConstraintsToWordz()
             }
-            
         /// Верстает экран к переводу с иностранного слова
         case .translation:
             prepareConstraintsToTranslation()
@@ -195,8 +194,29 @@ public class LearnWordzCardView: BaseCardView {
         
         NSLayoutConstraint.activate(storedConstraints)
         
-        /// Обновляем видимость карточки в соответсии с состоянием.
         updateVisabilityState()
+    }
+    
+    private func updateWordzVisability() {
+        wordzExampleLabels.forEach { label in
+            label.layoutIfNeeded()
+            exampleLabelContainer.layoutIfNeeded()
+            let exampleLabelFrame = exampleLabelContainer.frame
+            let labelFrame = label.frame
+            let cardHeight = frame.height - 40.0
+            let positionYLabel = exampleLabelFrame.minY
+            + labelFrame.minY
+            + labelFrame.height
+            if cardHeight >= positionYLabel {
+                label.alpha = 1.0
+            } else {
+                label.alpha = 0.0
+            }
+        }
+    }
+    
+    private func updateTranslationVisability() {
+        
     }
     
     private func prepareSingleConstraintsToWordz() {
@@ -306,14 +326,14 @@ public class LearnWordzCardView: BaseCardView {
             }
             previousLabel = label
             label.sizeToFit()
-            if label.expectedHeight < contentViewHeight - estimatedHeight {
-                verstedLabels.append(label)
-            }
-            label.alpha = 0.0
+//            if label.expectedHeight < contentViewHeight - estimatedHeight {
+//                verstedLabels.append(label)
+//            }
+//            label.alpha = 0.0
         }
-        verstedLabels.forEach { label in
-            label.alpha = 1.0
-        }
+//        verstedLabels.forEach { label in
+//            label.alpha = 1.0
+//        }
     }
     
     private func prepareConstraintsToTranslation() {
@@ -391,7 +411,8 @@ public class LearnWordzCardView: BaseCardView {
                 options: options,
                 animations: { [weak self] in
                     guard let self = self else { return }
-                    self.setupConstraints()
+//                    self.setupConstraints()
+                    self.updateVisabilityState()
                 },
                 completion: nil
             )
@@ -404,13 +425,15 @@ public class LearnWordzCardView: BaseCardView {
     private func updateVisabilityState() {
         switch configuration.state {
         case .wordz:
-            mainLabelContainer.isHidden = false
-            exampleLabelContainer.isHidden = configuration.isExamples ? false : true
-            translationsLabelContainer.isHidden = true
+            mainLabelContainer.alpha = 1.0
+            exampleLabelContainer.alpha = configuration.isExamples ? 1.0 : 0.0
+            translationsLabelContainer.alpha = 0.0
+            updateWordzVisability()
         case .translation:
-            mainLabelContainer.isHidden = true
-            exampleLabelContainer.isHidden = true
-            translationsLabelContainer.isHidden = false
+            mainLabelContainer.alpha = 0.0
+            exampleLabelContainer.alpha = 0.0
+            translationsLabelContainer.alpha = 1.0
+            updateTranslationVisability()
         }
     }
     
