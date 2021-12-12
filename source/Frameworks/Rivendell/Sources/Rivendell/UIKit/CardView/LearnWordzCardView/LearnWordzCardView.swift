@@ -72,13 +72,13 @@ public class LearnWordzCardView: BaseCardView {
         label.textColor = .mysteryShack
         label.font = UIFont(name:"HelveticaNeue-Bold", size: 28.0)
         label.textAlignment = .center
-        label.numberOfLines = 2
+        label.numberOfLines = 3
         return label
     }
     
     private lazy var translationExampleLabels: [UILabel] = {
         var translations: [UILabel] = []
-        for _ in 1...4 {
+        for _ in 1...3 {
             let label = translationExampleGen
             translations.append(label)
         }
@@ -110,7 +110,10 @@ public class LearnWordzCardView: BaseCardView {
     /// - Parameters:
     ///   - swipeDirections: Направление свайпов.
     ///   - configuration: Конфигруация элемента.
-    public init(swipeDirections: [BaseCardView.SwipeDirection], configuration: Configuration) {
+    public init(
+        swipeDirections: [BaseCardView.SwipeDirection] = [],
+        configuration: Configuration = .init(wordz: "", translations: [])
+    ) {
         self.configuration = configuration
         super.init(swipeDirections: swipeDirections)
         configureUI()
@@ -216,7 +219,14 @@ public class LearnWordzCardView: BaseCardView {
     }
     
     private func updateTranslationVisability() {
-        
+        let countToHide = Array(zip(translationExampleLabels, configuration.translations)).count
+        translationExampleLabels.enumerated().forEach { idx, label in
+            if idx < countToHide {
+                label.alpha = 1.0
+            } else {
+                label.alpha = 0.0
+            }
+        }
     }
     
     private func prepareSingleConstraintsToWordz() {
@@ -276,7 +286,6 @@ public class LearnWordzCardView: BaseCardView {
             wordzLabel.rightAnchor.constraint(equalTo: mainLabelContainer.rightAnchor),
             wordzLabel.leftAnchor.constraint(equalTo: mainLabelContainer.leftAnchor),
         ]
-//        wordzLabel.sizeToFit()
         
         transcriptionLabel.layoutIfNeeded()
         storedConstraints += [
@@ -285,13 +294,11 @@ public class LearnWordzCardView: BaseCardView {
             transcriptionLabel.leftAnchor.constraint(equalTo: mainLabelContainer.leftAnchor),
             transcriptionLabel.bottomAnchor.constraint(equalTo: mainLabelContainer.bottomAnchor),
         ]
-//        transcriptionLabel.sizeToFit()
         
         storedConstraints += [
             exampleLabelContainer.topAnchor.constraint(equalTo: mainLabelContainer.bottomAnchor, constant: Constants.topMainContainerOffset(configuration.isTranscription)),
             exampleLabelContainer.rightAnchor.constraint(equalTo: contentView.rightAnchor),
             exampleLabelContainer.leftAnchor.constraint(equalTo: contentView.leftAnchor),
-//            exampleLabelContainer.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
         ]
         
         wordzLabel.layoutIfNeeded()
@@ -299,17 +306,9 @@ public class LearnWordzCardView: BaseCardView {
         wordzLabel.sizeToFit()
         transcriptionLabel.sizeToFit()
         
-        var verstedLabels: [UILabel] = []
-        
         var previousLabel: UILabel?
         
         wordzExampleLabels.forEach { label in
-            let estimatedHeight: CGFloat = Constants.topContainerOffset
-            + mainLabelContainer.frame.height
-            + Constants.topMainContainerOffset(configuration.isTranscription)
-            + Constants.mainBetweenLabelsOffset
-            + verstedLabels.map { label in label.expectedHeight }.reduce(0.0, +)
-            let contentViewHeight = contentView.frame.height
             if let previousLabel = previousLabel {
                 storedConstraints += [
                     label.topAnchor.constraint(equalTo: previousLabel.bottomAnchor, constant: Constants.labelBetweenOffset),
@@ -326,14 +325,7 @@ public class LearnWordzCardView: BaseCardView {
             }
             previousLabel = label
             label.sizeToFit()
-//            if label.expectedHeight < contentViewHeight - estimatedHeight {
-//                verstedLabels.append(label)
-//            }
-//            label.alpha = 0.0
         }
-//        verstedLabels.forEach { label in
-//            label.alpha = 1.0
-//        }
     }
     
     private func prepareConstraintsToTranslation() {
@@ -343,44 +335,29 @@ public class LearnWordzCardView: BaseCardView {
             translationsLabelContainer.leftAnchor.constraint(equalTo: contentView.leftAnchor),
         ]
         
-        var verstedLabels: [UILabel] = []
-        
         var previousLabel: UILabel?
         
         translationExampleLabels.enumerated().forEach { idx, label in
-            let estimatedHeight: CGFloat = verstedLabels.map { label in
-                label.layoutIfNeeded()
-                return label.expectedHeight
-            }.reduce(0.0, +)
-            let contentViewHeight = contentView.frame.height
             if let previousLabel = previousLabel {
                 storedConstraints += [
                     label.topAnchor.constraint(equalTo: previousLabel.bottomAnchor, constant: Constants.labelBetweenOffset),
                     label.rightAnchor.constraint(equalTo: translationsLabelContainer.rightAnchor),
                     label.leftAnchor.constraint(equalTo: translationsLabelContainer.leftAnchor),
                 ]
-                if idx == (translationExampleLabels.count - 1) {
-                    storedConstraints += [
-                        label.bottomAnchor.constraint(equalTo: translationsLabelContainer.bottomAnchor),
-                    ]
-                }
             } else {
                 storedConstraints += [
                     label.topAnchor.constraint(equalTo: translationsLabelContainer.topAnchor),
                     label.rightAnchor.constraint(equalTo: translationsLabelContainer.rightAnchor),
                     label.leftAnchor.constraint(equalTo: translationsLabelContainer.leftAnchor),
                 ]
-                
+            }
+            if idx == (translationExampleLabels.count - 1) {
+                storedConstraints += [
+                    label.bottomAnchor.constraint(equalTo: translationsLabelContainer.bottomAnchor),
+                ]
             }
             previousLabel = label
             label.sizeToFit()
-            if label.expectedHeight < translationsLabelContainer.frame.height - estimatedHeight {
-                verstedLabels.append(label)
-            }
-            label.alpha = 0.0
-        }
-        verstedLabels.forEach { label in
-            label.alpha = 1.0
         }
         
     }
@@ -394,6 +371,7 @@ public class LearnWordzCardView: BaseCardView {
     func setupOnTap() {
         internalOnTap = { [weak self] in
             guard let self = self else { return }
+            guard !self.configuration.translations.isEmpty else { return }
             let state: Configuration.State
             let options: UIView.AnimationOptions
             switch self.configuration.state {
@@ -411,7 +389,6 @@ public class LearnWordzCardView: BaseCardView {
                 options: options,
                 animations: { [weak self] in
                     guard let self = self else { return }
-//                    self.setupConstraints()
                     self.updateVisabilityState()
                 },
                 completion: nil

@@ -127,15 +127,19 @@ public class RVImageButton: RVControl {
     
     public override func setHighlighted(isHighlighted: Bool, animated: Bool) {
         super.setHighlighted(isHighlighted: isHighlighted, animated: animated)
-        updateColorState(isHighlighted)
-    }
-    
-    private func updateColorState(_ isHighlighted: Bool) {
-        UIView.animate(withDuration: 0.1) { [weak self] in
-            guard let self = self else { return }
-            self.containerView.backgroundColor = isHighlighted
-            ? self.configuration.highlitedColor
-            : self.configuration.backgroundColor
+        guard let _ = configuration.onTap else { return }
+        if isHighlighted {
+            UIView.animate(withDuration: 0.045) {
+                self.transform = self.transform.scaledBy(x: 0.95, y: 0.95)
+                self.isUserInteractionEnabled = false
+                self.imageView.tintColor = self.configuration.imageColor?.withAlphaComponent(0.75)
+            }
+        } else {
+            UIView.animate(withDuration: 0.045) {
+                self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                self.isUserInteractionEnabled = true
+                self.imageView.tintColor = self.configuration.imageColor
+            }
         }
     }
 }

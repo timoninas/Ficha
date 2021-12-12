@@ -38,19 +38,21 @@ final class AlertCardViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }))
     
-    let centerView: UIView = {
+    private let phantomCard = BaseCardView.phantomCard()
+    
+    private let centerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let rightView: UIView = {
+    private let rightView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let leftView: UIView = {
+    private let leftView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -79,9 +81,20 @@ final class AlertCardViewController: UIViewController {
     private func configureUI() {
         view.backgroundColor = .gendalf
         addCloseButton()
+        addPhantomCard()
         addAlertCard()
         addCenteringViews()
         view.bringSubviewToFront(alertCardView)
+    }
+    
+    private func addPhantomCard() {
+        view.addSubview(phantomCard)
+        NSLayoutConstraint.activate([
+            phantomCard.heightAnchor.constraint(equalToConstant: view.safeAreaHeight / 1.75),
+            phantomCard.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            phantomCard.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20.0),
+            phantomCard.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20.0),
+        ])
     }
     
     private func addAlertCard() {
@@ -173,7 +186,7 @@ final class AlertCardViewController: UIViewController {
                 rightButton.heightAnchor.constraint(equalToConstant: 105.0),
                 rightButton.widthAnchor.constraint(equalToConstant: 65.0),
                 rightButton.centerXAnchor.constraint(equalTo: centerView.centerXAnchor),
-                rightButton.topAnchor.constraint(equalTo: alertCardView.bottomAnchor, constant: 12.0),
+                rightButton.topAnchor.constraint(equalTo: phantomCard.bottomAnchor, constant: 12.0),
             ])
             
             
@@ -205,7 +218,7 @@ final class AlertCardViewController: UIViewController {
                 leftButton.heightAnchor.constraint(equalToConstant: 105.0),
                 leftButton.widthAnchor.constraint(equalToConstant: 65.0),
                 leftButton.centerXAnchor.constraint(equalTo: leftView.centerXAnchor),
-                leftButton.topAnchor.constraint(equalTo: alertCardView.bottomAnchor, constant: 12.0),
+                leftButton.topAnchor.constraint(equalTo: phantomCard.bottomAnchor, constant: 12.0),
             ])
             
             view.addSubview(rightButton)
@@ -214,7 +227,7 @@ final class AlertCardViewController: UIViewController {
                 rightButton.heightAnchor.constraint(equalToConstant: 105.0),
                 rightButton.widthAnchor.constraint(equalToConstant: 65.0),
                 rightButton.centerXAnchor.constraint(equalTo: rightView.centerXAnchor),
-                rightButton.topAnchor.constraint(equalTo: alertCardView.bottomAnchor, constant: 12.0),
+                rightButton.topAnchor.constraint(equalTo: phantomCard.bottomAnchor, constant: 12.0),
             ])
         default:
             alertCardView.onEverySwipe(completion: { [weak self] in self?.dismiss(animated: true, completion: nil) })

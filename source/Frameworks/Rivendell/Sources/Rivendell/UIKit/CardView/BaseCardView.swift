@@ -75,7 +75,9 @@ public class BaseCardView: UIView {
     /// Инициализирует объект свайпающаяся карточка.
     /// - Parameters:
     ///  - swipeDirections: Направления свайпов.
-    public init(swipeDirections: [SwipeDirection]) {
+    public init(
+        swipeDirections: [SwipeDirection]
+    ) {
         self.swipeDirections = swipeDirections
         super.init(frame: .zero)
         self.configureUI()
@@ -167,7 +169,7 @@ public class BaseCardView: UIView {
         let responseSwipeRequest = countDirection(currentCardPosition: currentPoint)
         let shouldDismissCard = abs(currentPoint.x) > Constants.threshold || abs(currentPoint.y) > Constants.threshold
         
-        UIView.animate(withDuration: 0.65, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.03, options: .curveEaseIn) {
+        UIView.animate(withDuration: 0.35, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.03, options: .curveEaseIn) {
             if let responseSwipeRequest = responseSwipeRequest, shouldDismissCard && !self.swipeDirections.isEmpty {
                 let offScreenTransform = self.transform.translatedBy(x: responseSwipeRequest.1.x, y: responseSwipeRequest.1.y)
                 self.transform = offScreenTransform
@@ -176,14 +178,11 @@ public class BaseCardView: UIView {
             }
         } completion: { [weak self] _ in
             guard let self = self else { return }
-            // ------------
-            // DEPRECATE
-//            self.transform = .identity
-            // ------------
             guard let responseSwipeRequest = responseSwipeRequest, shouldDismissCard && !self.swipeDirections.isEmpty else {
                 self.onDragCard?()
                 return
             }
+            self.removeFromSuperview()
             switch responseSwipeRequest.0 {
             case .top:
                 self.onTopSwipe?()
@@ -287,7 +286,7 @@ public class BaseCardView: UIView {
         }
         
         UIView.animate(
-            withDuration: 0.8,
+            withDuration: 0.55,
             delay: 0.0,
             usingSpringWithDamping: 1.0,
             initialSpringVelocity: 0.3,
@@ -297,12 +296,7 @@ public class BaseCardView: UIView {
             self.transform = offScreenTransform
         } completion: { [weak self] _ in
             guard let self = self else { return }
-            // Пока разработка идет
-            // DEPRECATE
-//            self.transform = .identity
-            // ------------
-            
-            //self.removeFromSuperview()
+            self.removeFromSuperview()
             switch swipeDirection {
             case .top:
                 self.onTopSwipe?()
@@ -315,6 +309,19 @@ public class BaseCardView: UIView {
             }
         }
         
+    }
+    
+}
+
+public extension BaseCardView {
+    
+    /// Инициализирует фантомную карточку, к которой будут верстаться кнопки.
+    /// - Returns: Невидимая  `BaseCardView` карточка.
+    static func phantomCard() -> BaseCardView {
+        let phantomCard = BaseCardView(swipeDirections: [])
+        phantomCard.alpha = 0.0
+        phantomCard.isUserInteractionEnabled = false
+        return phantomCard
     }
     
 }

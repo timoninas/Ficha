@@ -237,6 +237,5 @@ public class RVAlignImageButton: RVControl {
                 self.isUserInteractionEnabled = true
             }
         }
-        
     }
 }

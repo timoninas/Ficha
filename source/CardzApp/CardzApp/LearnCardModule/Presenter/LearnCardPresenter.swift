@@ -38,4 +38,9 @@ final class LearnCardPresenter: LearnCardOutput {
         print("Right swipe: \(KnowledgeStats.rightSwipesLearnCard)")
     }
     
+    func didDragCard(with index: Int) {
+        KnowledgeStats.dragsLearnCard += 1
+        print("Drag card: \(KnowledgeStats.dragsLearnCard)")
+    }
+    
 }

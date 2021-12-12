@@ -19,6 +19,14 @@ final class DailyWordsViewController: UIViewController {
         }
     }
     
+    private var viewModelToLearnWordzViewModel: (ViewModel) -> LearnWordzCardView.ViewModel = {
+        .init(
+            wordz: $0.title,
+            translations: $0.translations,
+            wordzExamples: $0.subtitles ?? []
+        )
+    }
+    
     var wordsView: [TodayWordsView] = []
     
     let imageView = UIImageView(image: .revolvetra)
@@ -121,8 +129,6 @@ final class DailyWordsViewController: UIViewController {
     
     private func addHeader() {
         header.onTap = {
-            UIApplication.hapticLight()
-            print("Tapped")
         }
         scrollView.addSubview(header)
         header.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 10.0).isActive = true
@@ -135,8 +141,10 @@ final class DailyWordsViewController: UIViewController {
             .with(onTap: { [weak self] _ in
                 guard let self = self else { return }
                 UIApplication.hapticLight()
-                print("KEKEKE")
-                self.present(LearnCardBuilder.build(viewModel: getLearnCardViewModel()), animated: true, completion: nil)
+                let module = LearnCardBuilder.build(viewModel: self.viewModels.map { self.viewModelToLearnWordzViewModel($0) })
+                module.modalTransitionStyle = .coverVertical
+                module.modalPresentationStyle = .overFullScreen
+                self.present(module, animated: true, completion: nil)
             })
         
         view.addSubview(playButton)

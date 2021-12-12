@@ -30,11 +30,22 @@ final class LearnCardViewController: UIViewController {
                                                         .with(imageConfig: .visible(image: .rightArrowIcon, color: .goblin))
                                                         .with(imageMultiplier: 1.0))
     
+    private lazy var closeButton = RVImageButton(configuration: .init()
+                                                    .with(image: .closeIcon)
+                                                    .with(backgroundColor: .clear)
+                                                    .with(highlitedColor: .clear)
+                                                    .with(imageColor: .nazgul)
+                                                    .with(onTap: { [weak self] _ in
+        guard let self = self else { return }
+        self.dismiss(animated: true, completion: nil)
+    }))
+    
     private var allowedSwipeDirections: [BaseCardView.SwipeDirection] = [.top, .right, .left]
     
     private var viewModel: [LearnWordzCardView.ViewModel] = [] {
         didSet {
             renderCards()
+            topCardSwiped(isNeedToRemoveCard: false)
         }
     }
     
@@ -45,6 +56,8 @@ final class LearnCardViewController: UIViewController {
             configureCenteringView()
         }
     }
+    
+    private var phantomCard = LearnWordzCardView(configuration: .init(wordz: "", translations: []))
     
     private var swipeButtonContraints: [NSLayoutConstraint] = []
     private var centeringContraints: [NSLayoutConstraint] = []
@@ -93,8 +106,32 @@ final class LearnCardViewController: UIViewController {
     }
     
     private func configureUI() {
+        addCloseButton()
+        addPhantomCard()
         addCenteringViews()
         addSwipeButtons()
+    }
+    
+    private func addCloseButton() {
+        view.addSubview(closeButton)
+        NSLayoutConstraint.activate([
+            closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.0),
+            closeButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20.0),
+            closeButton.heightAnchor.constraint(equalToConstant: 30.0),
+            closeButton.widthAnchor.constraint(equalTo: closeButton.heightAnchor)
+        ])
+    }
+    
+    private func addPhantomCard() {
+        phantomCard.alpha = 0.0
+        phantomCard.isUserInteractionEnabled = false
+        view.addSubview(phantomCard)
+        NSLayoutConstraint.activate([
+            phantomCard.heightAnchor.constraint(equalToConstant: view.safeAreaHeight / 1.75),
+            phantomCard.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            phantomCard.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20.0),
+            phantomCard.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20.0),
+        ])
     }
     
     private func renderCards() {
@@ -121,17 +158,31 @@ final class LearnCardViewController: UIViewController {
             
             card.onTopSwipe = { [weak self] in
                 guard let self = self else { return }
+                self.topCardSwiped(isNeedToRemoveCard: true)
                 self.output?.didSwipeCardTop(with: idx)
             }
             card.onLeftSwipe = { [weak self] in
                 guard let self = self else { return }
+                self.topCardSwiped(isNeedToRemoveCard: true)
                 self.output?.didSwipeCardLeft(with: idx)
             }
             card.onRightSwipe = { [weak self] in
                 guard let self = self else { return }
+                self.topCardSwiped(isNeedToRemoveCard: true)
                 self.output?.didSwipeCardRight(with: idx)
             }
-            card.onDragCard = { print("Drag swipe") }
+            card.onDragCard = { [weak self] in
+                guard let self = self else { return }
+                self.output?.didDragCard(with: idx)
+            }
+            card.onCardChangedPosition = { [weak self] _, _ in
+                guard let self = self else { return }
+                self.closeButton.isUserInteractionEnabled = false
+            }
+            card.onCardEndChangedPosition = { [weak self] in
+                guard let self = self else { return }
+                self.closeButton.isUserInteractionEnabled = true
+            }
             
             tmpCards.append(card)
             
@@ -156,15 +207,13 @@ final class LearnCardViewController: UIViewController {
     }
     
     private func configureCenteringView() {
-        guard let card = cards.first else { return }
-        
         NSLayoutConstraint.deactivate(centeringContraints)
         centeringContraints.removeAll()
         
         centeringContraints += [
             centerView.widthAnchor.constraint(equalToConstant: 1.0),
             centerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            centerView.topAnchor.constraint(equalTo: card.bottomAnchor),
+            centerView.topAnchor.constraint(equalTo: phantomCard.bottomAnchor),
             centerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
             leftView.topAnchor.constraint(equalTo: centerView.topAnchor),
@@ -182,8 +231,6 @@ final class LearnCardViewController: UIViewController {
     }
     
     private func configureSwipeButtons() {
-        guard let card = cards.first else { return }
-        
         NSLayoutConstraint.deactivate(swipeButtonContraints)
         swipeButtonContraints.removeAll()
         
@@ -191,21 +238,21 @@ final class LearnCardViewController: UIViewController {
             leftButton.heightAnchor.constraint(equalToConstant: 105.0),
             leftButton.widthAnchor.constraint(equalToConstant: 65.0),
             leftButton.centerXAnchor.constraint(equalTo: leftView.centerXAnchor),
-            leftButton.topAnchor.constraint(equalTo: card.bottomAnchor, constant: 12.0)
+            leftButton.topAnchor.constraint(equalTo: phantomCard.bottomAnchor, constant: 12.0)
         ]
         
         swipeButtonContraints += [
             rightButton.heightAnchor.constraint(equalToConstant: 105.0),
             rightButton.widthAnchor.constraint(equalToConstant: 65.0),
             rightButton.centerXAnchor.constraint(equalTo: rightView.centerXAnchor),
-            rightButton.topAnchor.constraint(equalTo: card.bottomAnchor, constant: 12.0)
+            rightButton.topAnchor.constraint(equalTo: phantomCard.bottomAnchor, constant: 12.0)
         ]
         
         swipeButtonContraints += [
             starButton.heightAnchor.constraint(equalToConstant: 45.0),
             starButton.widthAnchor.constraint(equalToConstant: 135.0),
             starButton.centerXAnchor.constraint(equalTo: centerView.centerXAnchor),
-            starButton.bottomAnchor.constraint(equalTo: card.topAnchor, constant: -24.0)
+            starButton.bottomAnchor.constraint(equalTo: phantomCard.topAnchor, constant: -24.0)
         ]
         
         NSLayoutConstraint.activate(swipeButtonContraints)
@@ -215,6 +262,25 @@ final class LearnCardViewController: UIViewController {
         view.addSubview(leftButton)
         view.addSubview(rightButton)
         view.addSubview(starButton)
+    }
+    
+    private func topCardSwiped(isNeedToRemoveCard: Bool) {
+        if isNeedToRemoveCard {
+            cards.removeLast()
+        }
+        cards.forEach { card in
+            card.isHidden = true
+        }
+        let last2Cards = Array(cards.suffix(2))
+        if last2Cards.count == 2 {
+            last2Cards[0].isUserInteractionEnabled = false
+            last2Cards[0].isHidden = false
+            last2Cards[1].isUserInteractionEnabled = true
+            last2Cards[1].isHidden = false
+        } else if last2Cards.count == 1 {
+            last2Cards[0].isUserInteractionEnabled = true
+            last2Cards[0].isHidden = false
+        }
     }
     
 }

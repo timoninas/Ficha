@@ -22,4 +22,6 @@ protocol LearnCardOutput: LifeCycleProtocol, AnyObject {
     
     func didSwipeCardRight(with index: Int)
     
+    func didDragCard(with index: Int)
+    
 }

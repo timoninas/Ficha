@@ -23,8 +23,18 @@ public extension LearnWordzCardView {
         /// Примеры предложений с иностранным словом. По умолчанию `empty`.
         public var wordzExamples: [String] = []
         
-        
-        public init(wordz: String, translations: [String], transcription: String? = nil, wordzExamples: [String] = []) {
+        /// Инициализирует `ViewModel` для `LearnWordzCardView`.
+        /// - Parameters:
+        ///   - wordz: Иностранное слово.
+        ///   - translations: Переводы иностранного слова.
+        ///   - transcription: Транскрипция иностранного слова. По умолчанию `nil`.
+        ///   - wordzExamples: Примеры перевода иностранного слова. По умолчанию `[]`.
+        public init(
+            wordz: String,
+            translations: [String],
+            transcription: String? = nil,
+            wordzExamples: [String] = []
+        ) {
             self.wordz = wordz
             self.wordzExamples = wordzExamples
             self.transcription = transcription

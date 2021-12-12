@@ -16,6 +16,8 @@ public protocol KnowledgeStatsProtocol {
     
     static var topSwipesLearnCard: Int { get set }
     
+    static var dragsLearnCard: Int { get set }
+    
 }
 
 public class KnowledgeStats: KnowledgeStatsProtocol {
@@ -28,5 +30,8 @@ public class KnowledgeStats: KnowledgeStatsProtocol {
     
     @UserDefault(key: CardStatKey.topSwipesLearnCard , defaultValue: 0)
     public static var topSwipesLearnCard
+    
+    @UserDefault(key: CardStatKey.dragsLearnCard , defaultValue: 0)
+    public static var dragsLearnCard
     
 }

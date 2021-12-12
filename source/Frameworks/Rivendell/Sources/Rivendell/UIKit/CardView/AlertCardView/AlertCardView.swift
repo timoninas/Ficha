@@ -56,7 +56,7 @@ public class AlertCardView: BaseCardView {
         }
     }
     
-    public init(swipeDirections: [BaseCardView.SwipeDirection], configuration: Configuration) {
+    public init(swipeDirections: [BaseCardView.SwipeDirection] = [], configuration: Configuration = .init()) {
         self.configuration = configuration
         super.init(swipeDirections: swipeDirections)
         configureUI()

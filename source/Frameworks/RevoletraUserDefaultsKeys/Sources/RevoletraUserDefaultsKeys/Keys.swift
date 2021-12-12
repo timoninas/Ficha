@@ -13,6 +13,8 @@ public struct CardStatKey {
     
     public static let rightSwipesLearnCard = "Revolvetra.Ficha.RightSwipesLearnCard"
     
-    public static let topSwipesLearnCard = "Revolvetra.Ficha.TopSwipesLearnCard" 
+    public static let topSwipesLearnCard = "Revolvetra.Ficha.TopSwipesLearnCard"
+    
+    public static let dragsLearnCard = "Revolvetra.Ficha.DragsLearnCard"
     
 }
