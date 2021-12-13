@@ -44,7 +44,7 @@ func getLearnCardViewModel() -> [LearnWordzCardView.ViewModel] {
 final class LearnCardBuilder {
     
     public static func build(viewModel: [LearnWordzCardView.ViewModel]) -> UIViewController {
-        let presenter = LearnCardPresenter(viewModel: viewModel)
+        let presenter = LearnCardPresenter(viewModel: viewModel.shuffled())
         let view = LearnCardViewController(output: presenter)
         presenter.view = view
         return view

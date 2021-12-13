@@ -40,6 +40,7 @@ final class FavouriteWordzViewController: UIViewController {
                                     .with(onTap: { [weak self] button in
             guard let self = self else { return }
             guard button.alpha != 0.0 else { return }
+            UIApplication.hapticLight()
             let module = AlertCardBuilder.build(model:
                                                         .init(title: "Are you sure you want to reset your progress?",
                                                               secondTitle: "Resetting the progress will lead to a complete clearing of the statistics of the learned words",

@@ -156,14 +156,12 @@ public class LearnWordzCardView: BaseCardView {
         mainLabelContainer.addSubview(wordzLabel)
         mainLabelContainer.addSubview(transcriptionLabel)
         
-        wordzExampleLabels.forEach { [weak self] label in
-            guard let self = self else { return }
-            self.exampleLabelContainer.addSubview(label)
+        wordzExampleLabels.forEach { label in
+            exampleLabelContainer.addSubview(label)
         }
         
-        translationExampleLabels.forEach { [weak self] label in
-            guard let self = self else { return }
-            self.translationsLabelContainer.addSubview(label)
+        translationExampleLabels.forEach { label in
+            translationsLabelContainer.addSubview(label)
         }
         
     }

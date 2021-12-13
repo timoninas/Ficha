@@ -27,9 +27,9 @@ public extension UIColor {
     
     static let goblin = UIColor(red: 44/255, green: 225/255, blue: 44/255, alpha: 1)
     
-    static let bloods = UIColor(red: 207/255, green: 81/255, blue: 122/255, alpha: 1)
+    static let bloods = UIColor(red: 209/255, green: 50/255, blue: 102/255, alpha: 1)
     
-    static let moonlight = UIColor(red: 255/255, green: 190/255, blue: 11/255, alpha: 1)
+    static let moonlight = UIColor(red: 255/255, green: 187/255, blue: 0/255, alpha: 1)
     
     static let zoomy = UIColor(red: 17/255, green: 229/255, blue: 234/255, alpha: 1)
     

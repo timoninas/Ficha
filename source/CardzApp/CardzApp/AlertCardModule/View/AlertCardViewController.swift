@@ -35,6 +35,7 @@ final class AlertCardViewController: UIViewController {
                                                     .with(imageColor: .nazgul)
                                                     .with(onTap: { [weak self] _ in
         guard let self = self else { return }
+        UIApplication.hapticLight()
         self.dismiss(animated: true, completion: nil)
     }))
     

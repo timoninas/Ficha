@@ -43,7 +43,7 @@ public final class RVButton: RVControl {
     }()
     
     private var hasDetail: Bool {
-        get { return self.descriptionTitle.text == nil || self.descriptionTitle.text == "" ? false: true }
+        get { return descriptionTitle.text == nil || descriptionTitle.text == "" ? false: true }
     }
     
     public var configuration: Configuration {
@@ -55,7 +55,7 @@ public final class RVButton: RVControl {
     public init(configuration: Configuration = .init()) {
         self.configuration = configuration
         super.init()
-        self.configureUI()
+        configureUI()
         
     }
     
@@ -105,63 +105,63 @@ public final class RVButton: RVControl {
     
     func setupConstraints() {
         
-        NSLayoutConstraint.deactivate(self.storedConstraints)
+        NSLayoutConstraint.deactivate(storedConstraints)
         storedConstraints.removeAll()
         
         // Container View constraints
         storedConstraints.append(contentsOf: [
-            containerView.topAnchor.constraint(equalTo: self.topAnchor),
-            containerView.rightAnchor.constraint(equalTo: self.rightAnchor),
-            containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            containerView.leftAnchor.constraint(equalTo: self.leftAnchor),
+            containerView.topAnchor.constraint(equalTo: topAnchor),
+            containerView.rightAnchor.constraint(equalTo: rightAnchor),
+            containerView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            containerView.leftAnchor.constraint(equalTo: leftAnchor),
         ])
         
         // Main Title constraints
-        if self.hasDetail {
+        if hasDetail {
             storedConstraints.append(contentsOf: [
-                mainTitle.centerYAnchor.constraint(equalTo: self.containerView.centerYAnchor, constant: -10),
+                mainTitle.centerYAnchor.constraint(equalTo: containerView.centerYAnchor, constant: -10),
             ])
         } else {
             storedConstraints.append(contentsOf: [
-                mainTitle.centerYAnchor.constraint(equalTo: self.containerView.centerYAnchor, constant: 0),
+                mainTitle.centerYAnchor.constraint(equalTo: containerView.centerYAnchor, constant: 0),
             ])
         }
         
         storedConstraints.append(contentsOf: [
-            mainTitle.rightAnchor.constraint(equalTo: self.containerView.rightAnchor, constant: -4),
-            mainTitle.leftAnchor.constraint(equalTo: self.containerView.leftAnchor, constant: 4)
+            mainTitle.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -4),
+            mainTitle.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 4)
         ])
         
         // Description Title constraints
         storedConstraints.append(contentsOf: [
-            descriptionTitle.topAnchor.constraint(equalTo: self.mainTitle.bottomAnchor, constant: 4),
-            descriptionTitle.rightAnchor.constraint(equalTo: self.containerView.rightAnchor, constant: -8.0),
-            descriptionTitle.leftAnchor.constraint(equalTo: self.containerView.leftAnchor, constant: 8.0)
+            descriptionTitle.topAnchor.constraint(equalTo: mainTitle.bottomAnchor, constant: 4),
+            descriptionTitle.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -8.0),
+            descriptionTitle.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 8.0)
         ])
         
         storedConstraints.append(contentsOf: [
-            heightAnchor.constraint(equalToConstant: self.configuration.height)
+            heightAnchor.constraint(equalToConstant: configuration.height)
         ])
         
-        NSLayoutConstraint.activate(self.storedConstraints)
+        NSLayoutConstraint.activate(storedConstraints)
     }
     
     private func addView() {
-        self.addSubview(containerView)
-        self.containerView.backgroundColor = self.configuration.backgroundColor
+        addSubview(containerView)
+        containerView.backgroundColor = configuration.backgroundColor
     }
     
     private func addTitle() {
-        self.addSubview(mainTitle)
+        addSubview(mainTitle)
     }
     
     private func addDescriptionTitle() {
-        self.addSubview(descriptionTitle)
+        addSubview(descriptionTitle)
     }
     
     override public func handleTap() {
-        self.configuration.onTap?(self)
-        self.setHighlighted(isHighlighted: false, animated: true)
+        configuration.onTap?(self)
+        setHighlighted(isHighlighted: false, animated: true)
     }
     
     public override func setHighlighted(isHighlighted: Bool, animated: Bool) {
@@ -170,7 +170,8 @@ public final class RVButton: RVControl {
     }
     
     private func updateColorState(_ isHighlighted: Bool) {
-        UIView.animate(withDuration: 0.1) {
+        UIView.animate(withDuration: 0.1) { [weak self] in
+            guard let self = self else { return }
             self.containerView.backgroundColor = isHighlighted ? self.configuration.highlitedColor: self.configuration.backgroundColor
         }
     }

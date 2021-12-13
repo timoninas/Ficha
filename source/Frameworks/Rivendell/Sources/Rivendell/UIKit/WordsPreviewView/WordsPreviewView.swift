@@ -28,7 +28,7 @@ public final class WordsPreviewView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .mysteryShack
-        label.font = UIFont(name:"HelveticaNeue-Bold", size: 24.0)
+        label.font = UIFont(name:"HelveticaNeue-Bold", size: 22.0)
         label.textAlignment = .left
         label.numberOfLines = 1
         return label
@@ -38,7 +38,7 @@ public final class WordsPreviewView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .nazgul
-        label.font = UIFont(name:"HelveticaNeue", size: 18.0)
+        label.font = UIFont(name:"HelveticaNeue", size: 16.0)
         label.textAlignment = .left
         label.numberOfLines = 1
         return label
@@ -173,8 +173,8 @@ public final class WordsPreviewView: UIView {
     public static func height(configuration: Configuration) -> CGFloat {
         var totalHeight: CGFloat = 0.0
         
-        let mainLabelHeight = "MainTitleText".heightForOneLine( font: UIFont(name:"HelveticaNeue-Bold", size: 24.0))
-        let secondLabelHeight = "SecondTitleText".heightForOneLine(font: UIFont(name:"HelveticaNeue", size: 18.0))
+        let mainLabelHeight = "MainTitleText".heightForOneLine( font: UIFont(name:"HelveticaNeue-Bold", size: 22.0))
+        let secondLabelHeight = "SecondTitleText".heightForOneLine(font: UIFont(name:"HelveticaNeue", size: 16.0))
         
         totalHeight += 10.0
         totalHeight += mainLabelHeight
@@ -183,7 +183,7 @@ public final class WordsPreviewView: UIView {
             totalHeight +=  CGFloat(configuration.translations.count) * (secondLabelHeight + 10.0)
         }
         
-        totalHeight += 20.0
+        totalHeight += 15.0
         
         return totalHeight
     }
