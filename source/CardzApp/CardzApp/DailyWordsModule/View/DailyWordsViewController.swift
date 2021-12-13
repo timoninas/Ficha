@@ -35,6 +35,8 @@ final class DailyWordsViewController: UIViewController {
     
     let backView = BubblesView()
     
+    var checkBoxDevScreen = false
+    
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.delegate = self
@@ -121,14 +123,16 @@ final class DailyWordsViewController: UIViewController {
     
     private func addScrollView() {
         view.addSubview(scrollView)
-        scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         scrollView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         scrollView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
     private func addHeader() {
-        header.onTap = {
+        header.onTap = { [weak self] in
+            guard let self = self else { return }
+            self.checkBoxDevScreen = true
         }
         scrollView.addSubview(header)
         header.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 10.0).isActive = true
@@ -259,6 +263,10 @@ extension DailyWordsViewController: DailyWordsViewInput {
 extension DailyWordsViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y <= 0.0 {
+            header.transform = .init(translationX: 0.0, y: scrollView.contentOffset.y)
+        }
+        
         if scrollView.contentOffset.y > 150.0 {
             guard playButton.alpha > 0.0 else { return }
             playButton.isUserInteractionEnabled = false
@@ -276,6 +284,18 @@ extension DailyWordsViewController: UIScrollViewDelegate {
                 self.playButton.transform = .init(translationX: 0.0, y: 0.0)
             }
         }
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        if velocity.y <= -5.0 && checkBoxDevScreen {
+            DispatchQueue.main.async {
+                UIApplication.hapticHeavy()
+            }
+            present(DeveloperScreenBuilder.build(), animated: true, completion: nil)
+        }
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
     }
     
 }

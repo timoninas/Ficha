@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		7702F1DF2729F48C006176FE /* Rivendell in Frameworks */ = {isa = PBXBuildFile; productRef = 7702F1DE2729F48C006176FE /* Rivendell */; };
+		770B3FD82767D5DE00DC7887 /* DeveloperScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770B3FD72767D5DE00DC7887 /* DeveloperScreenViewController.swift */; };
+		770B3FDD2767D63B00DC7887 /* DeveloperScreenViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770B3FDC2767D63B00DC7887 /* DeveloperScreenViewController+ViewModel.swift */; };
+		770B3FDF2767D64C00DC7887 /* DeveloperScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770B3FDE2767D64C00DC7887 /* DeveloperScreenPresenter.swift */; };
+		770B3FE22767D66600DC7887 /* DeveloperScreenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770B3FE12767D66600DC7887 /* DeveloperScreenProtocol.swift */; };
+		770B3FE42767D68600DC7887 /* DeveloperScreenBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770B3FE32767D68600DC7887 /* DeveloperScreenBuilder.swift */; };
 		7720F601275FDA7800BC5973 /* ViewSimpleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720F600275FDA7800BC5973 /* ViewSimpleState.swift */; };
 		77232AC8275D2C2800529DE0 /* Moria in Frameworks */ = {isa = PBXBuildFile; productRef = 77232AC7275D2C2800529DE0 /* Moria */; };
 		77232ACA275D2C2B00529DE0 /* RevoletraUserDefaultsKeys in Frameworks */ = {isa = PBXBuildFile; productRef = 77232AC9275D2C2B00529DE0 /* RevoletraUserDefaultsKeys */; };
@@ -65,6 +70,11 @@
 
 /* Begin PBXFileReference section */
 		7702F1DD2729F483006176FE /* Rivendell */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Rivendell; path = ../Frameworks/Rivendell; sourceTree = "<group>"; };
+		770B3FD72767D5DE00DC7887 /* DeveloperScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperScreenViewController.swift; sourceTree = "<group>"; };
+		770B3FDC2767D63B00DC7887 /* DeveloperScreenViewController+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeveloperScreenViewController+ViewModel.swift"; sourceTree = "<group>"; };
+		770B3FDE2767D64C00DC7887 /* DeveloperScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperScreenPresenter.swift; sourceTree = "<group>"; };
+		770B3FE12767D66600DC7887 /* DeveloperScreenProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperScreenProtocol.swift; sourceTree = "<group>"; };
+		770B3FE32767D68600DC7887 /* DeveloperScreenBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperScreenBuilder.swift; sourceTree = "<group>"; };
 		7720F600275FDA7800BC5973 /* ViewSimpleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSimpleState.swift; sourceTree = "<group>"; };
 		77232AC6275D2C1A00529DE0 /* RevoletraUserDefaultsKeys */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RevoletraUserDefaultsKeys; path = ../Frameworks/RevoletraUserDefaultsKeys; sourceTree = "<group>"; };
 		7748E9312757F4B00063E592 /* FavouriteWordzViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteWordzViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +151,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		770B3FD92767D5E200DC7887 /* DeveloperScreenModule */ = {
+			isa = PBXGroup;
+			children = (
+				770B3FE12767D66600DC7887 /* DeveloperScreenProtocol.swift */,
+				770B3FE32767D68600DC7887 /* DeveloperScreenBuilder.swift */,
+				770B3FDA2767D5F100DC7887 /* View */,
+				770B3FE02767D64F00DC7887 /* Presenter */,
+			);
+			path = DeveloperScreenModule;
+			sourceTree = "<group>";
+		};
+		770B3FDA2767D5F100DC7887 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				770B3FDB2767D62900DC7887 /* Supplementary */,
+				770B3FD72767D5DE00DC7887 /* DeveloperScreenViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		770B3FDB2767D62900DC7887 /* Supplementary */ = {
+			isa = PBXGroup;
+			children = (
+				770B3FDC2767D63B00DC7887 /* DeveloperScreenViewController+ViewModel.swift */,
+			);
+			name = Supplementary;
+			sourceTree = "<group>";
+		};
+		770B3FE02767D64F00DC7887 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				770B3FDE2767D64C00DC7887 /* DeveloperScreenPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		7748E9332757F4B40063E592 /* FavouriteWordzModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +340,7 @@
 		D4F00D4F2718C3840079A860 /* CardzApp */ = {
 			isa = PBXGroup;
 			children = (
+				770B3FD92767D5E200DC7887 /* DeveloperScreenModule */,
 				7748E9332757F4B40063E592 /* FavouriteWordzModule */,
 				776EFC38274107CC001010FD /* AlertCardModule */,
 				776E4927272C90F3000D0B2D /* LearnCardModule */,
@@ -524,20 +571,25 @@
 				7748E93D2757F5460063E592 /* AlertCardViewController+ViewModel.swift in Sources */,
 				D4C7F12F2719636D0066125A /* DailyWordsViewController+State.swift in Sources */,
 				7720F601275FDA7800BC5973 /* ViewSimpleState.swift in Sources */,
+				770B3FE42767D68600DC7887 /* DeveloperScreenBuilder.swift in Sources */,
 				D4F00D982718C3FB0079A860 /* DailyWordsBuilder.swift in Sources */,
 				D4F00D962718C3FB0079A860 /* DailyWordsPresenter.swift in Sources */,
 				776E4929272C9103000D0B2D /* LearnCardPresenter.swift in Sources */,
 				D4F00DA52718C5070079A860 /* LifeCycleProtocol.swift in Sources */,
 				7748E9392757F4EE0063E592 /* FavouriteWordzBuilder.swift in Sources */,
+				770B3FDD2767D63B00DC7887 /* DeveloperScreenViewController+ViewModel.swift in Sources */,
 				D4F00D5B2718C3840079A860 /* CardzApp.xcdatamodeld in Sources */,
 				776E492F272C91C1000D0B2D /* LearnCardBuilder.swift in Sources */,
 				776EFC37274107C7001010FD /* AlertCardViewController.swift in Sources */,
 				77A178DF27352A0E005E520C /* Logger.swift in Sources */,
+				770B3FD82767D5DE00DC7887 /* DeveloperScreenViewController.swift in Sources */,
+				770B3FDF2767D64C00DC7887 /* DeveloperScreenPresenter.swift in Sources */,
 				776EFC3E27410824001010FD /* AlertCardProtocol.swift in Sources */,
 				776EFC4027410870001010FD /* AlertCardBuilder.swift in Sources */,
 				7748E9362757F4D60063E592 /* FavouriteWordzPresenter.swift in Sources */,
 				776EFC3B27410804001010FD /* AlertCardPresenter.swift in Sources */,
 				D4F00DA22718C4940079A860 /* DailyWordsViewController+ViewModel.swift in Sources */,
+				770B3FE22767D66600DC7887 /* DeveloperScreenProtocol.swift in Sources */,
 				7748E9322757F4B10063E592 /* FavouriteWordzViewController.swift in Sources */,
 				775A18C7271C284E00A295C0 /* DailyWordsHeader.swift in Sources */,
 				D4F00D9E2718C3FB0079A860 /* SceneDelegate.swift in Sources */,
