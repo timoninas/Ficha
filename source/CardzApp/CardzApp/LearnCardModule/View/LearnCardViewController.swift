@@ -52,13 +52,14 @@ final class LearnCardViewController: UIViewController {
     
     private var cards: [LearnWordzCardView] = [] {
         didSet {
-            guard !cards.isEmpty else { return }
             configureSwipeButtons()
             configureCenteringView()
         }
     }
     
     private var phantomCard = LearnWordzCardView(configuration: .init(wordz: "", translations: []))
+    
+    private var resultCard = ResultLearnCardView(swipeDirections: [.top, .bottom, .left, .right], configuration: .init())
     
     private var swipeButtonContraints: [NSLayoutConstraint] = []
     private var centeringContraints: [NSLayoutConstraint] = []
@@ -109,8 +110,11 @@ final class LearnCardViewController: UIViewController {
     private func configureUI() {
         addCloseButton()
         addPhantomCard()
+        addResultCard()
         addCenteringViews()
         addSwipeButtons()
+        
+        view.bringSubviewToFront(resultCard)
     }
     
     private func addCloseButton() {
@@ -132,6 +136,58 @@ final class LearnCardViewController: UIViewController {
             phantomCard.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             phantomCard.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20.0),
             phantomCard.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20.0),
+        ])
+    }
+    
+    private func changeVisabilityControls(isHidden: Bool, isAnimated: Bool) {
+        let valueAlpha = isHidden ? 0.0 : 1.0
+        if isAnimated {
+            UIView.animate(withDuration: 0.3) { [weak self] in
+                guard let self = self else { return }
+                guard self.leftButton.alpha != valueAlpha else { return }
+                self.leftButton.alpha = valueAlpha
+                self.rightButton.alpha = valueAlpha
+                self.starButton.alpha = valueAlpha
+            }
+        } else {
+            guard leftButton.alpha != valueAlpha else { return }
+            leftButton.alpha = valueAlpha
+            rightButton.alpha = valueAlpha
+            starButton.alpha = valueAlpha
+        }
+    }
+    
+    private func addResultCard() {
+        resultCard.onEverySwipe { [weak self] in
+            guard let self = self else { return }
+            UIApplication.hapticLight()
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        resultCard.onCardChangedPosition = { [weak self] x, y in
+            guard let self = self else { return }
+            self.closeButton.isUserInteractionEnabled = false
+            let hideTreasure = 65.0
+            if abs(x) > hideTreasure || abs(y) > hideTreasure {
+                self.changeVisabilityControls(isHidden: true, isAnimated: true)
+            } else {
+                self.changeVisabilityControls(isHidden: false, isAnimated: true)
+            }
+        }
+        
+        resultCard.onCardEndChangedPosition = { [weak self] in
+            guard let self = self else { return }
+            self.closeButton.isUserInteractionEnabled = true
+        }
+        
+        resultCard.isUserInteractionEnabled = false
+        
+        view.addSubview(resultCard)
+        NSLayoutConstraint.activate([
+            resultCard.heightAnchor.constraint(equalToConstant: view.safeAreaHeight / 1.75),
+            resultCard.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            resultCard.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20.0),
+            resultCard.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20.0),
         ])
     }
     
@@ -160,16 +216,22 @@ final class LearnCardViewController: UIViewController {
             card.onTopSwipe = { [weak self] in
                 guard let self = self else { return }
                 self.topCardSwiped(isNeedToRemoveCard: true)
+                self.resultCard.configuration = self.resultCard.configuration
+                    .with(favouritesCards: self.resultCard.configuration.favouritesCards + 1)
                 self.output?.didSwipeCardTop(with: idx)
             }
             card.onLeftSwipe = { [weak self] in
                 guard let self = self else { return }
                 self.topCardSwiped(isNeedToRemoveCard: true)
+                self.resultCard.configuration = self.resultCard.configuration
+                    .with(dontKnowCards: self.resultCard.configuration.dontKnowCards + 1)
                 self.output?.didSwipeCardLeft(with: idx)
             }
             card.onRightSwipe = { [weak self] in
                 guard let self = self else { return }
                 self.topCardSwiped(isNeedToRemoveCard: true)
+                self.resultCard.configuration = self.resultCard.configuration
+                    .with(knowCards: self.resultCard.configuration.knowCards + 1)
                 self.output?.didSwipeCardRight(with: idx)
             }
             card.onDragCard = { [weak self] in
@@ -281,6 +343,8 @@ final class LearnCardViewController: UIViewController {
         } else if last2Cards.count == 1 {
             last2Cards[0].isUserInteractionEnabled = true
             last2Cards[0].isHidden = false
+        } else {
+            resultCard.isUserInteractionEnabled = true
         }
     }
     

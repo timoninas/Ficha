@@ -35,7 +35,15 @@ public extension UILabel {
         return textHeight / lineHeight
     }
     
-    
+    func heightForOneLine() -> CGFloat {
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 10.0, height: .greatestFiniteMagnitude))
+        label.numberOfLines = 1
+        label.text = self.text
+        label.font = self.font
+        label.sizeToFit()
+        
+        return label.frame.height
+    }
 
 }
 
