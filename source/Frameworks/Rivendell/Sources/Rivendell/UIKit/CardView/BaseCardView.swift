@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  BaseCardView.swift
 //  
 //
 //  Created by Антон Тимонин on 30.10.2021.

@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  ResultLearnCardView+Configuration.swift
 //  
 //
 //  Created by Антон Тимонин on 13.12.2021.

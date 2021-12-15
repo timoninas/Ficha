@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  AlertCardView.swift
 //  
 //
 //  Created by Антон Тимонин on 14.11.2021.

@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  WordsPreviewView+Configuration.swift
 //  
 //
 //  Created by Антон Тимонин on 12.12.2021.

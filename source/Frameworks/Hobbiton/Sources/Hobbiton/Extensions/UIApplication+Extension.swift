@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  UIApplication+Extension.swift
 //  
 //
 //  Created by Антон Тимонин on 09.11.2021.

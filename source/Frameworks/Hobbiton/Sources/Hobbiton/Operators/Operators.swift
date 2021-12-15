@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Operators.swift
 //  
 //
 //  Created by Антон Тимонин on 04.11.2021.

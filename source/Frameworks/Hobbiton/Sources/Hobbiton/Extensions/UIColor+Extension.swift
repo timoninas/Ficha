@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  UIColor+Extension.swift
 //  
 //
 //  Created by Антон Тимонин on 01.11.2021.
@@ -36,5 +36,7 @@ public extension UIColor {
     static let olivie = UIColor(red: 106/255, green: 108/255, blue: 97/255, alpha: 1)
     
     static let livesMatter = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+    
+    static let softMint = UIColor(red: 206/255, green: 243/255, blue: 229/255, alpha: 1)
     
 }

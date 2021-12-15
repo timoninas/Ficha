@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             todayViewController.tabBarItem = item
         }
         
-        let learnViewController = LearnCardBuilder.build(viewModel: getLearnCardViewModel())
+        let learnViewController = LearnNewWordzBuilder.build()
         if let graduateIconData = UIImage.graduateIcon?.pngData() ,
            let graduateIconFilledData = UIImage.graduateIconFilled?.pngData(){
             let image = UIImage(data: graduateIconData, scale: 13.0)

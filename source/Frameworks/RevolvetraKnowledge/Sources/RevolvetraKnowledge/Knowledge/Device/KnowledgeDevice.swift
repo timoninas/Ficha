@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  KnowledgeDevice.swift
 //  
 //
 //  Created by Антон Тимонин on 07.12.2021.

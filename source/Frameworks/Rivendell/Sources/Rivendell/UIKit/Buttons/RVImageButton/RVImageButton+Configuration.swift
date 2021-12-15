@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  RVImageButton+Configuration.swift
 //  
 //
 //  Created by Антон Тимонин on 08.11.2021.
