@@ -112,6 +112,9 @@ final class LearnNewWordzViewController: UIViewController {
             subitems: [smallItemGroupLayout, bigItem]
         )
         
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(40))
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        
         let resultGroupLayout = NSCollectionLayoutGroup.vertical(
             layoutSize: .init(
                 widthDimension: .fractionalWidth(1.0),
@@ -120,11 +123,13 @@ final class LearnNewWordzViewController: UIViewController {
             subitems: [notCommonGroupLayout, small3ItemGroupLayout, commonGroupLayout]
         )
         
-        return .init(group: resultGroupLayout)
+        let kek = NSCollectionLayoutSection(group: resultGroupLayout)
+        kek.boundarySupplementaryItems = [header]
+        return kek
     }()
     
     private lazy var layout: UICollectionViewCompositionalLayout = {
-        let layout = UICollectionViewCompositionalLayout(section: self.customLayout)
+        let layout = UICollectionViewCompositionalLayout(section: customLayout)
         return layout
     }()
     
@@ -132,10 +137,11 @@ final class LearnNewWordzViewController: UIViewController {
     
     private let thematicView = BubbleThematicWordsView(configuration: .init(title: "Lol Kek cheburek")
                                                         .with(iconImage: .revolvetra)
-                                                        .with(backgroundColor: .softMint)
-                                                        .with(cornerRadius: 13.0))
+                                                        .with(backgroundColor: .softGreen)
+                                                        .with(cornerRadius: 13.0)
+                                                        .with(badgeText: "En→Ru"))
     
-    private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.layout)
+    private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
     
     init(output: LearnNewWordzOutput) {
         self.output = output
@@ -173,10 +179,19 @@ final class LearnNewWordzViewController: UIViewController {
         
         collectionView.backgroundColor = .clear
         collectionView.showsVerticalScrollIndicator = false
-        self.collectionView.translatesAutoresizingMaskIntoConstraints = false
-        self.collectionView.collectionViewLayout = self.layout
-        self.collectionView.dataSource = self
-        self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Kek")
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.collectionViewLayout = layout
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(
+            BubbleThematicWordsCollectionViewCell.self,
+            forCellWithReuseIdentifier: BubbleThematicWordsCollectionViewCell.reuseID
+        )
+        collectionView.register(
+            LearnNewWordzCollectionViewHeader.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: LearnNewWordzCollectionViewHeader.reuseID
+        )
         view.addSubview(collectionView)
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -193,17 +208,51 @@ extension LearnNewWordzViewController: LearnNewWordzInput {
     
 }
 
-extension LearnNewWordzViewController: UICollectionViewDataSource {
+extension LearnNewWordzViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         9
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Kek", for: indexPath)
-        cell.backgroundColor = indexPath.row % 2 == 1 ? .green : .blue
-        cell.layer.cornerRadius = 10.0
+        let dequedCell = collectionView.dequeueReusableCell(withReuseIdentifier: BubbleThematicWordsCollectionViewCell.reuseID, for: indexPath)
+        
+        guard let cell = dequedCell as? BubbleThematicWordsCollectionViewCell else { return UICollectionViewCell() }
+        
+        cell.configure(configuration: .init(title: "Architecture")
+                        .with(iconImage: .architecture)
+                        .with(cornerRadius: 13.0)
+                        .with(backgroundColor: .softGreen)
+                        .with(badgeText: "En~Ru"))
+        
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: LearnNewWordzCollectionViewHeader.reuseID, for: indexPath) as? LearnNewWordzCollectionViewHeader else { return UICollectionReusableView() }
+        header.configure()
+        return header
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("kek")
+        let module = ThematicWordzBuilder.build(viewModel: .init(title: "Architecture", wordsPreview: WordsPreviews))
+        module.modalPresentationStyle = .fullScreen
+        self.present(module, animated: true, completion: nil)
+    }
+    
 }
+
+private var WordsPreviews: [PreviewViewModel] = [
+    .init(title: "To get out", secondTitles: ["Выйти наружу", "Выбраться отсюда"]),
+    .init(title: "To find out", secondTitles: ["Выяснить", "Обнаруживать", "Разузнать"]),
+    .init(title: "Words Words Words Words", secondTitles: ["Слова", "Какие-то слова"]),
+    .init(title: "Words", secondTitles: ["Слово 1", "Слово 2"]),
+    .init(title: "Words", secondTitles: ["Слово", "Слово 1", "Слово 2"]),
+    .init(title: "Words", secondTitles: ["Слово", "Слово 1", "Слово 1", "Слово 1", "Слово 1"]),
+    .init(title: "Words Wordz 1", secondTitles: ["Слово"]),
+    .init(title: "Words KEK", secondTitles: ["Слово MEM"]),
+    .init(title: "Words LOL", secondTitles: ["Слово"]),
+]

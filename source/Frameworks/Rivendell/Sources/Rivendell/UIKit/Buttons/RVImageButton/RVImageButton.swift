@@ -51,6 +51,7 @@ public class RVImageButton: RVControl {
     }
     
     private func configureUI() {
+        translatesAutoresizingMaskIntoConstraints = false
         addContainerView()
         addImageView()
         updateAppearance()

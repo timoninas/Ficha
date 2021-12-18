@@ -37,6 +37,18 @@ public extension UIColor {
     
     static let livesMatter = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
     
-    static let softMint = UIColor(red: 206/255, green: 243/255, blue: 229/255, alpha: 1)
+    static let softGreen = UIColor(red: 206/255, green: 243/255, blue: 229/255, alpha: 1)
+    
+    static let softOrange = UIColor(red: 249/255, green: 224/255, blue: 199/255, alpha: 1)
+    
+    static let softPutple = UIColor(red: 185/255, green: 191/255, blue: 255/255, alpha: 1)
+    
+    static let softBlue = UIColor(red: 195/255, green: 226/255, blue: 252/255, alpha: 1)
+    
+    static let softYellow = UIColor(red: 255/255, green: 224/255, blue: 138/255, alpha: 1)
+    
+    static let softPink = UIColor(red: 240/255, green: 206/255, blue: 243/255, alpha: 1)
+    
+    static let softRed = UIColor(red: 249/255, green: 199/255, blue: 199/255, alpha: 1)
     
 }

@@ -1,0 +1,148 @@
+//
+//  Architecture.swift
+//  
+//
+//  Created by Антон Тимонин on 21.12.2021.
+//
+
+import Foundation
+
+public func getGoldArhitecture() -> BagOfGoldWords {
+    var ereborGoldWords: [EreborGoldWord] = []
+    
+    ereborGoldWords.append(contentsOf: [
+        .init(
+            word: "Apse",
+            transcription: "[æps]",
+            examples: [
+                "I was taken up the apse",
+                "Well, at the time, you know, it... it seemed like the apse"],
+            translations: ["Апсида", "Абсида"]
+        ),
+        .init(
+            word: "Arched colonnade",
+            transcription: "[ɑːtʃt ˌkɒləˈneɪd]",
+            examples: [],
+            translations: ["Арочная колоннада"]
+        ),
+        .init(
+            word: "Renaissance architect",
+            transcription: "[rɪˈneɪsns ˈɑːkɪtekt]",
+            examples: ["In proportion as architecture ebbs, printing swells and grows"],
+            translations: ["Архитектор эпохи Возрождения (Ренессанса)"]
+        ),
+        .init(
+            word: "Architecture",
+            transcription: "[ˈɑːkɪtektʃə]",
+            examples: ["Architecture is dethroned",
+                       "So... the architecture of Neolution is under our control"],
+            translations: ["Архитектура", "Зодчество"]
+        ),
+        .init(
+            word: "Architectural patronage",
+            transcription: "[ˌɑːkɪˈtektʃrəl ˈpætrənɪdʒ]",
+            examples: ["\"Do you know that I'm an architectural expert?\"",
+                       "They want their basic architectural elements back"],
+            translations: ["Архитектурный патронаж"]
+        ),
+        .init(
+            word: "Asymmetric plan",
+            transcription: "[ˌeɪsɪˈmetrɪk plæn]",
+            examples: ["There are many benefits to be had from the plan"],
+            translations: ["Ассиметричный план"]
+        ),
+        .init(
+            word: "Baptistry",
+            transcription: "[baptistry]",
+            examples: [],
+            translations: ["Баптистерий"]
+        ),
+        .init(
+            word: "Pinnacle",
+            transcription: "[ˈpɪnəkəl]",
+            examples: [],
+            translations: ["Башенка"]
+        ),
+        .init(
+            word: "Veranda",
+            transcription: "[vəˈrændə]",
+            examples: ["Bob got up and went out onto the veranda",
+                       "Anne leaned forward, hands on the veranda railing"],
+            translations: ["Веранда", "Терраса"]
+        ),
+        .init(
+            word: "Exterior",
+            transcription: "[ɪkˈstɪərɪə]",
+            examples: ["Interiors, exteriors, um, anything really",
+                       "Just want to know... what is behind this strong, silent exterior?"],
+            translations: ["Внешняя часть"]
+        ),
+        .init(
+            word: "To erect",
+            transcription: "[tu ɪˈrekt]",
+            examples: ["I don't want to erect a tomb for him in my heart",
+                       "When he decided to erect a building, he spent six months looking for an architect"],
+            translations: ["Возводить", "Строить"]
+        ),
+        .init(
+            word: "exposition \nexhibition",
+            transcription: "[ˌekspəˈzɪʃən]",
+            examples: [],
+            translations: ["Выставка"]
+        ),
+        .init(
+            word: "Harmony of form and color",
+            transcription: "[ˈhɑːməni əv ˈfɔːm ənd ˈkʌlər]",
+            examples: ["They call it harmony"],
+            translations: ["Гармония формы и цвета"]
+        ),
+        .init(
+            word: "Clay for brick",
+            transcription: "[kleɪ fə brɪk]",
+            examples: ["The privatization of space had just struck a brick wall"],
+            translations: ["Глина для кирпича"]
+        ),
+        .init(
+            word: "Urban surroundings",
+            transcription: "[ˈɜːbən səˈraʊndɪŋz]",
+            examples: ["In these new surroundings, he is a surprisingly adept swimmer"],
+            translations: ["Городские окрестности"]
+        ),
+        .init(
+            word: "Urban core",
+            transcription: "[ˈɜːbən kɔː]",
+            examples: [],
+            translations: ["Городской центр", "Городское ядро"]
+        ),
+        .init(
+            word: "Woodcut",
+            transcription: "[ˈwʊdkʌt]",
+            examples: ["It's crude, but remarkably similar to these copies... of old woodcuts and medieval drawings"],
+            translations: ["Гравюра на дереве", "Ксилография"]
+        ),
+        .init(
+            word: "Greek temples",
+            transcription: "[ɡriːk ˈtempəlz]",
+            examples: ["The west wall of Solomon's Temple"],
+            translations: ["Греческие храмы"]
+        ),
+        .init(
+            word: "Designer",
+            transcription: "[dɪˈzaɪnə]",
+            examples: ["He walked to the apartment of Neil Dumont, his new designer and best friend",
+                       "- Video game designer",
+                       "I send you out for exciting new designer drugs, and you come back with tomato sauce."],
+            translations: ["Дизайнер", "Проектировщик", "Художник"]
+        ),
+        .init(
+            word: "Ancient construction",
+            transcription: "[ˈeɪnʃənt kənˈstrʌkʃən]",
+            examples: ["Paris's ancient Rose Line",
+                      "But after construction began, the station's budget spiraled wildly out of control, and many countries dropped out in disgust"],
+            translations: ["Древняя конструкция"]
+        ),
+    ])
+    
+    let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .architecture, typeTranslation: .enToRu)
+    return bagOfGold
+}

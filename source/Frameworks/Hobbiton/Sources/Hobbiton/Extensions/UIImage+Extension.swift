@@ -43,4 +43,6 @@ public extension UIImage {
     
     static let closeIcon = UIImage(named: "closeIcon")
     
+    static let architecture = UIImage(named: "arhitecture")
+    
 }

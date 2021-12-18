@@ -20,6 +20,10 @@ public final class BubbleThematicWordsView: UIView {
     
     // MARK: - Private properties
     
+    private struct Constants {
+        static var cornerRadiusTextBadge: CGFloat { 4.0 }
+    }
+    
     private let contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -39,10 +43,13 @@ public final class BubbleThematicWordsView: UIView {
     
     private var iconImageView: UIImageView = {
         let iv = UIImageView()
-        iv.contentMode = .scaleAspectFit
+        iv.contentMode = .scaleAspectFill
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
     }()
+    
+    private var textBadge = TextBadge(configuration: .init(title: "")
+                                        .with(cornerRadius: Constants.cornerRadiusTextBadge))
     
     private var storedConstraints = [NSLayoutConstraint]()
     
@@ -68,6 +75,8 @@ public final class BubbleThematicWordsView: UIView {
     
     private func updateRounding() {
         layer.cornerRadius = configuration.cornerRadius
+        iconImageView.layer.masksToBounds = true
+        iconImageView.layer.cornerRadius = frame.height * 0.035
         contentView.layer.cornerRadius = configuration.cornerRadius
     }
     
@@ -80,6 +89,8 @@ public final class BubbleThematicWordsView: UIView {
         addContentView()
         addTitleLabel()
         addIconImage()
+        
+        addTextBadge()
         
         updateAppearance()
     }
@@ -97,6 +108,10 @@ public final class BubbleThematicWordsView: UIView {
         contentView.addSubview(iconImageView)
     }
     
+    private func addTextBadge() {
+        contentView.addSubview(textBadge)
+    }
+    
     private func updateAppearance() {
         updateContent()
         setupConstraints()
@@ -106,6 +121,10 @@ public final class BubbleThematicWordsView: UIView {
         titleLabel.text = configuration.title
         iconImageView.image = configuration.iconImage
         backgroundColor = configuration.backgroundColor
+        
+        textBadge.configuration = textBadge.configuration
+            .with(title: configuration.badgeText)
+        textBadge.alpha = configuration.badgeText.isEmpty ? 0.0 : 1.0
     }
     
     private func setupConstraints() {
@@ -127,10 +146,16 @@ public final class BubbleThematicWordsView: UIView {
         ]
         
         storedConstraints += [
-            iconImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8.0),
-            iconImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8.0),
-            iconImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8.0),
+            iconImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 9.0),
+            iconImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 9.0),
+            iconImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -9.0),
             iconImageView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -8.0),
+        ]
+        
+        storedConstraints += [
+            textBadge.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 6.0),
+            textBadge.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8.0),
+            textBadge.rightAnchor.constraint(lessThanOrEqualTo: contentView.rightAnchor, constant: -8.0)
         ]
         
         NSLayoutConstraint.activate(storedConstraints)

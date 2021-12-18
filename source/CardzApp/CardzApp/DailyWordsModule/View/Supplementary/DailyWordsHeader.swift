@@ -19,8 +19,8 @@ final class DailyWordsHeader: UIView {
     
     public var title: String = "" {
         didSet {
-            if self.title != oldValue {
-                self.titleLabel.text = self.title
+            if title != oldValue {
+                titleLabel.text = title
             }
         }
     }
@@ -29,7 +29,7 @@ final class DailyWordsHeader: UIView {
     
     private struct Constants {
         static let height: CGFloat = 65.0
-        static let settingsImageSize = 40.0
+        static let settingsImageSize = 42.5
         static let revolvetraImageSize = 12.5
     }
     
@@ -52,7 +52,14 @@ final class DailyWordsHeader: UIView {
         return imageView
     }()
     
-    private let settingsButton: UIButton = {
+    private let settingsButton = RVImageButton(configuration: .init()
+                                                .with(isFullyRounded: true)
+                                                .with(backgroundColor: .clear)
+                                                .with(highlitedColor: .clear)
+                                                .with(image: .settingRoundIcon)
+                                                .with(imageColor: .nazgul))
+    
+    private let settingsButton1: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         if let image = UIImage.settingRoundIcon {
@@ -65,7 +72,7 @@ final class DailyWordsHeader: UIView {
     
     init() {
         super.init(frame: .zero)
-        self.configureUI()
+        configureUI()
     }
     
     required init?(coder: NSCoder) {
@@ -79,49 +86,46 @@ final class DailyWordsHeader: UIView {
     }
     
     private func configureUI() {
-        self.setupView()
-        self.addSettingsButton()
-        self.addTitleLabel()
-        self.addRevolvetraImageView()
+        setupView()
+        addSettingsButton()
+        addTitleLabel()
+        addRevolvetraImageView()
     }
     
     private func setupView() {
-        self.backgroundColor = .clear
-        self.translatesAutoresizingMaskIntoConstraints = false
-        self.heightAnchor.constraint(equalToConstant: Constants.height).isActive = true
+        backgroundColor = .clear
+        translatesAutoresizingMaskIntoConstraints = false
+        heightAnchor.constraint(equalToConstant: Constants.height).isActive = true
     }
     
     private func addTitleLabel() {
-        self.addSubview(self.titleLabel)
-        self.titleLabel.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        self.titleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        self.titleLabel.rightAnchor.constraint(lessThanOrEqualTo: self.settingsButton.leftAnchor, constant: -10.0).isActive = true
-        self.titleLabel.sizeToFit()
+        addSubview(titleLabel)
+        titleLabel.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        titleLabel.rightAnchor.constraint(lessThanOrEqualTo: settingsButton.leftAnchor, constant: -10.0).isActive = true
+        titleLabel.sizeToFit()
     }
     
     private func addRevolvetraImageView() {
-        self.addSubview(self.revolvetraImageView)
-        self.revolvetraImageView.leftAnchor.constraint(equalTo: self.titleLabel.rightAnchor, constant: 2.0).isActive = true
-        self.revolvetraImageView.bottomAnchor.constraint(equalTo: self.titleLabel.topAnchor, constant: 8.0).isActive = true
-        self.revolvetraImageView.heightAnchor.constraint(equalToConstant: Constants.revolvetraImageSize).isActive = true
-        self.revolvetraImageView.widthAnchor.constraint(equalTo: self.revolvetraImageView.heightAnchor).isActive = true
+        addSubview(revolvetraImageView)
+        revolvetraImageView.leftAnchor.constraint(equalTo: titleLabel.rightAnchor, constant: 2.0).isActive = true
+        revolvetraImageView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: 8.0).isActive = true
+        revolvetraImageView.heightAnchor.constraint(equalToConstant: Constants.revolvetraImageSize).isActive = true
+        revolvetraImageView.widthAnchor.constraint(equalTo: revolvetraImageView.heightAnchor).isActive = true
     }
     
     private func addSettingsButton() {
-        self.addSubview(self.settingsButton)
-        self.settingsButton.addTarget(self, action: #selector(onSettingsButtonTapped(sender:)), for: .touchUpInside)
-        self.settingsButton.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        self.settingsButton.heightAnchor.constraint(equalToConstant: Constants.settingsImageSize).isActive = true
-        self.settingsButton.widthAnchor.constraint(equalTo: self.settingsButton.heightAnchor).isActive = true
-        self.settingsButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0.0).isActive = true
-    }
-    
-    // MARK: - Private properties
-    
-    @objc
-    func onSettingsButtonTapped(sender: UIButton) {
-        guard let onTap = self.onTap else { return }
-        onTap()
+        settingsButton.configuration = settingsButton.configuration
+            .with(onTap: { [weak self] _ in
+                guard let self = self else { return }
+                self.onTap?()
+                print("kek")
+            })
+        addSubview(settingsButton)
+        settingsButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        settingsButton.heightAnchor.constraint(equalToConstant: Constants.settingsImageSize).isActive = true
+        settingsButton.widthAnchor.constraint(equalTo: settingsButton.heightAnchor).isActive = true
+        settingsButton.rightAnchor.constraint(equalTo: rightAnchor, constant: 0.0).isActive = true
     }
     
 }

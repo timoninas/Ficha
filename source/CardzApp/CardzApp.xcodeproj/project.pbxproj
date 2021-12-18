@@ -38,7 +38,15 @@
 		77895BF927306ABC00A852BF /* Hobbiton in Frameworks */ = {isa = PBXBuildFile; productRef = 77895BF827306ABC00A852BF /* Hobbiton */; };
 		77A178DD273526FE005E520C /* EyeOfSauron in Frameworks */ = {isa = PBXBuildFile; productRef = 77A178DC273526FE005E520C /* EyeOfSauron */; };
 		77A178DF27352A0E005E520C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A178DE27352A0E005E520C /* Logger.swift */; };
+		77A3CA282772F93F00A0EA9C /* ThematicWordzViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3CA272772F93E00A0EA9C /* ThematicWordzViewController.swift */; };
+		77A3CA2B2772F96900A0EA9C /* ThematicWordzPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3CA2A2772F96900A0EA9C /* ThematicWordzPresenter.swift */; };
+		77A3CA2F2772F98D00A0EA9C /* ThematicWordzViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3CA2E2772F98D00A0EA9C /* ThematicWordzViewController+ViewModel.swift */; };
+		77A3CA322772F9A400A0EA9C /* ThematicWordzBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3CA312772F9A400A0EA9C /* ThematicWordzBuilder.swift */; };
+		77A3CA342772F9B300A0EA9C /* ThematicWordzProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3CA332772F9B300A0EA9C /* ThematicWordzProtocols.swift */; };
+		77A3CA362772FDE100A0EA9C /* PreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3CA352772FDE100A0EA9C /* PreviewViewModel.swift */; };
+		77DCC7A627711B0000F9572A /* Erebor in Frameworks */ = {isa = PBXBuildFile; productRef = 77DCC7A527711B0000F9572A /* Erebor */; };
 		77F9EF79275D30C8008B1EB6 /* RevolvetraKnowledge in Frameworks */ = {isa = PBXBuildFile; productRef = 77F9EF78275D30C8008B1EB6 /* RevolvetraKnowledge */; };
+		D48F8494276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F8493276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift */; };
 		D4C7F12F2719636D0066125A /* DailyWordsViewController+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C7F12E2719636D0066125A /* DailyWordsViewController+State.swift */; };
 		D4F00D5B2718C3840079A860 /* CardzApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4F00D592718C3840079A860 /* CardzApp.xcdatamodeld */; };
 		D4F00D5D2718C3860079A860 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F00D5C2718C3860079A860 /* Assets.xcassets */; };
@@ -92,6 +100,7 @@
 		7748E93C2757F5460063E592 /* AlertCardViewController+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertCardViewController+ViewModel.swift"; sourceTree = "<group>"; };
 		7748E93F2757F5B80063E592 /* FavouriteWordzViewController+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavouriteWordzViewController+ViewModel.swift"; sourceTree = "<group>"; };
 		775A18C6271C284E00A295C0 /* DailyWordsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWordsHeader.swift; sourceTree = "<group>"; };
+		776C7A6227711A8E000C2E97 /* Erebor */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Erebor; path = ../Frameworks/Erebor; sourceTree = "<group>"; };
 		776E4925272C90E7000D0B2D /* LearnCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCardViewController.swift; sourceTree = "<group>"; };
 		776E4928272C9103000D0B2D /* LearnCardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCardPresenter.swift; sourceTree = "<group>"; };
 		776E492C272C91B3000D0B2D /* LearnCardProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCardProtocol.swift; sourceTree = "<group>"; };
@@ -102,10 +111,17 @@
 		776EFC3F27410870001010FD /* AlertCardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCardBuilder.swift; sourceTree = "<group>"; };
 		77A178DB273526F4005E520C /* EyeOfSauron */ = {isa = PBXFileReference; lastKnownFileType = folder; name = EyeOfSauron; path = ../Frameworks/EyeOfSauron; sourceTree = "<group>"; };
 		77A178DE27352A0E005E520C /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		77A3CA272772F93E00A0EA9C /* ThematicWordzViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThematicWordzViewController.swift; sourceTree = "<group>"; };
+		77A3CA2A2772F96900A0EA9C /* ThematicWordzPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThematicWordzPresenter.swift; sourceTree = "<group>"; };
+		77A3CA2E2772F98D00A0EA9C /* ThematicWordzViewController+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThematicWordzViewController+ViewModel.swift"; sourceTree = "<group>"; };
+		77A3CA312772F9A400A0EA9C /* ThematicWordzBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThematicWordzBuilder.swift; sourceTree = "<group>"; };
+		77A3CA332772F9B300A0EA9C /* ThematicWordzProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThematicWordzProtocols.swift; sourceTree = "<group>"; };
+		77A3CA352772FDE100A0EA9C /* PreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewModel.swift; sourceTree = "<group>"; };
 		77C2F4A92737D66900138DF9 /* Rivendell */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Rivendell; path = ../Frameworks/Rivendell; sourceTree = "<group>"; };
 		77D5165A27306A180030D1D1 /* Hobbiton */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Hobbiton; path = ../Frameworks/Hobbiton; sourceTree = "<group>"; };
 		77DD37E32737D5AF007A3B1E /* Moria */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Moria; path = ../Frameworks/Moria; sourceTree = "<group>"; };
 		77F9EF77275D2D8C008B1EB6 /* RevolvetraKnowledge */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RevolvetraKnowledge; path = ../Frameworks/RevolvetraKnowledge; sourceTree = "<group>"; };
+		D48F8493276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnNewWordzCollectionViewHeader.swift; sourceTree = "<group>"; };
 		D4C7F12E2719636D0066125A /* DailyWordsViewController+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyWordsViewController+State.swift"; sourceTree = "<group>"; };
 		D4F00D4D2718C3840079A860 /* CardzApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardzApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F00D5A2718C3840079A860 /* CardzApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardzApp.xcdatamodel; sourceTree = "<group>"; };
@@ -139,6 +155,7 @@
 				77232AC8275D2C2800529DE0 /* Moria in Frameworks */,
 				77895BF927306ABC00A852BF /* Hobbiton in Frameworks */,
 				77A178DD273526FE005E520C /* EyeOfSauron in Frameworks */,
+				77DCC7A627711B0000F9572A /* Erebor in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +226,7 @@
 		770B3FE82769BA2200DC7887 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D48F8495276FD1EF00FC6606 /* Supplementary */,
 				770B3FE52769BA0800DC7887 /* LearnNewWordzViewController.swift */,
 			);
 			path = View;
@@ -329,6 +347,50 @@
 			path = Logger;
 			sourceTree = "<group>";
 		};
+		77A3CA292772F94900A0EA9C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				77A3CA302772F99200A0EA9C /* Supplementary */,
+				77A3CA272772F93E00A0EA9C /* ThematicWordzViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		77A3CA2C2772F96F00A0EA9C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				77A3CA2A2772F96900A0EA9C /* ThematicWordzPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		77A3CA2D2772F97800A0EA9C /* ThematicWordzModule */ = {
+			isa = PBXGroup;
+			children = (
+				77A3CA332772F9B300A0EA9C /* ThematicWordzProtocols.swift */,
+				77A3CA312772F9A400A0EA9C /* ThematicWordzBuilder.swift */,
+				77A3CA292772F94900A0EA9C /* View */,
+				77A3CA2C2772F96F00A0EA9C /* Presenter */,
+			);
+			path = ThematicWordzModule;
+			sourceTree = "<group>";
+		};
+		77A3CA302772F99200A0EA9C /* Supplementary */ = {
+			isa = PBXGroup;
+			children = (
+				77A3CA2E2772F98D00A0EA9C /* ThematicWordzViewController+ViewModel.swift */,
+			);
+			path = Supplementary;
+			sourceTree = "<group>";
+		};
+		77A3CA372772FDF200A0EA9C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				77A3CA352772FDE100A0EA9C /* PreviewViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		77C962262729F1CC00100FC3 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +401,7 @@
 				77C2F4A92737D66900138DF9 /* Rivendell */,
 				77232AC6275D2C1A00529DE0 /* RevoletraUserDefaultsKeys */,
 				77F9EF77275D2D8C008B1EB6 /* RevolvetraKnowledge */,
+				776C7A6227711A8E000C2E97 /* Erebor */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -348,6 +411,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D48F8495276FD1EF00FC6606 /* Supplementary */ = {
+			isa = PBXGroup;
+			children = (
+				D48F8493276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift */,
+			);
+			path = Supplementary;
 			sourceTree = "<group>";
 		};
 		D4F00D442718C3840079A860 = {
@@ -375,6 +446,7 @@
 		D4F00D4F2718C3840079A860 /* CardzApp */ = {
 			isa = PBXGroup;
 			children = (
+				77A3CA2D2772F97800A0EA9C /* ThematicWordzModule */,
 				770B3FD92767D5E200DC7887 /* DeveloperScreenModule */,
 				7748E9332757F4B40063E592 /* FavouriteWordzModule */,
 				776EFC38274107CC001010FD /* AlertCardModule */,
@@ -440,6 +512,7 @@
 		D4F00D8A2718C3FB0079A860 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				77A3CA372772FDF200A0EA9C /* Models */,
 				D4F00DA62718C5430079A860 /* Protocols */,
 				D4F00D902718C3FB0079A860 /* AppDelegate.swift */,
 				D4F00D912718C3FB0079A860 /* SceneDelegate.swift */,
@@ -489,6 +562,7 @@
 				77232AC7275D2C2800529DE0 /* Moria */,
 				77232AC9275D2C2B00529DE0 /* RevoletraUserDefaultsKeys */,
 				77F9EF78275D30C8008B1EB6 /* RevolvetraKnowledge */,
+				77DCC7A527711B0000F9572A /* Erebor */,
 			);
 			productName = CardzApp;
 			productReference = D4F00D4D2718C3840079A860 /* CardzApp.app */;
@@ -603,14 +677,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77A3CA282772F93F00A0EA9C /* ThematicWordzViewController.swift in Sources */,
 				7748E93B2757F4F90063E592 /* FavouriteWordzProtocols.swift in Sources */,
 				7748E93D2757F5460063E592 /* AlertCardViewController+ViewModel.swift in Sources */,
+				77A3CA322772F9A400A0EA9C /* ThematicWordzBuilder.swift in Sources */,
 				D4C7F12F2719636D0066125A /* DailyWordsViewController+State.swift in Sources */,
 				7720F601275FDA7800BC5973 /* ViewSimpleState.swift in Sources */,
 				770B3FE42767D68600DC7887 /* DeveloperScreenBuilder.swift in Sources */,
 				D4F00D982718C3FB0079A860 /* DailyWordsBuilder.swift in Sources */,
 				770B3FEF2769BA4E00DC7887 /* LearnNewWordzBuilder.swift in Sources */,
 				D4F00D962718C3FB0079A860 /* DailyWordsPresenter.swift in Sources */,
+				77A3CA362772FDE100A0EA9C /* PreviewViewModel.swift in Sources */,
 				776E4929272C9103000D0B2D /* LearnCardPresenter.swift in Sources */,
 				D4F00DA52718C5070079A860 /* LifeCycleProtocol.swift in Sources */,
 				7748E9392757F4EE0063E592 /* FavouriteWordzBuilder.swift in Sources */,
@@ -627,17 +704,21 @@
 				7748E9362757F4D60063E592 /* FavouriteWordzPresenter.swift in Sources */,
 				776EFC3B27410804001010FD /* AlertCardPresenter.swift in Sources */,
 				D4F00DA22718C4940079A860 /* DailyWordsViewController+ViewModel.swift in Sources */,
+				D48F8494276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift in Sources */,
 				770B3FE22767D66600DC7887 /* DeveloperScreenProtocol.swift in Sources */,
 				7748E9322757F4B10063E592 /* FavouriteWordzViewController.swift in Sources */,
 				775A18C7271C284E00A295C0 /* DailyWordsHeader.swift in Sources */,
 				D4F00D9E2718C3FB0079A860 /* SceneDelegate.swift in Sources */,
+				77A3CA342772F9B300A0EA9C /* ThematicWordzProtocols.swift in Sources */,
 				D4F00D972718C3FB0079A860 /* DailyWordsViewController.swift in Sources */,
 				770B3FE62769BA0900DC7887 /* LearnNewWordzViewController.swift in Sources */,
 				D4F00D9D2718C3FB0079A860 /* AppDelegate.swift in Sources */,
+				77A3CA2F2772F98D00A0EA9C /* ThematicWordzViewController+ViewModel.swift in Sources */,
 				D4F00D952718C3FB0079A860 /* DailyWordsProtocol.swift in Sources */,
 				776E492D272C91B3000D0B2D /* LearnCardProtocol.swift in Sources */,
 				7748E9402757F5B80063E592 /* FavouriteWordzViewController+ViewModel.swift in Sources */,
 				776E4926272C90E7000D0B2D /* LearnCardViewController.swift in Sources */,
+				77A3CA2B2772F96900A0EA9C /* ThematicWordzPresenter.swift in Sources */,
 				770B3FEA2769BA3100DC7887 /* LearnNewWordzPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -984,6 +1065,10 @@
 		77A178DC273526FE005E520C /* EyeOfSauron */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = EyeOfSauron;
+		};
+		77DCC7A527711B0000F9572A /* Erebor */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Erebor;
 		};
 		77F9EF78275D30C8008B1EB6 /* RevolvetraKnowledge */ = {
 			isa = XCSwiftPackageProductDependency;

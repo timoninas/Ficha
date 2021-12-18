@@ -49,14 +49,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         tabBar.tabBar.isHidden = false
         tabBar.tabBar.isTranslucent = true
         
+        UITabBar.appearance().backgroundColor = .white
         UITabBar.appearance().tintColor = .mysteryShack
         UITabBar.appearance().unselectedItemTintColor = .gendalfGray
         
         let bounds = tabBar.tabBar.bounds as CGRect
-        let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+        let visualEffectView = UIView() //UIVisualEffectView(effect: UIBlurEffect(style: .light))
         visualEffectView.frame = bounds
+        visualEffectView.backgroundColor = .gendalf
         visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tabBar.tabBar.insertSubview(visualEffectView, at: 0)
+        
+        UINavigationBar.appearance().backgroundColor = .gendalf
+        UINavigationBar.appearance().barTintColor = .gendalf
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.nazgul]
         
         self.window?.windowScene = windowScene
         self.window?.rootViewController = tabBar

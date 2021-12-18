@@ -1,33 +1,23 @@
 //
-//  FavouriteWordzViewController.swift
+//  ThematicWordzViewController.swift
 //  CardzApp
 //
-//  Created by Антон Тимонин on 01.12.2021.
+//  Created by Антон Тимонин on 22.12.2021.
 //
 
 import UIKit
 import Rivendell
 
-/// Контроллер с избранными словами, которые добавил пользователь.
-final class FavouriteWordzViewController: UIViewController {
+/// Контроллер с тематическими словами.
+final class ThematicWordzViewController: UIViewController {
     
-    var viewModel: [PreviewViewModel] = [
-        .init(title: "To get out", secondTitles: ["Выйти наружу", "Выбраться отсюда"]),
-        .init(title: "To find out", secondTitles: ["Выяснить", "Обнаруживать", "Разузнать"]),
-        .init(title: "Words Words Words Words", secondTitles: ["Слова", "Какие-то слова"]),
-        .init(title: "Words", secondTitles: ["Слово 1", "Слово 2"]),
-        .init(title: "Words", secondTitles: ["Слово", "Слово 1", "Слово 2"]),
-        .init(title: "Words", secondTitles: ["Слово", "Слово 1", "Слово 1", "Слово 1", "Слово 1"]),
-        .init(title: "Words Wordz 1", secondTitles: ["Слово"]),
-        .init(title: "Words KEK", secondTitles: ["Слово MEM"]),
-        .init(title: "Words LOL", secondTitles: ["Слово"]),
-    ] {
+    var viewModel: [PreviewViewModel] = [] {
         didSet {
             tableView.reloadData()
         }
     }
     
-    private let output: FavouriteWordzViewOutput
+    private let output: ThematicWordzViewOutput
     
     private lazy var playButton: RVImageButton = {
         let button = RVImageButton(configuration: .init()
@@ -70,7 +60,7 @@ final class FavouriteWordzViewController: UIViewController {
     
     private let tableView = UITableView()
     
-    init(output: FavouriteWordzViewOutput) {
+    init(output: ThematicWordzViewOutput) {
         self.output = output
         super.init(nibName: nil, bundle: nil)
     }
@@ -89,6 +79,7 @@ final class FavouriteWordzViewController: UIViewController {
         super.viewDidLoad()
         RLogInfo(message: "[Info] \(String(describing: self)) ViewDidLoad")
         configureUI()
+        output.viewDidLoad()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -98,14 +89,13 @@ final class FavouriteWordzViewController: UIViewController {
     private func configureUI() {
         view.backgroundColor = .gendalf
         tableView.backgroundColor = .clear
-        setupNavigation()
         
         addTableView()
         addPlayButton()
     }
     
-    private func setupNavigation() {
-        navigationItem.title = "Your favourite wordz"
+    private func setupNavigation(title: String) {
+        navigationItem.title = title
     }
     
     private func addTableView() {
@@ -138,7 +128,7 @@ final class FavouriteWordzViewController: UIViewController {
     
 }
 
-extension FavouriteWordzViewController: UITableViewDelegate {
+extension ThematicWordzViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let data = viewModel[indexPath.row]
@@ -171,7 +161,7 @@ extension FavouriteWordzViewController: UITableViewDelegate {
     }
 }
 
-extension FavouriteWordzViewController: UITableViewDataSource {
+extension ThematicWordzViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.count
@@ -192,7 +182,18 @@ extension FavouriteWordzViewController: UITableViewDataSource {
     
 }
 
-extension FavouriteWordzViewController: FavouriteWordzViewInput {
+extension ThematicWordzViewController: ThematicWordzViewInput {
+    
+    func changeState(state: SimpleScreenState<ThematicWordzViewController.ViewModel>) {
+        switch state {
+        case .normal(model: let viewModel):
+            self.viewModel = viewModel.wordsPreview
+            setupNavigation(title: viewModel.title)
+        case .error:
+            print("Error")
+        }
+    }
     
 }
+
 

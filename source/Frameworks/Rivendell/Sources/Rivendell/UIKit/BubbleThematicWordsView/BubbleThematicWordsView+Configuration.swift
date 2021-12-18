@@ -14,6 +14,8 @@ extension BubbleThematicWordsView {
         
         public private(set) var title: String
         
+        public private(set) var badgeText = ""
+        
         public private(set) var iconImage: UIImage?
         
         public private(set) var backgroundColor: UIColor = .clear
@@ -27,6 +29,12 @@ extension BubbleThematicWordsView {
         public func with(title: String) -> Configuration {
             var mutableSelf = self
             mutableSelf.title = title
+            return mutableSelf
+        }
+        
+        public func with(badgeText: String) -> Configuration {
+            var mutableSelf = self
+            mutableSelf.badgeText = badgeText
             return mutableSelf
         }
         

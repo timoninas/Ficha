@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Hobbiton
 
 final class FavouriteWordzBuilder {
     
@@ -13,7 +14,7 @@ final class FavouriteWordzBuilder {
         let presenter = FavouriteWordzPresenter()
         let view = FavouriteWordzViewController(output: presenter)
         presenter.view = view
-        let nav = UINavigationController(rootViewController: view)
+        let nav = NavigationController(rootViewController: view)
         return nav
     }
     
