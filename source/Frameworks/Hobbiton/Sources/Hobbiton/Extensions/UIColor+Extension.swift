@@ -41,7 +41,7 @@ public extension UIColor {
     
     static let softOrange = UIColor(red: 249/255, green: 224/255, blue: 199/255, alpha: 1)
     
-    static let softPutple = UIColor(red: 185/255, green: 191/255, blue: 255/255, alpha: 1)
+    static let softPurple = UIColor(red: 185/255, green: 191/255, blue: 255/255, alpha: 1)
     
     static let softBlue = UIColor(red: 195/255, green: 226/255, blue: 252/255, alpha: 1)
     

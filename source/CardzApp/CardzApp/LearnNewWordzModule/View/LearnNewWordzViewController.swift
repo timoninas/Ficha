@@ -10,45 +10,6 @@ import Rivendell
 
 final class LearnNewWordzViewController: UIViewController {
     
-//    let customLayout: NSCollectionLayoutSection = {
-//
-//        let smallItemsCount = 3
-//
-//        let smallItemLayout = NSCollectionLayoutItem(
-//            layoutSize: .init(
-//                widthDimension: .fractionalWidth(1.0 / CGFloat(smallItemsCount)),
-//                heightDimension: .fractionalHeight(1.0)
-//            )
-//        )
-//        smallItemLayout.contentInsets = .init(top: 0, leading: 2, bottom: 0, trailing: 2)
-//
-//        let smallItemGroupLayout = NSCollectionLayoutGroup.horizontal(
-//            layoutSize: .init(
-//                widthDimension: .fractionalWidth(1.0),
-//                heightDimension: .fractionalHeight(1 / 3)
-//            ),
-//            subitem: smallItemLayout,
-//            count: smallItemsCount
-//        )
-//        smallItemGroupLayout.contentInsets = .init(top: 2, leading: 0, bottom: 2, trailing: 0)
-//
-//        let bigItemLayout = NSCollectionLayoutItem(
-//            layoutSize: .init(
-//                widthDimension: .fractionalWidth(1.0),
-//                heightDimension: .fractionalHeight(2 / 3))
-//        )
-//
-//        let commonGroupLayout = NSCollectionLayoutGroup.vertical(
-//            layoutSize: .init(
-//                widthDimension: .fractionalWidth(1.0),
-//                heightDimension: .fractionalHeight(1 / 2)
-//            ),
-//            subitems: [bigItemLayout, smallItemGroupLayout]
-//        )
-//
-//        return .init(group: commonGroupLayout)
-//    }()
-    
     let customLayout: NSCollectionLayoutSection = {
         
         let bigItem = NSCollectionLayoutItem(
@@ -135,6 +96,23 @@ final class LearnNewWordzViewController: UIViewController {
     
     var output: LearnNewWordzOutput?
     
+    private var viewModel: ViewModel = .init(items: []) {
+        didSet {
+            guard self.viewModel.items != oldValue.items else { return }
+            collectionView.reloadData()
+        }
+    }
+    
+    private var colors: [UIColor] = [
+        .softGreen,
+        .softOrange,
+        .softPurple,
+        .softBlue,
+        .softYellow,
+        .softPink,
+        .softRed
+    ]
+    
     private let thematicView = BubbleThematicWordsView(configuration: .init(title: "Lol Kek cheburek")
                                                         .with(iconImage: .revolvetra)
                                                         .with(backgroundColor: .softGreen)
@@ -206,24 +184,33 @@ final class LearnNewWordzViewController: UIViewController {
 
 extension LearnNewWordzViewController: LearnNewWordzInput {
     
+    func changeState(state: SimpleScreenState<LearnNewWordzViewController.ViewModel>) {
+        switch state {
+        case .normal(model: let viewModel):
+            self.viewModel = viewModel
+        case .error:
+            print("Error")
+        }
+    }
+    
 }
 
 extension LearnNewWordzViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        9
+        viewModel.items.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let dequedCell = collectionView.dequeueReusableCell(withReuseIdentifier: BubbleThematicWordsCollectionViewCell.reuseID, for: indexPath)
         
         guard let cell = dequedCell as? BubbleThematicWordsCollectionViewCell else { return UICollectionViewCell() }
-        
-        cell.configure(configuration: .init(title: "Architecture")
-                        .with(iconImage: .architecture)
+        let item = viewModel.items[indexPath.row]
+        cell.configure(configuration: .init(title: item.title)
+                        .with(iconImage: item.image)
                         .with(cornerRadius: 13.0)
-                        .with(backgroundColor: .softGreen)
-                        .with(badgeText: "En~Ru"))
+                        .with(backgroundColor: colors[indexPath.row % colors.count])
+                        .with(badgeText: item.badgeText))
         
         return cell
     }

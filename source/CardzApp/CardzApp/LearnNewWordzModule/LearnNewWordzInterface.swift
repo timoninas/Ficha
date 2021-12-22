@@ -8,7 +8,7 @@
 import Foundation
 
 protocol LearnNewWordzInput: AnyObject {
-    
+    func changeState(state: SimpleScreenState<LearnNewWordzViewController.ViewModel>)
 }
 
 protocol LearnNewWordzOutput: LifeCycleProtocol, AnyObject {

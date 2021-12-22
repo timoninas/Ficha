@@ -44,6 +44,7 @@
 		77A3CA322772F9A400A0EA9C /* ThematicWordzBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3CA312772F9A400A0EA9C /* ThematicWordzBuilder.swift */; };
 		77A3CA342772F9B300A0EA9C /* ThematicWordzProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3CA332772F9B300A0EA9C /* ThematicWordzProtocols.swift */; };
 		77A3CA362772FDE100A0EA9C /* PreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3CA352772FDE100A0EA9C /* PreviewViewModel.swift */; };
+		77A3CA392773AA3300A0EA9C /* LearnNewWordzViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3CA382773AA3300A0EA9C /* LearnNewWordzViewController+ViewModel.swift */; };
 		77DCC7A627711B0000F9572A /* Erebor in Frameworks */ = {isa = PBXBuildFile; productRef = 77DCC7A527711B0000F9572A /* Erebor */; };
 		77F9EF79275D30C8008B1EB6 /* RevolvetraKnowledge in Frameworks */ = {isa = PBXBuildFile; productRef = 77F9EF78275D30C8008B1EB6 /* RevolvetraKnowledge */; };
 		D48F8494276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F8493276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift */; };
@@ -117,6 +118,7 @@
 		77A3CA312772F9A400A0EA9C /* ThematicWordzBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThematicWordzBuilder.swift; sourceTree = "<group>"; };
 		77A3CA332772F9B300A0EA9C /* ThematicWordzProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThematicWordzProtocols.swift; sourceTree = "<group>"; };
 		77A3CA352772FDE100A0EA9C /* PreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewModel.swift; sourceTree = "<group>"; };
+		77A3CA382773AA3300A0EA9C /* LearnNewWordzViewController+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearnNewWordzViewController+ViewModel.swift"; sourceTree = "<group>"; };
 		77C2F4A92737D66900138DF9 /* Rivendell */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Rivendell; path = ../Frameworks/Rivendell; sourceTree = "<group>"; };
 		77D5165A27306A180030D1D1 /* Hobbiton */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Hobbiton; path = ../Frameworks/Hobbiton; sourceTree = "<group>"; };
 		77DD37E32737D5AF007A3B1E /* Moria */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Moria; path = ../Frameworks/Moria; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				D48F8493276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift */,
+				77A3CA382773AA3300A0EA9C /* LearnNewWordzViewController+ViewModel.swift */,
 			);
 			path = Supplementary;
 			sourceTree = "<group>";
@@ -719,6 +722,7 @@
 				7748E9402757F5B80063E592 /* FavouriteWordzViewController+ViewModel.swift in Sources */,
 				776E4926272C90E7000D0B2D /* LearnCardViewController.swift in Sources */,
 				77A3CA2B2772F96900A0EA9C /* ThematicWordzPresenter.swift in Sources */,
+				77A3CA392773AA3300A0EA9C /* LearnNewWordzViewController+ViewModel.swift in Sources */,
 				770B3FEA2769BA3100DC7887 /* LearnNewWordzPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

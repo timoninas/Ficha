@@ -10,7 +10,7 @@ import Foundation
 extension FavouriteWordzViewController {
     
     /// Представление экрана избранных слов.
-    struct FavouriteWordzViewModel: Equatable {
+    struct ViewModel: Equatable {
         
         /// Заголовок уведомления.
         let title: String

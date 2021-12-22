@@ -11,17 +11,7 @@ import Rivendell
 /// Контроллер с избранными словами, которые добавил пользователь.
 final class FavouriteWordzViewController: UIViewController {
     
-    var viewModel: [PreviewViewModel] = [
-        .init(title: "To get out", secondTitles: ["Выйти наружу", "Выбраться отсюда"]),
-        .init(title: "To find out", secondTitles: ["Выяснить", "Обнаруживать", "Разузнать"]),
-        .init(title: "Words Words Words Words", secondTitles: ["Слова", "Какие-то слова"]),
-        .init(title: "Words", secondTitles: ["Слово 1", "Слово 2"]),
-        .init(title: "Words", secondTitles: ["Слово", "Слово 1", "Слово 2"]),
-        .init(title: "Words", secondTitles: ["Слово", "Слово 1", "Слово 1", "Слово 1", "Слово 1"]),
-        .init(title: "Words Wordz 1", secondTitles: ["Слово"]),
-        .init(title: "Words KEK", secondTitles: ["Слово MEM"]),
-        .init(title: "Words LOL", secondTitles: ["Слово"]),
-    ] {
+    var viewModel: [FavouriteWordzViewController.ViewModel] = [] {
         didSet {
             tableView.reloadData()
         }
@@ -89,6 +79,7 @@ final class FavouriteWordzViewController: UIViewController {
         super.viewDidLoad()
         RLogInfo(message: "[Info] \(String(describing: self)) ViewDidLoad")
         configureUI()
+        output.viewDidLoad()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -193,6 +184,15 @@ extension FavouriteWordzViewController: UITableViewDataSource {
 }
 
 extension FavouriteWordzViewController: FavouriteWordzViewInput {
+    
+    func changeState(state: SimpleScreenState<[FavouriteWordzViewController.ViewModel]>) {
+        switch state {
+        case .normal(model: let viewModel):
+            self.viewModel = viewModel
+        case .error:
+            break
+        }
+    }
     
 }
 

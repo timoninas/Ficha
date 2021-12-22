@@ -43,6 +43,22 @@ public extension UIImage {
     
     static let closeIcon = UIImage(named: "closeIcon")
     
+    static let animals = UIImage(named: "animals")
+    
     static let architecture = UIImage(named: "arhitecture")
+    
+    static let clothes = UIImage(named: "clothes")
+    
+    static let computers = UIImage(named: "computers")
+    
+    static let emotions = UIImage(named: "emotions")
+    
+    static let home = UIImage(named: "home")
+    
+    static let job = UIImage(named: "job")
+    
+    static let random = UIImage(named: "random")
+    
+    static let serials = UIImage(named: "serials")
     
 }

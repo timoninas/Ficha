@@ -27,4 +27,6 @@ public enum ArkenstoneTypeWord: String, CaseIterable {
     case serials = "Serials"
     /// Рандомные.
     case random = "Random"
+    /// Избранные.
+    case favourite = "Favourite"
 }

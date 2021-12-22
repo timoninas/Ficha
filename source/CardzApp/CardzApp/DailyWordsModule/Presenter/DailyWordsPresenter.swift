@@ -14,10 +14,14 @@ final class DailyWordsPresenter: DailyWordsOutput {
     init() { }
     
     func viewDidLoad() {
-        self.fetchData()
+        self.mockFetchData()
     }
     
     private func fetchData() {
+        
+    }
+    
+    private func mockFetchData() {
         let viewModel = [
             DailyWordsViewController.ViewModel(title: "Words", subtitles: ["Harper's words came faster now", "Tracy listened to his words, first with shock and then with growing anger. He made her sound like an outcast, a leper"], translations: ["Слова"]),
             DailyWordsViewController.ViewModel(title: "Interesting", subtitles: nil, translations: ["Интересный"]),

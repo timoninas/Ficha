@@ -8,6 +8,7 @@
 import Foundation
 
 protocol FavouriteWordzViewInput: AnyObject {
+    func changeState(state: SimpleScreenState<[FavouriteWordzViewController.ViewModel]>)
 }
 
 protocol FavouriteWordzViewOutput: LifeCycleProtocol, AnyObject {
