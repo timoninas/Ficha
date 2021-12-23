@@ -7,6 +7,7 @@
 
 import UIKit
 import Rivendell
+import Erebor
 
 final class LearnNewWordzViewController: UIViewController {
     
@@ -73,7 +74,7 @@ final class LearnNewWordzViewController: UIViewController {
             subitems: [smallItemGroupLayout, bigItem]
         )
         
-        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(40))
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(50))
         let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
         
         let resultGroupLayout = NSCollectionLayoutGroup.vertical(
@@ -224,22 +225,11 @@ extension LearnNewWordzViewController: UICollectionViewDataSource, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("kek")
-        let module = ThematicWordzBuilder.build(viewModel: .init(title: "Architecture", wordsPreview: WordsPreviews))
+        UIApplication.hapticSoft()
+        let item = viewModel.items[indexPath.row]
+        let module = ThematicWordzBuilder.build(typeWord: ArkenstoneTypeWord(rawValue: item.title) ?? .random)
         module.modalPresentationStyle = .fullScreen
         self.present(module, animated: true, completion: nil)
     }
     
 }
-
-private var WordsPreviews: [PreviewViewModel] = [
-    .init(title: "To get out", secondTitles: ["Выйти наружу", "Выбраться отсюда"]),
-    .init(title: "To find out", secondTitles: ["Выяснить", "Обнаруживать", "Разузнать"]),
-    .init(title: "Words Words Words Words", secondTitles: ["Слова", "Какие-то слова"]),
-    .init(title: "Words", secondTitles: ["Слово 1", "Слово 2"]),
-    .init(title: "Words", secondTitles: ["Слово", "Слово 1", "Слово 2"]),
-    .init(title: "Words", secondTitles: ["Слово", "Слово 1", "Слово 1", "Слово 1", "Слово 1"]),
-    .init(title: "Words Wordz 1", secondTitles: ["Слово"]),
-    .init(title: "Words KEK", secondTitles: ["Слово MEM"]),
-    .init(title: "Words LOL", secondTitles: ["Слово"]),
-]

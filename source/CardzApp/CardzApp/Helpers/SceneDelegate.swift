@@ -45,7 +45,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabBar = UITabBarController()
         tabBar.setViewControllers([todayViewController, learnViewController, favouriteViewController], animated: true)
         tabBar.selectedViewController = todayViewController
-        tabBar.selectedIndex = 1
+        tabBar.selectedIndex = 0
         tabBar.tabBar.isHidden = false
         tabBar.tabBar.isTranslucent = true
         

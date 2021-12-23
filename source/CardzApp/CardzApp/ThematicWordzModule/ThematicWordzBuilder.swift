@@ -7,12 +7,13 @@
 
 import UIKit
 import Hobbiton
+import Erebor
 import Rivendell
 
 final class ThematicWordzBuilder {
     
-    static func build(viewModel: ThematicWordzViewController.ViewModel) -> NavigationController {
-        let presenter = ThematicWordzPresenter(viewModel: viewModel)
+    static func build(typeWord: ArkenstoneTypeWord) -> NavigationController {
+        let presenter = ThematicWordzPresenter(typeWord: typeWord)
         let view = ThematicWordzViewController(output: presenter)
         presenter.view = view
         let nav = NavigationController(rootViewController: view)

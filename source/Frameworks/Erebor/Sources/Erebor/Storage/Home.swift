@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Home.swift
 //  
 //
 //  Created by Антон Тимонин on 22.12.2021.
@@ -70,6 +70,60 @@ public func getGoldHome() -> BagOfGoldWords {
             transcription: "[ˈbedkləʊðz]",
             examples: [],
             translations: ["Постельное белье"]
+        ),
+        .init(
+            word: "Bedroom",
+            transcription: "[ˈbedruːm]",
+            examples: [],
+            translations: ["Спальня"]
+        ),
+        .init(
+            word: "Bedside",
+            transcription: "[ˈbedsaɪd]",
+            examples: [],
+            translations: ["Прикроватный"]
+        ),
+        .init(
+            word: "Bookcase",
+            transcription: "[ˈbʊkkeɪs]",
+            examples: [],
+            translations: ["Книжный шкаф"]
+        ),
+        .init(
+            word: "Carpet",
+            transcription: "[ˈkɑːpɪt]",
+            examples: [],
+            translations: ["Ковер", "Покрытие"]
+        ),
+        .init(
+            word: "Ceiling",
+            transcription: "[ˈsiːlɪŋ]",
+            examples: [],
+            translations: ["Потолок", "Перекрытие"]
+        ),
+        .init(
+            word: "Chair",
+            transcription: "[tʃeər]",
+            examples: [],
+            translations: ["Стул", "Кресло", "Кафедра"]
+        ),
+        .init(
+            word: "Chimney",
+            transcription: "[ˈtʃɪmnɪ]",
+            examples: [],
+            translations: ["Дымоход", "Камин"]
+        ),
+        .init(
+            word: "Cottage",
+            transcription: "[kaʊtʃ]",
+            examples: [],
+            translations: ["Диван", "Кушетка"]
+        ),
+        .init(
+            word: "Cup",
+            transcription: "[kʌp]",
+            examples: [],
+            translations: ["Чашка", "Кубок"]
         ),
     ])
     

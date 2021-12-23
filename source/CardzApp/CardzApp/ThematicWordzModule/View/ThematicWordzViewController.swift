@@ -92,6 +92,13 @@ final class ThematicWordzViewController: UIViewController {
         
         addTableView()
         addPlayButton()
+        
+        setupNavigation()
+    }
+    
+    private func setupNavigation() {
+        let closeItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(backButtonTapped(sender:)))
+        navigationItem.rightBarButtonItem = closeItem
     }
     
     private func setupNavigation(title: String) {
@@ -124,6 +131,11 @@ final class ThematicWordzViewController: UIViewController {
             playButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30.0),
             playButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0)
         ])
+    }
+    
+    @objc func backButtonTapped(sender: Any) {
+        UIApplication.hapticSoft()
+        dismiss(animated: true, completion: nil)
     }
     
 }
