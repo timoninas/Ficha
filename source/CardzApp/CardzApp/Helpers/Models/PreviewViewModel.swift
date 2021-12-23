@@ -11,19 +11,26 @@ import Foundation
 struct PreviewViewModel: Equatable {
     
     /// Заголовок уведомления.
-    public let title: String
+    public let wordz: String
     
-    /// Детальное описание уведомления.
-    public let secondTitles: [String]
+    public let wordzExamples: [String]
     
+    public let transcription: String?
+    
+    public let translations: [String]
     
     /// Инициализирует вью модель.
     /// - Parameters:
     ///   - title: Слово.
-    ///   - secondTitles: Перевод слова.
-    public init(title: String, secondTitles: [String]) {
-        self.title = title
-        self.secondTitles = secondTitles
+    ///   - translations: Перевод слова.
+    public init(wordz: String,
+                wordzExamples: [String],
+                transcription: String?,
+                translations: [String]) {
+        self.wordz = wordz
+        self.wordzExamples = wordzExamples
+        self.transcription = transcription
+        self.translations = translations
     }
     
 }

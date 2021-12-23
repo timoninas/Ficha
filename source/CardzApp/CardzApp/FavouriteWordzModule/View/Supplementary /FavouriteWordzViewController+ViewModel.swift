@@ -13,10 +13,14 @@ extension FavouriteWordzViewController {
     struct ViewModel: Equatable {
         
         /// Заголовок уведомления.
-        let title: String
+        let wordz: String
+        
+        let wordzExamples: [String]
+        
+        let transcription: String?
         
         /// Детальное описание уведомления.
-        let secondTitles: [String]
+        let translations: [String]
         
     }
     

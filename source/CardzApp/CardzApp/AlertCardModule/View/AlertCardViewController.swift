@@ -111,6 +111,8 @@ final class AlertCardViewController: UIViewController {
         view.addSubview(alertCardView)
         alertCardView.backgroundColor = .whisper
         
+        alertCardView.withCardShadow()
+        
         NSLayoutConstraint.activate([
             alertCardView.heightAnchor.constraint(equalToConstant: view.safeAreaHeight / 1.75),
             alertCardView.centerYAnchor.constraint(equalTo: view.centerYAnchor),

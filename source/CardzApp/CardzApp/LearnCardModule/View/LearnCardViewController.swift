@@ -181,6 +181,7 @@ final class LearnCardViewController: UIViewController {
         }
         
         resultCard.isUserInteractionEnabled = false
+        resultCard.withCardShadow()
         
         view.addSubview(resultCard)
         NSLayoutConstraint.activate([

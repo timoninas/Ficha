@@ -14,7 +14,7 @@ public protocol KnowledgeProfileProtocol {
 
 public class KnowledgeProfile: KnowledgeProfileProtocol {
     
-    @UserDefault(key: "UD_KnowledgeProfile_isOnborded", defaultValue: false)
+    @UserDefault(key: ProfileKey.isOnborded, defaultValue: false)
     public static var isOnborded
     
 }

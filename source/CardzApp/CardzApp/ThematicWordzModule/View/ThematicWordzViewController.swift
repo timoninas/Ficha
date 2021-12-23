@@ -7,6 +7,7 @@
 
 import UIKit
 import Rivendell
+import RevolvetraKnowledge
 
 /// Контроллер с тематическими словами.
 final class ThematicWordzViewController: UIViewController {
@@ -15,6 +16,10 @@ final class ThematicWordzViewController: UIViewController {
         didSet {
             tableView.reloadData()
         }
+    }
+    
+    private struct Constants {
+        static var maxCountWordz: Int { KnowledgeCards.minCountCardToLearn }
     }
     
     private let output: ThematicWordzViewOutput
@@ -31,32 +36,48 @@ final class ThematicWordzViewController: UIViewController {
             guard let self = self else { return }
             guard button.alpha != 0.0 else { return }
             UIApplication.hapticLight()
-            let module = AlertCardBuilder.build(model:
-                                                        .init(title: "Are you sure you want to reset your progress?",
-                                                              secondTitle: "Resetting the progress will lead to a complete clearing of the statistics of the learned words",
-                                                              actions: [.init(title: "Nope", onSwipeClosure: { [weak self] in
-                guard let self = self else { return }
-                print("Swipe Net")
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                    self.presentAlertWith(title: "Nope")
-                }
-                
-            }),
-                                                                        .init(title: "Yep", onSwipeClosure: { [weak self] in
-                guard let self = self else { return }
-                print("Swipe Da")
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                    self.presentAlertWith(title: "Yep")
-                }
-            })]))
-            
-            module.modalPresentationStyle = .fullScreen
-            module.modalTransitionStyle = .crossDissolve
-            self.present(module, animated: true, completion: nil)
+            if self.viewModel.prefix(Constants.maxCountWordz).count < Constants.maxCountWordz {
+                self.showAlertResetModule()
+            } else {
+                self.showLearnCardModule()
+            }
         }))
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    private func showLearnCardModule() {
+        let shuffled = self.viewModel
+            .shuffled()
+            .prefix(10)
+            .map { LearnWordzCardView.ViewModel(
+            wordz: $0.wordz,
+            translations: $0.translations,
+            transcription: $0.transcription, wordzExamples: $0.wordzExamples
+        )}
+        let module = LearnCardBuilder.build(viewModel: shuffled)
+        module.modalPresentationStyle = .fullScreen
+        module.modalTransitionStyle = .crossDissolve
+        self.present(module, animated: true, completion: nil)
+    }
+    
+    private func showAlertResetModule() {
+        let module = AlertCardBuilder.build(model:
+                                                    .init(title: "Want to reset your progress?",
+                                                          secondTitle: "Congratulations, you have learned all the words from this category",
+                                                          actions: [.init(title: "Nope", onSwipeClosure: { [weak self] in
+            guard let self = self else { return }
+            print("not resetting static")
+        }),
+                                                                    .init(title: "Yep", onSwipeClosure: { [weak self] in
+            guard let self = self else { return }
+            print("resetting static")
+        })]))
+        
+        module.modalPresentationStyle = .fullScreen
+        module.modalTransitionStyle = .crossDissolve
+        self.present(module, animated: true, completion: nil)
+    }
     
     private let tableView = UITableView()
     
@@ -126,7 +147,7 @@ final class ThematicWordzViewController: UIViewController {
     private func addPlayButton() {
         view.addSubview(playButton)
         NSLayoutConstraint.activate([
-            playButton.heightAnchor.constraint(equalToConstant: 48.0),
+            playButton.heightAnchor.constraint(equalToConstant: 52.0),
             playButton.widthAnchor.constraint(equalTo: playButton.heightAnchor),
             playButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30.0),
             playButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0)
@@ -144,8 +165,8 @@ extension ThematicWordzViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let data = viewModel[indexPath.row]
-        return WordsPreviewView.height(configuration: .init(title: data.title)
-                                        .with(translations: data.secondTitles))
+        return WordsPreviewView.height(configuration: .init(title: data.wordz)
+                                        .with(translations: data.translations))
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -187,8 +208,8 @@ extension ThematicWordzViewController: UITableViewDataSource {
         }
         let data = viewModel[indexPath.row]
         cell.backgroundColor = .gendalf
-        cell.configure(configuration: .init(title: data.title)
-                        .with(translations: data.secondTitles))
+        cell.configure(configuration: .init(title: data.wordz)
+                        .with(translations: data.translations))
         return cell
     }
     

@@ -18,3 +18,15 @@ public struct CardStatKey {
     public static let dragsLearnCard = "Revolvetra.Ficha.DragsLearnCard"
     
 }
+
+public struct CardsKey {
+    
+    public static let minCountCardToLearn = "UD_KnowledgeCards_minCountCardToLearn"
+    
+}
+
+public struct ProfileKey {
+    
+    public static let isOnborded = "UD_KnowledgeProfile_isOnborded"
+    
+}

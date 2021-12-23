@@ -154,7 +154,7 @@ final class DailyWordsViewController: UIViewController {
         
         view.addSubview(playButton)
         NSLayoutConstraint.activate([
-            playButton.heightAnchor.constraint(equalToConstant: 48.0),
+            playButton.heightAnchor.constraint(equalToConstant: 52.0),
             playButton.widthAnchor.constraint(equalTo: playButton.heightAnchor),
             playButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30.0),
             playButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0)
