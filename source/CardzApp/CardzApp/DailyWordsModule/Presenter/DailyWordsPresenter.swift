@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import RevoletraUserDefaultsKeys
+import RevolvetraKnowledge
 
 final class DailyWordsPresenter: DailyWordsOutput {
     
@@ -21,18 +23,49 @@ final class DailyWordsPresenter: DailyWordsOutput {
         
     }
     
-    private func mockFetchData() {
-        let viewModel = [
-            DailyWordsViewController.ViewModel(title: "Words", subtitles: ["Harper's words came faster now", "Tracy listened to his words, first with shock and then with growing anger. He made her sound like an outcast, a leper"], translations: ["Слова"]),
-            DailyWordsViewController.ViewModel(title: "Interesting", subtitles: nil, translations: ["Интересный"]),
-            DailyWordsViewController.ViewModel(title: "Interesting message was sended in my pocket", subtitles: nil, translations: ["Интересное сообщение было отправлено в моем кармане"]),
-            DailyWordsViewController.ViewModel(title: "Joke", subtitles: ["It was a joke, of course, Percy was happy, not in a serious grabbing mood at all, but Delacroix didn't know that"], translations: ["Это была шутка, конечно, Перси был счастлив, совсем не в серьезном настроении, но Делакруа этого не знал"]),
-            DailyWordsViewController.ViewModel(title: "Pleasantry", subtitles: nil, translations: ["Любезность"]),
-            DailyWordsViewController.ViewModel(title: "Silly", subtitles: nil, translations: ["Глупый"]),
-            DailyWordsViewController.ViewModel(title: "to get out", subtitles: ["Suddenly I was terrified, almost choked with a need to get out of there", "Who told you to get out ?"], translations: ["Выйти наружу"]),
-        ]
+    private func isNewDay() -> Bool {
+        let currentDate = Date.now
+        let currentCalendar = Calendar.current
+        let currentComponents = currentCalendar.dateComponents([.month, .day], from: currentDate)
+        let currentMonth = currentComponents.month
+        let currentDay = currentComponents.day
         
-        self.handleSuccess(viewModel)
+        let lastVisitDate = KnowledgeProfile.lastVisitAppDate
+        let lastCalendar = Calendar.current
+        let lastComponents = lastCalendar.dateComponents([.month, .day], from: lastVisitDate)
+        let lastMonth = lastComponents.month
+        let lastDay = lastComponents.day
+        
+        if lastMonth != currentMonth || lastDay != currentDay {
+            KnowledgeProfile.lastVisitAppDate = currentDate
+            return true
+        }
+        
+        return false
+    }
+    
+    private func refillDailyWords() {
+        DailyWordsUserDefaultsCache.save([
+            DailyWordsUserDefaults(title: "Words", examples: ["Harper's words came faster now", "Tracy listened to his words, first with shock and then with growing anger. He made her sound like an outcast, a leper"]),
+            
+            DailyWordsUserDefaults(title: "Interesting", examples: ["Интересный"]),
+            DailyWordsUserDefaults(title: "Words", examples: ["Интересный"]),
+            DailyWordsUserDefaults(title: "Interesting message was sended in my pocket", examples: ["Интересное сообщение было отправлено в моем кармане"]),
+            DailyWordsUserDefaults(title: "Joke", examples: ["It was a joke, of course, Percy was happy, not in a serious grabbing mood at all, but Delacroix didn't know that"]),
+            DailyWordsUserDefaults(title: "Silly", examples: ["Глупый"]),
+            DailyWordsUserDefaults(title: "to get out", examples: ["Suddenly I was terrified, almost choked with a need to get out of there", "Who told you to get out ?"]),
+        ])
+        
+    }
+    
+    private func mockFetchData() {
+        if isNewDay() {
+            DailyWordsUserDefaultsCache.remove()
+            refillDailyWords()
+        }
+        
+        let array = DailyWordsUserDefaultsCache.get()
+        handleSuccess(array.map { DailyWordsViewController.ViewModel(title: $0.title, subtitles: $0.examples, translations: []) })
         
     }
     
@@ -44,4 +77,23 @@ final class DailyWordsPresenter: DailyWordsOutput {
         self.input?.changeState(state: .error)
     }
     
+}
+
+struct DailyWordsUserDefaultsCache {
+    static let key = "userProfileCache"
+    static func save(_ value: [DailyWordsUserDefaults]) {
+         UserDefaults.standard.set(try? PropertyListEncoder().encode(value), forKey: key)
+    }
+    static func get() -> [DailyWordsUserDefaults] {
+        var dailyWords: [DailyWordsUserDefaults] = []
+        if let data = UserDefaults.standard.value(forKey: key) as? Data {
+            guard let words = try? PropertyListDecoder().decode([DailyWordsUserDefaults].self, from: data) else { return [] }
+            return words
+        } else {
+            return dailyWords
+        }
+    }
+    static func remove() {
+        UserDefaults.standard.removeObject(forKey: key)
+    }
 }

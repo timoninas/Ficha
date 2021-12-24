@@ -14,7 +14,9 @@ final class FavouriteWordzViewController: UIViewController {
     
     var viewModel: [FavouriteWordzViewController.ViewModel] = [] {
         didSet {
+            guard viewModel != oldValue else { return }
             tableView.reloadData()
+            updateVisabilityLabel(isHidden: viewModel.isEmpty)
         }
     }
     
@@ -23,6 +25,17 @@ final class FavouriteWordzViewController: UIViewController {
     }
     
     private let output: FavouriteWordzViewOutput
+    
+    private let emptyLabel: UILabel = {
+       let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Add words to the favorites category 😉"
+        label.textAlignment = .center
+        label.textColor = .mysteryShack
+        label.font = UIFont(name:"HelveticaNeue-Bold", size: 28.0)
+        label.numberOfLines = 3
+        return label
+    }()
     
     private lazy var playButton: RVImageButton = {
         let button = RVImageButton(configuration: .init()
@@ -113,10 +126,23 @@ final class FavouriteWordzViewController: UIViewController {
         
         addTableView()
         addPlayButton()
+        addLabel()
+        
+        updateVisabilityLabel(isHidden: viewModel.isEmpty)
     }
     
     private func setupNavigation() {
         navigationItem.title = "Your favourite wordz"
+    }
+    
+    private func addLabel() {
+        view.addSubview(emptyLabel)
+        NSLayoutConstraint.activate([
+            emptyLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            emptyLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            emptyLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10.0),
+            emptyLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10.0),
+        ])
     }
     
     private func addTableView() {
@@ -145,6 +171,16 @@ final class FavouriteWordzViewController: UIViewController {
             playButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30.0),
             playButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0)
         ])
+    }
+    
+    // MARK: - Private methods
+    
+    private func updateVisabilityLabel(isHidden: Bool) {
+        UIView.animate(withDuration: 0.01) { [weak self] in
+            guard let self = self else { return }
+            self.emptyLabel.alpha = isHidden ? 1.0 : 0.0
+            self.playButton.isHidden = isHidden
+        }
     }
     
 }

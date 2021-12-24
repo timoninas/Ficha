@@ -139,9 +139,9 @@ public final class BubbleThematicWordsView: UIView {
         ]
         
         storedConstraints += [
-            titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8.0),
-            titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 4.0),
-            titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -4.0),
+            titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -4.0),
+            titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 2.0),
+            titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -2.0),
             titleLabel.heightAnchor.constraint(equalToConstant: titleLabel.heightForOneLine()),
         ]
         
@@ -149,7 +149,7 @@ public final class BubbleThematicWordsView: UIView {
             iconImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 9.0),
             iconImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 9.0),
             iconImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -9.0),
-            iconImageView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -8.0),
+            iconImageView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -4.0),
         ]
         
         storedConstraints += [

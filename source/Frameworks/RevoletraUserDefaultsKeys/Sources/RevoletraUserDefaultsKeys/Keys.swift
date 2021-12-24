@@ -23,10 +23,14 @@ public struct CardsKey {
     
     public static let minCountCardToLearn = "UD_KnowledgeCards_minCountCardToLearn"
     
+    public static let dailyWords = "UD_KnowledgeCards_dailyWords"
+    
 }
 
 public struct ProfileKey {
     
     public static let isOnborded = "UD_KnowledgeProfile_isOnborded"
+    
+    public static let lastVisitAppDate = "UD_KnowledgeProfile_lastVisitAppDate"
     
 }

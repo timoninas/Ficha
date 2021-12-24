@@ -45,6 +45,7 @@
 		77A3CA342772F9B300A0EA9C /* ThematicWordzProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3CA332772F9B300A0EA9C /* ThematicWordzProtocols.swift */; };
 		77A3CA362772FDE100A0EA9C /* PreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3CA352772FDE100A0EA9C /* PreviewViewModel.swift */; };
 		77A3CA392773AA3300A0EA9C /* LearnNewWordzViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3CA382773AA3300A0EA9C /* LearnNewWordzViewController+ViewModel.swift */; };
+		77A3CA3B2775A77100A0EA9C /* TODO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3CA3A2775A77000A0EA9C /* TODO.swift */; };
 		77DCC7A627711B0000F9572A /* Erebor in Frameworks */ = {isa = PBXBuildFile; productRef = 77DCC7A527711B0000F9572A /* Erebor */; };
 		77F9EF79275D30C8008B1EB6 /* RevolvetraKnowledge in Frameworks */ = {isa = PBXBuildFile; productRef = 77F9EF78275D30C8008B1EB6 /* RevolvetraKnowledge */; };
 		D48F8494276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F8493276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift */; };
@@ -119,6 +120,7 @@
 		77A3CA332772F9B300A0EA9C /* ThematicWordzProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThematicWordzProtocols.swift; sourceTree = "<group>"; };
 		77A3CA352772FDE100A0EA9C /* PreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewModel.swift; sourceTree = "<group>"; };
 		77A3CA382773AA3300A0EA9C /* LearnNewWordzViewController+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearnNewWordzViewController+ViewModel.swift"; sourceTree = "<group>"; };
+		77A3CA3A2775A77000A0EA9C /* TODO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODO.swift; sourceTree = "<group>"; };
 		77C2F4A92737D66900138DF9 /* Rivendell */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Rivendell; path = ../Frameworks/Rivendell; sourceTree = "<group>"; };
 		77D5165A27306A180030D1D1 /* Hobbiton */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Hobbiton; path = ../Frameworks/Hobbiton; sourceTree = "<group>"; };
 		77DD37E32737D5AF007A3B1E /* Moria */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Moria; path = ../Frameworks/Moria; sourceTree = "<group>"; };
@@ -519,6 +521,7 @@
 				D4F00DA62718C5430079A860 /* Protocols */,
 				D4F00D902718C3FB0079A860 /* AppDelegate.swift */,
 				D4F00D912718C3FB0079A860 /* SceneDelegate.swift */,
+				77A3CA3A2775A77000A0EA9C /* TODO.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -685,6 +688,7 @@
 				7748E93D2757F5460063E592 /* AlertCardViewController+ViewModel.swift in Sources */,
 				77A3CA322772F9A400A0EA9C /* ThematicWordzBuilder.swift in Sources */,
 				D4C7F12F2719636D0066125A /* DailyWordsViewController+State.swift in Sources */,
+				77A3CA3B2775A77100A0EA9C /* TODO.swift in Sources */,
 				7720F601275FDA7800BC5973 /* ViewSimpleState.swift in Sources */,
 				770B3FE42767D68600DC7887 /* DeveloperScreenBuilder.swift in Sources */,
 				D4F00D982718C3FB0079A860 /* DailyWordsBuilder.swift in Sources */,

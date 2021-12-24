@@ -16,7 +16,7 @@ final class FavouriteWordzPresenter: FavouriteWordzViewOutput {
     }
     
     func viewDidLoad() {
-        mockFetchData()
+        self.mockFetchData()
     }
     
     private func fetchData() {

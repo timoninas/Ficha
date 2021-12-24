@@ -15,6 +15,7 @@ final class DailyWordsViewController: UIViewController {
     var viewModels: [ViewModel] = [] {
         didSet {
             guard viewModels != oldValue else { return }
+            updateVisabilityButton(isHidden: viewModels.isEmpty)
             renderContent(isAnimated: true)
         }
     }
@@ -108,7 +109,6 @@ final class DailyWordsViewController: UIViewController {
         addPlayButton()
         
         backView.alpha = 0.0
-        playButton.alpha = 0.0
         
         renderContent(isAnimated: false)
     }
@@ -220,6 +220,13 @@ final class DailyWordsViewController: UIViewController {
         NSLayoutConstraint.activate(heightConstraints)
     }
     
+    private func updateVisabilityButton(isHidden: Bool) {
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            guard let self = self else { return }
+            self.playButton.isHidden = isHidden
+        }
+    }
+    
     private func renderContent(isAnimated: Bool) {
         // TODO: - Добавить нормальную анимацию появления коллекции.
         if isAnimated {
@@ -236,11 +243,6 @@ final class DailyWordsViewController: UIViewController {
             guard let self = self else { return }
             
             self.backView.alpha = isHidden ? 0.0 : 1.0
-            if self.playButton.alpha == 0.0 && self.scrollView.contentOffset.y > 150.0 {
-                
-            } else {
-                self.playButton.alpha = isHidden ? 0.0 : 1.0
-            }
         }
     }
     
