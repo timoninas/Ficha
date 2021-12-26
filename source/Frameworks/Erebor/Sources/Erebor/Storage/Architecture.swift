@@ -138,8 +138,83 @@ public func getGoldArhitecture() -> BagOfGoldWords {
             word: "Ancient construction",
             transcription: "[ˈeɪnʃənt kənˈstrʌkʃən]",
             examples: ["Paris's ancient Rose Line",
-                      "But after construction began, the station's budget spiraled wildly out of control, and many countries dropped out in disgust"],
+                       "But after construction began, the station's budget spiraled wildly out of control, and many countries dropped out in disgust"],
             translations: ["Древняя конструкция"]
+        ),
+        .init(
+            word: "Picturesque architecture",
+            transcription: "[ˌpɪktʃəˈresk ˈɑːkɪtektʃə]",
+            examples: ["They visited Volendam, the old picturesque fishing village on the Zuider Zee, and Madurodam, Holland in miniature",
+                       "Architecture is dethroned"],
+            translations: ["Живописная архитектура"]
+        ),
+        .init(
+            word: "Lime",
+            transcription: "[laɪm]",
+            examples: ["Then who was that in Lime House last night?",
+                       "Her body is in the lime pit"],
+            translations: ["Известь"]
+        ),
+        .init(
+            word: "Interior spaces",
+            transcription: "[ɪnˈtɪərɪə ˈspeɪsɪz]",
+            examples: [],
+            translations: ["Интерьер помещений"]
+        ),
+        .init(
+            word: "Spanish Baroque",
+            transcription: "[ˈspænɪʃ bəˈrɒk]",
+            examples: ["Put that baroque masterpiece down!",
+                       "We'll start with a bit of typical Baroque trumpet music",
+                       "Is that medieval, is that baroque or gothic?"],
+            translations: ["Испанское барокко"]
+        ),
+        .init(
+            word: "Compositional",
+            transcription: "[ˌkɑːmpəˈzɪʃənəl]",
+            examples: ["Let me try a compositional analysis",
+                       "The genius of the 12-tone compositional system should not be underestimated"],
+            translations: ["Композиционный"]
+        ),
+        .init(
+            word: "Landscape architect",
+            transcription: "[ˈlændskeɪp ˈɑːkɪtekt]",
+            examples: ["If you have a problem with the plants, I can call my landscape architect",
+                       "And she is marrying the landscape architect",
+                       "I was a landscape architect"],
+            translations: ["Ландшафтный архитектор"]
+        ),
+        .init(
+            word: "Red-tiled roof",
+            transcription: "[ruːf]",
+            examples: ["She glanced up impatiently at the veranda roof, as if tired of shouting",
+                       "What did the ballot matter when bread, a roof and staying out of jail were the real problems?",
+                       "Alone now, he knelt on the roof, and prayed"],
+            translations: ["Красная черепичная крыша"]
+        ),
+        .init(
+            word: "Medieval oversized chimney",
+            transcription: "[ˌmedɪˈiːvəl ˈəʊvəsaɪzd ˈtʃɪmni]",
+            examples: ["But I'm not, like, some oversized behemoth",
+                       "His flaws were correspondingly oversized",
+                       "It came howling down the chimney in our room!"],
+            translations: ["Крупногабаритный средневековый дымоход"]
+        ),
+        .init(
+            word: "Forge",
+            transcription: "[fɔːdʒ]",
+            examples: ["When I left there 13 years ago, those villagers had barely learned to forge iron",
+                       "Quick! forge me the harpoon",
+                       "But I need the original so I know what to forge"],
+            translations: ["Кузница"]
+        ),
+        .init(
+            word: "Dome",
+            transcription: "[dəʊm]",
+            examples: ["The magma dome erupted",
+                       "It was under the glass dome, behind the clock, that she hid her bank book",
+                       "I've done a sketch of an aviary as well, with a domed roof"],
+            translations: ["Купол"]
         ),
     ])
     

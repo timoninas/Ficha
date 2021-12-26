@@ -21,7 +21,7 @@ final class LearnNewWordzPresenter: LearnNewWordzOutput {
         .emotions,
         .clothes,
         .job,
-        .random
+        .slang
     ]
     
     init() {
@@ -58,7 +58,7 @@ final class LearnNewWordzPresenter: LearnNewWordzOutput {
                               image: .job,
                               badgeText: SilverTypeTranslation.enToRu.rawValue),
                         .init(title: words[8].rawValue,
-                              image: .random,
+                              image: .slang,
                               badgeText: SilverTypeTranslation.enToRu.rawValue),
                     ]
                 )

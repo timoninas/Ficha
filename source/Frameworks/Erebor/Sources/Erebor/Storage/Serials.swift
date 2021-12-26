@@ -12,10 +12,70 @@ public func getGoldSerials() -> BagOfGoldWords {
     
     ereborGoldWords.append(contentsOf: [
         .init(
-            word: "",
+            word: "Action!",
             transcription: "",
             examples: [],
-            translations: []
+            translations: ["Мотор!"]
+        ),
+        .init(
+            word: "Action movie",
+            transcription: "",
+            examples: [],
+            translations: ["Боевик"]
+        ),
+        .init(
+            word: "Actor",
+            transcription: "",
+            examples: [],
+            translations: ["Актер"]
+        ),
+        .init(
+            word: "Actress",
+            transcription: "",
+            examples: [],
+            translations: ["Актриса"]
+        ),
+        .init(
+            word: "Adventure film",
+            transcription: "",
+            examples: [],
+            translations: ["Приключенческий фильм"]
+        ),
+        .init(
+            word: "Alias",
+            transcription: "",
+            examples: [],
+            translations: ["Вымышленное имя"]
+        ),
+        .init(
+            word: "Animator",
+            transcription: "",
+            examples: [],
+            translations: ["Аниматор"]
+        ),
+        .init(
+            word: "Aspect ratio",
+            transcription: "",
+            examples: [],
+            translations: ["Соотношение сторон", "Формат"]
+        ),
+        .init(
+            word: "Backstage",
+            transcription: "",
+            examples: [],
+            translations: ["За кулисами"]
+        ),
+        .init(
+            word: "Behind the scenes",
+            transcription: "",
+            examples: [],
+            translations: ["За кулисами"]
+        ),
+        .init(
+            word: "Black-and-white film",
+            transcription: "",
+            examples: [],
+            translations: ["Черно-белый фильм"]
         ),
     ])
     

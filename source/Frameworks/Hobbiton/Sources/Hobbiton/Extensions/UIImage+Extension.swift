@@ -57,7 +57,7 @@ public extension UIImage {
     
     static let job = UIImage(named: "job")
     
-    static let random = UIImage(named: "random")
+    static let slang = UIImage(named: "slang")
     
     static let serials = UIImage(named: "serials")
     

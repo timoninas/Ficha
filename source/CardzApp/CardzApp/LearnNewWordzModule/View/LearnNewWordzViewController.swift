@@ -227,7 +227,7 @@ extension LearnNewWordzViewController: UICollectionViewDataSource, UICollectionV
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         UIApplication.hapticSoft()
         let item = viewModel.items[indexPath.row]
-        let module = ThematicWordzBuilder.build(typeWord: ArkenstoneTypeWord(rawValue: item.title) ?? .random)
+        let module = ThematicWordzBuilder.build(typeWord: ArkenstoneTypeWord(rawValue: item.title) ?? .unknown)
         module.modalPresentationStyle = .fullScreen
         self.present(module, animated: true, completion: nil)
     }

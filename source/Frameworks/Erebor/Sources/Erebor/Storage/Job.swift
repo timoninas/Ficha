@@ -12,10 +12,70 @@ public func getGoldJob() -> BagOfGoldWords {
     
     ereborGoldWords.append(contentsOf: [
         .init(
-            word: "",
-            transcription: "",
+            word: "Case",
+            transcription: "[keɪs]",
             examples: [],
-            translations: []
+            translations: ["Дело"]
+        ),
+        .init(
+            word: "Company",
+            transcription: "[ˈkʌmpəni]",
+            examples: [],
+            translations: ["Компания"]
+        ),
+        .init(
+            word: "Work",
+            transcription: "[wɜːk]",
+            examples: [],
+            translations: ["Работа"]
+        ),
+        .init(
+            word: "Money",
+            transcription: "[ˈmʌni]",
+            examples: [],
+            translations: ["Деньги"]
+        ),
+        .init(
+            word: "Job",
+            transcription: "[ʤɒb]",
+            examples: [],
+            translations: ["Работа"]
+        ),
+        .init(
+            word: "Service",
+            transcription: "[ˈsɜːvɪs]",
+            examples: [],
+            translations: ["Услуга", "Обслуживание"]
+        ),
+        .init(
+            word: "Office",
+            transcription: "[ˈɒfɪs]",
+            examples: [],
+            translations: ["Офис"]
+        ),
+        .init(
+            word: "Policy",
+            transcription: "[ˈpɒlɪsi]",
+            examples: [],
+            translations: ["Политика"]
+        ),
+        .init(
+            word: "Plan",
+            transcription: "[plæn]",
+            examples: [],
+            translations: ["План"]
+        ),
+        .init(
+            word: "Control",
+            transcription: "[kənˈtrəʊl]",
+            examples: [],
+            translations: ["Контроль"]
+        ),
+        .init(
+            word: "Report",
+            transcription: "[rɪˈpɔːt]",
+            examples: [],
+            translations: ["Отчет", "Доклад"]
         ),
     ])
     
