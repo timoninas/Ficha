@@ -7,7 +7,7 @@
 
 import Foundation
 
-public func getGoldEmotions() -> BagOfGoldWords {
+func getGoldEmotions() -> BagOfGoldWords {
     var ereborGoldWords: [EreborGoldWord] = []
     
     ereborGoldWords.append(contentsOf: [
@@ -76,6 +76,48 @@ public func getGoldEmotions() -> BagOfGoldWords {
             transcription: "",
             examples: [],
             translations: ["Наслаждение", "Удовольствие"]
+        ),
+        .init(
+            word: "Buzz",
+            transcription: "[bʌz]",
+            examples: [],
+            translations: ["Сильное чувство удовольствия"]
+        ),
+        .init(
+            word: "Effervescent",
+            transcription: "[ˌefərˈvesnt]",
+            examples: [],
+            translations: ["Возбужденное", "Восторженное поведение людей"]
+        ),
+        .init(
+            word: "Electric",
+            transcription: "[ɪˈlektrɪk]",
+            examples: [],
+            translations: ["Волнующий", "Поразительный"]
+        ),
+        .init(
+            word: "Electrify",
+            transcription: "[ɪˈlektrɪfaɪ]",
+            examples: [],
+            translations: ["Наэлектризовать"]
+        ),
+        .init(
+            word: "Enthuse",
+            transcription: "[ɪnˈθjuːz]",
+            examples: [],
+            translations: ["Воодушевлять"]
+        ),
+        .init(
+            word: "Excitable",
+            transcription: "[ɪkˈsaɪtəbl]",
+            examples: [],
+            translations: ["Легковозбудимый"]
+        ),
+        .init(
+            word: "Excite",
+            transcription: "[ɪkˈsaɪt]",
+            examples: [],
+            translations: ["Взволновать"]
         ),
     ])
     

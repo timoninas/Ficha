@@ -7,153 +7,215 @@
 
 import Foundation
 
-public func getGoldClothes() -> BagOfGoldWords {
+func getGoldClothes() -> BagOfGoldWords {
     var ereborGoldWords: [EreborGoldWord] = []
     
     ereborGoldWords.append(contentsOf: [
         .init(
-            word: "shirt",
-            transcription: "",
-            examples: [],
-            translations: ["рубашка"]
+            word: "Shirt",
+            transcription: "[ʃɜːt]",
+            examples: ["Ripping off his shirt, he hurled it to his right onto the open deck",
+                       "\"I do. Jamie looked at the hopeful young boy with the stained shirt. The next shovelful of dirt\""],
+            translations: ["Рубашка"]
         ),
         .init(
             word: "T-shirt",
             transcription: "",
             examples: [],
-            translations: ["футболка"]
+            translations: ["Футболка"]
         ),
         .init(
-            word: "polo shirt",
+            word: "Polo shirt",
             transcription: "",
             examples: [],
-            translations: ["рубашка поло"]
+            translations: ["Рубашка поло"]
         ),
         .init(
-            word: "fitted shirt",
+            word: "Fitted shirt",
             transcription: "",
-            examples: [],
-            translations: ["приталенная рубашка"]
+            examples: ["I can't believe I even fit into this shirt",
+                       "Medium build, fitted crimson T- shirt",
+                       "Is that a slim- fit Armani shirt?"],
+            translations: ["Приталенная рубашка"]
         ),
         .init(
-            word: "loose-fitting shirt",
+            word: "Loose-fitting shirt",
             transcription: "",
             examples: [],
-            translations: ["рубашка свободного покроя"]
+            translations: ["Рубашка свободного покроя"]
         ),
         .init(
-            word: "cuff",
-            transcription: "",
-            examples: [],
-            translations: ["манжета"]
+            word: "Cuff",
+            transcription: "[kʌf]",
+            examples: ["Angry at his own carelessness, he tore the cuff from his pant leg and rammed the fabric into the toe of his boot",
+                       "Maybe you should cuff him",
+                       "Climbing back down Gabrielle picked up the cuff links and put them back on the sink"],
+            translations: ["Манжета"]
         ),
         .init(
-            word: "button",
-            transcription: "",
-            examples: [],
-            translations: ["пуговица"]
+            word: "Button",
+            transcription: "[bʌtn]",
+            examples: ["He clicked the \"search\" button",
+                       "Why don't you, uh, find a button on one of those keyboards and lay down some kind of beat?",
+                       "Because I put a little release button right here on top"],
+            translations: ["Пуговица"]
         ),
         .init(
-            word: "pocket",
-            transcription: "",
-            examples: [],
-            translations: ["карман"]
+            word: "Pocket",
+            transcription: "[ˈpɒkɪt]",
+            examples: ["Langdon pulled the heavy key from his pocket again",
+                       "She had put her louis in the pocket of her new apron",
+                       "He saw the cigarette-holder between his fingers and put it back into his pocket"],
+            translations: ["Карман"]
         ),
         .init(
-            word: "breast pocket",
+            word: "Breast pocket",
             transcription: "",
             examples: [],
-            translations: ["нагрудный карман"]
+            translations: ["Нагрудный карман"]
         ),
         .init(
-            word: "blouse",
-            transcription: "",
-            examples: [],
-            translations: ["блузка"]
+            word: "Blouse",
+            transcription: "[blaʊz]",
+            examples: ["The woman was attractive, in her mid-thirties, wearing gray, pleated flannel pants, conservative flats, and an ivory Laura Ashley blouse",
+                       "He did not wear the gondolier's blouse: only the knitted blue jersey",
+                       "No one in the world has such an elegant blouse as this"],
+            translations: ["Блузка"]
         ),
         .init(
-            word: "tunic",
-            transcription: "",
+            word: "Tunic",
+            transcription: "[ˈtjuːnɪk]",
             examples: [],
-            translations: ["туника"]
+            translations: ["Туника"]
         ),
         .init(
-            word: "turtleneck",
+            word: "Turtleneck",
             transcription: "",
-            examples: [],
-            translations: ["водолазка"]
+            examples: ["Seldon studied the sleeve of his new tunic",
+                       "The commissioner of police unbuttoned his tunic again and looked at Yossarian with contempt",
+                       "He stared at the tall young man in uniform-the Spaceship-and-Sun neatly placed on the left side of his tunic"],
+            translations: ["Водолазка"]
         ),
         .init(
-            word: "jacket",
+            word: "Jacket",
             transcription: "",
             examples: [],
-            translations: ["куртка", "жакет"]
+            translations: ["Куртка", "Жакет"]
         ),
         .init(
-            word: "casual jacket",
-            transcription: "",
-            examples: [],
-            translations: ["повседневная куртка"]
+            word: "Casual jacket",
+            transcription: "[ˈʤækɪt]",
+            examples: ["She tried not to run, afraid of attracting attention. She pulled her jacket close around her to conceal her ripped blouse",
+                       "Next to the jacket, emergency water, nail clippers, tooth brush, space blanket..."],
+            translations: ["Повседневная куртка"]
         ),
         .init(
-            word: "leather jacket",
+            word: "Leather jacket",
             transcription: "",
             examples: [],
-            translations: ["кожаная куртка"]
+            translations: ["Кожаная куртка"]
         ),
         .init(
-            word: "dinner jacket",
+            word: "Dinner jacket",
             transcription: "",
             examples: [],
-            translations: ["смокинг"]
+            translations: ["Смокинг"]
         ),
         .init(
-            word: "hooded jacket",
+            word: "Hooded jacket",
             transcription: "",
             examples: [],
-            translations: ["куртка с капюшоном"]
+            translations: ["Куртка с капюшоном"]
         ),
         .init(
-            word: "flak jacket",
+            word: "Flak jacket",
             transcription: "",
             examples: [],
-            translations: ["бронежилет"]
+            translations: ["Бронежилет"]
         ),
         .init(
-            word: "life jacket",
+            word: "Life jacket",
             transcription: "",
             examples: [],
-            translations: ["спасательный жилет"]
+            translations: ["Спасательный жилет"]
         ),
         .init(
-            word: "skirt",
+            word: "Skirt",
             transcription: "",
             examples: [],
-            translations: ["юбка"]
+            translations: ["Юбка"]
         ),
         .init(
-            word: "miniskirt",
-            transcription: "",
-            examples: [],
-            translations: ["мини-юбка"]
+            word: "Miniskirt",
+            transcription: "[skɜːt]",
+            examples: ["Angela fetched her needle book and mended her skirt without any more fuss",
+                       "We skirt a small wood and then have the front-line immediately before us",
+                       "He skirted it, following the woods, and came to the road and looked in both directions"],
+            translations: ["Мини-юбка"]
         ),
         .init(
-            word: "knee-length skirt",
+            word: "Knee-length skirt",
             transcription: "",
             examples: [],
-            translations: ["юбка до колена"]
+            translations: ["Юбка до колена"]
         ),
         .init(
-            word: "calf-length skirt",
+            word: "Calf-length skirt",
             transcription: "",
             examples: [],
-            translations: ["юбка ниже колена"]
+            translations: ["Юбка ниже колена"]
         ),
         .init(
-            word: "multi-colored skirt",
+            word: "Multi-colored skirt",
             transcription: "",
             examples: [],
-            translations: ["разноцветная юбка"]
+            translations: ["Разноцветная юбка"]
+        ),
+        .init(
+            word: "Pleated skirt",
+            transcription: "[ˈpliːtɪd skɜːt]",
+            examples: ["We understand Han has a weakness for pleated white skirts and over-developed thighs",
+                       "It's a regular short pleated skirt with stripes on it",
+                       "I hate pleated skirts"],
+            translations: ["Плиссированная юбка"]
+        ),
+        .init(
+            word: "Wrap-around skirt",
+            transcription: "",
+            examples: [],
+            translations: ["Юбка с запахом"]
+        ),
+        .init(
+            word: "Dress",
+            transcription: "[dres]",
+            examples: ["A thin black woman was seated in a chair in a corner of the room sewing on a dress",
+                       "The little girl watched me, holding the bread against her dirty dress",
+                       "He not only brought Maybelle the satin but he was able to give excellent hints on the making of the wedding dress"],
+            translations: ["Платье"]
+        ),
+        .init(
+            word: "Cocktail dress",
+            transcription: "",
+            examples: [],
+            translations: ["Вечернее платье"]
+        ),
+        .init(
+            word: "Fancy dress",
+            transcription: "",
+            examples: [],
+            translations: ["Маскарадный костюм"]
+        ),
+        .init(
+            word: "Backless dress",
+            transcription: "",
+            examples: [],
+            translations: ["Платье с вырезом на спине"]
+        ),
+        .init(
+            word: "Beaded dress",
+            transcription: "",
+            examples: [],
+            translations: ["Платье, украшенное бисером"]
         ),
     ])
     

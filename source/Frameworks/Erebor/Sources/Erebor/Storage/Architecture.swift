@@ -7,7 +7,7 @@
 
 import Foundation
 
-public func getGoldArhitecture() -> BagOfGoldWords {
+func getGoldArhitecture() -> BagOfGoldWords {
     var ereborGoldWords: [EreborGoldWord] = []
     
     ereborGoldWords.append(contentsOf: [

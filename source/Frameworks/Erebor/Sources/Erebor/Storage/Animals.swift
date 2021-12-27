@@ -7,7 +7,7 @@
 
 import Foundation
 
-public func getGoldAnimals() -> BagOfGoldWords {
+func getGoldAnimals() -> BagOfGoldWords {
     var ereborGoldWords: [EreborGoldWord] = []
     
     ereborGoldWords.append(contentsOf: [
@@ -82,6 +82,66 @@ public func getGoldAnimals() -> BagOfGoldWords {
             transcription: "[bʊl]",
             examples: [],
             translations: ["Бык"]
+        ),
+        .init(
+            word: "Mouse",
+            transcription: "[maus]",
+            examples: [],
+            translations: ["Мышь"]
+        ),
+        .init(
+            word: "Deer",
+            transcription: "[diə]",
+            examples: [],
+            translations: ["Олень"]
+        ),
+        .init(
+            word: "Lion",
+            transcription: "['laiən]",
+            examples: [],
+            translations: ["Лев"]
+        ),
+        .init(
+            word: "Butterfly",
+            transcription: "['bʌtəflai]",
+            examples: [],
+            translations: ["Бабочка"]
+        ),
+        .init(
+            word: "Hippopotamus",
+            transcription: "[,haipə'pɔtəməs]",
+            examples: [],
+            translations: ["Бегемот"]
+        ),
+        .init(
+            word: "Rhinoceros",
+            transcription: "[rai'nɔsərəs]",
+            examples: [],
+            translations: ["Носорог"]
+        ),
+        .init(
+            word: "Snail",
+            transcription: "[sneil]",
+            examples: [],
+            translations: ["Улитка"]
+        ),
+        .init(
+            word: "Crocodile",
+            transcription: "['krɔkədail]",
+            examples: [],
+            translations: ["Крокодил"]
+        ),
+        .init(
+            word: "Cockroach",
+            transcription: "['kɔkrəuʧ]",
+            examples: [],
+            translations: ["Таракан"]
+        ),
+        .init(
+            word: "Cheetah",
+            transcription: "['ʧi:tə]",
+            examples: [],
+            translations: ["Гепард"]
         ),
     ])
     
