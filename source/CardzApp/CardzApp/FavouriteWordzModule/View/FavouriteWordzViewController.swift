@@ -75,8 +75,6 @@ final class FavouriteWordzViewController: UIViewController {
             transcription: $0.transcription, wordzExamples: $0.wordzExamples
         )}
         let module = LearnCardBuilder.build(viewModel: shuffled)
-        module.modalPresentationStyle = .fullScreen
-        module.modalTransitionStyle = .crossDissolve
         self.present(module, animated: true, completion: nil)
     }
     

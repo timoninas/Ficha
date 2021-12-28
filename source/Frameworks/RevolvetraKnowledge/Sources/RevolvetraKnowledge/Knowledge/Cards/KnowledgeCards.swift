@@ -7,19 +7,7 @@
 
 import Foundation
 import RevoletraUserDefaultsKeys
-
-public struct DailyWordsUserDefaults: Encodable, Decodable {
-    
-    public let title: String
-    
-    public let examples: [String]
-    
-    public init(title: String, examples: [String]) {
-        self.title = title
-        self.examples = examples
-    }
-    
-}
+import RevolvetraUserDefaults
 
 public protocol KnowledgeCardsProtocol {
     static var minCountCardToLearn: Int { get set }

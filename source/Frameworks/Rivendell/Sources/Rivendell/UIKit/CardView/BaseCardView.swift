@@ -255,6 +255,15 @@ public class BaseCardView: UIView {
     
     // MARK: - Public methods
     
+    public func renderAsCard(view: UIView) {
+        NSLayoutConstraint.activate([
+            self.heightAnchor.constraint(equalToConstant: view.safeAreaHeight / 1.75),
+            self.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            self.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20.0),
+            self.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20.0),
+        ])
+    }
+    
     /// Заменяет все события срабатывающие на свайпы в разные стороны.
     /// - Parameters:
     ///  - completion: Замыкание, которое будет срабатывать. Можно обнулить, поставив `nil`.

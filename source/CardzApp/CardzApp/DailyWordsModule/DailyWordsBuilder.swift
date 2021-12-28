@@ -12,7 +12,7 @@ final class DailyWordsBuilder {
     static func build() -> UIViewController {
         let presenter = DailyWordsPresenter()
         let view = DailyWordsViewController(output: presenter)
-        presenter.input = view
+        presenter.view = view
         return view
     }
     

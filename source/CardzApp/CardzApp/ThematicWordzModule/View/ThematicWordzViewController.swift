@@ -56,8 +56,6 @@ final class ThematicWordzViewController: UIViewController {
             transcription: $0.transcription, wordzExamples: $0.wordzExamples
         )}
         let module = LearnCardBuilder.build(viewModel: shuffled)
-        module.modalPresentationStyle = .fullScreen
-        module.modalTransitionStyle = .crossDissolve
         self.present(module, animated: true, completion: nil)
     }
     
@@ -101,6 +99,11 @@ final class ThematicWordzViewController: UIViewController {
         RLogInfo(message: "[Info] \(String(describing: self)) ViewDidLoad")
         configureUI()
         output.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        output.viewWillAppear()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -228,5 +231,3 @@ extension ThematicWordzViewController: ThematicWordzViewInput {
     }
     
 }
-
-

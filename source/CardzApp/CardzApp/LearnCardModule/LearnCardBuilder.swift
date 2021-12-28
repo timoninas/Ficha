@@ -47,6 +47,8 @@ final class LearnCardBuilder {
         let presenter = LearnCardPresenter(viewModel: viewModel.shuffled())
         let view = LearnCardViewController(output: presenter)
         presenter.view = view
+        view.modalPresentationStyle = .fullScreen
+        view.modalTransitionStyle = .crossDissolve
         return view
     }
     

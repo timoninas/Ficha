@@ -8,7 +8,10 @@
 import Foundation
 
 protocol DailyWordsViewInput: AnyObject {
+    
     func changeState(state: DailyWordsViewController.State)
+    
+    func showOnboardingModule(model: OnboardingModuleModel)
 }
 
 protocol DailyWordsOutput: LifeCycleProtocol, AnyObject {

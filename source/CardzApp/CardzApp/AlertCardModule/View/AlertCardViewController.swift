@@ -146,12 +146,7 @@ final class AlertCardViewController: UIViewController {
     
     private func addCloseButton() {
         view.addSubview(closeButton)
-        NSLayoutConstraint.activate([
-            closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.0),
-            closeButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20.0),
-            closeButton.heightAnchor.constraint(equalToConstant: 30.0),
-            closeButton.widthAnchor.constraint(equalTo: closeButton.heightAnchor)
-        ])
+        closeButton.renderAsCloseButton(view: view)
     }
     
     private func setUserInteractableToElements(isUserInteractible: Bool) {

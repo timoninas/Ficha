@@ -6,17 +6,37 @@
 //
 
 import Foundation
+
 import RevoletraUserDefaultsKeys
 import RevolvetraKnowledge
+import RevolvetraUserDefaults
 
 final class DailyWordsPresenter: DailyWordsOutput {
     
-    weak var input: DailyWordsViewInput?
+    weak var view: DailyWordsViewInput?
     
     init() { }
     
     func viewDidLoad() {
         self.mockFetchData()
+    }
+    
+    func viewWillAppear() {
+        KnowledgeProfile.isOnborded = false
+        if !KnowledgeProfile.isOnborded {
+            showOnboarding()
+        }
+    }
+    
+    func showOnboarding() {
+        let model: OnboardingModuleModel = .init(
+            onboardingModels: [
+                .init(image: .animals, title: "Kek lol arbidol"),
+                .init(image: .architecture, title: "Njefw wjekfwejf jkwef nwkefn kwejfnkwefnkwe fnjkwejf"),
+                .init(image: .job, title: "Учите слова, развивайтесь блять!")
+            ]
+        )
+        view?.showOnboardingModule(model: model)
     }
     
     private func fetchData() {
@@ -46,14 +66,17 @@ final class DailyWordsPresenter: DailyWordsOutput {
     
     private func refillDailyWords() {
         DailyWordsUserDefaultsCache.save([
-            DailyWordsUserDefaults(title: "Words", examples: ["Harper's words came faster now", "Tracy listened to his words, first with shock and then with growing anger. He made her sound like an outcast, a leper"]),
+            DailyWordsUserDefaults(
+                title: "Words",
+                examples: ["Harper's words came faster now", "Tracy listened to his words, first with shock and then with growing anger. He made her sound like an outcast, a leper"],
+                translations: ["kek"]),
             
-            DailyWordsUserDefaults(title: "Interesting", examples: ["Интересный"]),
-            DailyWordsUserDefaults(title: "Words", examples: ["Интересный"]),
-            DailyWordsUserDefaults(title: "Interesting message was sended in my pocket", examples: ["Интересное сообщение было отправлено в моем кармане"]),
-            DailyWordsUserDefaults(title: "Joke", examples: ["It was a joke, of course, Percy was happy, not in a serious grabbing mood at all, but Delacroix didn't know that"]),
-            DailyWordsUserDefaults(title: "Silly", examples: ["Глупый"]),
-            DailyWordsUserDefaults(title: "to get out", examples: ["Suddenly I was terrified, almost choked with a need to get out of there", "Who told you to get out ?"]),
+            DailyWordsUserDefaults(title: "Interesting", examples: ["Интересный"], translations: ["kek"]),
+            DailyWordsUserDefaults(title: "Words", examples: ["Интересный"], translations: ["kek"]),
+            DailyWordsUserDefaults(title: "Interesting message was sended in my pocket", examples: ["Интересное сообщение было отправлено в моем кармане"], translations: ["kek"]),
+            DailyWordsUserDefaults(title: "Joke", examples: ["It was a joke, of course, Percy was happy, not in a serious grabbing mood at all, but Delacroix didn't know that"], translations: ["kek"]),
+            DailyWordsUserDefaults(title: "Silly", examples: ["Глупый"], translations: ["kek"]),
+            DailyWordsUserDefaults(title: "to get out", examples: ["Suddenly I was terrified, almost choked with a need to get out of there", "Who told you to get out ?"], translations: ["kek"]),
         ])
         
     }
@@ -64,36 +87,22 @@ final class DailyWordsPresenter: DailyWordsOutput {
             refillDailyWords()
         }
         
-        let array = DailyWordsUserDefaultsCache.get()
-        handleSuccess(array.map { DailyWordsViewController.ViewModel(title: $0.title, subtitles: $0.examples, translations: []) })
+        var array = DailyWordsUserDefaultsCache.get()
         
+        if array.isEmpty {
+            refillDailyWords()
+            array = DailyWordsUserDefaultsCache.get()
+        }
+        
+        handleSuccess(array.map { DailyWordsViewController.ViewModel(title: $0.title, subtitles: $0.examples, translations: $0.translations) })
     }
     
     private func handleSuccess(_ todayCards: [DailyWordsViewController.ViewModel]) {
-        self.input?.changeState(state: .content(todayCards))
+        self.view?.changeState(state: .content(todayCards))
     }
     
     private func handleFailure() {
-        self.input?.changeState(state: .error)
+        self.view?.changeState(state: .error)
     }
     
-}
-
-struct DailyWordsUserDefaultsCache {
-    static let key = "userProfileCache"
-    static func save(_ value: [DailyWordsUserDefaults]) {
-         UserDefaults.standard.set(try? PropertyListEncoder().encode(value), forKey: key)
-    }
-    static func get() -> [DailyWordsUserDefaults] {
-        var dailyWords: [DailyWordsUserDefaults] = []
-        if let data = UserDefaults.standard.value(forKey: key) as? Data {
-            guard let words = try? PropertyListDecoder().decode([DailyWordsUserDefaults].self, from: data) else { return [] }
-            return words
-        } else {
-            return dailyWords
-        }
-    }
-    static func remove() {
-        UserDefaults.standard.removeObject(forKey: key)
-    }
 }

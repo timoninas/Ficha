@@ -87,6 +87,11 @@ final class DailyWordsViewController: UIViewController {
         output.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        output.viewWillAppear()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         renderHeights()
@@ -147,8 +152,6 @@ final class DailyWordsViewController: UIViewController {
                 guard button.alpha != 0.0 else { return }
                 UIApplication.hapticLight()
                 let module = LearnCardBuilder.build(viewModel: self.viewModels.map { self.viewModelToLearnWordzViewModel($0) })
-                module.modalTransitionStyle = .coverVertical
-                module.modalPresentationStyle = .overFullScreen
                 self.present(module, animated: true, completion: nil)
             })
         
@@ -254,9 +257,16 @@ extension DailyWordsViewController: DailyWordsViewInput {
         switch state {
         case .content(let viewModel):
             viewModels = viewModel
-            print(viewModel)
         case .error:
-            print("Oshibka")
+            break
+        }
+    }
+    
+    func showOnboardingModule(model: OnboardingModuleModel) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { [weak self] in
+            guard let self = self else { return }
+            let module = OnboardingUserBuilder.build(model: model)
+            self.present(module, animated: true, completion: nil)
         }
     }
     

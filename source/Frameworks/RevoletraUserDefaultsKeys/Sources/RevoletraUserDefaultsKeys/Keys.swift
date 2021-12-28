@@ -34,3 +34,10 @@ public struct ProfileKey {
     public static let lastVisitAppDate = "UD_KnowledgeProfile_lastVisitAppDate"
     
 }
+
+public struct DailyWordsCacheKey {
+    
+    public static let dailyWords = "UD_DailyWordsUserDefaultsCache_dailyWords"
+    
+}
+

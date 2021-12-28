@@ -57,7 +57,7 @@ final class LearnCardViewController: UIViewController {
         }
     }
     
-    private var phantomCard = LearnWordzCardView(configuration: .init(wordz: "", translations: []))
+    private var phantomCard = BaseCardView.phantomCard()
     
     private var resultCard = ResultLearnCardView(swipeDirections: [.top, .bottom, .left, .right], configuration: .init())
     
@@ -119,24 +119,12 @@ final class LearnCardViewController: UIViewController {
     
     private func addCloseButton() {
         view.addSubview(closeButton)
-        NSLayoutConstraint.activate([
-            closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.0),
-            closeButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20.0),
-            closeButton.heightAnchor.constraint(equalToConstant: 30.0),
-            closeButton.widthAnchor.constraint(equalTo: closeButton.heightAnchor)
-        ])
+        closeButton.renderAsCloseButton(view: view)
     }
     
     private func addPhantomCard() {
-        phantomCard.alpha = 0.0
-        phantomCard.isUserInteractionEnabled = false
         view.addSubview(phantomCard)
-        NSLayoutConstraint.activate([
-            phantomCard.heightAnchor.constraint(equalToConstant: view.safeAreaHeight / 1.75),
-            phantomCard.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            phantomCard.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20.0),
-            phantomCard.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20.0),
-        ])
+        phantomCard.renderAsCard(view: view)
     }
     
     private func changeVisabilityControls(isHidden: Bool, isAnimated: Bool) {

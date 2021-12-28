@@ -8,6 +8,7 @@
 import Foundation
 import Rivendell
 import Erebor
+import RevolvetraKnowledge
 
 final class ThematicWordzPresenter: ThematicWordzViewOutput {
     
