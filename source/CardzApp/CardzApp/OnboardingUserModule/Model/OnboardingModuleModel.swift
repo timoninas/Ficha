@@ -14,6 +14,8 @@ struct OnboardingModuleModel {
     struct OnboardingModel {
         let image: UIImage?
         
+        var flippedImage: UIImage? = nil
+        
         let title: String
     }
 }

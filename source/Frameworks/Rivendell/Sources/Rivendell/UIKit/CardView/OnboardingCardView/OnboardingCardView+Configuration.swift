@@ -11,9 +11,18 @@ extension OnboardingCardView {
     
     public struct Configuration {
         
+        public enum State {
+            case normal
+            case fliped
+        }
+        
         public private(set) var title: String = ""
         
         public private(set) var image: UIImage?
+        
+        public private(set) var state: State = .normal
+        
+        public private(set) var flippedImage: UIImage?
         
         public init() {}
         
@@ -26,6 +35,18 @@ extension OnboardingCardView {
         public func with(image: UIImage?) -> Configuration {
             var mutableSelf = self
             mutableSelf.image = image
+            return mutableSelf
+        }
+        
+        public func with(flippedImage: UIImage?) -> Configuration {
+            var mutableSelf = self
+            mutableSelf.flippedImage = flippedImage
+            return mutableSelf
+        }
+        
+        public func with(state: State) -> Configuration {
+            var mutableSelf = self
+            mutableSelf.state = state
             return mutableSelf
         }
         

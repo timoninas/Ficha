@@ -398,10 +398,10 @@ public class LearnWordzCardView: BaseCardView {
             switch self.configuration.state {
             case .wordz:
                 state = .translation
-                options = [.transitionFlipFromRight]
+                options = [.transitionFlipFromLeft]
             case .translation:
                 state = .wordz
-                options = [.transitionFlipFromLeft]
+                options = [.transitionFlipFromRight]
             }
             self.configuration = self.configuration
                 .with(state: state)

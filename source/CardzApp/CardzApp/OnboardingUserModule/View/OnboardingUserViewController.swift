@@ -81,6 +81,7 @@ final class OnboardingUserViewController: UIViewController {
                 configuration: .init()
                     .with(image: model.image)
                     .with(title: model.title)
+                    .with(flippedImage: model.flippedImage)
             )
             
             cards.append(card)

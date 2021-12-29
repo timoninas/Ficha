@@ -18,6 +18,8 @@ extension OnboardingUserViewController {
             let title: String
             
             let image: UIImage?
+            
+            var flippedImage: UIImage? = nil
         }
         
     }

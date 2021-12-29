@@ -32,9 +32,8 @@ final class DailyWordsPresenter: DailyWordsOutput {
     func showOnboarding() {
         let model: OnboardingModuleModel = .init(
             onboardingModels: [
-                .init(image: .animals, title: ""),
-                .init(image: .animals, title: "Че то там"),
-                .init(image: .architecture, title: "Njefw wjekfwejf jkwef nwkefn kwejfnkwefnkwe fnjkwejf wefwe fwe wef we fwe fwefwefwef wef we fwe fwef wef wef we fews fwef we fwe fwe fwe fwe f"),
+                .init(image: .onboarding3, flippedImage: .onboarding4, title: "To see the translation, tap on the card"),
+                .init(image: .onboarding2, title: "Swipe the cards in different directions"),
                 .init(image: .onboarding1, title: "Swipe these cards!")
             ]
         )

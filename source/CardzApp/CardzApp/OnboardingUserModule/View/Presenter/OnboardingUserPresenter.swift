@@ -14,9 +14,7 @@ final class OnboardingUserPresenter: OnboardingUserViewOutput {
     private var model: OnboardingModuleModel
     
     private var onboardingModelToViewModel: (OnboardingModuleModel) -> OnboardingUserViewController.ViewModel = {
-        .init(cards: $0.onboardingModels.map { OnboardingUserViewController.ViewModel.Card.init(
-            title: $0.title,
-            image: $0.image)
+        .init(cards: $0.onboardingModels.map { OnboardingUserViewController.ViewModel.Card.init(title: $0.title, image: $0.image, flippedImage: $0.flippedImage)
         })
     }
     

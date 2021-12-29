@@ -17,6 +17,14 @@ public class OnboardingCardView: BaseCardView {
         return iv
     }()
     
+    private let flippedImage: UIImageView = {
+        let iv = UIImageView()
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.contentMode = .scaleAspectFit
+        iv.layer.masksToBounds = true
+        return iv
+    }()
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -48,8 +56,15 @@ public class OnboardingCardView: BaseCardView {
     private func configureUI() {
         addOnboardingImage()
         addTitle()
+        addFlippedImage()
+        setupOnTap()
+        updateAppearance()
+    }
+    
+    private func updateAppearance() {
         updateData()
         setupConstraints()
+        updateVisability()
     }
     
     private func addOnboardingImage() {
@@ -60,9 +75,14 @@ public class OnboardingCardView: BaseCardView {
         contentView.addSubview(titleLabel)
     }
     
+    private func addFlippedImage() {
+        contentView.addSubview(flippedImage)
+    }
+    
     private func updateData() {
         titleLabel.text = configuration.title
         onboardingImage.image = configuration.image
+        flippedImage.image = configuration.flippedImage
     }
     
     private func setupConstraints() {
@@ -92,12 +112,58 @@ public class OnboardingCardView: BaseCardView {
             ]
         }
         
+        storedConstraints += [
+            flippedImage.topAnchor.constraint(equalTo: contentView.topAnchor),
+            flippedImage.leftAnchor.constraint(equalTo: contentView.leftAnchor),
+            flippedImage.rightAnchor.constraint(equalTo: contentView.rightAnchor),
+            flippedImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+        ]
+        
         NSLayoutConstraint.activate(storedConstraints)
     }
     
+    // MARK: - Private methods
+    
+    func setupOnTap() {
+        internalOnTap = { [weak self] in
+            guard let self = self else { return }
+            guard self.configuration.flippedImage != nil else { return }
+            let options: UIView.AnimationOptions
+            
+            switch self.configuration.state {
+            case .fliped:
+                self.configuration = self.configuration
+                    .with(state: .normal)
+                options = [.transitionFlipFromRight]
+            case .normal:
+                self.configuration = self.configuration
+                    .with(state: .fliped)
+                options = [.transitionFlipFromLeft]
+            }
+            UIView.transition(
+                with: self, duration: 0.3,
+                options: options,
+                animations: { },
+                completion: nil
+            )
+        }
+    }
+    
+    private func updateVisability() {
+        switch configuration.state {
+        case .normal:
+            titleLabel.isHidden = false
+            onboardingImage.isHidden = false
+            flippedImage.isHidden = true
+        case .fliped:
+            titleLabel.isHidden = true
+            onboardingImage.isHidden = true
+            flippedImage.isHidden = false
+        }
+    }
+    
     private func configurationChanged(oldValue: Configuration) {
-        updateData()
-        setupConstraints()
+        updateAppearance()
     }
     
 }
