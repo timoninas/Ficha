@@ -6,10 +6,13 @@
 //
 
 import Foundation
+import RevoletraUserDefaultsKeys
 
 public protocol KnowledgeDeviceProtocol {
     
     static var appVersion: String? { get }
+    
+    static var previousAppVersion: String { get set }
     
 }
 
@@ -17,4 +20,6 @@ public class KnowledgeDevice: KnowledgeDeviceProtocol {
     
     public static var appVersion: String? { Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String }
     
+    @UserDefault(key: DeviceKey.previousAppVersion, defaultValue: "")
+    public static var previousAppVersion
 }

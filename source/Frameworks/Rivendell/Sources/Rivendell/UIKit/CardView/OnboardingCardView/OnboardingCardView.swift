@@ -12,8 +12,8 @@ public class OnboardingCardView: BaseCardView {
     private let onboardingImage: UIImageView = {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
-//        iv.image = .kolokol?.withRenderingMode(.alwaysTemplate)
-//        iv.tintColor = .mysteryShack
+        iv.contentMode = .scaleAspectFit
+        iv.layer.masksToBounds = true
         return iv
     }()
     
@@ -21,9 +21,9 @@ public class OnboardingCardView: BaseCardView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .nazgul
-        label.font = UIFont(name:"HelveticaNeue-Bold", size: 24.0)
+        label.font = UIFont(name:"HelveticaNeue-Bold", size: 22.0)
         label.textAlignment = .center
-        label.numberOfLines = 4
+        label.numberOfLines = 5
         return label
     }()
     
@@ -53,11 +53,11 @@ public class OnboardingCardView: BaseCardView {
     }
     
     private func addOnboardingImage() {
-        
+        contentView.addSubview(onboardingImage)
     }
     
     private func addTitle() {
-        
+        contentView.addSubview(titleLabel)
     }
     
     private func updateData() {
@@ -70,7 +70,27 @@ public class OnboardingCardView: BaseCardView {
         storedConstraints.removeAll()
         
         storedConstraints += [
+            onboardingImage.topAnchor.constraint(equalTo: contentView.topAnchor),
+            onboardingImage.leftAnchor.constraint(equalTo: contentView.leftAnchor),
+            onboardingImage.rightAnchor.constraint(equalTo: contentView.rightAnchor),
         ]
+        
+        if self.configuration.title.isEmpty {
+            storedConstraints += [
+                onboardingImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            ]
+        } else {
+            storedConstraints += [
+                onboardingImage.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.65),
+            ]
+            
+            storedConstraints += [
+                titleLabel.topAnchor.constraint(equalTo: onboardingImage.bottomAnchor, constant: 12.0),
+                titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor),
+                titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor),
+                titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12.0),
+            ]
+        }
         
         NSLayoutConstraint.activate(storedConstraints)
     }

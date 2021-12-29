@@ -61,4 +61,6 @@ public extension UIImage {
     
     static let serials = UIImage(named: "serials")
     
+    static let onboarding1 = UIImage(named: "onboarding1")
+    
 }

@@ -10,6 +10,7 @@ import RevoletraUserDefaultsKeys
 import RevolvetraUserDefaults
 
 public protocol KnowledgeCardsProtocol {
+    
     static var minCountCardToLearn: Int { get set }
     
     static var dailyWords: [DailyWordsUserDefaults] { get set }

@@ -27,6 +27,12 @@ public struct CardsKey {
     
 }
 
+public struct DeviceKey {
+    
+    public static let previousAppVersion = "UD_KnowledgeDevice_previousAppVersion"
+    
+}
+
 public struct ProfileKey {
     
     public static let isOnborded = "UD_KnowledgeProfile_isOnborded"

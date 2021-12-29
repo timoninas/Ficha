@@ -97,7 +97,8 @@ final class OnboardingUserViewController: UIViewController {
     private func cardSwiped(with index: Int) {
         cards.removeLast()
         if cards.isEmpty {
-            print("eskeetit")
+            UIApplication.hapticSoft()
+            dismiss(animated: true, completion: nil)
         }
     }
     
