@@ -101,6 +101,48 @@ func getGoldSlang() -> BagOfGoldWords {
             examples: [],
             translations: ["Barbecue", "Grill"]
         ),
+        .init(
+            word: "Props",
+            transcription: "",
+            examples: [],
+            translations: ["Respect"]
+        ),
+        .init(
+            word: "Kudos",
+            transcription: "",
+            examples: [],
+            translations: ["Bravo", "Respect"]
+        ),
+        .init(
+            word: "Bottom line",
+            transcription: "",
+            examples: [],
+            translations: ["The most important thing"]
+        ),
+        .init(
+            word: "Diss",
+            transcription: "",
+            examples: [],
+            translations: ["Disrespectful", "Dismissive"]
+        ),
+        .init(
+            word: "Dig",
+            transcription: "",
+            examples: [],
+            translations: ["Get high", "Trudge"]
+        ),
+        .init(
+            word: "All right?",
+            transcription: "",
+            examples: [],
+            translations: ["Hi, how are you?"]
+        ),
+        .init(
+            word: "Cheers",
+            transcription: "",
+            examples: [],
+            translations: ["Let's be healthy"]
+        ),
     ])
     
     let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .architecture, typeTranslation: .enToRu)
