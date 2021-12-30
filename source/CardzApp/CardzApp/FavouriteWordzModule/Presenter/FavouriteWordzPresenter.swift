@@ -6,8 +6,13 @@
 //
 
 import Foundation
+import Erebor
 
 final class FavouriteWordzPresenter: FavouriteWordzViewOutput {
+    
+    private struct Constants {
+        static let arkenstone: ArkenstoneTypeWord = .favourite
+    }
     
     weak var view: FavouriteWordzViewInput?
     
@@ -20,7 +25,7 @@ final class FavouriteWordzPresenter: FavouriteWordzViewOutput {
     }
     
     private func fetchData() {
-        
+        print("Fetch \(Constants.arkenstone)")
     }
     
     private func mockFetchData() {

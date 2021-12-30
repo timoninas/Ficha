@@ -13,16 +13,19 @@ import RevolvetraUserDefaults
 
 final class DailyWordsPresenter: DailyWordsOutput {
     
+    private struct Constants {
+        static var dailyWordsCount: Int { 12 }
+    }
+    
     weak var view: DailyWordsViewInput?
     
     init() { }
     
     func viewDidLoad() {
-        self.mockFetchData()
+        mockFetchData()
     }
     
     func viewWillAppear() {
-        KnowledgeProfile.isOnborded = false
         if !KnowledgeProfile.isOnborded {
             KnowledgeProfile.isOnborded = true
             showOnboarding()
@@ -68,22 +71,23 @@ final class DailyWordsPresenter: DailyWordsOutput {
     private func refillDailyWords() {
         let newDailyWords = [
             DailyWordsUserDefaults(
-                title: "Words",
+                title: "Words111",
+                transcription: "fqwefqwe",
                 examples: ["Harper's words came faster now", "Tracy listened to his words, first with shock and then with growing anger. He made her sound like an outcast, a leper"],
                 translations: ["kek"]),
             
-            DailyWordsUserDefaults(title: "Interesting", examples: ["Интересный"], translations: ["kek"]),
-            DailyWordsUserDefaults(title: "Words", examples: ["Интересный"], translations: ["kek"]),
-            DailyWordsUserDefaults(title: "Interesting message was sended in my pocket", examples: ["Интересное сообщение было отправлено в моем кармане"], translations: ["kek"]),
-            DailyWordsUserDefaults(title: "Joke", examples: ["It was a joke, of course, Percy was happy, not in a serious grabbing mood at all, but Delacroix didn't know that"], translations: ["kek"]),
-            DailyWordsUserDefaults(title: "Silly", examples: ["Глупый"], translations: ["kek"]),
-            DailyWordsUserDefaults(title: "to get out", examples: ["Suddenly I was terrified, almost choked with a need to get out of there", "Who told you to get out ?"], translations: ["kek"]),
+            DailyWordsUserDefaults(title: "Interesting", transcription: "wefwef", examples: ["Интересный"], translations: ["kek"]),
+            DailyWordsUserDefaults(title: "Words", transcription: nil, examples: ["Интересный"], translations: ["kek"]),
+            DailyWordsUserDefaults(title: "Interesting message was sended in my pocket", transcription: nil, examples: ["Интересное сообщение было отправлено в моем кармане"], translations: ["kek"]),
+            DailyWordsUserDefaults(title: "Joke", transcription: nil, examples: ["It was a joke, of course, Percy was happy, not in a serious grabbing mood at all, but Delacroix didn't know that"], translations: ["kek"]),
+            DailyWordsUserDefaults(title: "Silly", transcription: nil, examples: ["Глупый"], translations: ["kek"]),
+            DailyWordsUserDefaults(title: "to get out", transcription: nil, examples: ["Suddenly I was terrified, almost choked with a need to get out of there", "Who told you to get out ?"], translations: ["kek"]),
         ]
         DailyWordsUserDefaultsCache.save(newDailyWords.shuffled())
     }
     
     private func mockFetchData() {
-        if isNewDay() {
+        if true || isNewDay() {
             DailyWordsUserDefaultsCache.remove()
             refillDailyWords()
         }
@@ -95,15 +99,15 @@ final class DailyWordsPresenter: DailyWordsOutput {
             array = DailyWordsUserDefaultsCache.get()
         }
         
-        handleSuccess(array.map { DailyWordsViewController.ViewModel(title: $0.title, subtitles: $0.examples, translations: $0.translations) })
+        handleSuccess(array.map { DailyWordsViewController.ViewModel(title: $0.title, transcription: $0.transcription, subtitles: $0.examples, translations: $0.translations) })
     }
     
     private func handleSuccess(_ todayCards: [DailyWordsViewController.ViewModel]) {
-        self.view?.changeState(state: .content(todayCards))
+        view?.changeState(state: .content(todayCards))
     }
     
     private func handleFailure() {
-        self.view?.changeState(state: .error)
+        view?.changeState(state: .error)
     }
     
 }

@@ -24,6 +24,7 @@ final class DailyWordsViewController: UIViewController {
         .init(
             wordz: $0.title,
             translations: $0.translations,
+            transcription: $0.transcription,
             wordzExamples: $0.subtitles ?? []
         )
     }

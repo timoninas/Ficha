@@ -12,12 +12,15 @@ public struct DailyWordsUserDefaults: Encodable, Decodable {
     
     public let title: String
     
+    public let transcription: String?
+    
     public let examples: [String]
     
     public let translations: [String]
     
-    public init(title: String, examples: [String], translations: [String]) {
+    public init(title: String, transcription: String?, examples: [String], translations: [String]) {
         self.title = title
+        self.transcription = transcription
         self.examples = examples
         self.translations = translations
     }

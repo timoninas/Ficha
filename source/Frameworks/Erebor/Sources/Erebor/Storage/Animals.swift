@@ -143,6 +143,66 @@ func getGoldAnimals() -> BagOfGoldWords {
             examples: [],
             translations: ["Гепард"]
         ),
+        .init(
+            word: "Peacock",
+            transcription: "['pi:kɔk]",
+            examples: [],
+            translations: ["Павлин"]
+        ),
+        .init(
+            word: "Parrot",
+            transcription: "['pærət]",
+            examples: [],
+            translations: ["Попугай"]
+        ),
+        .init(
+            word: "Duck",
+            transcription: "[dʌk]",
+            examples: [],
+            translations: ["Утка"]
+        ),
+        .init(
+            word: "Penguin",
+            transcription: "['peŋgwin]",
+            examples: [],
+            translations: ["Пингвин"]
+        ),
+        .init(
+            word: "Swan",
+            transcription: "[swɔn]",
+            examples: [],
+            translations: ["Лебедь"]
+        ),
+        .init(
+            word: "Fish",
+            transcription: "[fiʃ]",
+            examples: [],
+            translations: ["Рыба"]
+        ),
+        .init(
+            word: "Puppy",
+            transcription: "['pʌpi]",
+            examples: [],
+            translations: ["Щенок"]
+        ),
+        .init(
+            word: "Tortoise",
+            transcription: "['tɔ:təs]",
+            examples: [],
+            translations: ["Черепаха"]
+        ),
+        .init(
+            word: "Goldfinch",
+            transcription: "['gəʋldfɪntʃ]",
+            examples: [],
+            translations: ["щегол"]
+        ),
+        .init(
+            word: "Dolphin",
+            transcription: "['dɔlfin]",
+            examples: [],
+            translations: ["Дельфин"]
+        ),
     ])
     
     let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .architecture, typeTranslation: .enToRu)

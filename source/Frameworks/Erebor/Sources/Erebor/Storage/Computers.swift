@@ -173,6 +173,42 @@ func getGoldComputers() -> BagOfGoldWords {
             examples: [],
             translations: ["Загружать", "Скачать"]
         ),
+        .init(
+            word: "Display",
+            transcription: "",
+            examples: [],
+            translations: ["Экран"]
+        ),
+        .init(
+            word: "Sound card",
+            transcription: "",
+            examples: [],
+            translations: ["Звуковая карта "]
+        ),
+        .init(
+            word: "Case",
+            transcription: "",
+            examples: [],
+            translations: ["Компьютерный корпус"]
+        ),
+        .init(
+            word: "Computer mouse",
+            transcription: "",
+            examples: [],
+            translations: ["Компьютерная мышь"]
+        ),
+        .init(
+            word: "Mouse mat",
+            transcription: "",
+            examples: [],
+            translations: ["Коврик для мыши"]
+        ),
+        .init(
+            word: "Power indicator",
+            transcription: "",
+            examples: [],
+            translations: ["Индикатор питания "]
+        ),
     ])
     
     let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .architecture, typeTranslation: .enToRu)

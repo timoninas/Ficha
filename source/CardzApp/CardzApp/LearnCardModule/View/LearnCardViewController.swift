@@ -239,12 +239,7 @@ final class LearnCardViewController: UIViewController {
             tmpCards.append(card)
             
             view.addSubview(card)
-            NSLayoutConstraint.activate([
-                card.heightAnchor.constraint(equalToConstant: view.safeAreaHeight / 1.75),
-                card.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-                card.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20.0),
-                card.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20.0),
-            ])
+            card.renderAsCard(view: view)
             
             view.bringSubviewToFront(card)
         }

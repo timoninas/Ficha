@@ -119,6 +119,78 @@ func getGoldEmotions() -> BagOfGoldWords {
             examples: [],
             translations: ["Взволновать"]
         ),
+        .init(
+            word: "Excitement",
+            transcription: "[ɪkˈsaɪtmənt]",
+            examples: [],
+            translations: ["Волнение"]
+        ),
+        .init(
+            word: "Exult",
+            transcription: "[ɪɡˈzʌlt]",
+            examples: [],
+            translations: ["Ликовать"]
+        ),
+        .init(
+            word: "Fire",
+            transcription: "[ˈfaɪər]",
+            examples: [],
+            translations: ["Разжигать (заставить кого-то чувствовать себя очень взволнованным)"]
+        ),
+        .init(
+            word: "Flush",
+            transcription: "[flʌʃ]",
+            examples: [],
+            translations: ["Румянец"]
+        ),
+        .init(
+            word: "Galvanize",
+            transcription: "[ˈɡælvənaɪz]",
+            examples: [],
+            translations: ["Возбуждать"]
+        ),
+        .init(
+            word: "Het up",
+            transcription: "[ˌhet ˈʌp]",
+            examples: [],
+            translations: ["Возмущенный"]
+        ),
+        .init(
+            word: "Thrill",
+            transcription: "[θrɪl]",
+            examples: [],
+            translations: ["Острые ощущения", "Трепет"]
+        ),
+        .init(
+            word: "Wilt",
+            transcription: "[wɪlt]",
+            examples: [],
+            translations: ["Слабеть"]
+        ),
+        .init(
+            word: "Whirl",
+            transcription: "[wɜːl]",
+            examples: [],
+            translations: ["Кружиться"]
+        ),
+        .init(
+            word: "Alarm",
+            transcription: "[əˈlɑːrm]",
+            examples: [],
+            translations: ["Тревога"]
+        ),
+        .init(
+            word: "Rouse",
+            transcription: "[raʊz]",
+            examples: [],
+            translations: ["Пробудить"]
+        ),
+        .init(
+            word: "Wearisome",
+            transcription: "[ˈwɪrisəm]",
+            examples: [],
+            translations: ["Утомительный"]
+        ),
     ])
     
     let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .architecture, typeTranslation: .enToRu)

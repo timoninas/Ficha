@@ -13,6 +13,8 @@ extension DailyWordsViewController {
         
         let title: String
         
+        let transcription: String?
+        
         let subtitles: [String]?
         
         let translations: [String]

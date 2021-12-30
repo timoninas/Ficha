@@ -16,12 +16,24 @@ final class OnboardingUserViewController: UIViewController {
         didSet {
             guard viewModel != oldValue else { return }
             renderViewModelCards()
+            cardSwiped(isNeedToRemove: false)
         }
     }
     
     private var cards: [OnboardingCardView] = []
     
     private var phantomCard = BaseCardView.phantomCard()
+    
+    private var titleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .nazgul
+        label.font = UIFont(name:"HelveticaNeue-Bold", size: 24.0)
+        label.textAlignment = .left
+        label.numberOfLines = 1
+        label.text = "Onboarding"
+        return label
+    }()
     
     private lazy var closeButton = RVImageButton(configuration: .init()
                                                     .with(image: .closeIcon)
@@ -61,6 +73,7 @@ final class OnboardingUserViewController: UIViewController {
     
     private func configureUI() {
         addCloseButton()
+        addTitleLabel()
         addPhantomCard()
     }
     
@@ -69,13 +82,24 @@ final class OnboardingUserViewController: UIViewController {
         closeButton.renderAsCloseButton(view: view)
     }
     
+    private func addTitleLabel() {
+        view.addSubview(titleLabel)
+        titleLabel.sizeToFit()
+        NSLayoutConstraint.activate([
+            titleLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20.0),
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.0),
+            titleLabel.rightAnchor.constraint(lessThanOrEqualTo: closeButton.leftAnchor, constant: -20.0)
+        ])
+    }
+    
     private func addPhantomCard() {
         view.addSubview(phantomCard)
         phantomCard.renderAsCard(view: view)
     }
     
     private func renderViewModelCards() {
-        viewModel.cards.enumerated().forEach { idx, model in
+        viewModel.cards.enumerated().forEach { [weak self] idx, model in
+            guard let self = self else { return }
             let card = OnboardingCardView(
                 swipeDirections: [.top, .bottom, .left, .right],
                 configuration: .init()
@@ -90,13 +114,35 @@ final class OnboardingUserViewController: UIViewController {
             
             card.onEverySwipe { [weak self] in
                 guard let self = self else { return }
-                self.cardSwiped(with: idx)
+                self.cardSwiped(isNeedToRemove: true)
+            }
+            
+            if idx == (viewModel.cards.count - 1) {
+                card.withCardShadow()
             }
         }
     }
     
-    private func cardSwiped(with index: Int) {
-        cards.removeLast()
+    private func cardSwiped(isNeedToRemove: Bool) {
+        if isNeedToRemove {
+            cards.removeLast()
+        }
+        cards.forEach { card in
+            card.isHidden = true
+        }
+        let last2Cards = Array(cards.suffix(2))
+        switch last2Cards.count {
+        case 2:
+            last2Cards[0].isUserInteractionEnabled = false
+            last2Cards[0].isHidden = false
+            last2Cards[1].isUserInteractionEnabled = true
+            last2Cards[1].isHidden = false
+        case 1:
+            last2Cards[0].isUserInteractionEnabled = true
+            last2Cards[0].isHidden = false
+        default:
+            break
+        }
         if cards.isEmpty {
             UIApplication.hapticSoft()
             dismiss(animated: true, completion: nil)
