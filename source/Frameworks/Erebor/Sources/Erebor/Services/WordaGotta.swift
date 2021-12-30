@@ -9,6 +9,8 @@ import Foundation
 
 public final class WordaGotta {
     
+    public init() {}
+    
     public func gottaAllWords() -> [BagOfGoldWords] {
         var totalArray: [BagOfGoldWords] = []
         

@@ -7,8 +7,22 @@
 
 import Foundation
 
+public var arkenstones: [ArkenstoneTypeWord] = [
+    .home,
+    .computers,
+    .architecture,
+    .animals,
+    .serials,
+    .emotions,
+    .clothes,
+    .job,
+    .slang,
+    .favourite,
+    .unknown
+]
+
 /// Тип тематических слов.
-public enum ArkenstoneTypeWord: String, CaseIterable {
+public enum ArkenstoneTypeWord: String, CaseIterable, Decodable, Encodable {
     /// Архитектура.
     case architecture = "Architecture"
     /// Компьютеры.

@@ -180,7 +180,7 @@ public class LearnWordzCardView: BaseCardView {
             
         /// Верстает экран к иностранному варианту.
         case .wordz:
-            switch (configuration.isExamples, configuration.isTranscription) {
+            switch (configuration.wordzExamples.filter { !$0.isEmpty }.count > 0, configuration.isTranscription) {
             case (false, false):
                 prepareSingleConstraintsToWordz()
             case (false, true):

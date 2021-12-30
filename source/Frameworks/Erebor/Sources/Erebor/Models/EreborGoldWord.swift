@@ -9,12 +9,12 @@ import Foundation
 
 public struct EreborGoldWord {
     
-    let word: String
+    public let word: String
     
-    let transcription: String
+    public let transcription: String
     
-    let examples: [String]
+    public let examples: [String]
     
-    let translations: [String]
+    public let translations: [String]
     
 }

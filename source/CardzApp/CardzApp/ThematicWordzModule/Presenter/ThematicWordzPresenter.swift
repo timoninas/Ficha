@@ -15,18 +15,32 @@ final class ThematicWordzPresenter: ThematicWordzViewOutput {
     weak var view: ThematicWordzViewInput?
     
     private var typeWord: ArkenstoneTypeWord
+    private var typeTranslation: SilverTypeTranslation
     
-    init(typeWord: ArkenstoneTypeWord) {
+    init(typeWord: ArkenstoneTypeWord, typeTranslation: SilverTypeTranslation) {
         self.typeWord = typeWord
+        self.typeTranslation = typeTranslation
     }
     
     func viewDidLoad() {
         
-        mockFetchData()
+        fetchData()
+//        mockFetchData()
     }
     
     private func fetchData() {
-        
+        let array = MoriaManager.shared.getWordz(type: typeWord, typeTranslation: typeTranslation)
+        let previewViewModel = array.map {
+            PreviewViewModel(
+                wordz: $0.wordz,
+                wordzExamples: $0.examples,
+                transcription: $0.transcription,
+                translations: $0.translations,
+                type: $0.type,
+                languageVersion: $0.languageVersion
+            )
+        }
+        view?.changeState(state: .normal(model: .init(title: typeWord.rawValue, wordsPreview: previewViewModel) ))
     }
     
     private func mockFetchData() {
@@ -35,55 +49,9 @@ final class ThematicWordzPresenter: ThematicWordzViewOutput {
                 wordz: "To get out",
                 wordzExamples: [],
                 transcription: nil,
-                translations: ["Выйти наружу", "Выбраться отсюда"]
-            ),
-            .init(
-                wordz: "To find out",
-                wordzExamples: [],
-                transcription: nil,
-                translations: ["Выяснить", "Обнаруживать", "Разузнать"]
-            ),
-            .init(
-                wordz: "Words Words Words Words",
-                wordzExamples: [],
-                transcription: nil,
-                translations: ["Слова", "Какие-то слова"]
-            ),
-            .init(
-                wordz: "Words",
-                wordzExamples: [],
-                transcription: nil,
-                translations: ["Слово 1", "Слово 2"]
-            ),
-            .init(
-                wordz: "Words",
-                wordzExamples: [],
-                transcription: nil,
-                translations: ["Слово", "Слово 1", "Слово 2"]
-            ),
-            .init(
-                wordz: "Words",
-                wordzExamples: [],
-                transcription: nil,
-                translations: ["Слово", "Слово 1", "Слово 1", "Слово 1", "Слово 1"]
-            ),
-            .init(
-                wordz: "Words Wordz 1",
-                wordzExamples: [],
-                transcription: nil,
-                translations: ["Слово"]
-            ),
-            .init(
-                wordz: "Words KEK",
-                wordzExamples: [],
-                transcription: nil,
-                translations: ["Слово MEM"]
-            ),
-            .init(
-                wordz: "Words LOL",
-                wordzExamples: [],
-                transcription: nil,
-                translations: ["Слово"]
+                translations: ["Выйти наружу", "Выбраться отсюда"],
+                type: .animals,
+                languageVersion: .enToRu
             ),
         ]
         view?.changeState(state: .normal(model: .init(title: typeWord.rawValue, wordsPreview: wordsPreviews)))

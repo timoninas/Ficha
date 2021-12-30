@@ -209,6 +209,6 @@ func getGoldSerials() -> BagOfGoldWords {
         ),
     ])
     
-    let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .architecture, typeTranslation: .enToRu)
+    let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .serials, typeTranslation: .enToRu)
     return bagOfGold
 }

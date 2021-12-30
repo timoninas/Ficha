@@ -9,10 +9,10 @@ import Foundation
 
 public struct BagOfGoldWords {
     
-    let words: [EreborGoldWord]
+    public let words: [EreborGoldWord]
     
-    let typeWord: ArkenstoneTypeWord
+    public let typeWord: ArkenstoneTypeWord
     
-    let typeTranslation: SilverTypeTranslation
+    public let typeTranslation: SilverTypeTranslation
     
 }

@@ -53,7 +53,10 @@ final class ThematicWordzViewController: UIViewController {
             .map { LearnWordzCardView.ViewModel(
             wordz: $0.wordz,
             translations: $0.translations,
-            transcription: $0.transcription, wordzExamples: $0.wordzExamples
+            transcription: $0.transcription,
+            wordzExamples: $0.wordzExamples,
+            type: $0.type,
+            languageVersion: $0.languageVersion
         )}
         let module = LearnCardBuilder.build(viewModel: shuffled)
         self.present(module, animated: true, completion: nil)

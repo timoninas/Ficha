@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Erebor
 
 extension DailyWordsViewController {
     
@@ -18,6 +19,10 @@ extension DailyWordsViewController {
         let subtitles: [String]?
         
         let translations: [String]
+        
+        let type: ArkenstoneTypeWord
+        
+        let languageVersion: SilverTypeTranslation
         
     }
     

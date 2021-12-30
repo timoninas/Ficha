@@ -145,6 +145,6 @@ func getGoldSlang() -> BagOfGoldWords {
         ),
     ])
     
-    let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .architecture, typeTranslation: .enToRu)
+    let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .slang, typeTranslation: .enToRu)
     return bagOfGold
 }

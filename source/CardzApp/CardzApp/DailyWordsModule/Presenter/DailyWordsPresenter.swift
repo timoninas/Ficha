@@ -7,6 +7,8 @@
 
 import Foundation
 
+import Erebor
+
 import RevoletraUserDefaultsKeys
 import RevolvetraKnowledge
 import RevolvetraUserDefaults
@@ -69,20 +71,26 @@ final class DailyWordsPresenter: DailyWordsOutput {
     }
     
     private func refillDailyWords() {
-        let newDailyWords = [
-            DailyWordsUserDefaults(
-                title: "Words111",
-                transcription: "fqwefqwe",
-                examples: ["Harper's words came faster now", "Tracy listened to his words, first with shock and then with growing anger. He made her sound like an outcast, a leper"],
-                translations: ["kek"]),
-            
-            DailyWordsUserDefaults(title: "Interesting", transcription: "wefwef", examples: ["Интересный"], translations: ["kek"]),
-            DailyWordsUserDefaults(title: "Words", transcription: nil, examples: ["Интересный"], translations: ["kek"]),
-            DailyWordsUserDefaults(title: "Interesting message was sended in my pocket", transcription: nil, examples: ["Интересное сообщение было отправлено в моем кармане"], translations: ["kek"]),
-            DailyWordsUserDefaults(title: "Joke", transcription: nil, examples: ["It was a joke, of course, Percy was happy, not in a serious grabbing mood at all, but Delacroix didn't know that"], translations: ["kek"]),
-            DailyWordsUserDefaults(title: "Silly", transcription: nil, examples: ["Глупый"], translations: ["kek"]),
-            DailyWordsUserDefaults(title: "to get out", transcription: nil, examples: ["Suddenly I was terrified, almost choked with a need to get out of there", "Who told you to get out ?"], translations: ["kek"]),
-        ]
+        var newDailyWords: [DailyWordsUserDefaults] = []
+        let types = ArkenstoneTypeWord.allCases
+        types
+            .shuffled()
+            .prefix(6)
+            .forEach { type in
+                let words = Array(MoriaManager.shared.getWordz(type: type)
+                                    .shuffled()
+                                    .prefix(2))
+                words.forEach { word in
+                    newDailyWords.append(.init(
+                        title: word.wordz,
+                        transcription: word.transcription,
+                        examples: word.examples,
+                        translations: word.translations,
+                        type: type.rawValue,
+                        languageVersion: word.languageVersion.rawValue
+                    ))
+                }
+            }
         DailyWordsUserDefaultsCache.save(newDailyWords.shuffled())
     }
     
@@ -99,7 +107,14 @@ final class DailyWordsPresenter: DailyWordsOutput {
             array = DailyWordsUserDefaultsCache.get()
         }
         
-        handleSuccess(array.map { DailyWordsViewController.ViewModel(title: $0.title, transcription: $0.transcription, subtitles: $0.examples, translations: $0.translations) })
+        handleSuccess(array.map { DailyWordsViewController.ViewModel(
+            title: $0.title,
+            transcription: $0.transcription,
+            subtitles: $0.examples,
+            translations: $0.translations,
+            type: ArkenstoneTypeWord(rawValue: $0.type) ?? .unknown,
+            languageVersion: SilverTypeTranslation(rawValue: $0.languageVersion) ?? .unknown
+        ) })
     }
     
     private func handleSuccess(_ todayCards: [DailyWordsViewController.ViewModel]) {

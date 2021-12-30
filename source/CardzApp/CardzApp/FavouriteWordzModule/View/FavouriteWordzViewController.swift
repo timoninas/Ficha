@@ -49,8 +49,10 @@ final class FavouriteWordzViewController: UIViewController {
             guard let self = self else { return }
             guard button.alpha != 0.0 else { return }
             UIApplication.hapticLight()
-            if self.viewModel.prefix(Constants.maxCountWordz).count < Constants.maxCountWordz {
+            if false && self.viewModel.prefix(Constants.maxCountWordz).count < Constants.maxCountWordz {
                 self.showAlertResetModule()
+            } else if self.viewModel.prefix(Constants.maxCountWordz).count < 5 {
+                self.showAlertNeedMoreWords()
             } else {
                 self.showLearnCardModule()
             }
@@ -72,7 +74,10 @@ final class FavouriteWordzViewController: UIViewController {
             .map { LearnWordzCardView.ViewModel(
             wordz: $0.wordz,
             translations: $0.translations,
-            transcription: $0.transcription, wordzExamples: $0.wordzExamples
+            transcription: $0.transcription,
+            wordzExamples: $0.wordzExamples,
+            type: $0.type,
+            languageVersion: $0.languageVersion
         )}
         let module = LearnCardBuilder.build(viewModel: shuffled)
         self.present(module, animated: true, completion: nil)
@@ -96,6 +101,20 @@ final class FavouriteWordzViewController: UIViewController {
         self.present(module, animated: true, completion: nil)
     }
     
+    private func showAlertNeedMoreWords() {
+        let module = AlertCardBuilder.build(model:
+                                                    .init(title: "Add more words to your favorite category",
+                                                          secondTitle: "You need at least 5 words in the favourite category",
+                                                          actions: [.init(title: "Ok", onSwipeClosure: { [weak self] in
+            guard let self = self else { return }
+            print("not resetting static")
+        })]))
+        
+        module.modalPresentationStyle = .fullScreen
+        module.modalTransitionStyle = .crossDissolve
+        self.present(module, animated: true, completion: nil)
+    }
+    
     private func presentAlertWith(title: String) {
         let vc = UIAlertController(title: title, message: "Some message", preferredStyle: .alert)
         vc.addAction(.init(title: title, style: .default, handler: nil))
@@ -111,6 +130,11 @@ final class FavouriteWordzViewController: UIViewController {
         RLogInfo(message: "[Info] \(String(describing: self)) ViewDidLoad")
         configureUI()
         output.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        output.viewDidAppear()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

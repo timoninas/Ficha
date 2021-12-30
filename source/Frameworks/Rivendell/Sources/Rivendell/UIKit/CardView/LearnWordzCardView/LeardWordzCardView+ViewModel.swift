@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Erebor
 
 public extension LearnWordzCardView {
     
@@ -23,6 +24,10 @@ public extension LearnWordzCardView {
         /// Примеры предложений с иностранным словом. По умолчанию `empty`.
         public var wordzExamples: [String] = []
         
+        public var type: ArkenstoneTypeWord
+        
+        public var languageVersion: SilverTypeTranslation
+        
         /// Инициализирует `ViewModel` для `LearnWordzCardView`.
         /// - Parameters:
         ///   - wordz: Иностранное слово.
@@ -33,12 +38,16 @@ public extension LearnWordzCardView {
             wordz: String,
             translations: [String],
             transcription: String? = nil,
-            wordzExamples: [String] = []
+            wordzExamples: [String] = [],
+            type: ArkenstoneTypeWord,
+            languageVersion: SilverTypeTranslation
         ) {
             self.wordz = wordz
             self.wordzExamples = wordzExamples
             self.transcription = transcription
             self.translations = translations
+            self.type = type
+            self.languageVersion = languageVersion
         }
     }
     

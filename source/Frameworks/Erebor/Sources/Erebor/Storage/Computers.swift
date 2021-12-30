@@ -211,6 +211,6 @@ func getGoldComputers() -> BagOfGoldWords {
         ),
     ])
     
-    let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .architecture, typeTranslation: .enToRu)
+    let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .computers, typeTranslation: .enToRu)
     return bagOfGold
 }

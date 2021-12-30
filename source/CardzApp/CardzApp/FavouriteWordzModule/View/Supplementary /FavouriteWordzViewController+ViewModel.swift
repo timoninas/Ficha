@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Erebor
 
 extension FavouriteWordzViewController {
     
@@ -21,6 +22,10 @@ extension FavouriteWordzViewController {
         
         /// Детальное описание уведомления.
         let translations: [String]
+        
+        let type: ArkenstoneTypeWord = .favourite
+        
+        let languageVersion: SilverTypeTranslation = .unknown
         
     }
     

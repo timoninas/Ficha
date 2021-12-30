@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Erebor
+import RevolvetraKnowledge
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -14,6 +16,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        
+        fillDataBaseIfNeeded()
         
         let todayViewController = DailyWordsBuilder.build()
         if let todayIconData = UIImage.todayIcon?.pngData(),
@@ -79,6 +83,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func sceneDidEnterBackground(_ scene: UIScene) {
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+    }
+    
+    private func fillDataBaseIfNeeded() {
+        if KnowledgeDevice.previousAppVersion.isEmpty
+            || KnowledgeDevice.previousAppVersion != KnowledgeDevice.appVersion {
+            KnowledgeDevice.previousAppVersion = (KnowledgeDevice.appVersion ?? "")
+            MoriaManager.shared.deleteAllWordz(except: [.favourite])
+            
+            let wordaGotta = WordaGotta()
+            wordaGotta.gottaAllWords().forEach { bagOfGoldWords in
+                bagOfGoldWords.words.forEach { word in
+                    MoriaManager.shared.addWordz(
+                        wordz: word.word,
+                        transcription: word.transcription,
+                        examples: word.examples,
+                        translations: word.translations,
+                        type: bagOfGoldWords.typeWord,
+                        languageVersion: bagOfGoldWords.typeTranslation
+                    )
+                }
+            }
+        }
+        
     }
     
 }

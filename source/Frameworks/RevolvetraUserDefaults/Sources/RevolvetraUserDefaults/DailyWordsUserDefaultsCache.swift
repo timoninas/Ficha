@@ -7,6 +7,7 @@
 
 import Foundation
 import RevoletraUserDefaultsKeys
+import Erebor
 
 public struct DailyWordsUserDefaults: Encodable, Decodable {
     
@@ -18,11 +19,24 @@ public struct DailyWordsUserDefaults: Encodable, Decodable {
     
     public let translations: [String]
     
-    public init(title: String, transcription: String?, examples: [String], translations: [String]) {
+    public let type: String
+    
+    public let languageVersion: String
+    
+    public init(
+        title: String,
+        transcription: String?,
+        examples: [String],
+        translations: [String],
+        type: String,
+        languageVersion: String
+    ) {
         self.title = title
         self.transcription = transcription
         self.examples = examples
         self.translations = translations
+        self.type = type
+        self.languageVersion = languageVersion
     }
     
 }

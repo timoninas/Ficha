@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Erebor
 
 /// Представление экрана превьюшных слов слов.
 struct PreviewViewModel: Equatable {
@@ -19,18 +20,28 @@ struct PreviewViewModel: Equatable {
     
     public let translations: [String]
     
+    public let type: ArkenstoneTypeWord
+    
+    public let languageVersion: SilverTypeTranslation
+    
     /// Инициализирует вью модель.
     /// - Parameters:
     ///   - title: Слово.
     ///   - translations: Перевод слова.
-    public init(wordz: String,
-                wordzExamples: [String],
-                transcription: String?,
-                translations: [String]) {
+    public init(
+        wordz: String,
+        wordzExamples: [String],
+        transcription: String?,
+        translations: [String],
+        type: ArkenstoneTypeWord,
+        languageVersion: SilverTypeTranslation
+    ) {
         self.wordz = wordz
         self.wordzExamples = wordzExamples
         self.transcription = transcription
         self.translations = translations
+        self.type = type
+        self.languageVersion = languageVersion
     }
     
 }

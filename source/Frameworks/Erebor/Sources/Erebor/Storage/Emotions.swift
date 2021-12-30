@@ -193,6 +193,6 @@ func getGoldEmotions() -> BagOfGoldWords {
         ),
     ])
     
-    let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .architecture, typeTranslation: .enToRu)
+    let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .emotions, typeTranslation: .enToRu)
     return bagOfGold
 }

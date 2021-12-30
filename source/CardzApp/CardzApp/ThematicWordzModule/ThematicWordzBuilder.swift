@@ -12,8 +12,11 @@ import Rivendell
 
 final class ThematicWordzBuilder {
     
-    static func build(typeWord: ArkenstoneTypeWord) -> NavigationController {
-        let presenter = ThematicWordzPresenter(typeWord: typeWord)
+    static func build(typeWord: ArkenstoneTypeWord, typeTranslation: SilverTypeTranslation) -> NavigationController {
+        let presenter = ThematicWordzPresenter(
+            typeWord: typeWord,
+            typeTranslation: typeTranslation
+        )
         let view = ThematicWordzViewController(output: presenter)
         presenter.view = view
         let nav = NavigationController(rootViewController: view)

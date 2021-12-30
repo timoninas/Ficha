@@ -25,7 +25,9 @@ final class DailyWordsViewController: UIViewController {
             wordz: $0.title,
             translations: $0.translations,
             transcription: $0.transcription,
-            wordzExamples: $0.subtitles ?? []
+            wordzExamples: $0.subtitles ?? [],
+            type: $0.type,
+            languageVersion: $0.languageVersion
         )
     }
     
@@ -82,6 +84,7 @@ final class DailyWordsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         RLogInfo(message: "[Info] \(String(describing: self)) ViewDidLoad")
         view.backgroundColor = .gendalf
         configureUI()
