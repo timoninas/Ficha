@@ -45,6 +45,7 @@ final class DailyWordsPresenter: DailyWordsOutput {
             .shuffled()
             .prefix(6)
             .forEach { type in
+                guard type != .slang else { return }
                 let words = Array(MoriaManager.shared.getWordz(type: type)
                                     .shuffled()
                                     .prefix(2))

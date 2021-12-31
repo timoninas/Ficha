@@ -62,7 +62,11 @@ func getGoldJob() -> BagOfGoldWords {
         .init(
             word: "Plan",
             transcription: "[plæn]",
-            examples: [],
+            examples: [
+            "The Delta Force's plan to stage an accident by arranging four dead bodies on the ice shelf was no longer a viable option",
+            "We're all staying on your plan",
+            "Who were they to interfere with God's master plan?"
+            ],
             translations: ["План"]
         ),
         .init(
@@ -134,13 +138,21 @@ func getGoldJob() -> BagOfGoldWords {
         .init(
             word: "operation",
             transcription: "[ɒpəˈreɪʃn]",
-            examples: [],
+            examples: [
+            "The operation had taken nine hours",
+            "We walked in on their operation",
+            "I understood, but in its 200 years of operation, no one has successfully escaped from...",
+            ],
             translations: ["операция"]
         ),
         .init(
             word: "interview",
             transcription: "[ˈɪntəvjuː]",
-            examples: [],
+            examples: [
+            "I got the interview!",
+            "And you want to know whether I had a satisfactory interview with him!",
+            "I've decided that I will help interview Geoff Hastings"
+            ],
             translations: ["интервью", "собеседование"]
         ),
         .init(

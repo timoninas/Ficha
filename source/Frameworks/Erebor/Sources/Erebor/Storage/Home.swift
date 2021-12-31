@@ -21,7 +21,11 @@ func getGoldHome() -> BagOfGoldWords {
         .init(
             word: "Apartment",
             transcription: "[əˈpɑːtmənt]",
-            examples: [],
+            examples: [
+            "I have an apartment here in D.C. Private. Comfortable",
+            "Louise had estates in Long Island and the Bahamas, a villa in Sardinia, and a large apartment on Avenue Foch in Paris",
+            "The Sisters entered the apartment shyly, almost on tiptoe"
+            ],
             translations: ["Квартира", "Апартамент"]
         ),
         .init(

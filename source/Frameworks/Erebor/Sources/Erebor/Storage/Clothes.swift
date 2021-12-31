@@ -118,7 +118,11 @@ func getGoldClothes() -> BagOfGoldWords {
         .init(
             word: "Dinner jacket",
             transcription: "",
-            examples: [],
+            examples: [
+            "He rose and ran on, in his stained dinner jacket, his burst collar and broken hair",
+            "- Have you brought a dinner jacket?",
+            "There's Ryan Trilling in the white dinner jacket",
+            ],
             translations: ["Смокинг"]
         ),
         .init(
@@ -162,7 +166,11 @@ func getGoldClothes() -> BagOfGoldWords {
         .init(
             word: "Calf-length skirt",
             transcription: "",
-            examples: [],
+            examples: [
+            "As her skirt slid up, he eyed her legs appreciatively",
+            "Angela fetched her needle book and mended her skirt without any more fuss",
+            "I picked up a torn skirt which she had left lying on the floor and took it down with me for her to mend after breakfast"
+            ],
             translations: ["Юбка ниже колена"]
         ),
         .init(
