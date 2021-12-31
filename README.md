@@ -3,4 +3,6 @@
 
 # Cardz
 
-### Служба поддержки: revolvetra.help@gmail.com
+### Privacy Policy: [policy](PrivacyPolicy.md)
+
+### Support Service: revolvetra.help@gmail.com

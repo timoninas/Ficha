@@ -82,140 +82,140 @@ func getGoldJob() -> BagOfGoldWords {
             translations: ["Отчет", "Доклад"]
         ),
         .init(
-            word: "site",
+            word: "Site",
             transcription: "[saɪt]",
             examples: [],
-            translations: ["объект"]
+            translations: ["Объект"]
         ),
         .init(
-            word: "performance",
+            word: "Performance",
             transcription: "[pəˈfɔːməns]",
             examples: [],
-            translations: ["производительность"]
+            translations: ["Производительность"]
         ),
         .init(
-            word: "effort",
+            word: "Effort",
             transcription: "[ˈefət]",
             examples: [],
-            translations: ["усилие", "труд"]
+            translations: ["Усилие", "Труд"]
         ),
         .init(
-            word: "action",
+            word: "Action",
             transcription: "[ækʃn]",
             examples: [],
-            translations: ["действие"]
+            translations: ["Действие"]
         ),
         .init(
-            word: "activity",
+            word: "Activity",
             transcription: "[ækˈtɪvɪtɪ]",
             examples: [],
-            translations: ["деятельность"]
+            translations: ["Деятельность"]
         ),
         .init(
-            word: "practice",
+            word: "Practice",
             transcription: "[ˈpræktɪs]",
             examples: [],
-            translations: ["практика"]
+            translations: ["Практика"]
         ),
         .init(
-            word: "skill",
+            word: "Skill",
             transcription: "[skɪl]",
             examples: [],
-            translations: ["умение", "навык"]
+            translations: ["Умение", "Навык"]
         ),
         .init(
-            word: "order",
+            word: "Order",
             transcription: "[ˈɔːdə]",
             examples: [],
-            translations: ["порядок", "приказ", "заказ"]
+            translations: ["Порядок", "Приказ", "Заказ"]
         ),
         .init(
-            word: "meeting",
+            word: "Meeting",
             transcription: "[ˈmiːtɪŋ]",
             examples: [],
-            translations: ["встреча"]
+            translations: ["Встреча"]
         ),
         .init(
-            word: "operation",
+            word: "Operation",
             transcription: "[ɒpəˈreɪʃn]",
             examples: [
             "The operation had taken nine hours",
             "We walked in on their operation",
             "I understood, but in its 200 years of operation, no one has successfully escaped from...",
             ],
-            translations: ["операция"]
+            translations: ["Операция"]
         ),
         .init(
-            word: "interview",
+            word: "Interview",
             transcription: "[ˈɪntəvjuː]",
             examples: [
             "I got the interview!",
             "And you want to know whether I had a satisfactory interview with him!",
             "I've decided that I will help interview Geoff Hastings"
             ],
-            translations: ["интервью", "собеседование"]
+            translations: ["Интервью", "Собеседование"]
         ),
         .init(
-            word: "quality",
+            word: "Quality",
             transcription: "[ˈkwɒlɪtɪ]",
             examples: ["The food is of high (low) quality", "These wayside places have a reputation for low quality", "Like, they got a great quality of life, good restaurants"],
-            translations: ["качество"]
+            translations: ["Качество"]
         ),
         .init(
-            word: "success",
+            word: "Success",
             transcription: "[səkˈses]",
             examples: ["Success stories motivate people", "What a splendid notion! he said. Are you celebrating a success?", "I must match my mother's hard work, dedication, and success"],
-            translations: ["успех"]
+            translations: ["Успех"]
         ),
         .init(
-            word: "task",
+            word: "Task",
             transcription: " [tɑːsk]",
             examples: ["Here is your task for today", "Slowing Remy down had become Sophie's task", "I can work it out, it's like a task, I'm your apprentice, just watch me..."],
-            translations: ["задача"]
+            translations: ["Задача"]
         ),
         .init(
-            word: "break",
+            word: "Break",
             transcription: "[breɪk]",
             examples: ["Shall we take a break?",
                       "The important thing is to be careful not to break that spirit",
                        "Who knows when the hammer might slip and break a nose?"],
-            translations: ["перерыв"]
+            translations: ["Перерыв"]
         ),
         .init(
-            word: "mission",
+            word: "Mission",
             transcription: "[mɪʃn]",
             examples: ["His mission is top secret and extremely dangerous", "The Delta team jokingly referred to that mission as \"insertion behind enemy lines\""],
-            translations: ["миссия"]
+            translations: ["Миссия"]
         ),
         .init(
-            word: "labor",
+            word: "Labor",
             transcription: "",
             examples: ["manual labor", "The company used child labor"],
-            translations: ["труд"]
+            translations: ["Труд"]
         ),
         .init(
-            word: "weekend",
+            word: "Weekend",
             transcription: "[ˈwiːkˈɛnd]",
             examples: [],
-            translations: ["уикэнд", "выходные"]
+            translations: ["Уикэнд", "Выходные"]
         ),
         .init(
-            word: "attempt",
+            word: "Attempt",
             transcription: "[əˈtɛmpt]",
             examples: [],
-            translations: ["попытка"]
+            translations: ["Попытка"]
         ),
         .init(
-            word: "day off",
+            word: "Day off",
             transcription: "[deɪ ɒf]",
             examples: [],
-            translations: ["выходной день"]
+            translations: ["Выходной день"]
         ),
         .init(
-            word: "lack (of something)",
+            word: "Lack (of something)",
             transcription: "[læk]",
             examples: [],
-            translations: ["нехватка"]
+            translations: ["Нехватка"]
         ),
     ])
     
