@@ -130,6 +130,8 @@ final class FavouriteWordzViewController: UIViewController {
         RLogInfo(message: "[Info] \(String(describing: self)) ViewDidLoad")
         configureUI()
         output.viewDidLoad()
+        
+        MoriaManager.shared.deleteWordz(with: "Arse / Ass", translations: ["Backside"], type: .favourite)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -253,10 +255,25 @@ extension FavouriteWordzViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         let data = viewModel[indexPath.row]
+        cell.selectionStyle = .none
         cell.backgroundColor = .gendalf
         cell.configure(configuration: .init(title: data.wordz)
                         .with(translations: data.translations))
         return cell
+    }
+    
+    private func makeDeleteContextualAction(forRowAt indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .destructive, title: "Delete") { [weak self] (action, swipeButtonView, completion) in
+            guard let self = self else { return }
+            self.output.deleteAt(index: indexPath.row)
+        }
+        return action
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        UISwipeActionsConfiguration(actions: [
+            self.makeDeleteContextualAction(forRowAt: indexPath)
+        ])
     }
     
 }

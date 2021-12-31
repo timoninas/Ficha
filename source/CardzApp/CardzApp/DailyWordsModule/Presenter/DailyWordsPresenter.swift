@@ -6,25 +6,18 @@
 //
 
 import Foundation
-
 import Erebor
-
-import RevoletraUserDefaultsKeys
 import RevolvetraKnowledge
 import RevolvetraUserDefaults
 
 final class DailyWordsPresenter: DailyWordsOutput {
     
-    private struct Constants {
-        static var dailyWordsCount: Int { 12 }
-    }
-    
     weak var view: DailyWordsViewInput?
     
-    init() { }
+    init() {}
     
     func viewDidLoad() {
-        mockFetchData()
+        fetchData()
     }
     
     func viewWillAppear() {
@@ -43,31 +36,6 @@ final class DailyWordsPresenter: DailyWordsOutput {
             ]
         )
         view?.showOnboardingModule(model: model)
-    }
-    
-    private func fetchData() {
-        
-    }
-    
-    private func isNewDay() -> Bool {
-        let currentDate = Date.now
-        let currentCalendar = Calendar.current
-        let currentComponents = currentCalendar.dateComponents([.month, .day], from: currentDate)
-        let currentMonth = currentComponents.month
-        let currentDay = currentComponents.day
-        
-        let lastVisitDate = KnowledgeProfile.lastVisitAppDate
-        let lastCalendar = Calendar.current
-        let lastComponents = lastCalendar.dateComponents([.month, .day], from: lastVisitDate)
-        let lastMonth = lastComponents.month
-        let lastDay = lastComponents.day
-        
-        if lastMonth != currentMonth || lastDay != currentDay {
-            KnowledgeProfile.lastVisitAppDate = currentDate
-            return true
-        }
-        
-        return false
     }
     
     private func refillDailyWords() {
@@ -94,8 +62,8 @@ final class DailyWordsPresenter: DailyWordsOutput {
         DailyWordsUserDefaultsCache.save(newDailyWords.shuffled())
     }
     
-    private func mockFetchData() {
-        if true || isNewDay() {
+    private func fetchData() {
+        if DaysChechker.isNewDay {
             DailyWordsUserDefaultsCache.remove()
             refillDailyWords()
         }
@@ -105,6 +73,10 @@ final class DailyWordsPresenter: DailyWordsOutput {
         if array.isEmpty {
             refillDailyWords()
             array = DailyWordsUserDefaultsCache.get()
+            if array.isEmpty {
+                refillDailyWords()
+                array = DailyWordsUserDefaultsCache.get()
+            }
         }
         
         handleSuccess(array.map { DailyWordsViewController.ViewModel(

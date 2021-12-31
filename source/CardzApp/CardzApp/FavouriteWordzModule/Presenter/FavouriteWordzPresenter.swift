@@ -18,15 +18,20 @@ final class FavouriteWordzPresenter: FavouriteWordzViewOutput {
     
     private var viewModels: [FavouriteWordzViewController.ViewModel] = []
     
-    init() {
-        
-    }
-    
-    func viewDidLoad() {
-        
-    }
+    init() {}
     
     func viewDidAppear() {
+        fetchData()
+    }
+    
+    func deleteAt(index: Int) {
+        guard index >= 0 && index < viewModels.count else { return }
+        let word = viewModels[index]
+        MoriaManager.shared.deleteWordz(
+            with: word.wordz,
+            translations: word.translations,
+            type: word.type
+        )
         fetchData()
     }
     

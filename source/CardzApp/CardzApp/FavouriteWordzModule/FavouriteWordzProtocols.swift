@@ -12,5 +12,5 @@ protocol FavouriteWordzViewInput: AnyObject {
 }
 
 protocol FavouriteWordzViewOutput: LifeCycleProtocol, AnyObject {
-    
+    func deleteAt(index: Int)
 }

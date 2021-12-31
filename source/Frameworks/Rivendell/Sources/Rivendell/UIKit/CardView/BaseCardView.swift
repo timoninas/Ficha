@@ -62,7 +62,7 @@ public class BaseCardView: UIView {
     /// Вью, которая добавится в контентную область карточки.
     public var contentView: UIView = UIView() {
         didSet {
-            self.addContentViewIfNeeded(oldView: oldValue)
+            addContentViewIfNeeded(oldView: oldValue)
         }
     }
     
@@ -80,7 +80,7 @@ public class BaseCardView: UIView {
     ) {
         self.swipeDirections = swipeDirections
         super.init(frame: .zero)
-        self.configureUI()
+        configureUI()
     }
     
     required init?(coder: NSCoder) {
@@ -91,20 +91,20 @@ public class BaseCardView: UIView {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        self.updateRounding()
+        updateRounding()
     }
     
     private func configureUI() {
-        self.configureView()
-        self.addContentViewIfNeeded(oldView: nil)
-        self.addCardGestureRecognizer()
+        configureView()
+        addContentViewIfNeeded(oldView: nil)
+        addCardGestureRecognizer()
         
-        self.updateAppearance()
+        updateAppearance()
     }
     
     private func configureView() {
-        self.backgroundColor = .whisper
-        self.translatesAutoresizingMaskIntoConstraints = false
+        backgroundColor = .whisper
+        translatesAutoresizingMaskIntoConstraints = false
     }
     
     private func addContentViewIfNeeded(oldView: UIView?) {
@@ -112,26 +112,26 @@ public class BaseCardView: UIView {
             view.removeFromSuperview()
         }
         
-        self.contentView.translatesAutoresizingMaskIntoConstraints = false
-        if self.contentView.superview == nil {
-            self.addSubview(self.contentView)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        if contentView.superview == nil {
+            addSubview(contentView)
             let padding = 20.0
             NSLayoutConstraint.activate([
-                self.contentView.topAnchor.constraint(equalTo: self.topAnchor, constant: padding),
-                self.contentView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: padding),
-                self.contentView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -padding),
-                self.contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -padding)
+                contentView.topAnchor.constraint(equalTo: topAnchor, constant: padding),
+                contentView.leftAnchor.constraint(equalTo: leftAnchor, constant: padding),
+                contentView.rightAnchor.constraint(equalTo: rightAnchor, constant: -padding),
+                contentView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -padding)
             ])
         }
     }
     
     private func addCardGestureRecognizer() {
-        self.isUserInteractionEnabled = true
+        isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleCardTap(gesture:)))
-        self.addGestureRecognizer(tapGesture)
+        addGestureRecognizer(tapGesture)
         
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handleCardMoving(gesture:)))
-        self.addGestureRecognizer(panGesture)
+        addGestureRecognizer(panGesture)
     }
     
     @objc fileprivate func handleCardTap(gesture: UIPanGestureRecognizer) {
@@ -144,11 +144,11 @@ public class BaseCardView: UIView {
         switch gesture.state {
         case .changed:
             let transition = gesture.translation(in: nil)
-            self.onCardChangedPosition?(transition.x, transition.y)
-            self.handleCardChanged(gesture)
+            onCardChangedPosition?(transition.x, transition.y)
+            handleCardChanged(gesture)
         case .ended:
-            self.handleCardEnded(gesture)
-            self.onCardEndChangedPosition?()
+            handleCardEnded(gesture)
+            onCardEndChangedPosition?()
         default: break
         }
         
@@ -161,7 +161,7 @@ public class BaseCardView: UIView {
         let angle = degrees * 3.14 / 180
         
         let rotationalTranformation = CGAffineTransform(rotationAngle: angle)
-        self.transform = rotationalTranformation.translatedBy(x: transition.x, y: transition.y)
+        transform = rotationalTranformation.translatedBy(x: transition.x, y: transition.y)
     }
     
     fileprivate func handleCardEnded(_ gesture: UIPanGestureRecognizer) {
@@ -250,17 +250,17 @@ public class BaseCardView: UIView {
     }
     
     private func updateRounding() {
-        self.layer.cornerRadius = self.frame.height * 0.05
+        layer.cornerRadius = frame.height * 0.05
     }
     
     // MARK: - Public methods
     
     public func renderAsCard(view: UIView) {
         NSLayoutConstraint.activate([
-            self.heightAnchor.constraint(equalToConstant: view.safeAreaHeight / 1.75),
-            self.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            self.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20.0),
-            self.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20.0),
+            heightAnchor.constraint(equalToConstant: view.safeAreaHeight / 1.75),
+            centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20.0),
+            leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20.0),
         ])
     }
     

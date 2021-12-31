@@ -74,6 +74,12 @@ public class MoriaManager {
         type: ArkenstoneTypeWord,
         languageVersion: SilverTypeTranslation
     ) {
+        let excitedWords = getWordz(word: wordz, translations: translations)
+            .filter { $0.type == type }
+        guard excitedWords.count == 0 else {
+            return
+        }
+        
         let wordzEntity = NSEntityDescription.insertNewObject(
             forEntityName: Entitites.wordz,
             into: self.context
@@ -128,11 +134,41 @@ public class MoriaManager {
         return resultArray
     }
     
-    public func deleteWordz(with wordz: String, translations: [String]) {
+    public func getWordz(word: String, translations: [String]) -> [WordzModelDB] {
+        let fetchRequest = NSFetchRequest<WordzEntity>(entityName: Entitites.wordz)
+        let resultArray: [WordzModelDB]
+        do {
+            var wordz = try context.fetch(fetchRequest)
+            wordz = wordz.filter{ [weak self] in
+                guard let self = self else { return false }
+                return $0.wordz == word
+                && $0.translations == self.arrayToDBValue(translations)
+            }
+            resultArray = wordz.map {
+                WordzModelDB(
+                    wordz: $0.wordz ?? "",
+                    transcription: $0.transcription,
+                    examples: DBValueToArray($0.examples ?? ""),
+                    translations: DBValueToArray($0.translations ?? ""),
+                    type: (.init(rawValue: $0.type ?? "") ?? .unknown),
+                    languageVersion: .init(rawValue: $0.languageVersion ?? "") ?? .unknown,
+                    displayedCount: Int($0.displayedCount)
+                )
+            }
+        } catch {
+            resultArray = []
+        }
+        return resultArray
+    }
+    
+    public func deleteWordz(with wordz: String, translations: [String], type: ArkenstoneTypeWord) {
         let fetchRequest: NSFetchRequest<WordzEntity> = WordzEntity.fetchRequest()
         let predicate1 = NSPredicate(format: "%K = %@", "wordz", wordz)
         let predicate2 = NSPredicate(format: "%K = %@", "translations", arrayToDBValue(translations))
-        let compound = NSCompoundPredicate.init(andPredicateWithSubpredicates: [predicate1, predicate2])
+        let predicate3 = NSPredicate(format: "%K = %@", "type", type.rawValue)
+        let compound = NSCompoundPredicate.init(andPredicateWithSubpredicates: [
+            predicate1, predicate2, predicate3
+        ])
         fetchRequest.predicate = compound
         do {
             if let result = try? context.fetch(fetchRequest) {
@@ -165,7 +201,7 @@ public class MoriaManager {
     }
     
     public func deleteAllWordz(except: [ArkenstoneTypeWord] = []) {
-        ArkenstoneTypeWord.allCases.map {
+        ArkenstoneTypeWord.allCases.forEach {
             guard !except.contains($0) else { return }
             let fetchRequest: NSFetchRequest<WordzEntity> = WordzEntity.fetchRequest()
             let predicate = NSPredicate(format: "%K = %@", "type", $0.rawValue)

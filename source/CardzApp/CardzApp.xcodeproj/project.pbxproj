@@ -25,6 +25,7 @@
 		77140796277ADAAB00B7E8D2 /* OnboardingModuleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77140795277ADAAB00B7E8D2 /* OnboardingModuleModel.swift */; };
 		772041A9277DE7F200141FCA /* MoriaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772041A8277DE7F200141FCA /* MoriaManager.swift */; };
 		772041AC277DF01600141FCA /* WordzModelDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772041AB277DF01600141FCA /* WordzModelDB.swift */; };
+		772041AE277EDC1C00141FCA /* DaysChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772041AD277EDC1B00141FCA /* DaysChecker.swift */; };
 		7720F601275FDA7800BC5973 /* ViewSimpleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720F600275FDA7800BC5973 /* ViewSimpleState.swift */; };
 		77232AC8275D2C2800529DE0 /* Moria in Frameworks */ = {isa = PBXBuildFile; productRef = 77232AC7275D2C2800529DE0 /* Moria */; };
 		77232ACA275D2C2B00529DE0 /* RevoletraUserDefaultsKeys in Frameworks */ = {isa = PBXBuildFile; productRef = 77232AC9275D2C2B00529DE0 /* RevoletraUserDefaultsKeys */; };
@@ -110,6 +111,7 @@
 		77140795277ADAAB00B7E8D2 /* OnboardingModuleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModuleModel.swift; sourceTree = "<group>"; };
 		772041A8277DE7F200141FCA /* MoriaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoriaManager.swift; sourceTree = "<group>"; };
 		772041AB277DF01600141FCA /* WordzModelDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordzModelDB.swift; sourceTree = "<group>"; };
+		772041AD277EDC1B00141FCA /* DaysChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysChecker.swift; sourceTree = "<group>"; };
 		7720F600275FDA7800BC5973 /* ViewSimpleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSimpleState.swift; sourceTree = "<group>"; };
 		77232AC6275D2C1A00529DE0 /* RevoletraUserDefaultsKeys */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RevoletraUserDefaultsKeys; path = ../Frameworks/RevoletraUserDefaultsKeys; sourceTree = "<group>"; };
 		7748E9312757F4B00063E592 /* FavouriteWordzViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteWordzViewController.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 		772041AA277DF00200141FCA /* Moria */ = {
 			isa = PBXGroup;
 			children = (
+				772041AD277EDC1B00141FCA /* DaysChecker.swift */,
 				772041A8277DE7F200141FCA /* MoriaManager.swift */,
 				772041AB277DF01600141FCA /* WordzModelDB.swift */,
 			);
@@ -802,6 +805,7 @@
 				7748E9322757F4B10063E592 /* FavouriteWordzViewController.swift in Sources */,
 				775A18C7271C284E00A295C0 /* DailyWordsHeader.swift in Sources */,
 				D4F00D9E2718C3FB0079A860 /* SceneDelegate.swift in Sources */,
+				772041AE277EDC1C00141FCA /* DaysChecker.swift in Sources */,
 				77A3CA342772F9B300A0EA9C /* ThematicWordzProtocols.swift in Sources */,
 				D4F00D972718C3FB0079A860 /* DailyWordsViewController.swift in Sources */,
 				770B3FE62769BA0900DC7887 /* LearnNewWordzViewController.swift in Sources */,

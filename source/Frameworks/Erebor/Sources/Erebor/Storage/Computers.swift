@@ -91,8 +91,12 @@ func getGoldComputers() -> BagOfGoldWords {
         ),
         .init(
             word: "Copier",
-            transcription: "",
-            examples: [],
+            transcription: "[ˈkɒpɪə]",
+            examples: [
+                "I was planning on stealing the copier",
+                "You know the old copier in my office?",
+                "You got a copier, right?"
+            ],
             translations: ["Ксерокс", "Копир"]
         ),
         .init(
@@ -103,8 +107,12 @@ func getGoldComputers() -> BagOfGoldWords {
         ),
         .init(
             word: "CPU",
-            transcription: "",
-            examples: [],
+            transcription: "[()siː()piːˈjuː]",
+            examples: [
+                "The CPU seems to be handling the high poly count",
+                "The CPU from the first Terminator",
+                "CPU - revolvetra.com"
+            ],
             translations: ["Центральный процессор"]
         ),
         .init(
@@ -115,8 +123,12 @@ func getGoldComputers() -> BagOfGoldWords {
         ),
         .init(
             word: "Dangerous",
-            transcription: "",
-            examples: [],
+            transcription: "[ˈdeɪnʤərəs]",
+            examples: [
+                "He's a dangerous man, and he's breaking the law",
+                "I had proposed to Amelia that we stow away on one of their deadly projectiles, but this was a dangerous idea",
+                "There is nothing worse, in Texas, than Comanches on the war trail-nothing half so dangerous"
+            ],
             translations: ["Опасный"]
         ),
         .init(
@@ -127,8 +139,12 @@ func getGoldComputers() -> BagOfGoldWords {
         ),
         .init(
             word: "Defense",
-            transcription: "",
-            examples: [],
+            transcription: "[dɪˈfens]",
+            examples: [
+                "All the Defense leaders will be here-- at least two dozen high-value targets",
+                "He couldn't tell me anything useful about the town's defenses",
+                "But the order was issued by someone who penetrated our defense communications network"
+            ],
             translations: ["Оборона", "Защита"]
         ),
         .init(
@@ -145,8 +161,12 @@ func getGoldComputers() -> BagOfGoldWords {
         ),
         .init(
             word: "To determine",
-            transcription: "",
-            examples: [],
+            transcription: "[dɪˈtɜːmɪn]",
+            examples: [
+                "The purpose, the site, the material determine the shape",
+                "The color of a diamond helps determine its value",
+                "Graeber sniffed; he could not determine where it came from"
+            ],
             translations: ["Определить"]
         ),
         .init(
@@ -157,26 +177,32 @@ func getGoldComputers() -> BagOfGoldWords {
         ),
         .init(
             word: "Digital",
-            transcription: "",
-            examples: [],
+            transcription: "[ˈdɪʤɪtl]",
+            examples: [
+                "He even refused to connect to the Internet for fear of hackers infiltrating his sacred digital vault",
+                "The Goya's SHINCOM 2100 digital communications system was a platform with which Rachel was familiar enough",
+                "It's like a digital Black hole"
+            ],
             translations: ["Цифровой"]
         ),
         .init(
-            word: "Display",
-            transcription: "",
-            examples: [],
-            translations: ["Дисплей"]
-        ),
-        .init(
             word: "To download",
-            transcription: "",
-            examples: [],
+            transcription: "[ˈdaʊnləʊd]",
+            examples: [
+                "We'd have to download the entire cloud",
+                "Download shared files",
+                "Yeah, and she slipped you an emo download, dude"
+            ],
             translations: ["Загружать", "Скачать"]
         ),
         .init(
             word: "Display",
-            transcription: "",
-            examples: [],
+            transcription: "[dɪsˈpleɪ]",
+            examples: [
+                "And what is this display now, as amusing as you are?",
+                "Soon the entire display was filled with a high view of land, but we were at such an altitude that it was almost impossible to see details",
+                "They sat, not touching her, bewildered by her display"
+            ],
             translations: ["Экран"]
         ),
         .init(
@@ -188,7 +214,11 @@ func getGoldComputers() -> BagOfGoldWords {
         .init(
             word: "Case",
             transcription: "",
-            examples: [],
+            examples: [
+                "You mean cases like the Bravo case, Adelaide Bartlett and all the rest of them?",
+                "The object was to give the opponent a chance to choose the lesser of two evils-in this case, the truth",
+                "Except in the one grand case of Captain Lennox's offer, everything went on with the regularity of clockwork"
+            ],
             translations: ["Компьютерный корпус"]
         ),
         .init(
@@ -206,7 +236,11 @@ func getGoldComputers() -> BagOfGoldWords {
         .init(
             word: "Power indicator",
             transcription: "",
-            examples: [],
+            examples: [
+                "What happens if the power blinks out while we're in transit?",
+                "I will prove my power",
+                "And I will do everything in my power to find her"
+            ],
             translations: ["Индикатор питания "]
         ),
     ])

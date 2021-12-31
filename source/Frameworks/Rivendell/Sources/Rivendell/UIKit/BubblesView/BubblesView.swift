@@ -34,7 +34,7 @@ public final class BubblesView: UIView {
     
     public init() {
         super.init(frame: .zero)
-        self.configureUI()
+        configureUI()
     }
     
     required init?(coder: NSCoder) {
@@ -43,38 +43,38 @@ public final class BubblesView: UIView {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        self.updateRounding()
+        updateRounding()
     }
     
     private func configureUI() {
-        self.translatesAutoresizingMaskIntoConstraints = false
-        [self.bubble1, self.bubble2, self.bubble3].forEach { view in
-            self.addSubview(view)
+        translatesAutoresizingMaskIntoConstraints = false
+        [bubble1, bubble2, bubble3].forEach { view in
+            addSubview(view)
         }
-        self.updateRounding()
+        updateRounding()
         
-        let sizeBubble1 = self.screenSize.height * 0.18
-        self.bubble1.widthAnchor.constraint(equalToConstant: sizeBubble1).isActive = true
-        self.bubble1.heightAnchor.constraint(equalTo: self.bubble1.widthAnchor).isActive = true
-        self.bubble1.topAnchor.constraint(equalTo: self.topAnchor, constant: self.screenSize.height / 8.0).isActive = true
-        self.bubble1.leftAnchor.constraint(equalTo: self.leftAnchor, constant: -sizeBubble1 / 2.15).isActive = true
+        let sizeBubble1 = screenSize.height * 0.18
+        bubble1.widthAnchor.constraint(equalToConstant: sizeBubble1).isActive = true
+        bubble1.heightAnchor.constraint(equalTo: bubble1.widthAnchor).isActive = true
+        bubble1.topAnchor.constraint(equalTo: topAnchor, constant: screenSize.height / 8.0).isActive = true
+        bubble1.leftAnchor.constraint(equalTo: leftAnchor, constant: -sizeBubble1 / 2.15).isActive = true
         
-        let sizeBubble2 = self.screenSize.height * 0.27
-        self.bubble2.widthAnchor.constraint(equalToConstant: sizeBubble2).isActive = true
-        self.bubble2.heightAnchor.constraint(equalTo: self.bubble2.widthAnchor).isActive = true
-        self.bubble2.rightAnchor.constraint(equalTo: self.rightAnchor, constant: sizeBubble2 / 2.15).isActive = true
-        self.bubble2.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -self.screenSize.height / 3.0).isActive = true
+        let sizeBubble2 = screenSize.height * 0.27
+        bubble2.widthAnchor.constraint(equalToConstant: sizeBubble2).isActive = true
+        bubble2.heightAnchor.constraint(equalTo: bubble2.widthAnchor).isActive = true
+        bubble2.rightAnchor.constraint(equalTo: rightAnchor, constant: sizeBubble2 / 2.15).isActive = true
+        bubble2.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -screenSize.height / 3.0).isActive = true
         
-        let sizeBubble3 = self.screenSize.height * 0.4619
-        self.bubble3.widthAnchor.constraint(equalToConstant: sizeBubble3).isActive = true
-        self.bubble3.heightAnchor.constraint(equalTo: self.bubble3.widthAnchor).isActive = true
-        self.bubble3.leftAnchor.constraint(equalTo: self.leftAnchor, constant: -sizeBubble3 / 2.15).isActive = true
-        self.bubble3.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: sizeBubble3 / 2.25).isActive = true
+        let sizeBubble3 = screenSize.height * 0.4619
+        bubble3.widthAnchor.constraint(equalToConstant: sizeBubble3).isActive = true
+        bubble3.heightAnchor.constraint(equalTo: bubble3.widthAnchor).isActive = true
+        bubble3.leftAnchor.constraint(equalTo: leftAnchor, constant: -sizeBubble3 / 2.15).isActive = true
+        bubble3.bottomAnchor.constraint(equalTo: bottomAnchor, constant: sizeBubble3 / 2.25).isActive = true
     }
     
     private func updateRounding() {
-        self.bubble1.layer.cornerRadius = self.bubble1.frame.width / 2
-        self.bubble2.layer.cornerRadius = self.bubble2.frame.width / 2
-        self.bubble3.layer.cornerRadius = self.bubble3.frame.width / 2
+        bubble1.layer.cornerRadius = bubble1.frame.width / 2
+        bubble2.layer.cornerRadius = bubble2.frame.width / 2
+        bubble3.layer.cornerRadius = bubble3.frame.width / 2
     }
 }

@@ -68,9 +68,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UINavigationBar.appearance().barTintColor = .gendalf
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.nazgul]
         
-        self.window?.windowScene = windowScene
-        self.window?.rootViewController = tabBar
-        self.window?.makeKeyAndVisible()
+        window?.windowScene = windowScene
+        window?.rootViewController = tabBar
+        window?.makeKeyAndVisible()
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {}

@@ -213,6 +213,7 @@ extension ThematicWordzViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         let data = viewModel[indexPath.row]
+        cell.selectionStyle = .none
         cell.backgroundColor = .gendalf
         cell.configure(configuration: .init(title: data.wordz)
                         .with(translations: data.translations))

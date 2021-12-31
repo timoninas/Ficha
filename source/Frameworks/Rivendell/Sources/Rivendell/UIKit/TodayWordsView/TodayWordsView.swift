@@ -44,22 +44,22 @@ public final class TodayWordsView: UIView {
     
     var configuration: Configuration = .init() {
         didSet {
-            self.configurationChanged(oldValue)
+            configurationChanged(oldValue)
         }
     }
     
     private var storedConstraints = [NSLayoutConstraint]()
     
     private var hasSecond: Bool {
-        guard let subtitles = self.configuration.subtitles else { return false }
+        guard let subtitles = configuration.subtitles else { return false }
         return !subtitles.isEmpty
     }
     
     public init(configuration: Configuration = .init()) {
         self.configuration = configuration
         super.init(frame: .zero)
-        self.configureUI()
-        self.translatesAutoresizingMaskIntoConstraints = false
+        configureUI()
+        translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init?(coder: NSCoder) {
@@ -68,110 +68,110 @@ public final class TodayWordsView: UIView {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        self.layer.cornerRadius = 20.0
-        self.blurView.layer.cornerRadius = 20.0
-        self.updateContent()
+        layer.cornerRadius = 20.0
+        blurView.layer.cornerRadius = 20.0
+        updateContent()
     }
     
     private func configurationChanged(_ oldValue: Configuration) {
-        self.updateAppearance()
+        updateAppearance()
     }
     
     private func configureUI() {
-        self.translatesAutoresizingMaskIntoConstraints = false
-        self.addBlurView()
-        self.addContentView()
-        self.addMainLabel()
-        self.addSecondLabel()
+        translatesAutoresizingMaskIntoConstraints = false
+        addBlurView()
+        addContentView()
+        addMainLabel()
+        addSecondLabel()
         
-        self.updateAppearance()
+        updateAppearance()
     }
     
     private func addBlurView() {
-        self.insertSubview(self.blurView, at: 0)
+        insertSubview(blurView, at: 0)
     }
     
     private func addContentView() {
-        self.contentView.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(self.contentView)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(contentView)
     }
     
     private func addMainLabel() {
-        self.contentView.addSubview(self.mainLabel)
+        contentView.addSubview(mainLabel)
     }
     
     private func addSecondLabel() {
-        self.contentView.addSubview(self.secondLabel)
+        contentView.addSubview(secondLabel)
     }
     
     private func updateAppearance() {
-        self.setupConstraints()
-        self.updateContent()
-        self.secondLabel.addInterlineSpacing(spacingValue: 5.0)
-        self.layer.cornerRadius = 20.0
-        self.blurView.layer.cornerRadius = 20.0
+        setupConstraints()
+        updateContent()
+        secondLabel.addInterlineSpacing(spacingValue: 5.0)
+        layer.cornerRadius = 20.0
+        blurView.layer.cornerRadius = 20.0
     }
     
     private func setupConstraints() {
-        NSLayoutConstraint.deactivate(self.storedConstraints)
-        self.storedConstraints.removeAll()
+        NSLayoutConstraint.deactivate(storedConstraints)
+        storedConstraints.removeAll()
         
-        self.storedConstraints += [
-            self.blurView.topAnchor.constraint(equalTo: self.topAnchor),
-            self.blurView.rightAnchor.constraint(equalTo: self.rightAnchor),
-            self.blurView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            self.blurView.leftAnchor.constraint(equalTo: self.leftAnchor)
+        storedConstraints += [
+            blurView.topAnchor.constraint(equalTo: topAnchor),
+            blurView.rightAnchor.constraint(equalTo: rightAnchor),
+            blurView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            blurView.leftAnchor.constraint(equalTo: leftAnchor)
         ]
         
-        self.storedConstraints += [
-            self.contentView.topAnchor.constraint(equalTo: self.topAnchor, constant: 14.0),
-            self.contentView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16.0),
-            self.contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -14.0),
-            self.contentView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16.0),
+        storedConstraints += [
+            contentView.topAnchor.constraint(equalTo: topAnchor, constant: 14.0),
+            contentView.rightAnchor.constraint(equalTo: rightAnchor, constant: -16.0),
+            contentView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -14.0),
+            contentView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16.0),
         ]
         
-        self.storedConstraints += [
-            self.mainLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 0.0),
-            self.mainLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: 0.0),
-            self.mainLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 0.0)
+        storedConstraints += [
+            mainLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0.0),
+            mainLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0.0),
+            mainLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0.0)
         ]
-        if self.hasSecond { } else {
-            self.storedConstraints += [
-                self.mainLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 0.0),
+        if hasSecond { } else {
+            storedConstraints += [
+                mainLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0.0),
             ]
         }
         
-        if self.hasSecond {
-            self.storedConstraints += [
-                self.secondLabel.topAnchor.constraint(equalTo: self.mainLabel.bottomAnchor, constant: 14.0),
-                self.secondLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor),
-                self.secondLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor)
+        if hasSecond {
+            storedConstraints += [
+                secondLabel.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 14.0),
+                secondLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor),
+                secondLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor)
             ]
         }
-        NSLayoutConstraint.activate(self.storedConstraints)
+        NSLayoutConstraint.activate(storedConstraints)
     }
     
     private func updateContent() {
-        self.mainLabel.text = self.configuration.title
-        if let subtitles = self.configuration.subtitles {
-            self.secondLabel.text = subtitles.joined(separator: "\n\n")
+        mainLabel.text = configuration.title
+        if let subtitles = configuration.subtitles {
+            secondLabel.text = subtitles.joined(separator: "\n\n")
         }
     }
     
     var mainLabelHeightAnchor: [NSLayoutConstraint] = []
     
     public func height() -> CGFloat {
-        NSLayoutConstraint.deactivate(self.mainLabelHeightAnchor)
-        self.mainLabelHeightAnchor.removeAll()
+        NSLayoutConstraint.deactivate(mainLabelHeightAnchor)
+        mainLabelHeightAnchor.removeAll()
         var totalHeight: CGFloat = 0.0
         
-        let mainLabelHeight = self.mainLabel.numberOfVisibleLines * self.mainLabel.font.lineHeight
-        self.mainLabelHeightAnchor += [ self.mainLabel.heightAnchor.constraint(equalToConstant: mainLabelHeight) ]
+        let mainLabelHeight = mainLabel.numberOfVisibleLines * mainLabel.font.lineHeight
+        mainLabelHeightAnchor += [ mainLabel.heightAnchor.constraint(equalToConstant: mainLabelHeight) ]
         totalHeight += mainLabelHeight
         
-        if self.hasSecond {
-            let secondLabelHeight = self.secondLabel.numberOfVisibleLines * self.secondLabel.font.lineHeight
-            self.mainLabelHeightAnchor += [ self.secondLabel.heightAnchor.constraint(equalToConstant: secondLabelHeight) ]
+        if hasSecond {
+            let secondLabelHeight = secondLabel.numberOfVisibleLines * secondLabel.font.lineHeight
+            mainLabelHeightAnchor += [ secondLabel.heightAnchor.constraint(equalToConstant: secondLabelHeight) ]
             totalHeight += secondLabelHeight
         } else {
             totalHeight += 20
@@ -179,7 +179,7 @@ public final class TodayWordsView: UIView {
         
         totalHeight += 35
         
-        NSLayoutConstraint.activate(self.mainLabelHeightAnchor)
+        NSLayoutConstraint.activate(mainLabelHeightAnchor)
         
         return totalHeight
     }

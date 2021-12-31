@@ -176,6 +176,7 @@ final class AlertCardViewController: UIViewController {
             
             alertCardView.onEverySwipe(completion: { [weak self] in
                 first.onSwipeClosure?()
+                UIApplication.hapticLight()
                 self?.dismiss(animated: true, completion: nil) })
             
             view.addSubview(rightButton)
@@ -201,12 +202,14 @@ final class AlertCardViewController: UIViewController {
             alertCardView.onLeftSwipe = { [weak self] in
                 guard let self = self else { return }
                 first.onSwipeClosure?()
+                UIApplication.hapticLight()
                 self.dismiss(animated: true, completion: nil)
             }
             
             alertCardView.onRightSwipe = { [weak self] in
                 guard let self = self else { return }
                 second.onSwipeClosure?()
+                UIApplication.hapticLight()
                 self.dismiss(animated: true, completion: nil)
             }
             
@@ -228,7 +231,9 @@ final class AlertCardViewController: UIViewController {
                 rightButton.topAnchor.constraint(equalTo: phantomCard.bottomAnchor, constant: 12.0),
             ])
         default:
-            alertCardView.onEverySwipe(completion: { [weak self] in self?.dismiss(animated: true, completion: nil) })
+            alertCardView.onEverySwipe(completion: { [weak self] in
+                UIApplication.hapticLight()
+                self?.dismiss(animated: true, completion: nil) })
         }
         
     }
