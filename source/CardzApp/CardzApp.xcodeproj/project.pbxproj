@@ -150,7 +150,7 @@
 		D4C7F12E2719636D0066125A /* DailyWordsViewController+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyWordsViewController+State.swift"; sourceTree = "<group>"; };
 		D4F00D4D2718C3840079A860 /* CardzApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardzApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F00D5A2718C3840079A860 /* CardzApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardzApp.xcdatamodel; sourceTree = "<group>"; };
-		D4F00D5C2718C3860079A860 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D4F00D5C2718C3860079A860 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = CardzApp/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		D4F00D5F2718C3860079A860 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D4F00D612718C3860079A860 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4F00D662718C3860079A860 /* CardzAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardzAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -986,6 +986,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X92LK22555;
 				INFOPLIST_FILE = CardzApp/Info.plist;
@@ -1007,6 +1008,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X92LK22555;
 				INFOPLIST_FILE = CardzApp/Info.plist;
