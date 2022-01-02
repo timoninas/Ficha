@@ -7,7 +7,6 @@
 
 import Foundation
 import RevoletraUserDefaultsKeys
-import Erebor
 
 public struct DailyWordsUserDefaults: Encodable, Decodable {
     

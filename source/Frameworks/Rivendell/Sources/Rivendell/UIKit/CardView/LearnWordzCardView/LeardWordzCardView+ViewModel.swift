@@ -5,8 +5,8 @@
 //  Created by Антон Тимонин on 07.12.2021.
 //
 
-import Foundation
 import Erebor
+import Foundation
 
 public extension LearnWordzCardView {
     
