@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  TextBadge+Configuration.swift
 //  
 //
 //  Created by Антон Тимонин on 20.12.2021.

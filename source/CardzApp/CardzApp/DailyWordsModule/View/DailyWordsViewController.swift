@@ -303,11 +303,14 @@ extension DailyWordsViewController: UIScrollViewDelegate {
     }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        if velocity.y <= -5.0 && checkBoxDevScreen {
+        if velocity.y <= -4.0 && checkBoxDevScreen {
             DispatchQueue.main.async {
                 UIApplication.hapticHeavy()
             }
-            present(DeveloperScreenBuilder.build(), animated: true, completion: nil)
+            let module = DeveloperScreenBuilder.build()
+            module.modalPresentationStyle = .fullScreen
+            module.modalTransitionStyle = .crossDissolve
+            present(module, animated: true, completion: nil)
         }
     }
     

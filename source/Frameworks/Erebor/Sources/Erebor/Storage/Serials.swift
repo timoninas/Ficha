@@ -40,7 +40,11 @@ func getGoldSerials() -> BagOfGoldWords {
         .init(
             word: "Actress",
             transcription: "",
-            examples: [],
+            examples: [
+                "He had brought with him Miss Constance Hathaway, an actress then playing in the popular success, Sentiment",
+                "Do you think I'm an actress?",
+                "- I want to be an actress"
+            ],
             translations: ["Актриса"]
         ),
         .init(
@@ -129,14 +133,22 @@ func getGoldSerials() -> BagOfGoldWords {
         ),
         .init(
             word: "Cast",
-            transcription: "",
-            examples: [],
+            transcription: " [kɑːst]",
+            examples: [
+                "Ahead of him, beside the road, a scrawny, dusty willow tree cast a speckled shade",
+                "The street light on the corner cast sharp shadows on the Radley house",
+                "The mere implication of foul play will cast a heavy shadow on the White House and NASA"
+            ],
             translations: ["Актерский состав"]
         ),
         .init(
             word: "Character",
-            transcription: "",
-            examples: [],
+            transcription: "[ˈkærɪktə]",
+            examples: [
+                "The character of the light changed suddenly",
+                "I know it's an Asian character, but nobody seems to recognize it",
+                "Only the envoy of the Bishop bears this character"
+            ],
             translations: ["Персонаж"]
         ),
         .init(
@@ -185,9 +197,9 @@ func getGoldSerials() -> BagOfGoldWords {
             word: "Slate",
             transcription: "",
             examples: [
-            "So if you agree, you'll be the only woman slated, and thus, a shoo-in",
-            "Then the new slate roof of Aunt Pitty's house came in view with its red-brick walls, and Scarlett's heart throbbed",
-            "That slate face cracked pink, ran a tongue the color of strawberry ice cream over the lips"
+                "So if you agree, you'll be the only woman slated, and thus, a shoo-in",
+                "Then the new slate roof of Aunt Pitty's house came in view with its red-brick walls, and Scarlett's heart throbbed",
+                "That slate face cracked pink, ran a tongue the color of strawberry ice cream over the lips"
             ],
             translations: ["Хлопушка"]
         ),
@@ -211,9 +223,9 @@ func getGoldSerials() -> BagOfGoldWords {
             word: "Comedy",
             transcription: "",
             examples: [
-            "Though you would have thought, with her brilliance, her roguishness, her sense of comedy she would have been perfect",
-            "Well sometimes in comedy you have to generalize",
-            "Now that's a clear cut situation with a promise of comedy"
+                "Though you would have thought, with her brilliance, her roguishness, her sense of comedy she would have been perfect",
+                "Well sometimes in comedy you have to generalize",
+                "Now that's a clear cut situation with a promise of comedy"
             ],
             translations: ["Комедия"]
         ),
@@ -227,9 +239,9 @@ func getGoldSerials() -> BagOfGoldWords {
             word: "Crew",
             transcription: "",
             examples: [
-            "You know, a thousand dollars ain't such a bad price for a medium bomber and a crew",
-            "My crew would roll out the red carpet for you",
-            "If you're part of a crew nobody ever tells you they're going to kill you"
+                "You know, a thousand dollars ain't such a bad price for a medium bomber and a crew",
+                "My crew would roll out the red carpet for you",
+                "If you're part of a crew nobody ever tells you they're going to kill you"
             ],
             translations: ["Съемочная группа"]
         ),

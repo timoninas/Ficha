@@ -220,7 +220,11 @@ func getGoldAnimals() -> BagOfGoldWords {
         .init(
             word: "Tortoise",
             transcription: "['tɔ:təs]",
-            examples: [],
+            examples: [
+                "I noticed that the platform was not raised to its full height, but crawled along just above the ground like an iron tortoise",
+                "You act like you don't like me, like I killed your pet tortoise or something",
+                "Buy with them a tortoise powder box with a gold setting for your mamma; and if you have a little sister, buy her a good doll"
+            ],
             translations: ["Черепаха"]
         ),
         .init(

@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  MoriaManager.swift
 //  
 //
 //  Created by Антон Тимонин on 30.12.2021.

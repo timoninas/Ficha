@@ -21,7 +21,11 @@ func getGoldClothes() -> BagOfGoldWords {
         .init(
             word: "T-shirt",
             transcription: "",
-            examples: [],
+            examples: [
+                "I brought a T shirt",
+                "Like the T- shirt?",
+                "Put your T- shirt on"
+            ],
             translations: ["Футболка"]
         ),
         .init(
@@ -119,9 +123,9 @@ func getGoldClothes() -> BagOfGoldWords {
             word: "Dinner jacket",
             transcription: "",
             examples: [
-            "He rose and ran on, in his stained dinner jacket, his burst collar and broken hair",
-            "- Have you brought a dinner jacket?",
-            "There's Ryan Trilling in the white dinner jacket",
+                "He rose and ran on, in his stained dinner jacket, his burst collar and broken hair",
+                "- Have you brought a dinner jacket?",
+                "There's Ryan Trilling in the white dinner jacket",
             ],
             translations: ["Смокинг"]
         ),
@@ -145,8 +149,12 @@ func getGoldClothes() -> BagOfGoldWords {
         ),
         .init(
             word: "Skirt",
-            transcription: "",
-            examples: [],
+            transcription: "[skɜːt]",
+            examples: [
+                "As her skirt slid up, he eyed her legs appreciatively",
+                "Angela fetched her needle book and mended her skirt without any more fuss",
+                "She contented herself with plucking Jean Valjean by the skirt of his coat"
+            ],
             translations: ["Юбка"]
         ),
         .init(
@@ -167,9 +175,9 @@ func getGoldClothes() -> BagOfGoldWords {
             word: "Calf-length skirt",
             transcription: "",
             examples: [
-            "As her skirt slid up, he eyed her legs appreciatively",
-            "Angela fetched her needle book and mended her skirt without any more fuss",
-            "I picked up a torn skirt which she had left lying on the floor and took it down with me for her to mend after breakfast"
+                "As her skirt slid up, he eyed her legs appreciatively",
+                "Angela fetched her needle book and mended her skirt without any more fuss",
+                "I picked up a torn skirt which she had left lying on the floor and took it down with me for her to mend after breakfast"
             ],
             translations: ["Юбка ниже колена"]
         ),

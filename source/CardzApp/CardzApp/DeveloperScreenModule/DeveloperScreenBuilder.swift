@@ -12,6 +12,8 @@ final class DeveloperScreenBuilder {
     static func build() -> UINavigationController {
         let presenter = DeveloperScreenPresenter()
         let view = DeveloperScreenViewController(output: presenter)
+        view.modalPresentationStyle = .overFullScreen
+        view.modalTransitionStyle = .crossDissolve
         presenter.view = view
         let navigationVC = UINavigationController(rootViewController: view)
         return navigationVC
