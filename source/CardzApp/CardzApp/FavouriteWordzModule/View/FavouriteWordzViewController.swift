@@ -87,12 +87,10 @@ final class FavouriteWordzViewController: UIViewController {
         let module = AlertCardBuilder.build(model:
                                                     .init(title: "Want to reset your progress?",
                                                           secondTitle: "Congratulations, you have learned all the words from this category",
-                                                          actions: [.init(title: "Nope", onSwipeClosure: { [weak self] in
-            guard let self = self else { return }
+                                                          actions: [.init(title: "Nope", onSwipeClosure: {
             print("not resetting static")
         }),
-                                                                    .init(title: "Yep", onSwipeClosure: { [weak self] in
-            guard let self = self else { return }
+                                                                    .init(title: "Yep", onSwipeClosure: {
             print("resetting static")
         })]))
         
@@ -105,8 +103,7 @@ final class FavouriteWordzViewController: UIViewController {
         let module = AlertCardBuilder.build(model:
                                                     .init(title: "Add more words to your favorite category",
                                                           secondTitle: "You need at least 5 words in the favourite category",
-                                                          actions: [.init(title: "Ok", onSwipeClosure: { [weak self] in
-            guard let self = self else { return }
+                                                          actions: [.init(title: "Ok", onSwipeClosure: {
             print("not resetting static")
         })]))
         

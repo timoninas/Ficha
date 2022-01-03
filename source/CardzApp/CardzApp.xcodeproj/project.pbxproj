@@ -27,7 +27,6 @@
 		772041AC277DF01600141FCA /* WordzModelDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772041AB277DF01600141FCA /* WordzModelDB.swift */; };
 		772041AE277EDC1C00141FCA /* DaysChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772041AD277EDC1B00141FCA /* DaysChecker.swift */; };
 		7720F601275FDA7800BC5973 /* ViewSimpleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720F600275FDA7800BC5973 /* ViewSimpleState.swift */; };
-		77232AC8275D2C2800529DE0 /* Moria in Frameworks */ = {isa = PBXBuildFile; productRef = 77232AC7275D2C2800529DE0 /* Moria */; };
 		77232ACA275D2C2B00529DE0 /* RevoletraUserDefaultsKeys in Frameworks */ = {isa = PBXBuildFile; productRef = 77232AC9275D2C2B00529DE0 /* RevoletraUserDefaultsKeys */; };
 		7748E9322757F4B10063E592 /* FavouriteWordzViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7748E9312757F4B00063E592 /* FavouriteWordzViewController.swift */; };
 		7748E9362757F4D60063E592 /* FavouriteWordzPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7748E9352757F4D60063E592 /* FavouriteWordzPresenter.swift */; };
@@ -143,8 +142,6 @@
 		77A3CA3A2775A77000A0EA9C /* TODO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODO.swift; sourceTree = "<group>"; };
 		77C2F4A92737D66900138DF9 /* Rivendell */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Rivendell; path = ../Frameworks/Rivendell; sourceTree = "<group>"; };
 		77D5165A27306A180030D1D1 /* Hobbiton */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Hobbiton; path = ../Frameworks/Hobbiton; sourceTree = "<group>"; };
-		77D89703277DDF9B0055095B /* Moria */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Moria; path = ../Frameworks/Moria; sourceTree = "<group>"; };
-		77DD37E32737D5AF007A3B1E /* Moria */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Moria; path = ../Frameworks/Moria; sourceTree = "<group>"; };
 		77F8FEF6277AD10300B0B72E /* RevolvetraUserDefaults */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RevolvetraUserDefaults; path = ../Frameworks/RevolvetraUserDefaults; sourceTree = "<group>"; };
 		77F9EF77275D2D8C008B1EB6 /* RevolvetraKnowledge */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RevolvetraKnowledge; path = ../Frameworks/RevolvetraKnowledge; sourceTree = "<group>"; };
 		D48F8493276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnNewWordzCollectionViewHeader.swift; sourceTree = "<group>"; };
@@ -178,7 +175,6 @@
 				7702F1DF2729F48C006176FE /* Rivendell in Frameworks */,
 				77F9EF79275D30C8008B1EB6 /* RevolvetraKnowledge in Frameworks */,
 				77232ACA275D2C2B00529DE0 /* RevoletraUserDefaultsKeys in Frameworks */,
-				77232AC8275D2C2800529DE0 /* Moria in Frameworks */,
 				77895BF927306ABC00A852BF /* Hobbiton in Frameworks */,
 				77A178DD273526FE005E520C /* EyeOfSauron in Frameworks */,
 				77DCC7A627711B0000F9572A /* Erebor in Frameworks */,
@@ -479,13 +475,11 @@
 				7702F1DD2729F483006176FE /* Rivendell */,
 				77D5165A27306A180030D1D1 /* Hobbiton */,
 				77A178DB273526F4005E520C /* EyeOfSauron */,
-				77DD37E32737D5AF007A3B1E /* Moria */,
 				77C2F4A92737D66900138DF9 /* Rivendell */,
 				77232AC6275D2C1A00529DE0 /* RevoletraUserDefaultsKeys */,
 				77F9EF77275D2D8C008B1EB6 /* RevolvetraKnowledge */,
 				776C7A6227711A8E000C2E97 /* Erebor */,
 				77F8FEF6277AD10300B0B72E /* RevolvetraUserDefaults */,
-				77D89703277DDF9B0055095B /* Moria */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -648,7 +642,6 @@
 				7702F1DE2729F48C006176FE /* Rivendell */,
 				77895BF827306ABC00A852BF /* Hobbiton */,
 				77A178DC273526FE005E520C /* EyeOfSauron */,
-				77232AC7275D2C2800529DE0 /* Moria */,
 				77232AC9275D2C2B00529DE0 /* RevoletraUserDefaultsKeys */,
 				77F9EF78275D30C8008B1EB6 /* RevolvetraKnowledge */,
 				77DCC7A527711B0000F9572A /* Erebor */,
@@ -999,7 +992,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 22.1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = Revolvetra.Inc.CardzApp;
+				PRODUCT_BUNDLE_IDENTIFIER = Revolvetra.Inc.Ficha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -1023,7 +1016,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 22.1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = Revolvetra.Inc.CardzApp;
+				PRODUCT_BUNDLE_IDENTIFIER = Revolvetra.Inc.Ficha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -1156,10 +1149,6 @@
 		7702F1DE2729F48C006176FE /* Rivendell */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Rivendell;
-		};
-		77232AC7275D2C2800529DE0 /* Moria */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Moria;
 		};
 		77232AC9275D2C2B00529DE0 /* RevoletraUserDefaultsKeys */ = {
 			isa = XCSwiftPackageProductDependency;
