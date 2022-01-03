@@ -44,5 +44,5 @@ public class RVControl: UIControl {
     }
     
     @objc open func handleTap() { }
-    
+
 }

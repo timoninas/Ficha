@@ -8,6 +8,7 @@
 import UIKit
 import Rivendell
 import Hobbiton
+import Combine
 
 import RevolvetraKnowledge
 
@@ -59,6 +60,27 @@ final class DeveloperScreenViewController: UIViewController {
         return label
     }()
     
+    private var cancellable: Set<AnyCancellable> = []
+    
+    private lazy var playButton: RVImageButton = {
+        let button = RVImageButton(configuration: .init()
+                                    .with(backgroundColor: .galadriel)
+                                    .with(highlitedColor: .galadriel.withAlphaComponent(0.75))
+                                    .with(image: .playGameIcon)
+                                    .with(imageColor: .mysteryShack)
+                                    .with(isFullyRounded: true)
+                                    .with(imageAspectRation: 0.5)
+                                    )
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.publisher(for: .touchUpInside)
+            .sink { _ in
+                print("lol")
+            }
+            .store(in: &cancellable)
+
+        return button
+    }()
+    
     private lazy var closeButton = RVImageButton(configuration: .init()
                                                     .with(image: .closeIcon)
                                                     .with(backgroundColor: .clear)
@@ -94,6 +116,7 @@ final class DeveloperScreenViewController: UIViewController {
         setupNavigation()
         addCloseButton()
         addTitles()
+        addButton()
     }
     
     private func addCloseButton() {
@@ -133,6 +156,16 @@ final class DeveloperScreenViewController: UIViewController {
             labelDrag.topAnchor.constraint(equalTo: labelLeftSwipe.bottomAnchor, constant: 10.0),
             labelDrag.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10.0),
             labelDrag.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10.0),
+        ])
+    }
+    
+    private func addButton() {
+        view.addSubview(playButton)
+        NSLayoutConstraint.activate([
+            playButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 25.0),
+            playButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25.0),
+            playButton.heightAnchor.constraint(equalToConstant: 50.0),
+            playButton.widthAnchor.constraint(equalTo: playButton.heightAnchor)
         ])
     }
     
