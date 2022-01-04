@@ -206,31 +206,51 @@ func getGoldEmotions() -> BagOfGoldWords {
         .init(
             word: "Thrill",
             transcription: "[θrɪl]",
-            examples: [],
+            examples: [
+                "There was something about her use of the plural that sent a pleasurable, though not entirely guiltless, thrill through me",
+                "Arriving now at the doorway of the Communications Office, Tench felt alive with the thrill of the fight",
+                "Thrill of the kill"
+            ],
             translations: ["Острые ощущения", "Трепет"]
         ),
         .init(
             word: "Wilt",
             transcription: "[wɪlt]",
-            examples: [],
+            examples: [
+                "And some people respond to... that pressure and some people simply",
+                "Some girls blossom only at night and wilt in the daylight",
+                "Braddock looks like he's finally starting to wilt"
+            ],
             translations: ["Слабеть"]
         ),
         .init(
             word: "Whirl",
             transcription: "[wɜːl]",
-            examples: [],
+            examples: [
+                "During all this whirl of disaster he had never once lost his head or his courage",
+                "He was sucked under in the whirl by Nick's right leg and came to the surface a little way down stream",
+                "A sorrowful sight I saw: dark night coming down prematurely, and sky and hills mingled in one bitter whirl of wind and suffocating snow"
+            ],
             translations: ["Кружиться"]
         ),
         .init(
             word: "Alarm",
             transcription: "[əˈlɑːrm]",
-            examples: [],
+            examples: [
+                "You're gonna trigger the alarm",
+                "The howling of the preliminary alarm grew louder",
+                "And you aim these at an alarm circuit and the point where the beams cross..."
+            ],
             translations: ["Тревога"]
         ),
         .init(
             word: "Rouse",
             transcription: "[raʊz]",
-            examples: [],
+            examples: [
+                "Noise does not rouse a drunken man; silence awakens him",
+                "It, it seems he's... refused to rouse, sir",
+                "Must I close this?' I asked, in order to rouse him; for he would not stir"
+            ],
             translations: ["Пробудить"]
         ),
         .init(
@@ -242,6 +262,102 @@ func getGoldEmotions() -> BagOfGoldWords {
                 "It is not wearisome to you, I trust, Dorothea?"
             ],
             translations: ["Утомительный"]
+        ),
+        .init(
+            word: "Hot-blooded",
+            transcription: "[ˌhɑːt ˈblʌdɪd]",
+            examples: [
+                "Then Jack found the throat and the hot blood spouted over his hands",
+                "Hot blood pumping down my throat",
+                "I can't, because I have hot blood"
+            ],
+            translations: ["Вспыльчивый"]
+        ),
+        .init(
+            word: "Hyped up",
+            transcription: "[ˌhaɪpt ˈʌp]",
+            examples: [],
+            translations: ["Расшевеленный", "Возбужденный"]
+        ),
+        .init(
+            word: "Illuminate",
+            transcription: "[ɪˈluːmɪneɪt]",
+            examples: [
+                "No, but put a sky-light on top of his head to illuminate inwards",
+                "Sir, the seat belt sign is still illuminated",
+                "God has started to illuminate you, but let His grace be complete"
+            ],
+            translations: ["Освещать"]
+        ),
+        .init(
+            word: "Illumine",
+            transcription: "[ɪˈluːmɪn]",
+            examples: [
+                "She opened her mouth wide and placed the light so that it would illumine her larynx",
+                "I'm going to light it... and illumine us",
+                "The scorching rays of the sun illumined the blossoming meadows and environs ..."
+            ],
+            translations: ["Освещать"]
+        ),
+        .init(
+            word: "Inflamed",
+            transcription: "[ɪnˈfleɪmd]",
+            examples: [
+                "A policy no doubt intended to inflame a jury",
+                "This inflamed her impatient friend still more",
+                "We should be easing tensions, not inflaming them"
+            ],
+            translations: ["Вспыхнувший", "Очень злой", "Взволнованный"]
+        ),
+        .init(
+            word: "Intoxicated",
+            transcription: "[ɪnˈtɑːksɪkeɪtɪd]",
+            examples: [
+                "I feel like Robert's intoxicated you to the point where you can't see straight",
+                "Intoxicated, he was behaving as though, at the very least, he were a visiting World Controller",
+                "Zoe was intoxicated with wine and dance"
+            ],
+            translations: ["Опьяненный"]
+        ),
+        .init(
+            word: "Intoxicating",
+            transcription: "[ɪnˈtɑːksɪkeɪtɪŋ]",
+            examples: [
+                "Yes, yes, the quality, the texture, the intoxicating aroma",
+                "And some of the soldiers who were intoxicated at the time of the battle did better, they recovered better",
+                "I feel like Robert's intoxicated you to the point where you can't see straight"
+            ],
+            translations: ["Опьяняющий"]
+        ),
+        .init(
+            word: "Manic",
+            transcription: "[ˈmænɪk]",
+            examples: [
+                "Lecturing me on manic depression",
+                "Maybe it has something to do with you validating Darby's delusions, which then triggered her manic episode",
+                "- They will be, if we successfully marry your manic energy to my brilliant plan!"
+            ],
+            translations: ["Маниакальный"]
+        ),
+        .init(
+            word: "Nail-biting",
+            transcription: "[ˈneɪl baɪtɪŋ]",
+            examples: [
+                "- Is there a cure for nail biting?",
+                "Not a fan of nail biting",
+                "His nails were bitten to the quick, for while some trembling boy was construing he would sit at his desk"
+            ],
+            translations: ["Грызущий ногти", "Испытывающий беспокойство", "Напряжение"]
+        ),
+        .init(
+            word: "Overexcited",
+            transcription: "[ˌəʊvərɪkˈsaɪtɪd]",
+            examples: [
+                "Hard to coerce a man who faints if he gets overexcited",
+                "I got overexcited, I must have let it slip",
+                "You were jumping up and down, running around and getting completely overexcited"
+            ],
+            translations: ["Перевозбужденный"]
         ),
     ])
     
