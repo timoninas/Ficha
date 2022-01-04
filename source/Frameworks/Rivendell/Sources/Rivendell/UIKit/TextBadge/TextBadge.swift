@@ -103,4 +103,5 @@ public final class TextBadge: UIView {
         
         NSLayoutConstraint.activate(storedConstraints)
     }
+    
 }

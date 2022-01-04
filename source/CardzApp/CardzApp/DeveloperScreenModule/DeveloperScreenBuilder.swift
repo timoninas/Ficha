@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Hobbiton
 
 final class DeveloperScreenBuilder {
     
@@ -15,7 +16,7 @@ final class DeveloperScreenBuilder {
         view.modalPresentationStyle = .overFullScreen
         view.modalTransitionStyle = .crossDissolve
         presenter.view = view
-        let navigationVC = UINavigationController(rootViewController: view)
+        let navigationVC = NavigationController(rootViewController: view)
         return navigationVC
     }
     
