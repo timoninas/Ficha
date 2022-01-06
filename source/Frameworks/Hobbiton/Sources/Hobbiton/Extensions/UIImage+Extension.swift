@@ -69,4 +69,6 @@ public extension UIImage {
     
     static let onboarding4 = UIImage(named: "onboarding4")
     
+    static let bulbLight = UIImage(named: "bulbLight")
+    
 }

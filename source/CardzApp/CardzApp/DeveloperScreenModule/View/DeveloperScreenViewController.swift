@@ -34,10 +34,10 @@ final class DeveloperScreenViewController: UIViewController {
     
     private lazy var closeButton: RVImageButton = {
         let button = RVImageButton(configuration: .init()
-                                    .with(image: .closeIcon)
+                                    .with(image: .bulbLight)
                                     .with(backgroundColor: .clear)
                                     .with(highlitedColor: .clear)
-                                    .with(imageColor: .nazgul))
+                                    .with(imageColor: .mysteryShack))
         button.publisher(for: .touchUpInside)
             .sink { [weak self] _ in
                 guard let self = self else { return }
@@ -97,7 +97,12 @@ final class DeveloperScreenViewController: UIViewController {
     
     private func addCloseButton() {
         view.addSubview(closeButton)
-        closeButton.renderAsCloseButton(view: view)
+        NSLayoutConstraint.activate([
+            closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0.0),
+            closeButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20.0),
+            closeButton.heightAnchor.constraint(equalToConstant: 40.0),
+            closeButton.widthAnchor.constraint(equalTo: closeButton.heightAnchor)
+        ])
     }
     
     private func setupNavigation() {
