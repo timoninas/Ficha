@@ -63,9 +63,9 @@ func getGoldJob() -> BagOfGoldWords {
             word: "Plan",
             transcription: "[plæn]",
             examples: [
-            "The Delta Force's plan to stage an accident by arranging four dead bodies on the ice shelf was no longer a viable option",
-            "We're all staying on your plan",
-            "Who were they to interfere with God's master plan?"
+                "The Delta Force's plan to stage an accident by arranging four dead bodies on the ice shelf was no longer a viable option",
+                "We're all staying on your plan",
+                "Who were they to interfere with God's master plan?"
             ],
             translations: ["План"]
         ),
@@ -90,7 +90,11 @@ func getGoldJob() -> BagOfGoldWords {
         .init(
             word: "Performance",
             transcription: "[pəˈfɔːməns]",
-            examples: [],
+            examples: [
+                "I told him I thought it had been a very nicely managed and gentlemanly performance",
+                "I'm saying their performance is identical",
+                "And I prefer my boyfriend at peak performance"
+            ],
             translations: ["Производительность"]
         ),
         .init(
@@ -139,9 +143,9 @@ func getGoldJob() -> BagOfGoldWords {
             word: "Operation",
             transcription: "[ɒpəˈreɪʃn]",
             examples: [
-            "The operation had taken nine hours",
-            "We walked in on their operation",
-            "I understood, but in its 200 years of operation, no one has successfully escaped from...",
+                "The operation had taken nine hours",
+                "We walked in on their operation",
+                "I understood, but in its 200 years of operation, no one has successfully escaped from...",
             ],
             translations: ["Операция"]
         ),
@@ -149,9 +153,9 @@ func getGoldJob() -> BagOfGoldWords {
             word: "Interview",
             transcription: "[ˈɪntəvjuː]",
             examples: [
-            "I got the interview!",
-            "And you want to know whether I had a satisfactory interview with him!",
-            "I've decided that I will help interview Geoff Hastings"
+                "I got the interview!",
+                "And you want to know whether I had a satisfactory interview with him!",
+                "I've decided that I will help interview Geoff Hastings"
             ],
             translations: ["Интервью", "Собеседование"]
         ),
@@ -177,7 +181,7 @@ func getGoldJob() -> BagOfGoldWords {
             word: "Break",
             transcription: "[breɪk]",
             examples: ["Shall we take a break?",
-                      "The important thing is to be careful not to break that spirit",
+                       "The important thing is to be careful not to break that spirit",
                        "Who knows when the hammer might slip and break a nose?"],
             translations: ["Перерыв"]
         ),
@@ -214,7 +218,11 @@ func getGoldJob() -> BagOfGoldWords {
         .init(
             word: "Lack (of something)",
             transcription: "[læk]",
-            examples: [],
+            examples: [
+                "Most unsettling, however, was the apparent lack of a floor",
+                "Again, they would swim upward, this time reaching the surface inside the habisphere, where they would eventually die for lack of saltwater",
+                "This was the one area where Faraday's childhood poverty and lack of formal education actually held him back"
+            ],
             translations: ["Нехватка"]
         ),
     ])

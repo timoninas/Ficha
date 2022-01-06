@@ -14,73 +14,121 @@ func getGoldAnimals() -> BagOfGoldWords {
         .init(
             word: "Stork",
             transcription: "[stɔːk]",
-            examples: [],
+            examples: [
+                "Grasp the bird's tail, become the white stork, repulse the monkey, face the tiger, let your hands become clouds and circulate the water of life",
+                "Aunt Alexandra was standing stiff as a stork",
+                "He was balancing on the boards like a stork with horn-rimmed glasses"
+            ],
             translations: ["Аист"]
         ),
         .init(
             word: "Shark",
             transcription: "[ʃɑːk]",
-            examples: [],
+            examples: [
+                "The question now was whether this shark was an innocent bystander-or a player",
+                "The best technique for a card shark is dealing from the bottom",
+                "Introduce her to your loan shark?"
+            ],
             translations: ["Акула"]
         ),
         .init(
             word: "Antelope",
             transcription: "[ˈæntɪləʊp]",
-            examples: [],
+            examples: [
+                "I was a man, eager and curious as the antelope when we lured it by waving grass clumps where we lay hidden in the thick of the grass",
+                "It increased his caution; and he continued his approach with as much stealth, as if he had been stalking an antelope",
+                "I could have torn him limb from limb, as the lion rends the antelope"
+            ],
             translations: ["Антилопа"]
         ),
         .init(
             word: "Butterfly",
             transcription: "[ˈbʌtəflaɪ]",
-            examples: [],
+            examples: [
+                "She has a necklace of cornelian beads and one of bright royal blue beads and is wearing a brooch with a pearl butterfly on it",
+                "He's just a butterfly, you know",
+                "Honey, would you feel better... if I went out and gave that butterfly valve a twist now?"
+            ],
             translations: ["Бабочка"]
         ),
         .init(
             word: "Ox",
             transcription: "[ɒks]",
-            examples: [],
+            examples: [
+                "But they couldn't touch him, he told Clevinger, because he had a sound mind in a pure body and was as strong as an ox",
+                "He was warmed by the breathing of the ox",
+                "A gas jet burned on the rough wall, the colour of ox blood"
+            ],
             translations: ["Вол", "Бык"]
         ),
         .init(
             word: "Ram",
             transcription: "[ræm]",
-            examples: [],
+            examples: [
+                "The sleepy figures staggered into the Hotel France, and there came the bleating of a ram being dragged into the kitchen by the hind legs",
+                "Although he did not hear it, every blow of the ram reverberated simultaneously in the vaults of the church and within it",
+                "Ram, it is time for rehearsal"
+            ],
             translations: ["Баран"]
         ),
         .init(
             word: "Badger",
             transcription: "[ˈbædʒə]",
-            examples: [],
+            examples: [
+                "An old, old man with a bent back came like a badger out of a tent and snooped near, sniffing the air as he came",
+                "Badger me for 40 minutes in the hopes that I'll be distracted when you get to what you really care about",
+                "Because we're married and I have certain rights, and one of them is the right to badger you",
+            ],
             translations: ["Барсук"]
         ),
         .init(
             word: "Squirrel",
             transcription: "[ˈskwɪrəl]",
-            examples: [],
+            examples: [
+                "One day a neighbouring cat came to see her, and the squirrel was clearly the subject of their talk",
+                "Silly Squirrel, do you know the probability of winning the lottery?",
+                "-We're not stopping anyone from squirreling away 50 Seconal in the nightstand and washing it down with vodka"
+            ],
             translations: ["Белка"]
         ),
         .init(
             word: "Polar bear",
             transcription: "[ˈpəʊlə beə]",
-            examples: [],
+            examples: [
+                "But this is polar bear country, right?",
+                "Hot enough to burn a polar bear's butt",
+                "Taken by a polar bear"
+            ],
             translations: ["Белый медведь"]
         ),
         .init(
             word: "Ladybird",
             transcription: "[ˈleɪdɪbɜːd]",
-            examples: [],
+            examples: [
+                "Are you saying he was a ladybird, or some sort of...?",
+                "Now, when would you go out with a bucketful of ladybirds?",
+                "Would you like to see a ladybird?"
+            ],
             translations: ["Божья коровка"]
         ),
         .init(
             word: "Beaver",
             transcription: "[ˈbiːvə]",
-            examples: [],
+            examples: [
+                "Grey Beaver got the thirst",
+                "His buddies, Beaver and what's-his-name?",
+                "My busy little beaver"
+            ],
             translations: ["Бобр"]
         ),
         .init(
             word: "Bull",
             transcription: "[bʊl]",
-            examples: [],
+            examples: [
+                "A man, mercifully clad as a layman; one more red soutane, thought Justine, and I'll bellow like a bull",
+                "I thought the Taurus was the bull",
+                "What bull dropped that on the barn floor?"
+            ],
             translations: ["Бык"]
         ),
         .init(
@@ -238,6 +286,56 @@ func getGoldAnimals() -> BagOfGoldWords {
             transcription: "['dɔlfin]",
             examples: [],
             translations: ["Дельфин"]
+        ),
+        .init(
+            word: "Dinosaur",
+            transcription: "[ˈdaɪnəʊsɔː]",
+            examples: [
+                "Obviously space is the future, but NASA is a dinosaur!",
+                "I'll take that big purple dinosaur, please",
+                "Hey, dinosaur guy."
+            ],
+            translations: ["Динозавр"]
+        ),
+        .init(
+            word: "Wolverine",
+            transcription: "[ˈwʊlvəriːn]",
+            examples: [
+                "He did not know that it was a wolverine, standing outside, all a-trembling with its own daring",
+                "I never called your mother a wolverine",
+                "I will bite and scratch you like a wolverine"
+            ],
+            translations: ["Росомаха"]
+        ),
+        .init(
+            word: "Puma",
+            transcription: "[ˈpjuːmə]",
+            examples: [
+                "They were magnificent, vying with each other for the richest pelt: a lynx, a snow leopard, an ash-brown puma and a tawny jaguar with black spots",
+                "Rolling did not offer his hand to either of them but glared out of the depths of the limousine like a puma in a cage",
+                "Anyone know a good place if you're not dating a puma?"
+            ],
+            translations: ["Пума"]
+        ),
+        .init(
+            word: "Cougar",
+            transcription: "[ˈkuːgə]",
+            examples: [
+                "I even got a cougar once",
+                "Hurrah!-Here we go like three tin kettles at the tail of a mad cougar!",
+                "- They rid the state of cougars"
+            ],
+            translations: ["Пума"]
+        ),
+        .init(
+            word: "Opossum",
+            transcription: "[əˈpɒsəm]",
+            examples: [
+                "- Oh, can't we have opossum?",
+                "That's a cat or opossum",
+                "It's a opossum, and it died at least three to six years ago"
+            ],
+            translations: ["Опоссум"]
         ),
     ])
     

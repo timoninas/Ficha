@@ -216,6 +216,71 @@ func getGoldArhitecture() -> BagOfGoldWords {
                        "I've done a sketch of an aviary as well, with a domed roof"],
             translations: ["Купол"]
         ),
+        .init(
+            word: "Landscape architect",
+            transcription: "[ˈlændskeɪp ˈɑːkɪtekt]",
+            examples: [
+                "If you have a problem with the plants, I can call my landscape architect",
+                "And she is marrying the landscape architect",
+                "Hey, oh, did you hear that my wife left me for our landscape architect?"
+            ],
+            translations: ["Ландшафтный архитектор"]
+        ),
+        .init(
+            word: "Neo-Renaissance model",
+            transcription: "[ˈmɒdəl]",
+            examples: [
+                "His night vision system was a far cry from the Patriot model used by the Marines",
+                "It was planned as a gigantic experiment in low-rent housing, to serve as model for the whole country; for the whole world",
+                "Tony looked around for the model. He could see no one"
+            ],
+            translations: ["Модель в стиле неоренессанса"]
+        ),
+        .init(
+            word: "Marble",
+            transcription: "[ˈmɑːbəl]",
+            examples: [
+                "White marble",
+                "And here's a marble for Lisa for cleaning her room, and a marble for Bart for not trashing Lisa's room",
+                "The big blue velour marble"
+            ],
+            translations: ["Мрамор"]
+        ),
+        .init(
+            word: "Naturalistic garden",
+            transcription: "[ˌnætʃrəˈlɪstɪk ˈɡɑːdən]",
+            examples: [
+                "She turned to look at the garden",
+                "The back garden was like the front only more so",
+                "In Paris, Tracy stayed at the classic Plaza Athénée, in a lovely old suite that overlooked the garden restaurant"
+            ],
+            translations: ["Натуралистический сад"]
+        ),
+        .init(
+            word: "Gothic Revival",
+            transcription: "[ˈɡɒθɪk rɪˈvaɪvəl]",
+            examples: [],
+            translations: ["Неоготический стиль"]
+        ),
+        .init(
+            word: "Greek Revival",
+            transcription: "[ɡriːk rɪˈvaɪvəl]",
+            examples: [
+                "Just rehearsing for the revival of Evita",
+                "I'm also entering the necessary commands to commence final revival the moment sensors indicate the presence of your expedition team",
+                "This would allow him to decide whether the conditions warranted revival of the others"
+            ],
+            translations: ["Неогрек"]
+        ),
+        .init(
+            word: "Neoclassical",
+            transcription: "[ˌnioˈklæsɪkəl]",
+            examples: [
+                "While today its neoclassical fenestration is considered to be...",
+                "Paris, you're an MD, a lawyer, an expert on neoclassical architecture, and, I think, a certified dental technician to boot"
+            ],
+            translations: ["Неоклассический"]
+        ),
     ])
     
     let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .architecture, typeTranslation: .enToRu)

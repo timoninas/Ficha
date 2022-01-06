@@ -188,7 +188,11 @@ func getGoldEmotions() -> BagOfGoldWords {
         .init(
             word: "Flush",
             transcription: "[flʌʃ]",
-            examples: [],
+            examples: [
+                "Marks from the front side flush with the muzzle",
+                "\"I noticed she had a kind of bright flush,\" Ethel repeated",
+                "At supper Faye's face was flushed"
+            ],
             translations: ["Румянец"]
         ),
         .init(

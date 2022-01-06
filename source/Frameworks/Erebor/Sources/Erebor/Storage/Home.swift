@@ -22,9 +22,9 @@ func getGoldHome() -> BagOfGoldWords {
             word: "Apartment",
             transcription: "[əˈpɑːtmənt]",
             examples: [
-            "I have an apartment here in D.C. Private. Comfortable",
-            "Louise had estates in Long Island and the Bahamas, a villa in Sardinia, and a large apartment on Avenue Foch in Paris",
-            "The Sisters entered the apartment shyly, almost on tiptoe"
+                "I have an apartment here in D.C. Private. Comfortable",
+                "Louise had estates in Long Island and the Bahamas, a villa in Sardinia, and a large apartment on Avenue Foch in Paris",
+                "The Sisters entered the apartment shyly, almost on tiptoe"
             ],
             translations: ["Квартира", "Апартамент"]
         ),
@@ -63,13 +63,21 @@ func getGoldHome() -> BagOfGoldWords {
         .init(
             word: "Bathroom",
             transcription: "[ˈbɑːθruːm]",
-            examples: [],
+            examples: [
+                "\"We had an individual kitchen and bathroom at Cinna,\" said Dors with an air of resignation",
+                "I'll step into the bathroom and put this thing on",
+                "He headed for the bathroom"
+            ],
             translations: ["Ванная комната", "Туалет"]
         ),
         .init(
             word: "Bed",
             transcription: "[bed]",
-            examples: [],
+            examples: [
+                "My bed was hot, I noticed",
+                "A bishop from Palermo appeared at my hospital bed and took me in",
+                "A clock glowed 10:14 p.m. The bed was not her own"
+            ],
             translations: ["Постель", "Кровать"]
         ),
         .init(
