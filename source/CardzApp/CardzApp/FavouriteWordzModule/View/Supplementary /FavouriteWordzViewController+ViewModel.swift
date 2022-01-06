@@ -27,6 +27,8 @@ extension FavouriteWordzViewController {
         
         let languageVersion: SilverTypeTranslation = .unknown
         
+        let displayedCount: Int64
+        
     }
     
 }

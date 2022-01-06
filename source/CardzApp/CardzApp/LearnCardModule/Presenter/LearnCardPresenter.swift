@@ -35,7 +35,7 @@ final class LearnCardPresenter: LearnCardOutput {
             examples: word.wordzExamples,
             translations: word.translations,
             type: .favourite,
-            languageVersion: word.languageVersion
+            languageVersion: .unknown
         )
         KnowledgeStats.topSwipesLearnCard += 1
         print("Top swipes: \(KnowledgeStats.topSwipesLearnCard)")
@@ -47,7 +47,16 @@ final class LearnCardPresenter: LearnCardOutput {
     }
     
     func didSwipeCardRight(with index: Int) {
+        guard index >= 0 && index < viewModel.count else { return }
+        let word = viewModel[index]
         KnowledgeStats.rightSwipesLearnCard += 1
+        MoriaManager.shared.updateWordz(
+            wordz: word.wordz,
+            translations: word.translations,
+            type: word.type,
+            languageVersion: word.languageVersion,
+            count: word.displayedCount + 1
+        )
         print("Right swipe: \(KnowledgeStats.rightSwipesLearnCard)")
     }
     

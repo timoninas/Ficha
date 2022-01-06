@@ -24,6 +24,8 @@ struct PreviewViewModel: Equatable {
     
     public let languageVersion: SilverTypeTranslation
     
+    public let displayedCount: Int64
+    
     /// Инициализирует вью модель.
     /// - Parameters:
     ///   - title: Слово.
@@ -34,7 +36,8 @@ struct PreviewViewModel: Equatable {
         transcription: String?,
         translations: [String],
         type: ArkenstoneTypeWord,
-        languageVersion: SilverTypeTranslation
+        languageVersion: SilverTypeTranslation,
+        displayedCount: Int64
     ) {
         self.wordz = wordz
         self.wordzExamples = wordzExamples
@@ -42,6 +45,7 @@ struct PreviewViewModel: Equatable {
         self.translations = translations
         self.type = type
         self.languageVersion = languageVersion
+        self.displayedCount = displayedCount
     }
     
 }

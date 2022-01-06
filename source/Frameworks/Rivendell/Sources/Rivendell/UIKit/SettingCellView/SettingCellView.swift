@@ -27,6 +27,8 @@ public final class SettingCellView: UIView {
     
     private var contentView = UIView()
     
+    private var separatorView = UIView()
+    
     public var configuration: Configuration {
         didSet {
             configurationChanged(oldValue)
@@ -50,6 +52,7 @@ public final class SettingCellView: UIView {
         
         addContentView()
         addTitle()
+        addSeparatorView()
         
         updateAppearance()
     }
@@ -62,6 +65,18 @@ public final class SettingCellView: UIView {
     private func addTitle() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(titleLabel)
+    }
+    
+    private func addSeparatorView() {
+        separatorView.translatesAutoresizingMaskIntoConstraints = false
+        separatorView.backgroundColor = .urukhigh.withAlphaComponent(0.5)
+        addSubview(separatorView)
+        NSLayoutConstraint.activate([
+            separatorView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            separatorView.leftAnchor.constraint(equalTo: leftAnchor),
+            separatorView.rightAnchor.constraint(equalTo: rightAnchor),
+            separatorView.heightAnchor.constraint(equalToConstant: 0.75)
+        ])
     }
     
     private func updateAppearance() {

@@ -22,6 +22,9 @@ final class FavouriteWordzPresenter: FavouriteWordzViewOutput {
     
     func viewDidAppear() {
         fetchData()
+        if viewModels.count > 0 {
+            MoriaManager.shared.updateWordz(wordz: viewModels[0].wordz, translations: viewModels[0].translations, type: viewModels[0].type, languageVersion: viewModels[0].languageVersion, count: viewModels[0].displayedCount)
+        }
     }
     
     func deleteAt(index: Int) {
@@ -41,7 +44,8 @@ final class FavouriteWordzPresenter: FavouriteWordzViewOutput {
                 wordz: $0.wordz,
                 wordzExamples: $0.examples,
                 transcription: $0.transcription,
-                translations: $0.translations
+                translations: $0.translations,
+                displayedCount: $0.displayedCount
             )
         }
         guard viewModels != array else { return }

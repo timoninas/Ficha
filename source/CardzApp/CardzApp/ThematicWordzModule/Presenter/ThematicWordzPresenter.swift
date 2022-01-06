@@ -25,7 +25,7 @@ final class ThematicWordzPresenter: ThematicWordzViewOutput {
     func viewDidLoad() {
         
         fetchData()
-//        mockFetchData()
+        
     }
     
     private func fetchData() {
@@ -37,24 +37,11 @@ final class ThematicWordzPresenter: ThematicWordzViewOutput {
                 transcription: $0.transcription,
                 translations: $0.translations,
                 type: $0.type,
-                languageVersion: $0.languageVersion
+                languageVersion: $0.languageVersion,
+                displayedCount: $0.displayedCount
             )
         }
         view?.changeState(state: .normal(model: .init(title: typeWord.rawValue, wordsPreview: previewViewModel) ))
-    }
-    
-    private func mockFetchData() {
-        let wordsPreviews: [PreviewViewModel] = [
-            .init(
-                wordz: "To get out",
-                wordzExamples: [],
-                transcription: nil,
-                translations: ["Выйти наружу", "Выбраться отсюда"],
-                type: .animals,
-                languageVersion: .enToRu
-            ),
-        ]
-        view?.changeState(state: .normal(model: .init(title: typeWord.rawValue, wordsPreview: wordsPreviews)))
     }
     
 }

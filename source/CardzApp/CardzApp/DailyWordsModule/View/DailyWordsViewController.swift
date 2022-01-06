@@ -27,7 +27,8 @@ final class DailyWordsViewController: UIViewController {
             transcription: $0.transcription,
             wordzExamples: $0.subtitles ?? [],
             type: $0.type,
-            languageVersion: $0.languageVersion
+            languageVersion: $0.languageVersion,
+            displayedCount: $0.displayedCount
         )
     }
     

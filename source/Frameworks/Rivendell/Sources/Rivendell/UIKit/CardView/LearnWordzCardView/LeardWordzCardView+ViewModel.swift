@@ -28,6 +28,8 @@ public extension LearnWordzCardView {
         
         public var languageVersion: SilverTypeTranslation
         
+        public var displayedCount: Int64
+        
         /// Инициализирует `ViewModel` для `LearnWordzCardView`.
         /// - Parameters:
         ///   - wordz: Иностранное слово.
@@ -40,7 +42,8 @@ public extension LearnWordzCardView {
             transcription: String? = nil,
             wordzExamples: [String] = [],
             type: ArkenstoneTypeWord,
-            languageVersion: SilverTypeTranslation
+            languageVersion: SilverTypeTranslation,
+            displayedCount: Int64
         ) {
             self.wordz = wordz
             self.wordzExamples = wordzExamples
@@ -48,6 +51,7 @@ public extension LearnWordzCardView {
             self.translations = translations
             self.type = type
             self.languageVersion = languageVersion
+            self.displayedCount = displayedCount
         }
     }
     

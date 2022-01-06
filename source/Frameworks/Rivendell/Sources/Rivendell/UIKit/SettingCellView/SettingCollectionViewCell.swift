@@ -7,7 +7,7 @@
 
 import UIKit
 
-public final class SettingTableViewCell: UITableViewCell {
+public final class SettingCollectionViewCell: UICollectionViewCell {
     
     public static var reuseID: String { "\(String(describing: self))ID" }
 
@@ -25,10 +25,10 @@ public final class SettingTableViewCell: UITableViewCell {
         super.init(coder: coder)
     }
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-            super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.configureUI()
-        }
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        configureUI()
+    }
     
     private func configureUI() {
         addSubview(settingViewCell)

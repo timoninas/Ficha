@@ -77,7 +77,8 @@ final class FavouriteWordzViewController: UIViewController {
             transcription: $0.transcription,
             wordzExamples: $0.wordzExamples,
             type: $0.type,
-            languageVersion: $0.languageVersion
+            languageVersion: $0.languageVersion,
+            displayedCount: $0.displayedCount
         )}
         let module = LearnCardBuilder.build(viewModel: shuffled)
         self.present(module, animated: true, completion: nil)

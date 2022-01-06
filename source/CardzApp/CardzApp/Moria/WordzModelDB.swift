@@ -22,6 +22,6 @@ public struct WordzModelDB {
     
     var languageVersion: SilverTypeTranslation
     
-    var displayedCount: Int
+    var displayedCount: Int64
     
 }

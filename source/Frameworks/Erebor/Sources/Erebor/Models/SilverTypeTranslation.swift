@@ -16,5 +16,5 @@ public enum SilverTypeTranslation: String, Encodable, Decodable {
     /// С английского на германский.
     case enToD = "En~D"
     /// Неизвестный перевод.
-    case unknown = ""
+    case unknown = "unknown"
 }

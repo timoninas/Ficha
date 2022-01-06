@@ -24,6 +24,8 @@ extension DailyWordsViewController {
         
         let languageVersion: SilverTypeTranslation
         
+        let displayedCount: Int64
+        
     }
     
 }

@@ -25,7 +25,12 @@ final class DeveloperScreenViewController: UIViewController {
     
     private var cancellable: Set<AnyCancellable> = []
     
-    private let tableView = UITableView()
+    private var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        return collectionView
+    }()
     
     private lazy var closeButton: RVImageButton = {
         let button = RVImageButton(configuration: .init()
@@ -71,21 +76,22 @@ final class DeveloperScreenViewController: UIViewController {
     }
     
     private func addTableView() {
-        tableView.backgroundColor = .clear
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.showsVerticalScrollIndicator = false
-        tableView.register(
-            SettingTableViewCell.self,
-            forCellReuseIdentifier: SettingTableViewCell.reuseID
+        collectionView.backgroundColor = .clear
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.alwaysBounceVertical = true
+        collectionView.register(
+            SettingCollectionViewCell.self,
+            forCellWithReuseIdentifier: SettingCollectionViewCell.reuseID
         )
-        view.addSubview(tableView)
+        view.addSubview(collectionView)
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            collectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            collectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
         ])
     }
     
@@ -102,33 +108,47 @@ final class DeveloperScreenViewController: UIViewController {
     
 }
 
-extension DeveloperScreenViewController: UITableViewDelegate {
+extension DeveloperScreenViewController: UICollectionViewDelegateFlowLayout {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
         let state = states[indexPath.row]
         let configuration = SettingCellView.Configuration(state: state)
-        return SettingCellView.height(configuration: configuration)
+        let height = SettingCellView.height(configuration: configuration)
+        let cellSize = CGSize(width: collectionView.frame.width, height: height)
+        return cellSize
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        .init(top: 0, left: 0, bottom: 20, right: 0)
     }
+    
 }
 
-extension DeveloperScreenViewController: UITableViewDataSource {
+extension DeveloperScreenViewController: UICollectionViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int
+    ) -> Int {
         states.count
     }
     
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let dequedCell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.reuseID)
-        guard let cell = dequedCell as? SettingTableViewCell else {
-            return UITableViewCell()
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        let dequedCell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: SettingCollectionViewCell.reuseID,
+            for: indexPath
+        )
+        guard let cell = dequedCell as? SettingCollectionViewCell else {
+            return UICollectionViewCell()
         }
         let state = states[indexPath.row]
-        cell.selectionStyle = .none
         cell.backgroundColor = .gendalf
         cell.configure(configuration: .init(state: state))
         return cell

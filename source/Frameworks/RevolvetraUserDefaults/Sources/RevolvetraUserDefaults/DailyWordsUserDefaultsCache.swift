@@ -22,13 +22,16 @@ public struct DailyWordsUserDefaults: Encodable, Decodable {
     
     public let languageVersion: String
     
+    public let displayedCount: Int64
+    
     public init(
         title: String,
         transcription: String?,
         examples: [String],
         translations: [String],
         type: String,
-        languageVersion: String
+        languageVersion: String,
+        displayedCount: Int64
     ) {
         self.title = title
         self.transcription = transcription
@@ -36,6 +39,7 @@ public struct DailyWordsUserDefaults: Encodable, Decodable {
         self.translations = translations
         self.type = type
         self.languageVersion = languageVersion
+        self.displayedCount = displayedCount
     }
     
 }

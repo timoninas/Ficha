@@ -130,13 +130,21 @@ func getGoldJob() -> BagOfGoldWords {
         .init(
             word: "Order",
             transcription: "[ˈɔːdə]",
-            examples: [],
+            examples: [
+                "BY ORDER OF THE MINISTRY OF MAGIC",
+                "You don't have to use the Ionic order, use the Doric",
+                "I believe I already gave you that order"
+            ],
             translations: ["Порядок", "Приказ", "Заказ"]
         ),
         .init(
             word: "Meeting",
             transcription: "[ˈmiːtɪŋ]",
-            examples: [],
+            examples: [
+                "I imagine the press will be meeting you both at Southampton. Are you Miss Whitney's manager?",
+                "That afternoon she canceled a board meeting and went home early",
+                "This is a closed meeting"
+            ],
             translations: ["Встреча"]
         ),
         .init(
@@ -194,25 +202,40 @@ func getGoldJob() -> BagOfGoldWords {
         .init(
             word: "Labor",
             transcription: "",
-            examples: ["manual labor", "The company used child labor"],
+            examples: [
+                "manual labor",
+                "The company used child labor"
+            ],
             translations: ["Труд"]
         ),
         .init(
             word: "Weekend",
             transcription: "[ˈwiːkˈɛnd]",
-            examples: [],
+            examples: [
+                "You'd still be covering the weekend arts bulletin if I hadn't given you your break",
+                "To everyone’s delight except Harry’s, there was to be another Hogsmeade trip on the very last weekend of the term",
+                "How dare the servants take the weekend off, Tracy thought indignantly. They should all be discharged"
+            ],
             translations: ["Уикэнд", "Выходные"]
         ),
         .init(
             word: "Attempt",
             transcription: "[əˈtɛmpt]",
-            examples: [],
+            examples: [
+                "He wondered if her current slumber was just a deception, a pathetic attempt to avoid further service to him",
+                "Can't you just be a normal boyfriend and support me as I attempt to have a normal college experience?",
+                "\"If it was an attempt at free publicity - well, what atrocious taste!\""
+            ],
             translations: ["Попытка"]
         ),
         .init(
             word: "Day off",
             transcription: "[deɪ ɒf]",
-            examples: [],
+            examples: [
+                "- where he just... when he was taking the day off?",
+                "half day off",
+                "As a matter of fact, I thought I was entitled to a day off after the good news!"
+            ],
             translations: ["Выходной день"]
         ),
         .init(

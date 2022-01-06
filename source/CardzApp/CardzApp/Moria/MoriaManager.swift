@@ -104,6 +104,36 @@ public class MoriaManager {
         
     }
     
+    public func updateWordz(
+        wordz: String,
+        translations: [String],
+        type: ArkenstoneTypeWord,
+        languageVersion: SilverTypeTranslation,
+        count: Int64
+    ) {
+        let fetchRequest: NSFetchRequest<WordzEntity> = WordzEntity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(
+            format: "wordz = %@ AND translations = %@ AND type = %@ AND languageVersion = %@",
+            argumentArray: [
+                wordz,
+                arrayToDBValue(translations),
+                type.rawValue,
+                languageVersion.rawValue
+            ]
+        )
+        
+        do {
+            let wordz = try context.fetch(fetchRequest)
+            wordz.forEach {
+                $0.displayedCount = count
+                print("Updated entity wordz: \($0)")
+            }
+            try context.save()
+        } catch {
+            print("Error with saving context")
+        }
+    }
+    
     public func getWordz(type: ArkenstoneTypeWord, typeTranslation: SilverTypeTranslation? = nil) -> [WordzModelDB] {
         let fetchRequest = NSFetchRequest<WordzEntity>(entityName: Entitites.wordz)
         let resultArray: [WordzModelDB]
@@ -125,7 +155,7 @@ public class MoriaManager {
                     translations: DBValueToArray($0.translations ?? ""),
                     type: (.init(rawValue: $0.type ?? "") ?? .unknown),
                     languageVersion: .init(rawValue: $0.languageVersion ?? "") ?? .unknown,
-                    displayedCount: Int($0.displayedCount)
+                    displayedCount: Int64($0.displayedCount)
                 )
             }
         } catch {
@@ -152,7 +182,7 @@ public class MoriaManager {
                     translations: DBValueToArray($0.translations ?? ""),
                     type: (.init(rawValue: $0.type ?? "") ?? .unknown),
                     languageVersion: .init(rawValue: $0.languageVersion ?? "") ?? .unknown,
-                    displayedCount: Int($0.displayedCount)
+                    displayedCount: Int64($0.displayedCount)
                 )
             }
         } catch {

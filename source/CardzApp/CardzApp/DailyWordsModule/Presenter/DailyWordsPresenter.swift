@@ -56,7 +56,8 @@ final class DailyWordsPresenter: DailyWordsOutput {
                         examples: word.examples,
                         translations: word.translations,
                         type: type.rawValue,
-                        languageVersion: word.languageVersion.rawValue
+                        languageVersion: word.languageVersion.rawValue,
+                        displayedCount: word.displayedCount
                     ))
                 }
             }
@@ -86,7 +87,8 @@ final class DailyWordsPresenter: DailyWordsOutput {
             subtitles: $0.examples,
             translations: $0.translations,
             type: ArkenstoneTypeWord(rawValue: $0.type) ?? .unknown,
-            languageVersion: SilverTypeTranslation(rawValue: $0.languageVersion) ?? .unknown
+            languageVersion: SilverTypeTranslation(rawValue: $0.languageVersion) ?? .unknown,
+            displayedCount: $0.displayedCount
         ) })
     }
     

@@ -85,9 +85,9 @@ final class LearnNewWordzViewController: UIViewController {
             subitems: [notCommonGroupLayout, small3ItemGroupLayout, commonGroupLayout]
         )
         
-        let kek = NSCollectionLayoutSection(group: resultGroupLayout)
-        kek.boundarySupplementaryItems = [header]
-        return kek
+        let layoutSection = NSCollectionLayoutSection(group: resultGroupLayout)
+        layoutSection.boundarySupplementaryItems = [header]
+        return layoutSection
     }()
     
     private lazy var layout: UICollectionViewCompositionalLayout = {
@@ -148,14 +148,6 @@ final class LearnNewWordzViewController: UIViewController {
     }
     
     private func configureUI() {
-//        view.addSubview(thematicView)
-//        NSLayoutConstraint.activate([
-//            thematicView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.0),
-//            thematicView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20.0),
-//            thematicView.heightAnchor.constraint(equalToConstant: 130.0),
-//            thematicView.widthAnchor.constraint(equalToConstant: 100.0),
-//        ])
-        
         collectionView.backgroundColor = .clear
         collectionView.showsVerticalScrollIndicator = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -198,11 +190,17 @@ extension LearnNewWordzViewController: LearnNewWordzInput {
 
 extension LearnNewWordzViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int
+    ) -> Int {
         viewModel.items.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
         let dequedCell = collectionView.dequeueReusableCell(withReuseIdentifier: BubbleThematicWordsCollectionViewCell.reuseID, for: indexPath)
         
         guard let cell = dequedCell as? BubbleThematicWordsCollectionViewCell else { return UICollectionViewCell() }
@@ -216,15 +214,20 @@ extension LearnNewWordzViewController: UICollectionViewDataSource, UICollectionV
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView,
+    func collectionView(
+        _ collectionView: UICollectionView,
                         viewForSupplementaryElementOfKind kind: String,
-                        at indexPath: IndexPath) -> UICollectionReusableView {
+                        at indexPath: IndexPath
+    ) -> UICollectionReusableView {
         guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: LearnNewWordzCollectionViewHeader.reuseID, for: indexPath) as? LearnNewWordzCollectionViewHeader else { return UICollectionReusableView() }
         header.configure()
         return header
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
         UIApplication.hapticSoft()
         let item = viewModel.items[indexPath.row]
         let module = ThematicWordzBuilder.build(
