@@ -65,14 +65,22 @@ func getGoldComputers() -> BagOfGoldWords {
         ),
         .init(
             word: "To browse",
-            transcription: "",
-            examples: [],
+            transcription: " [braʊz]",
+            examples: [
+                "You want to browse among my books, the pawnshop's just around the corner",
+                "I shan't even browse",
+                "Why don't you browse for a while?"
+            ],
             translations: ["Просматривать"]
         ),
         .init(
             word: "Browser",
-            transcription: "",
-            examples: [],
+            transcription: "[ˈbraʊzə]",
+            examples: [
+                "- I have a similar question about browser histories",
+                "I'll hack his browser history",
+                "We checked your browser history on your office computer"
+            ],
             translations: ["Браузер", "Окно просмотра"]
         ),
         .init(
@@ -126,7 +134,11 @@ func getGoldComputers() -> BagOfGoldWords {
         .init(
             word: "To crack",
             transcription: "",
-            examples: [],
+            examples: [
+                "As he advances, the ice starts to crack",
+                "Even now you kind of expect it to crack open, don't you?",
+                "He doesn't try to crack the nut straight away, but drops it to the ground"
+            ],
             translations: ["Взломать"]
         ),
         .init(
@@ -142,7 +154,11 @@ func getGoldComputers() -> BagOfGoldWords {
         .init(
             word: "Data",
             transcription: "",
-            examples: [],
+            examples: [
+                "\"Yes,\" the agent said. \"It looks like data has been collected for over a year now.\" Collet read the list again, speechless",
+                "So he could access our data for Tracy's address",
+                "Absorption of data most satisfactory, master"
+            ],
             translations: ["Данные", "Сведения"]
         ),
         .init(
@@ -303,6 +319,56 @@ func getGoldComputers() -> BagOfGoldWords {
                 "'You mean cases like the Bravo case, Adelaide Bartlett and all the rest of them?'"
             ],
             translations: ["Корпус с горизонтальным рабочим положением"]
+        ),
+        .init(
+            word: "Router",
+            transcription: "[ˈruːtə]",
+            examples: [
+                "And I am not gonna let it beat me like that wireless router did",
+                "You'll need to install the time router",
+                "They use a Tor network, which is an onion router"
+            ],
+            translations: ["Маршрутизатор"]
+        ),
+        .init(
+            word: "Motherboard",
+            transcription: "[ˈmʌðəbɔːd]",
+            examples: [
+                "That could've been my motherboard lying in the street!",
+                "And the specific layout of the metal prongs on its motherboard match her wounds exactly",
+                "This man, whoever he was, replaced the motherboard"
+            ],
+            translations: ["Материнская плата"]
+        ),
+        .init(
+            word: "Microprocessor",
+            transcription: "[maɪkrə(ʊ)ˈprəʊsesə]",
+            examples: [
+                "The microprocessor became redundant in the year 2019, replaced by a system called",
+                "Apparently there was frost on the loading dock at our microprocessor plant in Acton",
+                "And, you know, she could fry the microprocessor in here"
+            ],
+            translations: ["Микропроцессор"]
+        ),
+        .init(
+            word: "Modem",
+            transcription: "[ˈməʊdem]",
+            examples: [
+                "It reminds me of watching pictures download on our old dial-up modem",
+                "There's just the modem line for the computers",
+                "It's about time this paper had a modem, liberal, progressive policy!"
+            ],
+            translations: ["Модем"]
+        ),
+        .init(
+            word: "Monitor",
+            transcription: "[ˈmɒnɪtə]",
+            examples: [
+                "The technician produced a rolling stool and positioned Rachel in front of a flat-screen monitor",
+                "I was going to make you a monitor next term, but I think I'd better wait a bit",
+                "Yeah, see once my heart rate hits 120, that's the signal to transmit the image on every frequency and on every monitor within 100 feet"
+            ],
+            translations: ["Монитор"]
         ),
     ])
     
