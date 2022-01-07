@@ -85,7 +85,7 @@ func getGoldArhitecture() -> BagOfGoldWords {
             translations: ["Возводить", "Строить"]
         ),
         .init(
-            word: "exposition \nexhibition",
+            word: "Exposition \nExhibition",
             transcription: "[ˌekspəˈzɪʃən]",
             examples: [],
             translations: ["Выставка"]

@@ -68,7 +68,7 @@ final class FavouriteWordzViewController: UIViewController {
     }
     
     private func showLearnCardModule() {
-        let shuffled = self.viewModel
+        let shuffled = viewModel
             .shuffled()
             .prefix(10)
             .map { LearnWordzCardView.ViewModel(
@@ -81,7 +81,7 @@ final class FavouriteWordzViewController: UIViewController {
             displayedCount: $0.displayedCount
         )}
         let module = LearnCardBuilder.build(viewModel: shuffled)
-        self.present(module, animated: true, completion: nil)
+        present(module, animated: true, completion: nil)
     }
     
     private func showAlertResetModule() {
@@ -97,7 +97,7 @@ final class FavouriteWordzViewController: UIViewController {
         
         module.modalPresentationStyle = .fullScreen
         module.modalTransitionStyle = .crossDissolve
-        self.present(module, animated: true, completion: nil)
+        present(module, animated: true, completion: nil)
     }
     
     private func showAlertNeedMoreWords() {
@@ -110,7 +110,7 @@ final class FavouriteWordzViewController: UIViewController {
         
         module.modalPresentationStyle = .fullScreen
         module.modalTransitionStyle = .crossDissolve
-        self.present(module, animated: true, completion: nil)
+        present(module, animated: true, completion: nil)
     }
     
     private func presentAlertWith(title: String) {
@@ -246,7 +246,6 @@ extension FavouriteWordzViewController: UITableViewDataSource {
         viewModel.count
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let dequedCell = tableView.dequeueReusableCell(withIdentifier: WordsPreviewViewTableViewCell.reuseID)
         guard let cell = dequedCell as? WordsPreviewViewTableViewCell else {
@@ -256,7 +255,8 @@ extension FavouriteWordzViewController: UITableViewDataSource {
         cell.selectionStyle = .none
         cell.backgroundColor = .gendalf
         cell.configure(configuration: .init(title: data.wordz)
-                        .with(translations: data.translations))
+                        .with(translations: data.translations)
+                        .with(isDone: data.displayedCount > 2))
         return cell
     }
     
@@ -265,6 +265,7 @@ extension FavouriteWordzViewController: UITableViewDataSource {
             guard let self = self else { return }
             self.output.deleteAt(index: indexPath.row)
         }
+        action.backgroundColor = .neonRed
         return action
     }
     

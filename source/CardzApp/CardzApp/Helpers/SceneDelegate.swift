@@ -54,11 +54,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let item = UITabBarItem(title: "Developer", image: image, selectedImage: imageFilled)
             devViewController.tabBarItem = item
         }
+        let devNavigation = UINavigationController(rootViewController: devViewController)
         
         let tabBar = UITabBarController()
         var viewControllers = [todayViewController, learnViewController, favouriteViewController]
         #if DEBUG
-        viewControllers.append(devViewController)
+        viewControllers.append(devNavigation)
         #endif
         tabBar.setViewControllers(viewControllers, animated: true)
         tabBar.selectedViewController = todayViewController

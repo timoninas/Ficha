@@ -22,10 +22,8 @@ final class ThematicWordzPresenter: ThematicWordzViewOutput {
         self.typeTranslation = typeTranslation
     }
     
-    func viewDidLoad() {
-        
+    func viewWillAppear() {
         fetchData()
-        
     }
     
     private func fetchData() {

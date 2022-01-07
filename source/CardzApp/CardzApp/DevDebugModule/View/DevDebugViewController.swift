@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Rivendell
 
 final class DevDebugViewController: UIViewController {
     
@@ -17,13 +18,33 @@ final class DevDebugViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    let merger = MergerImagerView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .gendalf
+        configureUI()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .darkContent
+    }
+    
+    private func configureUI() {
+        view.backgroundColor = .gendalf
+        addMerger()
+    }
+    
+    private func addMerger() {
+        view.addSubview(merger)
+        merger.configuration = merger.configuration
+            .with(firstImageConfig: .visible(image: .doneIcon, tintColor: .mysteryShack, aspectRatio: 1.0))
+            .with(secondImageConfig: .visible(image: .circleDone, tintColor: .mysteryShack, aspectRatio: 1.0))
+        NSLayoutConstraint.activate([
+            merger.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            merger.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            merger.heightAnchor.constraint(equalToConstant: 21.0),
+            merger.widthAnchor.constraint(equalTo: merger.heightAnchor)
+        ])
     }
     
 }

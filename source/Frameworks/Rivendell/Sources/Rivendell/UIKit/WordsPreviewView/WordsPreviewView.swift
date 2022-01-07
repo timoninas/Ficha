@@ -42,6 +42,8 @@ public final class WordsPreviewView: UIView {
         return label
     }
     
+    private var isDoneImage = MergerImagerView()
+    
     private var labels: [UILabel] = []
     
     public var configuration: Configuration {
@@ -77,6 +79,7 @@ public final class WordsPreviewView: UIView {
         
         addContentView()
         addMainLabel()
+        addIsDoneImage()
         
         updateAppearance()
     }
@@ -91,6 +94,10 @@ public final class WordsPreviewView: UIView {
     
     private func addMainLabel() {
         contentView.addSubview(mainLabel)
+    }
+    
+    private func addIsDoneImage() {
+        rightContentView.addSubview(isDoneImage)
     }
     
     private func updateAppearance() {
@@ -143,11 +150,28 @@ public final class WordsPreviewView: UIView {
             previousLabel = label
         }
         
+        storedConstraints += [
+            isDoneImage.rightAnchor.constraint(equalTo: rightContentView.rightAnchor),
+            isDoneImage.centerYAnchor.constraint(equalTo: rightContentView.centerYAnchor),
+            isDoneImage.heightAnchor.constraint(equalToConstant: 21.0),
+            isDoneImage.widthAnchor.constraint(equalTo: isDoneImage.heightAnchor)
+        ]
+        
         NSLayoutConstraint.activate(storedConstraints)
     }
     
     private func updateContent() {
         mainLabel.text = configuration.title
+        
+        if configuration.isDone {
+            isDoneImage.configuration = isDoneImage.configuration
+                .with(firstImageConfig: .visible(image: .doneIcon, tintColor: .mysteryShack, aspectRatio: 1.0))
+                .with(secondImageConfig: .visible(image: .circleDone, tintColor: .mysteryShack, aspectRatio: 1.0))
+        } else {
+            isDoneImage.configuration = isDoneImage.configuration
+                .with(firstImageConfig: .visible(image: .doneIcon, tintColor: .mysteryShack, aspectRatio: 1.0))
+                .with(secondImageConfig: .notVisible)
+        }
         
         labels.forEach { label in
             if label.superview != nil {
@@ -165,8 +189,6 @@ public final class WordsPreviewView: UIView {
             self.contentView.addSubview(label)
         }
     }
-    
-    var mainLabelHeightAnchor: [NSLayoutConstraint] = []
     
     public static func height(configuration: Configuration) -> CGFloat {
         var totalHeight: CGFloat = 0.0

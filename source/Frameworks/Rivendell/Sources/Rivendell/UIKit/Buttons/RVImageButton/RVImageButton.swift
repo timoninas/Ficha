@@ -54,10 +54,10 @@ public class RVImageButton: RVControl {
     
     public func renderAsCloseButton(view: UIView) {
         NSLayoutConstraint.activate([
-            self.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.0),
-            self.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20.0),
-            self.heightAnchor.constraint(equalToConstant: 30.0),
-            self.widthAnchor.constraint(equalTo: self.heightAnchor)
+            topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.0),
+            rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20.0),
+            heightAnchor.constraint(equalToConstant: 30.0),
+            widthAnchor.constraint(equalTo: heightAnchor)
         ])
     }
     

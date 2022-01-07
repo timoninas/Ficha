@@ -15,6 +15,8 @@ extension WordsPreviewView {
         
         public private(set) var translations: [String] = []
         
+        public private(set) var isDone = false
+        
         public init(title: String) {
             self.title = title
         }
@@ -22,6 +24,12 @@ extension WordsPreviewView {
         public func with(title: String) -> Configuration {
             var mutableSelf = self
             mutableSelf.title = title
+            return mutableSelf
+        }
+        
+        public func with(isDone: Bool) -> Configuration {
+            var mutableSelf = self
+            mutableSelf.isDone = isDone
             return mutableSelf
         }
         

@@ -215,7 +215,8 @@ extension ThematicWordzViewController: UITableViewDataSource {
         cell.selectionStyle = .none
         cell.backgroundColor = .gendalf
         cell.configure(configuration: .init(title: data.wordz)
-                        .with(translations: data.translations))
+                        .with(translations: data.translations)
+                        .with(isDone: data.displayedCount > 2))
         return cell
     }
     
