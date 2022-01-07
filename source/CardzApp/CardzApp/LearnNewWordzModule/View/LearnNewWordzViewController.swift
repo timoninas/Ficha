@@ -217,8 +217,8 @@ extension LearnNewWordzViewController: UICollectionViewDataSource, UICollectionV
     
     func collectionView(
         _ collectionView: UICollectionView,
-                        viewForSupplementaryElementOfKind kind: String,
-                        at indexPath: IndexPath
+        viewForSupplementaryElementOfKind kind: String,
+        at indexPath: IndexPath
     ) -> UICollectionReusableView {
         guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: LearnNewWordzCollectionViewHeader.reuseID, for: indexPath) as? LearnNewWordzCollectionViewHeader else { return UICollectionReusableView() }
         header.configure()

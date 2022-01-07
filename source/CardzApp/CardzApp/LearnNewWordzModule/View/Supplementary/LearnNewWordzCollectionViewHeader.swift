@@ -8,7 +8,7 @@
 import UIKit
 
 final class LearnNewWordzCollectionViewHeader: UICollectionReusableView {
-
+    
     public static var reuseID: String { "\(String(describing: self))ID" }
     
     private let titleLabel: UILabel = {

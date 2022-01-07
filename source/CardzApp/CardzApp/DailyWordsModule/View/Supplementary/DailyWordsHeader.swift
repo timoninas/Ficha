@@ -56,7 +56,7 @@ final class DailyWordsHeader: UIView {
                                                 .with(isFullyRounded: true)
                                                 .with(backgroundColor: .clear)
                                                 .with(highlitedColor: .clear)
-//                                                .with(image: .settingRoundIcon)
+                                               //                                                .with(image: .settingRoundIcon)
                                                 .with(imageColor: .nazgul))
     
     private let settingsButton1: UIButton = {

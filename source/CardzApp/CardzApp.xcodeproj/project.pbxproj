@@ -272,6 +272,8 @@
 		77140789277AD76C00B7E8D2 /* OnboardingUserModule */ = {
 			isa = PBXGroup;
 			children = (
+				77140791277AD91700B7E8D2 /* OnboardingUserProtocols.swift */,
+				77140793277AD92200B7E8D2 /* OnboardingUserBuilder.swift */,
 				7714078D277AD86000B7E8D2 /* View */,
 				77140797277ADAAE00B7E8D2 /* Model */,
 			);
@@ -289,8 +291,6 @@
 		7714078D277AD86000B7E8D2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				77140791277AD91700B7E8D2 /* OnboardingUserProtocols.swift */,
-				77140793277AD92200B7E8D2 /* OnboardingUserBuilder.swift */,
 				7714078C277AD84F00B7E8D2 /* Supplementary */,
 				77140787277AD75C00B7E8D2 /* OnboardingUserViewController.swift */,
 				77140790277AD90700B7E8D2 /* Presenter */,

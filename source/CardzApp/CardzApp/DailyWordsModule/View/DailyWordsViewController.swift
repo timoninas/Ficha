@@ -85,7 +85,6 @@ final class DailyWordsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         RLogInfo(message: "[Info] \(String(describing: self)) ViewDidLoad")
         view.backgroundColor = .gendalf
         configureUI()
