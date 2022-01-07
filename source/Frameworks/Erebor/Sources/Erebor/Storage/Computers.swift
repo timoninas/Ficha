@@ -13,19 +13,27 @@ func getGoldComputers() -> BagOfGoldWords {
     ereborGoldWords.append(contentsOf: [
         .init(
             word: "Ability",
-            transcription: "",
-            examples: [],
+            transcription: "[əˈbɪlɪtɪ]",
+            examples: [
+                "He was starting to fear he had overestimated the media's ability to connect the obvious dots",
+                "My ability to protect you becomes limited once we involve the White House",
+                "But this nonsense, while annoying, in no way affects my ability to do my job"
+            ],
             translations: ["Способность", "Возможность"]
         ),
         .init(
             word: "Accurate",
-            transcription: "",
-            examples: [],
+            transcription: " [ˈækjərət]",
+            examples: [
+                "All descriptions of artwork, architecture, documents, and secret rituals in this novel are accurate",
+                "You deem report from northern efforts accurate?",
+                "If you and your psycho friends want to worship me, then you might as well have some decent pictures and accurate info"
+            ],
             translations: ["Точный"]
         ),
         .init(
             word: "To affect",
-            transcription: "",
+            transcription: "[tuː ˈæfekt]",
             examples: [
                 "Robin, your revertigo is really starting to affect your work",
                 "Your presence here has already begun to affect the entire balance of our society",
@@ -35,31 +43,47 @@ func getGoldComputers() -> BagOfGoldWords {
         ),
         .init(
             word: "Amount of data",
-            transcription: "",
-            examples: [],
-            translations: ["Объем данных"]
+            transcription: "[əˈmaʊnt ɒv ˈdeɪtə]",
+            examples: [
+                "They're downloading a massive amount of data and transmitting it",
+                "It's transmitting a tremendous amount of data",
+                "Granted, there's no shortage of huge corporations with vast amounts of data, but it's highly risky"
+            ],
+            translations: ["Объем данных", "Количество данных"]
         ),
         .init(
             word: "Approximately",
-            transcription: "",
-            examples: [],
+            transcription: "[əˈprɒksɪmɪtlɪ]",
+            examples: [
+                "This morning at approximately 4 a.m. the Hetman shamefully abandoned us all to our fate and ran away!",
+                "He spoke not exactly so, perhaps; but in any case, approximately in that manner",
+                "Ten minutes and four flares later, Rachel and the others were approximately 250 yards from the habisphere"
+            ],
             translations: ["Приблизительно"]
         ),
         .init(
             word: "To attain",
-            transcription: "",
-            examples: [],
+            transcription: " [əˈteɪn]",
+            examples: [
+                "But through these five years of death-in-life I managed to attain freedom such as few men have ever known",
+                "Murdering others to feed my desire for closure that I haven't been able to attain?",
+                "He felt that if ever he wished to attain Berenice he must persuade Aileen to divorce him"
+            ],
             translations: ["Достигать"]
         ),
         .init(
             word: "Available",
-            transcription: "",
-            examples: [],
+            transcription: "[əˈveɪləbl]",
+            examples: [
+                "There were a half-dozen available candidates, any one of whom would have rejoiced to step into his shoes",
+                "Shortly after we had been caged the amphitheater began to fill and within an hour every available part of the seating space was occupied",
+                "make (someone or something) available to (one)"
+            ],
             translations: ["Доступный"]
         ),
         .init(
             word: "Broadband connection",
-            transcription: "",
+            transcription: "[ˈbrɔːdbænd kəˈnekʃn]",
             examples: [],
             translations: ["Выделенное подключение"]
         ),

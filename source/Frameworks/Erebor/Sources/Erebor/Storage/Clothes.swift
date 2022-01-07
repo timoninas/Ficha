@@ -211,26 +211,42 @@ func getGoldClothes() -> BagOfGoldWords {
         ),
         .init(
             word: "Cocktail dress",
-            transcription: "",
-            examples: [],
+            transcription: "[ˈkɒkteɪl dres]",
+            examples: [
+                "Where is the red cocktail dress?",
+                "I'll bust you out of there... just as soon as I get a cocktail dress and a crowbar",
+                "Why haven't you picked up my cocktail dress for Chuck's party yet?"
+            ],
             translations: ["Вечернее платье"]
         ),
         .init(
             word: "Fancy dress",
-            transcription: "",
-            examples: [],
+            transcription: " [ˈfænsɪ dres]  ",
+            examples: [
+                "Then I cleaned the make-up off my face that I had put on for the fancy dress",
+                "Are you practising your appearance for the fancy dress ball?",
+                "Hands up for the Manderley fancy dress ball"
+            ],
             translations: ["Маскарадный костюм"]
         ),
         .init(
             word: "Backless dress",
             transcription: "",
-            examples: [],
+            examples: [
+                "A thin black woman was seated in a chair in a corner of the room sewing on a dress",
+                "And this, despite her masculine dress, is Tribeswoman Venabili",
+                "She never conformed in dress or conduct"
+            ],
             translations: ["Платье с вырезом на спине"]
         ),
         .init(
             word: "Beaded dress",
             transcription: "",
-            examples: [],
+            examples: [
+                "She trotted down the hall, running her fingers through the beaded curtains",
+                "He lowered it and drew his hunting-knife from its beaded sheath at his hip",
+                "The little girl watched me, holding the bread against her dirty dress"
+            ],
             translations: ["Платье, украшенное бисером"]
         ),
     ])
