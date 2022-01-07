@@ -122,7 +122,11 @@ func getGoldSerials() -> BagOfGoldWords {
         .init(
             word: "Caption",
             transcription: "",
-            examples: [],
+            examples: [
+                "The caption under the drawing announced that the construction of the project was to begin at once",
+                "Benefiting from his lessons aboard the Scriabin, the Grossmeister artistically drew four knights and the appropriate caption on a sheet of cardboard",
+                "Not once have I used the real captions to Family Circus"
+            ],
             translations: ["Титр"]
         ),
         .init(

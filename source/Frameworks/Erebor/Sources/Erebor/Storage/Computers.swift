@@ -26,7 +26,11 @@ func getGoldComputers() -> BagOfGoldWords {
         .init(
             word: "To affect",
             transcription: "",
-            examples: [],
+            examples: [
+                "Robin, your revertigo is really starting to affect your work",
+                "Your presence here has already begun to affect the entire balance of our society",
+                "He was about to make a decision that was going to affect him, us, and his client, and I just pointed that out to him"
+            ],
             translations: ["Воздействовать"]
         ),
         .init(
@@ -74,7 +78,11 @@ func getGoldComputers() -> BagOfGoldWords {
         .init(
             word: "To carry out",
             transcription: "",
-            examples: [],
+            examples: [
+                "His job was to carry out her orders",
+                "I advise you to persuade your friend not to carry out this pointless plan",
+                "You need to carry out a small investigation, discreet but thorough"
+            ],
             translations: ["Выполнять"]
         ),
         .init(
@@ -207,8 +215,11 @@ func getGoldComputers() -> BagOfGoldWords {
         ),
         .init(
             word: "Sound card",
-            transcription: "",
-            examples: [],
+            transcription: "[saʊnd kɑːd]",
+            examples: [
+                "- Sounds like a card",
+                "Yeah, that does sound like card counting"
+            ],
             translations: ["Звуковая карта "]
         ),
         .init(
@@ -224,7 +235,11 @@ func getGoldComputers() -> BagOfGoldWords {
         .init(
             word: "Computer mouse",
             transcription: "",
-            examples: [],
+            examples: [
+                "Uh, a computer mouse or a live mouse?",
+                "You should put a computer mouse instead of a wheel in your car",
+                "The gun and the computer mouse are very similar"
+            ],
             translations: ["Компьютерная мышь"]
         ),
         .init(
@@ -242,6 +257,52 @@ func getGoldComputers() -> BagOfGoldWords {
                 "And I will do everything in my power to find her"
             ],
             translations: ["Индикатор питания "]
+        ),
+        .init(
+            word: "Computer program",
+            transcription: "[kəmˈpjuːtə ˈprəʊgræm]",
+            examples: [
+                "I'm not talking to some computer program",
+                "I will prepare a computer program that will limit their actions",
+                "How can a computer program be inside a human brain?"
+            ],
+            translations: ["Компьютерная программа"]
+        ),
+        .init(
+            word: "Interrupt controller",
+            transcription: " [ɪntəˈrʌpt kənˈtrəʊlə]",
+            examples: [],
+            translations: ["Контроллер прерываний"]
+        ),
+        .init(
+            word: "Drive controller",
+            transcription: "[draɪv kənˈtrəʊlə]",
+            examples: [
+                "We need you to finish the neutron controller",
+                "But the Controller would know",
+                "The Controller die?"
+            ],
+            translations: ["Контроллер привода"]
+        ),
+        .init(
+            word: "Cache memory",
+            transcription: "[kæʃ ˈmemərɪ]",
+            examples: [
+                "The defendant's Snipcam cache was always in the discovery, Your Honor",
+                "But I had my little cache",
+                "Part of a cache we found in a culvert near where we took those prisoners"
+            ],
+            translations: ["Кэш", "Сверхоперативная память"]
+        ),
+        .init(
+            word: "Desktop case",
+            transcription: "",
+            examples: [
+                "I also saw a file on her desktop labelled Charlotte DiLaurentis",
+                "- Playing desktop cornhole",
+                "'You mean cases like the Bravo case, Adelaide Bartlett and all the rest of them?'"
+            ],
+            translations: ["Корпус с горизонтальным рабочим положением"]
         ),
     ])
     

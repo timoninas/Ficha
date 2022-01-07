@@ -44,7 +44,11 @@ func getGoldJob() -> BagOfGoldWords {
         .init(
             word: "Service",
             transcription: "[ˈsɜːvɪs]",
-            examples: [],
+            examples: [
+                "A service truck, Inspector",
+                "- At least long enough for me to get it to the nearest service station"
+                "She never could understand why I could not steal phone service as easily as we liberated power",
+            ],
             translations: ["Услуга", "Обслуживание"]
         ),
         .init(

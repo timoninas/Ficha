@@ -111,7 +111,11 @@ func getGoldArhitecture() -> BagOfGoldWords {
         .init(
             word: "Urban core",
             transcription: "[ˈɜːbən kɔː]",
-            examples: [],
+            examples: [
+                "\"Anyhow, he gives large parties,\" said Jordan, changing the subject with an urban distaste for the concrete",
+                "Above us lay the glow of the galaxy-the fierce blue-whiteness of the central core, with the filmy mistiness of the arms spiraling out from it",
+                "That's an urban legend"
+            ],
             translations: ["Городской центр", "Городское ядро"]
         ),
         .init(

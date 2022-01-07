@@ -71,4 +71,12 @@ public extension UIImage {
     
     static let bulbLight = UIImage(named: "bulbLight")
     
+    static let devIcon = UIImage(named: "devIcon")
+    
+    static let devIconFilled = UIImage(named: "devIconFilled")
+    
+    static let circleDone = UIImage(named: "circleDone")
+    
+    static let doneIcon = UIImage(named: "doneIcon")
+    
 }

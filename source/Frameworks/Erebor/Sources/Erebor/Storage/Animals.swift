@@ -284,7 +284,11 @@ func getGoldAnimals() -> BagOfGoldWords {
         .init(
             word: "Dolphin",
             transcription: "['dɔlfin]",
-            examples: [],
+            examples: [
+                "Having lost track of the Dolphin helicopter that was supposed to be in the area, they feared an accident",
+                "I take back everything I said to you that night in the dolphin lab",
+                "A school of dolphin five hundred strong"
+            ],
             translations: ["Дельфин"]
         ),
         .init(
