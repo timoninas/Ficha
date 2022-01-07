@@ -1019,7 +1019,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 22.1.1;
+				MARKETING_VERSION = 22.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = Revolvetra.Inc.Ficha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
@@ -1043,7 +1043,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 22.1.1;
+				MARKETING_VERSION = 22.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = Revolvetra.Inc.Ficha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
