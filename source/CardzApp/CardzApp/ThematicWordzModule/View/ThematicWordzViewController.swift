@@ -101,6 +101,7 @@ final class ThematicWordzViewController: UIViewController {
         RLogInfo(message: "[Info] \(String(describing: self)) ViewDidLoad")
         configureUI()
         output.viewDidLoad()
+        print("viewDidLoad \(String(describing: self))")
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -90,6 +90,7 @@ final class DailyWordsViewController: UIViewController {
         view.backgroundColor = .gendalf
         configureUI()
         output.viewDidLoad()
+        print("viewDidLoad \(String(describing: self))")
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -128,6 +128,7 @@ final class FavouriteWordzViewController: UIViewController {
         RLogInfo(message: "[Info] \(String(describing: self)) ViewDidLoad")
         configureUI()
         output.viewDidLoad()
+        print("viewDidLoad \(String(describing: self))")
         
         MoriaManager.shared.deleteWordz(with: "Arse / Ass", translations: ["Backside"], type: .favourite)
     }

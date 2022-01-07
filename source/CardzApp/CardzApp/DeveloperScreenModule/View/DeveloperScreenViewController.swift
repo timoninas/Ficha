@@ -63,6 +63,7 @@ final class DeveloperScreenViewController: UIViewController {
         view.backgroundColor = .gendalf
         configureUI()
         output?.viewDidLoad()
+        print("viewDidLoad \(String(describing: self))")
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

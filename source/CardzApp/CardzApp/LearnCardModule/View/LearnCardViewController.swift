@@ -96,6 +96,7 @@ final class LearnCardViewController: UIViewController {
         view.backgroundColor = .gendalf
         configureUI()
         output?.viewDidLoad()
+        print("viewDidLoad \(String(describing: self))")
     }
     
     override func viewDidAppear(_ animated: Bool) {
