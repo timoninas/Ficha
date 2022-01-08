@@ -221,6 +221,22 @@ extension ThematicWordzViewController: UITableViewDataSource {
         return cell
     }
     
+    private func makeFavouriteContextualAction(forRowAt indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .normal, title: "Add to favorites") { [weak self] (action, swipeButtonView, completion) in
+            guard let self = self else { return }
+            self.output.addFavourite(at: indexPath.row)
+            self.tableView.reloadRows(at: [indexPath], with: .fade)
+        }
+        action.backgroundColor = .moonlight
+        return action
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        UISwipeActionsConfiguration(actions: [
+            self.makeFavouriteContextualAction(forRowAt: indexPath)
+        ])
+    }
+    
 }
 
 extension ThematicWordzViewController: ThematicWordzViewInput {

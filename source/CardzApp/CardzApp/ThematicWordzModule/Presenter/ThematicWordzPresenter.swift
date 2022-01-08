@@ -17,6 +17,8 @@ final class ThematicWordzPresenter: ThematicWordzViewOutput {
     private var typeWord: ArkenstoneTypeWord
     private var typeTranslation: SilverTypeTranslation
     
+    private var dbModels: [WordzModelDB] = []
+    
     init(typeWord: ArkenstoneTypeWord, typeTranslation: SilverTypeTranslation) {
         self.typeWord = typeWord
         self.typeTranslation = typeTranslation
@@ -26,8 +28,22 @@ final class ThematicWordzPresenter: ThematicWordzViewOutput {
         fetchData()
     }
     
+    func addFavourite(at index: Int) {
+        guard index > 0 && index < dbModels.count else { return }
+        let model = dbModels[index]
+        MoriaManager.shared.addWordz(
+            wordz: model.wordz,
+            transcription: model.transcription,
+            examples: model.examples,
+            translations: model.translations,
+            type: .favourite,
+            languageVersion: .unknown
+        )
+    }
+    
     private func fetchData() {
         let array = MoriaManager.shared.getWordz(type: typeWord, typeTranslation: typeTranslation)
+        dbModels = array
         let previewViewModel = array.map {
             PreviewViewModel(
                 wordz: $0.wordz,

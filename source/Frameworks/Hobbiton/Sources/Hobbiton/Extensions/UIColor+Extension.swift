@@ -53,4 +53,6 @@ public extension UIColor {
     
     static let neonRed = UIColor(red: 224/255, green: 0/255, blue: 46/255, alpha: 1)
     
+    static let neonYellow = UIColor(red: 207/255, green: 255/255, blue: 4/255, alpha: 1)
+    
 }
