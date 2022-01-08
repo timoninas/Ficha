@@ -82,7 +82,11 @@ func getGoldEmotions() -> BagOfGoldWords {
         .init(
             word: "Enjoyment",
             transcription: "",
-            examples: [],
+            examples: [
+                "Putting the bread and butter on a log between them, he sank his white teeth into the meat with evident enjoyment",
+                "Not only would she not touch it herself, but she resisted its enjoyment by anyone else",
+                "With her, actual enjoyment is not necessary to my happiness"
+            ],
             translations: ["Наслаждение", "Удовольствие"]
         ),
         .init(

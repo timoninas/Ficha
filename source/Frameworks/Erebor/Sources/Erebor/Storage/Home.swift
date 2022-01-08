@@ -229,6 +229,76 @@ func getGoldHome() -> BagOfGoldWords {
                        "Did you see my brother when you were the Starks' guest?"],
             translations: ["Гость"]
         ),
+        .init(
+            word: "Fridge",
+            transcription: "[frɪʤ]",
+            examples: [
+                "Our new fridge?",
+                "Fridge full of ketchup?",
+                "I returned my yogurt fridge"
+            ],
+            translations: ["Холодильник"]
+        ),
+        .init(
+            word: "Freezer",
+            transcription: "[ˈfriːzə]",
+            examples: [
+                "The rock could have been blasted by a slush-hydrogen engine and then rapidly cooled in a cryogenic freezer",
+                "There's no knowing what kind of evil might be lurking in the freezer chests...",
+                "- Then stay out of my freezer"
+            ],
+            translations: ["Морозильная камера"]
+        ),
+        .init(
+            word: "Cooker",
+            transcription: "[ˈkʊkə]",
+            examples: [
+                "Whoever it was could have gone on to the Lamberts' boat, loosened the gas tube to the cooker",
+                "I've thrown the cooker away. Cos that's what they've done",
+                "I even ordered the pressure cooker from Turkmenistan"
+            ],
+            translations: ["Плита", "Печь"]
+        ),
+        .init(
+            word: "Oven",
+            transcription: "[ʌvn]",
+            examples: [
+                "The rocket lay on the launching field, blowing out pink clouds of fire and oven heat",
+                "Or a cider mill in the grinding, or bread fresh from the oven?",
+                "My little girl was singing a song about a pie that would rather burn in the oven than land in the stomach of a fat nobleman"
+            ],
+            translations: ["Духовка", "Духовой шкаф"]
+        ),
+        .init(
+            word: "Hob",
+            transcription: "[hɒb]",
+            examples: [
+                "The hob is from the '30s",
+                "I burnt my fingers on the hob this morning",
+                "We catch 'em in a crossfire and send 'em down to see Old Hob"
+            ],
+            translations: ["Поверхность в печи или камине для разогревания или выпечки"]
+        ),
+        .init(
+            word: "Sink",
+            transcription: "[sɪŋk]",
+            examples: [
+                "Climbing back down Gabrielle picked up the cuff links and put them back on the sink",
+                "Oh, just some baby formula being stored under a sink with a dripping faucet",
+                "The potatoes is all ready peeled, dear, you'll find them by the sink"
+            ],
+            translations: ["Раковина"]
+        ),
+        .init(
+            word: "Work surface",
+            transcription: "[wɜːk ˈsɜːfɪs]",
+            examples: [
+                "They used them as thresholds, work surfaces, flagstones",
+                "Uh, Mr. Palmer, let's get our corporal to a more suitable work surface",
+                "She's sitting on your work surface"
+            ],
+            translations: ["Рабочая поверхность", "Столешница"]
+        ),
     ])
     
     let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .home, typeTranslation: .enToRu)

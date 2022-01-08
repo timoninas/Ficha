@@ -20,7 +20,11 @@ func getGoldJob() -> BagOfGoldWords {
         .init(
             word: "Company",
             transcription: "[ˈkʌmpəni]",
-            examples: [],
+            examples: [
+                "Many covert glances came our way and only Edwina, who sat with us, seemed at ease in our company",
+                "Six months ago Romano got in touch with your mother and said he wanted to buy the company",
+                "Between you and me there's going to be a big new gas company in the field"
+            ],
             translations: ["Компания"]
         ),
         .init(
@@ -32,7 +36,11 @@ func getGoldJob() -> BagOfGoldWords {
         .init(
             word: "Money",
             transcription: "[ˈmʌni]",
-            examples: [],
+            examples: [
+                "Mrs. Elsing hated to take his money--\"speculator money\"--but the Association needed money badly",
+                "I've got no ambition at all. The only thing I want to do after the war is marry some girl who's got more money than I have and shack up with lots more pretty girls",
+                "We want you badly and we think that this amount of money expresses that desire"
+            ],
             translations: ["Деньги"]
         ),
         .init(
@@ -54,13 +62,21 @@ func getGoldJob() -> BagOfGoldWords {
         .init(
             word: "Office",
             transcription: "[ˈɒfɪs]",
-            examples: [],
+            examples: [
+                "The entire area was dark except for an office on the far side of the lab, where a light shone under the door",
+                "In the outer office, the three girls were preparing to leave",
+                "I understand that the United States Patent Office has granted a patent on this?"
+            ],
             translations: ["Офис"]
         ),
         .init(
             word: "Policy",
             transcription: "[ˈpɒlɪsi]",
-            examples: [],
+            examples: [
+                "That doesn't mean we have to abandon good policy",
+                "\"Only an insurance policy will make your life completely worry-free,\" replied Ostap without slowing down",
+                "China has received more United Nations Awards for it's policies - and form of governance than any other nation"
+            ],
             translations: ["Политика"]
         ),
         .init(
@@ -76,19 +92,31 @@ func getGoldJob() -> BagOfGoldWords {
         .init(
             word: "Control",
             transcription: "[kənˈtrəʊl]",
-            examples: [],
+            examples: [
+                "He was almost to the control panel",
+                "- They wanna kick her out to get out of rent control, and now that we've missed the deadline, there's nothing we can do about it",
+                "She must have escaped from under control, Nikon Semyonitch went on, dropping his voice, and glancing significantly at Varvara Petrovna"
+            ],
             translations: ["Контроль"]
         ),
         .init(
             word: "Report",
             transcription: "[rɪˈpɔːt]",
-            examples: [],
+            examples: [
+                "We just issued our annual report for the meat-packing company, fellas. Our profits are up forty percent",
+                "Mr. Garrett, you must turn in a full report, mustn't you?",
+                "Glick groaned. He could hear the news anchor already. \"Thanks Gunther, great report\""
+            ],
             translations: ["Отчет", "Доклад"]
         ),
         .init(
             word: "Site",
             transcription: "[saɪt]",
-            examples: [],
+            examples: [
+                "The site for your book",
+                "Hodgins found bronze particulates at the site",
+                "Probably why the device was stored off- site for safe-keeping"
+            ],
             translations: ["Объект"]
         ),
         .init(

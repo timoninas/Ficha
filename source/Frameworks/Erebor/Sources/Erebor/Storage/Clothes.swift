@@ -30,8 +30,12 @@ func getGoldClothes() -> BagOfGoldWords {
         ),
         .init(
             word: "Polo shirt",
-            transcription: "",
-            examples: [],
+            transcription: "[ˈpəʊləʊ ʃɜːt]",
+            examples: [
+                "Come on, you are gonna look so sweet in a polo shirt and a pair of chinos",
+                "He only fits into American polo shirts",
+                "When Dad was around, she wore polo shirts and cooked meat"
+            ],
             translations: ["Рубашка поло"]
         ),
         .init(
@@ -74,7 +78,7 @@ func getGoldClothes() -> BagOfGoldWords {
         ),
         .init(
             word: "Breast pocket",
-            transcription: "",
+            transcription: "[brest ˈpɒkɪt]",
             examples: [],
             translations: ["Нагрудный карман"]
         ),
