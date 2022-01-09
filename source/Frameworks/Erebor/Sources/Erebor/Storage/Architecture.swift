@@ -16,7 +16,8 @@ func getGoldArhitecture() -> BagOfGoldWords {
             transcription: "[æps]",
             examples: [
                 "I was taken up the apse",
-                "Well, at the time, you know, it... it seemed like the apse"],
+                "Well, at the time, you know, it... it seemed like the apse"
+            ],
             translations: ["Апсида", "Абсида"]
         ),
         .init(

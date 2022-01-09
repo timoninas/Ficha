@@ -39,25 +39,42 @@ func getGoldHome() -> BagOfGoldWords {
         .init(
             word: "Balcony",
             transcription: "[ˈbælkənɪ]",
-            examples: [],
+            examples: [
+                "It was a broad square slab that hung off the glacier like a colossal balcony, surrounded on three sides by precipices to the ocean",
+                "She was holding her hands on the rail of the balcony and shaking back and forth",
+                "Nearby, a set of double doors stood open, beyond them a balcony"
+            ],
             translations: ["Балкон"]
         ),
         .init(
             word: "Barn",
             transcription: "[bɑːn]",
-            examples: [],
+            examples: [
+                "It would make him long to weep, but he never wept anymore; not since that night in the barn after the police had brought him home",
+                "A year ago you set me up to be killed. At the barn",
+                "He put on his shirt and left the barn",
+                
+            ],
             translations: ["Сарай", "Фмбар"]
         ),
         .init(
             word: "Basement",
             transcription: "[ˈbeɪsmənt]",
-            examples: [],
+            examples: [
+                "The air inside was bitter, like a basement in winter",
+                "They caught me making out with a girl in the basement and all hell broke loose",
+                "Next morning they rang through from the basement to say that Mr Fennell was on the telephone"
+            ],
             translations: ["Подвал", "Цокольный этаж", "Фундамент"]
         ),
         .init(
             word: "Bath",
             transcription: "[bɑːθ]",
-            examples: [],
+            examples: [
+                "He got up and went to his bath and I began putting things methodically in my suitcase",
+                "But if you're going to turn this into a blood bath, you can forget about me",
+                "The toilet flushed, the bath had fresh water; more modern amenities than either Drogheda or Himmelhoch, Meggie thought in amusement"
+            ],
             translations: ["Ванна", "Баня", "Купание"]
         ),
         .init(
@@ -119,25 +136,41 @@ func getGoldHome() -> BagOfGoldWords {
         .init(
             word: "Chair",
             transcription: "[tʃeər]",
-            examples: [],
+            examples: [
+                "'I'll fight you all!' Dobbs screamed back at them, and stood up on a rickety wooden chair, waving the gun wildly",
+                "Feeling slightly unreal, I led him to the chair farthest from Atticus and Mr. Tate",
+                "Oh, you know, chairing the hospital gala, voter-registration drive, the usual 100 Miles an hour"
+            ],
             translations: ["Стул", "Кресло", "Кафедра"]
         ),
         .init(
             word: "Chimney",
             transcription: "[ˈtʃɪmnɪ]",
-            examples: [],
+            examples: [
+                "He added the proper chemicals and carried the tray to a small chimney behind him",
+                "I could just see the stone chimney of the cottage through a gap in the dark trees",
+                "The place might have been deserted, save for the smoke he saw rising from the kitchen chimney"
+            ],
             translations: ["Дымоход", "Камин"]
         ),
         .init(
             word: "Cottage",
             transcription: "[kaʊtʃ]",
-            examples: [],
+            examples: [
+                "They all lived in a charming cottage, and there were lovely grounds around the prison farm",
+                "They stood in silence while he ran into the cottage; returning in a moment with a crumpled scrap of paper",
+                "Tracy looked around. It was a fairly large cottage, neat and attractively furnished"
+            ],
             translations: ["Диван", "Кушетка"]
         ),
         .init(
             word: "Cup",
             transcription: "[kʌp]",
-            examples: [],
+            examples: [
+                "Alice Jardine was having a cup of tea when Jamie walked into the kitchen",
+                "Half an hour. later, Mr. Aaa, seated in his library sipping a bit of electric fire from a metal cup, heard the voices outside in the stone causeway",
+                "A single drop in a cup of wine suffices to soothe ragged nerves"
+            ],
             translations: ["Чашка", "Кубок"]
         ),
         .init(

@@ -119,8 +119,12 @@ func getGoldClothes() -> BagOfGoldWords {
         ),
         .init(
             word: "Leather jacket",
-            transcription: "",
-            examples: [],
+            transcription: " [ˈleðə ˈʤækɪt]",
+            examples: [
+                "She studied Nevada for a moment, her eyes taking in his worn leather jacket, the faded Levi's, the wide-brimmed cowboy hat",
+                "Kilgrave wanted a leather jacket, live cello music, and the flattering smile of a pretty girl",
+                "So, 96 bucks for your leather jacket"
+            ],
             translations: ["Кожаная куртка"]
         ),
         .init(
@@ -142,13 +146,21 @@ func getGoldClothes() -> BagOfGoldWords {
         .init(
             word: "Flak jacket",
             transcription: "",
-            examples: [],
+            examples: [
+                "I don't care if you wear a bikini, or overalls, or a flak jacket, really",
+                "There is no flak jacket, no defensive-driving maneuver, no undercover persona that can protect you when using human intelligence",
+                "Lab just found some tiny traces of blood on her flak jacket, on the collar"
+            ],
             translations: ["Бронежилет"]
         ),
         .init(
             word: "Life jacket",
             transcription: "",
-            examples: [],
+            examples: [
+                "You need a goddamn life jacket no matter how fast you paddle",
+                "Do you know if he was wearing a life jacket?",
+                "I was so turned on, we were gonna need a canoe and life jackets"
+            ],
             translations: ["Спасательный жилет"]
         ),
         .init(
@@ -164,15 +176,21 @@ func getGoldClothes() -> BagOfGoldWords {
         .init(
             word: "Miniskirt",
             transcription: "[skɜːt]",
-            examples: ["Angela fetched her needle book and mended her skirt without any more fuss",
-                       "We skirt a small wood and then have the front-line immediately before us",
-                       "He skirted it, following the woods, and came to the road and looked in both directions"],
+            examples: [
+                "Angela fetched her needle book and mended her skirt without any more fuss",
+                "We skirt a small wood and then have the front-line immediately before us",
+                "He skirted it, following the woods, and came to the road and looked in both directions"
+            ],
             translations: ["Мини-юбка"]
         ),
         .init(
             word: "Knee-length skirt",
             transcription: "",
-            examples: [],
+            examples: [
+                "She was sitting on the floor brushing at her skirt, looking down at Sefelt",
+                "I'm seeing pigtails, frilly skirt",
+                "Poor little skirt"
+            ],
             translations: ["Юбка до колена"]
         ),
         .init(
@@ -194,15 +212,21 @@ func getGoldClothes() -> BagOfGoldWords {
         .init(
             word: "Pleated skirt",
             transcription: "[ˈpliːtɪd skɜːt]",
-            examples: ["We understand Han has a weakness for pleated white skirts and over-developed thighs",
-                       "It's a regular short pleated skirt with stripes on it",
-                       "I hate pleated skirts"],
+            examples: [
+                "We understand Han has a weakness for pleated white skirts and over-developed thighs",
+                "It's a regular short pleated skirt with stripes on it",
+                "I hate pleated skirts"
+            ],
             translations: ["Плиссированная юбка"]
         ),
         .init(
             word: "Wrap-around skirt",
             transcription: "",
-            examples: [],
+            examples: [
+                "As her skirt slid up, he eyed her legs appreciatively",
+                "Angela fetched her needle book and mended her skirt without any more fuss",
+                "I picked up a torn skirt which she had left lying on the floor and took it down with me for her to mend after breakfast"
+            ],
             translations: ["Юбка с запахом"]
         ),
         .init(
@@ -252,6 +276,76 @@ func getGoldClothes() -> BagOfGoldWords {
                 "The little girl watched me, holding the bread against her dirty dress"
             ],
             translations: ["Платье, украшенное бисером"]
+        ),
+        .init(
+            word: "Low-cut dress",
+            transcription: "",
+            examples: [
+                "Like he wouldn't do the same thing if Elaine walked by in a low- cut dress",
+                "Now all you need is a low- cut dress cinched at the waist, and you'll be all set",
+                "Oh, and Paralegally Blonde isn't here in her low- cut dress to make me jealous?"
+            ],
+            translations: ["Платье с глубоким вырезом"]
+        ),
+        .init(
+            word: "Flowery dress",
+            transcription: "",
+            examples: [
+                "I'm in a flowery dress, my hair's shoulder-length",
+                "In my flowery dress I ask him to quiz me after school",
+                "She was wearing a flowery dress"
+            ],
+            translations: ["Платье с цветным принятом"]
+        ),
+        .init(
+            word: "Glittery dress",
+            transcription: "",
+            examples: [
+                "A thin black woman was seated in a chair in a corner of the room sewing on a dress",
+                "And this, despite her masculine dress, is Tribeswoman Venabili",
+                "She never conformed in dress or conduct"
+            ],
+            translations: ["Блестящее платье"]
+        ),
+        .init(
+            word: "Sleeveless dress",
+            transcription: "",
+            examples: [
+                "\"They turned me out of one place today because I had on a sleeveless dress,\" she said ruefully",
+                "They turned me out because I have on a sleeveless dress",
+                "I mean, my political window just slams shut the second I can't wear sleeveless dresses"
+            ],
+            translations: ["Платье без рукавов"]
+        ),
+        .init(
+            word: "V-necked dress",
+            transcription: "",
+            examples: [
+                "A thin black woman was seated in a chair in a corner of the room sewing on a dress",
+                "And this, despite her masculine dress, is Tribeswoman Venabili",
+                "She never conformed in dress or conduct"
+            ],
+            translations: ["Платье c V-образным вырезом"]
+        ),
+        .init(
+            word: "Round-necked dress",
+            transcription: "",
+            examples: [
+                "It reconstructs the purple from the rag, and the woman from the scrap of her dress",
+                "One must be very rich to dress as badly as you do",
+                "He reached across the table to take Justine's hand; she was looking, he thought, more beautiful with maturity, in spite of that ghastly dress"
+            ],
+            translations: ["Платье с круглым вырезом"]
+        ),
+        .init(
+            word: "Evening gown",
+            transcription: "[ˈiːvnɪŋ gaʊn]",
+            examples: [
+                "\"Come in, Frank!\" called Aileen. \"I'm just trying on an evening gown\"",
+                "Bring Darius to the mansion right now and I will ditch the evening gowns",
+                "Her complexion was glowing, and her bare arms and shoulders shone white against the dark red of her evening gown"
+            ],
+            translations: ["Вечернее (бальное) платье"]
         ),
     ])
     

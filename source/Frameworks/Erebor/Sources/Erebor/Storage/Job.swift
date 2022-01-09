@@ -132,31 +132,51 @@ func getGoldJob() -> BagOfGoldWords {
         .init(
             word: "Effort",
             transcription: "[ˈefət]",
-            examples: [],
+            examples: [
+                "Cleon looked up and, with an obvious effort, managed to smile",
+                "Now if you strive and make a great effort, some day you'll rise to the level of that play!",
+                "Then, the body would make a final effort to conserve its remaining heat by shutting down all operations except the heart and respiration"
+            ],
             translations: ["Усилие", "Труд"]
         ),
         .init(
             word: "Action",
             transcription: "[ækʃn]",
-            examples: [],
+            examples: [
+                "He watched as she left. The minute she was gone, George went into action",
+                "And \"force\" is action of one body on another applied by means of energy",
+                "He did not see the time was not ripe for vigorous action"
+            ],
             translations: ["Действие"]
         ),
         .init(
             word: "Activity",
             transcription: "[ækˈtɪvɪtɪ]",
-            examples: [],
+            examples: [
+                "The fifth monster was taking no part in this activity",
+                "Yeah, a bunch of strange activity from the company's server caught the attention of the S.E.C.",
+                "It's a laborious activity because I have to imagine what you need, whereas you know what you need"
+            ],
             translations: ["Деятельность"]
         ),
         .init(
             word: "Practice",
             transcription: "[ˈpræktɪs]",
-            examples: [],
-            translations: ["Практика"]
+            examples: [
+                "- And practice, practice, practice",
+                "I was doing well enough but was young and had had practice in how to visit Terra and stay alive",
+                "Not some farming practice that's hidden away in the sonnets?"
+            ],
+            translations: ["Практика", "Деятельность"]
         ),
         .init(
             word: "Skill",
             transcription: "[skɪl]",
-            examples: [],
+            examples: [
+                "This was the least difficult job of all and the one classically requiring no skill",
+                "Your feeble skills are no match for the power of the dark side",
+                "Philip felt a little inclined to pat himself on the back for his skill in managing the business"
+            ],
             translations: ["Умение", "Навык"]
         ),
         .init(
