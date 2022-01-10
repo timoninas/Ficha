@@ -277,6 +277,68 @@ func getGoldSerials() -> BagOfGoldWords {
                        "I was aware that Mr. Wopsle had not succeeded in reviving the Drama, but, on the contrary, had rather partaken of its decline"],
             translations: ["Драма"]
         ),
+        .init(
+            word: "Drive-in-theatre",
+            transcription: "",
+            examples: [
+                "By 1994, we'll have drive- in theaters on Neptune!",
+                "- It's a drive- in movie theatre",
+                "Kind of like a drive- in movie theater, only without the cars"
+            ],
+            translations: ["Кинотеатр, куда можно въехать на автомобиле"]
+        ),
+        .init(
+            word: "Dubbed film",
+            transcription: "",
+            examples: [
+                "We a have a whole movie to dub in 4 days, and you came with your son",
+                "Their modus operandi matches that of a highly successful team of thieves that the Interpol has dubbed \"The Hole In The Wall\" gang for obvious reasons",
+                "Let's dub this one \"kaputnik\"",
+            ],
+            translations: ["Дублированый фильм"]
+        ),
+        .init(
+            word: "Dubbed in Russian",
+            transcription: "",
+            examples: [],
+            translations: ["Дублированый на русский язык"]
+        ),
+        .init(
+            word: "Educational film",
+            transcription: "",
+            examples: [],
+            translations: ["Общеобразовательный фильм"]
+        ),
+        .init(
+            word: "Episode",
+            transcription: "[ˈepɪsəʊd]",
+            examples: [
+                "But nothing and no one reminded her of the episode of the monkey",
+                "Every episode of his life was resurrected to serve as foundations for malicious fabrications",
+                "Or was the whole fantastic episode merely the figment of a diseased imagination, his own, of a deteriorating mind, a rotting brain?"
+            ],
+            translations: ["Эпизод", "Серия"]
+        ),
+        .init(
+            word: "Fade out",
+            transcription: "[feɪd aʊt]",
+            examples: [
+                "So I slept, hoping the sounds of the passing eras would fade out and a sort of death might happen",
+                "Gradually the wrath faded out of the old King's face, and he said",
+                "If she were happy with Lennox, I'd sit right back and fade out of the picture"
+            ],
+            translations: ["Исчезать постепенно"]
+        ),
+        .init(
+            word: "Feature film",
+            transcription: "[ˈfiːʧə fɪlm]",
+            examples: [
+                "This was supposed to be a regular feature film, but since we didn't have the money we had to use a much simpler technique",
+                "What he presents in his feature film is fiction, a fictitious underground world",
+                "I am pleased to present tonight's feature film, Eraserhead"
+            ],
+            translations: ["Художественный фильм", "Полнометражный фильм", "Игровое кино"]
+        ),
     ])
     
     let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .serials, typeTranslation: .enToRu)

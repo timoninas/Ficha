@@ -36,7 +36,9 @@ final class ThematicWordzViewController: UIViewController {
             guard let self = self else { return }
             guard button.alpha != 0.0 else { return }
             UIApplication.hapticLight()
-            if self.viewModel.prefix(Constants.maxCountWordz).count < Constants.maxCountWordz {
+            if self.viewModel.prefix(Constants.maxCountWordz)
+                .filter({ $0.displayedCount <= 2 })
+                .count < Constants.maxCountWordz {
                 self.showAlertResetModule()
             } else {
                 self.showLearnCardModule()
@@ -68,10 +70,14 @@ final class ThematicWordzViewController: UIViewController {
                                                     .init(title: "Want to reset your progress?",
                                                           secondTitle: "Congratulations, you have learned all the words from this category",
                                                           actions: [.init(title: "Nope", onSwipeClosure: {
-            print("not resetting static")
+            print("[LOG] Not resetting static")
         }),
-                                                                    .init(title: "Yep", onSwipeClosure: {
-            print("resetting static")
+                                                                    .init(title: "Yep", onSwipeClosure: { [weak self] in
+            guard let self = self else { return }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
+                guard let self = self else { return }
+                self.output.resetWordsStat()
+            }
         })]))
         
         module.modalPresentationStyle = .fullScreen
@@ -224,6 +230,7 @@ extension ThematicWordzViewController: UITableViewDataSource {
     private func makeFavouriteContextualAction(forRowAt indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: "Add to favorites") { [weak self] (action, swipeButtonView, completion) in
             guard let self = self else { return }
+            UIApplication.hapticLight()
             self.output.addFavourite(at: indexPath.row)
             self.tableView.reloadRows(at: [indexPath], with: .fade)
         }

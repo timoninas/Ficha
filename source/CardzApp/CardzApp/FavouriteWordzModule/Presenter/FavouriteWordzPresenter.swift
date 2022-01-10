@@ -27,17 +27,6 @@ final class FavouriteWordzPresenter: FavouriteWordzViewOutput {
         }
     }
     
-    func deleteAt(index: Int) {
-        guard index >= 0 && index < viewModels.count else { return }
-        let word = viewModels[index]
-        MoriaManager.shared.deleteWordz(
-            with: word.wordz,
-            translations: word.translations,
-            type: word.type
-        )
-        fetchData()
-    }
-    
     private func fetchData() {
         let array = MoriaManager.shared.getWordz(type: Constants.arkenstone).map {
             FavouriteWordzViewController.ViewModel(
@@ -51,6 +40,28 @@ final class FavouriteWordzPresenter: FavouriteWordzViewOutput {
         guard viewModels != array else { return }
         viewModels = array
         view?.changeState(state: .normal(model: viewModels))
+    }
+    
+    // MARK: - FavouriteWordzViewOutput
+    
+    func deleteAt(index: Int) {
+        guard index >= 0 && index < viewModels.count else { return }
+        let word = viewModels[index]
+        MoriaManager.shared.deleteWordz(
+            with: word.wordz,
+            translations: word.translations,
+            type: word.type
+        )
+        fetchData()
+    }
+    
+    func resetWordsStat() {
+        MoriaManager.shared.updateWordz(
+            type: .favourite,
+            languageVersion: .unknown,
+            count: 0
+        )
+        fetchData()
     }
     
 }

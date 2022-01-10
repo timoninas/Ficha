@@ -134,6 +134,32 @@ public class MoriaManager {
         }
     }
     
+    public func updateWordz(
+        type: ArkenstoneTypeWord,
+        languageVersion: SilverTypeTranslation,
+        count: Int64
+    ) {
+        let fetchRequest: NSFetchRequest<WordzEntity> = WordzEntity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(
+            format: "type = %@ AND languageVersion = %@",
+            argumentArray: [
+                type.rawValue,
+                languageVersion.rawValue
+            ]
+        )
+        
+        do {
+            let wordz = try context.fetch(fetchRequest)
+            wordz.forEach {
+                $0.displayedCount = count
+                print("Updated entity wordz: \($0)")
+            }
+            try context.save()
+        } catch {
+            print("Error with saving context")
+        }
+    }
+    
     public func getWordz(type: ArkenstoneTypeWord, typeTranslation: SilverTypeTranslation? = nil) -> [WordzModelDB] {
         let fetchRequest = NSFetchRequest<WordzEntity>(entityName: Entitites.wordz)
         let resultArray: [WordzModelDB]

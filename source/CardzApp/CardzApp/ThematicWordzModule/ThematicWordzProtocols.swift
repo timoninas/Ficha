@@ -23,4 +23,7 @@ protocol ThematicWordzViewOutput: LifeCycleProtocol, AnyObject {
     ///   - index: Индекс выбранного слова.
     func addFavourite(at index: Int)
     
+    /// Reset stats for choosen type words.
+    func resetWordsStat()
+    
 }

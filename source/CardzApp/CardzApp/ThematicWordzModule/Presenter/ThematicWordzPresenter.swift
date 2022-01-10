@@ -28,19 +28,6 @@ final class ThematicWordzPresenter: ThematicWordzViewOutput {
         fetchData()
     }
     
-    func addFavourite(at index: Int) {
-        guard index > 0 && index < dbModels.count else { return }
-        let model = dbModels[index]
-        MoriaManager.shared.addWordz(
-            wordz: model.wordz,
-            transcription: model.transcription,
-            examples: model.examples,
-            translations: model.translations,
-            type: .favourite,
-            languageVersion: .unknown
-        )
-    }
-    
     private func fetchData() {
         let array = MoriaManager.shared.getWordz(type: typeWord, typeTranslation: typeTranslation)
         dbModels = array
@@ -56,6 +43,30 @@ final class ThematicWordzPresenter: ThematicWordzViewOutput {
             )
         }
         view?.changeState(state: .normal(model: .init(title: typeWord.rawValue, wordsPreview: previewViewModel) ))
+    }
+    
+    // MARK: - ThematicWordzViewOutput
+    
+    func addFavourite(at index: Int) {
+        guard index > 0 && index < dbModels.count else { return }
+        let model = dbModels[index]
+        MoriaManager.shared.addWordz(
+            wordz: model.wordz,
+            transcription: model.transcription,
+            examples: model.examples,
+            translations: model.translations,
+            type: .favourite,
+            languageVersion: .unknown
+        )
+    }
+    
+    func resetWordsStat() {
+        MoriaManager.shared.updateWordz(
+            type: typeWord,
+            languageVersion: typeTranslation,
+            count: 0
+        )
+        fetchData()
     }
     
 }

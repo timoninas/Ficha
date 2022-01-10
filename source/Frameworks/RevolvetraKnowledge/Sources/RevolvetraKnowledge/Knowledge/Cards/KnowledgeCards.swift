@@ -18,7 +18,7 @@ public protocol KnowledgeCardsProtocol {
 
 public class KnowledgeCards: KnowledgeCardsProtocol {
     
-    @UserDefault(key: CardsKey.minCountCardToLearn, defaultValue: 10)
+    @UserDefault(key: CardsKey.minCountCardToLearn, defaultValue: 5)
     public static var minCountCardToLearn
     
     @UserDefault(key: CardsKey.dailyWords, defaultValue: [DailyWordsUserDefaults]())

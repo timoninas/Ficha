@@ -49,10 +49,12 @@ final class FavouriteWordzViewController: UIViewController {
             guard let self = self else { return }
             guard button.alpha != 0.0 else { return }
             UIApplication.hapticLight()
-            if false && self.viewModel.prefix(Constants.maxCountWordz).count < Constants.maxCountWordz {
-                self.showAlertResetModule()
-            } else if self.viewModel.prefix(Constants.maxCountWordz).count < 5 {
+            if self.viewModel.prefix(Constants.maxCountWordz).count < 5 {
                 self.showAlertNeedMoreWords()
+            } else if self.viewModel.prefix(Constants.maxCountWordz)
+                        .filter({ $0.displayedCount <= 2 })
+                        .count < Constants.maxCountWordz {
+                self.showAlertResetModule()
             } else {
                 self.showLearnCardModule()
             }
@@ -89,10 +91,15 @@ final class FavouriteWordzViewController: UIViewController {
                                                     .init(title: "Want to reset your progress?",
                                                           secondTitle: "Congratulations, you have learned all the words from this category",
                                                           actions: [.init(title: "Nope", onSwipeClosure: {
-            print("not resetting static")
+            print("[LOG] Not resetting static")
         }),
-                                                                    .init(title: "Yep", onSwipeClosure: {
-            print("resetting static")
+                                                                    .init(title: "Yep", onSwipeClosure: { [weak self] in
+            guard let self = self else { return }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
+                guard let self = self else { return }
+                self.output.resetWordsStat()
+            }
+            
         })]))
         
         module.modalPresentationStyle = .fullScreen
@@ -105,7 +112,7 @@ final class FavouriteWordzViewController: UIViewController {
                                                     .init(title: "Add more words to your favorite category",
                                                           secondTitle: "You need at least 5 words in the favourite category",
                                                           actions: [.init(title: "Ok", onSwipeClosure: {
-            print("not resetting static")
+            print("[LOG] Ok, need more words")
         })]))
         
         module.modalPresentationStyle = .fullScreen
@@ -264,6 +271,7 @@ extension FavouriteWordzViewController: UITableViewDataSource {
     private func makeDeleteContextualAction(forRowAt indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .destructive, title: "Delete") { [weak self] (action, swipeButtonView, completion) in
             guard let self = self else { return }
+            UIApplication.hapticLight()
             self.output.deleteAt(index: indexPath.row)
         }
         action.backgroundColor = .neonRed

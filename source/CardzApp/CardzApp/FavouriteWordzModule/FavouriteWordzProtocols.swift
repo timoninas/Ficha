@@ -12,5 +12,12 @@ protocol FavouriteWordzViewInput: AnyObject {
 }
 
 protocol FavouriteWordzViewOutput: LifeCycleProtocol, AnyObject {
+    
+    /// Delete wordz at index
+    /// - Parameters:
+    ///   - index: Index.
     func deleteAt(index: Int)
+    
+    /// Reset stats for choosen type words.
+    func resetWordsStat()
 }
