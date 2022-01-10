@@ -51,9 +51,11 @@ final class FavouriteWordzViewController: UIViewController {
             UIApplication.hapticLight()
             if self.viewModel.prefix(Constants.maxCountWordz).count < 5 {
                 self.showAlertNeedMoreWords()
-            } else if self.viewModel.prefix(Constants.maxCountWordz)
+            } else if self.viewModel
                         .filter({ $0.displayedCount <= 2 })
                         .count < Constants.maxCountWordz {
+                print(self.viewModel.prefix(Constants.maxCountWordz)
+                        .filter({ $0.displayedCount <= 2 }).count)
                 self.showAlertResetModule()
             } else {
                 self.showLearnCardModule()
@@ -71,6 +73,7 @@ final class FavouriteWordzViewController: UIViewController {
     
     private func showLearnCardModule() {
         let shuffled = viewModel
+            .filter({ $0.displayedCount <= 2 })
             .shuffled()
             .prefix(10)
             .map { LearnWordzCardView.ViewModel(

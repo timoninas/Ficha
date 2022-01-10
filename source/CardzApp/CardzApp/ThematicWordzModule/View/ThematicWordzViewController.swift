@@ -36,7 +36,7 @@ final class ThematicWordzViewController: UIViewController {
             guard let self = self else { return }
             guard button.alpha != 0.0 else { return }
             UIApplication.hapticLight()
-            if self.viewModel.prefix(Constants.maxCountWordz)
+            if self.viewModel
                 .filter({ $0.displayedCount <= 2 })
                 .count < Constants.maxCountWordz {
                 self.showAlertResetModule()
@@ -50,6 +50,7 @@ final class ThematicWordzViewController: UIViewController {
     
     private func showLearnCardModule() {
         let shuffled = self.viewModel
+            .filter({ $0.displayedCount <= 2 })
             .shuffled()
             .prefix(10)
             .map { LearnWordzCardView.ViewModel(
