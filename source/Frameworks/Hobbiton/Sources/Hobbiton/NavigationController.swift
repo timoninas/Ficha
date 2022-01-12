@@ -17,4 +17,5 @@ public class NavigationController : UINavigationController {
         
         return .darkContent
     }
+    
 }

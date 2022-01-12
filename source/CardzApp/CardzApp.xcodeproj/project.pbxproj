@@ -28,6 +28,7 @@
 		772041AE277EDC1C00141FCA /* DaysChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772041AD277EDC1B00141FCA /* DaysChecker.swift */; };
 		7720F601275FDA7800BC5973 /* ViewSimpleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720F600275FDA7800BC5973 /* ViewSimpleState.swift */; };
 		77232ACA275D2C2B00529DE0 /* RevoletraUserDefaultsKeys in Frameworks */ = {isa = PBXBuildFile; productRef = 77232AC9275D2C2B00529DE0 /* RevoletraUserDefaultsKeys */; };
+		7746E4F8278E983E001AEE45 /* AppConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7746E4F7278E983E001AEE45 /* AppConfigurator.swift */; };
 		7748E9322757F4B10063E592 /* FavouriteWordzViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7748E9312757F4B00063E592 /* FavouriteWordzViewController.swift */; };
 		7748E9362757F4D60063E592 /* FavouriteWordzPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7748E9352757F4D60063E592 /* FavouriteWordzPresenter.swift */; };
 		7748E9392757F4EE0063E592 /* FavouriteWordzBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7748E9382757F4EE0063E592 /* FavouriteWordzBuilder.swift */; };
@@ -117,6 +118,7 @@
 		7720F600275FDA7800BC5973 /* ViewSimpleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSimpleState.swift; sourceTree = "<group>"; };
 		77232AC6275D2C1A00529DE0 /* RevoletraUserDefaultsKeys */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RevoletraUserDefaultsKeys; path = ../Frameworks/RevoletraUserDefaultsKeys; sourceTree = "<group>"; };
 		77342624278196CC00E95A8E /* CardzApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CardzApp.entitlements; sourceTree = "<group>"; };
+		7746E4F7278E983E001AEE45 /* AppConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurator.swift; sourceTree = "<group>"; };
 		7748E9312757F4B00063E592 /* FavouriteWordzViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteWordzViewController.swift; sourceTree = "<group>"; };
 		7748E9352757F4D60063E592 /* FavouriteWordzPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteWordzPresenter.swift; sourceTree = "<group>"; };
 		7748E9382757F4EE0063E592 /* FavouriteWordzBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteWordzBuilder.swift; sourceTree = "<group>"; };
@@ -624,6 +626,7 @@
 				D4F00D902718C3FB0079A860 /* AppDelegate.swift */,
 				D4F00D912718C3FB0079A860 /* SceneDelegate.swift */,
 				77A3CA3A2775A77000A0EA9C /* TODO.swift */,
+				7746E4F7278E983E001AEE45 /* AppConfigurator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -811,6 +814,7 @@
 				772041AC277DF01600141FCA /* WordzModelDB.swift in Sources */,
 				77140788277AD75C00B7E8D2 /* OnboardingUserViewController.swift in Sources */,
 				770B3FED2769BA4500DC7887 /* LearnNewWordzInterface.swift in Sources */,
+				7746E4F8278E983E001AEE45 /* AppConfigurator.swift in Sources */,
 				776EFC37274107C7001010FD /* AlertCardViewController.swift in Sources */,
 				77A178DF27352A0E005E520C /* Logger.swift in Sources */,
 				7714078B277AD84A00B7E8D2 /* OnboardingUserViewController+ViewModel.swift in Sources */,
