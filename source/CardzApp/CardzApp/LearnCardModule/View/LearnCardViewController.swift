@@ -16,19 +16,43 @@ final class LearnCardViewController: UIViewController {
                                                         .with(titleConfig: .visible(title: "To\nfavorites", color: .olivie))
                                                         .with(align: .left)
                                                         .with(imageConfig: .visible(image: .starUnfilledIcon, color: .moonlight))
-                                                        .with(imageMultiplier: 1.0))
+                                                        .with(imageMultiplier: 1.0)
+                                                        .with(onTap: { [weak self] _ in
+        guard let self = self else { return }
+        if let card = self.cards.last {
+            card.swipeTo(.top)
+        } else {
+            self.resultCard.swipeTo(.top)
+        }
+    }))
     
     private lazy var leftButton = RVAlignImageButton(configuration: .init()
                                                         .with(titleConfig: .visible(title: "I don't \nknow", color: .olivie))
                                                         .with(align: .top)
                                                         .with(imageConfig: .visible(image: .leftArrowIcon, color: .bloods))
-                                                        .with(imageMultiplier: 1.0))
+                                                        .with(imageMultiplier: 1.0)
+                                                        .with(onTap: { [weak self] _ in
+        guard let self = self else { return }
+        if let card = self.cards.last {
+            card.swipeTo(.left)
+        } else {
+            self.resultCard.swipeTo(.left)
+        }
+    }))
     
     private lazy var rightButton = RVAlignImageButton(configuration: .init()
                                                         .with(titleConfig: .visible(title: "I know", color: .olivie))
                                                         .with(align: .top)
                                                         .with(imageConfig: .visible(image: .rightArrowIcon, color: .goblin))
-                                                        .with(imageMultiplier: 1.0))
+                                                        .with(imageMultiplier: 1.0)
+                                                        .with(onTap: { [weak self] _ in
+        guard let self = self else { return }
+        if let card = self.cards.last {
+            card.swipeTo(.right)
+        } else {
+            self.resultCard.swipeTo(.right)
+        }
+    }))
     
     private lazy var closeButton = RVImageButton(configuration: .init()
                                                     .with(image: .closeIcon)
