@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class RVAlignImageButton: RVControl {
+public class RVAlignImageButton: BaseControl {
     
     // MARK: - Private properties
     

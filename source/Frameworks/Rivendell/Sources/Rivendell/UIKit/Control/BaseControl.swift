@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class RVControl: UIControl {
+public class BaseControl: UIControl {
     
     open var isHighlightedState = false
     

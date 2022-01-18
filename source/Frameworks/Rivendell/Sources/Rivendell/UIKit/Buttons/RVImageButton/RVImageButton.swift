@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class RVImageButton: RVControl {
+public class RVImageButton: BaseControl {
     
     // MARK: - Private properties
     

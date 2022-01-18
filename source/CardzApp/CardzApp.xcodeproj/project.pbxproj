@@ -36,6 +36,12 @@
 		7748E93D2757F5460063E592 /* AlertCardViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7748E93C2757F5460063E592 /* AlertCardViewController+ViewModel.swift */; };
 		7748E9402757F5B80063E592 /* FavouriteWordzViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7748E93F2757F5B80063E592 /* FavouriteWordzViewController+ViewModel.swift */; };
 		775A18C7271C284E00A295C0 /* DailyWordsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775A18C6271C284E00A295C0 /* DailyWordsHeader.swift */; };
+		775E28622797534C00A147A3 /* FichaSmallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E285C279752B500A147A3 /* FichaSmallView.swift */; };
+		775E28632797534F00A147A3 /* FichaWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E28602797532000A147A3 /* FichaWidgetEntryView.swift */; };
+		775E28652797536B00A147A3 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E28642797536B00A147A3 /* Provider.swift */; };
+		775E28672797538B00A147A3 /* SimpleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E28662797538B00A147A3 /* SimpleEntry.swift */; };
+		775E28692798784D00A147A3 /* WordShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E28682798784D00A147A3 /* WordShot.swift */; };
+		775E286D2798911F00A147A3 /* RevolvetraUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = 775E286C2798911F00A147A3 /* RevolvetraUserDefaults */; };
 		776E4926272C90E7000D0B2D /* LearnCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E4925272C90E7000D0B2D /* LearnCardViewController.swift */; };
 		776E4929272C9103000D0B2D /* LearnCardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E4928272C9103000D0B2D /* LearnCardPresenter.swift */; };
 		776E492D272C91B3000D0B2D /* LearnCardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E492C272C91B3000D0B2D /* LearnCardProtocol.swift */; };
@@ -44,6 +50,11 @@
 		776EFC3B27410804001010FD /* AlertCardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776EFC3A27410804001010FD /* AlertCardPresenter.swift */; };
 		776EFC3E27410824001010FD /* AlertCardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776EFC3D27410824001010FD /* AlertCardProtocol.swift */; };
 		776EFC4027410870001010FD /* AlertCardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776EFC3F27410870001010FD /* AlertCardBuilder.swift */; };
+		7781F47527920D7A00612B1A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7781F47427920D7A00612B1A /* WidgetKit.framework */; };
+		7781F47727920D7A00612B1A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7781F47627920D7A00612B1A /* SwiftUI.framework */; };
+		7781F47A27920D7A00612B1A /* MainFichaWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7781F47927920D7A00612B1A /* MainFichaWidget.swift */; };
+		7781F47C27920D7D00612B1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7781F47B27920D7D00612B1A /* Assets.xcassets */; };
+		7781F48027920D7D00612B1A /* Ficha-WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7781F47327920D7A00612B1A /* Ficha-WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		77895BF927306ABC00A852BF /* Hobbiton in Frameworks */ = {isa = PBXBuildFile; productRef = 77895BF827306ABC00A852BF /* Hobbiton */; };
 		77A178DD273526FE005E520C /* EyeOfSauron in Frameworks */ = {isa = PBXBuildFile; productRef = 77A178DC273526FE005E520C /* EyeOfSauron */; };
 		77A178DF27352A0E005E520C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A178DE27352A0E005E520C /* Logger.swift */; };
@@ -79,6 +90,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7781F47E27920D7D00612B1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4F00D452718C3840079A860 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7781F47227920D7A00612B1A;
+			remoteInfo = "Ficha-WidgetExtension";
+		};
 		D4F00D672718C3860079A860 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D4F00D452718C3840079A860 /* Project object */;
@@ -94,6 +112,20 @@
 			remoteInfo = CardzApp;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7781F48127920D7D00612B1A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7781F48027920D7D00612B1A /* Ficha-WidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7702F1DD2729F483006176FE /* Rivendell */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Rivendell; path = ../Frameworks/Rivendell; sourceTree = "<group>"; };
@@ -126,6 +158,11 @@
 		7748E93C2757F5460063E592 /* AlertCardViewController+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertCardViewController+ViewModel.swift"; sourceTree = "<group>"; };
 		7748E93F2757F5B80063E592 /* FavouriteWordzViewController+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavouriteWordzViewController+ViewModel.swift"; sourceTree = "<group>"; };
 		775A18C6271C284E00A295C0 /* DailyWordsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWordsHeader.swift; sourceTree = "<group>"; };
+		775E285C279752B500A147A3 /* FichaSmallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaSmallView.swift; sourceTree = "<group>"; };
+		775E28602797532000A147A3 /* FichaWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaWidgetEntryView.swift; sourceTree = "<group>"; };
+		775E28642797536B00A147A3 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		775E28662797538B00A147A3 /* SimpleEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleEntry.swift; sourceTree = "<group>"; };
+		775E28682798784D00A147A3 /* WordShot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordShot.swift; sourceTree = "<group>"; };
 		776C7A6227711A8E000C2E97 /* Erebor */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Erebor; path = ../Frameworks/Erebor; sourceTree = "<group>"; };
 		776E4925272C90E7000D0B2D /* LearnCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCardViewController.swift; sourceTree = "<group>"; };
 		776E4928272C9103000D0B2D /* LearnCardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCardPresenter.swift; sourceTree = "<group>"; };
@@ -135,6 +172,13 @@
 		776EFC3A27410804001010FD /* AlertCardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCardPresenter.swift; sourceTree = "<group>"; };
 		776EFC3D27410824001010FD /* AlertCardProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCardProtocol.swift; sourceTree = "<group>"; };
 		776EFC3F27410870001010FD /* AlertCardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCardBuilder.swift; sourceTree = "<group>"; };
+		7781F47327920D7A00612B1A /* Ficha-WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Ficha-WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7781F47427920D7A00612B1A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		7781F47627920D7A00612B1A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		7781F47927920D7A00612B1A /* MainFichaWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFichaWidget.swift; sourceTree = "<group>"; };
+		7781F47B27920D7D00612B1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7781F47D27920D7D00612B1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7781F48527920DA000612B1A /* Ficha-WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Ficha-WidgetExtension.entitlements"; sourceTree = "<group>"; };
 		77A178DB273526F4005E520C /* EyeOfSauron */ = {isa = PBXFileReference; lastKnownFileType = folder; name = EyeOfSauron; path = ../Frameworks/EyeOfSauron; sourceTree = "<group>"; };
 		77A178DE27352A0E005E520C /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		77A3CA272772F93E00A0EA9C /* ThematicWordzViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThematicWordzViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +220,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7781F47027920D7A00612B1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7781F47727920D7A00612B1A /* SwiftUI.framework in Frameworks */,
+				7781F47527920D7A00612B1A /* WidgetKit.framework in Frameworks */,
+				775E286D2798911F00A147A3 /* RevolvetraUserDefaults in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4F00D4A2718C3840079A860 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -370,6 +424,22 @@
 			path = "Supplementary ";
 			sourceTree = "<group>";
 		};
+		775E285E279752B800A147A3 /* SupportedFamilies */ = {
+			isa = PBXGroup;
+			children = (
+				775E285F279752C900A147A3 /* Small */,
+				775E285C279752B500A147A3 /* FichaSmallView.swift */,
+			);
+			path = SupportedFamilies;
+			sourceTree = "<group>";
+		};
+		775E285F279752C900A147A3 /* Small */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Small;
+			sourceTree = "<group>";
+		};
 		776E4927272C90F3000D0B2D /* LearnCardModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -423,6 +493,21 @@
 				776EFC3A27410804001010FD /* AlertCardPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		7781F47827920D7A00612B1A /* Ficha-Widget */ = {
+			isa = PBXGroup;
+			children = (
+				775E28662797538B00A147A3 /* SimpleEntry.swift */,
+				775E28642797536B00A147A3 /* Provider.swift */,
+				7781F47927920D7A00612B1A /* MainFichaWidget.swift */,
+				775E28602797532000A147A3 /* FichaWidgetEntryView.swift */,
+				775E28682798784D00A147A3 /* WordShot.swift */,
+				775E285E279752B800A147A3 /* SupportedFamilies */,
+				7781F47B27920D7D00612B1A /* Assets.xcassets */,
+				7781F47D27920D7D00612B1A /* Info.plist */,
+			);
+			path = "Ficha-Widget";
 			sourceTree = "<group>";
 		};
 		77A178E027352A12005E520C /* Logger */ = {
@@ -495,6 +580,8 @@
 		77C962282729F1E600100FC3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7781F47427920D7A00612B1A /* WidgetKit.framework */,
+				7781F47627920D7A00612B1A /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -529,10 +616,12 @@
 		D4F00D442718C3840079A860 = {
 			isa = PBXGroup;
 			children = (
+				7781F48527920DA000612B1A /* Ficha-WidgetExtension.entitlements */,
 				77C962262729F1CC00100FC3 /* Packages */,
 				D4F00D4F2718C3840079A860 /* CardzApp */,
 				D4F00D692718C3860079A860 /* CardzAppTests */,
 				D4F00D742718C3860079A860 /* CardzAppUITests */,
+				7781F47827920D7A00612B1A /* Ficha-Widget */,
 				D4F00D4E2718C3840079A860 /* Products */,
 				77C962282729F1E600100FC3 /* Frameworks */,
 			);
@@ -544,6 +633,7 @@
 				D4F00D4D2718C3840079A860 /* CardzApp.app */,
 				D4F00D662718C3860079A860 /* CardzAppTests.xctest */,
 				D4F00D712718C3860079A860 /* CardzAppUITests.xctest */,
+				7781F47327920D7A00612B1A /* Ficha-WidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -653,6 +743,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7781F47227920D7A00612B1A /* Ficha-WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7781F48427920D7D00612B1A /* Build configuration list for PBXNativeTarget "Ficha-WidgetExtension" */;
+			buildPhases = (
+				7781F46F27920D7A00612B1A /* Sources */,
+				7781F47027920D7A00612B1A /* Frameworks */,
+				7781F47127920D7A00612B1A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ficha-WidgetExtension";
+			packageProductDependencies = (
+				775E286C2798911F00A147A3 /* RevolvetraUserDefaults */,
+			);
+			productName = "Ficha-WidgetExtension";
+			productReference = 7781F47327920D7A00612B1A /* Ficha-WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		D4F00D4C2718C3840079A860 /* CardzApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4F00D7A2718C3860079A860 /* Build configuration list for PBXNativeTarget "CardzApp" */;
@@ -660,10 +770,12 @@
 				D4F00D492718C3840079A860 /* Sources */,
 				D4F00D4A2718C3840079A860 /* Frameworks */,
 				D4F00D4B2718C3840079A860 /* Resources */,
+				7781F48127920D7D00612B1A /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7781F47F27920D7D00612B1A /* PBXTargetDependency */,
 			);
 			name = CardzApp;
 			packageProductDependencies = (
@@ -721,9 +833,12 @@
 		D4F00D452718C3840079A860 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					7781F47227920D7A00612B1A = {
+						CreatedOnToolsVersion = 13.1;
+					};
 					D4F00D4C2718C3840079A860 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
@@ -753,11 +868,20 @@
 				D4F00D4C2718C3840079A860 /* CardzApp */,
 				D4F00D652718C3860079A860 /* CardzAppTests */,
 				D4F00D702718C3860079A860 /* CardzAppUITests */,
+				7781F47227920D7A00612B1A /* Ficha-WidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7781F47127920D7A00612B1A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7781F47C27920D7D00612B1A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4F00D4B2718C3840079A860 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -784,6 +908,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7781F46F27920D7A00612B1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				775E28652797536B00A147A3 /* Provider.swift in Sources */,
+				775E28622797534C00A147A3 /* FichaSmallView.swift in Sources */,
+				7781F47A27920D7A00612B1A /* MainFichaWidget.swift in Sources */,
+				775E28672797538B00A147A3 /* SimpleEntry.swift in Sources */,
+				775E28632797534F00A147A3 /* FichaWidgetEntryView.swift in Sources */,
+				775E28692798784D00A147A3 /* WordShot.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4F00D492718C3840079A860 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -868,6 +1005,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7781F47F27920D7D00612B1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7781F47227920D7A00612B1A /* Ficha-WidgetExtension */;
+			targetProxy = 7781F47E27920D7D00612B1A /* PBXContainerItemProxy */;
+		};
 		D4F00D682718C3860079A860 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D4F00D4C2718C3840079A860 /* CardzApp */;
@@ -892,6 +1034,66 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7781F48227920D7D00612B1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_ENTITLEMENTS = "Ficha-WidgetExtension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X92LK22555;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Ficha-Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Ficha - Daily Words";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 22.1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "Revolvetra.Inc.Ficha.Ficha-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7781F48327920D7D00612B1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_ENTITLEMENTS = "Ficha-WidgetExtension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X92LK22555;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Ficha-Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Ficha - Daily Words";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 22.1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "Revolvetra.Inc.Ficha.Ficha-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		D4F00D782718C3860079A860 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1011,6 +1213,7 @@
 		D4F00D7B2718C3860079A860 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
@@ -1023,7 +1226,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 22.1.2;
+				MARKETING_VERSION = 22.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = Revolvetra.Inc.Ficha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
@@ -1035,6 +1238,7 @@
 		D4F00D7C2718C3860079A860 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
@@ -1047,7 +1251,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 22.1.2;
+				MARKETING_VERSION = 22.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = Revolvetra.Inc.Ficha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
@@ -1139,6 +1343,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7781F48427920D7D00612B1A /* Build configuration list for PBXNativeTarget "Ficha-WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7781F48227920D7D00612B1A /* Debug */,
+				7781F48327920D7D00612B1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D4F00D482718C3840079A860 /* Build configuration list for PBXProject "CardzApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1185,6 +1398,10 @@
 		77232AC9275D2C2B00529DE0 /* RevoletraUserDefaultsKeys */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RevoletraUserDefaultsKeys;
+		};
+		775E286C2798911F00A147A3 /* RevolvetraUserDefaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RevolvetraUserDefaults;
 		};
 		77895BF827306ABC00A852BF /* Hobbiton */ = {
 			isa = XCSwiftPackageProductDependency;
