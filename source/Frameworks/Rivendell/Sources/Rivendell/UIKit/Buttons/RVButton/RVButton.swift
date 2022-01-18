@@ -7,7 +7,7 @@
 
 import UIKit
 
-public final class RVButton: RVControl {
+public final class RVButton: BaseControl {
     
     private var storedConstraints = [NSLayoutConstraint]()
     private var containerView: UIView = {
@@ -175,4 +175,5 @@ public final class RVButton: RVControl {
             self.containerView.backgroundColor = isHighlighted ? self.configuration.highlitedColor: self.configuration.backgroundColor
         }
     }
+    
 }
