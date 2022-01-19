@@ -29,20 +29,20 @@ struct FichaSmallView : View {
             
             VStack {
                 Text(shot.wordz)
-                    .font(.system(size: 30, weight: .heavy, design: .rounded))
+                    .font(.system(size: 29, weight: .heavy, design: .rounded))
                     .multilineTextAlignment(.center)
-                    .lineLimit(3)
+                    .lineLimit(self.shot.titleLineCount)
                     .padding(EdgeInsets(top: 0.0, leading: 2.0, bottom: 0.0, trailing: 2.0))
                     .foregroundColor(.white)
                 Text(shot.translate)
-                    .font(.system(size: 18, weight: .medium, design: .rounded))
+                    .font(.system(size: 17, weight: .medium, design: .rounded))
                     .multilineTextAlignment(.center)
-                    .lineLimit(1)
+                    .lineLimit(self.shot.subtitleLineCount)
                     .padding(EdgeInsets(top: 0.0, leading: 2.0, bottom: 0.0, trailing: 2.0))
                     .foregroundColor(.white)
             }
             
-            if self.shot.wordz.count < 17 {
+            if self.shot.canShowLogo {
                 HStack {
                     VStack {
                         Image("ficha-logo")
