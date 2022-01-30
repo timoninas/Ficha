@@ -22,7 +22,7 @@ final class AppConfigurator {
         func buildModule() -> UIViewController {
             switch self {
             case .daily:
-                let todayViewController = DailyWordsBuilder.build()
+                let todayViewController = goJourney(.dailyWords)
                 if let todayIconData = UIImage.todayIcon?.pngData(),
                    let todayIconFilledData = UIImage.todayIconFilled?.pngData() {
                     let image = UIImage(data: todayIconData, scale: 13.0)
@@ -32,7 +32,7 @@ final class AppConfigurator {
                 }
                 return todayViewController
             case .learn:
-                let learnViewController = LearnNewWordzBuilder.build()
+                let learnViewController = goJourney(.learnNewWordz)
                 if let graduateIconData = UIImage.graduateIcon?.pngData() ,
                    let graduateIconFilledData = UIImage.graduateIconFilled?.pngData() {
                     let image = UIImage(data: graduateIconData, scale: 13.0)
@@ -42,7 +42,7 @@ final class AppConfigurator {
                 }
                 return learnViewController
             case .favourite:
-                let favouriteViewController = FavouriteWordzBuilder.build()
+                let favouriteViewController = goJourney(.favourite)
                 if let favouriteIconData = UIImage.starIcon?.pngData(),
                    let favouriteIconFilledData = UIImage.starIconFilled?.pngData() {
                     let image = UIImage(data: favouriteIconData, scale: 13.5)
@@ -52,7 +52,7 @@ final class AppConfigurator {
                 }
                 return favouriteViewController
             case .devDebug:
-                let devViewController = DevDebugBuilder.build()
+                let devViewController = goJourney(.devDebug)
                 if let decIconData = UIImage.devIcon?.pngData(),
                    let devIconFilledData = UIImage.devIconFilled?.pngData() {
                     let image = UIImage(data: decIconData, scale: 17.0)

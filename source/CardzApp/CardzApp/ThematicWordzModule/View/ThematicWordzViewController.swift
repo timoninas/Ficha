@@ -62,24 +62,23 @@ final class ThematicWordzViewController: UIViewController {
                 languageVersion: $0.languageVersion,
                 displayedCount: $0.displayedCount
             )}
-        let module = LearnCardBuilder.build(viewModel: shuffled)
+        let module = goJourney(.learnCard(viewModel: shuffled))
         self.present(module, animated: true, completion: nil)
     }
     
     private func showAlertResetModule() {
-        let module = AlertCardBuilder.build(model:
-                                                    .init(title: "Want to reset your progress?",
-                                                          secondTitle: "Congratulations, you have learned all the words from this category",
-                                                          actions: [.init(title: "Nope", onSwipeClosure: {
+        let module = goJourney(.alert(model: .init(title: "Want to reset your progress?",
+                                                   secondTitle: "Congratulations, you have learned all the words from this category",
+                                                   actions: [.init(title: "Nope", onSwipeClosure: {
             print("[LOG] Not resetting static")
         }),
-                                                                    .init(title: "Yep", onSwipeClosure: { [weak self] in
+                                                             .init(title: "Yep", onSwipeClosure: { [weak self] in
             guard let self = self else { return }
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
                 guard let self = self else { return }
                 self.output.resetWordsStat()
             }
-        })]))
+        })])))
         
         module.modalPresentationStyle = .fullScreen
         module.modalTransitionStyle = .crossDissolve

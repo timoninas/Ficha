@@ -156,7 +156,7 @@ final class DailyWordsViewController: UIViewController {
                 guard let self = self else { return }
                 guard button.alpha != 0.0 else { return }
                 UIApplication.hapticLight()
-                let module = LearnCardBuilder.build(viewModel: self.viewModels.map { self.viewModelToLearnWordzViewModel($0) })
+                let module = goJourney(.learnCard(viewModel: self.viewModels.map { self.viewModelToLearnWordzViewModel($0) }))
                 self.present(module, animated: true, completion: nil)
             })
         
@@ -270,7 +270,7 @@ extension DailyWordsViewController: DailyWordsViewInput {
     func showOnboardingModule(model: OnboardingModuleModel) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { [weak self] in
             guard let self = self else { return }
-            let module = OnboardingUserBuilder.build(model: model)
+            let module = goJourney(.onboarding(model: model))
             self.present(module, animated: true, completion: nil)
         }
     }
@@ -308,7 +308,7 @@ extension DailyWordsViewController: UIScrollViewDelegate {
             DispatchQueue.main.async {
                 UIApplication.hapticHeavy()
             }
-            let module = DeveloperScreenBuilder.build()
+            let module = goJourney(.developerScreen)
             module.modalPresentationStyle = .fullScreen
             module.modalTransitionStyle = .crossDissolve
             present(module, animated: true, completion: nil)

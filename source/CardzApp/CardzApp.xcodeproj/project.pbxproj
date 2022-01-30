@@ -35,6 +35,8 @@
 		7748E93B2757F4F90063E592 /* FavouriteWordzProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7748E93A2757F4F90063E592 /* FavouriteWordzProtocols.swift */; };
 		7748E93D2757F5460063E592 /* AlertCardViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7748E93C2757F5460063E592 /* AlertCardViewController+ViewModel.swift */; };
 		7748E9402757F5B80063E592 /* FavouriteWordzViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7748E93F2757F5B80063E592 /* FavouriteWordzViewController+ViewModel.swift */; };
+		774B3B1327A71F5600DC9B20 /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774B3B1227A71F5600DC9B20 /* Journey.swift */; };
+		774B3B1627A7228A00DC9B20 /* GoJourney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774B3B1527A7228A00DC9B20 /* GoJourney.swift */; };
 		775A18C7271C284E00A295C0 /* DailyWordsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775A18C6271C284E00A295C0 /* DailyWordsHeader.swift */; };
 		775E28622797534C00A147A3 /* FichaSmallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E285C279752B500A147A3 /* FichaSmallView.swift */; };
 		775E28632797534F00A147A3 /* FichaWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E28602797532000A147A3 /* FichaWidgetEntryView.swift */; };
@@ -157,6 +159,8 @@
 		7748E93A2757F4F90063E592 /* FavouriteWordzProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteWordzProtocols.swift; sourceTree = "<group>"; };
 		7748E93C2757F5460063E592 /* AlertCardViewController+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertCardViewController+ViewModel.swift"; sourceTree = "<group>"; };
 		7748E93F2757F5B80063E592 /* FavouriteWordzViewController+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavouriteWordzViewController+ViewModel.swift"; sourceTree = "<group>"; };
+		774B3B1227A71F5600DC9B20 /* Journey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journey.swift; sourceTree = "<group>"; };
+		774B3B1527A7228A00DC9B20 /* GoJourney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoJourney.swift; sourceTree = "<group>"; };
 		775A18C6271C284E00A295C0 /* DailyWordsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWordsHeader.swift; sourceTree = "<group>"; };
 		775E285C279752B500A147A3 /* FichaSmallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaSmallView.swift; sourceTree = "<group>"; };
 		775E28602797532000A147A3 /* FichaWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaWidgetEntryView.swift; sourceTree = "<group>"; };
@@ -424,6 +428,15 @@
 			path = "Supplementary ";
 			sourceTree = "<group>";
 		};
+		774B3B1427A71F5B00DC9B20 /* UnexpectedJourney */ = {
+			isa = PBXGroup;
+			children = (
+				774B3B1227A71F5600DC9B20 /* Journey.swift */,
+				774B3B1527A7228A00DC9B20 /* GoJourney.swift */,
+			);
+			path = UnexpectedJourney;
+			sourceTree = "<group>";
+		};
 		775E285E279752B800A147A3 /* SupportedFamilies */ = {
 			isa = PBXGroup;
 			children = (
@@ -642,6 +655,7 @@
 			isa = PBXGroup;
 			children = (
 				77342624278196CC00E95A8E /* CardzApp.entitlements */,
+				774B3B1427A71F5B00DC9B20 /* UnexpectedJourney */,
 				77FED85827881D2D007D60E3 /* DevDebugModule */,
 				772041AA277DF00200141FCA /* Moria */,
 				77140789277AD76C00B7E8D2 /* OnboardingUserModule */,
@@ -926,6 +940,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77A3CA282772F93F00A0EA9C /* ThematicWordzViewController.swift in Sources */,
+				774B3B1327A71F5600DC9B20 /* Journey.swift in Sources */,
 				7748E93B2757F4F90063E592 /* FavouriteWordzProtocols.swift in Sources */,
 				7748E93D2757F5460063E592 /* AlertCardViewController+ViewModel.swift in Sources */,
 				77A3CA322772F9A400A0EA9C /* ThematicWordzBuilder.swift in Sources */,
@@ -976,6 +991,7 @@
 				D4F00D9D2718C3FB0079A860 /* AppDelegate.swift in Sources */,
 				77A3CA2F2772F98D00A0EA9C /* ThematicWordzViewController+ViewModel.swift in Sources */,
 				D4F00D952718C3FB0079A860 /* DailyWordsProtocol.swift in Sources */,
+				774B3B1627A7228A00DC9B20 /* GoJourney.swift in Sources */,
 				776E492D272C91B3000D0B2D /* LearnCardProtocol.swift in Sources */,
 				77140792277AD91700B7E8D2 /* OnboardingUserProtocols.swift in Sources */,
 				7748E9402757F5B80063E592 /* FavouriteWordzViewController+ViewModel.swift in Sources */,
