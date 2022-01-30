@@ -24,7 +24,7 @@ struct Provider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> ()) {
         var entries: [SimpleEntry] = []
         
-        var words = DailyWordsUserDefaultsCache.getGroup().map { word in
+        var words = DailyWordsUserDefaultsCache.getForGroup().map { word in
             WordShot(wordz: word.title, translate: word.translations.first ?? "")
         }
         if words.isEmpty {

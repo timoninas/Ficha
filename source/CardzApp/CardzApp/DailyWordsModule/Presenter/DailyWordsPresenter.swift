@@ -9,6 +9,7 @@ import Foundation
 import Erebor
 import RevolvetraKnowledge
 import RevolvetraUserDefaults
+import WidgetKit
 
 final class DailyWordsPresenter: DailyWordsOutput {
     
@@ -62,6 +63,7 @@ final class DailyWordsPresenter: DailyWordsOutput {
                 }
             }
         DailyWordsUserDefaultsCache.save(newDailyWords.shuffled())
+        WidgetCenter.shared.reloadAllTimelines()
     }
     
     private func fetchData() {
@@ -72,13 +74,10 @@ final class DailyWordsPresenter: DailyWordsOutput {
         
         var array = DailyWordsUserDefaultsCache.get()
         
-        if array.isEmpty {
+        for _ in 0..<2 {
+            guard array.isEmpty else { break }
             refillDailyWords()
             array = DailyWordsUserDefaultsCache.get()
-            if array.isEmpty {
-                refillDailyWords()
-                array = DailyWordsUserDefaultsCache.get()
-            }
         }
         
         handleSuccess(array.map { DailyWordsViewController.ViewModel(

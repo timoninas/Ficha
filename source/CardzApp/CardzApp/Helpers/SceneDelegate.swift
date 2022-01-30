@@ -8,6 +8,7 @@
 import UIKit
 import Erebor
 import RevolvetraKnowledge
+import RevolvetraUserDefaults
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -18,6 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         
         fillDataBaseIfNeeded()
+        refillWidgetWords()
         
         let appConfigurator = AppConfigurator()
         var tabBarModules: [AppConfigurator.TabBarModule] = [
@@ -44,6 +46,43 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func sceneDidEnterBackground(_ scene: UIScene) {
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+    }
+    
+    private func refillWidgetWords() {
+        let filling = {
+            var newDailyWords: [DailyWordsUserDefaults] = []
+            let types = ArkenstoneTypeWord.allCases
+            types
+                .shuffled()
+                .prefix(6)
+                .forEach { type in
+                    guard type != .slang else { return }
+                    let words = Array(MoriaManager.shared.getWordz(type: type)
+                                        .filter({ $0.wordz.count < 14 })
+                                        .shuffled()
+                                        .prefix(2))
+                    words.forEach { word in
+                        newDailyWords.append(.init(
+                            title: word.wordz,
+                            transcription: word.transcription,
+                            examples: word.examples,
+                            translations: word.translations,
+                            type: type.rawValue,
+                            languageVersion: word.languageVersion.rawValue,
+                            displayedCount: word.displayedCount
+                        ))
+                    }
+                }
+            DailyWordsUserDefaultsCache.saveForGroup(newDailyWords.shuffled())
+        }
+        guard DaysChechker.isNewDay else {
+            for _ in 0..<2 {
+                guard DailyWordsUserDefaultsCache.getForGroup().isEmpty else { return }
+                filling()
+            }
+            return
+        }
+        filling()
     }
     
     private func fillDataBaseIfNeeded() {

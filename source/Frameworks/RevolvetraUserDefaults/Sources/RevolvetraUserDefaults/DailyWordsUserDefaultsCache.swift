@@ -49,8 +49,6 @@ public class DailyWordsUserDefaultsCache {
     public static let key = DailyWordsCacheKey.dailyWords
     
     public static func save(_ value: [DailyWordsUserDefaults]) {
-        let group = UserDefaults(suiteName: "group.Revolvetra.Inc.Ficha")
-        group?.set(try? PropertyListEncoder().encode(value), forKey: "WidgetWords")
         UserDefaults.standard.set(try? PropertyListEncoder().encode(value), forKey: key)
     }
     
@@ -63,7 +61,12 @@ public class DailyWordsUserDefaultsCache {
         }
     }
     
-    public static func getGroup() -> [DailyWordsUserDefaults] {
+    public static func saveForGroup(_ value: [DailyWordsUserDefaults]) {
+        let group = UserDefaults(suiteName: "group.Revolvetra.Inc.Ficha")
+        group?.set(try? PropertyListEncoder().encode(value), forKey: "WidgetWords")
+    }
+    
+    public static func getForGroup() -> [DailyWordsUserDefaults] {
         let groupDefaults = UserDefaults(suiteName: "group.Revolvetra.Inc.Ficha")
         if let data = groupDefaults?.data(forKey: "WidgetWords") {
             guard let words = try? PropertyListDecoder().decode([DailyWordsUserDefaults].self, from: data) else { return [] }
