@@ -43,6 +43,8 @@ public enum ArkenstoneTypeWord: String, CaseIterable, Decodable, Encodable {
     case slang = "Slang"
     /// Избранные.
     case favourite = "Favourite"
+    /// Эмодзи.
+    case emoji = "Emoji"
     /// Неизвестно.
     case unknown = "Unknown"
 }

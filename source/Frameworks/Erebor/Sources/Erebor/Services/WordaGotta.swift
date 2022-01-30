@@ -55,6 +55,8 @@ public final class WordaGotta {
                 typeWord: .favourite,
                 typeTranslation: .enToRu
             )
+        case .emoji:
+            return getGoldEmoji()
         case .unknown:
             return BagOfGoldWords.init(
                 words: [],
