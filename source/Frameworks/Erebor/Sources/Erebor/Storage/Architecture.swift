@@ -281,10 +281,105 @@ func getGoldArhitecture() -> BagOfGoldWords {
             word: "Neoclassical",
             transcription: "[ˌnioˈklæsɪkəl]",
             examples: [
-                "While today its neoclassical fenestration is considered to be...",
-                "Paris, you're an MD, a lawyer, an expert on neoclassical architecture, and, I think, a certified dental technician to boot"
+                "Paris, you're an MD, a lawyer, an expert on neoclassical architecture, and, I think, a certified dental technician to boot",
+                "While today its neoclassical fenestration is considered to be..."
             ],
             translations: ["Неоклассический"]
+        ),
+        .init(
+            word: "Unornamented",
+            transcription: "[ˌʌnˈɔːnəmentɪd]",
+            examples: [],
+            translations: ["Неукрашенный"]
+        ),
+        .init(
+            word: "Primary building material",
+            transcription: "[ˈpraɪməri ˈbɪldɪŋ məˈtɪərɪəl]",
+            examples: [
+                "One of our rules is, you have to preserve the relationship with your primary partner... or you can't participate",
+                "We must be absolutely certain of the nature of your primary tumour",
+                "The primary act - the process of reason - must be performed by each man alone"
+            ],
+            translations: ["Основной строительный материал"]
+        ),
+        .init(
+            word: "Mannerism",
+            transcription: "[ˈmænərɪzəm]",
+            examples: [
+                "But mannerisms are remembered, and Cora had certain very definite mannerisms, all of which you had practised carefully before the glass",
+                "A person afflicted by hysteria always displays some artificial mannerisms",
+                "Mr. Satterthwaite suspected him of deliberately exaggerating his foreign mannerisms"
+            ],
+            translations: ["Неукрашенный"]
+        ),
+        .init(
+            word: "Mansion",
+            transcription: "[ˈmænʃən]",
+            examples: [
+                "The Charles Stanhope Seniors lived in an impressive old mansion in Rittenhouse Square",
+                "Kate chose another architect to design a sixteenth-century French Renaissance mansion on Fifth Avenue",
+                "The perfect replica of a Shill Governor's Mansion on Shallanna"
+            ],
+            translations: ["Особняк"]
+        ),
+        .init(
+            word: "Gabled",
+            transcription: "[ˈɡeɪbəld]",
+            examples: [
+                "She had to live in this bright, red gabled house with the nurse until it was time for her to die",
+                "The house was large, red-bricked, and gabled"
+            ],
+            translations: ["Остроконечный"]
+        ),
+        .init(
+            word: "Remodeling",
+            transcription: "[rəˈmɑːdəlɪŋ]",
+            examples: [
+                "- Uh, yeah, my buddy here, he got stiffed on a kitchen remodel, and the guy owns a plane, we think he keeps it here",
+                "Chief organized a revolt against the remodeling of the chapel",
+                "Right after we gut and remodel the entire hotel",
+            ],
+            translations: ["Перепланировка"]
+        ),
+        .init(
+            word: "Kiln for firing brick",
+            transcription: "[kɪln fə ˈfaɪərɪŋ brɪk]",
+            examples: [
+                "It was another half-hour before I drew near to the kiln",
+                "The white vapor of the kiln was passing from us as we went by, and as I had thought a prayer before, I thought a thanksgiving now",
+                "Philip was seated on the table with all his bricks around him"
+            ],
+            translations: ["Печь для обжигания кирпича"]
+        ),
+        .init(
+            word: "Piano nobile",
+            transcription: "[pɪˈænəʊ ˈnɑːbəl]",
+            examples: [
+                "Somewhere in the town someone was playing the piano and the music came and went, came and went, softly, drowsily",
+                "Miss Willella gives a little jump on the piano stool, and looked at me curious",
+                "She went to the piano, picked up her hat and put it on. Her hands were trembling"
+            ],
+            translations: ["Пиано нобиле", "Главный этаж"]
+        ),
+        .init(
+            word: "Indentured servant",
+            transcription: "[ɪnˈdentʃəd ˈsɜːvənt]",
+            examples: [
+                "Off the ship you were sold as an indentured servant to the one who would take the cost of your skin out in your labor",
+                "Won't be an indentured servant anymore",
+                "Always acting like I'm his indentured servant"
+            ],
+            translations: ["Подмастерье"]
+        ),
+        .init(
+            word: "Buttress",
+            transcription: "[ˈbʌtrəs]",
+            examples: [
+                "there was a demand for a new stable order as a buttress against social collapse",
+                "we buttressed the wall as it was showing signs of cracking and collapse",
+                "authority was buttressed by religious belief"
+            ],
+            translations: ["Подпорка"]
         ),
     ])
     

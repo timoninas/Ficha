@@ -285,7 +285,7 @@ func getGoldJob() -> BagOfGoldWords {
             transcription: "[deɪ ɒf]",
             examples: [
                 "- where he just... when he was taking the day off?",
-                "half day off",
+                "Half day off",
                 "As a matter of fact, I thought I was entitled to a day off after the good news!"
             ],
             translations: ["Выходной день"]
@@ -299,6 +299,126 @@ func getGoldJob() -> BagOfGoldWords {
                 "This was the one area where Faraday's childhood poverty and lack of formal education actually held him back"
             ],
             translations: ["Нехватка"]
+        ),
+        .init(
+            word: "Target",
+            transcription: "[ˈtɑːgɪt]",
+            examples: [
+                "Especially when the target was a high-profile official",
+                "Victor Racine was our target... until one day, Ike didn't come into work",
+                "Well, it seems I'm still on target for my appointment 20 years from now"
+            ],
+            translations: ["Цель"]
+        ),
+        .init(
+            word: "Tool",
+            transcription: "[tuːl]",
+            examples: [
+                "I'm only your tool of self-destruction I know all that, I accept it and I want you to marry me",
+                "The ultimate surveillance tool, Delta-One thought, still amazed every time they powered it up",
+                "Loyalty is a tool to get people to do things they don't wanna do"
+            ],
+            translations: ["Инструмент"]
+        ),
+        .init(
+            word: "Leadership",
+            transcription: "[ˈliːdəʃɪp]",
+            examples: [
+                "If I'm ever supposed to be this great military leader... maybe you should start listening to my leadership ideas once in a while",
+                "It's that kind of leadership that's putting you at the head of the pack",
+                "She's been on me for years to come back to Boston and take a leadership role in the Harper Avery foundation"
+            ],
+            translations: ["Руководство", "Лидерство"]
+        ),
+        .init(
+            word: "Procedure",
+            transcription: "[prəˈsiːʤə]",
+            examples: [
+                "You may know more about making whiskey or love than I do, but I know more about criminal procedure than you, remember",
+                "I found the procedure in the study of rare diseases by Archmaester Pylos",
+                "Interested in learning a procedure that could save your life?"
+            ],
+            translations: ["Процедура", "Порядок выполнения действий"]
+        ),
+        .init(
+            word: "Document",
+            transcription: "[ˈdɒkjʊmənt]",
+            examples: [
+                "Then he pulled out his wallet from his hip pocket, opened with the deliberation of age, and studied a document",
+                "You cohabitate with one of the foremost forensic document examiners on the planet",
+                "Evidently our suspect used it to document the progression of the disease"
+            ],
+            translations: ["Документ"]
+        ),
+        .init(
+            word: "Contacts",
+            transcription: "[ˈkɒntækts]",
+            examples: [
+                "The news about the chondrules was almost as discomforting as Rachel's news about her attempted contact with Pickering",
+                "He immediately cleared his schedule, and he's been in close contact with NASA ever since",
+                "There's this stuff called urushiol, it's in the sap, it spreads by contact"
+            ],
+            translations: ["Контактные данные"]
+        ),
+        .init(
+            word: "Progress",
+            transcription: "[ˈprəʊgrəs]",
+            examples: [
+                "Kate had watched the progress of Alexandra's romance with Peter Templeton with a great deal of interest",
+                "Drops of red and green light flashed on a wall board, signaling the progress of cars high in space",
+                "The stick still fell; as the progress of the horse slowed, the speed of the stick increased in exact ratio"
+            ],
+            translations: ["Прогресс"]
+        ),
+        .init(
+            word: "Application",
+            transcription: "[ˌæplɪˈkeɪʃ(ə)n]",
+            examples: [
+                "When the Sessions came round, Mr. Jaggers caused an application to be made for the postponement of his trial until the following Sessions",
+                "It must be remembered that by \"business\" Caleb never meant money transactions, but the skilful application of labor",
+                "Before an application is released, they give it a trial run",
+            ],
+            translations: ["Заявка", "Прикладной"]
+        ),
+        .init(
+            word: "Instruction",
+            transcription: "[ɪnˈstrʌkʃən]",
+            examples: [
+                "But yes, I will do that to myself at your instruction",
+                "Yet the mother confided his whole instruction and moral education to Stepan Trofimovitch",
+                "At her instruction I put my arms around her waist, and pressed my chest against her back"
+            ],
+            translations: ["Инструкция", "Руководство"]
+        ),
+        .init(
+            word: "Instrument",
+            transcription: "[ˈɪnstrʊmənt]",
+            examples: [
+                "This was presently being rotated by the monster, which pressed one of its bland, saucer-like eyes to a sighting instrument",
+                "Everyone was staring at Tracy. She said, \"I... you didn't sterilize that instrument\"",
+                "The instrument looked like three miniature snowplow blades that had been affixed in parallel to an aluminum frame",
+            ],
+            translations: ["Инструмент", "Прибор"]
+        ),
+        .init(
+            word: "File",
+            transcription: "[faɪl]",
+            examples: [
+                "She entered, flicked on the fluorescent lights, and strode directly to her file cabinets",
+                "Just like old Luccheni, if you remember, who stabbed our late lamented Elizabeth with a file",
+                "Unlock Special File Zebra"
+            ],
+            translations: ["Файл", "Документ", "Личное дело"]
+        ),
+        .init(
+            word: "Outcome",
+            transcription: "[ˈaʊtkʌm]",
+            examples: [
+                "I have not pushed it to the length of getting into a box to think, but that is the logical outcome of my convictions",
+                "But are you seriously suggesting that this machine can predict the outcome of a revolution?",
+                "Rachel felt pleased with the outcome of her briefing of the White House staff",
+            ],
+            translations: ["Итог", "Результат"]
         ),
     ])
     

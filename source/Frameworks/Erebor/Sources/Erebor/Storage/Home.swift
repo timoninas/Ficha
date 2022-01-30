@@ -332,6 +332,56 @@ func getGoldHome() -> BagOfGoldWords {
             ],
             translations: ["Рабочая поверхность", "Столешница"]
         ),
+        .init(
+            word: "Dishwasher",
+            transcription: " [ˈdɪʃwɒʃə]",
+            examples: [
+                "While you're bothering the world's most famous scientist, be sure to show him how funny he looks getting stuck under our dishwasher",
+                "And when you load the dishwasher, you can't put a big, flat bowl on the bottom",
+                "The poisoning was from iodine, not arsenic, as the dishwasher had mistakenly jibed"
+            ],
+            translations: ["Посудомоечная машина"]
+        ),
+        .init(
+            word: "Washing machine",
+            transcription: "[ˈwɒʃɪŋ məˈʃiːn]",
+            examples: [
+                "The ocean thundered in around her, swirling up under her back, lifting her now off the chair, tossing her upside down like a sock in a washing machine",
+                "David wants to know how to use the washing machine",
+                "- Your washing machine broken?"
+            ],
+            translations: ["Стиральная машина", "Моечная машина"]
+        ),
+        .init(
+            word: "Clothes dryer",
+            transcription: " [kləʊðz]",
+            examples: [
+                "Well, you put the wet clothes in the dryer, you close the door and you wait",
+                "I'VE GOT TO PUT THE CLOTHES IN THE DRYER",
+                "Samatha, put the clothes in the dryer and buryJelly"
+            ],
+            translations: ["Сушилка для одежды"]
+        ),
+        .init(
+            word: "Bin",
+            transcription: " [bɪn]",
+            examples: [
+                "He has a priceless bin of port in some artful cellar under the Fields, which is one of his many secrets",
+                "Does he still believe he has enough in the money bin to buy back his life?",
+                "Discretely, I squirted the difference into a bin",
+            ],
+            translations: ["Мусорная корзина"]
+        ),
+        .init(
+            word: "Wardrobe",
+            transcription: "",
+            examples: [
+                "Mrs Leidner had only had a very simple wardrobe with her and it was soon sorted and packed up into a couple of suitcases",
+                "By the same brilliant reasoning, every man's body is to be found in the neighbourhood of his wardrobe",
+                "Now, to pass to another subject, had your mistress a dark green dress in her wardrobe?"
+            ],
+            translations: ["Шкаф для одежды", "Платяной шкаф"]
+        ),
     ])
     
     let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .home, typeTranslation: .enToRu)

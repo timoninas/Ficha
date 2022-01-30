@@ -18,8 +18,6 @@ final class DevDebugViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let merger = MergerImagerView()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -32,20 +30,6 @@ final class DevDebugViewController: UIViewController {
     
     private func configureUI() {
         view.backgroundColor = .gendalf
-        addMerger()
-    }
-    
-    private func addMerger() {
-        view.addSubview(merger)
-        merger.configuration = merger.configuration
-            .with(firstImageConfig: .visible(image: .doneIcon, tintColor: .mysteryShack, aspectRatio: 1.0))
-            .with(secondImageConfig: .visible(image: .circleDone, tintColor: .mysteryShack, aspectRatio: 1.0))
-        NSLayoutConstraint.activate([
-            merger.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            merger.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            merger.heightAnchor.constraint(equalToConstant: 21.0),
-            merger.widthAnchor.constraint(equalTo: merger.heightAnchor)
-        ])
     }
     
 }
