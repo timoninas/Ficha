@@ -20,7 +20,8 @@ final class DeveloperScreenViewController: UIViewController {
         .onlyTitle(title: "Top swipes count: \(KnowledgeStats.topSwipesLearnCard)"),
         .onlyTitle(title: "Right swipes count: \(KnowledgeStats.rightSwipesLearnCard)"),
         .onlyTitle(title: "Left swipes count: \(KnowledgeStats.leftSwipesLearnCard)"),
-        .onlyTitle(title: "Drags count: \(KnowledgeStats.dragsLearnCard)")
+        .onlyTitle(title: "Drags count: \(KnowledgeStats.dragsLearnCard)"),
+        .onlyTitle(title: "App version: \(KnowledgeDevice.appVersion ?? "?")")
     ]
     
     private var cancellable: Set<AnyCancellable> = []

@@ -19,7 +19,7 @@ public final class SettingCellView: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .urukhigh
-        label.font = UIFont(name:"HelveticaNeue-Bold", size: 14.0)
+        label.font = UIFont(name:"HelveticaNeue-Bold", size: 16.0)
         label.textAlignment = .left
         label.numberOfLines = 1
         return label
@@ -145,7 +145,7 @@ public final class SettingCellView: UIView {
             + text.heightForOneLine(
                 font: UIFont(
                     name:"HelveticaNeue-Bold",
-                    size: 14.0
+                    size: 16.0
                 )
             )
         }
