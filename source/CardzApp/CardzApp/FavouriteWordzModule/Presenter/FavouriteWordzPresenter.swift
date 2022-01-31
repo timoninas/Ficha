@@ -28,7 +28,7 @@ final class FavouriteWordzPresenter: FavouriteWordzViewOutput {
     }
     
     private func fetchData() {
-        let array = MoriaManager.shared.getWordz(type: Constants.arkenstone).map {
+        var array = MoriaManager.shared.getWordz(type: Constants.arkenstone).map {
             FavouriteWordzViewController.ViewModel(
                 wordz: $0.wordz,
                 wordzExamples: $0.examples,
@@ -37,6 +37,7 @@ final class FavouriteWordzPresenter: FavouriteWordzViewOutput {
                 displayedCount: $0.displayedCount
             )
         }
+        array = Array(array.reversed())
         guard viewModels != array else { return }
         viewModels = array
         view?.changeState(state: .normal(model: viewModels))
