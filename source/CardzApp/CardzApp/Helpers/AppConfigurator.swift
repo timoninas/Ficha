@@ -60,8 +60,7 @@ final class AppConfigurator {
                     let item = UITabBarItem(title: "Developer", image: image, selectedImage: imageFilled)
                     devViewController.tabBarItem = item
                 }
-                let devNavigation = UINavigationController(rootViewController: devViewController)
-                return devNavigation
+                return devViewController
             }
         
         }

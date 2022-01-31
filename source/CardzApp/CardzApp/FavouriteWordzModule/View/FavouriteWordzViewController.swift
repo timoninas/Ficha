@@ -163,6 +163,8 @@ final class FavouriteWordzViewController: UIViewController {
     }
     
     private func setupNavigation() {
+        navigationController?.navigationBar.barTintColor = .gendalf
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.urukhigh]
         navigationItem.title = "Your favourite wordz"
     }
     

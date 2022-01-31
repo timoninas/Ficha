@@ -130,6 +130,8 @@ final class ThematicWordzViewController: UIViewController {
     }
     
     private func setupNavigation() {
+        navigationController?.navigationBar.barTintColor = .gendalf
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.urukhigh]
         let closeItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(backButtonTapped(sender:)))
         navigationItem.rightBarButtonItem = closeItem
     }
