@@ -339,6 +339,197 @@ func getGoldSerials() -> BagOfGoldWords {
             ],
             translations: ["Художественный фильм", "Полнометражный фильм", "Игровое кино"]
         ),
+        .init(
+            word: "Film",
+            transcription: "[fɪlm]",
+            examples: [
+                "I thought that all special training these days was done by film. Mrs. Phelps blinked. \"You reading up on fireman theory?\"",
+                "It's the material they use to make motion film",
+                "It's like on a film loop in my brain",
+            ],
+            translations: ["Фильм", "Плёнка"]
+        ),
+        .init(
+            word: "Flash-back",
+            transcription: "",
+            examples: [],
+            translations: ["Воспоминания героя", "Возврат в прошлое"]
+        ),
+        .init(
+            word: "Full-length film",
+            transcription: "",
+            examples: [],
+            translations: ["Полнометражный фильм"]
+        ),
+        .init(
+            word: "Happy ending",
+            transcription: "[ˈhæpɪ ˈendɪŋ]",
+            examples: [
+                "I'm sorry your plus one doesn't get a happy ending, but, like it or not, I just saved this world because I want to change",
+                "It's going to be all right, Tracy told herself. This movie's going to have a happy ending",
+                "Did someone order a happy ending?"
+            ],
+            translations: ["Счастливый конец"]
+        ),
+        .init(
+            word: "Historical film",
+            transcription: "[hɪsˈtɒrɪkəl fɪlm]",
+            examples: [
+                "Sophie glanced at Langdon, who nodded. Sophie, the historical evidence supporting this is substantial",
+                "The thoughts of historical spirits suddenly made Rachel realize what a sacred place this room was",
+                "Cooper sat in his darkened room hour after hour, looking at the film, and the first glimmering of suspicion became a certainty"
+            ],
+            translations: ["Исторический фильм"]
+        ),
+        .init(
+            word: "Horror film",
+            transcription: "[ˈhɒrə fɪlm]",
+            examples: [
+                "I still can't believe they needed multiple oboes for a small horror film",
+                "Place looks like the start of an amish horror film",
+                "- It's some sort of horror film- something she shouldn't be looking at anyway"
+            ],
+            translations: ["Фильм ужасов"]
+        ),
+        .init(
+            word: "Location",
+            transcription: "[ləʊˈkeɪʃn]",
+            examples: [
+                "I can tell that by the conformation of your brain and the strange location of your internal organs and the shape and size of your heart",
+                "You got a specific location for this place or are we just gonna wander around till we find it?",
+                "Teabing gasped. Then the location of the keystone would be lost forever!"
+            ],
+            translations: ["Место натурных съемок"]
+        ),
+        .init(
+            word: "Long shot",
+            transcription: "[lɒŋ ʃɒt]",
+            examples: [
+                "It's a long shot, but I got to try, gotta get down there and reconstruct the shot",
+                "It's a long shot, but, worth a try especially given the alternative",
+                "I know my new plan is a long shot, but it's the only hope left"
+            ],
+            translations: ["Общий план"]
+        ),
+        .init(
+            word: "Makeup",
+            transcription: "[ˈmeɪkʌp]",
+            examples: [
+                "Presumably it's the same place as the glove, which, judging from its atomic makeup, isn't anywhere local",
+                "Tracy became a chameleon, an expert in makeup and disguises and accents. She acquired half a dozen passports",
+                "Deb, the makeup artist, will take care of you from here"
+            ],
+            translations: ["Грим", "Состав"]
+        ),
+        .init(
+            word: "Makeup artist",
+            transcription: "[ˈmeɪkʌp ˈɑːtɪst]",
+            examples: [
+                "So I get here, and Grandma immediately whisks me upstairs where her hairdresser and makeup artist are waiting to make a new me",
+                "I just paid a makeup artist 500 bucks to do my face",
+                "A mortician's nothing more than a glorified makeup artist",
+            ],
+            translations: ["Художник по гриму", "Гример"]
+        ),
+        .init(
+            word: "Movie",
+            transcription: "[ˈmuːvɪ]",
+            examples: [
+                "If we get one big movie, we can get all the big movies",
+                "If you take her to a lousy movie, for instance, she knows it's a lousy movie",
+                "I was meeting my little boy, not this handsome movie star"
+            ],
+            translations: ["Кинофильм", "Кинокартина"]
+        ),
+        .init(
+            word: "Musical",
+            transcription: "[ˈmjuːzɪkəl]",
+            examples: [
+                "He has a remarkable musical talent, and he wants to be a classical musician. He's going to choose his own life",
+                "Her voice took me by surprise; it didn't match her face at all; it was musical and slightly tremulous",
+                "She would never forget the leap of her heart as she heard it, as if for the first time, drawling, resonant, musical"
+            ],
+            translations: ["Мюзикл"]
+        ),
+        .init(
+            word: "Mute film",
+            transcription: "",
+            examples: [
+                "I just feel like I'm being pulled back into this version of me when I was, like, 12 and furious and invisible and mute",
+                "His eye fell with a mute inquiry upon the withered white flowers upon the little table",
+                "This is the talkback button here, if I want to talk to Roz, the cough button if I want to mute the mike"
+            ],
+            translations: ["Немой фильм"]
+        ),
+        .init(
+            word: "Newsreel",
+            transcription: "[ˈnjuːzriːl]",
+            examples: [
+                "The newsreel was on or something, and all of a sudden I felt this hand on the back of my neck, and it was Jane's",
+                "David saw to it that a special print of the newsreel of the wedding was sent on to Cord, who was in Europe at the time",
+                "There was a glimpse of her on some newsreel footage after the bomb blast",
+            ],
+            translations: ["Кинотрейлер", "Киножурнал", "Кинохроника"]
+        ),
+        .init(
+            word: "Offscreen narration",
+            transcription: "",
+            examples: [
+                "Indeed, when, at certain moments, I perceived that my more ardent passages confused him, I purposely increased my ardour of narration",
+                "You know full well that the narration in this novel is impersonal but also incomplete",
+                "Our music is more of a narration of an oppressed people"
+            ],
+            translations: ["Повествование за кадром"]
+        ),
+        .init(
+            word: "Open-air theatre",
+            transcription: "",
+            examples: [
+                "Nadine found Lennox sitting at the top of the Graeco-Roman Theatre",
+                "One thing we can agree on, this delicate, little theater between us does need to reach a conclusion, so...",
+                "They stand inside the bed, and we sprawl back in them as in a theatre box"
+            ],
+            translations: ["Кинотеатр под открытым небом"]
+        ),
+        .init(
+            word: "Original soundtrack (OST)",
+            transcription: "[əˈrɪʤɪn(ə)l ˈsaʊndtræk]",
+            examples: [
+                "I always feel as if I were reading to you a carbon copy of myself and you've already seen the original",
+                "He's just got this very original personality that takes you a little while to get to know him",
+                "A cast of your skull, sir, until the original is available, would be an ornament to any anthropological museum"
+            ],
+            translations: ["Оригинальный саундтрек"]
+        ),
+        .init(
+            word: "Plot",
+            transcription: "[plɒt]",
+            examples: [
+                "Let us suppose that these bad terms were part of a clever plot",
+                "That it was I and I alone who had the idea for the great and daring mouse plot",
+                "A fraternal lodge to which he had belonged gave her a cemetery plot"
+            ],
+            translations: ["Сюжет", "Интрига", "Фабула"]
+        ),.init(
+            word: "Poster",
+            transcription: "",
+            examples: [
+                "The Banner assumed the appearance of a circus poster in body, of a circus performance in soul",
+                "Whenever your family comes into your life, I instantly become the poster boy for the Rebecca Logan",
+                "I'm looking for a poster board and markers"
+            ],
+            translations: ["Афиша", "Плакат"]
+        ),
+        .init(
+            word: "Producer",
+            transcription: "[prəˈdjuːsə]",
+            examples: [
+                "Giving up control of your message putting that in the hands of news producers",
+                "The whole industry knows you maneuvered Cord into buying the company so you could become a producer",
+                "The maintenance of court etiquette was in the hands of a Russian emigre, a famous ballet producer"
+            ],
+            translations: ["Продюсер"]
+        ),
     ])
     
     let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .serials, typeTranslation: .enToRu)
