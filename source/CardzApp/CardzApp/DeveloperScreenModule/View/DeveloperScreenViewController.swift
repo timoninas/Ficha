@@ -61,10 +61,9 @@ final class DeveloperScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .gendalf
         configureUI()
         output?.viewDidLoad()
-        print("viewDidLoad \(String(describing: self))")
+        RLogDebug(message: "viewDidLoad", subsystem: String(describing: self))
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -72,6 +71,7 @@ final class DeveloperScreenViewController: UIViewController {
     }
     
     private func configureUI() {
+        view.backgroundColor = .gendalf
         setupNavigation()
         addTableView()
         addCloseButton()

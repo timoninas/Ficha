@@ -60,7 +60,7 @@ final class OnboardingUserViewController: UIViewController {
         view.backgroundColor = .gendalf
         configureUI()
         output?.viewDidLoad()
-        print("viewDidLoad \(String(describing: self))")
+        RLogDebug(message: "viewDidLoad", subsystem: String(describing: self))
     }
     
     override func viewDidAppear(_ animated: Bool) {

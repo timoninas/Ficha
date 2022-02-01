@@ -38,12 +38,12 @@ final class LearnCardPresenter: LearnCardOutput {
             languageVersion: .unknown
         )
         KnowledgeStats.topSwipesLearnCard += 1
-        print("Top swipes: \(KnowledgeStats.topSwipesLearnCard)")
+        RLogDebug(message: "Top swipes: \(KnowledgeStats.topSwipesLearnCard)", subsystem: String(describing: self))
     }
     
     func didSwipeCardLeft(with index: Int) {
         KnowledgeStats.leftSwipesLearnCard += 1
-        print("Left swipes: \(KnowledgeStats.leftSwipesLearnCard)")
+        RLogDebug(message: "Left swipes: \(KnowledgeStats.leftSwipesLearnCard)", subsystem: String(describing: self))
     }
     
     func didSwipeCardRight(with index: Int) {
@@ -57,12 +57,12 @@ final class LearnCardPresenter: LearnCardOutput {
             languageVersion: word.languageVersion,
             count: word.displayedCount + 1
         )
-        print("Right swipe: \(KnowledgeStats.rightSwipesLearnCard)")
+        RLogDebug(message: "Right swipe: \(KnowledgeStats.rightSwipesLearnCard)", subsystem: String(describing: self))
     }
     
     func didDragCard(with index: Int) {
         KnowledgeStats.dragsLearnCard += 1
-        print("Drag card: \(KnowledgeStats.dragsLearnCard)")
+        RLogDebug(message: "Drag card: \(KnowledgeStats.dragsLearnCard)", subsystem: String(describing: self))
     }
     
 }

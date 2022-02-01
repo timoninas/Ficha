@@ -136,7 +136,7 @@ final class LearnNewWordzViewController: UIViewController {
         view.backgroundColor = .gendalf
         configureUI()
         output?.viewDidLoad()
-        print("viewDidLoad \(String(describing: self))")
+        RLogDebug(message: "viewDidLoad", subsystem: String(describing: self))
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -183,7 +183,7 @@ extension LearnNewWordzViewController: LearnNewWordzInput {
         case .normal(model: let viewModel):
             self.viewModel = viewModel
         case .error:
-            print("Error")
+            RLogDebug(message: "Change state to error", subsystem: String(describing: self))
         }
     }
     

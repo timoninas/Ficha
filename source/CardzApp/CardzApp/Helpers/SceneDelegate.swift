@@ -9,6 +9,7 @@ import UIKit
 import Erebor
 import RevolvetraKnowledge
 import RevolvetraUserDefaults
+import EyeOfSauron
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -20,6 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         fillDataBaseIfNeeded()
         refillWidgetWords()
+        setupLogger()
         
         let appConfigurator = AppConfigurator()
         var tabBarModules: [AppConfigurator.TabBarModule] = [
@@ -106,6 +108,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             }
         }
         
+    }
+    
+    private func setupLogger() {
+        Logger.shared.add(ConsoleLogger())
+        Logger.shared.add(OSLogger())
     }
     
 }

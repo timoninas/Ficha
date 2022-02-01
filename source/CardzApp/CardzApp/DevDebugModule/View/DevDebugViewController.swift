@@ -21,7 +21,7 @@ final class DevDebugViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        print("viewDidLoad \(String(describing: self))")
+        RLogDebug(message: "viewDidLoad", subsystem: String(describing: self))
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

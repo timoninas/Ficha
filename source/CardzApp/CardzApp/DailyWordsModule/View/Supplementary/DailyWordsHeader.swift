@@ -119,7 +119,7 @@ final class DailyWordsHeader: UIView {
             .with(onTap: { [weak self] _ in
                 guard let self = self else { return }
                 self.onTap?()
-                print("kek")
+                RLogDebug(message: "Header settings tapped", subsystem: String(describing: self))
             })
         addSubview(settingsButton)
         settingsButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true

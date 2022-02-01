@@ -70,7 +70,7 @@ final class ThematicWordzViewController: UIViewController {
         let module = goJourney(.alert(model: .init(title: "Want to reset your progress?",
                                                    secondTitle: "Congratulations, you have learned all the words from this category",
                                                    actions: [.init(title: "Nope", onSwipeClosure: {
-            print("[LOG] Not resetting static")
+            RLogDebug(message: "Not resetting static", subsystem: String(describing: self))
         }),
                                                              .init(title: "Yep", onSwipeClosure: { [weak self] in
             guard let self = self else { return }
@@ -104,15 +104,15 @@ final class ThematicWordzViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        RLogInfo(message: "[Info] \(String(describing: self)) ViewDidLoad")
         configureUI()
         output.viewDidLoad()
-        print("viewDidLoad \(String(describing: self))")
+        RLogDebug(message: "viewDidLoad", subsystem: String(describing: self))
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         output.viewWillAppear()
+        RLogDebug(message: "viewWillAppear", subsystem: String(describing: self))
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -256,7 +256,7 @@ extension ThematicWordzViewController: ThematicWordzViewInput {
             self.viewModel = viewModel.wordsPreview
             setupNavigation(title: viewModel.title)
         case .error:
-            print("Error")
+            RLogDebug(message: "Change state to Error", subsystem: String(describing: self))
         }
     }
     

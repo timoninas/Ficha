@@ -85,16 +85,15 @@ final class DailyWordsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        RLogInfo(message: "[Info] \(String(describing: self)) ViewDidLoad")
-        view.backgroundColor = .gendalf
         configureUI()
         output.viewDidLoad()
-        print("viewDidLoad \(String(describing: self))")
+        RLogDebug(message: "viewDidLoad", subsystem: String(describing: self))
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         output.viewWillAppear()
+        RLogDebug(message: "viewWillAppear", subsystem: String(describing: self))
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -113,6 +112,8 @@ final class DailyWordsViewController: UIViewController {
     }
     
     private func configureUI() {
+        view.backgroundColor = .gendalf
+        
         addBackgroundView()
         addScrollView()
         addHeader()
