@@ -14,74 +14,110 @@ func getGoldEmoji() -> BagOfGoldWords {
         .init(
             word: "🐶",
             transcription: "Dog",
-            examples: [
-                ""
-            ],
+            examples: [],
             translations: ["Собака"]
         ),
         .init(
             word: "🐭",
             transcription: "Mouse",
-            examples: [
-                ""
-            ],
+            examples: [],
             translations: ["Мышь"]
         ),
         .init(
             word: "🦊",
             transcription: "Fox",
-            examples: [
-                ""
-            ],
+            examples: [],
             translations: ["Лиса"]
         ),
         .init(
             word: "🐻",
             transcription: "Bear",
-            examples: [
-                ""
-            ],
+            examples: [],
             translations: ["Медведь"]
         ),
         .init(
             word: "🐼",
             transcription: "Panda",
-            examples: [
-                ""
-            ],
+            examples: [],
             translations: ["Панда"]
         ),
         .init(
             word: "🐧",
             transcription: "Penguin",
-            examples: [
-                ""
-            ],
+            examples: [],
             translations: ["Пингвин"]
         ),
         .init(
             word: "🐤",
             transcription: "Chicken",
-            examples: [
-                ""
-            ],
+            examples: [],
             translations: ["Цыпленок"]
         ),
         .init(
             word: "🐸",
             transcription: "Frog",
-            examples: [
-                ""
-            ],
+            examples: [],
             translations: ["Лягушка"]
         ),
         .init(
             word: "🐷",
             transcription: "Pig",
-            examples: [
-                ""
-            ],
+            examples: [],
             translations: ["Свинья"]
+        ),
+        .init(
+            word: "🐵",
+            transcription: "A monkey",
+            examples: [],
+            translations: ["Обезьяна"]
+        ),
+        .init(
+            word: "🦆",
+            transcription: "Duck",
+            examples: [],
+            translations: ["Утка"]
+        ),
+        .init(
+            word: "🦉",
+            transcription: "Owl",
+            examples: [],
+            translations: ["Сова"]
+        ),
+        .init(
+            word: "🦅",
+            transcription: "Eagle",
+            examples: [],
+            translations: ["Орёл"]
+        ),
+        .init(
+            word: "🐯",
+            transcription: "Tiger",
+            examples: [],
+            translations: ["Тигр"]
+        ),
+        .init(
+            word: "🦄",
+            transcription: "Unicorn",
+            examples: [],
+            translations: ["Единорог"]
+        ),
+        .init(
+            word: "🐗",
+            transcription: "Boar",
+            examples: [],
+            translations: ["Боров"]
+        ),
+        .init(
+            word: "🐴",
+            transcription: "Horse",
+            examples: [],
+            translations: ["Лошадь"]
+        ),
+        .init(
+            word: "🐢",
+            transcription: "Turtle",
+            examples: [],
+            translations: ["Черепаха"]
         ),
     ])
     
