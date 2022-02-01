@@ -38,11 +38,11 @@
 		774B3B1327A71F5600DC9B20 /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774B3B1227A71F5600DC9B20 /* Journey.swift */; };
 		774B3B1627A7228A00DC9B20 /* GoJourney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774B3B1527A7228A00DC9B20 /* GoJourney.swift */; };
 		775A18C7271C284E00A295C0 /* DailyWordsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775A18C6271C284E00A295C0 /* DailyWordsHeader.swift */; };
-		775E28622797534C00A147A3 /* FichaSmallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E285C279752B500A147A3 /* FichaSmallView.swift */; };
-		775E28632797534F00A147A3 /* FichaWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E28602797532000A147A3 /* FichaWidgetEntryView.swift */; };
-		775E28652797536B00A147A3 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E28642797536B00A147A3 /* Provider.swift */; };
-		775E28672797538B00A147A3 /* SimpleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E28662797538B00A147A3 /* SimpleEntry.swift */; };
-		775E28692798784D00A147A3 /* WordShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E28682798784D00A147A3 /* WordShot.swift */; };
+		775E28622797534C00A147A3 /* TodayWidgetSmallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E285C279752B500A147A3 /* TodayWidgetSmallView.swift */; };
+		775E28632797534F00A147A3 /* TodayWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E28602797532000A147A3 /* TodayWidgetEntryView.swift */; };
+		775E28652797536B00A147A3 /* TodayProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E28642797536B00A147A3 /* TodayProvider.swift */; };
+		775E28672797538B00A147A3 /* TodayWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E28662797538B00A147A3 /* TodayWidgetEntry.swift */; };
+		775E28692798784D00A147A3 /* TodayWordShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E28682798784D00A147A3 /* TodayWordShot.swift */; };
 		775E286D2798911F00A147A3 /* RevolvetraUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = 775E286C2798911F00A147A3 /* RevolvetraUserDefaults */; };
 		776E4926272C90E7000D0B2D /* LearnCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E4925272C90E7000D0B2D /* LearnCardViewController.swift */; };
 		776E4929272C9103000D0B2D /* LearnCardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E4928272C9103000D0B2D /* LearnCardPresenter.swift */; };
@@ -54,9 +54,11 @@
 		776EFC4027410870001010FD /* AlertCardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776EFC3F27410870001010FD /* AlertCardBuilder.swift */; };
 		7781F47527920D7A00612B1A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7781F47427920D7A00612B1A /* WidgetKit.framework */; };
 		7781F47727920D7A00612B1A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7781F47627920D7A00612B1A /* SwiftUI.framework */; };
-		7781F47A27920D7A00612B1A /* MainFichaWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7781F47927920D7A00612B1A /* MainFichaWidget.swift */; };
+		7781F47A27920D7A00612B1A /* TodayWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7781F47927920D7A00612B1A /* TodayWidget.swift */; };
 		7781F47C27920D7D00612B1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7781F47B27920D7D00612B1A /* Assets.xcassets */; };
 		7781F48027920D7D00612B1A /* Ficha-WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7781F47327920D7A00612B1A /* Ficha-WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7782739A27A905FE00E5053D /* Rivendell in Frameworks */ = {isa = PBXBuildFile; productRef = 7782739927A905FE00E5053D /* Rivendell */; };
+		7782739F27A9092D00E5053D /* FichaWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7782739B27A9089A00E5053D /* FichaWidgetBundle.swift */; };
 		77895BF927306ABC00A852BF /* Hobbiton in Frameworks */ = {isa = PBXBuildFile; productRef = 77895BF827306ABC00A852BF /* Hobbiton */; };
 		77A178DD273526FE005E520C /* EyeOfSauron in Frameworks */ = {isa = PBXBuildFile; productRef = 77A178DC273526FE005E520C /* EyeOfSauron */; };
 		77A178DF27352A0E005E520C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A178DE27352A0E005E520C /* Logger.swift */; };
@@ -162,11 +164,11 @@
 		774B3B1227A71F5600DC9B20 /* Journey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journey.swift; sourceTree = "<group>"; };
 		774B3B1527A7228A00DC9B20 /* GoJourney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoJourney.swift; sourceTree = "<group>"; };
 		775A18C6271C284E00A295C0 /* DailyWordsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWordsHeader.swift; sourceTree = "<group>"; };
-		775E285C279752B500A147A3 /* FichaSmallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaSmallView.swift; sourceTree = "<group>"; };
-		775E28602797532000A147A3 /* FichaWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaWidgetEntryView.swift; sourceTree = "<group>"; };
-		775E28642797536B00A147A3 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
-		775E28662797538B00A147A3 /* SimpleEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleEntry.swift; sourceTree = "<group>"; };
-		775E28682798784D00A147A3 /* WordShot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordShot.swift; sourceTree = "<group>"; };
+		775E285C279752B500A147A3 /* TodayWidgetSmallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWidgetSmallView.swift; sourceTree = "<group>"; };
+		775E28602797532000A147A3 /* TodayWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWidgetEntryView.swift; sourceTree = "<group>"; };
+		775E28642797536B00A147A3 /* TodayProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayProvider.swift; sourceTree = "<group>"; };
+		775E28662797538B00A147A3 /* TodayWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWidgetEntry.swift; sourceTree = "<group>"; };
+		775E28682798784D00A147A3 /* TodayWordShot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWordShot.swift; sourceTree = "<group>"; };
 		776C7A6227711A8E000C2E97 /* Erebor */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Erebor; path = ../Frameworks/Erebor; sourceTree = "<group>"; };
 		776E4925272C90E7000D0B2D /* LearnCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCardViewController.swift; sourceTree = "<group>"; };
 		776E4928272C9103000D0B2D /* LearnCardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCardPresenter.swift; sourceTree = "<group>"; };
@@ -179,10 +181,11 @@
 		7781F47327920D7A00612B1A /* Ficha-WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Ficha-WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7781F47427920D7A00612B1A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		7781F47627920D7A00612B1A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		7781F47927920D7A00612B1A /* MainFichaWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFichaWidget.swift; sourceTree = "<group>"; };
+		7781F47927920D7A00612B1A /* TodayWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWidget.swift; sourceTree = "<group>"; };
 		7781F47B27920D7D00612B1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7781F47D27920D7D00612B1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7781F48527920DA000612B1A /* Ficha-WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Ficha-WidgetExtension.entitlements"; sourceTree = "<group>"; };
+		7782739B27A9089A00E5053D /* FichaWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaWidgetBundle.swift; sourceTree = "<group>"; };
 		77A178DB273526F4005E520C /* EyeOfSauron */ = {isa = PBXFileReference; lastKnownFileType = folder; name = EyeOfSauron; path = ../Frameworks/EyeOfSauron; sourceTree = "<group>"; };
 		77A178DE27352A0E005E520C /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		77A3CA272772F93E00A0EA9C /* ThematicWordzViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThematicWordzViewController.swift; sourceTree = "<group>"; };
@@ -230,6 +233,7 @@
 			files = (
 				7781F47727920D7A00612B1A /* SwiftUI.framework in Frameworks */,
 				7781F47527920D7A00612B1A /* WidgetKit.framework in Frameworks */,
+				7782739A27A905FE00E5053D /* Rivendell in Frameworks */,
 				775E286D2798911F00A147A3 /* RevolvetraUserDefaults in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,18 +441,23 @@
 			path = UnexpectedJourney;
 			sourceTree = "<group>";
 		};
-		775E285E279752B800A147A3 /* SupportedFamilies */ = {
+		775E285E279752B800A147A3 /* TodayWidget */ = {
 			isa = PBXGroup;
 			children = (
-				775E285F279752C900A147A3 /* Small */,
-				775E285C279752B500A147A3 /* FichaSmallView.swift */,
+				7781F47927920D7A00612B1A /* TodayWidget.swift */,
+				775E28602797532000A147A3 /* TodayWidgetEntryView.swift */,
+				778273A127A909DB00E5053D /* Provider */,
+				778273A027A909D000E5053D /* Model */,
+				7782739D27A908CD00E5053D /* Entry */,
+				7782739E27A908D700E5053D /* FamilyViews */,
 			);
-			path = SupportedFamilies;
+			path = TodayWidget;
 			sourceTree = "<group>";
 		};
 		775E285F279752C900A147A3 /* Small */ = {
 			isa = PBXGroup;
 			children = (
+				775E285C279752B500A147A3 /* TodayWidgetSmallView.swift */,
 			);
 			path = Small;
 			sourceTree = "<group>";
@@ -511,16 +520,44 @@
 		7781F47827920D7A00612B1A /* Ficha-Widget */ = {
 			isa = PBXGroup;
 			children = (
-				775E28662797538B00A147A3 /* SimpleEntry.swift */,
-				775E28642797536B00A147A3 /* Provider.swift */,
-				7781F47927920D7A00612B1A /* MainFichaWidget.swift */,
-				775E28602797532000A147A3 /* FichaWidgetEntryView.swift */,
-				775E28682798784D00A147A3 /* WordShot.swift */,
-				775E285E279752B800A147A3 /* SupportedFamilies */,
+				7782739B27A9089A00E5053D /* FichaWidgetBundle.swift */,
+				775E285E279752B800A147A3 /* TodayWidget */,
 				7781F47B27920D7D00612B1A /* Assets.xcassets */,
 				7781F47D27920D7D00612B1A /* Info.plist */,
 			);
 			path = "Ficha-Widget";
+			sourceTree = "<group>";
+		};
+		7782739D27A908CD00E5053D /* Entry */ = {
+			isa = PBXGroup;
+			children = (
+				775E28662797538B00A147A3 /* TodayWidgetEntry.swift */,
+			);
+			path = Entry;
+			sourceTree = "<group>";
+		};
+		7782739E27A908D700E5053D /* FamilyViews */ = {
+			isa = PBXGroup;
+			children = (
+				775E285F279752C900A147A3 /* Small */,
+			);
+			path = FamilyViews;
+			sourceTree = "<group>";
+		};
+		778273A027A909D000E5053D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				775E28682798784D00A147A3 /* TodayWordShot.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		778273A127A909DB00E5053D /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				775E28642797536B00A147A3 /* TodayProvider.swift */,
+			);
+			path = Provider;
 			sourceTree = "<group>";
 		};
 		77A178E027352A12005E520C /* Logger */ = {
@@ -772,6 +809,7 @@
 			name = "Ficha-WidgetExtension";
 			packageProductDependencies = (
 				775E286C2798911F00A147A3 /* RevolvetraUserDefaults */,
+				7782739927A905FE00E5053D /* Rivendell */,
 			);
 			productName = "Ficha-WidgetExtension";
 			productReference = 7781F47327920D7A00612B1A /* Ficha-WidgetExtension.appex */;
@@ -926,12 +964,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				775E28652797536B00A147A3 /* Provider.swift in Sources */,
-				775E28622797534C00A147A3 /* FichaSmallView.swift in Sources */,
-				7781F47A27920D7A00612B1A /* MainFichaWidget.swift in Sources */,
-				775E28672797538B00A147A3 /* SimpleEntry.swift in Sources */,
-				775E28632797534F00A147A3 /* FichaWidgetEntryView.swift in Sources */,
-				775E28692798784D00A147A3 /* WordShot.swift in Sources */,
+				775E28652797536B00A147A3 /* TodayProvider.swift in Sources */,
+				775E28622797534C00A147A3 /* TodayWidgetSmallView.swift in Sources */,
+				7781F47A27920D7A00612B1A /* TodayWidget.swift in Sources */,
+				775E28672797538B00A147A3 /* TodayWidgetEntry.swift in Sources */,
+				775E28632797534F00A147A3 /* TodayWidgetEntryView.swift in Sources */,
+				775E28692798784D00A147A3 /* TodayWordShot.swift in Sources */,
+				7782739F27A9092D00E5053D /* FichaWidgetBundle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1418,6 +1457,10 @@
 		775E286C2798911F00A147A3 /* RevolvetraUserDefaults */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RevolvetraUserDefaults;
+		};
+		7782739927A905FE00E5053D /* Rivendell */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Rivendell;
 		};
 		77895BF827306ABC00A852BF /* Hobbiton */ = {
 			isa = XCSwiftPackageProductDependency;

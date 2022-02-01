@@ -1,5 +1,5 @@
 //
-//  Provider.swift
+//  TodayProvider.swift
 //  Ficha-WidgetExtension
 //
 //  Created by Антон Тимонин on 18.01.2022.
@@ -10,22 +10,22 @@ import WidgetKit
 import RevolvetraUserDefaults
 
 /// Таймлайн из слепков для Widget.
-struct Provider: TimelineProvider {
+struct TodayProvider: TimelineProvider {
     
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), shot: .simpleWordShot)
+    func placeholder(in context: Context) -> TodayWidgetEntry {
+        TodayWidgetEntry(date: Date(), shot: .simpleWordShot)
     }
-
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), shot: .simpleWordShot)
+    
+    func getSnapshot(in context: Context, completion: @escaping (TodayWidgetEntry) -> ()) {
+        let entry = TodayWidgetEntry(date: Date(), shot: .simpleWordShot)
         completion(entry)
     }
-
-    func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> ()) {
-        var entries: [SimpleEntry] = []
+    
+    func getTimeline(in context: Context, completion: @escaping (Timeline<TodayWidgetEntry>) -> ()) {
+        var entries: [TodayWidgetEntry] = []
         
         var words = DailyWordsUserDefaultsCache.getForGroup().map { word in
-            WordShot(wordz: word.title, translate: word.translations.first ?? "")
+            TodayWordShot(wordz: word.title, translate: word.translations.first ?? "")
         }
         if words.isEmpty {
             words.append(contentsOf: [
@@ -41,16 +41,16 @@ struct Provider: TimelineProvider {
                 .init(wordz: "To count", translate: "Считать"),
             ])
         }
-
+        
         let currentDate = Date()
         words
             .enumerated()
             .forEach { idx, word in
-            let entryDate = Calendar.current.date(byAdding: .minute, value: 30 * idx, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, shot: word)
-            entries.append(entry)
-        }
-
+                let entryDate = Calendar.current.date(byAdding: .minute, value: 30 * idx, to: currentDate)!
+                let entry = TodayWidgetEntry(date: entryDate, shot: word)
+                entries.append(entry)
+            }
+        
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }

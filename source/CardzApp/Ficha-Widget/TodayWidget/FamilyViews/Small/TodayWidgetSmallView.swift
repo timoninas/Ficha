@@ -1,31 +1,32 @@
 //
-//  FichaSmallView.swift
+//  TodayWidgetSmallView.swift
 //  CardzApp
 //
 //  Created by Антон Тимонин on 18.01.2022.
 //
 
 import SwiftUI
+import Rivendell
 
 struct FichaSmallView : View {
     
-    var shot: WordShot
+    var shot: TodayWordShot
     
-    init(_ shot: WordShot) {
+    init(_ shot: TodayWordShot) {
         self.shot = shot
     }
-
+    
     var body: some View {
         ZStack {
             
             LinearGradient(gradient: Gradient(
                 stops: [
-                    .init(color: Color(.sRGB, red: 94.0 / 255.0, green: 107.0 / 255.0, blue: 250.0 / 255.0, opacity: 0.85), location: 0),
-                    .init(color: Color(.sRGB, red: 173.0 / 255.0, green: 0.0 / 255.0, blue: 254.0 / 255.0, opacity: 0.85), location: 1.0)
+                    .init(color: Color.wowFir, location: 0.0),
+                    .init(color: Color.wowSec, location: 1.0)
                 ]
             ),
-                           startPoint: .top,
-                           endPoint: .bottom)
+                           startPoint: .init(x: 0.0, y: 0.0),
+                           endPoint: .init(x: 1.0, y: 1.0))
             
             VStack {
                 Text(shot.wordz)
@@ -33,13 +34,13 @@ struct FichaSmallView : View {
                     .multilineTextAlignment(.center)
                     .lineLimit(self.shot.titleLineCount)
                     .padding(EdgeInsets(top: 0.0, leading: 2.0, bottom: 0.0, trailing: 2.0))
-                    .foregroundColor(.white)
+                    .foregroundColor(Color.whisper)
                 Text(shot.translate)
                     .font(.system(size: 17, weight: .medium, design: .rounded))
                     .multilineTextAlignment(.center)
                     .lineLimit(self.shot.subtitleLineCount)
                     .padding(EdgeInsets(top: 0.0, leading: 2.0, bottom: 0.0, trailing: 2.0))
-                    .foregroundColor(.white)
+                    .foregroundColor(Color.whisper)
             }
             
             if self.shot.canShowLogo {
@@ -47,7 +48,7 @@ struct FichaSmallView : View {
                     VStack {
                         Image("ficha-logo")
                             .resizable()
-                            .frame(width: 25.0, height: 25.0)
+                            .frame(width: 23.0, height: 23.0)
                         Spacer()
                     }
                     Spacer()
@@ -65,9 +66,11 @@ struct FichaSmallView : View {
 }
 
 struct FichaSmallView_Previews: PreviewProvider {
+    
     static var previews: some View {
         Group {
             FichaSmallView(.simpleWordShot)
         }
     }
+    
 }

@@ -1,5 +1,5 @@
 //
-//  FichaWordShot.swift
+//  TodayWordShot.swift
 //  Ficha-WidgetExtension
 //
 //  Created by Антон Тимонин on 19.01.2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct WordShot: Hashable, Codable, Identifiable {
+struct TodayWordShot: Hashable, Codable, Identifiable {
     
     let wordz: String
     let translate: String
@@ -16,7 +16,7 @@ struct WordShot: Hashable, Codable, Identifiable {
         wordz
     }
     
-    static let simpleWordShot = WordShot(
+    static let simpleWordShot = TodayWordShot(
         wordz: "Cinema",
         translate: "Кино"
     )
