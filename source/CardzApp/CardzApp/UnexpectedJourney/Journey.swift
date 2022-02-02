@@ -19,4 +19,5 @@ enum Journey {
     case learnCard(viewModel: [LearnWordzCardView.ViewModel])
     case learnNewWordz
     case dailyWords
+    case learnTimes
 }

@@ -29,5 +29,7 @@ func goJourney(_ journey: Journey) -> UIViewController {
         return LearnNewWordzBuilder.build()
     case .dailyWords:
         return DailyWordsBuilder.build()
+    case .learnTimes:
+        return LearnTimesBuilder.build()
     }
 }

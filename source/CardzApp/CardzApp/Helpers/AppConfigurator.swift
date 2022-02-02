@@ -18,6 +18,7 @@ final class AppConfigurator {
         case learn
         case favourite
         case devDebug
+        case templateModule
         
         func buildModule() -> UIViewController {
             switch self {
@@ -61,6 +62,16 @@ final class AppConfigurator {
                     devViewController.tabBarItem = item
                 }
                 return devViewController
+            case .templateModule:
+                let viewController = goJourney(.learnTimes)
+                if let iconData = UIImage.developingModule?.pngData(),
+                   let filledIconData = UIImage.developingModuleFilled?.pngData(){
+                    let image = UIImage(data: iconData, scale: 17.0)
+                    let imageFilled = UIImage(data: filledIconData, scale: 17.0)
+                    let item = UITabBarItem(title: "Times", image: image, selectedImage: imageFilled)
+                    viewController.tabBarItem = item
+                }
+                return viewController
             }
         
         }

@@ -79,4 +79,8 @@ public extension UIImage {
     
     static let doneIcon = UIImage(named: "doneIcon")
     
+    static let developingModule = UIImage(named: "developingModule")
+    
+    static let developingModuleFilled = UIImage(named: "developingModuleFilled")
+    
 }

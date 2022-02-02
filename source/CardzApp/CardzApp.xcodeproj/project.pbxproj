@@ -59,6 +59,15 @@
 		7781F48027920D7D00612B1A /* Ficha-WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7781F47327920D7A00612B1A /* Ficha-WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7782739A27A905FE00E5053D /* Rivendell in Frameworks */ = {isa = PBXBuildFile; productRef = 7782739927A905FE00E5053D /* Rivendell */; };
 		7782739F27A9092D00E5053D /* FichaWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7782739B27A9089A00E5053D /* FichaWidgetBundle.swift */; };
+		778273A327AA566F00E5053D /* LearnTimesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778273A227AA566F00E5053D /* LearnTimesViewController.swift */; };
+		778273A727AA569900E5053D /* LearnTimesViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778273A627AA569900E5053D /* LearnTimesViewController+ViewModel.swift */; };
+		778273AA27AA56B100E5053D /* LearnTimesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778273A927AA56B100E5053D /* LearnTimesPresenter.swift */; };
+		778273AD27AA56D500E5053D /* LearnTimesViewController+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778273AC27AA56D500E5053D /* LearnTimesViewController+State.swift */; };
+		778273AF27AA56E900E5053D /* LearnTimesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778273AE27AA56E900E5053D /* LearnTimesBuilder.swift */; };
+		778273B127AA56F500E5053D /* LearnTimesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778273B027AA56F500E5053D /* LearnTimesProtocols.swift */; };
+		778273B327AA5AD100E5053D /* LearnTimesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778273B227AA5AD100E5053D /* LearnTimesViewModel.swift */; };
+		778273B527AA5AE000E5053D /* LearnTimesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778273B427AA5AE000E5053D /* LearnTimesModel.swift */; };
+		778273B727AA5AEA00E5053D /* LearnTimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778273B627AA5AEA00E5053D /* LearnTimesView.swift */; };
 		77895BF927306ABC00A852BF /* Hobbiton in Frameworks */ = {isa = PBXBuildFile; productRef = 77895BF827306ABC00A852BF /* Hobbiton */; };
 		77A178DD273526FE005E520C /* EyeOfSauron in Frameworks */ = {isa = PBXBuildFile; productRef = 77A178DC273526FE005E520C /* EyeOfSauron */; };
 		77A178DF27352A0E005E520C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A178DE27352A0E005E520C /* Logger.swift */; };
@@ -186,6 +195,15 @@
 		7781F47D27920D7D00612B1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7781F48527920DA000612B1A /* Ficha-WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Ficha-WidgetExtension.entitlements"; sourceTree = "<group>"; };
 		7782739B27A9089A00E5053D /* FichaWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaWidgetBundle.swift; sourceTree = "<group>"; };
+		778273A227AA566F00E5053D /* LearnTimesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTimesViewController.swift; sourceTree = "<group>"; };
+		778273A627AA569900E5053D /* LearnTimesViewController+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearnTimesViewController+ViewModel.swift"; sourceTree = "<group>"; };
+		778273A927AA56B100E5053D /* LearnTimesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTimesPresenter.swift; sourceTree = "<group>"; };
+		778273AC27AA56D500E5053D /* LearnTimesViewController+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearnTimesViewController+State.swift"; sourceTree = "<group>"; };
+		778273AE27AA56E900E5053D /* LearnTimesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTimesBuilder.swift; sourceTree = "<group>"; };
+		778273B027AA56F500E5053D /* LearnTimesProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTimesProtocols.swift; sourceTree = "<group>"; };
+		778273B227AA5AD100E5053D /* LearnTimesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTimesViewModel.swift; sourceTree = "<group>"; };
+		778273B427AA5AE000E5053D /* LearnTimesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTimesModel.swift; sourceTree = "<group>"; };
+		778273B627AA5AEA00E5053D /* LearnTimesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTimesView.swift; sourceTree = "<group>"; };
 		77A178DB273526F4005E520C /* EyeOfSauron */ = {isa = PBXFileReference; lastKnownFileType = folder; name = EyeOfSauron; path = ../Frameworks/EyeOfSauron; sourceTree = "<group>"; };
 		77A178DE27352A0E005E520C /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		77A3CA272772F93E00A0EA9C /* ThematicWordzViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThematicWordzViewController.swift; sourceTree = "<group>"; };
@@ -560,6 +578,86 @@
 			path = Provider;
 			sourceTree = "<group>";
 		};
+		778273A427AA567400E5053D /* LearnTimesModule */ = {
+			isa = PBXGroup;
+			children = (
+				778273BC27AA5B2C00E5053D /* MVVM */,
+				778273B827AA5AFB00E5053D /* VIPER */,
+			);
+			path = LearnTimesModule;
+			sourceTree = "<group>";
+		};
+		778273A527AA568600E5053D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				778273A827AA569D00E5053D /* Supplementary */,
+				778273A227AA566F00E5053D /* LearnTimesViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		778273A827AA569D00E5053D /* Supplementary */ = {
+			isa = PBXGroup;
+			children = (
+				778273A627AA569900E5053D /* LearnTimesViewController+ViewModel.swift */,
+				778273AC27AA56D500E5053D /* LearnTimesViewController+State.swift */,
+			);
+			path = Supplementary;
+			sourceTree = "<group>";
+		};
+		778273AB27AA56B300E5053D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				778273A927AA56B100E5053D /* LearnTimesPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		778273B827AA5AFB00E5053D /* VIPER */ = {
+			isa = PBXGroup;
+			children = (
+				778273AE27AA56E900E5053D /* LearnTimesBuilder.swift */,
+				778273B027AA56F500E5053D /* LearnTimesProtocols.swift */,
+				778273A527AA568600E5053D /* View */,
+				778273AB27AA56B300E5053D /* Presenter */,
+			);
+			path = VIPER;
+			sourceTree = "<group>";
+		};
+		778273B927AA5B0100E5053D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				778273B227AA5AD100E5053D /* LearnTimesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		778273BA27AA5B1000E5053D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				778273B627AA5AEA00E5053D /* LearnTimesView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		778273BB27AA5B1400E5053D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				778273B427AA5AE000E5053D /* LearnTimesModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		778273BC27AA5B2C00E5053D /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				778273BB27AA5B1400E5053D /* Model */,
+				778273BA27AA5B1000E5053D /* View */,
+				778273B927AA5B0100E5053D /* ViewModel */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
 		77A178E027352A12005E520C /* Logger */ = {
 			isa = PBXGroup;
 			children = (
@@ -703,6 +801,7 @@
 				776E4927272C90F3000D0B2D /* LearnCardModule */,
 				770B3FE72769BA0D00DC7887 /* LearnNewWordzModule */,
 				D4F00D832718C3FB0079A860 /* DailyWordsModule */,
+				778273A427AA567400E5053D /* LearnTimesModule */,
 				D4F00D8A2718C3FB0079A860 /* Helpers */,
 				D4F00D5C2718C3860079A860 /* Assets.xcassets */,
 				D4F00D5E2718C3860079A860 /* LaunchScreen.storyboard */,
@@ -982,6 +1081,7 @@
 				774B3B1327A71F5600DC9B20 /* Journey.swift in Sources */,
 				7748E93B2757F4F90063E592 /* FavouriteWordzProtocols.swift in Sources */,
 				7748E93D2757F5460063E592 /* AlertCardViewController+ViewModel.swift in Sources */,
+				778273A327AA566F00E5053D /* LearnTimesViewController.swift in Sources */,
 				77A3CA322772F9A400A0EA9C /* ThematicWordzBuilder.swift in Sources */,
 				D4C7F12F2719636D0066125A /* DailyWordsViewController+State.swift in Sources */,
 				77A3CA3B2775A77100A0EA9C /* TODO.swift in Sources */,
@@ -997,14 +1097,20 @@
 				D4F00DA52718C5070079A860 /* LifeCycleProtocol.swift in Sources */,
 				7748E9392757F4EE0063E592 /* FavouriteWordzBuilder.swift in Sources */,
 				770B3FDD2767D63B00DC7887 /* DeveloperScreenViewController+ViewModel.swift in Sources */,
+				778273AA27AA56B100E5053D /* LearnTimesPresenter.swift in Sources */,
+				778273B527AA5AE000E5053D /* LearnTimesModel.swift in Sources */,
 				77FED85727881D20007D60E3 /* DevDebugViewController.swift in Sources */,
+				778273A727AA569900E5053D /* LearnTimesViewController+ViewModel.swift in Sources */,
 				77140796277ADAAB00B7E8D2 /* OnboardingModuleModel.swift in Sources */,
 				D4F00D5B2718C3840079A860 /* CardzApp.xcdatamodeld in Sources */,
 				776E492F272C91C1000D0B2D /* LearnCardBuilder.swift in Sources */,
+				778273B727AA5AEA00E5053D /* LearnTimesView.swift in Sources */,
 				7714078F277AD90400B7E8D2 /* OnboardingUserPresenter.swift in Sources */,
 				772041AC277DF01600141FCA /* WordzModelDB.swift in Sources */,
 				77140788277AD75C00B7E8D2 /* OnboardingUserViewController.swift in Sources */,
+				778273B127AA56F500E5053D /* LearnTimesProtocols.swift in Sources */,
 				770B3FED2769BA4500DC7887 /* LearnNewWordzInterface.swift in Sources */,
+				778273AF27AA56E900E5053D /* LearnTimesBuilder.swift in Sources */,
 				7746E4F8278E983E001AEE45 /* AppConfigurator.swift in Sources */,
 				776EFC37274107C7001010FD /* AlertCardViewController.swift in Sources */,
 				77A178DF27352A0E005E520C /* Logger.swift in Sources */,
@@ -1017,6 +1123,7 @@
 				776EFC3B27410804001010FD /* AlertCardPresenter.swift in Sources */,
 				D4F00DA22718C4940079A860 /* DailyWordsViewController+ViewModel.swift in Sources */,
 				77140794277AD92200B7E8D2 /* OnboardingUserBuilder.swift in Sources */,
+				778273B327AA5AD100E5053D /* LearnTimesViewModel.swift in Sources */,
 				D48F8494276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift in Sources */,
 				770B3FE22767D66600DC7887 /* DeveloperScreenProtocol.swift in Sources */,
 				7748E9322757F4B10063E592 /* FavouriteWordzViewController.swift in Sources */,
@@ -1025,6 +1132,7 @@
 				D4F00D9E2718C3FB0079A860 /* SceneDelegate.swift in Sources */,
 				772041AE277EDC1C00141FCA /* DaysChecker.swift in Sources */,
 				77A3CA342772F9B300A0EA9C /* ThematicWordzProtocols.swift in Sources */,
+				778273AD27AA56D500E5053D /* LearnTimesViewController+State.swift in Sources */,
 				D4F00D972718C3FB0079A860 /* DailyWordsViewController.swift in Sources */,
 				770B3FE62769BA0900DC7887 /* LearnNewWordzViewController.swift in Sources */,
 				D4F00D9D2718C3FB0079A860 /* AppDelegate.swift in Sources */,
