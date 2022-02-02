@@ -22,8 +22,8 @@ struct TodayWidgetMediumView : View {
             if shot.example != nil {
                 LinearGradient(gradient: Gradient(
                     stops: [
-                        .init(color: Color.wowFir, location: 0.0),
-                        .init(color: Color.wowSec, location: 1.0)
+                        .init(color: Color.wowSec, location: 0.0),
+                        .init(color: Color.wowFir, location: 1.0)
                     ]
                 ),
                                startPoint: .top,
@@ -41,9 +41,9 @@ struct TodayWidgetMediumView : View {
             
             HStack(spacing: 8.0) {
                 if shot.example != nil {
-                    Color.wowFir
-                        .cornerRadius(30.0, corners: [.bottomRight])
                     Color.wowSec
+                        .cornerRadius(30.0, corners: [.bottomRight])
+                    Color.wowFir
                         .cornerRadius(30.0, corners: [.topLeft])
                 }
             }
