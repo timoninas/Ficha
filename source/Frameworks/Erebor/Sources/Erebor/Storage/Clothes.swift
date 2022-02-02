@@ -347,6 +347,192 @@ func getGoldClothes() -> BagOfGoldWords {
             ],
             translations: ["Вечернее (бальное) платье"]
         ),
+        .init(
+            word: "Business suit",
+            transcription: "[ˈbɪznəs suːt]",
+            examples: [
+                "Maybe it was the way she wore her hair. Or the simple business suit",
+                "A brown-faced man dressed in a light gray business suit got out and walked across to the truck",
+                "A man in a 20th-century business suit"
+            ],
+            translations: ["Деловой костюм"]
+        ),
+        .init(
+            word: "Pants suit",
+            transcription: "[pænts suːt]",
+            examples: [
+                "And then Lang called and he said you left your pant suit at the headquarters",
+                "Like in the movies with the headsets and the black pant suits?",
+                "What's with the pant suit, mami?"
+            ],
+            translations: ["Женский брючный костюм"]
+        ),
+        .init(
+            word: "Uniform",
+            transcription: "[ˈjuːnɪfɔːm]",
+            examples: [
+                "I looked mighty vip too, in black and gold uniform which Stu claimed was Lunar diplomatic uniform of my rank",
+                "There were so many strident faceless people in uniform in the dining room with him",
+                "Fritz answered the door, not clad in his smart navy chauffeur's uniform, clad in his smart butler's morning suit instead"
+            ],
+            translations: ["Форма (рабочая)"]
+        ),
+        .init(
+            word: "Button-through dress",
+            transcription: "[ˈbʌtn̩ θruː dres]",
+            examples: [
+                "A thin black woman was seated in a chair in a corner of the room sewing on a dress",
+                "The little girl watched me, holding the bread against her dirty dress",
+                "He not only brought Maybelle the satin but he was able to give excellent hints on the making of the wedding dress"
+            ],
+            translations: ["Платье-халат"]
+        ),
+        .init(
+            word: "Pinafore dress",
+            transcription: "[ˈpɪnəfɔː dres]",
+            examples: [
+                "She was wearing a long white chiffon dress with delicate silver slippers and a diamond necklace, a present from Kate",
+                "It reconstructs the purple from the rag, and the woman from the scrap of her dress",
+                "I'm making a child's dress, for Mrs Flint's baby"
+            ],
+            translations: ["Сарафан"]
+        ),
+        .init(
+            word: "House dress",
+            transcription: "[ˈhaʊs dres]",
+            examples: [
+                "She wore a cotton house dress and red mules, on the insteps of which were little bouquets of red ostrich feathers",
+                "Tracy,you're not going out the house dressed like that",
+                "I managed to get him back to my house and dress his wounds"
+            ],
+            translations: ["Домашнее платье"]
+        ),
+        .init(
+            word: "Maternity wear",
+            transcription: "[məˈtɜːnɪti weə]",
+            examples: [],
+            translations: ["Одежда для беременных"]
+        ),
+        .init(
+            word: "Maternity dress",
+            transcription: "[məˈtɜːnɪti dres]",
+            examples: [
+                "Tracy wore a black wig, a maternity dress and padding, heavy makeup, and dark sunglasses",
+                "I brought the maternity dress from home, and Tessie took charge of the accessories",
+                "I hope your aunt doesn't think that's a maternity dress"
+            ],
+            translations: ["Платье для беременных"]
+        ),
+        .init(
+            word: "Sweater",
+            transcription: "[ˈswetə]",
+            examples: [
+                "Slowly, Sophie pulled the cruciform key from her sweater pocket and held it out to Teabing",
+                "He saw that she was wearing a black sweater and a tight black skirt",
+                "I always thought that was a sweater cubby"
+            ],
+            translations: ["Свитер"]
+        ),
+        .init(
+            word: "Jersey",
+            transcription: "[ˈdʒɜːzi]",
+            examples: [
+                "He was dressed in grey, grey stockings above the knee, grey shorts, and a grey jersey",
+                "He was startled to see a letter for him from Jersey in a writing he knew too well, and had expected least to behold again",
+                "I'm creating a Jersey dress"
+            ],
+            translations: ["Свитер", "Вязаная кофта"]
+        ),
+        .init(
+            word: "Cardigan",
+            transcription: "[ˈkɑːdɪɡən]",
+            examples: [
+                "You should have worn a different cardigan this morning, Christina",
+                "Can you take your cardigan off and stand up, please?",
+                "That's a very pretty cardigan you have on today, Dot"
+            ],
+            translations: ["Кардиган", "Кофта", "Жилет"]
+        ),
+        .init(
+            word: "Jacket",
+            transcription: "[ˈdʒækɪt]",
+            examples: [
+                "She tried not to run, afraid of attracting attention. She pulled her jacket close around her to conceal her ripped blouse",
+                "Next to the jacket, emergency water, nail clippers, tooth brush, space blanket...",
+                "Then a gloomy old woman came in and spent ages unwinding her scarf and taking off her jacket"
+            ],
+            translations: ["Куртка", "Пиджак"]
+        ),
+        .init(
+            word: "Vest",
+            transcription: "[vest]",
+            examples: [
+                "His Majesty intends to vest the succession with the children he will have with Queen Anne",
+                "He is sincerely for the revolution and fully deserves the trust that the Yuriatin City Council has vested in him",
+                "It will state that the line of succession is now firmly vested in our children... and no others"
+            ],
+            translations: ["Жилет", "Майка", "Бронежелет"]
+        ),
+        .init(
+            word: "Blouse",
+            transcription: "[blaʊz]",
+            examples: [
+                "The woman was attractive, in her mid-thirties, wearing gray, pleated flannel pants, conservative flats, and an ivory Laura Ashley blouse",
+                "He did not wear the gondolier's blouse: only the knitted blue jersey",
+                "No one in the world has such an elegant blouse as this"
+            ],
+            translations: ["Блузка", "Кофточка", "Гимнастерка"]
+        ),
+        .init(
+            word: "Shirt",
+            transcription: "[ʃɜːt]",
+            examples: [
+                "Ripping off his shirt, he hurled it to his right onto the open deck",
+                "I do. Jamie looked at the hopeful young boy with the stained shirt. The next shovelful of dirt",
+                "To put on a grey shirt once more was strangely pleasing"
+            ],
+            translations: ["Рубашка", "Сорочка"]
+        ),
+        .init(
+            word: "Tunic",
+            transcription: "[ˈtjuːnɪk]",
+            examples: [
+                "The commissioner of police unbuttoned his tunic again and looked at Yossarian with contempt",
+                "I sat beside him, undid my tunic and tried to rip the tail of my shirt",
+                "She simply removed her uniform tunic and started building"
+            ],
+            translations: ["Туника", "Блузка", "Жакет"]
+        ),
+        .init(
+            word: "T-shirt",
+            transcription: "[ˈtiː ʃɜːt]",
+            examples: [
+                "The lifeguard was standing on the edge of the pool; he had a whistle and a T- shirt on with his ward number on it",
+                "T- shirt or top?",
+                "Prince T- shirt?"
+            ],
+            translations: ["Футболка"]
+        ),
+        .init(
+            word: "Tank top",
+            transcription: "[tæŋk tɒp]",
+            examples: [
+                "I can just picture the two of us, tank tops and spandex",
+                "A... one-eyed princess in a long, flowing... tank top",
+                "I wore a tank top today because I thought it was summer"
+            ],
+            translations: ["Вязаный жилет", "Майка на лямках"]
+        ),
+        .init(
+            word: "Halter top",
+            transcription: "[ˈhɔːltə tɒp]",
+            examples: [
+                "You know, sometimes I drive past her house and she's out watering her lawn in her shorty shorts and her halter top",
+                "And I already bought Tammy a halter top for her birthday",
+                "Now I can't wear halter tops, you stupid zombie",
+            ],
+            translations: ["Короткий топ"]
+        ),
     ])
     
     let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .clothes, typeTranslation: .enToRu)
