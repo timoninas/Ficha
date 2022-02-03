@@ -382,6 +382,206 @@ func getGoldHome() -> BagOfGoldWords {
             ],
             translations: ["Шкаф для одежды", "Платяной шкаф"]
         ),
+        .init(
+            word: "To iron",
+            transcription: "[tu ˈaɪən]",
+            examples: [
+                "Now, if you would all please excuse me... my mommy has to iron my corduroys",
+                "I'm going to be carrying some scrap iron in this truck, Jeff explained",
+                "A big rusty iron ball at the end of a chain"
+            ],
+            translations: ["Гладить"]
+        ),
+        .init(
+            word: "To press",
+            transcription: "[tə pres]",
+            examples: [
+                "The tumor's starting to press against your esophagus",
+                "I need you to press this as hard as you can",
+                "He trained them to press levers"
+            ],
+            translations: ["Погладить"]
+        ),
+        .init(
+            word: "Living",
+            transcription: "[ˈlɪvɪŋ]",
+            examples: [
+                "Then his father had carefully placed the rose on a high dusty shelf in the darkest corner of the living room",
+                "I mean, a string quartet in my living room - who does that?",
+                "I can't live in a room with landscapes, said Ostap",
+            ],
+            translations: ["Гостиная"]
+        ),
+        .init(
+            word: "Sitting room",
+            transcription: "[ˈsɪtɪŋ ruːm]",
+            examples: [
+                "He glanced at Atticus, then at the jury, then at Mr. Underwood sitting across the room",
+                "Only it's dull enough to sit in a room where everything speaks to you of a dead friend",
+                "I entered the sitting room and turned on the light. I put my vest on"
+            ],
+            translations: ["Гостиная"]
+        ),
+        .init(
+            word: "Lounge",
+            transcription: "[laʊndʒ]",
+            examples: [
+                "IX Miss Sainsbury Seale was in the dimly lit lounge of the Glengowrie Court Hotel, having tea",
+                "And I have no intention of winding up back here, in the losers' lounge",
+                "The manager said Belser picked up a shift at the Vonner street lounge"
+            ],
+            translations: ["Гостиная", "Гостиная комната"]
+        ),
+        .init(
+            word: "Dirty",
+            transcription: "[ˈdɜːti]",
+            examples: [
+                "On the chimney-piece, scattered over with paints and brushes, were a cup, a dirty plate, and a tea-pot",
+                "Indeed Mr. Moss's house, though somewhat dirty, was splendid throughout",
+                "From sleeping in his clothes he felt sticky and dirty"
+            ],
+            translations: ["Грязный", "Пакостный"]
+        ),
+        .init(
+            word: "Filthy",
+            transcription: "[ˈfɪlθi]",
+            examples: [
+                "Then at last my knife-arm came free, and I slashed wildly at any part of the filthy body that presented itself",
+                "Some filthy swine in town had told them about him, because they came straight here and asked for him",
+                "Gold, silver, round their necks, round their wrists, in their filthy mouths!"
+            ],
+            translations: ["Грязный", "Мерзкий"]
+        ),
+        .init(
+            word: "Mud",
+            transcription: "[mʌd]",
+            examples: [
+                "I had half a mind to spend it by my study fire, instead of wading through heath and mud to Wuthering Heights",
+                "It doesn't do for Scarlett to stay away too long from the patch of red mud she loves",
+                "As the mud turns into rock, the bugs get fossilized in stone"
+            ],
+            translations: ["Грязь", "Слякоть"]
+        ),
+        .init(
+            word: "Dirt",
+            transcription: "[dɜːt] ",
+            examples: [
+                "Standing around jabbering ain't gonna get the dirt out of that ground",
+                "From the dirt, these picture have been here a long time",
+                "If you're interested, I have dirt on bree"
+            ],
+            translations: ["Грязь", "Нечистоты"]
+        ),
+        .init(
+            word: "Door",
+            transcription: "[dɔː]",
+            examples: [
+                "Together we shifted the folding screen to one side, then I turned the handle of the door",
+                "The door was closed, but through the window she could see a man sitting at a computer",
+                "The door to boundless opportunities is now open for you, Shura"
+            ],
+            translations: ["Дверь", "Вход"]
+        ),
+        .init(
+            word: "House",
+            transcription: "[ˈhaʊs]",
+            examples: [
+                "Filled with anticipation, they bought a small house near Pasadena, where Celia got a job as a science teacher",
+                "I can't sit here forever, she told herself. Why don't I just go take a look at the house? A quick look",
+                "The house was so small, the furnishings so very simple"
+            ],
+            translations: ["Дом", "Здание", "Жилье"]
+        ),
+        .init(
+            word: "At home",
+            transcription: "[ət həʊm]",
+            examples: [
+                "Here's something I want everyone to watch at home tonight",
+                "I taught a \"Massage Yourself at Home\" workshop",
+                "I mean, they want to see you at home"
+            ],
+            translations: ["Дома", "На родине"]
+        ),
+        .init(
+            word: "Oven",
+            transcription: "[ˈʌvn̩]",
+            examples: [
+                "My little girl was singing a song about a pie that would rather burn in the oven than land in the stomach of a fat nobleman",
+                "Or a cider mill in the grinding, or bread fresh from the oven?",
+                "Keith was basting a roast in the oven"
+            ],
+            translations: ["Духовка", "Термостат"]
+        ),
+        .init(
+            word: "Shower",
+            transcription: "[ˈʃaʊə]",
+            examples: [
+                "There was a shower right between every two rooms in our wing, and about eighty-five times a day old Ackley barged in on me",
+                "The city dissolved in a shower of ancient glass and splintered quartz",
+                "Well, some of it... the shower, kitchen counter, mudroom"
+            ],
+            translations: ["Душ", "Ливень"]
+        ),
+        .init(
+            word: "Fence",
+            transcription: "[fens]",
+            examples: [
+                "No one seemed to want to. Harry, Ron, and Hermione, however, approached the fence cautiously",
+                "All its garbage just blows off, gets caught in the snow fence by the side of the road",
+                "They tore down Mr. Fenchel's white picket fence and burned the front out of his house"
+            ],
+            translations: ["Забор", "Ограда"]
+        ),
+        .init(
+            word: "To close",
+            transcription: "[tə kləʊz]",
+            examples: [
+                "I strain so hard my eyes ache and I have to close them, and when I open them again the colonel is gone",
+                "I'll have to close you up till you do,' says the constable",
+                "Then came more cavalry to close the column"
+            ],
+            translations: ["Задёрнуть занавески", "Закрыть"]
+        ),
+        .init(
+            word: "Draw the curtains",
+            transcription: "[drɔː ðə ˈkɜːtn̩z]",
+            examples: [
+                "If I were to draw the curtains, and look out of that window, I should feel the acutest pain all over my face",
+                "Let me draw the curtains, and light the candles, and make things more comfortable about you",
+                "Do you want me to draw the curtains?"
+            ],
+            translations: ["Задёрнуть занавески"]
+        ),
+        .init(
+            word: "To close",
+            transcription: "[tə kləʊz]",
+            examples: [
+                "I strain so hard my eyes ache and I have to close them, and when I open them again the colonel is gone",
+                "I'll have to close you up till you do,' says the constable",
+                "They're going to close the bridges"
+            ],
+            translations: ["Закрывать"]
+        ),
+        .init(
+            word: "To shut",
+            transcription: "[tə ʃʌt]",
+            examples: [
+                "They control you on paper, and unless you want to shut down for the next 90 days, this is what you have to do",
+                "So from now on you'll all have to shut your eyes or look in the other direction when she comes in that way",
+                "As it is, all I can say is for you to shut your God-damn mouth"
+            ],
+            translations: ["Закрыть", "Захлопнуть"]
+        ),
+        .init(
+            word: "Lock",
+            transcription: "[lɒk]",
+            examples: [
+                "Tracy put the key in the lock, and the door swung open. She waited a full minute before she stepped inside",
+                "In my opinion as best computerman in Luna, Mike could not remove this lock once it was set up",
+                "It has a shed with bars and an iron door and a lock"
+            ],
+            translations: ["Замок", "Блокировка"]
+        ),
     ])
     
     let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .home, typeTranslation: .enToRu)
