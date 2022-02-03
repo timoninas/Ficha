@@ -19,7 +19,7 @@ struct TodayWidget: Widget {
         }
         .configurationDisplayName("Ficha")
         .description("The appearance of new words every day!")
-        .supportedFamilies([.systemSmall])
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
     
 }

@@ -11,9 +11,15 @@ struct TodayWidgetEntryView: View {
     
     var entry: TodayProvider.Entry
     
+    @Environment(\.widgetFamily) var family
+    
     @ViewBuilder
     var body: some View {
-        FichaSmallView(entry.shot)
+        if family == .systemSmall {
+            TodayWidgetSmallView(entry.shot)
+        } else if family == .systemMedium {
+            TodayWidgetMediumView(entry.shot)
+        }
     }
     
 }

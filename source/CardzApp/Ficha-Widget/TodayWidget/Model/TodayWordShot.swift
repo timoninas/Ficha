@@ -5,12 +5,13 @@
 //  Created by Антон Тимонин on 19.01.2022.
 //
 
-import Foundation
+import SwiftUI
 
 struct TodayWordShot: Hashable, Codable, Identifiable {
     
     let wordz: String
     let translate: String
+    let example: String?
     
     var id: String {
         wordz
@@ -18,7 +19,8 @@ struct TodayWordShot: Hashable, Codable, Identifiable {
     
     static let simpleWordShot = TodayWordShot(
         wordz: "Cinema",
-        translate: "Кино"
+        translate: "Кино",
+        example: "You’re right that is a lovely depiction of postmodernism.\nYou’re right that is a lovely depiction of postmodernism"
     )
     
     var titleLineCount: Int {

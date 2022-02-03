@@ -10,6 +10,7 @@ import Erebor
 import RevolvetraKnowledge
 import RevolvetraUserDefaults
 import EyeOfSauron
+import WidgetKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -63,7 +64,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     let words = Array(MoriaManager.shared.getWordz(type: type)
                                         .filter({ $0.wordz.count < 14 })
                                         .shuffled()
-                                        .prefix(2))
+                                        .prefix(3))
                     words.forEach { word in
                         newDailyWords.append(.init(
                             title: word.wordz,
@@ -77,8 +78,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     }
                 }
             DailyWordsUserDefaultsCache.saveForGroup(newDailyWords.shuffled())
+            WidgetCenter.shared.reloadAllTimelines()
         }
-        guard DaysChechker.isNewDay else {
+        guard DaysChechker.isQuarterOfDay else {
             for _ in 0..<2 {
                 guard DailyWordsUserDefaultsCache.getForGroup().isEmpty else { return }
                 filling()

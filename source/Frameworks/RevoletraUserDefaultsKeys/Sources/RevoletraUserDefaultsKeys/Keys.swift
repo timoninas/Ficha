@@ -39,6 +39,8 @@ public struct ProfileKey {
     
     public static let lastVisitAppDate = "UD_KnowledgeProfile_lastVisitAppDate"
     
+    public static let lastHalfHalfDateVisit = "UD_KnowledgeProfile_lastHalfHalfDateVisit"
+    
 }
 
 public struct DailyWordsCacheKey {

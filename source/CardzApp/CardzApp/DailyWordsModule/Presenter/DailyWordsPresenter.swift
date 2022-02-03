@@ -63,7 +63,6 @@ final class DailyWordsPresenter: DailyWordsOutput {
                 }
             }
         DailyWordsUserDefaultsCache.save(newDailyWords.shuffled())
-        WidgetCenter.shared.reloadAllTimelines()
     }
     
     private func fetchData() {

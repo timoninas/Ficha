@@ -8,7 +8,7 @@
 import SwiftUI
 import Rivendell
 
-struct FichaSmallView : View {
+struct TodayWidgetSmallView : View {
     
     var shot: TodayWordShot
     
@@ -44,20 +44,11 @@ struct FichaSmallView : View {
             }
             
             if self.shot.canShowLogo {
-                HStack {
-                    VStack {
-                        Image("ficha-logo")
-                            .resizable()
-                            .frame(width: 23.0, height: 23.0)
-                        Spacer()
-                    }
-                    Spacer()
-                }
-                .padding(.top, 10.0)
-                .padding(.leading, 10.0)
+                FichaLogoView(
+                    imageName: "ficha-logo",
+                    size: CGSize(width: 23.0, height: 23.0)
+                )
             }
-            
-            
             
         }.edgesIgnoringSafeArea(.all)
         
@@ -65,11 +56,11 @@ struct FichaSmallView : View {
     
 }
 
-struct FichaSmallView_Previews: PreviewProvider {
+struct TodayWidgetSmallView_Previews: PreviewProvider {
     
     static var previews: some View {
         Group {
-            FichaSmallView(.simpleWordShot)
+            TodayWidgetSmallView(.simpleWordShot)
         }
     }
     

@@ -68,6 +68,8 @@
 		778273B327AA5AD100E5053D /* LearnTimesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778273B227AA5AD100E5053D /* LearnTimesViewModel.swift */; };
 		778273B527AA5AE000E5053D /* LearnTimesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778273B427AA5AE000E5053D /* LearnTimesModel.swift */; };
 		778273B727AA5AEA00E5053D /* LearnTimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778273B627AA5AEA00E5053D /* LearnTimesView.swift */; };
+		778273BE27AAF6AF00E5053D /* TodayWidgetMediumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778273BD27AAF6AF00E5053D /* TodayWidgetMediumView.swift */; };
+		778273C127AB058F00E5053D /* SharedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778273C027AB058F00E5053D /* SharedView.swift */; };
 		77895BF927306ABC00A852BF /* Hobbiton in Frameworks */ = {isa = PBXBuildFile; productRef = 77895BF827306ABC00A852BF /* Hobbiton */; };
 		77A178DD273526FE005E520C /* EyeOfSauron in Frameworks */ = {isa = PBXBuildFile; productRef = 77A178DC273526FE005E520C /* EyeOfSauron */; };
 		77A178DF27352A0E005E520C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A178DE27352A0E005E520C /* Logger.swift */; };
@@ -204,6 +206,8 @@
 		778273B227AA5AD100E5053D /* LearnTimesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTimesViewModel.swift; sourceTree = "<group>"; };
 		778273B427AA5AE000E5053D /* LearnTimesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTimesModel.swift; sourceTree = "<group>"; };
 		778273B627AA5AEA00E5053D /* LearnTimesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTimesView.swift; sourceTree = "<group>"; };
+		778273BD27AAF6AF00E5053D /* TodayWidgetMediumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWidgetMediumView.swift; sourceTree = "<group>"; };
+		778273C027AB058F00E5053D /* SharedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedView.swift; sourceTree = "<group>"; };
 		77A178DB273526F4005E520C /* EyeOfSauron */ = {isa = PBXFileReference; lastKnownFileType = folder; name = EyeOfSauron; path = ../Frameworks/EyeOfSauron; sourceTree = "<group>"; };
 		77A178DE27352A0E005E520C /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		77A3CA272772F93E00A0EA9C /* ThematicWordzViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThematicWordzViewController.swift; sourceTree = "<group>"; };
@@ -538,6 +542,7 @@
 		7781F47827920D7A00612B1A /* Ficha-Widget */ = {
 			isa = PBXGroup;
 			children = (
+				778273C227AB059200E5053D /* Additional */,
 				7782739B27A9089A00E5053D /* FichaWidgetBundle.swift */,
 				775E285E279752B800A147A3 /* TodayWidget */,
 				7781F47B27920D7D00612B1A /* Assets.xcassets */,
@@ -558,6 +563,7 @@
 			isa = PBXGroup;
 			children = (
 				775E285F279752C900A147A3 /* Small */,
+				778273BF27AAF6B200E5053D /* Medium */,
 			);
 			path = FamilyViews;
 			sourceTree = "<group>";
@@ -656,6 +662,22 @@
 				778273B927AA5B0100E5053D /* ViewModel */,
 			);
 			path = MVVM;
+			sourceTree = "<group>";
+		};
+		778273BF27AAF6B200E5053D /* Medium */ = {
+			isa = PBXGroup;
+			children = (
+				778273BD27AAF6AF00E5053D /* TodayWidgetMediumView.swift */,
+			);
+			path = Medium;
+			sourceTree = "<group>";
+		};
+		778273C227AB059200E5053D /* Additional */ = {
+			isa = PBXGroup;
+			children = (
+				778273C027AB058F00E5053D /* SharedView.swift */,
+			);
+			path = Additional;
 			sourceTree = "<group>";
 		};
 		77A178E027352A12005E520C /* Logger */ = {
@@ -1063,8 +1085,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				778273BE27AAF6AF00E5053D /* TodayWidgetMediumView.swift in Sources */,
 				775E28652797536B00A147A3 /* TodayProvider.swift in Sources */,
 				775E28622797534C00A147A3 /* TodayWidgetSmallView.swift in Sources */,
+				778273C127AB058F00E5053D /* SharedView.swift in Sources */,
 				7781F47A27920D7A00612B1A /* TodayWidget.swift in Sources */,
 				775E28672797538B00A147A3 /* TodayWidgetEntry.swift in Sources */,
 				775E28632797534F00A147A3 /* TodayWidgetEntryView.swift in Sources */,
