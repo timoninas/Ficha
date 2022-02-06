@@ -41,15 +41,14 @@ final class DailyWordsPresenter: DailyWordsOutput {
     
     private func refillDailyWords() {
         var newDailyWords: [DailyWordsUserDefaults] = []
-        let types = ArkenstoneTypeWord.allCases
+        let types = ArkenstoneTypeWord.allowedTypes()
         types
             .shuffled()
-            .prefix(6)
+            .prefix(5)
             .forEach { type in
-                guard type != .slang else { return }
                 let words = Array(MoriaManager.shared.getWordz(type: type)
                                     .shuffled()
-                                    .prefix(2))
+                                    .prefix(3))
                 words.forEach { word in
                     newDailyWords.append(.init(
                         title: word.wordz,

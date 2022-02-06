@@ -47,4 +47,14 @@ public enum ArkenstoneTypeWord: String, CaseIterable, Decodable, Encodable {
     case emoji = "Emoji"
     /// Неизвестно.
     case unknown = "Unknown"
+    
+    public static func allowedTypes() -> [ArkenstoneTypeWord] {
+        let restrictedTypes: [ArkenstoneTypeWord] = [.slang, .emoji]
+        var result: [ArkenstoneTypeWord] = []
+        ArkenstoneTypeWord.allCases.forEach { type in
+            guard !restrictedTypes.contains(type) else { return }
+            result.append(type)
+        }
+        return result
+    }
 }
