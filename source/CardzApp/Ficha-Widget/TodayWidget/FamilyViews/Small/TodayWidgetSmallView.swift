@@ -45,7 +45,7 @@ struct TodayWidgetSmallView : View {
             
             if self.shot.canShowLogo {
                 FichaLogoView(
-                    imageName: "ficha-logo",
+                    image: Image.fichaLogo,
                     size: CGSize(width: 23.0, height: 23.0)
                 )
             }

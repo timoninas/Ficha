@@ -9,13 +9,13 @@ import SwiftUI
 
 struct FichaLogoView : View {
     
-    let imageName: String
+    let image: Image
     let size: CGSize
     
     var body: some View {
         HStack {
             VStack {
-                Image(imageName)
+                image
                     .resizable()
                     .frame(width: size.width, height: size.height)
                 Spacer()
