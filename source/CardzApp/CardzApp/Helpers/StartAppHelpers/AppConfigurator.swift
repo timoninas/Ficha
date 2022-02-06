@@ -93,7 +93,9 @@ final class AppConfigurator {
         
         let tabBar = setupTabBarAppearance(tabBar: UITabBarController())
         tabBar.setViewControllers(controllers, animated: true)
-        tabBar.selectedIndex = 0
+        #if DEBUG
+        tabBar.selectedIndex = 3
+        #endif
         
         return tabBar
     }
@@ -105,7 +107,6 @@ final class AppConfigurator {
     }
     
     func setupTabBarAppearance(tabBar: UITabBarController) -> UITabBarController {
-        tabBar.selectedIndex = 0
         tabBar.tabBar.isHidden = false
         tabBar.tabBar.isTranslucent = true
         
