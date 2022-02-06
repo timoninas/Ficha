@@ -62,7 +62,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 .forEach { type in
                     guard type != .slang else { return }
                     let words = Array(MoriaManager.shared.getWordz(type: type)
-                                        .filter({ $0.wordz.count < 14 })
+                                        .filter({ $0.wordz.count < 12 })
                                         .shuffled()
                                         .prefix(3))
                     words.forEach { word in

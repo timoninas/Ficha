@@ -157,8 +157,12 @@ func getGoldSerials() -> BagOfGoldWords {
         ),
         .init(
             word: "Cinema",
-            transcription: "",
-            examples: [],
+            transcription: "[ˈsɪnɪmə]",
+            examples: [
+                "I know it's not a luxury movie cinema yet, but we have a full supply of Red Vines",
+                "A girl who knows a thing or two about good vampire cinema",
+                "The participation of the National Center Cinema"
+            ],
             translations: ["Кино"]
         ),
         .init(

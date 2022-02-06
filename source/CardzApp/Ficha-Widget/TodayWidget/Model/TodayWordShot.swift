@@ -20,7 +20,7 @@ struct TodayWordShot: Hashable, Codable, Identifiable {
     static let simpleWordShot = TodayWordShot(
         wordz: "Cinema",
         translate: "Кино",
-        example: "You’re right that is a lovely depiction of postmodernism.\nYou’re right that is a lovely depiction of postmodernism"
+        example: "You’re right that is a lovely depiction of postmodernism"
     )
     
     var titleLineCount: Int {

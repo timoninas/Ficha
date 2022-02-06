@@ -341,6 +341,200 @@ func getGoldAnimals() -> BagOfGoldWords {
             ],
             translations: ["Опоссум"]
         ),
+        .init(
+            word: "Puma",
+            transcription: "[ˈpjuːmə]",
+            examples: [
+                "Rolling did not offer his hand to either of them but glared out of the depths of the limousine like a puma in a cage",
+                "A puma, the lion of the Andes",
+                "- Purrs like a puma in heat"
+            ],
+            translations: ["Пума"]
+        ),
+        .init(
+            word: "Cougar",
+            transcription: "[ˈkuːgə]",
+            examples: [
+                "He crashed through the tree canopy there, and was presumably eaten by this cougar, who is still coughing up parts of the boy's clothes",
+                "Hurrah!-Here we go like three tin kettles at the tail of a mad cougar!",
+                "Tell you, I have a good mind to stay in a hotel until they catch that cougar"
+            ],
+            translations: ["Пума"]
+        ),
+        .init(
+            word: "Wolverine",
+            transcription: "[ˈwʊlvəriːn]",
+            examples: [
+                "I can keep sitting here pretending to read about Wolverine, or you can talk about what happened with Emma",
+                "You dip a guy in brown gravy and lock him in a small room with a wolverine who's high on angel dust",
+                "Someone will finish what we've started, Wolverine!"
+            ],
+            translations: ["Росомаха"]
+        ),
+        .init(
+            word: "Dinosaur",
+            transcription: "[ˈdaɪnəʊsɔː]",
+            examples: [
+                "He felt like a paleontologist coming face to face with a living dinosaur",
+                "That's just a dinosaur toy down the street",
+                "Hey, dinosaur guy"
+            ],
+            translations: ["Динозавр"]
+        ),
+        .init(
+            word: "Colony (of ants, rabbits)",
+            transcription: "[ˈkɒləni]",
+            examples: [
+                "The fungus is so virulent, it can wipe out whole colonies of ants and it's not just ants that fall victim to this killer",
+                "And a colony of aggressive red ants looking for a ride",
+                "A colony of ants all in a line"
+            ],
+            translations: ["Колония"]
+        ),
+        .init(
+            word: "Swarm (of bees)",
+            transcription: "[swɔːm]",
+            examples: [
+                "It looks more as if he'd been attacked by a swarm of bees, but that is supposed to indicate ladies and their husbands trying to restrain them",
+                "Hung on the doors and running-boards like a swarm of bees",
+                "It sounded like a swarm of bees here"
+            ],
+            translations: ["Рой"]
+        ),
+        .init(
+            word: "Flock (of birds)",
+            transcription: "[flɒk]",
+            examples: [
+                "Now it converts itself into a flock of birds, scatters itself to the four winds, and occupies all points of air and space at once",
+                "We flew through a flock of birds, the clouds parted, then we entered His Kingdom",
+                "I was watching the news, and another flock of birds fell out of the sky dead"
+            ],
+            translations: ["Стая"]
+        ),
+        .init(
+            word: "Herd (of pigs)",
+            transcription: "[hɜːd]",
+            examples: [
+                "A herd of pigs came squealing out of the greenery behind the savage and rushed away into the forest",
+                "Here on the mountain grazing large herd of pigs"
+            ],
+            translations: ["Стадо"]
+        ),
+        .init(
+            word: "Pack (of dogs)",
+            transcription: "[pæk]",
+            examples: [
+                "A pack of wild dogs could've run right through the courtroom, and he might've kept it to himself",
+                "Like, I'm sorry you have a pack of wild dogs going crazy in your neighborhood",
+                "He was attacked by a pack of wild dogs he thought he saw"
+            ],
+            translations: ["Стая", "Свора"]
+        ),
+        .init(
+            word: "School (of fish)",
+            transcription: "[skuːl]",
+            examples: [
+                "An airplane passed overhead on its course to Miami and he watched its shadow scaring up the schools of flying fish",
+                "There's a huge school of fish under the dock",
+                "I think it's a school of small fish",
+            ],
+            translations: ["Стая", "Косяк"]
+        ),
+        .init(
+            word: "Pride (of lions)",
+            transcription: "[praɪd]",
+            examples: [
+                "To keep your body absolutely still during the putting stroke, imagine you're trying not to be noticed by a pride of lions",
+                "For one pride of lions, this poses a major problem",
+                "A pride of lions and a parliament of owls"
+            ],
+            translations: ["Прайд", "Стая"]
+        ),
+        .init(
+            word: "Nest (of snakes)",
+            transcription: "[nɛst]",
+            examples: [
+                "Outside the window, hiding the view, there was a \"zirando\", a tree with light branches that intertwined like a nest of snakes",
+                "We were riding, we came upon a nest of snakes",
+                "Your family is a nest of snakes",
+            ],
+            translations: ["Гнездо"]
+        ),
+        .init(
+            word: "Litter (of puppies)",
+            transcription: "[ˈlɪtə]",
+            examples: [
+                "Exactly six days after my son departed, his pet dog gave birth to a litter of five puppies",
+                "You are breeding a litter of puppies"
+            ],
+            translations: ["Выводок", "Приплод", "Помет"]
+        ),
+        .init(
+            word: "Growl",
+            transcription: "[graʊl]",
+            examples: [
+                "Paying no attention to Kashtanka's growls, the sow lifted up her little hoof and grunted good-humouredly",
+                "He tried to growl threateningly, ferociously",
+                "Now give me the growl that means \"okay\"",
+            ],
+            translations: ["Реветь", "Рычать", "Рык"]
+        ),
+        .init(
+            word: "Fly",
+            transcription: "[flaɪ]",
+            examples: [],
+            translations: ["Муха", "Мушка"]
+        ),
+        .init(
+            word: "Bee",
+            transcription: "[biː]",
+            examples: [
+                "Practical Handbook of Bee Culture with Some Observations Upon the Segregation of the Queen",
+                "To make a bee understand that it is the earth that travels around the sun",
+                "Penicillin, bee stings, peanuts"
+            ],
+            translations: ["Пчела", "Трутень"]
+        ),
+        .init(
+            word: "Spider",
+            transcription: "[ˈspaɪdə]",
+            examples: [
+                "Crookshanks leapt lightly onto her lap. A large, dead spider was dangling from his mouth",
+                "Six spider webs on the cornice, Miss Marple noted",
+                "It's just spider web on a stick"
+            ],
+            translations: ["Паук", "Паутина"]
+        ),
+        .init(
+            word: "Scorpion",
+            transcription: "[ˈskɔːpɪən]",
+            examples: [
+                "To abruptly find such a secret in the midst of one's happiness resembles the discovery of a scorpion in a nest of turtledoves",
+                "And the claws of a lobster resemble those of a large scorpion",
+                "The Scorpion and the Toad"
+            ],
+            translations: ["Скорпион"]
+        ),
+        .init(
+            word: "Cobra",
+            transcription: "[ˈkɒbrə]",
+            examples: [
+                "The ladies were hissing like a nest of cobra's to quiet the shrieking creature",
+                "Let's see if this cobra solves it",
+                "Stephen Fry's barking cobra"
+            ],
+            translations: ["Кобра"]
+        ),
+        .init(
+            word: "Dove",
+            transcription: "[dʌv]",
+            examples: [
+                "I wasn't going to dive into it; I would have enough to do to keep my head above the surface",
+                "A Turtle dove goes uptown dressed like a housemaid",
+                "Not a goat but a regular dove",
+            ],
+            translations: ["Голубь", "Горлица"]
+        ),
     ])
     
     let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .animals, typeTranslation: .enToRu)
