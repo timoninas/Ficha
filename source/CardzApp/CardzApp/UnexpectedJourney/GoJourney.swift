@@ -30,6 +30,6 @@ func goJourney(_ journey: Journey) -> UIViewController {
     case .dailyWords:
         return DailyWordsBuilder.build()
     case .learnTimes:
-        return LearnTimesBuilder.build()
+        return LearnTimesMvvmBuilder.build()
     }
 }

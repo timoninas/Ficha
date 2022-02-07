@@ -394,7 +394,6 @@ func getGoldEmotions() -> BagOfGoldWords {
                 "She did not get up and leave the room, as she had done in former days, when his abruptness or his temper had annoyed her",
                 "The only thing that could annoy Jack more now is if he opens that can and it's all left-handed peaches",
                 "How on earth will you ever annoy me?",
-                
             ],
             translations: ["Раздраженный", "Недовольный"]
         ),

@@ -88,6 +88,7 @@
 		77FED85A27881D45007D60E3 /* DevDebugBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FED85927881D45007D60E3 /* DevDebugBuilder.swift */; };
 		77FED85D27881DEA007D60E3 /* DevDebugProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FED85C27881DEA007D60E3 /* DevDebugProtocols.swift */; };
 		D42CC37927AF9D8B00335204 /* IndependentDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42CC37827AF9D8B00335204 /* IndependentDependencies.swift */; };
+		D469CEC627B19FA800B47A14 /* LearnTimesMvvmBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D469CEC527B19FA800B47A14 /* LearnTimesMvvmBuilder.swift */; };
 		D48F8494276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F8493276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift */; };
 		D4C7F12F2719636D0066125A /* DailyWordsViewController+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C7F12E2719636D0066125A /* DailyWordsViewController+State.swift */; };
 		D4F00D5B2718C3840079A860 /* CardzApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4F00D592718C3840079A860 /* CardzApp.xcdatamodeld */; };
@@ -227,6 +228,7 @@
 		77FED85927881D45007D60E3 /* DevDebugBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevDebugBuilder.swift; sourceTree = "<group>"; };
 		77FED85C27881DEA007D60E3 /* DevDebugProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevDebugProtocols.swift; sourceTree = "<group>"; };
 		D42CC37827AF9D8B00335204 /* IndependentDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndependentDependencies.swift; sourceTree = "<group>"; };
+		D469CEC527B19FA800B47A14 /* LearnTimesMvvmBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTimesMvvmBuilder.swift; sourceTree = "<group>"; };
 		D48F8493276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnNewWordzCollectionViewHeader.swift; sourceTree = "<group>"; };
 		D4C7F12E2719636D0066125A /* DailyWordsViewController+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyWordsViewController+State.swift"; sourceTree = "<group>"; };
 		D4F00D4D2718C3840079A860 /* CardzApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardzApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -659,6 +661,7 @@
 		778273BC27AA5B2C00E5053D /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				D469CEC527B19FA800B47A14 /* LearnTimesMvvmBuilder.swift */,
 				778273BB27AA5B1400E5053D /* Model */,
 				778273BA27AA5B1000E5053D /* View */,
 				778273B927AA5B0100E5053D /* ViewModel */,
@@ -1175,6 +1178,7 @@
 				77A3CA2F2772F98D00A0EA9C /* ThematicWordzViewController+ViewModel.swift in Sources */,
 				D4F00D952718C3FB0079A860 /* DailyWordsProtocol.swift in Sources */,
 				774B3B1627A7228A00DC9B20 /* GoJourney.swift in Sources */,
+				D469CEC627B19FA800B47A14 /* LearnTimesMvvmBuilder.swift in Sources */,
 				776E492D272C91B3000D0B2D /* LearnCardProtocol.swift in Sources */,
 				77140792277AD91700B7E8D2 /* OnboardingUserProtocols.swift in Sources */,
 				7748E9402757F5B80063E592 /* FavouriteWordzViewController+ViewModel.swift in Sources */,

@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+public struct LearnTimesModel : Decodable {
+    
+    public var title : String
+    
+}
