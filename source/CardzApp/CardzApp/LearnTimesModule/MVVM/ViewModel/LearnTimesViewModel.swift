@@ -9,15 +9,15 @@ import Foundation
 
 class LearnTimesViewModel : ObservableObject, Identifiable {
     
+    @Published private var model : LearnTimesModel?
+    
     public var title: String {
         model?.title ?? ""
     }
     
-    private var model : LearnTimesModel?
+    public let id = UUID()
     
-    init() {
-        loadModel()
-    }
+    init() {}
     
     public func loadModel() {
         model = LearnTimesModel(title: "Some text")

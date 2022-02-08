@@ -6,13 +6,25 @@
 //
 
 import SwiftUI
+import Hobbiton
 
 struct LearnTimesView : View {
     
-    var learnTimesViewModel = LearnTimesViewModel()
-
+    @ObservedObject var learnTimesViewModel = LearnTimesViewModel()
+    
     var body: some View {
-        Text(learnTimesViewModel.title)
+        
+        Color.gendalf
+            .ignoresSafeArea(edges: .vertical) // Ignore just for the color
+            .overlay(
+                VStack {
+                    Text(learnTimesViewModel.title)
+                        .onAppear {
+                            learnTimesViewModel.loadModel()
+                        }
+                }
+            )
+        
     }
     
 }

@@ -10,6 +10,8 @@ import SwiftUI
 
 public extension Color {
     
+    static let gendalf = Color(uiColor: .gendalf)
+    
     static let wowFir: Color = .init(.sRGB, red: 150/255, green: 87/255, blue: 220/255, opacity: 1)
     
     static let wowSec: Color = .init(.sRGB, red: 94/255, green: 107/255, blue: 250/255, opacity: 1)
