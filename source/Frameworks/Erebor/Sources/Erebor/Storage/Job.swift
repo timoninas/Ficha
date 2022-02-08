@@ -420,6 +420,204 @@ func getGoldJob() -> BagOfGoldWords {
             ],
             translations: ["Итог", "Результат"]
         ),
+        .init(
+            word: "Duty",
+            transcription: "[ˈdjuːti]",
+            examples: [
+                "Tell her father that as soon as she has done her duty by her husband and child she shall go to see him",
+                "I told him to get me out of the duty of army, but he said he will send me to 7 years duty unit",
+                "Mrs. Vanderlake knew where her duty lay",
+            ],
+            translations: ["Долг", "Должностная обязанность"]
+        ),
+        .init(
+            word: "Manner",
+            transcription: "[ˈmænə]",
+            examples: [
+                "Your honor, I object to the whole manner in which this examination is being conducted by the prosecution",
+                "It was a great, rambling, two-story affair, done after the manner of the French chateaux, but in red brick and brownstone",
+                "Sir, your manner is deeply inappropriate"
+            ],
+            translations: ["Способ выполнения действия"]
+        ),
+        .init(
+            word: "Requirement",
+            transcription: "[rɪˈkwaɪəmənt]",
+            examples: [
+                "Have you ever speculated, Mr. Harding, that perhaps you are impatient with your wife... because she doesn't meet your mental requirements?",
+                "If you want my help, then going to meetings is my one requirement",
+                "Three requirements distinguish the professional escapist from the amateur"
+            ],
+            translations: ["Требование"]
+        ),
+        .init(
+            word: "Copy",
+            transcription: "[ˈkɒpi]",
+            examples: [
+                "Not copy the Dana Building, but design it as Henry Cameron would have wanted it done, as I will",
+                "I will write to your dictation, or I will copy and extract what you tell me: I can be of no other use",
+                "Copy me a line or two of that valuation, with the figures at the end"
+            ],
+            translations: ["Копия", "Экземпляр книги"]
+        ),
+        .init(
+            word: "Tips",
+            transcription: "[tɪps]",
+            examples: [
+                "General Peckem lifted a wooden pointer and swept the rubber tip cheerfully across Italy from one coast to the other",
+                "The tip of his boot was shredded, and the front of his big toe had been sheared off",
+                "Then he felt the tip of the stick connect with his heel"
+            ],
+            translations: ["Чаевые"]
+        ),
+        .init(
+            word: "Achievement",
+            transcription: "[əˈʧiːvmənt]",
+            examples: [
+                "",
+            ],
+            translations: ["Достижение"]
+        ),
+        .init(
+            word: "Characteristic",
+            transcription: "[ˌkærɪktəˈrɪstɪk]",
+            examples: [
+                "And he went on to develop his pet theory that the significance of a title unaccompanied by personal achievement was little",
+                "And as for the Cosmo-Slotnick Building, who can deny that it's an extraordinary achievement?",
+                "The achievements of the revolution, and so on ..."
+            ],
+            translations: ["Характеристика", "Черта"]
+        ),
+        .init(
+            word: "Signal",
+            transcription: "[ˈsɪgnl]",
+            examples: [
+                "The machine, detecting no data signal, had switched to its answering machine feature",
+                "For starters, a mysterious hiss was interfering with their radio signal",
+                "I can write an algorithm that can bypass the signal traps"
+            ],
+            translations: ["Сигнал", "Знак"]
+        ),
+        .init(
+            word: "Agenda",
+            transcription: "[əˈʤɛndə]",
+            examples: [
+                "The first item on the agenda is to elect a president and treasurer of the company to replace the late Jonas Cord",
+                "So he sets the agenda, same as always",
+                "House always has an agenda"
+            ],
+            translations: ["Повестка дня"]
+        ),
+        .init(
+            word: "Schedule",
+            transcription: "[ˈʃɛdjuːl]",
+            examples: [
+                "Puzzled, the manager checked his delivery schedule. It's here. Downstairs at the loading dock",
+                "Ippolit Matveyevich's initiative was allotted a fair share of the work schedule",
+                "No, you just have her entire schedule memorized for fun"
+            ],
+            translations: ["График работы", "Расписание"]
+        ),
+        .init(
+            word: "Print",
+            transcription: "[prɪnt]",
+            examples: [
+                "You get satnav, but you print it out into a booklet that you can just flick through",
+                "The only thing you could print on this is letterheads",
+                "Leonel was gonna print them for me"
+            ],
+            translations: ["Печать", "Отпечаток"]
+        ),
+        .init(
+            word: "Stamp",
+            transcription: "[stæmp]",
+            examples: [
+                "Why do you want to know what Mr. Stevens and I discussed? Are you a rival stamp collector?",
+                "There's no stamp, so it must have been hand-delivered from some guy",
+                "And he loved this ennobling stamp on his verses"
+            ],
+            translations: ["Печать", "Штамп"]
+        ),
+        .init(
+            word: "Pass",
+            transcription: "[pɑːs]",
+            examples: [
+                "Then we will pass to the Red Room, where Dolley Madison liquored up visiting heads of state before James Madison negotiated with them",
+                "If you knuckle down and pass examinations a year early, why, I'll help you through college",
+                "Pass on to the next head-I omit the second excursus on Crete"
+            ],
+            translations: ["Пропуск", "Пасс"]
+        ),
+        .init(
+            word: "Employer",
+            transcription: "[ɪmˈplɔɪə]",
+            examples: [
+                "You have a small following of your own, but no prospective employer can withstand the kind of pressure I am in a position to exert",
+                "Although his employer had never revealed his face, the killer felt honored to be in his presence",
+                "Look, I know that Khan is going to lead me to his employer"
+            ],
+            translations: ["Работодатель", "Заказчик"]
+        ),
+        .init(
+            word: "Prospect",
+            transcription: "[ˈprɒspɛkt]",
+            examples: [
+                "Furthermore, the prospect of returning to work the next day was one I greeted with the utmost despondency",
+                "Towards evening, just before it got dark, I was walking along the Voznesensky Prospect",
+                "I would rather never have seen you than think of you with such a prospect"
+            ],
+            translations: ["Перспектива"]
+        ),
+        .init(
+            word: "Entry",
+            transcription: "[ˈɛntri]",
+            examples: [
+                "It is not known... how many office robberies occur every second, cause there is no wikipedia entry for office robbery statistics",
+                "The sentry led her to a desk and handed her a pen. \"Please sign the entry log\"",
+                "May I present a late entry to the joust"
+            ],
+            translations: ["Запись"]
+        ),
+        .init(
+            word: "Disorder",
+            transcription: "[dɪsˈɔːdə]",
+            examples: [
+                "The first thing he saw was the disorder in the street lantern whose rope had been cut",
+                "Berlaga has a very serious mental illness, the heel nerve disorder",
+                "Mr. Kenneth was perplexed to pronounce of what disorder the master died"
+            ],
+            translations: ["Беспорядок", "Нарушение"]
+        ),
+        .init(
+            word: "Distribution",
+            transcription: "[ˌdɪstrɪˈbjuːʃən]",
+            examples: [
+                "I talked to people involved in the sales and distribution of stationery, I talked to farmers, Army people, Colonel Kurtz",
+                "Disney, Goldwyn and Bonner were all looking for new distribution outlets",
+                "Creation comes before distribution - or there will be nothing to distribute"
+            ],
+            translations: ["Распределение", "Распространение"]
+        ),
+        .init(
+            word: "Command",
+            transcription: "[kəˈmɑːnd]",
+            examples: [
+                "Sergeant Malloy put his whistle to his lips and blew a shrill blast up and down the company lines; the captain shouted his forward command",
+                "Well, apparently, my command of the English language has not been dulled by the ravages of time",
+                "Thanks to your High Command, it's been a rather nasty day"
+            ],
+            translations: ["Команда", "Приказ"]
+        ),
+        .init(
+            word: "Veteran",
+            transcription: "[ˈvɛtərən]",
+            examples: [
+                "She was a veteran too, but she had no cronies with whom she could refight old battles",
+                "Foreman is currently working with two of House's most veteran associates",
+                "I met this guy who...in America, and he was a Vietnam veteran"
+            ],
+            translations: ["Ветеран"]
+        ),
     ])
     
     let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .job, typeTranslation: .enToRu)
