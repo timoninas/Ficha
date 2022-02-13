@@ -46,7 +46,8 @@ public class MoriaManager {
     private var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: Constants.xcdatamodel)
         container.loadPersistentStores { _, error in
-            if error != nil {
+            if let error = error {
+                RLogError(error: error)
                 fatalError("Failed: \(String(describing: error))")
             }
         }
@@ -97,9 +98,9 @@ public class MoriaManager {
         
         do {
             try context.save()
-            print("Saved \(wordzEntity)")
+            RLogInfo(message: "Saved \(wordzEntity)", subsystem: String(describing: self))
         } catch {
-            print("Failed: \(error) \(error.localizedDescription)")
+            RLogError(error: error, subsystem: String(describing: self))
         }
         
     }
@@ -126,11 +127,11 @@ public class MoriaManager {
             let wordz = try context.fetch(fetchRequest)
             wordz.forEach {
                 $0.displayedCount = count
-                print("Updated entity wordz: \($0)")
+                RLogInfo(message: "Updated entity wordz: \($0)", subsystem: String(describing: self))
             }
             try context.save()
         } catch {
-            print("Error with saving context")
+            RLogError(error: error, subsystem: String(describing: self))
         }
     }
     
@@ -152,11 +153,11 @@ public class MoriaManager {
             let wordz = try context.fetch(fetchRequest)
             wordz.forEach {
                 $0.displayedCount = count
-                print("Updated entity wordz: \($0)")
+                RLogInfo(message: "Updated entity wordz: \($0)", subsystem: String(describing: self))
             }
             try context.save()
         } catch {
-            print("Error with saving context")
+            RLogError(error: error, subsystem: String(describing: self))
         }
     }
     
@@ -230,12 +231,13 @@ public class MoriaManager {
             if let result = try? context.fetch(fetchRequest) {
                 for object in result {
                     context.delete(object)
-                    print()
+                    RLogInfo(message: "Delete entity wordz: \(object) - \(object.wordz ?? "")", subsystem: String(describing: self))
                 }
             }
             try context.save()
+            
         } catch {
-            print("Failed: \(error) \(error.localizedDescription)")
+            RLogError(error: error, subsystem: String(describing: self))
         }
     }
     
@@ -247,12 +249,12 @@ public class MoriaManager {
             if let result = try? context.fetch(fetchRequest) {
                 for object in result {
                     context.delete(object)
-                    print()
+                    RLogInfo(message: "Delete entity wordz: \(object) - \(object.wordz ?? "")", subsystem: String(describing: self))
                 }
             }
             try context.save()
         } catch {
-            print("Failed: \(error) \(error.localizedDescription)")
+            RLogError(error: error, subsystem: String(describing: self))
         }
     }
     
@@ -266,12 +268,12 @@ public class MoriaManager {
                 if let result = try? context.fetch(fetchRequest) {
                     for object in result {
                         context.delete(object)
-                        print()
+                        RLogInfo(message: "Delete entity wordz: \(object) - \(object.wordz ?? "")", subsystem: String(describing: self))
                     }
                 }
                 try context.save()
             } catch {
-                print("Failed: \(error) \(error.localizedDescription)")
+                RLogError(error: error, subsystem: String(describing: self))
             }
         }
         

@@ -120,12 +120,13 @@ final class LearnCardViewController: UIViewController {
         view.backgroundColor = .gendalf
         configureUI()
         output?.viewDidLoad()
-        print("viewDidLoad \(String(describing: self))")
+        RLogDebug(message: "viewDidLoad", subsystem: String(describing: self))
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         output?.viewDidAppear()
+        RLogDebug(message: "viewDidAppear", subsystem: String(describing: self))
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

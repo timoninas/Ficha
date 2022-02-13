@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import Erebor
-import RevolvetraKnowledge
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -17,7 +15,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         
-        fillDataBaseIfNeeded()
+        /// Dependecies.
+        IndependentDependencies.shared.launch()
         
         let appConfigurator = AppConfigurator()
         var tabBarModules: [AppConfigurator.TabBarModule] = [
@@ -27,6 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         ]
         #if DEBUG
         tabBarModules.append(.devDebug)
+        tabBarModules.append(.templateModule)
         #endif
         
         window?.windowScene = windowScene
@@ -46,30 +46,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
     
-    private func fillDataBaseIfNeeded() {
-        if KnowledgeDevice.previousAppVersion.isEmpty
-            || KnowledgeDevice.previousAppVersion != KnowledgeDevice.appVersion {
-            KnowledgeDevice.previousAppVersion = (KnowledgeDevice.appVersion ?? "")
-            MoriaManager.shared.deleteAllWordz(except: [.favourite])
-            
-            let wordaGotta = WordaGotta()
-            wordaGotta.gottaAllWords().forEach { bagOfGoldWords in
-                bagOfGoldWords.words.forEach { word in
-                    MoriaManager.shared.addWordz(
-                        wordz: word.word,
-                        transcription: word.transcription,
-                        examples: word.examples,
-                        translations: word.translations,
-                        type: bagOfGoldWords.typeWord,
-                        languageVersion: bagOfGoldWords.typeTranslation
-                    )
-                }
-            }
-        }
-        
-    }
-    
 }
+ 
 
 //
 //        **  ~~~~~~~~~~~~~~~  **

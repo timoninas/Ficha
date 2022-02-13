@@ -9,9 +9,13 @@ import Foundation
 import RevoletraUserDefaultsKeys
 
 public protocol KnowledgeProfileProtocol {
+    
     static var isOnborded: Bool { get set }
     
     static var lastVisitAppDate: Date { get set }
+    
+    static var lastHalfHalfDateVisit: Date { get set }
+    
 }
 
 public class KnowledgeProfile: KnowledgeProfileProtocol {
@@ -21,5 +25,8 @@ public class KnowledgeProfile: KnowledgeProfileProtocol {
     
     @UserDefault(key: ProfileKey.lastVisitAppDate, defaultValue: Date().addingTimeInterval(-100000))
     public static var lastVisitAppDate
+    
+    @UserDefault(key: ProfileKey.lastHalfHalfDateVisit, defaultValue: Date().addingTimeInterval(-100000))
+    public static var lastHalfHalfDateVisit
     
 }

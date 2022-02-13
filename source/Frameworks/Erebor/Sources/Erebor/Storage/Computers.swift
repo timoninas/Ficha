@@ -394,6 +394,200 @@ func getGoldComputers() -> BagOfGoldWords {
             ],
             translations: ["Монитор"]
         ),
+        .init(
+            word: "Algorithm",
+            transcription: "[ˈælgərɪðm]",
+            examples: [
+                "We use a proprietary trading algorithm",
+                "I'm hoping to extract an algorithm to define their movement",
+                "The core compression algorithm is optimal"
+            ],
+            translations: ["Алгоритм"]
+        ),
+        .init(
+            word: "Analog",
+            transcription: "[ˈænəlɒg]",
+            examples: [
+                "It all comes together into disturbingly accurate analog of human skin",
+                "Remember those analog units we used to use to pull cell numbers out of the air?",
+                "The Eye of Sauron is the near perfect analogue for the modern media"
+            ],
+            translations: ["Аналог", "Аналоговое"]
+        ),
+        .init(
+            word: "App",
+            transcription: "[æp]",
+            examples: [
+                "These examples will teach the app to actually anticipate the negative consequences of impulsive posts",
+                "You know what, I have a translation app on my phone",
+                "Does the app know you ate half a kilo of gnocchi in 30 seconds?"
+            ],
+            translations: ["Приложение", "Программа"]
+        ),
+        .init(
+            word: "Array",
+            transcription: "[əˈreɪ]",
+            examples: [
+                "London is now ringed by the most comprehensive array of surveillance cameras mankind has ever seen",
+                "And as exquisite as this array of emotions is... even more sublime is the ability to turn it off",
+                "We represent an array of American companies including Miller Beer"
+            ],
+            translations: ["Массив", "Набор"]
+        ),
+        .init(
+            word: "Application",
+            transcription: "[æplɪˈkeɪʃn]",
+            examples: [
+                "It must be remembered that by \"business\" Caleb never meant money transactions, but the skilful application of labor",
+                "That's weird, 'cause I found your application in the trash folder of Allan's computer",
+                "This application should never have been defended"
+            ],
+            translations: ["Приложение", "Прикладная программа"]
+        ),
+        .init(
+            word: "Backup",
+            transcription: "[ˈbækʌp]",
+            examples: [
+                "Well, I'm going to perform a full backup, reinitialize and then reinstall all my operating systems",
+                "It's full of redundancies and backups developed with the help of ex-thieves",
+                "We just lost our backup"
+            ],
+            translations: ["Резервная копия", "Копия"]
+        ),
+        .init(
+            word: "Bit",
+            transcription: "[bɪt]",
+            examples: [
+                "Pump him for every bit of information that you can",
+                "64- bit core processor",
+                "Binary digit"
+            ],
+            translations: ["Бит", "Разряд"]
+        ),
+        .init(
+            word: "Binary",
+            transcription: "[ˈbaɪnərɪ]",
+            examples: [
+                "Like binary code but instead of just having zeros and ones, you have zeros, ones and twos",
+                "Because 127 in binary code would be a palindrome",
+                "A binary vascular system!"
+            ],
+            translations: ["Двоичный", "Бинарный"]
+        ),
+        .init(
+            word: "Bitmap",
+            transcription: "[ˈbɪtmæp]",
+            examples: [],
+            translations: ["Растровый", "Точечный"]
+        ),
+        .init(
+            word: "Bug",
+            transcription: "[buːg]",
+            examples: [
+                "'He said it looked like a bed bug, monsieur, but not so that the mechanics could hear what he said",
+                "And this bug mutated as a direct result of our mass consumption of animals, particularly pork",
+                "I think I've had a bug, or something"
+            ],
+            translations: ["Ошибка", "Глюк", "Баг"]
+        ),
+        .init(
+            word: "Compile",
+            transcription: "[kəmˈpaɪl]",
+            examples: [
+                "And once I compile the data, finding Mr. Right will be a cinch",
+                "I still have to compile the particulates from the obelisk, so...",
+                "I just need access to wherever they compile all the available data..."
+            ],
+            translations: ["Компилировать", "Собрать"]
+        ),
+        .init(
+            word: "Cache",
+            transcription: "[kæʃ]",
+            examples: [
+                "And if I did, I know how to scrub a search cache clean",
+                "It is decentralized, cached on servers all over the world",
+                "Well, I can pretty much say I've never cleaned my cache"
+            ],
+            translations: ["Кэш", "Кеширование", "Тайник"]
+        ),
+        .init(
+            word: "Captcha",
+            transcription: "[ˈkæpʧə]",
+            examples: [],
+            translations: ["Капча"]
+        ),
+        .init(
+            word: "Cloud computing",
+            transcription: "[klaʊd kəmˈpjuːtɪŋ]",
+            examples: [],
+            translations: ["Облачные вычисления"]
+        ),
+        .init(
+            word: "Cybercrime",
+            transcription: "[saɪbəˈkraɪm]",
+            examples: [
+                "I spent seven years at cybercrimes tracking you, studying your work",
+                "Chief strategy officer, cybercrimes unit-- catches hackers for the NSA",
+                "Cybercrime division, Oslo"
+            ],
+            translations: ["Киберпреступность"]
+        ),
+        .init(
+            word: "Cookie",
+            transcription: "[ˈkʊkɪ]",
+            examples: [
+                "While she carried the cookie plate and the teapot, he followed with the cups and saucers, back into the living room",
+                "You can't be seen anywhere near that video, Cookie",
+                "Cookie Monster could have invented Facebook!"
+            ],
+            translations: ["Файл cookie", "Печенька"]
+        ),
+        .init(
+            word: "Command",
+            transcription: "[kəˈmɑːnd]",
+            examples: [
+                "It but remains for this council to command, and Tal Hajus must prove his fitness to rule",
+                "\"Go home!\" came the sharp command, and this time he obeyed",
+                "Mrs Crale was quite in command of herself"
+            ],
+            translations: ["Команда", "Приказ"]
+        ),
+        .init(
+            word: "Clip art",
+            transcription: "[klɪp ɑːt]",
+            examples: [],
+            translations: ["Картинка", "Клипарт"]
+        ),
+        .init(
+            word: "Dashboard",
+            transcription: "[ˈdæʃbɔːd]",
+            examples: [
+                "She kept her eyes on the road, but the dashboard on the rim of her vision looked like the panel of an airplane",
+                "The steering wheel comes out of the dashboard at an angle",
+                "It even has a button marked \"Race\" on the dashboard"
+            ],
+            translations: ["Приборная панель", "Панель инстурментов"]
+        ),
+        .init(
+            word: "Database",
+            transcription: "[ˈdeɪtəbeɪs]",
+            examples: [
+                "Lost my database of his acquaintances",
+                "Run through database for possible criminal background",
+                "In return, he saved me to a database in the biggest library in the universe"
+            ],
+            translations: ["База данных", "БД"]
+        ),
+        .init(
+            word: "Domain",
+            transcription: "[dəˈmeɪn]",
+            examples: [
+                "Left alone while Rob sped back to his suspicious Missus, Meggie unpacked and surveyed her domain",
+                "So he lived long enough to see some of his songs go into the public domain",
+                "How does your brain feel about calculating the surface tension of the domain walls?"
+            ],
+            translations: ["Домен", "Область"]
+        ),
     ])
     
     let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .computers, typeTranslation: .enToRu)

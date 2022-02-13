@@ -367,6 +367,206 @@ func getGoldEmotions() -> BagOfGoldWords {
             ],
             translations: ["Перевозбужденный"]
         ),
+        .init(
+            word: "Angry",
+            transcription: "[ˈæŋgrɪ]",
+            examples: [
+                "Now they could hear angry voices, growing louder and louder. Madam Pomfrey was staring at the door",
+                "His face was streaked with angry tears as we made our way through the cheerful crowd",
+                "He was confused and blinded by the rush of it and the beat of angry wings"
+            ],
+            translations: ["Злой", "Гневный"]
+        ),
+        .init(
+            word: "Anger",
+            transcription: "[ˈæŋgə]",
+            examples: [
+                "She stood there, watching his curiosity get the better of his anger",
+                "Rachel's surprise gave way immediately to anger",
+                "Abra's face reddened with anger"
+            ],
+            translations: ["Злость", "Гнев", "Ярость"]
+        ),
+        .init(
+            word: "Annoyed",
+            transcription: "[əˈnɔɪd]",
+            examples: [
+                "She did not get up and leave the room, as she had done in former days, when his abruptness or his temper had annoyed her",
+                "The only thing that could annoy Jack more now is if he opens that can and it's all left-handed peaches",
+                "How on earth will you ever annoy me?",
+            ],
+            translations: ["Раздраженный", "Недовольный"]
+        ),
+        .init(
+            word: "Bored",
+            transcription: "[bɔːd]",
+            examples: [
+                "They followed that about a hundred yards and then bored through eight feet of soil to get to the bank's foundation",
+                "Bore a small hole in his skull to help relieve the pressure",
+                "Her eyes still bored into me as they had done at tea"
+            ],
+            translations: ["Скучающий"]
+        ),
+        .init(
+            word: "Boring",
+            transcription: "[ˈbɔːrɪŋ]",
+            examples: [
+                "Sarah was the doctor, then there was the one with the spots, then the one with the nose and then, who was after the boring teacher?",
+                "Tony loathed parties. He hated the endless, boring conversations, the boastful men and the predatory women",
+                "All the things Father wanted me to do and be were such boring things"
+            ],
+            translations: ["Скучный", "Унылый"]
+        ),
+        .init(
+            word: "Calm",
+            transcription: "[kɑːm]",
+            examples: [
+                "Even in the pounding wind, the night felt suddenly calm... as if a storm had let up unexpectedly",
+                "It was still surrounded by pylons, and the surface of the water appeared calm",
+                "When the calm, aloof eyes looked into hers, she realized who he was"
+            ],
+            translations: ["Спокойный"]
+        ),
+        .init(
+            word: "Careful",
+            transcription: "[ˈkeəf(ə)l",
+            examples: [
+                "'So much the better, but you must be very careful and look after yourself, Comrade Rusanov,' Dontsova warned him",
+                "And she was careful those first years; there was never a murmur about her, never a whisper",
+                "There was a balanced, careful, wise creature who smiled shyly but very firmly at him",
+            ],
+            translations: ["Заботливый"]
+        ),
+        .init(
+            word: "Care",
+            transcription: "[keə]",
+            examples: [
+                "I'll make arrangements to get him into a private sanitarium where he can get the proper care",
+                "With ludicrous care he embraced the rock, pressing himself to it above the sucking sea",
+                "Debbie can't take care of a special needs kid on top of day care"
+            ],
+            translations: ["Забота", "Уход", "Присмотр"]
+        ),
+        .init(
+            word: "Confused",
+            transcription: "[kənˈfjuːzd]",
+            examples: [
+                "For several months during his childhood there had been confused street fighting in London itself, some of which he remembered vividly",
+                "I had a confused dream, one of those that you forget on the spot when you wake up",
+                "She was angry, with the complicated and confused anger that made her inert"
+            ],
+            translations: ["Недоумевающий", "Озадаченный"]
+        ),
+        .init(
+            word: "Confident",
+            transcription: "[ˈkɒnfɪdənt]",
+            examples: [
+                "I'm gonna kill the audition with my confident stillness and empathy, both, and you... you just got the perfect ring",
+                "With the confident tone of a man of enormous influence, the Teacher explained what was to be done",
+                "You're very confident and very insistent"
+            ],
+            translations: ["Уверенный", "Самонадеянный"]
+        ),
+        .init(
+            word: "Dangerous",
+            transcription: "[ˈdeɪnʤərəs]",
+            examples: [
+                "It was hard on the girl, terribly hard; perhaps this journey, dangerous though it might be, would not be altogether a bad thing for her",
+                "I had proposed to Amelia that we stow away on one of their deadly projectiles, but this was a dangerous idea",
+                "Tibul continued his dangerous journey"
+            ],
+            translations: ["Опасный", "Небезопасный"]
+        ),
+        .init(
+            word: "Depressed",
+            transcription: "[dɪˈprest]",
+            examples: [
+                "\"I think it's our fellow travelers who depress me,\" said Sarah. It's awful, isn't it, but I do hate women!",
+                "You remind me of me when I was younger, depressed and sullen",
+                "Don't depress the kids"
+            ],
+            translations: ["Подавленный"]
+        ),
+        .init(
+            word: "Depression",
+            transcription: "[dɪˈpreʃn]",
+            examples: [
+                "Perhaps allied to this overall depression was the fact that the room was almost silent",
+                "He walked round the precincts slowly, and a profound depression seized him",
+                "Every depression leads to war"
+            ],
+            translations: ["Депрессия"]
+        ),
+        .init(
+            word: "Disappointed",
+            transcription: "[dɪsəˈpɔɪntɪd]",
+            examples: [
+                "It'll only disappoint you when we catch him",
+                "I can't disappoint her, because I'm always disappointing her!",
+                "Alexandra did not enjoy parties, but she always pretended she was having a good time in order not to disappoint her grandmother"
+            ],
+            translations: ["Расстроенный"]
+        ),
+        .init(
+            word: "Distant",
+            transcription: "[ˈdɪstənt]",
+            examples: [
+                "Even the pounding of the rotors had faded to a distant hum",
+                "For a split second, the most distant flame caught her attention",
+                "In the meantime young Daniel had been sent to live with a distant relative in Texas, Aunt Mattie, whom he had never met"
+            ],
+            translations: ["Отстраненный"]
+        ),
+        .init(
+            word: "Dreamy",
+            transcription: "[ˈdriːmɪ]",
+            examples: [
+                "His thin dark face had become animated, his eyes had lost their mocking expression and grown almost dreamy",
+                "The Dean's office looked like a chapel, a pool of dreamy twilight fed by one tall window of stained glass",
+                "The one who caused her the most worry was Sascha, Mikhail's son, a handsome lad, dreamy and book-loving"
+            ],
+            translations: ["Мечтательный"]
+        ),
+        .init(
+            word: "Daydreaming",
+            transcription: "[ˈdeɪdriːmɪŋ]",
+            examples: [
+                "So I'm stuck with all your daydreaming, your wish to be my son",
+                "Gregory Halston sat in his office lost in a daydream. Fate had placed in his hands a man who was so besotted with his blond tart",
+                "Cornusse, it is my opinion that Catherine finds too many distractions here that cause her to daydream"
+            ],
+            translations: ["Мечтательность"]
+        ),
+        .init(
+            word: "Empty",
+            transcription: "[ˈemptɪ]",
+            examples: [
+                "For some vague matter of personal vanity, for some empty conceit",
+                "He put the boat on automatic pilot, took one last look around the empty horizon and walked over to the lee railing",
+                "We could empty bedpans, or wash cadavers"
+            ],
+            translations: ["Опустошенный"]
+        ),
+        .init(
+            word: "Energetic",
+            transcription: "[enəˈʤetɪk]",
+            examples: [
+                "In some respects, he was so like the Cowperwood of old, energetic, cordial, and not a little managerial",
+                "I grew up in a very energetic, happy puerto rican family",
+                "I knew your energetic nature, and that you would not be happy until you had been on the scene of the crime"
+            ],
+            translations: ["Энергичный"]
+        ),
+        .init(
+            word: "Excited",
+            transcription: "[ɪkˈsaɪtɪd]",
+            examples: [
+                "Not knowing his secret it was cruel mockery that she should for the first time excite his animosity when she had taken his surname",
+                "His face was pale and there were beads of perspiration on his forehead. His eyes were curiously excited",
+                "Rosamond enjoyed not only Lydgate's presence but its effect: she liked to excite jealousy"
+            ],
+            translations: ["Взволнованный"]
+        ),
     ])
     
     let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .emotions, typeTranslation: .enToRu)

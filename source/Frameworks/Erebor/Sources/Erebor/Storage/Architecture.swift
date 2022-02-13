@@ -281,10 +281,292 @@ func getGoldArhitecture() -> BagOfGoldWords {
             word: "Neoclassical",
             transcription: "[ˌnioˈklæsɪkəl]",
             examples: [
-                "While today its neoclassical fenestration is considered to be...",
-                "Paris, you're an MD, a lawyer, an expert on neoclassical architecture, and, I think, a certified dental technician to boot"
+                "Paris, you're an MD, a lawyer, an expert on neoclassical architecture, and, I think, a certified dental technician to boot",
+                "While today its neoclassical fenestration is considered to be..."
             ],
             translations: ["Неоклассический"]
+        ),
+        .init(
+            word: "Unornamented",
+            transcription: "[ˌʌnˈɔːnəmentɪd]",
+            examples: [],
+            translations: ["Неукрашенный"]
+        ),
+        .init(
+            word: "Primary building material",
+            transcription: "[ˈpraɪməri ˈbɪldɪŋ məˈtɪərɪəl]",
+            examples: [
+                "One of our rules is, you have to preserve the relationship with your primary partner... or you can't participate",
+                "We must be absolutely certain of the nature of your primary tumour",
+                "The primary act - the process of reason - must be performed by each man alone"
+            ],
+            translations: ["Основной строительный материал"]
+        ),
+        .init(
+            word: "Mannerism",
+            transcription: "[ˈmænərɪzəm]",
+            examples: [
+                "But mannerisms are remembered, and Cora had certain very definite mannerisms, all of which you had practised carefully before the glass",
+                "A person afflicted by hysteria always displays some artificial mannerisms",
+                "Mr. Satterthwaite suspected him of deliberately exaggerating his foreign mannerisms"
+            ],
+            translations: ["Неукрашенный"]
+        ),
+        .init(
+            word: "Mansion",
+            transcription: "[ˈmænʃən]",
+            examples: [
+                "The Charles Stanhope Seniors lived in an impressive old mansion in Rittenhouse Square",
+                "Kate chose another architect to design a sixteenth-century French Renaissance mansion on Fifth Avenue",
+                "The perfect replica of a Shill Governor's Mansion on Shallanna"
+            ],
+            translations: ["Особняк"]
+        ),
+        .init(
+            word: "Gabled",
+            transcription: "[ˈɡeɪbəld]",
+            examples: [
+                "She had to live in this bright, red gabled house with the nurse until it was time for her to die",
+                "The house was large, red-bricked, and gabled"
+            ],
+            translations: ["Остроконечный"]
+        ),
+        .init(
+            word: "Remodeling",
+            transcription: "[rəˈmɑːdəlɪŋ]",
+            examples: [
+                "- Uh, yeah, my buddy here, he got stiffed on a kitchen remodel, and the guy owns a plane, we think he keeps it here",
+                "Chief organized a revolt against the remodeling of the chapel",
+                "Right after we gut and remodel the entire hotel",
+            ],
+            translations: ["Перепланировка"]
+        ),
+        .init(
+            word: "Kiln for firing brick",
+            transcription: "[kɪln fə ˈfaɪərɪŋ brɪk]",
+            examples: [
+                "It was another half-hour before I drew near to the kiln",
+                "The white vapor of the kiln was passing from us as we went by, and as I had thought a prayer before, I thought a thanksgiving now",
+                "Philip was seated on the table with all his bricks around him"
+            ],
+            translations: ["Печь для обжигания кирпича"]
+        ),
+        .init(
+            word: "Piano nobile",
+            transcription: "[pɪˈænəʊ ˈnɑːbəl]",
+            examples: [
+                "Somewhere in the town someone was playing the piano and the music came and went, came and went, softly, drowsily",
+                "Miss Willella gives a little jump on the piano stool, and looked at me curious",
+                "She went to the piano, picked up her hat and put it on. Her hands were trembling"
+            ],
+            translations: ["Пиано нобиле", "Главный этаж"]
+        ),
+        .init(
+            word: "Indentured servant",
+            transcription: "[ɪnˈdentʃəd ˈsɜːvənt]",
+            examples: [
+                "Off the ship you were sold as an indentured servant to the one who would take the cost of your skin out in your labor",
+                "Won't be an indentured servant anymore",
+                "Always acting like I'm his indentured servant"
+            ],
+            translations: ["Подмастерье"]
+        ),
+        .init(
+            word: "Buttress",
+            transcription: "[ˈbʌtrəs]",
+            examples: [
+                "there was a demand for a new stable order as a buttress against social collapse",
+                "we buttressed the wall as it was showing signs of cracking and collapse",
+                "authority was buttressed by religious belief"
+            ],
+            translations: ["Подпорка"]
+        ),
+        .init(
+            word: "Portico",
+            transcription: "[ˈpɔːtɪkəʊ]",
+            examples: [
+                "She ascended the main portico to the church's sole wooden door",
+                "If you'll follow me this way, we'll head towards the North Portico",
+                "I gotta get out of here and go to Portico"
+            ],
+            translations: ["Портик", "Галерея"]
+        ),
+        .init(
+            word: "Postmodernism",
+            transcription: "[ˌpəʊstˈmɒdənɪzəm]",
+            examples: [
+                "It's one of the tricky paradoxes of postmodernism, that psychedelics both require and produce a transformative effect",
+                "You're right, that is a lovely depiction of postmodernism"
+            ],
+            translations: ["Постмодернизм"]
+        ),
+        .init(
+            word: "To peg",
+            transcription: "[tə peɡ]",
+            examples: [
+                "Thank you, Peg, I don't deal in wind-instruments",
+                "Softly I steal across, lift the peg, pull it out and open the door",
+                "His helmet hung on a peg and his face showed clearly"
+            ],
+            translations: ["Прикреплять колышком"]
+        ),
+        .init(
+            word: "Superintendent",
+            transcription: "[ˌsuːpərɪnˈtendənt]",
+            examples: [
+                "The superintendent of the building told me that one night when Mellis was there, Eve was almost beaten to death",
+                "Now, the media's only reporting three, because they don't know about the park superintendent",
+                "I should've taken that superintendent job in Honduras"
+            ],
+            translations: ["Прораб", "Смотритель", "Надзиратель"]
+        ),
+        .init(
+            word: "Expansion",
+            transcription: "[ɪkˈspænʃən]",
+            examples: [
+                "Well, sure, you get a short-term spike, but wouldn't that rapid expansion devalue that stock completely in two years?",
+                "Your program is perfect for LeMarchal's expansion into social media",
+                "That expansion was my dream"
+            ],
+            translations: ["Расширение", "Рост", "Экспансия"]
+        ),
+        .init(
+            word: "Sacristy",
+            transcription: "[ˈsækrɪsti]",
+            examples: [
+                "As the bell tolled there came from the sacristy a procession of altar-boys",
+                "He even pushed as far as Embrun, entered the cathedral one night, and despoiled the sacristy",
+                "Graeber walked past to the pew near the sacristy"
+            ],
+            translations: ["Ризница", "Сакристия"]
+        ),
+        .init(
+            word: "Romanesque church",
+            transcription: "[ˌrəʊməˈnesk tʃɜːtʃ]",
+            examples: [],
+            translations: ["Романская церковь"]
+        ),
+        .init(
+            word: "Single-aisled",
+            transcription: "[ˈsɪŋɡəl aɪld]",
+            examples: [],
+            translations: ["С одним проходом между рядами (о церкви)", "Однопроходный"]
+        ),
+        .init(
+            word: "Adobe",
+            transcription: "[əˈdəʊbi]",
+            examples: [
+                "Every Adobe update is critical and should be installed immediately",
+                "I like adobe better",
+                "Adobe dollar"
+            ],
+            translations: ["Самана", "Необожённый кирпич"]
+        ),
+        .init(
+            word: "Tudor Gothic style",
+            transcription: "[ˈtuːdə ˈɡɒθɪk staɪl]",
+            examples: [],
+            translations: ["Стиль поздней английской готики"]
+        ),
+        .init(
+            word: "Post-and-beam construction",
+            transcription: "[kənˈstrʌkʃən]",
+            examples: [],
+            translations: ["Стоечно-ригельная конструкция"]
+        ),
+        .init(
+            word: "Carpentry shop",
+            transcription: "[ˈkɑːpɪntri ʃɒp]",
+            examples: [
+                "My family ran a carpentry shop for generations",
+                "If they would give me back my grandfather's carpentry shop...",
+                "There was my grandfather's carpentry shop here, too"
+            ],
+            translations: ["Столярная мастерская"]
+        ),
+        .init(
+            word: "Pointed arch",
+            transcription: "[ˈpɔɪntɪd ɑːtʃ]",
+            examples: [
+                "It was a pointed arch, lower than the vault, which gradually narrowed, and narrower than the gallery, which closed in as the vault grew lower",
+                "With the pointed arches and the ribbed vaults, maybe a flying buttress?",
+                "It was the Gothic style with pointed arches and soaring lines"
+            ],
+            translations: ["Стрельчатая арка"]
+        ),
+        .init(
+            word: "Tepidarium",
+            transcription: "[ˌtɛpɪˈdɛːrɪəm]",
+            examples: [],
+            translations: ["Тепидарий"]
+        ),
+        .init(
+            word: "Sidewalk",
+            transcription: "[ˈsaɪdwɔːk]",
+            examples: [
+                "She walked out of the shop and stood on the sidewalk, uncertainly. Coming to New York had been a mistake",
+                "The green bullet in which Faber's voice whispered and cried, fell to the sidewalk",
+                "You're scared of sidewalk grates"
+            ],
+            translations: ["Тротуар", "Бордюр"]
+        ),
+        .init(
+            word: "Embellishment",
+            transcription: "[ɪmˈbelɪʃmənt]",
+            examples: [
+                "I wouldn't, but I'm not willing to throw away a man's entire career over a little embellishment",
+                "The embellishments in the oblong room, though old and faded, were replete with familiar symbology",
+                "Clear and comprehensive, no embellishments"
+            ],
+            translations: ["Украшение", "Декорирование"]
+        ),
+        .init(
+            word: "Undecorated stretches",
+            transcription: "[ˈstretʃɪz]",
+            examples: [],
+            translations: ["Участки без отделки"]
+        ),
+        .init(
+            word: "Facade",
+            transcription: "[fəˈsɑːd]",
+            examples: [
+                "Leaning against the railing, he gazed out across town to the illuminated facade of the White House in the distance",
+                "You may think it's a facade, and I may agree with you, but that's what a trial is for",
+                "Well, that's just part of your facade"
+            ],
+            translations: ["Фасад", "Видимость", "Показуха"]
+        ),
+        .init(
+            word: "Florentine Renaissance",
+            transcription: "[ˈflɔːənˌtin rɪˈneɪsns]",
+            examples: [],
+            translations: ["Флорентийский ренессанс"]
+        ),
+        .init(
+            word: "Pediment",
+            transcription: "[ˈpedɪmənt]",
+            examples: [
+                "You will, on this pediment, leave more than one feather",
+                "With a little pediment, it's very splendid",
+                "Vaulted pediment"
+            ],
+            translations: ["Фронтон", "Сандрик"]
+        ),
+        .init(
+            word: "Eclecticism",
+            transcription: "[ɪˈklektɪsɪzəm]",
+            examples: [],
+            translations: ["Эклектизм", "Эклетицизм"]
+        ),
+        .init(
+            word: "Aesthetic simplicity",
+            transcription: "[iːsˈθetɪk sɪmˈplɪsɪti]",
+            examples: [
+                "The pretty colour of the first, the affected drawing of the second, had entirely satisfied his aesthetic sensibilities",
+                "They never let science crush the aesthetic and the beautiful",
+                "Forgive and you shall be forgiven and live in aesthetic simplicity",
+            ],
+            translations: ["Эстетическая простота"]
         ),
     ])
     

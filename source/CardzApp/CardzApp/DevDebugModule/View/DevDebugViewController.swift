@@ -7,8 +7,15 @@
 
 import UIKit
 import Rivendell
+import Hobbiton
 
 final class DevDebugViewController: UIViewController {
+    
+    private var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        return collectionView
+    }()
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -18,34 +25,76 @@ final class DevDebugViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let merger = MergerImagerView()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        print("viewDidLoad \(String(describing: self))")
+        RLogDebug(message: "viewDidLoad", subsystem: String(describing: self))
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .darkContent
     }
     
+    let interItemSpacing: CGFloat = 10.0
+    let lineSpacing: CGFloat = 10.0
+    
     private func configureUI() {
         view.backgroundColor = .gendalf
-        addMerger()
+        addCollectionView()
+        updateCollectionItemSize()
     }
     
-    private func addMerger() {
-        view.addSubview(merger)
-        merger.configuration = merger.configuration
-            .with(firstImageConfig: .visible(image: .doneIcon, tintColor: .mysteryShack, aspectRatio: 1.0))
-            .with(secondImageConfig: .visible(image: .circleDone, tintColor: .mysteryShack, aspectRatio: 1.0))
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        updateCollectionItemSize()
+    }
+    
+    private var collectionViewFlowLayout = CustLayout()
+    
+    private func addCollectionView() {
+//        collectionViewFlowLayout.sectionInset = UIEdgeInsets.zero
+//        collectionViewFlowLayout.scrollDirection = .vertical
+//        collectionViewFlowLayout.minimumLineSpacing = lineSpacing
+//        collectionViewFlowLayout.minimumInteritemSpacing = interItemSpacing
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.register(DevDebugCollectionViewCell.self, forCellWithReuseIdentifier: DevDebugCollectionViewCell.reuseID)
+        collectionView.setCollectionViewLayout(collectionViewFlowLayout, animated: false)
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.isPagingEnabled = true
+        collectionView.alwaysBounceVertical = true
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        view.addSubview(collectionView)
         NSLayoutConstraint.activate([
-            merger.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            merger.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            merger.heightAnchor.constraint(equalToConstant: 21.0),
-            merger.widthAnchor.constraint(equalTo: merger.heightAnchor)
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            collectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+    
+    private func updateCollectionItemSize() {
+//        let numberOfItemRow: CGFloat = 3
+//        let width = (collectionView.frame.width - (numberOfItemRow - 1) * interItemSpacing) / numberOfItemRow
+//        let height = width
+//        guard width > 0 && height > 0 else { return }
+//        collectionViewFlowLayout.itemSize = .init(width: 100, height: 100)
+    }
+    
+}
+
+extension DevDebugViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let dequedCell = collectionView.dequeueReusableCell(withReuseIdentifier: DevDebugCollectionViewCell.reuseID, for: indexPath)
+        guard let cell = dequedCell as? DevDebugCollectionViewCell else { return dequedCell }
+        return cell
     }
     
 }

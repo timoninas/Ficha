@@ -136,7 +136,7 @@ final class LearnNewWordzViewController: UIViewController {
         view.backgroundColor = .gendalf
         configureUI()
         output?.viewDidLoad()
-        print("viewDidLoad \(String(describing: self))")
+        RLogDebug(message: "viewDidLoad", subsystem: String(describing: self))
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -183,7 +183,7 @@ extension LearnNewWordzViewController: LearnNewWordzInput {
         case .normal(model: let viewModel):
             self.viewModel = viewModel
         case .error:
-            print("Error")
+            RLogDebug(message: "Change state to error", subsystem: String(describing: self))
         }
     }
     
@@ -231,10 +231,9 @@ extension LearnNewWordzViewController: UICollectionViewDataSource, UICollectionV
     ) {
         UIApplication.hapticSoft()
         let item = viewModel.items[indexPath.row]
-        let module = ThematicWordzBuilder.build(
-            typeWord: ArkenstoneTypeWord(rawValue: item.title) ?? .unknown,
-            typeTranslation: SilverTypeTranslation(rawValue: item.badgeText) ?? .unknown
-        )
+        let module = goJourney(.thematicWordz(typeWord: ArkenstoneTypeWord(rawValue: item.title) ?? .unknown,
+                                              typeTranslation: SilverTypeTranslation(rawValue: item.badgeText) ?? .unknown))
+        
         module.modalPresentationStyle = .fullScreen
         self.present(module, animated: true, completion: nil)
     }

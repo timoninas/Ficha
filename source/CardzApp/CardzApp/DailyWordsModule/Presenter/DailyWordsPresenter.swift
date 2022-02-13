@@ -9,6 +9,7 @@ import Foundation
 import Erebor
 import RevolvetraKnowledge
 import RevolvetraUserDefaults
+import WidgetKit
 
 final class DailyWordsPresenter: DailyWordsOutput {
     
@@ -40,15 +41,14 @@ final class DailyWordsPresenter: DailyWordsOutput {
     
     private func refillDailyWords() {
         var newDailyWords: [DailyWordsUserDefaults] = []
-        let types = ArkenstoneTypeWord.allCases
+        let types = ArkenstoneTypeWord.allowedTypes()
         types
             .shuffled()
-            .prefix(6)
+            .prefix(5)
             .forEach { type in
-                guard type != .slang else { return }
                 let words = Array(MoriaManager.shared.getWordz(type: type)
                                     .shuffled()
-                                    .prefix(2))
+                                    .prefix(3))
                 words.forEach { word in
                     newDailyWords.append(.init(
                         title: word.wordz,
@@ -72,13 +72,10 @@ final class DailyWordsPresenter: DailyWordsOutput {
         
         var array = DailyWordsUserDefaultsCache.get()
         
-        if array.isEmpty {
+        for _ in 0..<2 {
+            guard array.isEmpty else { break }
             refillDailyWords()
             array = DailyWordsUserDefaultsCache.get()
-            if array.isEmpty {
-                refillDailyWords()
-                array = DailyWordsUserDefaultsCache.get()
-            }
         }
         
         handleSuccess(array.map { DailyWordsViewController.ViewModel(

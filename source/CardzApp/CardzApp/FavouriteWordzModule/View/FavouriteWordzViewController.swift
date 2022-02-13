@@ -54,8 +54,6 @@ final class FavouriteWordzViewController: UIViewController {
             } else if self.viewModel
                         .filter({ $0.displayedCount <= 2 })
                         .count < Constants.maxCountWordz {
-                print(self.viewModel.prefix(Constants.maxCountWordz)
-                        .filter({ $0.displayedCount <= 2 }).count)
                 self.showAlertResetModule()
             } else {
                 self.showLearnCardModule()
@@ -85,25 +83,24 @@ final class FavouriteWordzViewController: UIViewController {
                 languageVersion: $0.languageVersion,
                 displayedCount: $0.displayedCount
             )}
-        let module = LearnCardBuilder.build(viewModel: shuffled)
+        let module = goJourney(.learnCard(viewModel: shuffled))
         present(module, animated: true, completion: nil)
     }
     
     private func showAlertResetModule() {
-        let module = AlertCardBuilder.build(model:
-                                                    .init(title: "Want to reset your progress?",
-                                                          secondTitle: "Congratulations, you have learned all the words from this category",
-                                                          actions: [.init(title: "Nope", onSwipeClosure: {
-            print("[LOG] Not resetting static")
+        let module = goJourney(.alert(model: .init(title: "Want to reset your progress?",
+                                                   secondTitle: "Congratulations, you have learned all the words from this category",
+                                                   actions: [.init(title: "Nope", onSwipeClosure: {
+            RLogDebug(message: "Not resetting static", subsystem: String(describing: self))
         }),
-                                                                    .init(title: "Yep", onSwipeClosure: { [weak self] in
+                                                             .init(title: "Yep", onSwipeClosure: { [weak self] in
             guard let self = self else { return }
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
                 guard let self = self else { return }
                 self.output.resetWordsStat()
             }
             
-        })]))
+        })])))
         
         module.modalPresentationStyle = .fullScreen
         module.modalTransitionStyle = .crossDissolve
@@ -111,12 +108,11 @@ final class FavouriteWordzViewController: UIViewController {
     }
     
     private func showAlertNeedMoreWords() {
-        let module = AlertCardBuilder.build(model:
-                                                    .init(title: "Add more words to your favorite category",
-                                                          secondTitle: "You need at least 5 words in the favourite category",
-                                                          actions: [.init(title: "Ok", onSwipeClosure: {
-            print("[LOG] Ok, need more words")
-        })]))
+        let module = goJourney(.alert(model: .init(title: "Add more words to your favorite category",
+                                                   secondTitle: "You need at least 5 words in the favourite category",
+                                                   actions: [.init(title: "Ok", onSwipeClosure: {
+            RLogDebug(message: "Ok, need more words", subsystem: String(describing: self))
+        })])))
         
         module.modalPresentationStyle = .fullScreen
         module.modalTransitionStyle = .crossDissolve
@@ -135,17 +131,15 @@ final class FavouriteWordzViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        RLogInfo(message: "[Info] \(String(describing: self)) ViewDidLoad")
         configureUI()
         output.viewDidLoad()
-        print("viewDidLoad \(String(describing: self))")
-        
-        MoriaManager.shared.deleteWordz(with: "Arse / Ass", translations: ["Backside"], type: .favourite)
+        RLogDebug(message: "viewDidLoad", subsystem: String(describing: self))
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         output.viewDidAppear()
+        RLogDebug(message: "viewWillAppear", subsystem: String(describing: self))
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -165,6 +159,8 @@ final class FavouriteWordzViewController: UIViewController {
     }
     
     private func setupNavigation() {
+        navigationController?.navigationBar.barTintColor = .gendalf
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.urukhigh]
         navigationItem.title = "Your favourite wordz"
     }
     

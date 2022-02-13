@@ -20,6 +20,14 @@ public enum LogType {
         case .debug: return .debug
         }
     }
+    
+    var describe: String {
+        switch self {
+        case .info: return "INFO"
+        case .error: return "ERROR"
+        case .debug: return "DEBUG"
+        }
+    }
 }
 
 public protocol Loggable {

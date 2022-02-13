@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import Hobbiton
 
 final class DevDebugBuilder {
     
-    static func build() -> DevDebugViewController {
+    static func build() -> UIViewController {
         let module = DevDebugViewController()
-        return module
+        let navigation = NavigationController(rootViewController: module)
+        return navigation
     }
     
 }

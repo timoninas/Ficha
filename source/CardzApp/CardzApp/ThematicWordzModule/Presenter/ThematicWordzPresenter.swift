@@ -30,6 +30,9 @@ final class ThematicWordzPresenter: ThematicWordzViewOutput {
     
     private func fetchData() {
         let array = MoriaManager.shared.getWordz(type: typeWord, typeTranslation: typeTranslation)
+            .sorted(by: { model1, model2 in
+                model1.wordz < model2.wordz
+            })
         dbModels = array
         let previewViewModel = array.map {
             PreviewViewModel(

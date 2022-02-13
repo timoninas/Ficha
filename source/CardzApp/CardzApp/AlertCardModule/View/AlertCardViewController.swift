@@ -74,10 +74,9 @@ final class AlertCardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        RLogInfo(message: "[Info] \(String(describing: self)) ViewDidLoad")
         configureUI()
         output.viewDidLoad()
-        print("viewDidLoad \(String(describing: self))")
+        RLogDebug(message: "viewDidLoad", subsystem: String(describing: self))
     }
     
     private func configureUI() {
@@ -243,9 +242,6 @@ final class AlertCardViewController: UIViewController {
 extension AlertCardViewController: AlertCardViewInput {
     
     func changeState(state: SimpleScreenState<AlertModel>) {
-        print(state)
-        print()
-        
         switch state {
         case .normal(model: let model):
             let actions = Array(model.actions.prefix(2))
@@ -253,8 +249,8 @@ extension AlertCardViewController: AlertCardViewInput {
                               secondTitle: model.secondTitle,
                               actions: actions)
             configureForModel()
-        default:
-            break
+        case .error:
+            RLogDebug(message: "Change state to error", subsystem: String(describing: self))
         }
         
     }

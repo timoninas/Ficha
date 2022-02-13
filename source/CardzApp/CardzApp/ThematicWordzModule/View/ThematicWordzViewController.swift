@@ -62,24 +62,23 @@ final class ThematicWordzViewController: UIViewController {
                 languageVersion: $0.languageVersion,
                 displayedCount: $0.displayedCount
             )}
-        let module = LearnCardBuilder.build(viewModel: shuffled)
+        let module = goJourney(.learnCard(viewModel: shuffled))
         self.present(module, animated: true, completion: nil)
     }
     
     private func showAlertResetModule() {
-        let module = AlertCardBuilder.build(model:
-                                                    .init(title: "Want to reset your progress?",
-                                                          secondTitle: "Congratulations, you have learned all the words from this category",
-                                                          actions: [.init(title: "Nope", onSwipeClosure: {
-            print("[LOG] Not resetting static")
+        let module = goJourney(.alert(model: .init(title: "Want to reset your progress?",
+                                                   secondTitle: "Congratulations, you have learned all the words from this category",
+                                                   actions: [.init(title: "Nope", onSwipeClosure: {
+            RLogDebug(message: "Not resetting static", subsystem: String(describing: self))
         }),
-                                                                    .init(title: "Yep", onSwipeClosure: { [weak self] in
+                                                             .init(title: "Yep", onSwipeClosure: { [weak self] in
             guard let self = self else { return }
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
                 guard let self = self else { return }
                 self.output.resetWordsStat()
             }
-        })]))
+        })])))
         
         module.modalPresentationStyle = .fullScreen
         module.modalTransitionStyle = .crossDissolve
@@ -105,15 +104,15 @@ final class ThematicWordzViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        RLogInfo(message: "[Info] \(String(describing: self)) ViewDidLoad")
         configureUI()
         output.viewDidLoad()
-        print("viewDidLoad \(String(describing: self))")
+        RLogDebug(message: "viewDidLoad", subsystem: String(describing: self))
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         output.viewWillAppear()
+        RLogDebug(message: "viewWillAppear", subsystem: String(describing: self))
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -131,6 +130,8 @@ final class ThematicWordzViewController: UIViewController {
     }
     
     private func setupNavigation() {
+        navigationController?.navigationBar.barTintColor = .gendalf
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.urukhigh]
         let closeItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(backButtonTapped(sender:)))
         navigationItem.rightBarButtonItem = closeItem
     }
@@ -255,7 +256,7 @@ extension ThematicWordzViewController: ThematicWordzViewInput {
             self.viewModel = viewModel.wordsPreview
             setupNavigation(title: viewModel.title)
         case .error:
-            print("Error")
+            RLogDebug(message: "Change state to Error", subsystem: String(describing: self))
         }
     }
     

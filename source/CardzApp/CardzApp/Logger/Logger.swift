@@ -28,21 +28,35 @@ final class Logger: Loggable {
     
 }
 
-public func RLogInfo(message: String) {
+public func RLogInfo(message: String, subsystem: String, category: String = "") {
     
-    Logger.shared.log(message: message, logType: .info, subsystem: "", category: "")
+    Logger.shared.log(
+        message: message,
+        logType: .info,
+        subsystem: subsystem,
+        category: category
+    )
     
 }
 
-public func RLogError(message: String) {
+public func RLogError(error: Error, subsystem: String = "", category: String = "") {
     
-    Logger.shared.log(message: message, logType: .error, subsystem: "", category: "")
+    Logger.shared.log(
+        message: "Failed: \(error) \(error.localizedDescription)",
+        logType: .error,
+        subsystem: subsystem,
+        category: category)
     
 }
 
-public func RLogDebug(message: String) {
+public func RLogDebug(message: String, subsystem: String, category: String = "") {
     
-    Logger.shared.log(message: message, logType: .debug, subsystem: "", category: "")
+    Logger.shared.log(
+        message: message,
+        logType: .debug,
+        subsystem: subsystem,
+        category: category
+    )
     
 }
 

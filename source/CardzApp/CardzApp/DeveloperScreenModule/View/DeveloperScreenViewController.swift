@@ -20,7 +20,8 @@ final class DeveloperScreenViewController: UIViewController {
         .onlyTitle(title: "Top swipes count: \(KnowledgeStats.topSwipesLearnCard)"),
         .onlyTitle(title: "Right swipes count: \(KnowledgeStats.rightSwipesLearnCard)"),
         .onlyTitle(title: "Left swipes count: \(KnowledgeStats.leftSwipesLearnCard)"),
-        .onlyTitle(title: "Drags count: \(KnowledgeStats.dragsLearnCard)")
+        .onlyTitle(title: "Drags count: \(KnowledgeStats.dragsLearnCard)"),
+        .onlyTitle(title: "App version: \(KnowledgeDevice.appVersion ?? "?")")
     ]
     
     private var cancellable: Set<AnyCancellable> = []
@@ -60,10 +61,9 @@ final class DeveloperScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .gendalf
         configureUI()
         output?.viewDidLoad()
-        print("viewDidLoad \(String(describing: self))")
+        RLogDebug(message: "viewDidLoad", subsystem: String(describing: self))
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -71,6 +71,7 @@ final class DeveloperScreenViewController: UIViewController {
     }
     
     private func configureUI() {
+        view.backgroundColor = .gendalf
         setupNavigation()
         addTableView()
         addCloseButton()

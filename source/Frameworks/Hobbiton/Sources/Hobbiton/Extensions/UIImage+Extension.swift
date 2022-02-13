@@ -9,74 +9,82 @@ import UIKit
 
 public extension UIImage {
     
-    static let revolvetra = UIImage(named: "Revolvetra")
+    private static func imageFromBundle(named: String) -> UIImage? {
+        UIImage(named: named, in: .module, with: nil)
+    }
     
-    static let settingRoundIcon = UIImage(named: "settingsIcon")
+    static let revolvetra = UIImage.imageFromBundle(named: "Revolvetra")
     
-    static let playGameIcon = UIImage(named: "playGameIcon")
+    static let settingRoundIcon = UIImage.imageFromBundle(named: "settingsIcon")
     
-    static let starUnfilledIcon = UIImage(named: "starUnfilledIcon")
+    static let playGameIcon = UIImage.imageFromBundle(named: "playGameIcon")
     
-    static let starFilledIcon = UIImage(named: "starFilledIcon")
+    static let starUnfilledIcon = UIImage.imageFromBundle(named: "starUnfilledIcon")
     
-    static let starIcon = UIImage(named: "starIcon")
+    static let starFilledIcon = UIImage.imageFromBundle(named: "starFilledIcon")
     
-    static let todayIcon = UIImage(named: "todayIcon")
+    static let starIcon = UIImage.imageFromBundle(named: "starIcon")
     
-    static let graduateIcon = UIImage(named: "graduateIcon")
+    static let todayIcon = UIImage.imageFromBundle(named: "todayIcon")
     
-    static let todayIconFilled = UIImage(named: "todayIconFilled")
+    static let graduateIcon = UIImage.imageFromBundle(named: "graduateIcon")
     
-    static let starIconFilled = UIImage(named: "starIconFilled")
+    static let todayIconFilled = UIImage.imageFromBundle(named: "todayIconFilled")
     
-    static let graduateIconFilled = UIImage(named: "graduateIconFilled")
+    static let starIconFilled = UIImage.imageFromBundle(named: "starIconFilled")
     
-    static let leftArrowIcon = UIImage(named: "leftArrowIcon")
+    static let graduateIconFilled = UIImage.imageFromBundle(named: "graduateIconFilled")
     
-    static let rightArrowIcon = UIImage(named: "rightArrowIcon")
+    static let leftArrowIcon = UIImage.imageFromBundle(named: "leftArrowIcon")
     
-    static let openedEye = UIImage(named: "openedEye")
+    static let rightArrowIcon = UIImage.imageFromBundle(named: "rightArrowIcon")
     
-    static let closedEye = UIImage(named: "closedEye")
+    static let openedEye = UIImage.imageFromBundle(named: "openedEye")
     
-    static let kolokol = UIImage(named: "kolokol")
+    static let closedEye = UIImage.imageFromBundle(named: "closedEye")
     
-    static let closeIcon = UIImage(named: "closeIcon")
+    static let kolokol = UIImage.imageFromBundle(named: "kolokol")
     
-    static let animals = UIImage(named: "animals")
+    static let closeIcon = UIImage.imageFromBundle(named: "closeIcon")
     
-    static let architecture = UIImage(named: "arhitecture")
+    static let animals = UIImage.imageFromBundle(named: "animals")
     
-    static let clothes = UIImage(named: "clothes")
+    static let architecture = UIImage.imageFromBundle(named: "arhitecture")
     
-    static let computers = UIImage(named: "computers")
+    static let clothes = UIImage.imageFromBundle(named: "clothes")
     
-    static let emotions = UIImage(named: "emotions")
+    static let computers = UIImage.imageFromBundle(named: "computers")
     
-    static let home = UIImage(named: "home")
+    static let emotions = UIImage.imageFromBundle(named: "emotions")
     
-    static let job = UIImage(named: "job")
+    static let home = UIImage.imageFromBundle(named: "home")
     
-    static let slang = UIImage(named: "slang")
+    static let job = UIImage.imageFromBundle(named: "job")
     
-    static let serials = UIImage(named: "serials")
+    static let slang = UIImage.imageFromBundle(named: "slang")
     
-    static let onboarding1 = UIImage(named: "onboarding1")
+    static let serials = UIImage.imageFromBundle(named: "serials")
     
-    static let onboarding2 = UIImage(named: "onboarding2")
+    static let onboarding1 = UIImage.imageFromBundle(named: "onboarding1")
     
-    static let onboarding3 = UIImage(named: "onboarding3")
+    static let onboarding2 = UIImage.imageFromBundle(named: "onboarding2")
     
-    static let onboarding4 = UIImage(named: "onboarding4")
+    static let onboarding3 = UIImage.imageFromBundle(named: "onboarding3")
     
-    static let bulbLight = UIImage(named: "bulbLight")
+    static let onboarding4 = UIImage.imageFromBundle(named: "onboarding4")
     
-    static let devIcon = UIImage(named: "devIcon")
+    static let bulbLight = UIImage.imageFromBundle(named: "bulbLight")
     
-    static let devIconFilled = UIImage(named: "devIconFilled")
+    static let devIcon = UIImage.imageFromBundle(named: "devIcon")
     
-    static let circleDone = UIImage(named: "circleDone")
+    static let devIconFilled = UIImage.imageFromBundle(named: "devIconFilled")
     
-    static let doneIcon = UIImage(named: "doneIcon")
+    static let circleDone = UIImage.imageFromBundle(named: "circleDone")
+    
+    static let doneIcon = UIImage.imageFromBundle(named: "doneIcon")
+    
+    static let developingModule = UIImage.imageFromBundle(named: "developingModule")
+    
+    static let developingModuleFilled = UIImage.imageFromBundle(named: "developingModuleFilled")
     
 }

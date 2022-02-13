@@ -31,4 +31,20 @@ public class DaysChechker {
         return false
     }
     
+    public static var isQuarterOfDay: Bool {
+        let currentDate = Date.now
+        
+        let lastVisitDate = KnowledgeProfile.lastHalfHalfDateVisit
+        
+        let difference = Calendar.current.dateComponents([.hour], from: lastVisitDate, to: currentDate)
+        let diffHours = abs(difference.hour ?? 0)
+        
+        if diffHours >= 4 {
+            KnowledgeProfile.lastHalfHalfDateVisit = currentDate
+            return true
+        }
+        
+        return false
+    }
+    
 }
