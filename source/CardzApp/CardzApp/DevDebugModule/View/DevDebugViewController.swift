@@ -11,15 +11,10 @@ import Hobbiton
 
 final class DevDebugViewController: UIViewController {
     
-    
-    private var blurView = BlurView()
-    
-    private var roundView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .mysteryShack
-        view.layer.cornerRadius = 100.0
-        return view
+    private var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        return collectionView
     }()
     
     init() {
@@ -40,24 +35,66 @@ final class DevDebugViewController: UIViewController {
         .darkContent
     }
     
+    let interItemSpacing: CGFloat = 10.0
+    let lineSpacing: CGFloat = 10.0
+    
     private func configureUI() {
         view.backgroundColor = .gendalf
+        addCollectionView()
+        updateCollectionItemSize()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        updateCollectionItemSize()
+    }
+    
+    private var collectionViewFlowLayout = CustLayout()
+    
+    private func addCollectionView() {
+//        collectionViewFlowLayout.sectionInset = UIEdgeInsets.zero
+//        collectionViewFlowLayout.scrollDirection = .vertical
+//        collectionViewFlowLayout.minimumLineSpacing = lineSpacing
+//        collectionViewFlowLayout.minimumInteritemSpacing = interItemSpacing
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.register(DevDebugCollectionViewCell.self, forCellWithReuseIdentifier: DevDebugCollectionViewCell.reuseID)
+        collectionView.setCollectionViewLayout(collectionViewFlowLayout, animated: false)
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.isPagingEnabled = true
+        collectionView.alwaysBounceVertical = true
         
-        view.addSubview(roundView)
-        NSLayoutConstraint.activate([
-            roundView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10.0),
-            roundView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            roundView.heightAnchor.constraint(equalToConstant: 200.0),
-            roundView.widthAnchor.constraint(equalToConstant: 200.0)
-        ])
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
-        view.addSubview(blurView)
+        view.addSubview(collectionView)
         NSLayoutConstraint.activate([
-            blurView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10.0),
-            blurView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10.0),
-            blurView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10.0),
-            blurView.heightAnchor.constraint(equalToConstant: 300.0)
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            collectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+    
+    private func updateCollectionItemSize() {
+//        let numberOfItemRow: CGFloat = 3
+//        let width = (collectionView.frame.width - (numberOfItemRow - 1) * interItemSpacing) / numberOfItemRow
+//        let height = width
+//        guard width > 0 && height > 0 else { return }
+//        collectionViewFlowLayout.itemSize = .init(width: 100, height: 100)
+    }
+    
+}
+
+extension DevDebugViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let dequedCell = collectionView.dequeueReusableCell(withReuseIdentifier: DevDebugCollectionViewCell.reuseID, for: indexPath)
+        guard let cell = dequedCell as? DevDebugCollectionViewCell else { return dequedCell }
+        return cell
     }
     
 }

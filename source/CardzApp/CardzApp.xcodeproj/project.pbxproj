@@ -88,6 +88,8 @@
 		77FED85A27881D45007D60E3 /* DevDebugBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FED85927881D45007D60E3 /* DevDebugBuilder.swift */; };
 		77FED85D27881DEA007D60E3 /* DevDebugProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FED85C27881DEA007D60E3 /* DevDebugProtocols.swift */; };
 		D42CC37927AF9D8B00335204 /* IndependentDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42CC37827AF9D8B00335204 /* IndependentDependencies.swift */; };
+		D42D2E7227B7CD3600374C58 /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42D2E7127B7CD3600374C58 /* CustomLayout.swift */; };
+		D42D2E7427B81B2C00374C58 /* DevDebugCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42D2E7327B81B2C00374C58 /* DevDebugCollectionViewCell.swift */; };
 		D469CEC627B19FA800B47A14 /* LearnTimesMvvmBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D469CEC527B19FA800B47A14 /* LearnTimesMvvmBuilder.swift */; };
 		D48F8494276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F8493276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift */; };
 		D4C7F12F2719636D0066125A /* DailyWordsViewController+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C7F12E2719636D0066125A /* DailyWordsViewController+State.swift */; };
@@ -228,6 +230,8 @@
 		77FED85927881D45007D60E3 /* DevDebugBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevDebugBuilder.swift; sourceTree = "<group>"; };
 		77FED85C27881DEA007D60E3 /* DevDebugProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevDebugProtocols.swift; sourceTree = "<group>"; };
 		D42CC37827AF9D8B00335204 /* IndependentDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndependentDependencies.swift; sourceTree = "<group>"; };
+		D42D2E7127B7CD3600374C58 /* CustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
+		D42D2E7327B81B2C00374C58 /* DevDebugCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevDebugCollectionViewCell.swift; sourceTree = "<group>"; };
 		D469CEC527B19FA800B47A14 /* LearnTimesMvvmBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTimesMvvmBuilder.swift; sourceTree = "<group>"; };
 		D48F8493276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnNewWordzCollectionViewHeader.swift; sourceTree = "<group>"; };
 		D4C7F12E2719636D0066125A /* DailyWordsViewController+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyWordsViewController+State.swift"; sourceTree = "<group>"; };
@@ -774,7 +778,9 @@
 		77FED85B27881DDC007D60E3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D42D2E7127B7CD3600374C58 /* CustomLayout.swift */,
 				77FED85627881D20007D60E3 /* DevDebugViewController.swift */,
+				D42D2E7327B81B2C00374C58 /* DevDebugCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1131,6 +1137,7 @@
 				77A3CA362772FDE100A0EA9C /* PreviewViewModel.swift in Sources */,
 				772041A9277DE7F200141FCA /* MoriaManager.swift in Sources */,
 				77FED85A27881D45007D60E3 /* DevDebugBuilder.swift in Sources */,
+				D42D2E7427B81B2C00374C58 /* DevDebugCollectionViewCell.swift in Sources */,
 				776E4929272C9103000D0B2D /* LearnCardPresenter.swift in Sources */,
 				D4F00DA52718C5070079A860 /* LifeCycleProtocol.swift in Sources */,
 				7748E9392757F4EE0063E592 /* FavouriteWordzBuilder.swift in Sources */,
@@ -1169,6 +1176,7 @@
 				775A18C7271C284E00A295C0 /* DailyWordsHeader.swift in Sources */,
 				77FED85D27881DEA007D60E3 /* DevDebugProtocols.swift in Sources */,
 				D4F00D9E2718C3FB0079A860 /* SceneDelegate.swift in Sources */,
+				D42D2E7227B7CD3600374C58 /* CustomLayout.swift in Sources */,
 				772041AE277EDC1C00141FCA /* DaysChecker.swift in Sources */,
 				77A3CA342772F9B300A0EA9C /* ThematicWordzProtocols.swift in Sources */,
 				778273AD27AA56D500E5053D /* LearnTimesViewController+State.swift in Sources */,
