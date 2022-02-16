@@ -47,7 +47,7 @@ public struct DailyWordsCacheKey {
     
     public static let dailyWords = "UD_DailyWordsUserDefaultsCache_dailyWords"
     
-    public static let widgetWords = "group.Revolvetra.Inc.Ficha"
+    public static let widgetWords = "7T683Q6H89.group.Revolvetra.Inc.Ficha"
     
 }
 

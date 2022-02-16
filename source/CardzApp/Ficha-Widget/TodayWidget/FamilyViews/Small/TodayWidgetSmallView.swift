@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Rivendell
 
 struct TodayWidgetSmallView : View {
     
@@ -45,7 +44,7 @@ struct TodayWidgetSmallView : View {
             
             if self.shot.canShowLogo {
                 FichaLogoView(
-                    image: Image.fichaLogo,
+                    image: Image("ficha-logo"),
                     size: CGSize(width: 23.0, height: 23.0)
                 )
             }
