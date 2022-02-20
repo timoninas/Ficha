@@ -12,15 +12,15 @@ import Hobbiton
 
 final class DailyWordsViewController: UIViewController {
     
-    var viewModels: [ViewModel] = [] {
+    var viewModels: ViewModel = .init(todayWords: []) {
         didSet {
             guard viewModels != oldValue else { return }
-            updateVisabilityButton(isHidden: viewModels.isEmpty)
+            updateVisabilityButton(isHidden: viewModels.todayWords.isEmpty)
             renderContent(isAnimated: true)
         }
     }
     
-    private var viewModelToLearnWordzViewModel: (ViewModel) -> LearnWordzCardView.ViewModel = {
+    private var viewModelToLearnWordzViewModel: (ViewModel.TodayWords) -> LearnWordzCardView.ViewModel = {
         .init(
             wordz: $0.title,
             translations: $0.translations,
@@ -32,7 +32,7 @@ final class DailyWordsViewController: UIViewController {
         )
     }
     
-    var wordsView: [TodayWordsView] = []
+    var wordsView: [UIViewWithHeight & UIView] = []
     
     let imageView = UIImageView(image: .revolvetra)
     
@@ -157,7 +157,7 @@ final class DailyWordsViewController: UIViewController {
                 guard let self = self else { return }
                 guard button.alpha != 0.0 else { return }
                 UIApplication.hapticLight()
-                let module = goJourney(.learnCard(viewModel: self.viewModels.map { self.viewModelToLearnWordzViewModel($0) }))
+                let module = goJourney(.learnCard(viewModel: self.viewModels.todayWords.map { self.viewModelToLearnWordzViewModel($0) }))
                 self.present(module, animated: true, completion: nil)
             })
         
@@ -170,18 +170,23 @@ final class DailyWordsViewController: UIViewController {
         ])
     }
     
+    private func renderViews() -> [UIViewWithHeight & UIView] {
+        return wordsView
+    }
+    
     private func renderTodayViews() {
         NSLayoutConstraint.deactivate(todayConstraints)
         todayConstraints.removeAll()
         
-        wordsView.forEach { view in
+        let viewsToRender = renderViews()
+        viewsToRender.forEach { view in
             if view.superview != nil {
                 view.removeFromSuperview()
             }
         }
         
         var previousView: TodayWordsView?
-        for (idx, viewModel) in viewModels.enumerated() {
+        for (idx, viewModel) in viewModels.todayWords.enumerated() {
             let todayView = TodayWordsView(configuration: .init()
                                             .with(title: viewModel.title)
                                             .with(subtitles: viewModel.subtitles))
@@ -193,7 +198,7 @@ final class DailyWordsViewController: UIViewController {
                     
                 ]
             } else {
-                if idx == viewModels.count - 1 {
+                if idx == viewModels.todayWords.count - 1 {
                     todayConstraints += [
                         todayView.bottomAnchor.constraint(lessThanOrEqualTo: scrollView.bottomAnchor, constant: -30.0)
                     ]

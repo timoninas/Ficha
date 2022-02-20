@@ -77,8 +77,7 @@ final class DailyWordsPresenter: DailyWordsOutput {
             refillDailyWords()
             array = DailyWordsUserDefaultsCache.get()
         }
-        
-        handleSuccess(array.map { DailyWordsViewController.ViewModel(
+        handleSuccess(.init(todayWords: array.map { DailyWordsViewController.ViewModel.TodayWords(
             title: $0.title,
             transcription: $0.transcription,
             subtitles: $0.examples,
@@ -86,10 +85,10 @@ final class DailyWordsPresenter: DailyWordsOutput {
             type: ArkenstoneTypeWord(rawValue: $0.type) ?? .unknown,
             languageVersion: SilverTypeTranslation(rawValue: $0.languageVersion) ?? .unknown,
             displayedCount: $0.displayedCount
-        ) })
+        ) }))
     }
     
-    private func handleSuccess(_ todayCards: [DailyWordsViewController.ViewModel]) {
+    private func handleSuccess(_ todayCards: DailyWordsViewController.ViewModel) {
         view?.changeState(state: .content(todayCards))
     }
     

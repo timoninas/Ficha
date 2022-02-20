@@ -49,7 +49,7 @@ final class DevDebugViewController: UIViewController {
         updateCollectionItemSize()
     }
     
-    private var collectionViewFlowLayout = CustLayout()
+    private var collectionViewFlowLayout = HorizontalLineLayout()
     
     private func addCollectionView() {
 //        collectionViewFlowLayout.sectionInset = UIEdgeInsets.zero
@@ -60,18 +60,18 @@ final class DevDebugViewController: UIViewController {
         collectionView.register(DevDebugCollectionViewCell.self, forCellWithReuseIdentifier: DevDebugCollectionViewCell.reuseID)
         collectionView.setCollectionViewLayout(collectionViewFlowLayout, animated: false)
         collectionView.showsVerticalScrollIndicator = false
-        collectionView.isPagingEnabled = true
-        collectionView.alwaysBounceVertical = true
+//        collectionView.isPagingEnabled = true
+//        collectionView.alwaysBounceVertical = true
         
         collectionView.dataSource = self
         collectionView.delegate = self
         
         view.addSubview(collectionView)
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             collectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
             collectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            collectionView.heightAnchor.constraint(equalToConstant: self.collectionViewFlowLayout.collectionViewContentSize.height)
         ])
     }
     

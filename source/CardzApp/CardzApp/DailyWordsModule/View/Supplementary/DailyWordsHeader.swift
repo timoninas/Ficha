@@ -83,6 +83,8 @@ final class DailyWordsHeader: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        let gradient = UIImage.gradientImage(bounds: titleLabel.bounds, colors: [.blue, .mysteryShack])
+        titleLabel.textColor = UIColor(patternImage: gradient)
     }
     
     private func configureUI() {
@@ -99,6 +101,8 @@ final class DailyWordsHeader: UIView {
     }
     
     private func addTitleLabel() {
+        let gradient = UIImage.gradientImage(bounds: titleLabel.bounds, colors: [.systemBlue, .systemRed])
+        titleLabel.textColor = UIColor(patternImage: gradient)
         addSubview(titleLabel)
         titleLabel.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true

@@ -10,7 +10,7 @@ import Foundation
 extension DailyWordsViewController {
     
     enum State {
-        case content([ViewModel])
+        case content(ViewModel)
         case error
     }
     

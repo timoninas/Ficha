@@ -45,8 +45,23 @@ struct TodayProvider: TimelineProvider {
                 entries.append(entry)
             }
         
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
+        if context.family == .systemSmall {
+            let timeline = Timeline(entries: entries
+                                        .shuffled(),
+                                    policy: .atEnd)
+            completion(timeline)
+        } else if context.family == .systemMedium {
+            let timeline = Timeline(entries: entries
+                                        .shuffled()
+                                        .shuffled(),
+                                    policy: .atEnd)
+            completion(timeline)
+        } else {
+            let timeline = Timeline(entries: entries,
+                                    policy: .atEnd)
+            completion(timeline)
+        }
+        
     }
     
     private func formateExamples(examples: [String]) -> String? {
