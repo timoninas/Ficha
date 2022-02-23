@@ -17,6 +17,10 @@ final class DevDebugViewController: UIViewController {
         return collectionView
     }()
     
+    private var collectionViewFlowLayout = HorizontalLineLayout()
+    
+    private var header = AddFavouriteHeaderView()
+    
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -40,28 +44,21 @@ final class DevDebugViewController: UIViewController {
     
     private func configureUI() {
         view.backgroundColor = .gendalf
-        addCollectionView()
-        updateCollectionItemSize()
+//        addCollectionView()
+        view.addSubview(header)
+        NSLayoutConstraint.activate([
+            header.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            header.leftAnchor.constraint(equalTo: view.leftAnchor),
+            header.rightAnchor.constraint(equalTo: view.rightAnchor),
+            header.heightAnchor.constraint(equalToConstant: AddFavouriteHeaderView.height())
+        ])
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        updateCollectionItemSize()
-    }
-    
-    private var collectionViewFlowLayout = HorizontalLineLayout()
     
     private func addCollectionView() {
-//        collectionViewFlowLayout.sectionInset = UIEdgeInsets.zero
-//        collectionViewFlowLayout.scrollDirection = .vertical
-//        collectionViewFlowLayout.minimumLineSpacing = lineSpacing
-//        collectionViewFlowLayout.minimumInteritemSpacing = interItemSpacing
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(DevDebugCollectionViewCell.self, forCellWithReuseIdentifier: DevDebugCollectionViewCell.reuseID)
         collectionView.setCollectionViewLayout(collectionViewFlowLayout, animated: false)
         collectionView.showsVerticalScrollIndicator = false
-//        collectionView.isPagingEnabled = true
-//        collectionView.alwaysBounceVertical = true
         
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -73,14 +70,6 @@ final class DevDebugViewController: UIViewController {
             collectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
             collectionView.heightAnchor.constraint(equalToConstant: self.collectionViewFlowLayout.collectionViewContentSize.height)
         ])
-    }
-    
-    private func updateCollectionItemSize() {
-//        let numberOfItemRow: CGFloat = 3
-//        let width = (collectionView.frame.width - (numberOfItemRow - 1) * interItemSpacing) / numberOfItemRow
-//        let height = width
-//        guard width > 0 && height > 0 else { return }
-//        collectionViewFlowLayout.itemSize = .init(width: 100, height: 100)
     }
     
 }

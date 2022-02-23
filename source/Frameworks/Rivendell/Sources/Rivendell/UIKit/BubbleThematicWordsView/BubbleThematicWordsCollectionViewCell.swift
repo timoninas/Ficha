@@ -46,10 +46,14 @@ public final class BubbleThematicWordsCollectionViewCell: UICollectionViewCell {
     
     public override var isHighlighted: Bool {
         didSet {
-            let duration = isHighlighted ? 0.45 : 0.4
+            let duration = isHighlighted ? 0.45 : 0.35
             let transform = isHighlighted ?
                 CGAffineTransform(scaleX: 0.96, y: 0.96) : CGAffineTransform.identity
-            let animations = {
+            let animations = { [weak self] in
+                guard let self = self else { return }
+                if !self.isHighlighted {
+                    UIApplication.hapticLight()
+                }
                 self.transform = transform
             }
             UIView.animate(withDuration: duration,

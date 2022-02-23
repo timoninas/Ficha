@@ -14,6 +14,8 @@ public protocol KnowledgeDeviceProtocol {
     
     static var previousAppVersion: String { get set }
     
+    static var isEnabledHidingAddFavouriteHeader: Bool { get set }
+    
 }
 
 public class KnowledgeDevice: KnowledgeDeviceProtocol {
@@ -22,4 +24,7 @@ public class KnowledgeDevice: KnowledgeDeviceProtocol {
     
     @UserDefault(key: DeviceKey.previousAppVersion, defaultValue: "")
     public static var previousAppVersion
+    
+    @UserDefault(key: DeviceKey.isEnabledHidingAddFavouriteHeader, defaultValue: false)
+    public static var isEnabledHidingAddFavouriteHeader
 }

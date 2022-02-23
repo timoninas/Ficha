@@ -38,7 +38,12 @@ final class FavouriteWordzPresenter: FavouriteWordzViewOutput {
             )
         }
         array = Array(array.reversed())
-        guard viewModels != array else { return }
+        guard viewModels != array else {
+            if self.viewModels.isEmpty {
+                view?.changeState(state: .error)
+            }
+            return
+        }
         viewModels = array
         view?.changeState(state: .normal(model: viewModels))
     }
@@ -62,6 +67,10 @@ final class FavouriteWordzPresenter: FavouriteWordzViewOutput {
             languageVersion: .unknown,
             count: 0
         )
+        fetchData()
+    }
+    
+    func refetchData() {
         fetchData()
     }
     

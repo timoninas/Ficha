@@ -21,7 +21,10 @@ final class DeveloperScreenViewController: UIViewController {
         .onlyTitle(title: "Right swipes count: \(KnowledgeStats.rightSwipesLearnCard)"),
         .onlyTitle(title: "Left swipes count: \(KnowledgeStats.leftSwipesLearnCard)"),
         .onlyTitle(title: "Drags count: \(KnowledgeStats.dragsLearnCard)"),
-        .onlyTitle(title: "App version: \(KnowledgeDevice.appVersion ?? "?")")
+        .onlyTitle(title: "App version: \(KnowledgeDevice.appVersion ?? "?")"),
+        .switcher(title: "Is enabled hiding favourite", initialState: KnowledgeDevice.isEnabledHidingAddFavouriteHeader, closure: { isEnabled in
+            KnowledgeDevice.isEnabledHidingAddFavouriteHeader = isEnabled
+        })
     ]
     
     private var cancellable: Set<AnyCancellable> = []

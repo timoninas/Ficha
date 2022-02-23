@@ -31,6 +31,8 @@ public struct DeviceKey {
     
     public static let previousAppVersion = "UD_KnowledgeDevice_previousAppVersion"
     
+    public static let isEnabledHidingAddFavouriteHeader = "UD_KnowledgeDevice_isEnabledHidingAddFavouriteHeader"
+    
 }
 
 public struct ProfileKey {

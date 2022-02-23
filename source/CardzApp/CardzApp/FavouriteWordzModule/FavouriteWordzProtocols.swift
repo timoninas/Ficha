@@ -20,4 +20,7 @@ protocol FavouriteWordzViewOutput: LifeCycleProtocol, AnyObject {
     
     /// Reset stats for choosen type words.
     func resetWordsStat()
+    
+    func refetchData()
+    
 }
