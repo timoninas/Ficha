@@ -74,6 +74,7 @@ public final class RVButton: BaseControl {
     }
     
     private func configureUI() {
+        translatesAutoresizingMaskIntoConstraints = false
         addView()
         addTitle()
         addDescriptionTitle()

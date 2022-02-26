@@ -30,6 +30,7 @@ public extension RVButton {
         /// Вариация размеров кнопки.
         public enum Size {
             case legolas
+            case elkoko
         }
         
         /// Вариация стиля кнопки.
@@ -48,6 +49,8 @@ public extension RVButton {
             switch size {
             case .legolas:
                 return 60.0
+            case .elkoko:
+                return 30.0
             }
         }
         
@@ -64,6 +67,8 @@ public extension RVButton {
             switch size {
             case .legolas:
                 return 16.0
+            case .elkoko:
+                return 12.0
             }
         }
         
@@ -72,6 +77,8 @@ public extension RVButton {
             switch size {
             case .legolas:
                 return 12.0
+            case .elkoko:
+                return 8.0
             }
         }
         

@@ -44,8 +44,8 @@ struct TodayProvider: TimelineProvider {
                 let entry = TodayWidgetEntry(date: entryDate, shot: word)
                 entries.append(entry)
             }
-        print(entries)
-        let timeline = Timeline(entries: entries, policy: .atEnd)
+        let timeline = Timeline(entries: entries,
+                                policy: .atEnd)
         completion(timeline)
     }
     

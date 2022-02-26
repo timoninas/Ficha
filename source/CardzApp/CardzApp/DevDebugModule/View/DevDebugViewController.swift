@@ -17,6 +17,10 @@ final class DevDebugViewController: UIViewController {
         return collectionView
     }()
     
+    private var collectionViewFlowLayout = HorizontalLineLayout()
+    
+    private var header = AddFavouriteHeaderView()
+    
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -40,47 +44,32 @@ final class DevDebugViewController: UIViewController {
     
     private func configureUI() {
         view.backgroundColor = .gendalf
-        addCollectionView()
-        updateCollectionItemSize()
+//        addCollectionView()
+        view.addSubview(header)
+        NSLayoutConstraint.activate([
+            header.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            header.leftAnchor.constraint(equalTo: view.leftAnchor),
+            header.rightAnchor.constraint(equalTo: view.rightAnchor),
+            header.heightAnchor.constraint(equalToConstant: AddFavouriteHeaderView.height())
+        ])
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        updateCollectionItemSize()
-    }
-    
-    private var collectionViewFlowLayout = CustLayout()
     
     private func addCollectionView() {
-//        collectionViewFlowLayout.sectionInset = UIEdgeInsets.zero
-//        collectionViewFlowLayout.scrollDirection = .vertical
-//        collectionViewFlowLayout.minimumLineSpacing = lineSpacing
-//        collectionViewFlowLayout.minimumInteritemSpacing = interItemSpacing
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(DevDebugCollectionViewCell.self, forCellWithReuseIdentifier: DevDebugCollectionViewCell.reuseID)
         collectionView.setCollectionViewLayout(collectionViewFlowLayout, animated: false)
         collectionView.showsVerticalScrollIndicator = false
-        collectionView.isPagingEnabled = true
-        collectionView.alwaysBounceVertical = true
         
         collectionView.dataSource = self
         collectionView.delegate = self
         
         view.addSubview(collectionView)
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             collectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
             collectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            collectionView.heightAnchor.constraint(equalToConstant: self.collectionViewFlowLayout.collectionViewContentSize.height)
         ])
-    }
-    
-    private func updateCollectionItemSize() {
-//        let numberOfItemRow: CGFloat = 3
-//        let width = (collectionView.frame.width - (numberOfItemRow - 1) * interItemSpacing) / numberOfItemRow
-//        let height = width
-//        guard width > 0 && height > 0 else { return }
-//        collectionViewFlowLayout.itemSize = .init(width: 100, height: 100)
     }
     
 }

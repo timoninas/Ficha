@@ -13,7 +13,6 @@ import WidgetKit
 
 protocol IndependentDependenciesProtocol {
     
-    
     /// Runs and installs all independent dependencies that need to be run/check and installed if necessary.
     func launch()
     
@@ -84,13 +83,11 @@ public final class IndependentDependencies: IndependentDependenciesProtocol {
                     }
                 }
             WidgetWordsUserDefaultsCache.save(newDailyWords.shuffled())
-            WidgetCenter.shared.reloadAllTimelines()
-        }
-        guard DaysChechker.isQuarterOfDay else {
-            for _ in 0..<2 {
-                guard WidgetWordsUserDefaultsCache.get().isEmpty else { return }
-                filling()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                WidgetCenter.shared.reloadAllTimelines()
             }
+        }
+        guard true || DaysChechker.isQuarterOfDay else {
             return
         }
         filling()

@@ -31,7 +31,9 @@ public extension UIColor {
     
     static let moonlight = UIColor(red: 255/255, green: 187/255, blue: 0/255, alpha: 1)
     
-    static let zoomy = UIColor(red: 17/255, green: 229/255, blue: 234/255, alpha: 1)
+    static let zoomy = UIColor(red: 18/255, green: 240/255, blue: 245/255, alpha: 1)
+    
+    static let babushka = UIColor(red: 189/255, green: 12/255, blue: 234/255, alpha: 1)
     
     static let olivie = UIColor(red: 106/255, green: 108/255, blue: 97/255, alpha: 1)
     

@@ -56,7 +56,6 @@ final class DailyWordsHeader: UIView {
                                                 .with(isFullyRounded: true)
                                                 .with(backgroundColor: .clear)
                                                 .with(highlitedColor: .clear)
-                                               //                                                .with(image: .settingRoundIcon)
                                                 .with(imageColor: .nazgul))
     
     private let settingsButton1: UIButton = {
@@ -83,6 +82,13 @@ final class DailyWordsHeader: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        let gradient = UIImage.gradientImage(bounds: titleLabel.bounds, colors: [
+            .mysteryShack,
+            .mysteryShack,
+            .mysteryShack,
+            .babushka.withAlphaComponent(0.5)
+        ])
+        titleLabel.textColor = UIColor(patternImage: gradient)
     }
     
     private func configureUI() {
@@ -99,6 +105,8 @@ final class DailyWordsHeader: UIView {
     }
     
     private func addTitleLabel() {
+        let gradient = UIImage.gradientImage(bounds: titleLabel.bounds, colors: [.systemBlue, .systemRed])
+        titleLabel.textColor = UIColor(patternImage: gradient)
         addSubview(titleLabel)
         titleLabel.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true

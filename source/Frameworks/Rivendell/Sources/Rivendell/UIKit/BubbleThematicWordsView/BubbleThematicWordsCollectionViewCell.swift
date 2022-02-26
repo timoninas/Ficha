@@ -43,5 +43,27 @@ public final class BubbleThematicWordsCollectionViewCell: UICollectionViewCell {
     public func configure(configuration: BubbleThematicWordsView.Configuration) {
         bubbleThematicWordsView.configuration = configuration
     }
+    
+    public override var isHighlighted: Bool {
+        didSet {
+            let duration = isHighlighted ? 0.45 : 0.35
+            let transform = isHighlighted ?
+                CGAffineTransform(scaleX: 0.96, y: 0.96) : CGAffineTransform.identity
+            let animations = { [weak self] in
+                guard let self = self else { return }
+                if !self.isHighlighted {
+                    UIApplication.hapticLight()
+                }
+                self.transform = transform
+            }
+            UIView.animate(withDuration: duration,
+                           delay: 0,
+                           usingSpringWithDamping: 1.0,
+                           initialSpringVelocity: 0.0,
+                           options: [.allowUserInteraction, .beginFromCurrentState],
+                           animations: animations,
+                           completion: nil)
+        }
+    }
 
 }

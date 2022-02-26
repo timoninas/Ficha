@@ -12,19 +12,25 @@ extension DailyWordsViewController {
     
     struct ViewModel: Equatable {
         
-        let title: String
+        let todayWords: [TodayWords]
         
-        let transcription: String?
-        
-        let subtitles: [String]?
-        
-        let translations: [String]
-        
-        let type: ArkenstoneTypeWord
-        
-        let languageVersion: SilverTypeTranslation
-        
-        let displayedCount: Int64
+        struct TodayWords: Equatable {
+            
+            let title: String
+            
+            let transcription: String?
+            
+            let subtitles: [String]?
+            
+            let translations: [String]
+            
+            let type: ArkenstoneTypeWord
+            
+            let languageVersion: SilverTypeTranslation
+            
+            let displayedCount: Int64
+            
+        }
         
     }
     

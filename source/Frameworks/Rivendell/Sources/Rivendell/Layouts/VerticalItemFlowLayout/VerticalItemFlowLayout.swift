@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustLayout: UICollectionViewLayout {
+class VerticalItemFlowLayout: UICollectionViewLayout {
     
     var numberOfColumns: CGFloat = 3
     var spacingBetweenCell: CGFloat = 10.0
@@ -48,7 +48,6 @@ class CustLayout: UICollectionViewLayout {
             let cellWidth = columnWidth
             let cellHeight = heightForOneItem
             
-            print("\(xOffset) + \(cellWidth) <= \(totalCollectionWidth) - \(xOffset + cellWidth <= totalCollectionWidth)")
             if xOffset + cellWidth <= totalCollectionWidth  {
                 
             } else {
@@ -57,7 +56,6 @@ class CustLayout: UICollectionViewLayout {
             }
             
             let frame = CGRect(x: xOffset, y: yOffset, width: cellWidth, height: cellHeight)
-            print("x: \(xOffset), y: \(yOffset)")
             
             
             let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)

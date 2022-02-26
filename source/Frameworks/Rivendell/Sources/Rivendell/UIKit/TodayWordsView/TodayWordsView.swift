@@ -8,7 +8,13 @@
 import UIKit
 import Hobbiton
 
-public final class TodayWordsView: UIView {
+public protocol UIViewWithHeight {
+    
+    func height() -> CGFloat
+    
+}
+
+public final class TodayWordsView: UIView, UIViewWithHeight {
     
     // MARK: - Init
     
