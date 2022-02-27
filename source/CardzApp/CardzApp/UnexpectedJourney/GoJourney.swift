@@ -23,8 +23,8 @@ func goJourney(_ journey: Journey) -> UIViewController {
         return FavouriteWordzBuilder.build()
     case .alert(model: let model):
         return AlertCardBuilder.build(model: model)
-    case .learnCard(viewModel: let model):
-        return LearnCardBuilder.build(viewModel: model)
+    case .learnCard(mode: let mode, viewModel: let model):
+        return LearnCardBuilder.build(mode: mode, viewModel: model)
     case .learnNewWordz:
         return LearnNewWordzBuilder.build()
     case .dailyWords:

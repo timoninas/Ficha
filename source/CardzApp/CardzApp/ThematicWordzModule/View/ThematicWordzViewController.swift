@@ -62,7 +62,7 @@ final class ThematicWordzViewController: UIViewController {
                 languageVersion: $0.languageVersion,
                 displayedCount: $0.displayedCount
             )}
-        let module = goJourney(.learnCard(viewModel: shuffled))
+        let module = goJourney(.learnCard(mode: .simpleMode, viewModel: shuffled))
         self.present(module, animated: true, completion: nil)
     }
     

@@ -60,7 +60,57 @@ final class FavouriteWordzViewController: UIViewController {
                         .count < Constants.maxCountWordz {
                 self.showAlertResetModule()
             } else {
-                self.showLearnCardModule()
+                self.showLearnCardModule(mode: .simpleMode)
+            }
+        }))
+        return button
+    }()
+    
+    private lazy var playReverseButton: RVImageButton = {
+        let button = RVImageButton(configuration: .init()
+                                    .with(backgroundColor: .galadriel)
+                                    .with(highlitedColor: .galadriel.withAlphaComponent(0.75))
+                                    .with(image: .reverseIcon)
+                                    .with(imageColor: .mysteryShack)
+                                    .with(isFullyRounded: true)
+                                    .with(imageAspectRation: 0.5)
+                                    .with(onTap: { [weak self] button in
+            guard let self = self else { return }
+            guard button.alpha != 0.0 else { return }
+            UIApplication.hapticLight()
+            if self.viewModel.prefix(Constants.maxCountWordz).count < 5 {
+                self.showAlertNeedMoreWords()
+            } else if self.viewModel
+                        .filter({ $0.displayedCount <= 2 })
+                        .count < Constants.maxCountWordz {
+                self.showAlertResetModule()
+            } else {
+                self.showLearnCardModule(mode: .reverseMode)
+            }
+        }))
+        return button
+    }()
+    
+    private lazy var playShuffleButton: RVImageButton = {
+        let button = RVImageButton(configuration: .init()
+                                    .with(backgroundColor: .galadriel)
+                                    .with(highlitedColor: .galadriel.withAlphaComponent(0.75))
+                                    .with(image: .shuffleIcon)
+                                    .with(imageColor: .mysteryShack)
+                                    .with(isFullyRounded: true)
+                                    .with(imageAspectRation: 0.5)
+                                    .with(onTap: { [weak self] button in
+            guard let self = self else { return }
+            guard button.alpha != 0.0 else { return }
+            UIApplication.hapticLight()
+            if self.viewModel.prefix(Constants.maxCountWordz).count < 5 {
+                self.showAlertNeedMoreWords()
+            } else if self.viewModel
+                        .filter({ $0.displayedCount <= 2 })
+                        .count < Constants.maxCountWordz {
+                self.showAlertResetModule()
+            } else {
+                self.showLearnCardModule(mode: .randomMode)
             }
         }))
         return button
@@ -171,6 +221,22 @@ final class FavouriteWordzViewController: UIViewController {
             playButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30.0),
             playButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0)
         ])
+        
+        view.addSubview(playReverseButton)
+        NSLayoutConstraint.activate([
+            playReverseButton.heightAnchor.constraint(equalToConstant: 52.0),
+            playReverseButton.widthAnchor.constraint(equalTo: playReverseButton.heightAnchor),
+            playReverseButton.bottomAnchor.constraint(equalTo: playButton.topAnchor, constant: -16.0),
+            playReverseButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0)
+        ])
+        
+        view.addSubview(playShuffleButton)
+        NSLayoutConstraint.activate([
+            playShuffleButton.heightAnchor.constraint(equalToConstant: 52.0),
+            playShuffleButton.widthAnchor.constraint(equalTo: playShuffleButton.heightAnchor),
+            playShuffleButton.bottomAnchor.constraint(equalTo: playReverseButton.topAnchor, constant: -16.0),
+            playShuffleButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0)
+        ])
     }
     
     // MARK: - Private methods
@@ -181,6 +247,8 @@ final class FavouriteWordzViewController: UIViewController {
             self.view.sendSubviewToBack(self.emptyLabel)
             self.emptyLabel.alpha = isHidden ? 1.0 : 0.0
             self.playButton.isHidden = isHidden
+            self.playReverseButton.isHidden = isHidden
+            self.playShuffleButton.isHidden = isHidden
         }
     }
     
@@ -199,7 +267,11 @@ final class FavouriteWordzViewController: UIViewController {
             UIView.animate(withDuration: 0.3) { [weak self] in
                 guard let self = self else { return }
                 self.playButton.alpha = 0.0
-                self.playButton.transform = .init(translationX: 20.0, y: 0.0)
+                self.playButton.transform = .init(translationX: 40.0, y: 0.0)
+                self.playReverseButton.alpha = 0.0
+                self.playReverseButton.transform = .init(translationX: 30.0, y: 0.0)
+                self.playShuffleButton.alpha = 0.0
+                self.playShuffleButton.transform = .init(translationX: 20.0, y: 0.0)
             }
         } else {
             guard playButton.alpha < 1.0 else { return }
@@ -208,6 +280,10 @@ final class FavouriteWordzViewController: UIViewController {
                 guard let self = self else { return }
                 self.playButton.alpha = 1.0
                 self.playButton.transform = .init(translationX: 0.0, y: 0.0)
+                self.playReverseButton.alpha = 1.0
+                self.playReverseButton.transform = .init(translationX: 0.0, y: 0.0)
+                self.playShuffleButton.alpha = 1.0
+                self.playShuffleButton.transform = .init(translationX: 0.0, y: 0.0)
             }
         }
     }
@@ -264,7 +340,7 @@ final class FavouriteWordzViewController: UIViewController {
         present(vc, animated: true, completion: nil)
     }
     
-    private func showLearnCardModule() {
+    private func showLearnCardModule(mode: CardLearnMode) {
         let shuffled = viewModel
             .filter({ $0.displayedCount <= 2 })
             .shuffled()
@@ -278,7 +354,7 @@ final class FavouriteWordzViewController: UIViewController {
                 languageVersion: $0.languageVersion,
                 displayedCount: $0.displayedCount
             )}
-        let module = goJourney(.learnCard(viewModel: shuffled))
+        let module = goJourney(.learnCard(mode: mode, viewModel: shuffled))
         present(module, animated: true, completion: nil)
     }
     

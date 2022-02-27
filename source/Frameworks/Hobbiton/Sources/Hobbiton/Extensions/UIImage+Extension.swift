@@ -19,6 +19,12 @@ public extension UIImage {
     
     static let playGameIcon = UIImage.imageFromBundle(named: "playGameIcon")
     
+    static let reversePlayGameIcon = UIImage.imageFromBundle(named: "reversePlayGameIcon")
+    
+    static let reverseIcon = UIImage.imageFromBundle(named: "reverseIcon")
+    
+    static let shuffleIcon = UIImage.imageFromBundle(named: "shuffleIcon")
+    
     static let starUnfilledIcon = UIImage.imageFromBundle(named: "starUnfilledIcon")
     
     static let starFilledIcon = UIImage.imageFromBundle(named: "starFilledIcon")

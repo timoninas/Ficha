@@ -157,7 +157,7 @@ final class DailyWordsViewController: UIViewController {
                 guard let self = self else { return }
                 guard button.alpha != 0.0 else { return }
                 UIApplication.hapticLight()
-                let module = goJourney(.learnCard(viewModel: self.viewModels.todayWords.map { self.viewModelToLearnWordzViewModel($0) }))
+                let module = goJourney(.learnCard(mode: .simpleMode, viewModel: self.viewModels.todayWords.map { self.viewModelToLearnWordzViewModel($0) }))
                 self.present(module, animated: true, completion: nil)
             })
         

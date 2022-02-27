@@ -10,9 +10,9 @@ import Rivendell
 
 final class LearnCardBuilder {
     
-    public static func build(viewModel: [LearnWordzCardView.ViewModel]) -> UIViewController {
+    public static func build(mode: CardLearnMode, viewModel: [LearnWordzCardView.ViewModel]) -> UIViewController {
         let presenter = LearnCardPresenter(viewModel: viewModel.shuffled())
-        let view = LearnCardViewController(output: presenter)
+        let view = LearnCardViewController(output: presenter, learnMode: mode)
         presenter.view = view
         view.modalPresentationStyle = .fullScreen
         view.modalTransitionStyle = .crossDissolve

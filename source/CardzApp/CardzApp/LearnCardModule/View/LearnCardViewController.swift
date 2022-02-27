@@ -8,9 +8,20 @@
 import UIKit
 import Rivendell
 
+public enum CardLearnMode {
+    /// Simple mode. For exa, English -> Russian.
+    case simpleMode
+    /// Reverse mode. For exa, Russian -> English.
+    case reverseMode
+    /// Random mode. For exa, Russian/English -> English/Russian.
+    case randomMode
+}
+
 final class LearnCardViewController: UIViewController {
     
     var output: LearnCardOutput?
+    
+    let mode: CardLearnMode
     
     private lazy var starButton = RVAlignImageButton(configuration: .init()
                                                         .with(titleConfig: .visible(title: "To\nfavorites", color: .olivie))
@@ -106,8 +117,9 @@ final class LearnCardViewController: UIViewController {
         return view
     }()
     
-    init(output: LearnCardOutput) {
+    init(output: LearnCardOutput, learnMode: CardLearnMode) {
         self.output = output
+        self.mode = learnMode
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -219,6 +231,20 @@ final class LearnCardViewController: UIViewController {
         
         viewModel.enumerated().forEach { [weak self] (idx, model) in
             guard let self = self else { return }
+            let state: LearnWordzCardView.Configuration.State
+            switch self.mode {
+            case .simpleMode:
+                state = .wordz
+            case .reverseMode:
+                state = .translation
+            case .randomMode:
+                let num = Int.random(in: 0..<1488)
+                if num % 2 == 0 {
+                    state = .wordz
+                } else {
+                    state = .translation
+                }
+            }
             let card = LearnWordzCardView(
                 swipeDirections: allowedSwipeDirections,
                 configuration:
@@ -226,6 +252,7 @@ final class LearnCardViewController: UIViewController {
                               translations: model.translations)
                     .with(transcription: model.transcription)
                     .with(wordzExamples: model.wordzExamples)
+                    .with(state: state)
             )
             
             card.onTopSwipe = { [weak self] in
