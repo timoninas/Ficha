@@ -87,10 +87,17 @@ public final class IndependentDependencies: IndependentDependenciesProtocol {
                 WidgetCenter.shared.reloadAllTimelines()
             }
         }
+        let extraFilling = {
+            if WidgetWordsUserDefaultsCache.get().isEmpty {
+                filling()
+            }
+        }
         guard true || DaysChechker.isQuarterOfDay else {
+            extraFilling()
             return
         }
         filling()
+        extraFilling()
     }
     
 }

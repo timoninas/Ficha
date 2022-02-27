@@ -33,7 +33,7 @@ struct TodayProvider: TimelineProvider {
         }
         
         if words.isEmpty {
-            words.append(contentsOf: defaultEntities())
+            words.append(.init(wordz: "Relaunch app", translate: "", example: nil))
         }
         
         let currentDate = Date()
@@ -66,18 +66,20 @@ struct TodayProvider: TimelineProvider {
     }
     
     private func defaultEntities() -> [TodayWordShot] {
-        [
-            .init(wordz: "Cinema", translate: "Кино", example: "I know it's not a luxury movie cinema yet, but we have a full supply of Red Vines"),
-            .init(wordz: "Sink", translate: "Раковина", example: "Which heats up the innards, which means a bigger heat sink"),
-            .init(wordz: "Bookcase", translate: "Книжный шкаф", example: "Why are all your things to eat in the bookcase?"),
-            .init(wordz: "Comedy", translate: "Комедия", example: "Well sometimes in comedy you have to generalize"),
-            .init(wordz: "Case", translate: "Дело", example: "The object was to give the opponent a chance to choose the lesser of two evils-in this case, the truth"),
-            .init(wordz: "Wearisome", translate: "Утомительный", example: "An hour or two of wearisome waiting followed"),
-            .init(wordz: "Policy", translate: "Политика", example: "That doesn't mean we have to abandon good policy"),
-            .init(wordz: "Polo shirt", translate: "Рубашка", example: "He only fits into American polo shirts"),
-            .init(wordz: "Baptisry", translate: "Баптисерий", example: nil),
+        let entries: [TodayWordShot] = [
             .init(wordz: "To count", translate: "Считать", example: "He decided not to count his steps"),
+            .init(wordz: "Stork", translate: "Аист", example: "Aunt Alexandra was standing stiff as a stork"),
+            .init(wordz: "Apse", translate: "Апсида", example: "Well, at the time, you know, it... it seemed like the apse"),
+            .init(wordz: "T-shirt", translate: "Футболка", example: "I brought a T shirt"),
+            .init(wordz: "Amount of data", translate: "That massive amount of data then unspools into your brain, eventually taking over your consciousness", example: "Объем данных"),
+            .init(wordz: "Approximately", translate: "Примерно", example: "He spoke not exactly so, perhaps; but in any case, approximately in that manner"),
+            .init(wordz: "To browse", translate: "Просматривать", example: "You want to browse among my books, the pawnshop's just around the corner"),
+            .init(wordz: "Copier", translate: "Ксерокс", example: "Except I can't seem to find the copier room"),
+            .init(wordz: "Dangerous", translate: "Опасный", example: "I had proposed to Amelia that we stow away on one of their deadly projectiles, but this was a dangerous idea"),
+            .init(wordz: "Ceiling", translate: "Потолок", example: "All you've got is me trying to climb through a ceiling tile"),
+            .init(wordz: "Cameraman", translate: "Оператор", example: "I think she was a little concerned about shoving the cameraman, and all that")
         ]
+        return entries.shuffled()
     }
     
 }

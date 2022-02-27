@@ -229,7 +229,6 @@ extension LearnNewWordzViewController: UICollectionViewDataSource, UICollectionV
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath
     ) {
-        UIApplication.hapticSoft()
         let item = viewModel.items[indexPath.row]
         let module = goJourney(.thematicWordz(typeWord: ArkenstoneTypeWord(rawValue: item.title) ?? .unknown,
                                               typeTranslation: SilverTypeTranslation(rawValue: item.badgeText) ?? .unknown))
