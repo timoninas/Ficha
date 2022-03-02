@@ -45,9 +45,11 @@ public final class AddFavouriteHeaderView: UIView {
     
     private lazy var wordTextField: UITextField = {
         let textField = UITextField()
-        textField.autocorrectionType = .no
+        textField.textColor = .nazgul
         textField.returnKeyType = .done
+        textField.autocorrectionType = .no
         textField.borderStyle = .roundedRect
+        textField.backgroundColor = .whisper
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.attributedPlaceholder = NSAttributedString(string: "Input word", attributes: [
             .foregroundColor: UIColor.lightGray,

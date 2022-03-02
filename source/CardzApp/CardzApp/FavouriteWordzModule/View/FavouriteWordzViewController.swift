@@ -434,9 +434,10 @@ extension FavouriteWordzViewController: UITableViewDataSource {
                     translations: tranlsates,
                     type: .favourite,
                     languageVersion: .unknown)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) { [weak self] in
                     guard let self = self else { return }
                     self.output.refetchData()
+                    self.resetHeaderState()
                 }
             }))
         }

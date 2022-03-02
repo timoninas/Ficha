@@ -18,9 +18,11 @@ public final class AddFavouriteHeaderCollectionViewCell: UICollectionViewCell {
     
     private var textField: UITextField = {
         let textField = UITextField()
-        textField.autocorrectionType = .no
+        textField.textColor = .nazgul
         textField.returnKeyType = .done
+        textField.autocorrectionType = .no
         textField.borderStyle = .roundedRect
+        textField.backgroundColor = .whisper
         textField.attributedPlaceholder = NSAttributedString(string: "Input translate", attributes: [
             .foregroundColor: UIColor.lightGray,
             .font: UIFont(name:"HelveticaNeue-Medium", size: 12.0) ?? UIFont(),
