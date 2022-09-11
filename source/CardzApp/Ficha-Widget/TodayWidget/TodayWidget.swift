@@ -17,20 +17,9 @@ struct TodayWidget: Widget {
         StaticConfiguration(kind: kind, provider: TodayProvider()) { entry in
             TodayWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("Ficha")
-        .description("The appearance of new words every day!")
+        .configurationDisplayName("Learn new words")
+        .description("here they appear every day.")
         .supportedFamilies([.systemSmall, .systemMedium])
-    }
-    
-}
-
-struct Ficha_Widget_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        Group {
-            TodayWidgetEntryView(entry: TodayWidgetEntry(date: Date(), shot: .simpleWordShot))
-                .previewContext(WidgetPreviewContext(family: .systemSmall))
-        }
     }
     
 }

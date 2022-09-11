@@ -23,6 +23,18 @@ struct TodayWordShot: Hashable, Codable, Identifiable {
         example: "You’re right that is a lovely depiction of postmodernism"
     )
     
+    static let longWordShot = TodayWordShot(
+        wordz: "Cinema cinema cinema cinema cinema cinema",
+        translate: "Кино кино кино кино кино кино кино",
+        example: "You’re right that is a lovely depiction of postmodernism. You’re right that is a lovely depiction of postmodernism. You’re right that is a lovely depiction of postmodernism"
+    )
+    
+    static let nonExampleWordShot = TodayWordShot(
+        wordz: "Cinema cinema cinema cinema cinema cinema",
+        translate: "Кино кино кино кино кино кино кино",
+        example: nil
+    )
+    
     var titleLineCount: Int {
         let titleCount = self.wordz.count < 17 ? 2 : 3
         return titleCount
@@ -34,14 +46,14 @@ struct TodayWordShot: Hashable, Codable, Identifiable {
     }
     
     var canShowLogo: Bool {
-        if self.wordz.count < 17 {
-            if self.translate.count < 25 {
+        if self.wordz.count < 16 {
+            if self.translate.count < 24 {
                 return true
             } else {
                 return false
             }
         } else {
-            if self.translate.count >= 25 {
+            if self.translate.count >= 24 {
                 return false
             } else {
                 return true

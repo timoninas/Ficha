@@ -28,16 +28,6 @@ struct FichaLogoView : View {
     
 }
 
-struct TodayWidgetMediumView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        Group {
-            TodayWidgetMediumView(.simpleWordShot)
-        }
-    }
-    
-}
-
 extension View {
     func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
         clipShape( RoundedCorner(radius: radius, corners: corners) )
