@@ -9,39 +9,43 @@ import SwiftUI
 import WidgetKit
 import RevolvetraUserDefaults
 
-/// Таймлайн из слепков для Widget.
+/// Таймлайн из слепков для `Widget`.
 struct TodayProvider: TimelineProvider {
     
     func placeholder(in context: Context) -> TodayWidgetEntry {
-        TodayWidgetEntry(date: Date(), shot: .simpleWordShot)
+        TodayWidgetEntry(date: Date(), state: .filled(wordz: "Hello there",
+                                                      translate: "Привет",
+                                                      example: "Hello there, Harry! he said. Just had an exam, I expect? Nearly finished?"))
     }
     
     func getSnapshot(in context: Context, completion: @escaping (TodayWidgetEntry) -> ()) {
-        let entry = TodayWidgetEntry(date: Date(), shot: .simpleWordShot)
+        let entry = TodayWidgetEntry(date: Date(), state: .filled(wordz: "Hello there",
+                                                                  translate: "Привет",
+                                                                  example: "Hello there, Harry! he said. Just had an exam, I expect? Nearly finished?"))
         completion(entry)
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<TodayWidgetEntry>) -> ()) {
         var entries: [TodayWidgetEntry] = []
         
-        var words = WidgetWordsUserDefaultsCache.get().map { word in
-            TodayWordShot(
-                wordz: word.title,
-                translate: word.translations.first ?? "",
-                example: formateExamples(examples: word.examples)
-            )
+        var words: [TodayWidgetState]  = WidgetWordsUserDefaultsCache.get().map { word in
+            if let example = formateExamples(examples: word.examples) {
+                return .filled(wordz: word.title, translate: word.translations.first ?? "", example: example)
+            } else {
+                return .simple(wordz: word.title, translate: word.translations.first ?? "")
+            }
         }
         
         if words.isEmpty {
-            words.append(.init(wordz: "Relaunch app", translate: "", example: nil))
+            words.append(.simple(wordz: "Launch Ficha", translate: "please!"))
         }
         
         let currentDate = Date()
         words
             .enumerated()
             .forEach { idx, word in
-                let entryDate = Calendar.current.date(byAdding: .minute, value: 30 * idx, to: currentDate)!
-                let entry = TodayWidgetEntry(date: entryDate, shot: word)
+                let entryDate = Calendar.current.date(byAdding: .minute, value: 45 * idx, to: currentDate)!
+                let entry = TodayWidgetEntry(date: entryDate, state: word)
                 entries.append(entry)
             }
         let timeline = Timeline(entries: entries,
@@ -63,23 +67,6 @@ struct TodayProvider: TimelineProvider {
         } else {
             return resultString
         }
-    }
-    
-    private func defaultEntities() -> [TodayWordShot] {
-        let entries: [TodayWordShot] = [
-            .init(wordz: "To count", translate: "Считать", example: "He decided not to count his steps"),
-            .init(wordz: "Stork", translate: "Аист", example: "Aunt Alexandra was standing stiff as a stork"),
-            .init(wordz: "Apse", translate: "Апсида", example: "Well, at the time, you know, it... it seemed like the apse"),
-            .init(wordz: "T-shirt", translate: "Футболка", example: "I brought a T shirt"),
-            .init(wordz: "Amount of data", translate: "That massive amount of data then unspools into your brain, eventually taking over your consciousness", example: "Объем данных"),
-            .init(wordz: "Approximately", translate: "Примерно", example: "He spoke not exactly so, perhaps; but in any case, approximately in that manner"),
-            .init(wordz: "To browse", translate: "Просматривать", example: "You want to browse among my books, the pawnshop's just around the corner"),
-            .init(wordz: "Copier", translate: "Ксерокс", example: "Except I can't seem to find the copier room"),
-            .init(wordz: "Dangerous", translate: "Опасный", example: "I had proposed to Amelia that we stow away on one of their deadly projectiles, but this was a dangerous idea"),
-            .init(wordz: "Ceiling", translate: "Потолок", example: "All you've got is me trying to climb through a ceiling tile"),
-            .init(wordz: "Cameraman", translate: "Оператор", example: "I think she was a little concerned about shoving the cameraman, and all that")
-        ]
-        return entries.shuffled()
     }
     
 }
