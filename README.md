@@ -3,6 +3,12 @@
 
 # Cardz
 
+### Lock screen widget
+
+<p align="center">
+  <img class = "wordz" src = "documentation/img/home-screen-widget.jpeg" >
+</p>
+
 ### Privacy Policy: [policy](PrivacyPolicy.md)
 
 ### Support Service: revolvetra.help@gmail.com
