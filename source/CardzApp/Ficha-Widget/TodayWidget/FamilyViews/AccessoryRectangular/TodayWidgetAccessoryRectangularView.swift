@@ -15,9 +15,13 @@ struct TodayAccessoryRectangularView : View {
     
     var body: some View {
         HStack(alignment: .center, spacing: 4.0) {
-            FichaAccentableImageLogo()
-                .frame(width: 20.0, height: 20.0)
-                .widgetAccentable()
+            if #available(iOSApplicationExtension 16.0, *) {
+                FichaAccentableImageLogo()
+                    .frame(width: 20.0, height: 20.0)
+                    .widgetAccentable()
+            } else {
+                EmptyView()
+            }
             
             VStack(alignment: .center, spacing: 0.0) {
                 Text(wordz)
@@ -65,14 +69,20 @@ struct TodayWidgetAccessoryRectangularView_Previews: PreviewProvider {
     
     static var previews: some View {
         Group {
-            TodayWidgetAccessoryRectangularView(.simpleWordState)
-                .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
+            if #available(iOSApplicationExtension 16.0, *) {
+                TodayWidgetAccessoryRectangularView(.simpleWordState)
+                    .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
+            }
             
-            TodayWidgetAccessoryRectangularView(.longWordState)
-                .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
+            if #available(iOSApplicationExtension 16.0, *) {
+                TodayWidgetAccessoryRectangularView(.longWordState)
+                    .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
+            }
             
-            TodayWidgetAccessoryRectangularView(.nonExampleWordState)
-                .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
+            if #available(iOSApplicationExtension 16.0, *) {
+                TodayWidgetAccessoryRectangularView(.nonExampleWordState)
+                    .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
+            }
         }
     }
     

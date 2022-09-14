@@ -20,7 +20,8 @@ struct TodayWidgetEntryView: View {
             TodayWidgetSmallView(entry.state)
         } else if family == .systemMedium {
             TodayWidgetMediumView(entry.state)
-        } else if family == .accessoryRectangular {
+        } else if #available(iOSApplicationExtension 16.0, *),
+                  family == .accessoryRectangular {
             TodayWidgetAccessoryRectangularView(entry.state)
         }
     }
