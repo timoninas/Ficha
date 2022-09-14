@@ -3,10 +3,10 @@
 
 # Cardz
 
-### Lock screen widget
+### Lock screen widget available!
 
-<p align="center">
-  <img class = "wordz" src = "documentation/img/home-screen-widget.jpeg" >
+<p align="left">
+  <img class = "wordz" src = "documentation/img/home-screen-widget.png" height = 250px >
 </p>
 
 ### Privacy Policy: [policy](PrivacyPolicy.md)
