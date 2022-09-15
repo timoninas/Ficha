@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct TodayWidgetEntryView: View {
     
@@ -16,19 +17,12 @@ struct TodayWidgetEntryView: View {
     @ViewBuilder
     var body: some View {
         if family == .systemSmall {
-            TodayWidgetSmallView(entry.shot)
+            TodayWidgetSmallView(entry.state)
         } else if family == .systemMedium {
-            TodayWidgetMediumView(entry.shot)
-        }
-    }
-    
-}
-
-struct TodayWidgetEntryView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        Group {
-            TodayWidgetEntryView(entry: .init(date: Date(), shot: .simpleWordShot))
+            TodayWidgetMediumView(entry.state)
+        } else if #available(iOSApplicationExtension 16.0, *),
+                  family == .accessoryRectangular {
+            TodayWidgetAccessoryRectangularView(entry.state)
         }
     }
     

@@ -588,6 +588,140 @@ func getGoldComputers() -> BagOfGoldWords {
             ],
             translations: ["Домен", "Область"]
         ),
+        .init(
+            word: "Cable",
+            transcription: "[keɪbl]",
+            examples: [
+                "At a nearby Western Union office, Tracy sent a paid cable to the Rio Othon Palace on Copacabana Beach in Rio de Janeiro",
+                "He saw something like a dark cable swinging in the wind and every time it swung back he heard the mysterious gong-like note"
+            ],
+            translations: ["Кабель", "Провод"]
+        ),
+        .init(
+            word: "Chip",
+            transcription: "[ʧɪp]",
+            examples: [
+                "Where's Chip?",
+                "We're seeing promising indicators in the pentium chip market",
+                "Some kind of little computer chip imbedded in his midbrain"
+            ],
+            translations: ["Чип", "Микросхема", "Интегральная схема"]
+        ),
+        .init(
+            word: "Speakers",
+            transcription: "",
+            examples: [
+                "Every one of us was touched by the events of October 14th, but no one more than our honored speaker",
+                "I'm already Deputy Speaker and Stu has been appointed Deputy Secretary of State for Foreign Affairs"
+            ],
+            translations: ["Микрофон", "Динамик"]
+        ),
+        .init(
+            word: "Card reader",
+            transcription: "[kɑːd ˈriːdə]",
+            examples: [
+                "When Michelle leaves her desk, you insert the skimmer into her card reader like this",
+                "He wasn't able to dig up anything on Sibilance, but he had good luck finding a pinout to hack the card reader at his office"
+            ],
+            translations: ["Картридер", "Считыватель карт"]
+        ),
+        .init(
+            word: "Webcam",
+            transcription: "",
+            examples: [
+                ""
+            ],
+            translations: ["Веб-камера", "Вебка"]
+        ),
+        .init(
+            word: "Flash drive",
+            transcription: "[flæʃ] [draɪv]",
+            examples: [
+                "She has no idea her webcam is on",
+                "It took stills from the webcam conversations of millions of people across the world, trying to spot terrorists planning another attack"
+            ],
+            translations: [""]
+        ),
+        .init(
+            word: "Smart card",
+            transcription: "[smɑːt kɑːd]",
+            examples: [
+                "Not enough cards, smart card",
+                "Smart card technology provides greater security... and improved accountability, with no need for unreliable human surveillance"
+            ],
+            translations: ["Чип-карта", "Интелектуальная карта"]
+        ),
+        .init(
+            word: "Joystick",
+            transcription: "[ˈʤɔɪstɪk]",
+            examples: [
+                "He and Delta-Three were focused on their comrade, who was manipulating the joystick in his hand with surgical dexterity",
+                "God gave you that joystick to control your woman, and you just let it dangle"
+            ],
+            translations: ["Джойстик", "Рычаг управления"]
+        ),
+        .init(
+            word: "Printer",
+            transcription: "[ˈprɪntə]",
+            examples: [
+                "Don't tell me cheque printer stuttered; you did it on purpose",
+                "- Does the printer owe us more?"
+            ],
+            translations: ["Принтер", "Типограф"]
+        ),
+        .init(
+            word: "Device",
+            transcription: "[dɪˈvaɪs]",
+            examples: [
+                "The soldier winced in pain as he lifted his communication device to his lips",
+                "Norah shook the device and looked again"
+            ],
+            translations: ["Устройство", "Прибор"]
+        ),
+        .init(
+            word: "Virtual reality",
+            transcription: "[ˈvɜːʧʊəl rɪˈælɪtɪ]",
+            examples: [
+                "What you see around you, this entire world, is nothing more than virtual reality",
+                "I was enjoying some virtual reality, until you ruined it with your actual face"
+            ],
+            translations: ["Виртуальная реальность", "Виртуальный мир"]
+        ),
+        .init(
+            word: "Hardware",
+            transcription: "[ˈhɑːdweə]",
+            examples: [
+                "Even with all your hardware, we're easy targets",
+                "You mind if I check out some of this hardware?",
+                "I like to mess with the hardware that generates the code"
+            ],
+            translations: ["Оборудование", "Аппаратура"]
+        ),
+        .init(
+            word: "Software",
+            transcription: "[ˈsɒftweə]",
+            examples: [
+                "But the damned software didn't work",
+                "You're the developer of the trading software",
+                "I traced all the calls in my company's software"
+            ],
+            translations: ["Программное обеспечение", "Софт"]
+        ),
+        .init(
+            word: "I/O devices",
+            transcription: "",
+            examples: [],
+            translations: ["Устройства ввода-вывода"]
+        ),
+        .init(
+            word: "Process",
+            transcription: "[ˈprəʊsəs]",
+            examples: [
+                "What was happening was only the working-out of a process that had started years ago",
+                "Mr. Gibson is not gonna be buying your process"
+            ],
+            translations: ["Процесс", "Процедура"]
+        )
     ])
     
     let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .computers, typeTranslation: .enToRu)

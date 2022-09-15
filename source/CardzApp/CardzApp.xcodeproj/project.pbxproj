@@ -42,7 +42,6 @@
 		775E28632797534F00A147A3 /* TodayWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E28602797532000A147A3 /* TodayWidgetEntryView.swift */; };
 		775E28652797536B00A147A3 /* TodayProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E28642797536B00A147A3 /* TodayProvider.swift */; };
 		775E28672797538B00A147A3 /* TodayWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E28662797538B00A147A3 /* TodayWidgetEntry.swift */; };
-		775E28692798784D00A147A3 /* TodayWordShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E28682798784D00A147A3 /* TodayWordShot.swift */; };
 		775E286D2798911F00A147A3 /* RevolvetraUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = 775E286C2798911F00A147A3 /* RevolvetraUserDefaults */; };
 		776E4926272C90E7000D0B2D /* LearnCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E4925272C90E7000D0B2D /* LearnCardViewController.swift */; };
 		776E4929272C9103000D0B2D /* LearnCardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E4928272C9103000D0B2D /* LearnCardPresenter.swift */; };
@@ -56,7 +55,7 @@
 		7781F47727920D7A00612B1A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7781F47627920D7A00612B1A /* SwiftUI.framework */; };
 		7781F47A27920D7A00612B1A /* TodayWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7781F47927920D7A00612B1A /* TodayWidget.swift */; };
 		7781F47C27920D7D00612B1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7781F47B27920D7D00612B1A /* Assets.xcassets */; };
-		7781F48027920D7D00612B1A /* Ficha-WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7781F47327920D7A00612B1A /* Ficha-WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7781F48027920D7D00612B1A /* Ficha-WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7781F47327920D7A00612B1A /* Ficha-WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7782739F27A9092D00E5053D /* FichaWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7782739B27A9089A00E5053D /* FichaWidgetBundle.swift */; };
 		778273A327AA566F00E5053D /* LearnTimesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778273A227AA566F00E5053D /* LearnTimesViewController.swift */; };
 		778273A727AA569900E5053D /* LearnTimesViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778273A627AA569900E5053D /* LearnTimesViewController+ViewModel.swift */; };
@@ -91,6 +90,8 @@
 		D42D2E7427B81B2C00374C58 /* DevDebugCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42D2E7327B81B2C00374C58 /* DevDebugCollectionViewCell.swift */; };
 		D469CEC627B19FA800B47A14 /* LearnTimesMvvmBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D469CEC527B19FA800B47A14 /* LearnTimesMvvmBuilder.swift */; };
 		D48F8494276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F8493276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift */; };
+		D49579F028D03793002AC23E /* TodayWidgetAccessoryRectangularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49579EF28D03793002AC23E /* TodayWidgetAccessoryRectangularView.swift */; };
+		D49579F328D053A7002AC23E /* FichaLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49579F228D053A7002AC23E /* FichaLogoView.swift */; };
 		D4C7F12F2719636D0066125A /* DailyWordsViewController+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C7F12E2719636D0066125A /* DailyWordsViewController+State.swift */; };
 		D4F00D5B2718C3840079A860 /* CardzApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4F00D592718C3840079A860 /* CardzApp.xcdatamodeld */; };
 		D4F00D5D2718C3860079A860 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F00D5C2718C3860079A860 /* Assets.xcassets */; };
@@ -105,6 +106,9 @@
 		D4F00D9E2718C3FB0079A860 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F00D912718C3FB0079A860 /* SceneDelegate.swift */; };
 		D4F00DA22718C4940079A860 /* DailyWordsViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F00DA12718C4940079A860 /* DailyWordsViewController+ViewModel.swift */; };
 		D4F00DA52718C5070079A860 /* LifeCycleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F00DA42718C5070079A860 /* LifeCycleProtocol.swift */; };
+		D4F9E4BC28D18D13001F48F7 /* ExamplesWordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F9E4BB28D18D13001F48F7 /* ExamplesWordsView.swift */; };
+		D4F9E4BF28D18D42001F48F7 /* WordzAndTranslateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F9E4BE28D18D42001F48F7 /* WordzAndTranslateView.swift */; };
+		D4F9E4C128D18D59001F48F7 /* CustomGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F9E4C028D18D59001F48F7 /* CustomGradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,15 +136,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		7781F48127920D7D00612B1A /* Embed App Extensions */ = {
+		7781F48127920D7D00612B1A /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				7781F48027920D7D00612B1A /* Ficha-WidgetExtension.appex in Embed App Extensions */,
+				7781F48027920D7D00612B1A /* Ficha-WidgetExtension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -182,7 +186,6 @@
 		775E28602797532000A147A3 /* TodayWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWidgetEntryView.swift; sourceTree = "<group>"; };
 		775E28642797536B00A147A3 /* TodayProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayProvider.swift; sourceTree = "<group>"; };
 		775E28662797538B00A147A3 /* TodayWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWidgetEntry.swift; sourceTree = "<group>"; };
-		775E28682798784D00A147A3 /* TodayWordShot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWordShot.swift; sourceTree = "<group>"; };
 		776C7A6227711A8E000C2E97 /* Erebor */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Erebor; path = ../Frameworks/Erebor; sourceTree = "<group>"; };
 		776E4925272C90E7000D0B2D /* LearnCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCardViewController.swift; sourceTree = "<group>"; };
 		776E4928272C9103000D0B2D /* LearnCardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCardPresenter.swift; sourceTree = "<group>"; };
@@ -233,6 +236,8 @@
 		D42D2E7327B81B2C00374C58 /* DevDebugCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevDebugCollectionViewCell.swift; sourceTree = "<group>"; };
 		D469CEC527B19FA800B47A14 /* LearnTimesMvvmBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTimesMvvmBuilder.swift; sourceTree = "<group>"; };
 		D48F8493276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnNewWordzCollectionViewHeader.swift; sourceTree = "<group>"; };
+		D49579EF28D03793002AC23E /* TodayWidgetAccessoryRectangularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWidgetAccessoryRectangularView.swift; sourceTree = "<group>"; };
+		D49579F228D053A7002AC23E /* FichaLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaLogoView.swift; sourceTree = "<group>"; };
 		D4C7F12E2719636D0066125A /* DailyWordsViewController+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyWordsViewController+State.swift"; sourceTree = "<group>"; };
 		D4F00D4D2718C3840079A860 /* CardzApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardzApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F00D5A2718C3840079A860 /* CardzApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardzApp.xcdatamodel; sourceTree = "<group>"; };
@@ -253,6 +258,9 @@
 		D4F00D912718C3FB0079A860 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D4F00DA12718C4940079A860 /* DailyWordsViewController+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyWordsViewController+ViewModel.swift"; sourceTree = "<group>"; };
 		D4F00DA42718C5070079A860 /* LifeCycleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeCycleProtocol.swift; sourceTree = "<group>"; };
+		D4F9E4BB28D18D13001F48F7 /* ExamplesWordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplesWordsView.swift; sourceTree = "<group>"; };
+		D4F9E4BE28D18D42001F48F7 /* WordzAndTranslateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordzAndTranslateView.swift; sourceTree = "<group>"; };
+		D4F9E4C028D18D59001F48F7 /* CustomGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -475,7 +483,6 @@
 				7781F47927920D7A00612B1A /* TodayWidget.swift */,
 				775E28602797532000A147A3 /* TodayWidgetEntryView.swift */,
 				778273A127A909DB00E5053D /* Provider */,
-				778273A027A909D000E5053D /* Model */,
 				7782739D27A908CD00E5053D /* Entry */,
 				7782739E27A908D700E5053D /* FamilyViews */,
 			);
@@ -548,7 +555,7 @@
 		7781F47827920D7A00612B1A /* Ficha-Widget */ = {
 			isa = PBXGroup;
 			children = (
-				778273C227AB059200E5053D /* Additional */,
+				778273C227AB059200E5053D /* Extension */,
 				7782739B27A9089A00E5053D /* FichaWidgetBundle.swift */,
 				775E285E279752B800A147A3 /* TodayWidget */,
 				7781F47B27920D7D00612B1A /* Assets.xcassets */,
@@ -568,18 +575,12 @@
 		7782739E27A908D700E5053D /* FamilyViews */ = {
 			isa = PBXGroup;
 			children = (
+				D4F9E4BD28D18D16001F48F7 /* Supplementary */,
 				775E285F279752C900A147A3 /* Small */,
 				778273BF27AAF6B200E5053D /* Medium */,
+				D49579F128D03797002AC23E /* AccessoryRectangular */,
 			);
 			path = FamilyViews;
-			sourceTree = "<group>";
-		};
-		778273A027A909D000E5053D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				775E28682798784D00A147A3 /* TodayWordShot.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		778273A127A909DB00E5053D /* Provider */ = {
@@ -679,13 +680,12 @@
 			path = Medium;
 			sourceTree = "<group>";
 		};
-		778273C227AB059200E5053D /* Additional */ = {
+		778273C227AB059200E5053D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				778273C027AB058F00E5053D /* SharedView.swift */,
 				77B20A2027BD187E005A9F54 /* Color+Extension.swift */,
 			);
-			path = Additional;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		77A178E027352A12005E520C /* Logger */ = {
@@ -799,6 +799,14 @@
 				77A3CA382773AA3300A0EA9C /* LearnNewWordzViewController+ViewModel.swift */,
 			);
 			path = Supplementary;
+			sourceTree = "<group>";
+		};
+		D49579F128D03797002AC23E /* AccessoryRectangular */ = {
+			isa = PBXGroup;
+			children = (
+				D49579EF28D03793002AC23E /* TodayWidgetAccessoryRectangularView.swift */,
+			);
+			path = AccessoryRectangular;
 			sourceTree = "<group>";
 		};
 		D4F00D442718C3840079A860 = {
@@ -930,6 +938,18 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		D4F9E4BD28D18D16001F48F7 /* Supplementary */ = {
+			isa = PBXGroup;
+			children = (
+				778273C027AB058F00E5053D /* SharedView.swift */,
+				D49579F228D053A7002AC23E /* FichaLogoView.swift */,
+				D4F9E4BB28D18D13001F48F7 /* ExamplesWordsView.swift */,
+				D4F9E4BE28D18D42001F48F7 /* WordzAndTranslateView.swift */,
+				D4F9E4C028D18D59001F48F7 /* CustomGradientView.swift */,
+			);
+			path = Supplementary;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -960,7 +980,7 @@
 				D4F00D492718C3840079A860 /* Sources */,
 				D4F00D4A2718C3840079A860 /* Frameworks */,
 				D4F00D4B2718C3840079A860 /* Resources */,
-				7781F48127920D7D00612B1A /* Embed App Extensions */,
+				7781F48127920D7D00612B1A /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -1024,7 +1044,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1310;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					7781F47227920D7A00612B1A = {
 						CreatedOnToolsVersion = 13.1;
@@ -1104,14 +1124,18 @@
 			files = (
 				778273BE27AAF6AF00E5053D /* TodayWidgetMediumView.swift in Sources */,
 				77B20A2127BD187E005A9F54 /* Color+Extension.swift in Sources */,
+				D4F9E4BC28D18D13001F48F7 /* ExamplesWordsView.swift in Sources */,
 				775E28652797536B00A147A3 /* TodayProvider.swift in Sources */,
+				D4F9E4BF28D18D42001F48F7 /* WordzAndTranslateView.swift in Sources */,
 				775E28622797534C00A147A3 /* TodayWidgetSmallView.swift in Sources */,
 				778273C127AB058F00E5053D /* SharedView.swift in Sources */,
 				7781F47A27920D7A00612B1A /* TodayWidget.swift in Sources */,
 				775E28672797538B00A147A3 /* TodayWidgetEntry.swift in Sources */,
 				775E28632797534F00A147A3 /* TodayWidgetEntryView.swift in Sources */,
-				775E28692798784D00A147A3 /* TodayWordShot.swift in Sources */,
+				D49579F328D053A7002AC23E /* FichaLogoView.swift in Sources */,
+				D49579F028D03793002AC23E /* TodayWidgetAccessoryRectangularView.swift in Sources */,
 				7782739F27A9092D00E5053D /* FichaWidgetBundle.swift in Sources */,
+				D4F9E4C128D18D59001F48F7 /* CustomGradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1250,7 +1274,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = "Ficha-WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 22.9.1.0;
 				DEVELOPMENT_TEAM = X92LK22555;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Ficha-Widget/Info.plist";
@@ -1262,13 +1286,13 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 22.3.1;
+				MARKETING_VERSION = 22.9.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "Revolvetra.Inc.Ficha.Ficha-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1280,7 +1304,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = "Ficha-WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 22.9.1.0;
 				DEVELOPMENT_TEAM = X92LK22555;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Ficha-Widget/Info.plist";
@@ -1292,13 +1316,13 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 22.3.1;
+				MARKETING_VERSION = 22.9.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "Revolvetra.Inc.Ficha.Ficha-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1353,7 +1377,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1408,7 +1432,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1427,6 +1451,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = CardzApp/CardzApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 22.9.1.0;
 				DEVELOPMENT_TEAM = X92LK22555;
 				INFOPLIST_FILE = CardzApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1434,7 +1459,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 22.3.1;
+				MARKETING_VERSION = 22.9.1;
 				PRODUCT_BUNDLE_IDENTIFIER = Revolvetra.Inc.Ficha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
@@ -1452,6 +1477,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = CardzApp/CardzApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 22.9.1.0;
 				DEVELOPMENT_TEAM = X92LK22555;
 				INFOPLIST_FILE = CardzApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1459,7 +1485,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 22.3.1;
+				MARKETING_VERSION = 22.9.1;
 				PRODUCT_BUNDLE_IDENTIFIER = Revolvetra.Inc.Ficha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
