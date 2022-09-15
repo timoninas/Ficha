@@ -618,6 +618,100 @@ func getGoldJob() -> BagOfGoldWords {
             ],
             translations: ["Ветеран"]
         ),
+        .init(
+            word: "Plumber",
+            transcription: "[ˈplʌmə]",
+            examples: [
+                "Oh, I've been an electrician, and a plumber, and a rivet catcher, and many other things",
+                "Anything that requires flames--plumbers, electricians, welders"
+            ],
+            translations: ["Сантехник", "Водопроводчик"]
+        ),
+        .init(
+            word: "Policeman",
+            transcription: "[pəˈliːsmən]",
+            examples: [
+                "That policeman who had only just sent him to the front of the queue was already lifting a hand to take him to one side",
+                "A uniformed policeman appeared from nowhere. Hold it! What do you think you're doing?"
+            ],
+            translations: ["Полицейский", "Полицай"]
+        ),
+        .init(
+            word: "Photographer",
+            transcription: "[fəˈtɒgrəfə]",
+            examples: [
+                "Actually, Peter Parker was a news photographer",
+                "The odd thing was that in civilian life Hungry Joe really had been a photographer for Life magazine"
+            ],
+            translations: ["Фотограф"]
+        ),
+        .init(
+            word: "Hairdresser",
+            transcription: "[ˈheədresə]",
+            examples: [
+                ""
+            ],
+            translations: [""]
+        ),
+        .init(
+            word: "Judge",
+            transcription: "[ʤʌʤ]",
+            examples: [
+                "Hell, I tip my hairdresser that. The woman guffawed",
+                "I need this story coming out of every TV, phone, laptop, and hairdresser in America",
+                "Fabian, my hairdresser"
+            ],
+            translations: ["Парикмахер", "Стилист"]
+        ),
+        .init(
+            word: "Lawyer",
+            transcription: "[ˈlɔːjə]",
+            examples: [
+                "Nor would he have spoken to Mike; Warden was political lawyer before exile, knew nothing about computers",
+                "He's a corporation lawyer"
+            ],
+            translations: ["Юрист", "Адвокат"]
+        ),
+        .init(
+            word: "Nurse",
+            transcription: "[nɜːs]",
+            examples: [
+                "She was a nurse in 1913, and she fell in love with this man called John Smith",
+                "The nurse took him to the nursery so you could get some sleep",
+                "Thanks, Nurse"
+            ],
+            translations: ["Медсестра", "Няня", "Санитар"]
+        ),
+        .init(
+            word: "Optician",
+            transcription: "[ɒpˈtɪʃn]",
+            examples: [
+                "So when I went for an eye test the optician said, Can you see the Great wall of China?",
+                "When are you going to get yourself to an optician?",
+                "Eye to eye with optician van Laren?"
+            ],
+            translations: ["Оптик", "Окулист"]
+        ),
+        .init(
+            word: "Porter",
+            transcription: "[ɒpˈtɪʃn]",
+            examples: [
+                "What's in those packages? I asked him, pointing to the long thin parcels the porter had given him",
+                "When Sheila had gone, I went across to the Clarendon, packed my bag and left it ready with the porter",
+                "There's no porter there, and nobody knows whether tenants are in or out"
+            ],
+            translations: ["Носильщик", "Грузчик"]
+        ),
+        .init(
+            word: "Postman",
+            transcription: "[ˈpəʊstmən]",
+            examples: [
+                "It's only what the postman thinks - he's not sure",
+                "Let the postman do it, then, Miss Reba said",
+                "The letter will fall in as the postman comes along, then off!"
+            ],
+            translations: ["Почтальон", "Почтовик"]
+        ),
     ])
     
     let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .job, typeTranslation: .enToRu)

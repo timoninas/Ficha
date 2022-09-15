@@ -55,7 +55,7 @@
 		7781F47727920D7A00612B1A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7781F47627920D7A00612B1A /* SwiftUI.framework */; };
 		7781F47A27920D7A00612B1A /* TodayWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7781F47927920D7A00612B1A /* TodayWidget.swift */; };
 		7781F47C27920D7D00612B1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7781F47B27920D7D00612B1A /* Assets.xcassets */; };
-		7781F48027920D7D00612B1A /* Ficha-WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7781F47327920D7A00612B1A /* Ficha-WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7781F48027920D7D00612B1A /* Ficha-WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7781F47327920D7A00612B1A /* Ficha-WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7782739F27A9092D00E5053D /* FichaWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7782739B27A9089A00E5053D /* FichaWidgetBundle.swift */; };
 		778273A327AA566F00E5053D /* LearnTimesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778273A227AA566F00E5053D /* LearnTimesViewController.swift */; };
 		778273A727AA569900E5053D /* LearnTimesViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778273A627AA569900E5053D /* LearnTimesViewController+ViewModel.swift */; };
@@ -136,15 +136,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		7781F48127920D7D00612B1A /* Embed App Extensions */ = {
+		7781F48127920D7D00612B1A /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				7781F48027920D7D00612B1A /* Ficha-WidgetExtension.appex in Embed App Extensions */,
+				7781F48027920D7D00612B1A /* Ficha-WidgetExtension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -980,7 +980,7 @@
 				D4F00D492718C3840079A860 /* Sources */,
 				D4F00D4A2718C3840079A860 /* Frameworks */,
 				D4F00D4B2718C3840079A860 /* Resources */,
-				7781F48127920D7D00612B1A /* Embed App Extensions */,
+				7781F48127920D7D00612B1A /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -1044,7 +1044,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1310;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					7781F47227920D7A00612B1A = {
 						CreatedOnToolsVersion = 13.1;
@@ -1274,7 +1274,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = "Ficha-WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 22.9.1.0;
 				DEVELOPMENT_TEAM = X92LK22555;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Ficha-Widget/Info.plist";
@@ -1286,7 +1286,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 22.3.1;
+				MARKETING_VERSION = 22.9.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "Revolvetra.Inc.Ficha.Ficha-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1304,7 +1304,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = "Ficha-WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 22.9.1.0;
 				DEVELOPMENT_TEAM = X92LK22555;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Ficha-Widget/Info.plist";
@@ -1316,7 +1316,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 22.3.1;
+				MARKETING_VERSION = 22.9.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "Revolvetra.Inc.Ficha.Ficha-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
