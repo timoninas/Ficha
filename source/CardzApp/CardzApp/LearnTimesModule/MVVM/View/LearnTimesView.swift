@@ -5,26 +5,232 @@
 //  Created by Антон Тимонин on 02.02.2022.
 //
 
-import SwiftUI
 import Hobbiton
+import SwiftUI
+
+struct BlurView: UIViewRepresentable {
+    
+    let style: UIBlurEffect.Style
+    
+    func makeUIView(context: UIViewRepresentableContext<BlurView>) -> UIView {
+        let view = UIView(frame: .zero)
+        view.backgroundColor = .clear
+        let blurEffect = UIBlurEffect(style: style)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.translatesAutoresizingMaskIntoConstraints = false
+        view.insertSubview(blurView, at: 0)
+        NSLayoutConstraint.activate([
+            blurView.heightAnchor.constraint(equalTo: view.heightAnchor),
+            blurView.widthAnchor.constraint(equalTo: view.widthAnchor),
+        ])
+        return view
+    }
+    
+    func updateUIView(_ uiView: UIView,
+                      context: UIViewRepresentableContext<BlurView>) {}
+    
+}
+
+struct PresentationWordWithTranslateView : View {
+    
+    var wordz: String
+    var examples: [String]
+    
+    var body: some View {
+        ZStack(alignment: .center) {
+            VStack(spacing: 0.0) {
+                self.mainTitle(title: wordz)
+                self.examplesTitles(examples: examples)
+            }
+            .padding(EdgeInsets(top: 12.0,
+                                leading: 0.0,
+                                bottom: 12.0,
+                                trailing: 0.0))
+            .background(BlurView(style: .light).cornerRadius(20.0))
+            .padding(EdgeInsets(top: 8.0,
+                                leading: 12.0,
+                                bottom: 8.0,
+                                trailing: 12.0))
+        }
+        
+    }
+    
+    @ViewBuilder
+    private func mainTitle(title: String) -> some View {
+        HStack(spacing: 0.0) {
+            Spacer()
+            Text(title)
+                .font(.system(size: 36.0, weight: .bold))
+                .multilineTextAlignment(.center)
+                .foregroundColor(.mysteryShack)
+                .padding(EdgeInsets(top: 0.0,
+                                    leading: 16.0,
+                                    bottom: 8.0,
+                                    trailing: 16.0))
+            Spacer()
+        }
+    }
+    
+    @ViewBuilder
+    private func examplesTitles(examples: [String]) -> some View {
+        if examples.filter({ !$0.isEmpty }).isEmpty {
+            EmptyView()
+        } else {
+            VStack(alignment: .leading, spacing: 8.0) {
+                ForEach(examples, id: \.self) {
+                    Text($0)
+                        .font(.system(size: 20.0))
+                        .multilineTextAlignment(.leading)
+                        .foregroundColor(.nazgul)
+                        .padding(EdgeInsets(top: 8.0,
+                                            leading: 16.0,
+                                            bottom: 0.0,
+                                            trailing: 16.0))
+                }
+                Spacer()
+            }
+        }
+    }
+    
+}
+
+extension Text {
+    public func foregroundLinearGradient(
+        colors: [Color],
+        startPoint: UnitPoint,
+        endPoint: UnitPoint) -> some View
+    {
+        self.overlay {
+            
+            LinearGradient(
+                colors: colors,
+                startPoint: startPoint,
+                endPoint: endPoint
+            )
+            .mask(self)
+        }
+    }
+}
+
+struct LearnTimesHeaderView : View {
+    var title: String
+    var subtitle: String?
+    var image: Image?
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            HStack(alignment: .center) {
+                self.mainTitle(title: title)
+                VStack(alignment: .center) {
+                    self.titleImage(image: image)
+                    Spacer()
+                }
+                Spacer()
+            }
+        }
+        .padding(EdgeInsets(top: 8.0,
+                            leading: 16.0,
+                            bottom: 8.0,
+                            trailing: 16.0))
+    }
+    
+    @ViewBuilder
+    private func mainTitle(title: String) -> some View {
+        Text(title)
+            .foregroundLinearGradient(
+                colors: [.mysteryShack,
+                         .mysteryShack,
+                         .mysteryShack,
+                         .babushka.opacity(1.0)],
+                startPoint: .leading,
+                endPoint: .trailing
+            )
+            .foregroundColor(.nazgul)
+            .font(.system(size: 24.0, weight: .bold))
+            .multilineTextAlignment(.leading)
+            .lineLimit(1)
+    }
+    
+    @ViewBuilder
+    private func titleImage(image: Image?) -> some View {
+        if let image = image {
+            
+                image
+                    .resizable()
+                    .frame(width: 13.0,
+                           height: 13.0)
+        } else {
+            EmptyView()
+        }
+    }
+    
+}
 
 struct LearnTimesView : View {
     
-    @ObservedObject var learnTimesViewModel = LearnTimesViewModel()
+    @ObservedObject var learnTimesViewModel: LearnTimesViewModel
+    
+    init(learnTimesViewModel: LearnTimesViewModel = LearnTimesViewModel()) {
+        self.learnTimesViewModel = learnTimesViewModel
+    }
     
     var body: some View {
+        ZStack {
+            self.backgroundBubbles()
+            ScrollView(showsIndicators: false) {
+                self.header()
+                self.listWithWords()
+            }
+        }
+        .onAppear {
+            learnTimesViewModel.loadModel()
+        }
         
-        Color.gendalf
-            .ignoresSafeArea(edges: .vertical) // Ignore just for the color
-            .overlay(
-                VStack {
-                    Text(learnTimesViewModel.title)
-                        .onAppear {
-                            learnTimesViewModel.loadModel()
-                        }
-                }
-            )
+    }
+    
+    @ViewBuilder
+    private func header() -> some View {
+        LearnTimesHeaderView(title: learnTimesViewModel.headerModel.title,
+                             subtitle: learnTimesViewModel.headerModel.subtitle,
+                             image: learnTimesViewModel.headerModel.image)
+    }
+    
+    @ViewBuilder
+    private func listWithWords() -> some View {
+        ForEach(learnTimesViewModel.wordz) {
+            PresentationWordWithTranslateView(wordz: $0.title, examples: $0.examples)
+        }
+    }
+    
+    @ViewBuilder
+    private func backgroundBubbles() -> some View {
+        GeometryReader { proxy in
+            VStack(alignment: .center, spacing: 0.0) {
+                RoundedRectangle(cornerRadius: proxy.size.height / 6)
+                    .frame(width: proxy.size.height / 3,
+                           height: proxy.size.height / 3)
+                    .foregroundColor(.lightMysteryShack.opacity(0.3))
+                    .offset(CGSize(width: -100, height: 100))
+                
+                RoundedRectangle(cornerRadius: proxy.size.height / 6)
+                    .frame(width: proxy.size.height / 3,
+                           height: proxy.size.height / 3)
+                    .foregroundColor(.lightMysteryShack.opacity(0.3))
+                    .offset(CGSize(width: 200, height: 300))
+            }
+            
+        }
         
+    }
+    
+}
+
+struct PresentationWordWithTranslateView_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        Group {
+            LearnTimesView(learnTimesViewModel: LearnTimesViewModel(model: MockLearnTimesModel()))
+        }
     }
     
 }

@@ -94,7 +94,7 @@ final class AppConfigurator {
         let tabBar = setupTabBarAppearance(tabBar: UITabBarController())
         tabBar.setViewControllers(controllers, animated: true)
         #if DEBUG
-        tabBar.selectedIndex = 2
+        tabBar.selectedIndex = 4
         #endif
         
         return tabBar

@@ -79,7 +79,6 @@
 		77A3CA362772FDE100A0EA9C /* PreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3CA352772FDE100A0EA9C /* PreviewViewModel.swift */; };
 		77A3CA392773AA3300A0EA9C /* LearnNewWordzViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3CA382773AA3300A0EA9C /* LearnNewWordzViewController+ViewModel.swift */; };
 		77A3CA3B2775A77100A0EA9C /* TODO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3CA3A2775A77000A0EA9C /* TODO.swift */; };
-		77B20A2127BD187E005A9F54 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B20A2027BD187E005A9F54 /* Color+Extension.swift */; };
 		77DCC7A627711B0000F9572A /* Erebor in Frameworks */ = {isa = PBXBuildFile; productRef = 77DCC7A527711B0000F9572A /* Erebor */; };
 		77F8FEF8277AD10F00B0B72E /* RevolvetraUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = 77F8FEF7277AD10F00B0B72E /* RevolvetraUserDefaults */; };
 		77F9EF79275D30C8008B1EB6 /* RevolvetraKnowledge in Frameworks */ = {isa = PBXBuildFile; productRef = 77F9EF78275D30C8008B1EB6 /* RevolvetraKnowledge */; };
@@ -88,6 +87,7 @@
 		77FED85D27881DEA007D60E3 /* DevDebugProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FED85C27881DEA007D60E3 /* DevDebugProtocols.swift */; };
 		D42CC37927AF9D8B00335204 /* IndependentDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42CC37827AF9D8B00335204 /* IndependentDependencies.swift */; };
 		D42D2E7427B81B2C00374C58 /* DevDebugCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42D2E7327B81B2C00374C58 /* DevDebugCollectionViewCell.swift */; };
+		D43E5F6928D5987200CFE3E5 /* Hobbiton in Frameworks */ = {isa = PBXBuildFile; productRef = D43E5F6828D5987200CFE3E5 /* Hobbiton */; };
 		D469CEC627B19FA800B47A14 /* LearnTimesMvvmBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D469CEC527B19FA800B47A14 /* LearnTimesMvvmBuilder.swift */; };
 		D48F8494276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F8493276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift */; };
 		D49579F028D03793002AC23E /* TodayWidgetAccessoryRectangularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49579EF28D03793002AC23E /* TodayWidgetAccessoryRectangularView.swift */; };
@@ -224,7 +224,6 @@
 		77A3CA352772FDE100A0EA9C /* PreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewModel.swift; sourceTree = "<group>"; };
 		77A3CA382773AA3300A0EA9C /* LearnNewWordzViewController+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearnNewWordzViewController+ViewModel.swift"; sourceTree = "<group>"; };
 		77A3CA3A2775A77000A0EA9C /* TODO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODO.swift; sourceTree = "<group>"; };
-		77B20A2027BD187E005A9F54 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		77C2F4A92737D66900138DF9 /* Rivendell */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Rivendell; path = ../Frameworks/Rivendell; sourceTree = "<group>"; };
 		77D5165A27306A180030D1D1 /* Hobbiton */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Hobbiton; path = ../Frameworks/Hobbiton; sourceTree = "<group>"; };
 		77F8FEF6277AD10300B0B72E /* RevolvetraUserDefaults */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RevolvetraUserDefaults; path = ../Frameworks/RevolvetraUserDefaults; sourceTree = "<group>"; };
@@ -269,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7781F47727920D7A00612B1A /* SwiftUI.framework in Frameworks */,
+				D43E5F6928D5987200CFE3E5 /* Hobbiton in Frameworks */,
 				7781F47527920D7A00612B1A /* WidgetKit.framework in Frameworks */,
 				775E286D2798911F00A147A3 /* RevolvetraUserDefaults in Frameworks */,
 			);
@@ -555,7 +555,6 @@
 		7781F47827920D7A00612B1A /* Ficha-Widget */ = {
 			isa = PBXGroup;
 			children = (
-				778273C227AB059200E5053D /* Extension */,
 				7782739B27A9089A00E5053D /* FichaWidgetBundle.swift */,
 				775E285E279752B800A147A3 /* TodayWidget */,
 				7781F47B27920D7D00612B1A /* Assets.xcassets */,
@@ -678,14 +677,6 @@
 				778273BD27AAF6AF00E5053D /* TodayWidgetMediumView.swift */,
 			);
 			path = Medium;
-			sourceTree = "<group>";
-		};
-		778273C227AB059200E5053D /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				77B20A2027BD187E005A9F54 /* Color+Extension.swift */,
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		77A178E027352A12005E520C /* Logger */ = {
@@ -968,6 +959,7 @@
 			name = "Ficha-WidgetExtension";
 			packageProductDependencies = (
 				775E286C2798911F00A147A3 /* RevolvetraUserDefaults */,
+				D43E5F6828D5987200CFE3E5 /* Hobbiton */,
 			);
 			productName = "Ficha-WidgetExtension";
 			productReference = 7781F47327920D7A00612B1A /* Ficha-WidgetExtension.appex */;
@@ -1123,7 +1115,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				778273BE27AAF6AF00E5053D /* TodayWidgetMediumView.swift in Sources */,
-				77B20A2127BD187E005A9F54 /* Color+Extension.swift in Sources */,
 				D4F9E4BC28D18D13001F48F7 /* ExamplesWordsView.swift in Sources */,
 				775E28652797536B00A147A3 /* TodayProvider.swift in Sources */,
 				D4F9E4BF28D18D42001F48F7 /* WordzAndTranslateView.swift in Sources */,
@@ -1656,6 +1647,10 @@
 		77F9EF78275D30C8008B1EB6 /* RevolvetraKnowledge */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RevolvetraKnowledge;
+		};
+		D43E5F6828D5987200CFE3E5 /* Hobbiton */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Hobbiton;
 		};
 /* End XCSwiftPackageProductDependency section */
 

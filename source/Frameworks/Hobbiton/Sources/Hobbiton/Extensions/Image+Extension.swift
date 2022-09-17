@@ -9,10 +9,12 @@ import SwiftUI
 
 public extension Image {
     
-    static let fichaLogo = imageFromBundle(named: "ficha-logo")
-                                  
     private static func imageFromBundle(named: String) -> Image {
         Image(named, bundle: .module)
     }
+    
+    static let fichaLogo = imageFromBundle(named: "ficha-logo")
+    
+    static let revolvetra = imageFromBundle(named: "Revolvetra")
     
 }

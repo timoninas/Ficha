@@ -86,7 +86,7 @@ final class DailyWordsHeader: UIView {
             .mysteryShack,
             .mysteryShack,
             .mysteryShack,
-            .babushka.withAlphaComponent(0.5)
+            .babushka.withAlphaComponent(1.0),
         ])
         titleLabel.textColor = UIColor(patternImage: gradient)
     }

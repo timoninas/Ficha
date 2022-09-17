@@ -6,21 +6,56 @@
 //
 
 import Foundation
+import SwiftUI
 
 class LearnTimesViewModel : ObservableObject, Identifiable {
     
-    @Published private var model : LearnTimesModel?
+    @Published var wordz: [LearnWordsViewModel] = []
     
-    public var title: String {
-        model?.title ?? ""
-    }
+    @Published var headerModel: HeaderViewModel = .init()
     
     public let id = UUID()
     
-    init() {}
+    private let model: LearnTimesModelProtocol
+    
+    init(model: LearnTimesModelProtocol = LearnTimesModel()) {
+        self.model = model
+    }
     
     public func loadModel() {
-        model = LearnTimesModel(title: "Some text")
+        wordz = model.fetchWords()
+        headerModel = HeaderViewModel(title: "Daily words", image: .revolvetra)
+    }
+    
+}
+
+extension LearnTimesViewModel {
+    
+    struct LearnWordsViewModel : Identifiable, Decodable {
+        var id = UUID()
+        public var title : String
+        public var examples: [String]
+        
+        init(title: String,
+             examples: [String] = []) {
+            self.title = title
+            self.examples = examples
+        }
+        
+    }
+    
+    struct HeaderViewModel {
+        public var title: String
+        public var subtitle: String?
+        public var image: Image?
+        
+        init(title: String = "",
+             subtitle: String? = nil,
+             image: Image? = nil) {
+            self.title = title
+            self.subtitle = subtitle
+            self.image = image
+        }
     }
     
 }
