@@ -1,6 +1,6 @@
-// TODO: Получение данных слов из json
-// TODO: Прикрутить Combine
-// TODO: Reset stats in words
-// TODO: Learn english times
-// TODO: Cards with emoji
-// TODO: Rename proj to Ficha
+#warning("TODO: Получение данных слов из json")
+#warning("TODO: Прикрутить Combine")
+#warning("TODO: Reset stats in words")
+#warning("TODO: Learn english times")
+#warning("TODO: Cards with emoji")
+#warning("TODO: Rename proj to Ficha")

@@ -242,7 +242,7 @@ final class DailyWordsViewController: UIViewController {
     }
     
     private func renderContent(isAnimated: Bool) {
-        // TODO: - Добавить нормальную анимацию появления коллекции.
+        #warning("TODO: Добавить нормальную анимацию появления коллекции.")
         if isAnimated {
             renderTodayViews()
             renderHeights()

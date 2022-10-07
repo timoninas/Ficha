@@ -9,6 +9,7 @@ import Combine
 
 extension Publisher where Failure == Never {
     
+    /// Создает `assign` со слабой ссылкой.
     func weakAssign<T: AnyObject>(
         to keyPath: ReferenceWritableKeyPath<T, Output>,
         on object: T
@@ -18,6 +19,7 @@ extension Publisher where Failure == Never {
         }
     }
 
+    /// Создает `sink` со слабой ссылкой.
     func weakSink<T: AnyObject>(
         _ weaklyCaptured: T,
         receiveValue: @escaping (T, Self.Output) -> Void
