@@ -60,7 +60,7 @@ struct PresentationWordWithTranslateView : View {
         HStack(spacing: 0.0) {
             Spacer()
             Text(title)
-                .font(.system(size: 36.0, weight: .bold))
+                .font(.system(size: 36.0, weight: .bold, design: .rounded))
                 .multilineTextAlignment(.center)
                 .foregroundColor(.mysteryShack)
                 .padding(EdgeInsets(top: 0.0,
@@ -79,7 +79,7 @@ struct PresentationWordWithTranslateView : View {
             VStack(alignment: .leading, spacing: 8.0) {
                 ForEach(examples, id: \.self) {
                     Text($0)
-                        .font(.system(size: 20.0))
+                        .font(.system(size: 20.0, design: .rounded))
                         .multilineTextAlignment(.leading)
                         .foregroundColor(.nazgul)
                         .padding(EdgeInsets(top: 8.0,
@@ -146,7 +146,7 @@ struct LearnTimesHeaderView : View {
                 endPoint: .trailing
             )
             .foregroundColor(.nazgul)
-            .font(.system(size: 24.0, weight: .bold))
+            .font(.system(size: 24.0, weight: .bold, design: .rounded))
             .multilineTextAlignment(.leading)
             .lineLimit(1)
     }
@@ -170,6 +170,9 @@ struct LearnTimesView : View {
     
     @ObservedObject var learnTimesViewModel: LearnTimesViewModel
     
+    @State
+    var contentItem: LearnTimesViewModel.LearnWordsViewModel?
+    
     init(learnTimesViewModel: LearnTimesViewModel = LearnTimesViewModel()) {
         self.learnTimesViewModel = learnTimesViewModel
     }
@@ -181,6 +184,12 @@ struct LearnTimesView : View {
                 self.header()
                 self.listWithWords()
             }
+            .fullScreenCover(item: $contentItem) {
+                print("keke")
+            } content: { item in
+                DetailWordView(items: learnTimesViewModel.wordz)
+            }
+
         }
         .onAppear {
             learnTimesViewModel.loadModel()
@@ -197,8 +206,11 @@ struct LearnTimesView : View {
     
     @ViewBuilder
     private func listWithWords() -> some View {
-        ForEach(learnTimesViewModel.wordz) {
-            PresentationWordWithTranslateView(wordz: $0.title, examples: $0.examples)
+        ForEach(learnTimesViewModel.wordz) { item in
+            PresentationWordWithTranslateView(wordz: item.title, examples: item.examples)
+                .onTapGesture {
+                    contentItem = item
+                }
         }
     }
     
@@ -230,6 +242,79 @@ struct PresentationWordWithTranslateView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             LearnTimesView(learnTimesViewModel: LearnTimesViewModel(model: MockLearnTimesModel()))
+        }
+    }
+    
+}
+
+struct DetailWordView : View {
+    
+    let items: [LearnTimesViewModel.LearnWordsViewModel]
+    
+    var body: some View {
+        VStack {
+            TabView {
+//                LazyHStack {
+                    ForEach(items, id: \.id) { item in
+                        CardDetailView(item: item)
+                            .background(Color.green)
+                            .frame(width: UIScreen.main.bounds.size.width,
+                                   height: UIScreen.main.bounds.size.height)
+                    }
+                    
+//                }
+            }
+            .tabViewStyle(PageTabViewStyle())
+            .tabViewStyle(.page(indexDisplayMode: .never))
+        }
+    }
+}
+
+
+struct CardDetailView : View {
+    
+    @Environment(\.dismiss)
+    private var isPresented
+    
+    let item: LearnTimesViewModel.LearnWordsViewModel
+    
+    var body: some View {
+        ScrollView(.vertical, showsIndicators: false) {
+            Spacer()
+                .frame(height: 100.0)
+            HStack {
+                VStack {
+                    mainTitle(title: item.title)
+                    
+                    ForEach(item.examples, id: \.self) {
+                        Text($0)
+                            .font(.system(size: 20.0, design: .rounded))
+                            .multilineTextAlignment(.leading)
+                            .foregroundColor(.nazgul)
+                            .padding(EdgeInsets(top: 8.0,
+                                                leading: 16.0,
+                                                bottom: 0.0,
+                                                trailing: 16.0))
+                    }
+                    Text(item.title)
+                    Text("Kek")
+                        .onTapGesture {
+                            isPresented.callAsFunction()
+                        }
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private func mainTitle(title: String?) -> some View {
+        if let title = title {
+            Text(title)
+                .foregroundColor(.nazgul)
+                .font(.system(size: 32.0, weight: .bold, design: .rounded))
+                .multilineTextAlignment(.center)
+        } else {
+            EmptyView()
         }
     }
     

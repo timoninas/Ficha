@@ -31,7 +31,7 @@ class LearnTimesViewModel : ObservableObject, Identifiable {
 
 extension LearnTimesViewModel {
     
-    struct LearnWordsViewModel : Identifiable, Decodable {
+    struct LearnWordsViewModel : Identifiable, Decodable, Hashable {
         var id = UUID()
         public var title : String
         public var examples: [String]
