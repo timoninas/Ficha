@@ -36,7 +36,8 @@ final class LearnTimesModel: LearnTimesModelProtocol {
         }
         
         return array.map { dailyWord in
-            LearnTimesViewModel.LearnWordsViewModel(title: dailyWord.title,
+            return LearnTimesViewModel.LearnWordsViewModel(title: dailyWord.title,
+                                                    transcription: dailyWord.transcription,
                                                     examples: dailyWord.examples)
         }
     }
@@ -73,9 +74,9 @@ final class MockLearnTimesModel: LearnTimesModelProtocol {
     
     func fetchWords() -> [LearnTimesViewModel.LearnWordsViewModel] {
         [
-            LearnTimesViewModel.LearnWordsViewModel(title: "1123", examples: ["Lol", "Kek", "Cheburek"]),
-            LearnTimesViewModel.LearnWordsViewModel(title: "rejkngjkwegjkner", examples: []),
-            LearnTimesViewModel.LearnWordsViewModel(title: "Ololoolo", examples: ["", "", ""])
+            LearnTimesViewModel.LearnWordsViewModel(title: "1123", transcription: "[awefawe]", examples: ["Lol", "Kek", "Cheburek"]),
+            LearnTimesViewModel.LearnWordsViewModel(title: "rejkngjkwegjkner", transcription: "[o0o]", examples: []),
+            LearnTimesViewModel.LearnWordsViewModel(title: "Ololoolo", transcription: "[123]", examples: ["", "", ""])
         ]
     }
     

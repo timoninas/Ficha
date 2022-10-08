@@ -34,11 +34,14 @@ extension LearnTimesViewModel {
     struct LearnWordsViewModel : Identifiable, Decodable, Hashable {
         var id = UUID()
         public var title : String
+        public var transcription: String?
         public var examples: [String]
         
         init(title: String,
+             transcription: String?,
              examples: [String] = []) {
             self.title = title
+            self.transcription = transcription
             self.examples = examples
         }
         

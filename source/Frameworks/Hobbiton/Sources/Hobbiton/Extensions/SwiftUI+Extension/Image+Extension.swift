@@ -17,4 +17,6 @@ public extension Image {
     
     static let revolvetra = imageFromBundle(named: "Revolvetra")
     
+    static let closeIcon = imageFromBundle(named: "closeIcon")
+    
 }

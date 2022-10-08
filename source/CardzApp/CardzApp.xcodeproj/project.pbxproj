@@ -88,7 +88,12 @@
 		D42CC37927AF9D8B00335204 /* IndependentDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42CC37827AF9D8B00335204 /* IndependentDependencies.swift */; };
 		D42D2E7427B81B2C00374C58 /* DevDebugCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42D2E7327B81B2C00374C58 /* DevDebugCollectionViewCell.swift */; };
 		D43E5F6928D5987200CFE3E5 /* Hobbiton in Frameworks */ = {isa = PBXBuildFile; productRef = D43E5F6828D5987200CFE3E5 /* Hobbiton */; };
+		D45E6A0C28F1B5D200FDA697 /* DetailWordCardVewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45E6A0B28F1B5D200FDA697 /* DetailWordCardVewModel.swift */; };
+		D45E6A0F28F1B71900FDA697 /* DetailWordCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45E6A0E28F1B71900FDA697 /* DetailWordCardModel.swift */; };
 		D469CEC627B19FA800B47A14 /* LearnTimesMvvmBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D469CEC527B19FA800B47A14 /* LearnTimesMvvmBuilder.swift */; };
+		D4866AB728F17DE4007A3D1E /* PresentationWordWithTranslateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4866AB628F17DE4007A3D1E /* PresentationWordWithTranslateView.swift */; };
+		D4866ABA28F181C5007A3D1E /* LearnTimesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4866AB928F181C5007A3D1E /* LearnTimesHeaderView.swift */; };
+		D4866ABC28F18212007A3D1E /* DetailWordCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4866ABB28F18212007A3D1E /* DetailWordCardView.swift */; };
 		D48F8494276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F8493276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift */; };
 		D49579F028D03793002AC23E /* TodayWidgetAccessoryRectangularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49579EF28D03793002AC23E /* TodayWidgetAccessoryRectangularView.swift */; };
 		D49579F328D053A7002AC23E /* FichaLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49579F228D053A7002AC23E /* FichaLogoView.swift */; };
@@ -233,7 +238,12 @@
 		77FED85C27881DEA007D60E3 /* DevDebugProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevDebugProtocols.swift; sourceTree = "<group>"; };
 		D42CC37827AF9D8B00335204 /* IndependentDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndependentDependencies.swift; sourceTree = "<group>"; };
 		D42D2E7327B81B2C00374C58 /* DevDebugCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevDebugCollectionViewCell.swift; sourceTree = "<group>"; };
+		D45E6A0B28F1B5D200FDA697 /* DetailWordCardVewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWordCardVewModel.swift; sourceTree = "<group>"; };
+		D45E6A0E28F1B71900FDA697 /* DetailWordCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWordCardModel.swift; sourceTree = "<group>"; };
 		D469CEC527B19FA800B47A14 /* LearnTimesMvvmBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTimesMvvmBuilder.swift; sourceTree = "<group>"; };
+		D4866AB628F17DE4007A3D1E /* PresentationWordWithTranslateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationWordWithTranslateView.swift; sourceTree = "<group>"; };
+		D4866AB928F181C5007A3D1E /* LearnTimesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTimesHeaderView.swift; sourceTree = "<group>"; };
+		D4866ABB28F18212007A3D1E /* DetailWordCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWordCardView.swift; sourceTree = "<group>"; };
 		D48F8493276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnNewWordzCollectionViewHeader.swift; sourceTree = "<group>"; };
 		D49579EF28D03793002AC23E /* TodayWidgetAccessoryRectangularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWidgetAccessoryRectangularView.swift; sourceTree = "<group>"; };
 		D49579F228D053A7002AC23E /* FichaLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaLogoView.swift; sourceTree = "<group>"; };
@@ -647,6 +657,7 @@
 		778273BA27AA5B1000E5053D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D4866AB828F17DE8007A3D1E /* Supplementary */,
 				778273B627AA5AEA00E5053D /* LearnTimesView.swift */,
 			);
 			path = View;
@@ -783,6 +794,49 @@
 			path = StartAppHelpers;
 			sourceTree = "<group>";
 		};
+		D45E6A0D28F1B5D500FDA697 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D45E6A0B28F1B5D200FDA697 /* DetailWordCardVewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D45E6A1028F1B71C00FDA697 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D45E6A0E28F1B71900FDA697 /* DetailWordCardModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D4866AB828F17DE8007A3D1E /* Supplementary */ = {
+			isa = PBXGroup;
+			children = (
+				D4866AB628F17DE4007A3D1E /* PresentationWordWithTranslateView.swift */,
+				D4866AB928F181C5007A3D1E /* LearnTimesHeaderView.swift */,
+			);
+			path = Supplementary;
+			sourceTree = "<group>";
+		};
+		D4866ABD28F18216007A3D1E /* DetailWordCardModule */ = {
+			isa = PBXGroup;
+			children = (
+				D45E6A1028F1B71C00FDA697 /* Model */,
+				D4866ABE28F18256007A3D1E /* View */,
+				D45E6A0D28F1B5D500FDA697 /* ViewModel */,
+			);
+			path = DetailWordCardModule;
+			sourceTree = "<group>";
+		};
+		D4866ABE28F18256007A3D1E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D4866ABB28F18212007A3D1E /* DetailWordCardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D48F8495276FD1EF00FC6606 /* Supplementary */ = {
 			isa = PBXGroup;
 			children = (
@@ -841,6 +895,7 @@
 				770B3FE72769BA0D00DC7887 /* LearnNewWordzModule */,
 				D4F00D832718C3FB0079A860 /* DailyWordsModule */,
 				778273A427AA567400E5053D /* LearnTimesModule */,
+				D4866ABD28F18216007A3D1E /* DetailWordCardModule */,
 				D4F00D8A2718C3FB0079A860 /* Helpers */,
 				D4F00D5C2718C3860079A860 /* Assets.xcassets */,
 				D4F00D5E2718C3860079A860 /* LaunchScreen.storyboard */,
@@ -1149,6 +1204,7 @@
 				D4F00D962718C3FB0079A860 /* DailyWordsPresenter.swift in Sources */,
 				77A3CA362772FDE100A0EA9C /* PreviewViewModel.swift in Sources */,
 				772041A9277DE7F200141FCA /* MoriaManager.swift in Sources */,
+				D45E6A0C28F1B5D200FDA697 /* DetailWordCardVewModel.swift in Sources */,
 				77FED85A27881D45007D60E3 /* DevDebugBuilder.swift in Sources */,
 				D42D2E7427B81B2C00374C58 /* DevDebugCollectionViewCell.swift in Sources */,
 				776E4929272C9103000D0B2D /* LearnCardPresenter.swift in Sources */,
@@ -1158,6 +1214,7 @@
 				778273AA27AA56B100E5053D /* LearnTimesPresenter.swift in Sources */,
 				778273B527AA5AE000E5053D /* LearnTimesModel.swift in Sources */,
 				77FED85727881D20007D60E3 /* DevDebugViewController.swift in Sources */,
+				D4866AB728F17DE4007A3D1E /* PresentationWordWithTranslateView.swift in Sources */,
 				778273A727AA569900E5053D /* LearnTimesViewController+ViewModel.swift in Sources */,
 				77140796277ADAAB00B7E8D2 /* OnboardingModuleModel.swift in Sources */,
 				D4F00D5B2718C3840079A860 /* CardzApp.xcdatamodeld in Sources */,
@@ -1188,12 +1245,15 @@
 				7748E9322757F4B10063E592 /* FavouriteWordzViewController.swift in Sources */,
 				775A18C7271C284E00A295C0 /* DailyWordsHeader.swift in Sources */,
 				77FED85D27881DEA007D60E3 /* DevDebugProtocols.swift in Sources */,
+				D4866ABC28F18212007A3D1E /* DetailWordCardView.swift in Sources */,
 				D4F00D9E2718C3FB0079A860 /* SceneDelegate.swift in Sources */,
 				772041AE277EDC1C00141FCA /* DaysChecker.swift in Sources */,
 				77A3CA342772F9B300A0EA9C /* ThematicWordzProtocols.swift in Sources */,
 				778273AD27AA56D500E5053D /* LearnTimesViewController+State.swift in Sources */,
+				D4866ABA28F181C5007A3D1E /* LearnTimesHeaderView.swift in Sources */,
 				D4F00D972718C3FB0079A860 /* DailyWordsViewController.swift in Sources */,
 				770B3FE62769BA0900DC7887 /* LearnNewWordzViewController.swift in Sources */,
+				D45E6A0F28F1B71900FDA697 /* DetailWordCardModel.swift in Sources */,
 				D4F00D9D2718C3FB0079A860 /* AppDelegate.swift in Sources */,
 				77A3CA2F2772F98D00A0EA9C /* ThematicWordzViewController+ViewModel.swift in Sources */,
 				D4F00D952718C3FB0079A860 /* DailyWordsProtocol.swift in Sources */,
