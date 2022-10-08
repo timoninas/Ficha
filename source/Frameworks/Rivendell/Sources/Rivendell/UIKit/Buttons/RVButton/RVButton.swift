@@ -172,7 +172,7 @@ public final class RVButton: BaseControl {
     
     private func updateColorState(_ isHighlighted: Bool) {
         UIView.animate(withDuration: 0.1) { [weak self] in
-            guard let self = self else { return }
+            guard let self else { return }
             self.containerView.backgroundColor = isHighlighted ? self.configuration.highlitedColor: self.configuration.backgroundColor
         }
     }

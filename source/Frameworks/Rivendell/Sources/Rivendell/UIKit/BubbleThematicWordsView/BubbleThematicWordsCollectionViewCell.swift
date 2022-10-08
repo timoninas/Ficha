@@ -50,7 +50,7 @@ public final class BubbleThematicWordsCollectionViewCell: UICollectionViewCell {
             let transform = isHighlighted ?
                 CGAffineTransform(scaleX: 0.96, y: 0.96) : CGAffineTransform.identity
             let animations = { [weak self] in
-                guard let self = self else { return }
+                guard let self else { return }
                 if !self.isHighlighted {
                     UIApplication.hapticLight()
                 }

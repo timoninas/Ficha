@@ -18,7 +18,7 @@ class VerticalItemFlowLayout: UICollectionViewLayout {
     private var totalCollectionHeight: CGFloat = 0.0
     
     private var totalCollectionWidth: CGFloat {
-        guard let collectionView = collectionView else {
+        guard let collectionView else {
             return 0.0
         }
         

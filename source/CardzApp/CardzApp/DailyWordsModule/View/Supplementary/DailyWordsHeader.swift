@@ -125,7 +125,7 @@ final class DailyWordsHeader: UIView {
     private func addSettingsButton() {
         settingsButton.configuration = settingsButton.configuration
             .with(onTap: { [weak self] _ in
-                guard let self = self else { return }
+                guard let self else { return }
                 self.onTap?()
                 RLogDebug(message: "Header settings tapped", subsystem: String(describing: self))
             })

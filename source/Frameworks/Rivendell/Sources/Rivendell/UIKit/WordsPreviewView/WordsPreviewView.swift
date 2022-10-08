@@ -134,7 +134,7 @@ public final class WordsPreviewView: UIView {
         var previousLabel: UILabel?
         labels.enumerated().forEach { idx, label in
             label.layoutIfNeeded()
-            if let previousLabel = previousLabel {
+            if let previousLabel {
                 storedConstraints += [
                     label.topAnchor.constraint(equalTo: previousLabel.bottomAnchor, constant: Constants.topAnchor),
                     label.leftAnchor.constraint(equalTo: leftAnchor, constant: Constants.titleLeftAnchor),
@@ -182,7 +182,7 @@ public final class WordsPreviewView: UIView {
         labels.removeAll()
         
         configuration.translations.forEach { [weak self] text in
-            guard let self = self else { return }
+            guard let self else { return }
             let label = self.wordzExampleGen
             label.text = text
             self.labels.append(label)

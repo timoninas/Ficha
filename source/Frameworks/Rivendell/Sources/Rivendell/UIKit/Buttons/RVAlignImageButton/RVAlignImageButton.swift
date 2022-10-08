@@ -228,13 +228,13 @@ public class RVAlignImageButton: BaseControl {
         guard let _ = configuration.onTap else { return }
         if isHighlighted {
             UIView.animate(withDuration: 0.15) { [weak self] in
-                guard let self = self else { return }
+                guard let self else { return }
                 self.transform = self.transform.scaledBy(x: 0.95, y: 0.95)
                 self.isUserInteractionEnabled = false
             }
         } else {
             UIView.animate(withDuration: 0.1) { [weak self] in
-                guard let self = self else { return }
+                guard let self else { return }
                 self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
                 self.isUserInteractionEnabled = true
             }

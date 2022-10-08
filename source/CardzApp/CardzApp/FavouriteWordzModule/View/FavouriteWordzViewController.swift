@@ -50,7 +50,7 @@ final class FavouriteWordzViewController: UIViewController {
                                     .with(isFullyRounded: true)
                                     .with(imageAspectRation: 0.5)
                                     .with(onTap: { [weak self] button in
-            guard let self = self else { return }
+            guard let self else { return }
             guard button.alpha != 0.0 else { return }
             UIApplication.hapticLight()
             if self.viewModel.prefix(Constants.maxCountWordz).count < 5 {
@@ -75,7 +75,7 @@ final class FavouriteWordzViewController: UIViewController {
                                     .with(isFullyRounded: true)
                                     .with(imageAspectRation: 0.5)
                                     .with(onTap: { [weak self] button in
-            guard let self = self else { return }
+            guard let self else { return }
             guard button.alpha != 0.0 else { return }
             UIApplication.hapticLight()
             if self.viewModel.prefix(Constants.maxCountWordz).count < 5 {
@@ -100,7 +100,7 @@ final class FavouriteWordzViewController: UIViewController {
                                     .with(isFullyRounded: true)
                                     .with(imageAspectRation: 0.5)
                                     .with(onTap: { [weak self] button in
-            guard let self = self else { return }
+            guard let self else { return }
             guard button.alpha != 0.0 else { return }
             UIApplication.hapticLight()
             if self.viewModel.prefix(Constants.maxCountWordz).count < 5 {
@@ -125,7 +125,7 @@ final class FavouriteWordzViewController: UIViewController {
             resetHeaderState()
             let animation: UITableView.RowAnimation = isHeaderVisible ? .bottom : .top
             UIView.animate(withDuration: 0.3) { [weak self] in
-                guard let self = self else { return }
+                guard let self else { return }
                 self.tableView.performBatchUpdates {
                     self.tableView.reloadSections(IndexSet(integer: 0), with: animation)
                 }
@@ -243,7 +243,7 @@ final class FavouriteWordzViewController: UIViewController {
     
     private func updateVisabilityLabel(isHidden: Bool) {
         UIView.animate(withDuration: 0.3) { [weak self] in
-            guard let self = self else { return }
+            guard let self else { return }
             self.view.sendSubviewToBack(self.emptyLabel)
             self.emptyLabel.alpha = isHidden ? 1.0 : 0.0
             self.playButton.isHidden = isHidden
@@ -265,7 +265,7 @@ final class FavouriteWordzViewController: UIViewController {
             guard playButton.alpha > 0.0 else { return }
             playButton.isUserInteractionEnabled = false
             UIView.animate(withDuration: 0.3) { [weak self] in
-                guard let self = self else { return }
+                guard let self else { return }
                 self.playButton.alpha = 0.0
                 self.playButton.transform = .init(translationX: 40.0, y: 0.0)
                 self.playReverseButton.alpha = 0.0
@@ -277,7 +277,7 @@ final class FavouriteWordzViewController: UIViewController {
             guard playButton.alpha < 1.0 else { return }
             playButton.isUserInteractionEnabled = true
             UIView.animate(withDuration: 0.3) { [weak self] in
-                guard let self = self else { return }
+                guard let self else { return }
                 self.playButton.alpha = 1.0
                 self.playButton.transform = .init(translationX: 0.0, y: 0.0)
                 self.playReverseButton.alpha = 1.0
@@ -309,9 +309,9 @@ final class FavouriteWordzViewController: UIViewController {
             RLogDebug(message: "Not resetting static", subsystem: String(describing: self))
         }),
                                                              .init(title: "Yep", onSwipeClosure: { [weak self] in
-            guard let self = self else { return }
+            guard let self else { return }
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
-                guard let self = self else { return }
+                guard let self else { return }
                 self.output.resetWordsStat()
             }
         })])))
@@ -325,7 +325,7 @@ final class FavouriteWordzViewController: UIViewController {
         let module = goJourney(.alert(model: .init(title: "Add more words to your favorite category",
                                                    secondTitle: "You need at least 5 words in the favourite category",
                                                    actions: [.init(title: "Ok", onSwipeClosure: { [weak self] in
-            guard let self = self else { return }
+            guard let self else { return }
             RLogDebug(message: "Ok, need more words", subsystem: String(describing: self))
         })])))
         
@@ -400,7 +400,7 @@ extension FavouriteWordzViewController: UITableViewDataSource {
     
     private func makeDeleteContextualAction(forRowAt indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .destructive, title: "Delete") { [weak self] (action, swipeButtonView, completion) in
-            guard let self = self else { return }
+            guard let self else { return }
             UIApplication.hapticLight()
             self.output.deleteAt(index: indexPath.row)
         }
@@ -421,8 +421,8 @@ extension FavouriteWordzViewController: UITableViewDataSource {
             header.setTextFieldDelegate(delegate: self)
             header.configure(configuration: .init()
                                 .withOnTap({ [weak self] word, tranlsates in
-                guard let self = self else { return }
-                guard let word = word,
+                guard let self else { return }
+                guard let word,
                       !tranlsates.isEmpty else {
                           self.showErrorInputAlert()
                           return
@@ -435,7 +435,7 @@ extension FavouriteWordzViewController: UITableViewDataSource {
                     type: .favourite,
                     languageVersion: .unknown)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) { [weak self] in
-                    guard let self = self else { return }
+                    guard let self else { return }
                     self.output.refetchData()
                     self.resetHeaderState()
                 }

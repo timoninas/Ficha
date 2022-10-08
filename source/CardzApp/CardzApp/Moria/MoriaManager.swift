@@ -46,7 +46,7 @@ public class MoriaManager {
     private var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: Constants.xcdatamodel)
         container.loadPersistentStores { _, error in
-            if let error = error {
+            if let error {
                 RLogError(error: error)
                 fatalError("Failed: \(String(describing: error))")
             }
@@ -167,7 +167,7 @@ public class MoriaManager {
         do {
             var wordz = try context.fetch(fetchRequest)
             wordz = wordz.filter{
-                if let typeTranslation = typeTranslation {
+                if let typeTranslation {
                     return $0.type == type.rawValue
                     && $0.languageVersion == typeTranslation.rawValue
                 } else {
@@ -197,7 +197,7 @@ public class MoriaManager {
         do {
             var wordz = try context.fetch(fetchRequest)
             wordz = wordz.filter{ [weak self] in
-                guard let self = self else { return false }
+                guard let self else { return false }
                 return $0.wordz == word
                 && $0.translations == self.arrayToDBValue(translations)
             }

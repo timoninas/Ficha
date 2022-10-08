@@ -157,7 +157,7 @@ public final class AddFavouriteHeaderView: UIView {
         contentView.addSubview(button)
         button.configuration = button.configuration
             .with(onTap: { [weak self] _ in
-                guard let self = self else { return }
+                guard let self else { return }
                 var text: String?
                 if let fieldText = self.wordTextField.text, !fieldText.isEmpty {
                     text = fieldText
@@ -240,7 +240,7 @@ public final class AddFavouriteHeaderView: UIView {
     /// - Parameter completion: Closure that react hiding showing header.
     public func hide(completion: @escaping () -> Void) {
         UIView.animate(withDuration: 0.3) { [weak self] in
-            guard let self = self else { return }
+            guard let self else { return }
             self.contentView.alpha = 0.0
             self.isVisible = false
         } completion: { _ in
@@ -252,7 +252,7 @@ public final class AddFavouriteHeaderView: UIView {
     /// - Parameter completion: Closure that react after showing header.
     public func show(completion: @escaping () -> Void) {
         UIView.animate(withDuration: 0.3) { [weak self] in
-            guard let self = self else { return }
+            guard let self else { return }
             self.contentView.alpha = 1.0
             self.isVisible = true
         } completion: { _ in

@@ -126,7 +126,7 @@ public class OnboardingCardView: BaseCardView {
     
     func setupOnTap() {
         internalOnTap = { [weak self] in
-            guard let self = self else { return }
+            guard let self else { return }
             guard self.configuration.flippedImage != nil else { return }
             let options: UIView.AnimationOptions
             

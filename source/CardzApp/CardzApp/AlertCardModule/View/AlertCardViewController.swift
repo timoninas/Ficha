@@ -34,7 +34,7 @@ final class AlertCardViewController: UIViewController {
                                                     .with(highlitedColor: .clear)
                                                     .with(imageColor: .nazgul)
                                                     .with(onTap: { [weak self] _ in
-        guard let self = self else { return }
+        guard let self else { return }
         UIApplication.hapticLight()
         self.dismiss(animated: true, completion: nil)
     }))
@@ -100,11 +100,11 @@ final class AlertCardViewController: UIViewController {
     
     private func addAlertCard() {
         alertCardView.onCardChangedPosition = { [weak self] _, _ in
-            guard let self = self else { return }
+            guard let self else { return }
             self.setUserInteractableToElements(isUserInteractible: false)
         }
         alertCardView.onCardEndChangedPosition = { [weak self] in
-            guard let self = self else { return }
+            guard let self else { return }
             self.setUserInteractableToElements(isUserInteractible: true)
         }
         
@@ -156,7 +156,7 @@ final class AlertCardViewController: UIViewController {
     }
     
     private func configureForModel() {
-        guard let viewModel = viewModel else { return }
+        guard let viewModel else { return }
         alertCardView.configuration = alertCardView.configuration
             .with(title: viewModel.title)
             .with(secondTitle: viewModel.secondTitle)
@@ -200,14 +200,14 @@ final class AlertCardViewController: UIViewController {
                 .with(titleConfig: .visible(title: first.title, color: .olivie))
             
             alertCardView.onLeftSwipe = { [weak self] in
-                guard let self = self else { return }
+                guard let self else { return }
                 first.onSwipeClosure?()
                 UIApplication.hapticLight()
                 self.dismiss(animated: true, completion: nil)
             }
             
             alertCardView.onRightSwipe = { [weak self] in
-                guard let self = self else { return }
+                guard let self else { return }
                 second.onSwipeClosure?()
                 UIApplication.hapticLight()
                 self.dismiss(animated: true, completion: nil)

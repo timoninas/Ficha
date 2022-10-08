@@ -207,17 +207,17 @@ public class ResultLearnCardView: BaseCardView {
     
     private func updateData() {
         UIView.transition(with: self.knowLabel, duration: 0.1, options: .transitionCrossDissolve) { [weak self] in
-            guard let self = self else { return }
+            guard let self else { return }
             self.knowLabel.text = "\(self.configuration.knowCards) cards"
         }
         
         UIView.transition(with: self.dontKnowLabel, duration: 0.1, options: .transitionCrossDissolve) { [weak self] in
-            guard let self = self else { return }
+            guard let self else { return }
             self.dontKnowLabel.text = "\(self.configuration.dontKnowCards) cards"
         }
         
         UIView.transition(with: self.favouriteLabel, duration: 0.1, options: .transitionCrossDissolve) { [weak self] in
-            guard let self = self else { return }
+            guard let self else { return }
             self.favouriteLabel.text = "\(self.configuration.favouritesCards) cards"
         }
     }

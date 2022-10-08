@@ -41,7 +41,7 @@ final class OnboardingUserViewController: UIViewController {
                                                     .with(highlitedColor: .clear)
                                                     .with(imageColor: .nazgul)
                                                     .with(onTap: { [weak self] _ in
-        guard let self = self else { return }
+        guard let self else { return }
         UIApplication.hapticLight()
         self.dismiss(animated: true, completion: nil)
     }))
@@ -100,7 +100,7 @@ final class OnboardingUserViewController: UIViewController {
     
     private func renderViewModelCards() {
         viewModel.cards.enumerated().forEach { [weak self] idx, model in
-            guard let self = self else { return }
+            guard let self else { return }
             let card = OnboardingCardView(
                 swipeDirections: [.top, .bottom, .left, .right],
                 configuration: .init()
@@ -114,7 +114,7 @@ final class OnboardingUserViewController: UIViewController {
             card.renderAsCard(view: view)
             
             card.onEverySwipe { [weak self] in
-                guard let self = self else { return }
+                guard let self else { return }
                 self.cardSwiped(isNeedToRemove: true)
             }
             

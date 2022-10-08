@@ -307,7 +307,7 @@ public class LearnWordzCardView: BaseCardView {
         var previousLabel: UILabel?
         
         wordzExampleLabels.forEach { label in
-            if let previousLabel = previousLabel {
+            if let previousLabel {
                 storedConstraints += [
                     label.topAnchor.constraint(equalTo: previousLabel.bottomAnchor, constant: Constants.labelBetweenOffset),
                     label.rightAnchor.constraint(equalTo: exampleLabelContainer.rightAnchor),
@@ -358,7 +358,7 @@ public class LearnWordzCardView: BaseCardView {
         var previousLabel: UILabel?
         
         translationExampleLabels.enumerated().forEach { idx, label in
-            if let previousLabel = previousLabel {
+            if let previousLabel {
                 storedConstraints += [
                     label.topAnchor.constraint(equalTo: previousLabel.bottomAnchor, constant: Constants.labelBetweenOffset),
                     label.rightAnchor.constraint(equalTo: translationsLabelContainer.rightAnchor),
@@ -391,7 +391,7 @@ public class LearnWordzCardView: BaseCardView {
     
     func setupOnTap() {
         internalOnTap = { [weak self] in
-            guard let self = self else { return }
+            guard let self else { return }
             guard !self.configuration.translations.isEmpty else { return }
             let state: Configuration.State
             let options: UIView.AnimationOptions
@@ -409,7 +409,7 @@ public class LearnWordzCardView: BaseCardView {
                 with: self, duration: 0.3,
                 options: options,
                 animations: { [weak self] in
-                    guard let self = self else { return }
+                    guard let self else { return }
                     self.updateVisabilityState()
                 },
                 completion: nil

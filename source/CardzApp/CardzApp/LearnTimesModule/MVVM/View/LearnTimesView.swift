@@ -153,7 +153,7 @@ struct LearnTimesHeaderView : View {
     
     @ViewBuilder
     private func titleImage(image: Image?) -> some View {
-        if let image = image {
+        if let image {
             
                 image
                     .resizable()
@@ -308,7 +308,7 @@ struct CardDetailView : View {
     
     @ViewBuilder
     private func mainTitle(title: String?) -> some View {
-        if let title = title {
+        if let title {
             Text(title)
                 .foregroundColor(.nazgul)
                 .font(.system(size: 32.0, weight: .bold, design: .rounded))

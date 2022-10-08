@@ -142,7 +142,7 @@ final class DailyWordsViewController: UIViewController {
     
     private func addHeader() {
         header.onTap = { [weak self] in
-            guard let self = self else { return }
+            guard let self else { return }
             self.checkBoxDevScreen = true
         }
         scrollView.addSubview(header)
@@ -154,7 +154,7 @@ final class DailyWordsViewController: UIViewController {
     private func addPlayButton() {
         playButton.configuration = playButton.configuration
             .with(onTap: { [weak self] button in
-                guard let self = self else { return }
+                guard let self else { return }
                 guard button.alpha != 0.0 else { return }
                 UIApplication.hapticLight()
                 let module = goJourney(.learnCard(mode: .simpleMode, viewModel: self.viewModels.todayWords.map { self.viewModelToLearnWordzViewModel($0) }))
@@ -236,7 +236,7 @@ final class DailyWordsViewController: UIViewController {
     
     private func updateVisabilityButton(isHidden: Bool) {
         UIView.animate(withDuration: 0.3) { [weak self] in
-            guard let self = self else { return }
+            guard let self else { return }
             self.playButton.isHidden = isHidden
         }
     }
@@ -254,7 +254,7 @@ final class DailyWordsViewController: UIViewController {
     
     private func updateVisabilityBubbles(isHidden: Bool) {
         UIView.animate(withDuration: 0.45) { [weak self] in
-            guard let self = self else { return }
+            guard let self else { return }
             
             self.backView.alpha = isHidden ? 0.0 : 1.0
         }
@@ -275,7 +275,7 @@ extension DailyWordsViewController: DailyWordsViewInput {
     
     func showOnboardingModule(model: OnboardingModuleModel) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { [weak self] in
-            guard let self = self else { return }
+            guard let self else { return }
             let module = goJourney(.onboarding(model: model))
             self.present(module, animated: true, completion: nil)
         }
@@ -294,7 +294,7 @@ extension DailyWordsViewController: UIScrollViewDelegate {
             guard playButton.alpha > 0.0 else { return }
             playButton.isUserInteractionEnabled = false
             UIView.animate(withDuration: 0.3) { [weak self] in
-                guard let self = self else { return }
+                guard let self else { return }
                 self.playButton.alpha = 0.0
                 self.playButton.transform = .init(translationX: 20.0, y: 0.0)
             }
@@ -302,7 +302,7 @@ extension DailyWordsViewController: UIScrollViewDelegate {
             guard playButton.alpha < 1.0 else { return }
             playButton.isUserInteractionEnabled = true
             UIView.animate(withDuration: 0.3) { [weak self] in
-                guard let self = self else { return }
+                guard let self else { return }
                 self.playButton.alpha = 1.0
                 self.playButton.transform = .init(translationX: 0.0, y: 0.0)
             }
