@@ -36,7 +36,7 @@ final class LearnTimesModel: LearnTimesModelProtocol {
         }
         
         return array.map { dailyWord in
-            return LearnTimesViewModel.LearnWordsViewModel(title: dailyWord.title,
+            LearnTimesViewModel.LearnWordsViewModel(title: dailyWord.title,
                                                     transcription: dailyWord.transcription,
                                                     examples: dailyWord.examples)
         }

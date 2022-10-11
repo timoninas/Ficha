@@ -26,7 +26,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         ]
         #if DEBUG
         tabBarModules.append(.devDebug)
-        tabBarModules.append(.templateModule)
         #endif
         
         window?.windowScene = windowScene
