@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 public extension View {
     
     func onNavigation(_ action: @escaping () -> Void) -> some View {
