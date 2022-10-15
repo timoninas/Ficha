@@ -22,8 +22,8 @@ struct DetailWordView : View {
             TabView {
                 ForEach(items, id: \.self) { item in
                     DetailWordCardView(model: item)
-                        .frame(width: UIScreen.main.bounds.size.width - 32.0,
-                               height: UIScreen.main.bounds.size.height - 32.0)
+                        .frame(width: UIScreen.main.bounds.size.width - 40.0,
+                               height: UIScreen.main.bounds.size.height - 40.0)
                 }
             }
             .tabViewStyle(PageTabViewStyle())
@@ -62,14 +62,12 @@ struct Segment {
     
     struct ViewModel: Hashable {
         let title: String
-        let transcription: String?
-        let examples: [String]
+        let translations: [String]
         
         static func adapt(_ model:  LearnTimesViewModel.LearnWordsViewModel) -> ViewModel {
             ViewModel(
                 title: model.title,
-                transcription: model.transcription,
-                examples: model.examples
+                translations: model.translations
             )
         }
     }
@@ -79,6 +77,10 @@ struct Segment {
         case title(TitleBlock)
         
         case transcription(TranscriptionBlock)
+        
+        case translations(TranslationsBlock)
+        
+        case tag(TagBlock)
         
         case examples(ExamplesBlock)
         
@@ -101,8 +103,12 @@ struct Segment {
                 return 0
             case .transcription:
                 return 50
-            case .examples:
+            case .tag:
                 return 100
+            case .translations:
+                return 150
+            case .examples:
+                return 200
             }
         }
     }
@@ -116,6 +122,18 @@ struct Segment {
     struct TranscriptionBlock: Hashable, Equatable {
         
         let transcription: String
+        
+    }
+    
+    struct TagBlock: Hashable, Equatable {
+        
+        let tag: String
+        
+    }
+    
+    struct TranslationsBlock: Hashable, Equatable {
+        
+        let translations: [String]
         
     }
     
@@ -140,6 +158,10 @@ struct CardDetailChooser: View {
                 buildTranscription(block)
             case .examples(let block):
                 buildExamples(block)
+            case .tag(let block):
+                buildTag(block)
+            case .translations(let block):
+                buildTranslations(block)
             }
         }
     }
@@ -147,8 +169,8 @@ struct CardDetailChooser: View {
     @ViewBuilder
     private func buildTitle(_ block: Segment.TitleBlock) -> some View {
         Text(block.title)
-            .foregroundColor(.nazgul)
-            .font(.system(size: 32.0, weight: .bold, design: .rounded))
+            .font(.system(size: 72.0, weight: .bold, design: .rounded))
+            .foregroundColor(.mysteryShack)
             .multilineTextAlignment(.center)
     }
     
@@ -156,22 +178,73 @@ struct CardDetailChooser: View {
     private func buildTranscription(_ block: Segment.TranscriptionBlock) -> some View {
         Text(block.transcription)
             .foregroundColor(.nazgul)
-            .font(.system(size: 32.0, weight: .bold, design: .rounded))
+            .font(.system(size: 32.0, weight: .semibold, design: .rounded))
             .multilineTextAlignment(.center)
     }
     
     @ViewBuilder
     private func buildExamples(_ block: Segment.ExamplesBlock) -> some View {
-        ForEach(block.examples, id: \.self) {
-            Text($0)
-                .font(.system(size: 20.0, design: .rounded))
-                .multilineTextAlignment(.leading)
-                .foregroundColor(.nazgul)
-                .padding(EdgeInsets(top: 8.0,
-                                    leading: 16.0,
-                                    bottom: 0.0,
-                                    trailing: 16.0))
+        VStack(spacing: 0.0) {
+            HStack {
+                Text("Examples")
+                    .foregroundColor(.nazgul)
+                    .font(.system(size: 24.0, weight: .bold, design: .rounded))
+                Spacer()
+            }
+            Spacer()
+                .frame(height: 8.0)
+            ForEach(block.examples, id: \.self) { example in
+                HStack(spacing: 0.0) {
+                    Text(example)
+                        .font(.system(size: 18.0, weight: .regular, design: .rounded))
+                        .multilineTextAlignment(.leading)
+                        .foregroundColor(.nazgul)
+                        .lineSpacing(3.0)
+                    Spacer()
+                }
+                .padding(.bottom(10.0))
+            }
         }
+        .padding(.top(10.0).bottom(10.0))
+    }
+    
+    @ViewBuilder
+    private func buildTag(_ block: Segment.TagBlock) -> some View {
+        VStack(spacing: 0.0) {
+            Text(block.tag)
+                .padding(EdgeInsets.top(2.0).bottom(2.0).leading(10.0).trailing(10.0))
+                .font(.system(size: 15.0, design: .rounded))
+                .foregroundColor(.whisper)
+                .multilineTextAlignment(.center)
+                .background(Color.mysteryShack.opacity(0.8))
+                .cornerRadius(13.0)
+        }
+        .padding(.top(12.0).bottom(12.0))
+    }
+    
+    @ViewBuilder
+    private func buildTranslations(_ block: Segment.TranslationsBlock) -> some View {
+        VStack(spacing: 0.0) {
+            HStack {
+                Text("Translation")
+                    .foregroundColor(.nazgul)
+                    .font(.system(size: 24.0, weight: .bold, design: .rounded))
+                Spacer()
+            }
+            Spacer()
+                .frame(height: 8.0)
+            ForEach(block.translations, id: \.self) { translation in
+                HStack {
+                    Text(translation)
+                        .foregroundColor(.nazgul)
+                        .font(.system(size: 18.0, weight: .regular, design: .rounded))
+                    Spacer()
+                }
+                .padding(.bottom(10.0))
+                
+            }
+        }
+        Divider()
     }
     
 }
@@ -196,9 +269,9 @@ struct DetailWordCardView : View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             Spacer()
-                .frame(height: 100.0)
+                .frame(height: UIApplication.shared.statusBarFrame.height)
             HStack {
-                LazyVStack {
+                VStack(spacing: 0.0) {
                     CardDetailChooser(segments: detailWordCardVewModel.segments)
                 }
             }

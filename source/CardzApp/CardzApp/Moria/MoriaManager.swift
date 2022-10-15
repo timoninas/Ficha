@@ -191,31 +191,35 @@ public class MoriaManager {
         return resultArray
     }
     
+    private let lockQueue = DispatchQueue(label: "bank.lock.queue")
+    
     public func getWordz(word: String, translations: [String]) -> [WordzModelDB] {
-        let fetchRequest = NSFetchRequest<WordzEntity>(entityName: Entitites.wordz)
-        let resultArray: [WordzModelDB]
-        do {
-            var wordz = try context.fetch(fetchRequest)
-            wordz = wordz.filter{ [weak self] in
-                guard let self else { return false }
-                return $0.wordz == word
-                && $0.translations == self.arrayToDBValue(translations)
+        lockQueue.sync {
+            let fetchRequest = NSFetchRequest<WordzEntity>(entityName: Entitites.wordz)
+            let resultArray: [WordzModelDB]
+            do {
+                var wordz = try context.fetch(fetchRequest)
+                wordz = wordz.filter{ [weak self] in
+                    guard let self else { return false }
+                    return $0.wordz == word
+                    && $0.translations == self.arrayToDBValue(translations)
+                }
+                resultArray = wordz.map {
+                    WordzModelDB(
+                        wordz: $0.wordz ?? "",
+                        transcription: $0.transcription,
+                        examples: DBValueToArray($0.examples ?? ""),
+                        translations: DBValueToArray($0.translations ?? ""),
+                        type: (.init(rawValue: $0.type ?? "") ?? .unknown),
+                        languageVersion: .init(rawValue: $0.languageVersion ?? "") ?? .unknown,
+                        displayedCount: Int64($0.displayedCount)
+                    )
+                }
+            } catch {
+                resultArray = []
             }
-            resultArray = wordz.map {
-                WordzModelDB(
-                    wordz: $0.wordz ?? "",
-                    transcription: $0.transcription,
-                    examples: DBValueToArray($0.examples ?? ""),
-                    translations: DBValueToArray($0.translations ?? ""),
-                    type: (.init(rawValue: $0.type ?? "") ?? .unknown),
-                    languageVersion: .init(rawValue: $0.languageVersion ?? "") ?? .unknown,
-                    displayedCount: Int64($0.displayedCount)
-                )
-            }
-        } catch {
-            resultArray = []
+            return resultArray
         }
-        return resultArray
     }
     
     public func deleteWordz(with wordz: String, translations: [String], type: ArkenstoneTypeWord) {

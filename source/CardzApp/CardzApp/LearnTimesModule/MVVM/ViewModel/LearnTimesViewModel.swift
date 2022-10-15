@@ -35,13 +35,16 @@ extension LearnTimesViewModel {
         var id = UUID()
         public var title : String
         public var transcription: String?
+        public var translations: [String]
         public var examples: [String]
         
         init(title: String,
              transcription: String?,
+             translations: [String] = [],
              examples: [String] = []) {
             self.title = title
             self.transcription = transcription
+            self.translations = translations
             self.examples = examples
         }
         

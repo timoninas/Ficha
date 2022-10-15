@@ -38,6 +38,7 @@ final class LearnTimesModel: LearnTimesModelProtocol {
         return array.map { dailyWord in
             LearnTimesViewModel.LearnWordsViewModel(title: dailyWord.title,
                                                     transcription: dailyWord.transcription,
+                                                    translations: dailyWord.translations,
                                                     examples: dailyWord.examples)
         }
     }

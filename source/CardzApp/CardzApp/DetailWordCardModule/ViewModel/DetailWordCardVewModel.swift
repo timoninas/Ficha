@@ -5,6 +5,7 @@
 //  Created by Anton Timonin on 08.10.2022.
 //
 
+import Foundation
 import Combine
 
 class DetailWordCardVewModel : ObservableObject, Identifiable {
@@ -18,7 +19,11 @@ class DetailWordCardVewModel : ObservableObject, Identifiable {
     }
     
     public func loadModel(viewModel: Segment.ViewModel) {
-        segments = model.fetchSegments(viewModel: viewModel)
+        self.model.fetchSegments(viewModel: viewModel, completion: { [weak self] segments in
+            guard let self = self else { return }
+            guard self.segments != segments else { return }
+            self.segments = segments
+        })
     }
     
 }
