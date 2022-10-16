@@ -31,6 +31,16 @@ struct LearnTimesView : View {
             } content: { item in
                 DetailWordView(selectedItem: Segment.ViewModel.adapt(item), items: learnTimesViewModel.wordz.map { Segment.ViewModel.adapt($0) })
             }
+            .fullScreenCover(isPresented: $learnTimesViewModel.isPresentedOnboarding) {
+                return OnboardingUserView(model: .init(
+                    onboardingModels: [
+                        .init(image: .onboarding3, flippedImage: .onboarding4, title: "To see the translation, tap on the card"),
+                        .init(image: .onboarding2, title: "Swipe the cards in different directions"),
+                        .init(image: .onboarding1, title: "Swipe these cards!")
+                    ]
+                ))
+                .background(Color.gendalf)
+            }
 
         }
         .onAppear {

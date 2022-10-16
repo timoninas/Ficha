@@ -5,8 +5,27 @@
 //  Created by Антон Тимонин on 28.12.2021.
 //
 
-import UIKit
 import Rivendell
+import SwiftUI
+import UIKit
+
+struct OnboardingUserView: UIViewControllerRepresentable {
+    typealias UIViewControllerType = OnboardingUserViewController
+    
+    private var model: OnboardingModuleModel
+    
+    init(model: OnboardingModuleModel) {
+        self.model = model
+    }
+    
+    func makeUIViewController(context: Context) -> UIViewControllerType {
+        OnboardingUserBuilder.build(model: self.model)
+    }
+    
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+        // Updates the state of the specified view controller with new information from SwiftUI.
+    }
+}
 
 final class OnboardingUserViewController: UIViewController {
     

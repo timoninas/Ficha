@@ -14,6 +14,8 @@ class LearnTimesViewModel : ObservableObject, Identifiable {
     
     @Published var headerModel: HeaderViewModel = .init()
     
+    @Published var isPresentedOnboarding: Bool = false
+    
     public let id = UUID()
     
     private let model: LearnTimesModelProtocol
@@ -25,6 +27,7 @@ class LearnTimesViewModel : ObservableObject, Identifiable {
     public func loadModel() {
         wordz = model.fetchWords()
         headerModel = HeaderViewModel(title: "Daily words", image: .revolvetra)
+        isPresentedOnboarding = model.isNeedToPresentOnboarding()
     }
     
 }

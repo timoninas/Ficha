@@ -6,6 +6,7 @@
 //
 
 import RevolvetraUserDefaults
+import RevolvetraKnowledge
 import SwiftUI
 import Erebor
 
@@ -13,12 +14,22 @@ protocol LearnTimesModelProtocol {
     
     func fetchWords() -> [LearnTimesViewModel.LearnWordsViewModel]
     
+    func isNeedToPresentOnboarding() -> Bool
+    
 }
 
 final class LearnTimesModel: LearnTimesModelProtocol {
     
     func fetchWords() -> [LearnTimesViewModel.LearnWordsViewModel] {
         fetchData()
+    }
+    
+    func isNeedToPresentOnboarding() -> Bool {
+        if !KnowledgeProfile.isOnborded {
+            KnowledgeProfile.isOnborded = true
+            return true
+        }
+        return false
     }
     
     private func fetchData() -> [LearnTimesViewModel.LearnWordsViewModel] {
@@ -79,6 +90,10 @@ final class MockLearnTimesModel: LearnTimesModelProtocol {
             LearnTimesViewModel.LearnWordsViewModel(title: "rejkngjkwegjkner", transcription: "[o0o]", examples: []),
             LearnTimesViewModel.LearnWordsViewModel(title: "Ololoolo", transcription: "[123]", examples: ["", "", ""])
         ]
+    }
+    
+    func isNeedToPresentOnboarding() -> Bool {
+        false
     }
     
 }
