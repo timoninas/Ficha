@@ -27,7 +27,7 @@ struct LearnTimesView : View {
                 self.listWithWords()
             }
             .fullScreenCover(item: $contentItem) {
-                print("keke")
+                #warning("TODO: Add action for opening screen")
             } content: { item in
                 DetailWordView(selectedItem: Segment.ViewModel.adapt(item), items: learnTimesViewModel.wordz.map { Segment.ViewModel.adapt($0) })
             }

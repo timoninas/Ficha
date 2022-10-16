@@ -9,6 +9,16 @@ import UIKit
 
 public extension UIApplication {
     
+    static var statusBarHeight: CGFloat {
+        let window = UIApplication
+            .shared
+            .connectedScenes
+            .flatMap { ($0 as? UIWindowScene)?.windows ?? [] }
+            .first { $0.isKeyWindow }
+        let height = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+        return height
+    }
+    
     static func hapticLight() {
         let generator = UIImpactFeedbackGenerator(style: .light)
         generator.impactOccurred()

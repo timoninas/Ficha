@@ -20,11 +20,11 @@ struct DetailWordView : View {
     var body: some View {
         ZStack {
             TabView {
-                ForEach(items, id: \.self) { item in
-                    DetailWordCardView(model: item)
+//                ForEach(items, id: \.self) { item in
+                    DetailWordCardView(model: selectedItem)
                         .frame(width: UIScreen.main.bounds.size.width - 40.0,
                                height: UIScreen.main.bounds.size.height - 40.0)
-                }
+//                }
             }
             .tabViewStyle(PageTabViewStyle())
             .tabViewStyle(.page(indexDisplayMode: .never))
@@ -269,7 +269,7 @@ struct DetailWordCardView : View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             Spacer()
-                .frame(height: UIApplication.shared.statusBarFrame.height)
+                .frame(height: UIApplication.statusBarHeight)
             HStack {
                 VStack(spacing: 0.0) {
                     CardDetailChooser(segments: detailWordCardVewModel.segments)
