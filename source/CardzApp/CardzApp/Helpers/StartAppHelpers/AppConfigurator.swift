@@ -5,6 +5,7 @@
 //  Created by Антон Тимонин on 12.01.2022.
 //
 
+import Rivendell
 import UIKit
 
 protocol AppConfiguratorProtocol {
@@ -91,7 +92,7 @@ final class AppConfigurator {
             controllers.append(tabBarType.buildModule())
         }
         
-        let tabBar = setupTabBarAppearance(tabBar: UITabBarController())
+        let tabBar = setupTabBarAppearance(tabBar: AnimateTabBarController())
         tabBar.setViewControllers(controllers, animated: true)
         #if DEBUG
         tabBar.selectedIndex = 0
@@ -111,7 +112,7 @@ final class AppConfigurator {
         tabBar.tabBar.isTranslucent = true
         
         let bounds = tabBar.tabBar.bounds as CGRect
-        let visualEffectView = UIView() //UIVisualEffectView(effect: UIBlurEffect(style: .light))
+        let visualEffectView = UIView()
         visualEffectView.frame = bounds
         visualEffectView.backgroundColor = .gendalf
         visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
