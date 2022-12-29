@@ -3,4 +3,3 @@
 #warning("TODO: Reset stats in words")
 #warning("TODO: Learn english times")
 #warning("TODO: Cards with emoji")
-#warning("TODO: Rename proj to Ficha")

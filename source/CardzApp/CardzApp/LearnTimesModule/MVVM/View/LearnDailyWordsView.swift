@@ -184,11 +184,11 @@ struct LearnDailyWordsView : View {
                         .background(Color.gendalf)
                     }
                 Spacer()
-                    .frame(width: 10.0)
+                    .frame(width: 14.0)
             }
             
             Spacer()
-                .frame(height: 5.0)
+                .frame(height: 8.0)
         }
         
     }

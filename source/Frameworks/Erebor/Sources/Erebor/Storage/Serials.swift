@@ -534,6 +534,55 @@ func getGoldSerials() -> BagOfGoldWords {
             ],
             translations: ["Продюсер"]
         ),
+        .init(
+            word: "Aesir",
+            transcription: "[ˈiːsɪə]",
+            examples: [
+                "All the friends and companions of my youth are dead and feasting and drinking with the Aesir in the halls of the gods!",
+                "Lord Freyr, Lord of the Aesir, God of K'Tau, grant us an audience that we may share your wisdom",
+                "Lord Freyr, Lord of the Aesir..."
+            ],
+            translations: ["Озиры", "Сонм богов"]
+        ),
+        .init(
+            word: "Preview",
+            transcription: "[ˈpriːvjuː]",
+            examples: [
+                "Two weeks after that, we held the first sneak preview at a theater out in the valley",
+                "Hope you like what you see, 'cause this sneak preview is gonna cost you your life",
+                "Before a preview of next week's sermon I have some announcements to make"
+            ],
+            translations: ["Предварительный просмотр", "Просмотр", "Анонс"]
+        ),
+        .init(
+            word: "Remake",
+            transcription: "[ˈriːmeɪk]",
+            examples: [
+                "The world proletariat, the remaking of the universe-that's something else, that I understand",
+                "Richard Hammond is doing a remake of The Poseidon Adventure",
+            ],
+            translations: ["Переделка", "Ремейк :)"]
+        ),
+        .init(
+            word: "Clone",
+            transcription: "[kləʊn]",
+            examples: [
+                "Maybe splicing some genes, clone a sheep, perhaps grow a human ear on a mouse's back?",
+                "When the hero is confronted with the spectral clone, as it were, of his deceased wife",
+                "And we cloned your phone so we'll be able to read your texts in real time",
+            ],
+            translations: ["Клон", "Двойник", "Копия"]
+        ),
+        .init(
+            word: "Scripts",
+            transcription: "[skrɪpt]",
+            examples: [
+                "I don't know if you realize, but the Latin script, the Latin alphabet that we use has its origins thousands of years ago, near the Nile River",
+                "It was addressed to her in a small, feminine script that she did not recognize",
+                "They will, eventually, when I get around to reading the script"
+            ],
+            translations: ["Файлы сценариев", "Скрипт", "Сценарий"]
+        ),
     ])
     
     let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .serials, typeTranslation: .enToRu)

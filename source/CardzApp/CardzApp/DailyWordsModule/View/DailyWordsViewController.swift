@@ -61,12 +61,12 @@ final class DailyWordsViewController: UIViewController {
     
     private let playButton: RVImageButton = {
         let button = RVImageButton(configuration: .init()
-                                    .with(backgroundColor: .galadriel)
-                                    .with(highlitedColor: .galadriel.withAlphaComponent(0.75))
-                                    .with(image: .playGameIcon)
-                                    .with(imageColor: .mysteryShack)
-                                    .with(isFullyRounded: true)
-                                    .with(imageAspectRation: 0.5))
+            .with(backgroundColor: .galadriel)
+            .with(highlitedColor: .galadriel.withAlphaComponent(0.75))
+            .with(image: .playGameIcon)
+            .with(imageColor: .mysteryShack)
+            .with(isFullyRounded: true)
+            .with(imageAspectRation: 0.5))
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -188,8 +188,8 @@ final class DailyWordsViewController: UIViewController {
         var previousView: TodayWordsView?
         for (idx, viewModel) in viewModels.todayWords.enumerated() {
             let todayView = TodayWordsView(configuration: .init()
-                                            .with(title: viewModel.title)
-                                            .with(subtitles: viewModel.subtitles))
+                .with(title: viewModel.title)
+                .with(subtitles: viewModel.subtitles))
             scrollView.addSubview(todayView)
             wordsView.append(todayView)
             if idx == 0 {
@@ -242,7 +242,7 @@ final class DailyWordsViewController: UIViewController {
     }
     
     private func renderContent(isAnimated: Bool) {
-        #warning("TODO: Добавить нормальную анимацию появления коллекции.")
+#warning("TODO: Добавить нормальную анимацию появления коллекции.")
         if isAnimated {
             renderTodayViews()
             renderHeights()
