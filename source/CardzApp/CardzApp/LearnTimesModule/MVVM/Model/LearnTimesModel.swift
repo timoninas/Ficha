@@ -47,10 +47,14 @@ final class LearnTimesModel: LearnTimesModelProtocol {
         }
         
         return array.map { dailyWord in
-            LearnTimesViewModel.LearnWordsViewModel(title: dailyWord.title,
-                                                    transcription: dailyWord.transcription,
-                                                    translations: dailyWord.translations,
-                                                    examples: dailyWord.examples)
+            LearnTimesViewModel.LearnWordsViewModel(
+                title: dailyWord.title,
+                transcription: dailyWord.transcription,
+                translations: dailyWord.translations,
+                examples: dailyWord.examples,
+                type: dailyWord.type,
+                languageVersion: dailyWord.languageVersion,
+                displayedCount: dailyWord.displayedCount)
         }
     }
     
@@ -86,9 +90,9 @@ final class MockLearnTimesModel: LearnTimesModelProtocol {
     
     func fetchWords() -> [LearnTimesViewModel.LearnWordsViewModel] {
         [
-            LearnTimesViewModel.LearnWordsViewModel(title: "1123", transcription: "[awefawe]", examples: ["Lol", "Kek", "Cheburek"]),
-            LearnTimesViewModel.LearnWordsViewModel(title: "rejkngjkwegjkner", transcription: "[o0o]", examples: []),
-            LearnTimesViewModel.LearnWordsViewModel(title: "Ololoolo", transcription: "[123]", examples: ["", "", ""])
+            LearnTimesViewModel.LearnWordsViewModel(title: "1123", transcription: "[awefawe]", examples: ["Lol", "Kek", "Cheburek"], languageVersion: "", displayedCount: 0),
+            LearnTimesViewModel.LearnWordsViewModel(title: "rejkngjkwegjkner", transcription: "[o0o]", examples: [], languageVersion: "", displayedCount: 0),
+            LearnTimesViewModel.LearnWordsViewModel(title: "Ololoolo", transcription: "[123]", examples: ["", "", ""], languageVersion: "", displayedCount: 0)
         ]
     }
     

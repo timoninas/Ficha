@@ -9,7 +9,7 @@ import UIKit
 
 public extension UIImage {
     
-    private static func imageFromBundle(named: String) -> UIImage? {
+    static func imageFromBundle(named: String) -> UIImage? {
         UIImage(named: named, in: .module, with: nil)
     }
     

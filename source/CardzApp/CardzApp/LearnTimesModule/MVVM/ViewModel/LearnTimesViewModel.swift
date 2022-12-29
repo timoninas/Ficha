@@ -40,15 +40,24 @@ extension LearnTimesViewModel {
         public var transcription: String?
         public var translations: [String]
         public var examples: [String]
+        public var type: String
+        public var languageVersion: String
+        public var displayedCount: Int64
         
         init(title: String,
              transcription: String?,
              translations: [String] = [],
-             examples: [String] = []) {
+             examples: [String] = [],
+             type: String = "",
+             languageVersion: String,
+             displayedCount: Int64) {
             self.title = title
             self.transcription = transcription
             self.translations = translations
             self.examples = examples
+            self.type = type
+            self.languageVersion = languageVersion
+            self.displayedCount = displayedCount
         }
         
     }

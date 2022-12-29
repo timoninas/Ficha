@@ -340,7 +340,7 @@ final class FavouriteWordzViewController: UIViewController {
         present(vc, animated: true, completion: nil)
     }
     
-    private func showLearnCardModule(mode: CardLearnMode) {
+    private func showLearnCardModule(mode: CardLearnModel) {
         let shuffled = viewModel
             .filter({ $0.displayedCount <= 2 })
             .shuffled()

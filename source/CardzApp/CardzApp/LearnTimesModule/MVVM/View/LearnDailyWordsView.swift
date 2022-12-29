@@ -5,15 +5,69 @@
 //  Created by Антон Тимонин on 02.02.2022.
 //
 
+import Rivendell
 import Hobbiton
 import SwiftUI
+import Lottie
+import Erebor
 
-struct LearnTimesView : View {
+struct LottieView: UIViewRepresentable {
+    
+    let lottieFile: String
+
+    func makeUIView(context: Context) -> some UIView {
+        let view = UIView(frame: .zero)
+
+        let animationView = LottieAnimationView(configuration: LottieConfiguration(renderingEngine: .coreAnimation))
+        animationView.animation = LottieAnimation.named(lottieFile)
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.play()
+
+        view.addSubview(animationView)
+
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        animationView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
+        animationView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+
+        return view
+    }
+
+    func updateUIView(_ uiView: UIViewType, context: Context) {
+
+    }
+}
+
+struct LearnCardWrappedView: UIViewControllerRepresentable {
+    typealias UIViewControllerType = LearnCardViewController
+    
+    private let model: CardLearnModel
+    private let viewModel: [LearnWordzCardView.ViewModel]
+    
+    public init(model: CardLearnModel, viewModel: [LearnWordzCardView.ViewModel]) {
+        self.model = model
+        self.viewModel = viewModel
+    }
+    
+    func makeUIViewController(context: Context) -> LearnCardViewController {
+        let module = goJourney(.learnCard(mode: model, viewModel: viewModel)) as? LearnCardViewController
+        return module!
+    }
+    
+    func updateUIViewController(_ uiViewController: LearnCardViewController, context: Context) {
+        // Updates the state of the specified view controller with new information from SwiftUI.
+    }
+}
+
+struct LearnDailyWordsView : View {
     
     @ObservedObject var learnTimesViewModel: LearnTimesViewModel
     
     @State
     var contentItem: LearnTimesViewModel.LearnWordsViewModel?
+    
+    @State
+    private var isLearnPresented = false
     
     init(learnTimesViewModel: LearnTimesViewModel = LearnTimesViewModel()) {
         self.learnTimesViewModel = learnTimesViewModel
@@ -32,7 +86,7 @@ struct LearnTimesView : View {
                 DetailWordView(selectedItem: Segment.ViewModel.adapt(item), items: learnTimesViewModel.wordz.map { Segment.ViewModel.adapt($0) })
             }
             .fullScreenCover(isPresented: $learnTimesViewModel.isPresentedOnboarding) {
-                return OnboardingUserView(model: .init(
+                OnboardingUserView(model: .init(
                     onboardingModels: [
                         .init(image: .onboarding3, flippedImage: .onboarding4, title: "To see the translation, tap on the card"),
                         .init(image: .onboarding2, title: "Swipe the cards in different directions"),
@@ -41,6 +95,8 @@ struct LearnTimesView : View {
                 ))
                 .background(Color.gendalf)
             }
+            
+            self.playButton()
 
         }
         .onAppear {
@@ -101,13 +157,49 @@ struct LearnTimesView : View {
         }
     }
     
+    @ViewBuilder
+    private func playButton() -> some View {
+        VStack(alignment: .center, spacing: 0.0) {
+            Spacer()
+            HStack(alignment: .center, spacing: 0.0) {
+                Spacer()
+                LottieView(lottieFile: "PlayButton")
+                    .frame(width: 100.0, height: 100.0)
+                    .onTapGesture {
+                        self.isLearnPresented = !self.isLearnPresented
+                        UIApplication.hapticSoft()
+                    }
+                    .fullScreenCover(isPresented: $isLearnPresented) {
+                        LearnCardWrappedView(
+                            model: .simpleMode,
+                            viewModel: learnTimesViewModel.wordz.map {
+                                .init(wordz: $0.title,
+                                      translations: $0.translations,
+                                      transcription: $0.transcription,
+                                      wordzExamples: $0.examples,
+                                      type: ArkenstoneTypeWord(rawValue: $0.type) ?? .unknown,
+                                      languageVersion: SilverTypeTranslation(rawValue: $0.languageVersion) ?? .unknown,
+                                      displayedCount: $0.displayedCount)
+                            })
+                        .background(Color.gendalf)
+                    }
+                Spacer()
+                    .frame(width: 10.0)
+            }
+            
+            Spacer()
+                .frame(height: 5.0)
+        }
+        
+    }
+    
 }
 
 struct PresentationWordWithTranslateView_Previews: PreviewProvider {
     
     static var previews: some View {
         Group {
-            LearnTimesView(learnTimesViewModel: LearnTimesViewModel(model: MockLearnTimesModel()))
+            LearnDailyWordsView(learnTimesViewModel: LearnTimesViewModel(model: MockLearnTimesModel()))
         }
     }
 

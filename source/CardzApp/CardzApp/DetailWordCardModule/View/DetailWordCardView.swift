@@ -20,15 +20,14 @@ struct DetailWordView : View {
     var body: some View {
         ZStack {
             TabView {
-//                ForEach(items, id: \.self) { item in
-                    DetailWordCardView(model: selectedItem)
+                ForEach(items, id: \.self) { item in
+                    DetailWordCardView(model: item)
                         .frame(width: UIScreen.main.bounds.size.width - 40.0,
                                height: UIScreen.main.bounds.size.height - 40.0)
-//                }
+                }
             }
             .tabViewStyle(PageTabViewStyle())
             .tabViewStyle(.page(indexDisplayMode: .never))
-            
             
             closeButtonView()
         }

@@ -65,7 +65,7 @@
 		778273B127AA56F500E5053D /* LearnTimesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778273B027AA56F500E5053D /* LearnTimesProtocols.swift */; };
 		778273B327AA5AD100E5053D /* LearnTimesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778273B227AA5AD100E5053D /* LearnTimesViewModel.swift */; };
 		778273B527AA5AE000E5053D /* LearnTimesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778273B427AA5AE000E5053D /* LearnTimesModel.swift */; };
-		778273B727AA5AEA00E5053D /* LearnTimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778273B627AA5AEA00E5053D /* LearnTimesView.swift */; };
+		778273B727AA5AEA00E5053D /* LearnDailyWordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778273B627AA5AEA00E5053D /* LearnDailyWordsView.swift */; };
 		778273BE27AAF6AF00E5053D /* TodayWidgetMediumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778273BD27AAF6AF00E5053D /* TodayWidgetMediumView.swift */; };
 		778273C127AB058F00E5053D /* SharedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778273C027AB058F00E5053D /* SharedView.swift */; };
 		77895BF927306ABC00A852BF /* Hobbiton in Frameworks */ = {isa = PBXBuildFile; productRef = 77895BF827306ABC00A852BF /* Hobbiton */; };
@@ -87,7 +87,9 @@
 		77FED85D27881DEA007D60E3 /* DevDebugProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FED85C27881DEA007D60E3 /* DevDebugProtocols.swift */; };
 		D42CC37927AF9D8B00335204 /* IndependentDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42CC37827AF9D8B00335204 /* IndependentDependencies.swift */; };
 		D42D2E7427B81B2C00374C58 /* DevDebugCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42D2E7327B81B2C00374C58 /* DevDebugCollectionViewCell.swift */; };
+		D42F7117295D743A00AB2054 /* PlayButton.json in Resources */ = {isa = PBXBuildFile; fileRef = D42F7116295D743A00AB2054 /* PlayButton.json */; };
 		D43E5F6928D5987200CFE3E5 /* Hobbiton in Frameworks */ = {isa = PBXBuildFile; productRef = D43E5F6828D5987200CFE3E5 /* Hobbiton */; };
+		D454C6A1295D7ABA00903B91 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D454C6A0295D7ABA00903B91 /* Lottie */; };
 		D45E6A0C28F1B5D200FDA697 /* DetailWordCardVewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45E6A0B28F1B5D200FDA697 /* DetailWordCardVewModel.swift */; };
 		D45E6A0F28F1B71900FDA697 /* DetailWordCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45E6A0E28F1B71900FDA697 /* DetailWordCardModel.swift */; };
 		D469CEC627B19FA800B47A14 /* LearnTimesMvvmBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D469CEC527B19FA800B47A14 /* LearnTimesMvvmBuilder.swift */; };
@@ -216,7 +218,7 @@
 		778273B027AA56F500E5053D /* LearnTimesProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTimesProtocols.swift; sourceTree = "<group>"; };
 		778273B227AA5AD100E5053D /* LearnTimesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTimesViewModel.swift; sourceTree = "<group>"; };
 		778273B427AA5AE000E5053D /* LearnTimesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTimesModel.swift; sourceTree = "<group>"; };
-		778273B627AA5AEA00E5053D /* LearnTimesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTimesView.swift; sourceTree = "<group>"; };
+		778273B627AA5AEA00E5053D /* LearnDailyWordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnDailyWordsView.swift; sourceTree = "<group>"; };
 		778273BD27AAF6AF00E5053D /* TodayWidgetMediumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWidgetMediumView.swift; sourceTree = "<group>"; };
 		778273C027AB058F00E5053D /* SharedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedView.swift; sourceTree = "<group>"; };
 		77A178DB273526F4005E520C /* EyeOfSauron */ = {isa = PBXFileReference; lastKnownFileType = folder; name = EyeOfSauron; path = ../Frameworks/EyeOfSauron; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 		77FED85C27881DEA007D60E3 /* DevDebugProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevDebugProtocols.swift; sourceTree = "<group>"; };
 		D42CC37827AF9D8B00335204 /* IndependentDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndependentDependencies.swift; sourceTree = "<group>"; };
 		D42D2E7327B81B2C00374C58 /* DevDebugCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevDebugCollectionViewCell.swift; sourceTree = "<group>"; };
+		D42F7116295D743A00AB2054 /* PlayButton.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PlayButton.json; sourceTree = "<group>"; };
 		D45E6A0B28F1B5D200FDA697 /* DetailWordCardVewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWordCardVewModel.swift; sourceTree = "<group>"; };
 		D45E6A0E28F1B71900FDA697 /* DetailWordCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWordCardModel.swift; sourceTree = "<group>"; };
 		D469CEC527B19FA800B47A14 /* LearnTimesMvvmBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTimesMvvmBuilder.swift; sourceTree = "<group>"; };
@@ -295,6 +298,7 @@
 				77A178DD273526FE005E520C /* EyeOfSauron in Frameworks */,
 				77DCC7A627711B0000F9572A /* Erebor in Frameworks */,
 				77F8FEF8277AD10F00B0B72E /* RevolvetraUserDefaults in Frameworks */,
+				D454C6A1295D7ABA00903B91 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,7 +662,7 @@
 			isa = PBXGroup;
 			children = (
 				D4866AB828F17DE8007A3D1E /* Supplementary */,
-				778273B627AA5AEA00E5053D /* LearnTimesView.swift */,
+				778273B627AA5AEA00E5053D /* LearnDailyWordsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -794,6 +798,14 @@
 			path = StartAppHelpers;
 			sourceTree = "<group>";
 		};
+		D42F7115295D742B00AB2054 /* LottieAnimations */ = {
+			isa = PBXGroup;
+			children = (
+				D42F7116295D743A00AB2054 /* PlayButton.json */,
+			);
+			name = LottieAnimations;
+			sourceTree = "<group>";
+		};
 		D45E6A0D28F1B5D500FDA697 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -898,6 +910,7 @@
 				D4866ABD28F18216007A3D1E /* DetailWordCardModule */,
 				D4F00D8A2718C3FB0079A860 /* Helpers */,
 				D4F00D5C2718C3860079A860 /* Assets.xcassets */,
+				D42F7115295D742B00AB2054 /* LottieAnimations */,
 				D4F00D5E2718C3860079A860 /* LaunchScreen.storyboard */,
 				D4F00D612718C3860079A860 /* Info.plist */,
 				D4F00D592718C3840079A860 /* CardzApp.xcdatamodeld */,
@@ -1043,6 +1056,7 @@
 				77F9EF78275D30C8008B1EB6 /* RevolvetraKnowledge */,
 				77DCC7A527711B0000F9572A /* Erebor */,
 				77F8FEF7277AD10F00B0B72E /* RevolvetraUserDefaults */,
+				D454C6A0295D7ABA00903B91 /* Lottie */,
 			);
 			productName = CardzApp;
 			productReference = D4F00D4D2718C3840079A860 /* CardzApp.app */;
@@ -1118,6 +1132,9 @@
 				Base,
 			);
 			mainGroup = D4F00D442718C3840079A860;
+			packageReferences = (
+				D454C69F295D7ABA00903B91 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = D4F00D4E2718C3840079A860 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1145,6 +1162,7 @@
 			files = (
 				D4F00D602718C3860079A860 /* LaunchScreen.storyboard in Resources */,
 				D4F00D5D2718C3860079A860 /* Assets.xcassets in Resources */,
+				D42F7117295D743A00AB2054 /* PlayButton.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1219,7 +1237,7 @@
 				77140796277ADAAB00B7E8D2 /* OnboardingModuleModel.swift in Sources */,
 				D4F00D5B2718C3840079A860 /* CardzApp.xcdatamodeld in Sources */,
 				776E492F272C91C1000D0B2D /* LearnCardBuilder.swift in Sources */,
-				778273B727AA5AEA00E5053D /* LearnTimesView.swift in Sources */,
+				778273B727AA5AEA00E5053D /* LearnDailyWordsView.swift in Sources */,
 				7714078F277AD90400B7E8D2 /* OnboardingUserPresenter.swift in Sources */,
 				772041AC277DF01600141FCA /* WordzModelDB.swift in Sources */,
 				77140788277AD75C00B7E8D2 /* OnboardingUserViewController.swift in Sources */,
@@ -1675,6 +1693,17 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		D454C69F295D7ABA00903B91 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = exactVersion;
+				version = 4.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		7702F1DE2729F48C006176FE /* Rivendell */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1711,6 +1740,11 @@
 		D43E5F6828D5987200CFE3E5 /* Hobbiton */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Hobbiton;
+		};
+		D454C6A0295D7ABA00903B91 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D454C69F295D7ABA00903B91 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 

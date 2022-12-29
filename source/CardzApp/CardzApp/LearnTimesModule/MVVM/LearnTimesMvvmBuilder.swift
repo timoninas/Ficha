@@ -10,7 +10,7 @@ import SwiftUI
 public final class LearnTimesMvvmBuilder {
     
     static func build() -> UIViewController {
-        let view = UIHostingController(rootView: LearnTimesView())
+        let view = UIHostingController(rootView: LearnDailyWordsView())
         return view
     }
     

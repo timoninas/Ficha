@@ -8,7 +8,7 @@
 import UIKit
 import Rivendell
 
-public enum CardLearnMode {
+public enum CardLearnModel {
     /// Simple mode. For exa, English -> Russian.
     case simpleMode
     /// Reverse mode. For exa, Russian -> English.
@@ -21,7 +21,7 @@ final class LearnCardViewController: UIViewController {
     
     var output: LearnCardOutput?
     
-    let mode: CardLearnMode
+    let mode: CardLearnModel
     
     private lazy var starButton = RVAlignImageButton(configuration: .init()
                                                         .with(titleConfig: .visible(title: "To\nfavorites", color: .olivie))
@@ -117,7 +117,7 @@ final class LearnCardViewController: UIViewController {
         return view
     }()
     
-    init(output: LearnCardOutput, learnMode: CardLearnMode) {
+    init(output: LearnCardOutput, learnMode: CardLearnModel) {
         self.output = output
         self.mode = learnMode
         super.init(nibName: nil, bundle: nil)
