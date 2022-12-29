@@ -170,15 +170,15 @@ public class BaseCardView: UIView {
         let shouldDismissCard = abs(currentPoint.x) > Constants.threshold || abs(currentPoint.y) > Constants.threshold
         
         UIView.animate(withDuration: 0.35, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.03, options: .curveEaseIn) {
-            if let responseSwipeRequest = responseSwipeRequest, shouldDismissCard && !self.swipeDirections.isEmpty {
+            if let responseSwipeRequest, shouldDismissCard && !self.swipeDirections.isEmpty {
                 let offScreenTransform = self.transform.translatedBy(x: responseSwipeRequest.1.x, y: responseSwipeRequest.1.y)
                 self.transform = offScreenTransform
             } else {
                 self.transform = .identity
             }
         } completion: { [weak self] _ in
-            guard let self = self else { return }
-            guard let responseSwipeRequest = responseSwipeRequest, shouldDismissCard && !self.swipeDirections.isEmpty else {
+            guard let self else { return }
+            guard let responseSwipeRequest, shouldDismissCard && !self.swipeDirections.isEmpty else {
                 self.onDragCard?()
                 return
             }
@@ -304,7 +304,7 @@ public class BaseCardView: UIView {
             let offScreenTransform = self.transform.translatedBy(x: point.x, y: point.y)
             self.transform = offScreenTransform
         } completion: { [weak self] _ in
-            guard let self = self else { return }
+            guard let self else { return }
             self.removeFromSuperview()
             switch swipeDirection {
             case .top:

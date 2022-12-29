@@ -86,7 +86,7 @@ final class DailyWordsHeader: UIView {
             .mysteryShack,
             .mysteryShack,
             .mysteryShack,
-            .babushka.withAlphaComponent(0.5)
+            .babushka.withAlphaComponent(1.0),
         ])
         titleLabel.textColor = UIColor(patternImage: gradient)
     }
@@ -125,7 +125,7 @@ final class DailyWordsHeader: UIView {
     private func addSettingsButton() {
         settingsButton.configuration = settingsButton.configuration
             .with(onTap: { [weak self] _ in
-                guard let self = self else { return }
+                guard let self else { return }
                 self.onTap?()
                 RLogDebug(message: "Header settings tapped", subsystem: String(describing: self))
             })

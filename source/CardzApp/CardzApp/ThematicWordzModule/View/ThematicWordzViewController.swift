@@ -33,7 +33,7 @@ final class ThematicWordzViewController: UIViewController {
                                     .with(isFullyRounded: true)
                                     .with(imageAspectRation: 0.5)
                                     .with(onTap: { [weak self] button in
-            guard let self = self else { return }
+            guard let self else { return }
             guard button.alpha != 0.0 else { return }
             UIApplication.hapticLight()
             if self.viewModel
@@ -73,9 +73,9 @@ final class ThematicWordzViewController: UIViewController {
             RLogDebug(message: "Not resetting static", subsystem: String(describing: self))
         }),
                                                              .init(title: "Yep", onSwipeClosure: { [weak self] in
-            guard let self = self else { return }
+            guard let self else { return }
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
-                guard let self = self else { return }
+                guard let self else { return }
                 self.output.resetWordsStat()
             }
         })])))
@@ -192,7 +192,7 @@ extension ThematicWordzViewController: UITableViewDelegate {
             guard playButton.alpha > 0.0 else { return }
             playButton.isUserInteractionEnabled = false
             UIView.animate(withDuration: 0.3) { [weak self] in
-                guard let self = self else { return }
+                guard let self else { return }
                 self.playButton.alpha = 0.0
                 self.playButton.transform = .init(translationX: 20.0, y: 0.0)
             }
@@ -200,7 +200,7 @@ extension ThematicWordzViewController: UITableViewDelegate {
             guard playButton.alpha < 1.0 else { return }
             playButton.isUserInteractionEnabled = true
             UIView.animate(withDuration: 0.3) { [weak self] in
-                guard let self = self else { return }
+                guard let self else { return }
                 self.playButton.alpha = 1.0
                 self.playButton.transform = .init(translationX: 0.0, y: 0.0)
             }
@@ -231,7 +231,7 @@ extension ThematicWordzViewController: UITableViewDataSource {
     
     private func makeFavouriteContextualAction(forRowAt indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: "Add to favorites") { [weak self] (action, swipeButtonView, completion) in
-            guard let self = self else { return }
+            guard let self else { return }
             UIApplication.hapticLight()
             self.output.addFavourite(at: indexPath.row)
             self.tableView.reloadRows(at: [indexPath], with: .fade)

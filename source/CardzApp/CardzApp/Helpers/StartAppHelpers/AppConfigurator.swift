@@ -5,6 +5,7 @@
 //  Created by Антон Тимонин on 12.01.2022.
 //
 
+import Rivendell
 import UIKit
 
 protocol AppConfiguratorProtocol {
@@ -23,7 +24,7 @@ final class AppConfigurator {
         func buildModule() -> UIViewController {
             switch self {
             case .daily:
-                let todayViewController = goJourney(.dailyWords)
+                let todayViewController = goJourney(.learnTimes)
                 if let todayIconData = UIImage.todayIcon?.pngData(),
                    let todayIconFilledData = UIImage.todayIconFilled?.pngData() {
                     let image = UIImage(data: todayIconData, scale: 13.0)
@@ -63,7 +64,7 @@ final class AppConfigurator {
                 }
                 return devViewController
             case .templateModule:
-                let viewController = goJourney(.learnTimes)
+                let viewController = goJourney(.dailyWords)
                 if let iconData = UIImage.developingModule?.pngData(),
                    let filledIconData = UIImage.developingModuleFilled?.pngData(){
                     let image = UIImage(data: iconData, scale: 17.0)
@@ -91,10 +92,10 @@ final class AppConfigurator {
             controllers.append(tabBarType.buildModule())
         }
         
-        let tabBar = setupTabBarAppearance(tabBar: UITabBarController())
+        let tabBar = setupTabBarAppearance(tabBar: AnimateTabBarController())
         tabBar.setViewControllers(controllers, animated: true)
         #if DEBUG
-        tabBar.selectedIndex = 2
+        tabBar.selectedIndex = 0
         #endif
         
         return tabBar
@@ -111,7 +112,7 @@ final class AppConfigurator {
         tabBar.tabBar.isTranslucent = true
         
         let bounds = tabBar.tabBar.bounds as CGRect
-        let visualEffectView = UIView() //UIVisualEffectView(effect: UIBlurEffect(style: .light))
+        let visualEffectView = UIView()
         visualEffectView.frame = bounds
         visualEffectView.backgroundColor = .gendalf
         visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

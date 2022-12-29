@@ -16,7 +16,7 @@ enum Journey {
     case thematicWordz(typeWord: ArkenstoneTypeWord, typeTranslation: SilverTypeTranslation)
     case favourite
     case alert(model: AlertModel)
-    case learnCard(mode: CardLearnMode, viewModel: [LearnWordzCardView.ViewModel])
+    case learnCard(mode: CardLearnModel, viewModel: [LearnWordzCardView.ViewModel])
     case learnNewWordz
     case dailyWords
     case learnTimes

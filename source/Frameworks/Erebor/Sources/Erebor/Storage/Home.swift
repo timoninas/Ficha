@@ -582,6 +582,56 @@ func getGoldHome() -> BagOfGoldWords {
             ],
             translations: ["Замок", "Блокировка"]
         ),
+        .init(
+            word: "Homeland",
+            transcription: "[ˈhəʊmlənd]",
+            examples: [
+                "If you had mentioned 'patriotism' to a Loonie, he would have stared--or thought you were talking about his homeland",
+                "These people were wrenched from their homeland and disappeared into the cold seas of the Atlantic, forgotten until today",
+                "Homeland has been informed that they are officially domestic terrorists"
+            ],
+            translations: ["Родина", "Отечество", "Отчизна"]
+        ),
+        .init(
+            word: "Tenement",
+            transcription: "[ˈtenəmənt]",
+            examples: [
+                "And almost at the same moment that the door closed behind him, there was an explosion in an old tenement on the other side of the city",
+                "I subsequently left the domain and moved here to Edo, where I found shelter in a back-alley tenement",
+                "I wrote it one night when I was sixteen and stood on the roof of a tenement"
+            ],
+            translations: ["Многоквартирный дом", "Жилой дом", "Обитель"]
+        ),
+        .init(
+            word: "Barracks",
+            transcription: "[ˈbærəks]",
+            examples: [
+                "'Cleaned out!' the man who had called Graeber a barracks crapper said in despair",
+                "Exactly four urinals in the staff building, two company latrines in barrack V, and... one floor in the officer's casino",
+                "They live in a great barrack of a house way down in the country, miles from anywhere"
+            ],
+            translations: ["Казарменный", "Барак", "Казарма"]
+        ),
+        .init(
+            word: "Shanty",
+            transcription: "",
+            examples: [
+                "He had been born in a wattle-and-daub shanty exactly on the Tropic of Capricorn, outside the town of Longreach in Western Queensland",
+                "Every time I thought of you out in that shanty, I got the creeps",
+                "The old mud shanty was bursting with it"
+            ],
+            translations: ["Лачуга", "Хибарка", "Хижина"]
+        ),
+        .init(
+            word: "Hermitage",
+            transcription: "[ˈhɜːmɪtɪʤ]",
+            examples: [
+                "Prajapati daksha and sage bhrigu are welcome to this poor sage's hermitage",
+                "So remember then; The Hermitage, Horizon",
+                "TO THE HERMITAGE, by Malcolm Bradbury"
+            ],
+            translations: ["Эрмитаж", "Скит", "Хижина отшельника"]
+        ),
     ])
     
     let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .home, typeTranslation: .enToRu)

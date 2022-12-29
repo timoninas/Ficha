@@ -6,6 +6,7 @@
 //
 
 import WidgetKit
+import Hobbiton
 import SwiftUI
 
 struct TodayAccessoryRectangularView : View {

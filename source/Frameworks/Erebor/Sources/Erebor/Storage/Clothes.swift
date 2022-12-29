@@ -533,6 +533,56 @@ func getGoldClothes() -> BagOfGoldWords {
             ],
             translations: ["Короткий топ"]
         ),
+        .init(
+            word: "Sun hat",
+            transcription: "",
+            examples: [
+                "Why hadn't she brought her sun hat?",
+                "Then will you need an umbrella or a sun hat?",
+                "- We've got sun hats."
+            ],
+            translations: ["Шляпа от солнца"]
+        ),
+        .init(
+            word: "Wool hat",
+            transcription: "",
+            examples: [
+                "He was wearing a black wool hat with the hood of his red jumper over the hat, and a black, sleeveless, quilted coat and brown chinos",
+                "The girls could be wearing some wool gloves or wool hats, no cotton fibers?",
+                "A bearded man in a wool hat drove them"
+            ],
+            translations: ["Шерстяная шляпа"]
+        ),
+        .init(
+            word: "Scarf",
+            transcription: "[skɑːf]",
+            examples: [
+                "In a hoop, with those funny puffy things-what the devil are they called?-that they wore to emphasize their hips, an apron and a scarf round me neck",
+                "Left behind, on the floor of the cargo plane, was the scarf Jeff had given her",
+                "Hey, pal, I've been meaning to tell you that scarf is so not your color"
+            ],
+            translations: ["Шарф", "Кашне", "Галстук"]
+        ),
+        .init(
+            word: "Glasses",
+            transcription: "[ˈɡlɑːsɪz]",
+            examples: [
+                "She produced with enormous pride a small pair of opera glasses",
+                "The eyes that were staring into the glass unseeingly suddenly focused",
+                "Piggy wiped his glass again"
+            ],
+            translations: ["Очки", "Бинокль"]
+        ),
+        .init(
+            word: "Earrings",
+            transcription: "[ˈɪərɪŋ]",
+            examples: [
+                "Look for his sparkling earrings",
+                "And she has the other earring",
+                "Where's the earring?"
+            ],
+            translations: ["Серьга", "Серёжка"]
+        ),
     ])
     
     let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .clothes, typeTranslation: .enToRu)

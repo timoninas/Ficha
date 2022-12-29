@@ -154,7 +154,11 @@ func getGoldAnimals() -> BagOfGoldWords {
         .init(
             word: "Lion",
             transcription: "['laiən]",
-            examples: [],
+            examples: [
+                "Wake up, Papa, a lion is coming",
+                "You know the one about the mother lion and her little cub?",
+                "She had the strength of a little lion too"
+            ],
             translations: ["Лев"]
         ),
         .init(

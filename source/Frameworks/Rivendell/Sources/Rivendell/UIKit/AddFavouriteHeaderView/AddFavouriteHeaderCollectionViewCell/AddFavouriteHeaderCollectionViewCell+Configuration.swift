@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  AddFavouriteHeaderCollectionViewCell+Configuration.swift
 //  
 //
 //  Created by Антон Тимонин on 23/02/2022.

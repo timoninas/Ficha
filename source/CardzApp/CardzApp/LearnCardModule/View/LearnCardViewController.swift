@@ -8,7 +8,7 @@
 import UIKit
 import Rivendell
 
-public enum CardLearnMode {
+public enum CardLearnModel {
     /// Simple mode. For exa, English -> Russian.
     case simpleMode
     /// Reverse mode. For exa, Russian -> English.
@@ -21,7 +21,7 @@ final class LearnCardViewController: UIViewController {
     
     var output: LearnCardOutput?
     
-    let mode: CardLearnMode
+    let mode: CardLearnModel
     
     private lazy var starButton = RVAlignImageButton(configuration: .init()
                                                         .with(titleConfig: .visible(title: "To\nfavorites", color: .olivie))
@@ -29,7 +29,7 @@ final class LearnCardViewController: UIViewController {
                                                         .with(imageConfig: .visible(image: .starUnfilledIcon, color: .moonlight))
                                                         .with(imageMultiplier: 1.0)
                                                         .with(onTap: { [weak self] _ in
-        guard let self = self else { return }
+        guard let self else { return }
         if let card = self.cards.last {
             card.swipeTo(.top)
         } else {
@@ -43,7 +43,7 @@ final class LearnCardViewController: UIViewController {
                                                         .with(imageConfig: .visible(image: .leftArrowIcon, color: .bloods))
                                                         .with(imageMultiplier: 1.0)
                                                         .with(onTap: { [weak self] _ in
-        guard let self = self else { return }
+        guard let self else { return }
         if let card = self.cards.last {
             card.swipeTo(.left)
         } else {
@@ -57,7 +57,7 @@ final class LearnCardViewController: UIViewController {
                                                         .with(imageConfig: .visible(image: .rightArrowIcon, color: .goblin))
                                                         .with(imageMultiplier: 1.0)
                                                         .with(onTap: { [weak self] _ in
-        guard let self = self else { return }
+        guard let self else { return }
         if let card = self.cards.last {
             card.swipeTo(.right)
         } else {
@@ -71,7 +71,7 @@ final class LearnCardViewController: UIViewController {
                                                     .with(highlitedColor: .clear)
                                                     .with(imageColor: .nazgul)
                                                     .with(onTap: { [weak self] _ in
-        guard let self = self else { return }
+        guard let self else { return }
         UIApplication.hapticLight()
         self.dismiss(animated: true, completion: nil)
     }))
@@ -117,7 +117,7 @@ final class LearnCardViewController: UIViewController {
         return view
     }()
     
-    init(output: LearnCardOutput, learnMode: CardLearnMode) {
+    init(output: LearnCardOutput, learnMode: CardLearnModel) {
         self.output = output
         self.mode = learnMode
         super.init(nibName: nil, bundle: nil)
@@ -169,7 +169,7 @@ final class LearnCardViewController: UIViewController {
         let valueAlpha = isHidden ? 0.0 : 1.0
         if isAnimated {
             UIView.animate(withDuration: 0.3) { [weak self] in
-                guard let self = self else { return }
+                guard let self else { return }
                 guard self.leftButton.alpha != valueAlpha else { return }
                 self.leftButton.alpha = valueAlpha
                 self.rightButton.alpha = valueAlpha
@@ -185,13 +185,13 @@ final class LearnCardViewController: UIViewController {
     
     private func addResultCard() {
         resultCard.onEverySwipe { [weak self] in
-            guard let self = self else { return }
+            guard let self else { return }
             UIApplication.hapticLight()
             self.dismiss(animated: true, completion: nil)
         }
         
         resultCard.onCardChangedPosition = { [weak self] x, y in
-            guard let self = self else { return }
+            guard let self else { return }
             self.closeButton.isUserInteractionEnabled = false
             let hideTreasure = 65.0
             if abs(x) > hideTreasure || abs(y) > hideTreasure {
@@ -202,7 +202,7 @@ final class LearnCardViewController: UIViewController {
         }
         
         resultCard.onCardEndChangedPosition = { [weak self] in
-            guard let self = self else { return }
+            guard let self else { return }
             self.closeButton.isUserInteractionEnabled = true
         }
         
@@ -230,7 +230,7 @@ final class LearnCardViewController: UIViewController {
         var tmpCards: [LearnWordzCardView] = []
         
         viewModel.enumerated().forEach { [weak self] (idx, model) in
-            guard let self = self else { return }
+            guard let self else { return }
             let state: LearnWordzCardView.Configuration.State
             switch self.mode {
             case .simpleMode:
@@ -256,36 +256,36 @@ final class LearnCardViewController: UIViewController {
             )
             
             card.onTopSwipe = { [weak self] in
-                guard let self = self else { return }
+                guard let self else { return }
                 self.topCardSwiped(isNeedToRemoveCard: true)
                 self.resultCard.configuration = self.resultCard.configuration
                     .with(favouritesCards: self.resultCard.configuration.favouritesCards + 1)
                 self.output?.didSwipeCardTop(with: idx)
             }
             card.onLeftSwipe = { [weak self] in
-                guard let self = self else { return }
+                guard let self else { return }
                 self.topCardSwiped(isNeedToRemoveCard: true)
                 self.resultCard.configuration = self.resultCard.configuration
                     .with(dontKnowCards: self.resultCard.configuration.dontKnowCards + 1)
                 self.output?.didSwipeCardLeft(with: idx)
             }
             card.onRightSwipe = { [weak self] in
-                guard let self = self else { return }
+                guard let self else { return }
                 self.topCardSwiped(isNeedToRemoveCard: true)
                 self.resultCard.configuration = self.resultCard.configuration
                     .with(knowCards: self.resultCard.configuration.knowCards + 1)
                 self.output?.didSwipeCardRight(with: idx)
             }
             card.onDragCard = { [weak self] in
-                guard let self = self else { return }
+                guard let self else { return }
                 self.output?.didDragCard(with: idx)
             }
             card.onCardChangedPosition = { [weak self] _, _ in
-                guard let self = self else { return }
+                guard let self else { return }
                 self.closeButton.isUserInteractionEnabled = false
             }
             card.onCardEndChangedPosition = { [weak self] in
-                guard let self = self else { return }
+                guard let self else { return }
                 self.closeButton.isUserInteractionEnabled = true
             }
             

@@ -44,7 +44,7 @@ final class DeveloperScreenViewController: UIViewController {
                                     .with(imageColor: .mysteryShack))
         button.publisher(for: .touchUpInside)
             .sink { [weak self] _ in
-                guard let self = self else { return }
+                guard let self else { return }
                 UIApplication.hapticLight()
                 self.dismiss(animated: true, completion: nil)
             }
