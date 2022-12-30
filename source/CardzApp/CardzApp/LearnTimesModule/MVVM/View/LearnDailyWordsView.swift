@@ -8,56 +8,7 @@
 import Rivendell
 import Hobbiton
 import SwiftUI
-import Lottie
 import Erebor
-
-struct LottieView: UIViewRepresentable {
-    
-    let lottieFile: String
-
-    func makeUIView(context: Context) -> some UIView {
-        let view = UIView(frame: .zero)
-
-        let animationView = LottieAnimationView(configuration: LottieConfiguration(renderingEngine: .coreAnimation))
-        animationView.animation = LottieAnimation.named(lottieFile)
-        animationView.contentMode = .scaleAspectFit
-        animationView.loopMode = .loop
-        animationView.play()
-
-        view.addSubview(animationView)
-
-        animationView.translatesAutoresizingMaskIntoConstraints = false
-        animationView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
-        animationView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-
-        return view
-    }
-
-    func updateUIView(_ uiView: UIViewType, context: Context) {
-
-    }
-}
-
-struct LearnCardWrappedView: UIViewControllerRepresentable {
-    typealias UIViewControllerType = LearnCardViewController
-    
-    private let model: CardLearnModel
-    private let viewModel: [LearnWordzCardView.ViewModel]
-    
-    public init(model: CardLearnModel, viewModel: [LearnWordzCardView.ViewModel]) {
-        self.model = model
-        self.viewModel = viewModel
-    }
-    
-    func makeUIViewController(context: Context) -> LearnCardViewController {
-        let module = goJourney(.learnCard(mode: model, viewModel: viewModel)) as? LearnCardViewController
-        return module!
-    }
-    
-    func updateUIViewController(_ uiViewController: LearnCardViewController, context: Context) {
-        // Updates the state of the specified view controller with new information from SwiftUI.
-    }
-}
 
 struct LearnDailyWordsView : View {
     
@@ -102,6 +53,8 @@ struct LearnDailyWordsView : View {
         .onAppear {
             learnTimesViewModel.loadModel()
         }
+        .background(Color.gendalf)
+        .preferredColorScheme(.dark)
         
     }
     

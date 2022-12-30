@@ -20,14 +20,15 @@ struct DetailWordView : View {
     var body: some View {
         ZStack {
             TabView {
-                ForEach(items, id: \.self) { item in
-                    DetailWordCardView(model: item)
+//                ForEach(items, id: \.self) { item in
+                    DetailWordCardView(model: selectedItem)
                         .frame(width: UIScreen.main.bounds.size.width - 40.0,
                                height: UIScreen.main.bounds.size.height - 40.0)
-                }
+//                }
             }
             .tabViewStyle(PageTabViewStyle())
             .tabViewStyle(.page(indexDisplayMode: .never))
+            .background(Color.whisper)
             
             closeButtonView()
         }
@@ -255,11 +256,11 @@ struct DetailWordCardView : View {
     
     let model: Segment.ViewModel
     
-    @ObservedObject var detailWordCardVewModel: DetailWordCardVewModel
+    @ObservedObject var detailWordCardVewModel: DetailWordCardViewModel
     
     init(
         model: Segment.ViewModel,
-        detailWordCardVewModel: DetailWordCardVewModel = DetailWordCardVewModel()
+        detailWordCardVewModel: DetailWordCardViewModel = DetailWordCardViewModel()
     ) {
         self.model = model
         self.detailWordCardVewModel = detailWordCardVewModel

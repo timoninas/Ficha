@@ -5,8 +5,8 @@
 //  Created by Антон Тимонин on 29.10.2021.
 //
 
-import UIKit
 import Rivendell
+import UIKit
 
 final class LearnCardBuilder {
     
