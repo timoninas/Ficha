@@ -7,7 +7,6 @@
 
 import WidgetKit
 import Hobbiton
-import Rivendell
 import SwiftUI
 
 struct ShortcutAccessoryCircularEntryView : View {
