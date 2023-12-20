@@ -1,0 +1,5 @@
+app_identifier "Revolvetra.Inc.Ficha"
+apple_id "revolvetra@gmail.com"
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile
