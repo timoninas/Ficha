@@ -32,7 +32,7 @@ final class LearnNewWordzViewController: UIViewController {
         let smallItemGroupLayout = NSCollectionLayoutGroup.vertical(
             layoutSize: .init(
                 widthDimension: .fractionalWidth(0.35),
-                heightDimension: .fractionalHeight(1.0)
+                heightDimension: .fractionalHeight(1.66)
             ),
             repeatingSubitem: smallItem,
             count: 2
