@@ -13,6 +13,4 @@ protocol AlertCardViewInput: AnyObject {
     
 }
 
-protocol AlertCardViewOutput: LifeCycleProtocol, AnyObject {
-    
-}
+protocol AlertCardViewOutput: LifeCycleProtocol, AnyObject { }

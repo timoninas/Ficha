@@ -166,6 +166,4 @@ extension DeveloperScreenViewController: UICollectionViewDataSource {
     
 }
 
-extension DeveloperScreenViewController: DeveloperScreenViewInput {
-    
-}
+extension DeveloperScreenViewController: DeveloperScreenViewInput { }

@@ -7,10 +7,12 @@
 
 import Foundation
 import SwiftUI
+import RevolvetraUserDefaults
+import RevoletraUserDefaultsKeys
 
 class LearnTimesViewModel : ObservableObject, Identifiable {
     
-    @Published var wordz: [LearnWordsViewModel] = []
+    @Published var wordz: [Model] = []
     
     @Published var headerModel: HeaderViewModel = .init()
     
@@ -20,12 +22,13 @@ class LearnTimesViewModel : ObservableObject, Identifiable {
     
     private let model: LearnTimesModelProtocol
     
-    init(model: LearnTimesModelProtocol = LearnTimesModel()) {
+    init(model: LearnTimesModelProtocol) {
         self.model = model
     }
     
     public func loadModel() {
         wordz = model.fetchWords()
+        model.releaseResultWords()
         headerModel = HeaderViewModel(title: "Daily words", image: .revolvetra)
         isPresentedOnboarding = model.isNeedToPresentOnboarding()
     }
@@ -34,7 +37,7 @@ class LearnTimesViewModel : ObservableObject, Identifiable {
 
 extension LearnTimesViewModel {
     
-    struct LearnWordsViewModel : Identifiable, Decodable, Hashable {
+    struct Model : Identifiable, Decodable, Hashable {
         var id = UUID()
         public var title : String
         public var transcription: String?

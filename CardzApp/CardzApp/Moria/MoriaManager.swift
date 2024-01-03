@@ -9,7 +9,12 @@ import Foundation
 import CoreData
 import Erebor
 
-public class MoriaManager {
+public protocol MoriaManagerProtocol {
+    
+    func addWordz(model: WordzModelDB)
+}
+
+public class MoriaManager: MoriaManagerProtocol {
     
     // MARK: - Public properties
     
@@ -100,9 +105,7 @@ public class MoriaManager {
             wordzEntity.setValue(type.rawValue, forKey: "type")
             wordzEntity.setValue(languageVersion.rawValue, forKey: "languageVersion")
             wordzEntity.setValue(0, forKey: "displayedCount")
-            
             wordzEntity.setValue(arrayToDBValue(examples), forKey: "examples")
-            
             wordzEntity.setValue(arrayToDBValue(translations), forKey: "translations")
             
             do {

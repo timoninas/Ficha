@@ -19,4 +19,3 @@ struct ShortcutWidgetModel: Hashable {
     
     let imageName: String?
 }
-

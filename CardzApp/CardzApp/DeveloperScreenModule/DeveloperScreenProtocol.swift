@@ -7,9 +7,6 @@
 
 import Foundation
 
-protocol DeveloperScreenViewInput: AnyObject {
-}
+protocol DeveloperScreenViewInput: AnyObject { }
 
-protocol DeveloperScreenViewOutput: LifeCycleProtocol, AnyObject {
-    
-}
+protocol DeveloperScreenViewOutput: LifeCycleProtocol, AnyObject { }

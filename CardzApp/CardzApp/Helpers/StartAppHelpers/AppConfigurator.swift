@@ -8,10 +8,6 @@
 import Rivendell
 import UIKit
 
-protocol AppConfiguratorProtocol {
-    
-}
-
 final class AppConfigurator {
     
     enum TabBarModule {

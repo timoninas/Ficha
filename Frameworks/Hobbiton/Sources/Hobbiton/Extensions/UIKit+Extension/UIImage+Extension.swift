@@ -43,6 +43,10 @@ public extension UIImage {
     
     static let leftArrowIcon = UIImage.imageFromBundle(named: "leftArrowIcon")
     
+    static let leftArrowIconThin = UIImage.imageFromBundle(named: "leftArrowIconThin")
+    
+    static let rightArrowIconThin = UIImage.imageFromBundle(named: "rightArrowIconThin")
+    
     static let rightArrowIcon = UIImage.imageFromBundle(named: "rightArrowIcon")
     
     static let openedEye = UIImage.imageFromBundle(named: "openedEye")
@@ -92,6 +96,8 @@ public extension UIImage {
     static let developingModule = UIImage.imageFromBundle(named: "developingModule")
     
     static let developingModuleFilled = UIImage.imageFromBundle(named: "developingModuleFilled")
+    
+    static let searchIcon = UIImage.imageFromBundle(named: "searchIcon")
     
 }
 

@@ -10,7 +10,7 @@ import RevoletraUserDefaultsKeys
 
 public class WidgetWordsUserDefaultsCache {
     
-    public static let key = DailyWordsCacheKey.widgetWords
+    public static let key = WidgetSharedKey.widgetWords
     public static let internalKey = "US_WidgetWordsUserDefaultsCache"
     
     public static func save(_ value: [DailyWordsUserDefaults]) {
@@ -34,4 +34,3 @@ public class WidgetWordsUserDefaultsCache {
     }
     
 }
-

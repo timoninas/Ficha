@@ -20,11 +20,9 @@ struct DetailWordView : View {
     var body: some View {
         ZStack {
             TabView {
-//                ForEach(items, id: \.self) { item in
                     DetailWordCardView(model: selectedItem)
                         .frame(width: UIScreen.main.bounds.size.width - 40.0,
                                height: UIScreen.main.bounds.size.height - 40.0)
-//                }
             }
             .tabViewStyle(PageTabViewStyle())
             .tabViewStyle(.page(indexDisplayMode: .never))
@@ -64,7 +62,7 @@ struct Segment {
         let title: String
         let translations: [String]
         
-        static func adapt(_ model:  LearnTimesViewModel.LearnWordsViewModel) -> ViewModel {
+        static func adapt(_ model:  LearnTimesViewModel.Model) -> ViewModel {
             ViewModel(
                 title: model.title,
                 translations: model.translations

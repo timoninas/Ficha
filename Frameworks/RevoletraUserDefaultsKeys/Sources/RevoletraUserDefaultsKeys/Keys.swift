@@ -45,11 +45,20 @@ public struct ProfileKey {
     
 }
 
+public struct WidgetSharedKey {
+    
+    public static let widgetWords = "group.Revolvetra.Inc.Ficha"
+}
+
 public struct DailyWordsCacheKey {
     
     public static let dailyWords = "UD_DailyWordsUserDefaultsCache_dailyWords"
     
-    public static let widgetWords = "group.Revolvetra.Inc.Ficha"
-    
 }
 
+public struct InteractiveWidgetStorage {
+    
+    public static let interactiveWidgetWordsStorage = "UD_interactiveWidgetWordsStorage"
+    
+    public static let interactiveWidgetWordsResults = "UD_interactiveWidgetWordsResults"
+}

@@ -8,9 +8,8 @@
 import Foundation
 
 protocol LearnTimesViewInput: AnyObject {
+    
     func changeState(state: LearnTimesViewState)
 }
 
-protocol LearnTimesOutput: LifeCycleProtocol, AnyObject {
-    
-}
+protocol LearnTimesOutput: LifeCycleProtocol, AnyObject { }

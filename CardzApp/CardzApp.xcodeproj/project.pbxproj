@@ -99,6 +99,12 @@
 		D48F8494276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F8493276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift */; };
 		D49579F028D03793002AC23E /* TodayWidgetAccessoryRectangularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49579EF28D03793002AC23E /* TodayWidgetAccessoryRectangularView.swift */; };
 		D49579F328D053A7002AC23E /* FichaLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49579F228D053A7002AC23E /* FichaLogoView.swift */; };
+		D4BECCFC2B397FC4002D3866 /* LearnWordWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BECCFB2B397FC4002D3866 /* LearnWordWidget.swift */; };
+		D4BECCFF2B398472002D3866 /* LearnWordWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BECCFE2B398472002D3866 /* LearnWordWidgetEntryView.swift */; };
+		D4BECD022B3984B5002D3866 /* LearnWordSmallWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BECD012B3984B5002D3866 /* LearnWordSmallWidget.swift */; };
+		D4BECD052B3986E4002D3866 /* LearnWordWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BECD042B3986E4002D3866 /* LearnWordWidgetEntry.swift */; };
+		D4BECD082B3987D1002D3866 /* LearnWordWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BECD072B3987D1002D3866 /* LearnWordWidgetProvider.swift */; };
+		D4BECD382B452BDA002D3866 /* MockLearnTimesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BECD372B452BDA002D3866 /* MockLearnTimesModel.swift */; };
 		D4C7F12F2719636D0066125A /* DailyWordsViewController+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C7F12E2719636D0066125A /* DailyWordsViewController+State.swift */; };
 		D4E2DA7F2B32D07500C3F37D /* ShortcutWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E2DA7C2B32CF8900C3F37D /* ShortcutWidget.swift */; };
 		D4E2DA862B32D0F100C3F37D /* ShortcutAccessoryCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E2DA842B32D0EF00C3F37D /* ShortcutAccessoryCircularView.swift */; };
@@ -255,6 +261,12 @@
 		D48F8493276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnNewWordzCollectionViewHeader.swift; sourceTree = "<group>"; };
 		D49579EF28D03793002AC23E /* TodayWidgetAccessoryRectangularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWidgetAccessoryRectangularView.swift; sourceTree = "<group>"; };
 		D49579F228D053A7002AC23E /* FichaLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaLogoView.swift; sourceTree = "<group>"; };
+		D4BECCFB2B397FC4002D3866 /* LearnWordWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnWordWidget.swift; sourceTree = "<group>"; };
+		D4BECCFE2B398472002D3866 /* LearnWordWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnWordWidgetEntryView.swift; sourceTree = "<group>"; };
+		D4BECD012B3984B5002D3866 /* LearnWordSmallWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnWordSmallWidget.swift; sourceTree = "<group>"; };
+		D4BECD042B3986E4002D3866 /* LearnWordWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnWordWidgetEntry.swift; sourceTree = "<group>"; };
+		D4BECD072B3987D1002D3866 /* LearnWordWidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnWordWidgetProvider.swift; sourceTree = "<group>"; };
+		D4BECD372B452BDA002D3866 /* MockLearnTimesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLearnTimesModel.swift; sourceTree = "<group>"; };
 		D4C7F12E2719636D0066125A /* DailyWordsViewController+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyWordsViewController+State.swift"; sourceTree = "<group>"; };
 		D4E2DA7C2B32CF8900C3F37D /* ShortcutWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutWidget.swift; sourceTree = "<group>"; };
 		D4E2DA802B32D0D400C3F37D /* ShortcutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutProvider.swift; sourceTree = "<group>"; };
@@ -581,6 +593,7 @@
 			isa = PBXGroup;
 			children = (
 				7782739B27A9089A00E5053D /* FichaWidgetBundle.swift */,
+				D4BECCFD2B397FE0002D3866 /* LearnWordsWidget */,
 				D4E2DA7E2B32CF8C00C3F37D /* ShortcutWidget */,
 				775E285E279752B800A147A3 /* TodayWidget */,
 				7781F47B27920D7D00612B1A /* Assets.xcassets */,
@@ -683,6 +696,7 @@
 			isa = PBXGroup;
 			children = (
 				778273B427AA5AE000E5053D /* LearnTimesModel.swift */,
+				D4BECD372B452BDA002D3866 /* MockLearnTimesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -876,6 +890,50 @@
 				D49579EF28D03793002AC23E /* TodayWidgetAccessoryRectangularView.swift */,
 			);
 			path = AccessoryRectangular;
+			sourceTree = "<group>";
+		};
+		D4BECCFD2B397FE0002D3866 /* LearnWordsWidget */ = {
+			isa = PBXGroup;
+			children = (
+				D4BECCFB2B397FC4002D3866 /* LearnWordWidget.swift */,
+				D4BECD092B3987D4002D3866 /* Provider */,
+				D4BECD002B398476002D3866 /* View */,
+				D4BECD062B3986E9002D3866 /* Entry */,
+			);
+			path = LearnWordsWidget;
+			sourceTree = "<group>";
+		};
+		D4BECD002B398476002D3866 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D4BECCFE2B398472002D3866 /* LearnWordWidgetEntryView.swift */,
+				D4BECD032B3984B8002D3866 /* Supplementary */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D4BECD032B3984B8002D3866 /* Supplementary */ = {
+			isa = PBXGroup;
+			children = (
+				D4BECD012B3984B5002D3866 /* LearnWordSmallWidget.swift */,
+			);
+			path = Supplementary;
+			sourceTree = "<group>";
+		};
+		D4BECD062B3986E9002D3866 /* Entry */ = {
+			isa = PBXGroup;
+			children = (
+				D4BECD042B3986E4002D3866 /* LearnWordWidgetEntry.swift */,
+			);
+			path = Entry;
+			sourceTree = "<group>";
+		};
+		D4BECD092B3987D4002D3866 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				D4BECD072B3987D1002D3866 /* LearnWordWidgetProvider.swift */,
+			);
+			path = Provider;
 			sourceTree = "<group>";
 		};
 		D4E2DA7E2B32CF8C00C3F37D /* ShortcutWidget */ = {
@@ -1246,17 +1304,22 @@
 				778273BE27AAF6AF00E5053D /* TodayWidgetMediumView.swift in Sources */,
 				D4F9E4BC28D18D13001F48F7 /* ExamplesWordsView.swift in Sources */,
 				775E28652797536B00A147A3 /* TodayProvider.swift in Sources */,
+				D4BECCFC2B397FC4002D3866 /* LearnWordWidget.swift in Sources */,
 				D4F9E4BF28D18D42001F48F7 /* WordzAndTranslateView.swift in Sources */,
 				775E28622797534C00A147A3 /* TodayWidgetSmallView.swift in Sources */,
 				778273C127AB058F00E5053D /* SharedView.swift in Sources */,
+				D4BECD052B3986E4002D3866 /* LearnWordWidgetEntry.swift in Sources */,
 				7781F47A27920D7A00612B1A /* TodayWidget.swift in Sources */,
 				775E28672797538B00A147A3 /* TodayWidgetEntry.swift in Sources */,
 				D4E2DA882B32D0F700C3F37D /* ShortcutProvider.swift in Sources */,
 				775E28632797534F00A147A3 /* TodayWidgetEntryView.swift in Sources */,
+				D4BECD082B3987D1002D3866 /* LearnWordWidgetProvider.swift in Sources */,
 				D49579F328D053A7002AC23E /* FichaLogoView.swift in Sources */,
 				D49579F028D03793002AC23E /* TodayWidgetAccessoryRectangularView.swift in Sources */,
 				D4E2DA872B32D0F500C3F37D /* ShortcutEntry.swift in Sources */,
 				7782739F27A9092D00E5053D /* FichaWidgetBundle.swift in Sources */,
+				D4BECD022B3984B5002D3866 /* LearnWordSmallWidget.swift in Sources */,
+				D4BECCFF2B398472002D3866 /* LearnWordWidgetEntryView.swift in Sources */,
 				D4F9E4C128D18D59001F48F7 /* CustomGradientView.swift in Sources */,
 				D4E2DA7F2B32D07500C3F37D /* ShortcutWidget.swift in Sources */,
 			);
@@ -1309,6 +1372,7 @@
 				776EFC37274107C7001010FD /* AlertCardViewController.swift in Sources */,
 				77A178DF27352A0E005E520C /* Logger.swift in Sources */,
 				7714078B277AD84A00B7E8D2 /* OnboardingUserViewController+ViewModel.swift in Sources */,
+				D4BECD382B452BDA002D3866 /* MockLearnTimesModel.swift in Sources */,
 				770B3FD82767D5DE00DC7887 /* DeveloperScreenViewController.swift in Sources */,
 				770B3FDF2767D64C00DC7887 /* DeveloperScreenPresenter.swift in Sources */,
 				776EFC3E27410824001010FD /* AlertCardProtocol.swift in Sources */,
@@ -1403,7 +1467,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = "Ficha-WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22.12.2.0;
+				CURRENT_PROJECT_VERSION = 24.1.1.0;
 				DEVELOPMENT_TEAM = X92LK22555;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Ficha-Widget/Info.plist";
@@ -1415,7 +1479,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 22.12.2;
+				MARKETING_VERSION = 24.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "Revolvetra.Inc.Ficha.Ficha-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1433,7 +1497,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = "Ficha-WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22.12.2.0;
+				CURRENT_PROJECT_VERSION = 24.1.1.0;
 				DEVELOPMENT_TEAM = X92LK22555;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Ficha-Widget/Info.plist";
@@ -1445,7 +1509,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 22.12.2;
+				MARKETING_VERSION = 24.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "Revolvetra.Inc.Ficha.Ficha-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1580,7 +1644,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = CardzApp/CardzApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23.12.1.0;
+				CURRENT_PROJECT_VERSION = 24.1.1.0;
 				DEVELOPMENT_TEAM = X92LK22555;
 				INFOPLIST_FILE = CardzApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -1588,7 +1652,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 23.12.1;
+				MARKETING_VERSION = 24.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = Revolvetra.Inc.Ficha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
@@ -1606,7 +1670,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = CardzApp/CardzApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23.12.1.0;
+				CURRENT_PROJECT_VERSION = 24.1.1.0;
 				DEVELOPMENT_TEAM = X92LK22555;
 				INFOPLIST_FILE = CardzApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -1614,7 +1678,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 23.12.1;
+				MARKETING_VERSION = 24.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = Revolvetra.Inc.Ficha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;

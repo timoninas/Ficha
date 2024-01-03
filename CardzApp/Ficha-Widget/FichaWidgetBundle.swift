@@ -13,6 +13,7 @@ struct FichaWidgetBundle: WidgetBundle {
     
     @WidgetBundleBuilder
     var body: some Widget {
+        LearnWordWidget()
         ShortcutWidget()
         TodayWidget()
     }

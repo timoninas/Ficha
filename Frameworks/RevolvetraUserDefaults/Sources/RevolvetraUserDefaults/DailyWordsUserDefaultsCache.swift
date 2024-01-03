@@ -8,7 +8,7 @@
 import Foundation
 import RevoletraUserDefaultsKeys
 
-public struct DailyWordsUserDefaults: Encodable, Decodable {
+public struct DailyWordsUserDefaults: Codable {
     
     public let title: String
     

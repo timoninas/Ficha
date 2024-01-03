@@ -31,4 +31,9 @@ public extension Color {
     
     static let softPurple: Color = .init(.sRGB, red: 185/255, green: 191/255, blue: 255/255, opacity: 1)
     
+    static let softGreen: Color = .init(.sRGB, red: 204/255, green: 255/255, blue: 204/255, opacity: 1)
+    
+    static let softRed: Color = .init(.sRGB, red: 255/255, green: 153/255, blue: 153/255, opacity: 1)
+    
+    static let softYellow: Color = .init(.sRGB, red: 255/255, green: 255/255, blue: 153/255, opacity: 1)
 }

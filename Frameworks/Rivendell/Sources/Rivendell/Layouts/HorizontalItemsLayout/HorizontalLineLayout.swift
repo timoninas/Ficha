@@ -110,4 +110,3 @@ public final class HorizontalLineLayout: UICollectionViewLayout {
     }
     
 }
-

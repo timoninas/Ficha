@@ -14,6 +14,4 @@ protocol DailyWordsViewInput: AnyObject {
     func showOnboardingModule(model: OnboardingModuleModel)
 }
 
-protocol DailyWordsOutput: LifeCycleProtocol, AnyObject {
-    
-}
+protocol DailyWordsOutput: LifeCycleProtocol, AnyObject { }

@@ -124,4 +124,3 @@ func getGoldEmoji() -> BagOfGoldWords {
     let bagOfGold = BagOfGoldWords(words: ereborGoldWords, typeWord: .animals, typeTranslation: .enToRu)
     return bagOfGold
 }
-

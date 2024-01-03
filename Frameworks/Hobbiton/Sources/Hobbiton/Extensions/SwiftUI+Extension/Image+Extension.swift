@@ -19,4 +19,6 @@ public extension Image {
     
     static let closeIcon = imageFromBundle(named: "closeIcon")
     
+    static let searchIcon = imageFromBundle(named: "searchIcon")
+    
 }

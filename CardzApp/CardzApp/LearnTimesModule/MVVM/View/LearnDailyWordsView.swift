@@ -15,12 +15,12 @@ struct LearnDailyWordsView : View {
     @ObservedObject var learnTimesViewModel: LearnTimesViewModel
     
     @State
-    var contentItem: LearnTimesViewModel.LearnWordsViewModel?
+    var contentItem: LearnTimesViewModel.Model?
     
     @State
     private var isLearnPresented = false
     
-    init(learnTimesViewModel: LearnTimesViewModel = LearnTimesViewModel()) {
+    init(learnTimesViewModel: LearnTimesViewModel) {
         self.learnTimesViewModel = learnTimesViewModel
     }
     
@@ -55,7 +55,6 @@ struct LearnDailyWordsView : View {
         }
         .background(Color.gendalf)
         .preferredColorScheme(.dark)
-        
     }
     
     @ViewBuilder
