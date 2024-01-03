@@ -12,15 +12,20 @@ import Erebor
 
 protocol LearnTimesModelProtocol {
     
-    func fetchWords() -> [LearnTimesViewModel.LearnWordsViewModel]
+    func fetchWords() -> [LearnTimesViewModel.Model]
     
     func isNeedToPresentOnboarding() -> Bool
-    
 }
 
 final class LearnTimesModel: LearnTimesModelProtocol {
     
-    func fetchWords() -> [LearnTimesViewModel.LearnWordsViewModel] {
+    private var wordsStorage: WordsStorageProtocol?
+    
+    init(wordsStorage: WordsStorageProtocol?) {
+        self.wordsStorage = wordsStorage
+    }
+    
+    func fetchWords() -> [LearnTimesViewModel.Model] {
         fetchData()
     }
     
@@ -32,22 +37,13 @@ final class LearnTimesModel: LearnTimesModelProtocol {
         return false
     }
     
-    private func fetchData() -> [LearnTimesViewModel.LearnWordsViewModel] {
-        if DaysChechker.isNewDay {
-            DailyWordsUserDefaultsCache.remove()
-            refillDailyWords()
-        }
-        
-        var array = DailyWordsUserDefaultsCache.get()
-        
-        for _ in 0..<2 {
-            guard array.isEmpty else { break }
-            refillDailyWords()
-            array = DailyWordsUserDefaultsCache.get()
-        }
+    private func fetchData() -> [LearnTimesViewModel.Model] {
+        DailyWordsUserDefaultsCache.remove()
+        refillDailyWords()
+        let array = DailyWordsUserDefaultsCache.get()
         
         return array.map { dailyWord in
-            LearnTimesViewModel.LearnWordsViewModel(
+            LearnTimesViewModel.Model(
                 title: dailyWord.title,
                 transcription: dailyWord.transcription,
                 translations: dailyWord.translations,
@@ -80,24 +76,16 @@ final class LearnTimesModel: LearnTimesModelProtocol {
                     ))
                 }
             }
-        DailyWordsUserDefaultsCache.save(newDailyWords.shuffled())
+        let shuffledWords = newDailyWords.shuffled()
+        fillStorages(shuffledWords)
     }
     
-}
-
-
-final class MockLearnTimesModel: LearnTimesModelProtocol {
-    
-    func fetchWords() -> [LearnTimesViewModel.LearnWordsViewModel] {
-        [
-            LearnTimesViewModel.LearnWordsViewModel(title: "1123", transcription: "[awefawe]", examples: ["Lol", "Kek", "Cheburek"], languageVersion: "", displayedCount: 0),
-            LearnTimesViewModel.LearnWordsViewModel(title: "rejkngjkwegjkner", transcription: "[o0o]", examples: [], languageVersion: "", displayedCount: 0),
-            LearnTimesViewModel.LearnWordsViewModel(title: "Ololoolo", transcription: "[123]", examples: ["", "", ""], languageVersion: "", displayedCount: 0)
-        ]
+    private func fillStorages(_ words: [DailyWordsUserDefaults]) {
+        DailyWordsUserDefaultsCache.save(words)
+        wordsStorage?.reset()
+        wordsStorage?.words = words.map {
+            .init(title: $0.title,
+                  translation: $0.translations.first ?? "")
+        }
     }
-    
-    func isNeedToPresentOnboarding() -> Bool {
-        false
-    }
-    
 }

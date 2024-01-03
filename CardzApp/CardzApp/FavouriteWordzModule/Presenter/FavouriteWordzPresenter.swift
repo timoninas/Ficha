@@ -7,20 +7,39 @@
 
 import Foundation
 import Erebor
+import RevolvetraUserDefaults
+import UIKit
 
-final class FavouriteWordzPresenter: FavouriteWordzViewOutput {
+final class FavouriteWordzPresenter {
+    
+    // MARK: - Constants
     
     private struct Constants {
         static let arkenstone: ArkenstoneTypeWord = .favourite
     }
     
+    // MARK: - Properties
+    
     weak var view: FavouriteWordzViewInput?
     
     private var viewModels: [FavouriteWordzViewController.ViewModel] = []
     
-    init() {}
+    private var wordResultsStorage: WordResultsStorageProtocol
+    private var dbManager: MoriaManagerProtocol
+    
+    // MARK: - Init
+    
+    init(wordResultsStorage: WordResultsStorageProtocol,
+         dbManager: MoriaManagerProtocol) {
+        self.wordResultsStorage = wordResultsStorage
+        self.dbManager = dbManager
+        self.subscribeToChanges()
+    }
+    
+    // MARK: - Methods
     
     func viewDidAppear() {
+        actualizeFavouriteSection()
         fetchData()
         if viewModels.count > 0 {
             MoriaManager.shared.updateWordz(wordz: viewModels[0].wordz, translations: viewModels[0].translations, type: viewModels[0].type, languageVersion: viewModels[0].languageVersion, count: viewModels[0].displayedCount)
@@ -48,7 +67,45 @@ final class FavouriteWordzPresenter: FavouriteWordzViewOutput {
         view?.changeState(state: .normal(model: viewModels))
     }
     
-    // MARK: - FavouriteWordzViewOutput
+    private func actualizeFavouriteSection() {
+        guard !wordResultsStorage.words.isEmpty else { return }
+        wordResultsStorage.words
+            .filter({ $0.actionType == .leftSwipe })
+            .forEach { wordResult in
+                dbManager.addWordz(model: .init(
+                    wordz: wordResult.word.title,
+                    examples: [],
+                    translations: [wordResult.word.translation],
+                    type: .favourite,
+                    languageVersion: .enToRu,
+                    displayedCount: 1
+                ))
+            }
+        wordResultsStorage.words = []
+    }
+    
+    private func subscribeToChanges() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(appMovedToForeground),
+            name: UIApplication.willEnterForegroundNotification,
+            object: nil
+        )
+    }
+    
+    @objc
+    private func appMovedToForeground() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.actualizeFavouriteSection()
+            self.fetchData()
+        }
+    }
+    
+}
+
+// MARK: - FavouriteWordzViewOutput
+
+extension FavouriteWordzPresenter: FavouriteWordzViewOutput {
     
     func deleteAt(index: Int) {
         guard index >= 0 && index < viewModels.count else { return }
@@ -73,5 +130,4 @@ final class FavouriteWordzPresenter: FavouriteWordzViewOutput {
     func refetchData() {
         fetchData()
     }
-    
 }

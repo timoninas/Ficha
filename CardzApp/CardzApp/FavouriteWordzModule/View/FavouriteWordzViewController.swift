@@ -23,7 +23,6 @@ final class FavouriteWordzViewController: UIViewController {
         didSet {
             guard viewModel != oldValue else { return }
             tableView.reloadData()
-            UIApplication.hapticLight()
         }
     }
     

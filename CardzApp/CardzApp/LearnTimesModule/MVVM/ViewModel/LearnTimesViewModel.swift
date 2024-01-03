@@ -28,7 +28,6 @@ class LearnTimesViewModel : ObservableObject, Identifiable {
     
     public func loadModel() {
         wordz = model.fetchWords()
-        model.releaseResultWords()
         headerModel = HeaderViewModel(title: "Daily words", image: .revolvetra)
         isPresentedOnboarding = model.isNeedToPresentOnboarding()
     }

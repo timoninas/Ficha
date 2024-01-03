@@ -105,6 +105,10 @@
 		D4BECD052B3986E4002D3866 /* LearnWordWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BECD042B3986E4002D3866 /* LearnWordWidgetEntry.swift */; };
 		D4BECD082B3987D1002D3866 /* LearnWordWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BECD072B3987D1002D3866 /* LearnWordWidgetProvider.swift */; };
 		D4BECD382B452BDA002D3866 /* MockLearnTimesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BECD372B452BDA002D3866 /* MockLearnTimesModel.swift */; };
+		D4BECD3A2B452F63002D3866 /* ActionReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BECD392B452F63002D3866 /* ActionReducer.swift */; };
+		D4BECD3D2B453089002D3866 /* LearnWordWidgetEntryView+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BECD3C2B453089002D3866 /* LearnWordWidgetEntryView+Config.swift */; };
+		D4BECD3F2B453184002D3866 /* LearnWordCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BECD3E2B453184002D3866 /* LearnWordCard.swift */; };
+		D4BECD412B45319E002D3866 /* LearnWordAppIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BECD402B45319E002D3866 /* LearnWordAppIntents.swift */; };
 		D4C7F12F2719636D0066125A /* DailyWordsViewController+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C7F12E2719636D0066125A /* DailyWordsViewController+State.swift */; };
 		D4E2DA7F2B32D07500C3F37D /* ShortcutWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E2DA7C2B32CF8900C3F37D /* ShortcutWidget.swift */; };
 		D4E2DA862B32D0F100C3F37D /* ShortcutAccessoryCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E2DA842B32D0EF00C3F37D /* ShortcutAccessoryCircularView.swift */; };
@@ -267,6 +271,10 @@
 		D4BECD042B3986E4002D3866 /* LearnWordWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnWordWidgetEntry.swift; sourceTree = "<group>"; };
 		D4BECD072B3987D1002D3866 /* LearnWordWidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnWordWidgetProvider.swift; sourceTree = "<group>"; };
 		D4BECD372B452BDA002D3866 /* MockLearnTimesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLearnTimesModel.swift; sourceTree = "<group>"; };
+		D4BECD392B452F63002D3866 /* ActionReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionReducer.swift; sourceTree = "<group>"; };
+		D4BECD3C2B453089002D3866 /* LearnWordWidgetEntryView+Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearnWordWidgetEntryView+Config.swift"; sourceTree = "<group>"; };
+		D4BECD3E2B453184002D3866 /* LearnWordCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnWordCard.swift; sourceTree = "<group>"; };
+		D4BECD402B45319E002D3866 /* LearnWordAppIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnWordAppIntents.swift; sourceTree = "<group>"; };
 		D4C7F12E2719636D0066125A /* DailyWordsViewController+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyWordsViewController+State.swift"; sourceTree = "<group>"; };
 		D4E2DA7C2B32CF8900C3F37D /* ShortcutWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutWidget.swift; sourceTree = "<group>"; };
 		D4E2DA802B32D0D400C3F37D /* ShortcutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutProvider.swift; sourceTree = "<group>"; };
@@ -906,7 +914,7 @@
 		D4BECD002B398476002D3866 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D4BECCFE2B398472002D3866 /* LearnWordWidgetEntryView.swift */,
+				D4BECD3B2B453078002D3866 /* EntryView */,
 				D4BECD032B3984B8002D3866 /* Supplementary */,
 			);
 			path = View;
@@ -916,6 +924,8 @@
 			isa = PBXGroup;
 			children = (
 				D4BECD012B3984B5002D3866 /* LearnWordSmallWidget.swift */,
+				D4BECD3E2B453184002D3866 /* LearnWordCard.swift */,
+				D4BECD402B45319E002D3866 /* LearnWordAppIntents.swift */,
 			);
 			path = Supplementary;
 			sourceTree = "<group>";
@@ -932,8 +942,18 @@
 			isa = PBXGroup;
 			children = (
 				D4BECD072B3987D1002D3866 /* LearnWordWidgetProvider.swift */,
+				D4BECD392B452F63002D3866 /* ActionReducer.swift */,
 			);
 			path = Provider;
+			sourceTree = "<group>";
+		};
+		D4BECD3B2B453078002D3866 /* EntryView */ = {
+			isa = PBXGroup;
+			children = (
+				D4BECCFE2B398472002D3866 /* LearnWordWidgetEntryView.swift */,
+				D4BECD3C2B453089002D3866 /* LearnWordWidgetEntryView+Config.swift */,
+			);
+			path = EntryView;
 			sourceTree = "<group>";
 		};
 		D4E2DA7E2B32CF8C00C3F37D /* ShortcutWidget */ = {
@@ -1217,8 +1237,9 @@
 		D4F00D452718C3840079A860 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1310;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					7781F47227920D7A00612B1A = {
 						CreatedOnToolsVersion = 13.1;
@@ -1302,19 +1323,23 @@
 			files = (
 				D4E2DA862B32D0F100C3F37D /* ShortcutAccessoryCircularView.swift in Sources */,
 				778273BE27AAF6AF00E5053D /* TodayWidgetMediumView.swift in Sources */,
+				D4BECD412B45319E002D3866 /* LearnWordAppIntents.swift in Sources */,
 				D4F9E4BC28D18D13001F48F7 /* ExamplesWordsView.swift in Sources */,
 				775E28652797536B00A147A3 /* TodayProvider.swift in Sources */,
 				D4BECCFC2B397FC4002D3866 /* LearnWordWidget.swift in Sources */,
+				D4BECD3F2B453184002D3866 /* LearnWordCard.swift in Sources */,
 				D4F9E4BF28D18D42001F48F7 /* WordzAndTranslateView.swift in Sources */,
 				775E28622797534C00A147A3 /* TodayWidgetSmallView.swift in Sources */,
 				778273C127AB058F00E5053D /* SharedView.swift in Sources */,
 				D4BECD052B3986E4002D3866 /* LearnWordWidgetEntry.swift in Sources */,
+				D4BECD3A2B452F63002D3866 /* ActionReducer.swift in Sources */,
 				7781F47A27920D7A00612B1A /* TodayWidget.swift in Sources */,
 				775E28672797538B00A147A3 /* TodayWidgetEntry.swift in Sources */,
 				D4E2DA882B32D0F700C3F37D /* ShortcutProvider.swift in Sources */,
 				775E28632797534F00A147A3 /* TodayWidgetEntryView.swift in Sources */,
 				D4BECD082B3987D1002D3866 /* LearnWordWidgetProvider.swift in Sources */,
 				D49579F328D053A7002AC23E /* FichaLogoView.swift in Sources */,
+				D4BECD3D2B453089002D3866 /* LearnWordWidgetEntryView+Config.swift in Sources */,
 				D49579F028D03793002AC23E /* TodayWidgetAccessoryRectangularView.swift in Sources */,
 				D4E2DA872B32D0F500C3F37D /* ShortcutEntry.swift in Sources */,
 				7782739F27A9092D00E5053D /* FichaWidgetBundle.swift in Sources */,
@@ -1523,6 +1548,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1556,6 +1582,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1584,6 +1611,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1617,6 +1645,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
