@@ -7,6 +7,7 @@
 
 import WidgetKit
 import SwiftUI
+import AppIntents
 
 @main
 struct FichaWidgetBundle: WidgetBundle {
@@ -16,6 +17,9 @@ struct FichaWidgetBundle: WidgetBundle {
         LearnWordWidget()
         ShortcutWidget()
         TodayWidget()
+        if #available(iOSApplicationExtension 18.0, *) {
+            ShortcutButtonControlWidget()
+        }
     }
     
 }

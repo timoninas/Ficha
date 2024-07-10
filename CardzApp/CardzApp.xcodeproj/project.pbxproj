@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -85,6 +85,7 @@
 		77FED85727881D20007D60E3 /* DevDebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FED85627881D20007D60E3 /* DevDebugViewController.swift */; };
 		77FED85A27881D45007D60E3 /* DevDebugBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FED85927881D45007D60E3 /* DevDebugBuilder.swift */; };
 		77FED85D27881DEA007D60E3 /* DevDebugProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FED85C27881DEA007D60E3 /* DevDebugProtocols.swift */; };
+		D4019A542B58428000E2F4F8 /* NothingAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4019A522B58425100E2F4F8 /* NothingAppIntent.swift */; };
 		D42CC37927AF9D8B00335204 /* IndependentDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42CC37827AF9D8B00335204 /* IndependentDependencies.swift */; };
 		D42D2E7427B81B2C00374C58 /* DevDebugCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42D2E7327B81B2C00374C58 /* DevDebugCollectionViewCell.swift */; };
 		D42F7117295D743A00AB2054 /* PlayButton.json in Resources */ = {isa = PBXBuildFile; fileRef = D42F7116295D743A00AB2054 /* PlayButton.json */; };
@@ -97,6 +98,7 @@
 		D4866ABA28F181C5007A3D1E /* LearnTimesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4866AB928F181C5007A3D1E /* LearnTimesHeaderView.swift */; };
 		D4866ABC28F18212007A3D1E /* DetailWordCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4866ABB28F18212007A3D1E /* DetailWordCardView.swift */; };
 		D48F8494276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F8493276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift */; };
+		D4908A682C3E7D5A002344F7 /* CheckToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4908A672C3E7D58002344F7 /* CheckToggleStyle.swift */; };
 		D49579F028D03793002AC23E /* TodayWidgetAccessoryRectangularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49579EF28D03793002AC23E /* TodayWidgetAccessoryRectangularView.swift */; };
 		D49579F328D053A7002AC23E /* FichaLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49579F228D053A7002AC23E /* FichaLogoView.swift */; };
 		D4BECCFC2B397FC4002D3866 /* LearnWordWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BECCFB2B397FC4002D3866 /* LearnWordWidget.swift */; };
@@ -253,6 +255,7 @@
 		77FED85627881D20007D60E3 /* DevDebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevDebugViewController.swift; sourceTree = "<group>"; };
 		77FED85927881D45007D60E3 /* DevDebugBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevDebugBuilder.swift; sourceTree = "<group>"; };
 		77FED85C27881DEA007D60E3 /* DevDebugProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevDebugProtocols.swift; sourceTree = "<group>"; };
+		D4019A522B58425100E2F4F8 /* NothingAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NothingAppIntent.swift; sourceTree = "<group>"; };
 		D42CC37827AF9D8B00335204 /* IndependentDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndependentDependencies.swift; sourceTree = "<group>"; };
 		D42D2E7327B81B2C00374C58 /* DevDebugCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevDebugCollectionViewCell.swift; sourceTree = "<group>"; };
 		D42F7116295D743A00AB2054 /* PlayButton.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PlayButton.json; sourceTree = "<group>"; };
@@ -263,6 +266,7 @@
 		D4866AB928F181C5007A3D1E /* LearnTimesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTimesHeaderView.swift; sourceTree = "<group>"; };
 		D4866ABB28F18212007A3D1E /* DetailWordCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWordCardView.swift; sourceTree = "<group>"; };
 		D48F8493276FD1EC00FC6606 /* LearnNewWordzCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnNewWordzCollectionViewHeader.swift; sourceTree = "<group>"; };
+		D4908A672C3E7D58002344F7 /* CheckToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckToggleStyle.swift; sourceTree = "<group>"; };
 		D49579EF28D03793002AC23E /* TodayWidgetAccessoryRectangularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWidgetAccessoryRectangularView.swift; sourceTree = "<group>"; };
 		D49579F228D053A7002AC23E /* FichaLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaLogoView.swift; sourceTree = "<group>"; };
 		D4BECCFB2B397FC4002D3866 /* LearnWordWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnWordWidget.swift; sourceTree = "<group>"; };
@@ -304,6 +308,21 @@
 		D4F9E4C028D18D59001F48F7 /* CustomGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGradientView.swift; sourceTree = "<group>"; };
 		D4FA44EA295ECA6000274B88 /* LearnCardWrappedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCardWrappedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		D4908A622C3D265C002344F7 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ShortcutButtonControlWidget.swift,
+				ShortcutToggleControlWidget.swift,
+			);
+			target = 7781F47227920D7A00612B1A /* Ficha-WidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		D4908A612C3D265C002344F7 /* ControlWidgets */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D4908A622C3D265C002344F7 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ControlWidgets; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		7781F47027920D7A00612B1A /* Frameworks */ = {
@@ -601,6 +620,7 @@
 			isa = PBXGroup;
 			children = (
 				7782739B27A9089A00E5053D /* FichaWidgetBundle.swift */,
+				D4908A612C3D265C002344F7 /* ControlWidgets */,
 				D4BECCFD2B397FE0002D3866 /* LearnWordsWidget */,
 				D4E2DA7E2B32CF8C00C3F37D /* ShortcutWidget */,
 				775E285E279752B800A147A3 /* TodayWidget */,
@@ -923,9 +943,11 @@
 		D4BECD032B3984B8002D3866 /* Supplementary */ = {
 			isa = PBXGroup;
 			children = (
+				D4908A672C3E7D58002344F7 /* CheckToggleStyle.swift */,
 				D4BECD012B3984B5002D3866 /* LearnWordSmallWidget.swift */,
 				D4BECD3E2B453184002D3866 /* LearnWordCard.swift */,
 				D4BECD402B45319E002D3866 /* LearnWordAppIntents.swift */,
+				D4019A522B58425100E2F4F8 /* NothingAppIntent.swift */,
 			);
 			path = Supplementary;
 			sourceTree = "<group>";
@@ -1238,7 +1260,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1310;
+				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					7781F47227920D7A00612B1A = {
@@ -1338,8 +1360,10 @@
 				D4E2DA882B32D0F700C3F37D /* ShortcutProvider.swift in Sources */,
 				775E28632797534F00A147A3 /* TodayWidgetEntryView.swift in Sources */,
 				D4BECD082B3987D1002D3866 /* LearnWordWidgetProvider.swift in Sources */,
+				D4019A542B58428000E2F4F8 /* NothingAppIntent.swift in Sources */,
 				D49579F328D053A7002AC23E /* FichaLogoView.swift in Sources */,
 				D4BECD3D2B453089002D3866 /* LearnWordWidgetEntryView+Config.swift in Sources */,
+				D4908A682C3E7D5A002344F7 /* CheckToggleStyle.swift in Sources */,
 				D49579F028D03793002AC23E /* TodayWidgetAccessoryRectangularView.swift in Sources */,
 				D4E2DA872B32D0F500C3F37D /* ShortcutEntry.swift in Sources */,
 				7782739F27A9092D00E5053D /* FichaWidgetBundle.swift in Sources */,
@@ -1667,7 +1691,6 @@
 		D4F00D7B2718C3860079A860 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
@@ -1693,7 +1716,6 @@
 		D4F00D7C2718C3860079A860 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
@@ -1719,7 +1741,6 @@
 		D4F00D7E2718C3860079A860 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CardzAppTests/Info.plist;
@@ -1740,7 +1761,6 @@
 		D4F00D7F2718C3860079A860 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CardzAppTests/Info.plist;
@@ -1761,7 +1781,6 @@
 		D4F00D812718C3860079A860 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CardzAppUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -1781,7 +1800,6 @@
 		D4F00D822718C3860079A860 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CardzAppUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;

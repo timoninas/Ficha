@@ -15,8 +15,10 @@ import RevoletraUserDefaultsKeys
 struct LeftSwipeAppIntent: AppIntent {
     
     static var title: LocalizedStringResource = "Swipe card to the left side"
+    static var isDiscoverable: Bool = false
     
     func perform() async throws -> some IntentResult {
+        try await Task.sleep(nanoseconds: 300_000_000)
         let resultsStorage = WordResultsStorage(key: WidgetSharedKey.widgetWords)
         let storage: WordsStorageProtocol = WordsStorage(
             key: WidgetSharedKey.widgetWords,
@@ -45,6 +47,7 @@ struct RightSwipeAppIntent: AppIntent {
 struct FlipCardAppIntent: AppIntent {
     
     static var title: LocalizedStringResource = "Flip current card"
+    static var isDiscoverable: Bool = false
     
     func perform() async throws -> some IntentResult {
         let storage: WordsStorageProtocol = WordsStorage(key: WidgetSharedKey.widgetWords)

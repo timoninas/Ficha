@@ -20,6 +20,8 @@ struct LearnWordSmallWidget: View {
     var toRightAppIntent: any AppIntent
     var flipAppIntent: any AppIntent
     
+    var isToggled = false
+    
     private var transition: AnyTransition {
         guard case let .word(word) = state,
               let action = word.action else { 
@@ -62,6 +64,8 @@ struct LearnWordSmallWidget: View {
     
     // MARK: - Methods
     
+    @Environment(\.scenePhase) private var phase
+    
     @ViewBuilder
     func contentView(_ word: LearnWordWidgetEntryView.Word) -> some View {
         VStack(alignment: .leading, spacing: 8.0) {
@@ -70,7 +74,11 @@ struct LearnWordSmallWidget: View {
                     .transition(transition)
             }.buttonStyle(.plain)
             HStack {
-                buildButton(image: .starUnfilledIcon,
+                buildToggle(onToggleImage: {
+                    $0
+                    ? Image(uiImage: .starFilledIcon ?? UIImage())
+                    : Image(uiImage: .starUnfilledIcon ?? UIImage())
+                },
                             color: .softYellow,
                             intent: toLeftAppIntent)
                 .padding(.leading(4.0))
@@ -119,6 +127,19 @@ struct LearnWordSmallWidget: View {
                 .frame(width: 30.0, height: 30.0)
         }
         .buttonStyle(.plain)
+    }
+    
+    @ViewBuilder
+    func buildToggle(onToggleImage: @escaping (Bool) -> Image,
+                     color: Color,
+                     intent: any AppIntent) -> some View {
+        Toggle("",
+               isOn: false,
+               intent: intent)
+        .toggleStyle(CheckToggleStyle(imageColor: .softYellow) { isOn in
+            Image(uiImage: (isOn ? .starFilledIcon : .starUnfilledIcon) ?? UIImage())
+        })
+        .frame(width: 30.0, height: 30.0)
     }
     
 }

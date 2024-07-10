@@ -39,9 +39,9 @@ struct LearnWordWidgetProvider: TimelineProvider {
                                               isFlipped: storage.isFlipped)
             let word: LearnWordWidgetEntryView.Word = storage.isFlipped
             ? .init(title: firstWord.translation, action: action)
-                : .init(title: firstWord.title, action: action)
+            : .init(title: firstWord.title, action: action)
             timeline = Timeline(entries: [.init(date: Date(), word: word)],
-                                    policy: .after(Date().addingTimeInterval(60.0 * 60.0 * 6.0)))
+                                policy: .after(Date().addingTimeInterval(60.0 * 60.0 * 6.0)))
         } else {
             let entry = LearnWordWidgetEntry(date: Date(),
                                              inform: .init(imageName: "searchIcon",
