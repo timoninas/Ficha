@@ -2,7 +2,7 @@
 //  ShortcutButtonControlWidget.swift
 //  CardzApp
 //
-//  Created by Anton Timonin on 09.07.2024.
+//  Created by Anton Timonin on 10.07.2024.
 //
 
 import WidgetKit

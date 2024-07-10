@@ -310,18 +310,17 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		D4908A622C3D265C002344F7 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+		D4908A712C3E7E45002344F7 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				ShortcutButtonControlWidget.swift,
-				ShortcutToggleControlWidget.swift,
 			);
 			target = 7781F47227920D7A00612B1A /* Ficha-WidgetExtension */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		D4908A612C3D265C002344F7 /* ControlWidgets */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D4908A622C3D265C002344F7 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ControlWidgets; sourceTree = "<group>"; };
+		D4908A612C3D265C002344F7 /* ControlWidgets */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D4908A712C3E7E45002344F7 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ControlWidgets; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
